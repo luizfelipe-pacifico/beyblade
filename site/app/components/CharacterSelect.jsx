@@ -22,6 +22,11 @@ export default function CharacterSelect() {
   }
 
   function onKeyDown(e) {
+    if (e.key === 'Home' || e.key === 'End') {
+      e.preventDefault();
+      select(e.key === 'Home' ? 0 : BLADERS.length - 1, true);
+      return;
+    }
     const step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
     if (!step) return;
     e.preventDefault();
@@ -89,15 +94,20 @@ export default function CharacterSelect() {
         </div>
         <p style={{ '--i': 2 }}>
           Os quatro Bladebreakers da primeira temporada, cada um com a sua fera bit. Os atributos saem das peças
-          reais de cada beyblade.
+          reais de cada beyblade, como referência para o balanceamento.
         </p>
       </div>
 
       <div className="stage" style={{ '--c': color, '--field-text': BEASTS[blader.beast].text }}>
         <article id="ficha" className="card" data-ui="" aria-live="polite" aria-atomic="true" style={{ '--c': color }}>
-          <div className="card-photo">
-            <Picture id={blader.image} sizes="(max-width: 680px) 92vw, 560px" style={{ objectPosition: blader.focus }} />
-            <span className="card-tag">{BEASTS[blader.beast].name}</span>
+          <div className="card-visual">
+            <div className="card-photo">
+              <Picture id={blader.image} sizes="(max-width: 800px) 42vw, 300px" style={{ objectPosition: blader.focus }} />
+              <span className="card-tag">{BEASTS[blader.beast].name}</span>
+            </div>
+            <div className="card-bey">
+              <img src={`/beyblades/${blader.beast}-s.svg`} alt={`Ilustração da ${blader.bey}`} width="768" height="768" loading="lazy" />
+            </div>
           </div>
           <div className="card-body">
             <div className="card-name">
@@ -135,7 +145,7 @@ export default function CharacterSelect() {
               ))}
             </dl>
             <p className="special">
-              <strong>Especial: {blader.special.name}</strong>
+              <strong>Especial planejado: {blader.special.name}</strong>
               {blader.special.text}
             </p>
           </div>

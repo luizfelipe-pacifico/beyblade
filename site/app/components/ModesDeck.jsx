@@ -15,8 +15,16 @@ export default function ModesDeck() {
         <h2 id="modos-titulo" className="head">Encontre sua luta</h2>
         <p className="lead">Quatro modos planejados para o Alpha. Todos para jogar sem internet.</p>
       </div>
+      <article className="mode-feature" data-reveal="">
+        <div><h3>{MODES[0][0]}</h3><p>{MODES[0][1]}</p></div>
+        <div className="versus-art" role="img" aria-label="Dragoon e Dranzer frente a frente">
+          <img src="/beyblades/dragoon-s.svg" alt="" width="768" height="768" loading="lazy" />
+          <span aria-hidden="true">VS</span>
+          <img src="/beyblades/dranzer-s.svg" alt="" width="768" height="768" loading="lazy" />
+        </div>
+      </article>
       <div className="mode-list">
-        {MODES.map(([title, text]) => (
+        {MODES.slice(1).map(([title, text]) => (
           <article className="mode" key={title} data-reveal="">
             <h3>{title}</h3>
             <p>{text}</p>

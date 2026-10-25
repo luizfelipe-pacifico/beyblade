@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Picture from './Picture';
 import { BLADERS } from '../site';
 import { PsButton } from './PsButtons';
@@ -67,7 +67,7 @@ const STAGES = [
   {
     name: 'Lançamento',
     clause: 'Então, lance na hora certa',
-    text: 'Segure para carregar e solte na faixa verde. Um lançamento bom começa a luta com mais giro.',
+    text: 'Segure para carregar e solte na faixa amarela. Um lançamento bom começa a luta com mais giro.',
     ui: () => (
       <div className="ui">
         <div className="ui-title">
@@ -93,24 +93,9 @@ const STAGES = [
     ui: () => (
       <div className="ui">
         <div className="ui-title">
-          <span>Tyson 2 × 1 Kai</span>
-          <span>1:24</span>
+          <span>Dragoon S × Dranzer S</span>
         </div>
         <BattleLoop />
-        {[
-          ['Dragoon S', 72],
-          ['Dranzer S', 51],
-        ].map(([name, v]) => (
-          <div key={name} style={{ display: 'grid', gap: 6 }}>
-            <div className="ui-row">
-              <span>{name}</span>
-              <span>Giro {v}%</span>
-            </div>
-            <div className="ui-bar" style={{ '--value': v / 100 }}>
-              <span />
-            </div>
-          </div>
-        ))}
       </div>
     ),
   },
@@ -118,46 +103,44 @@ const STAGES = [
 
 export default function StageSlider() {
   const [step, setStep] = useState(0);
+  const tabs = useRef([]);
   const stage = STAGES[step];
-  const progress = step / (STAGES.length - 1);
+
+  function onKeyDown(event) {
+    const next = {
+      ArrowRight: (step + 1) % STAGES.length,
+      ArrowLeft: (step - 1 + STAGES.length) % STAGES.length,
+      Home: 0,
+      End: STAGES.length - 1,
+    }[event.key];
+    if (next === undefined) return;
+    event.preventDefault();
+    setStep(next);
+    tabs.current[next].focus();
+  }
 
   return (
     <section id="como-jogar" className="stages" aria-labelledby="como-jogar-titulo">
-      <div className="stages-copy" data-reveal="">
-        <div aria-live="polite">
-          <h2 id="como-jogar-titulo">{stage.clause}</h2>
+      <div className="section-intro" data-reveal="">
+        <h2 id="como-jogar-titulo" className="head">Do lançamento à arena</h2>
+        <p className="lead">Escolha cada etapa e veja como a partida está sendo pensada.</p>
+      </div>
+      <div className="stage-names" role="tablist" aria-label="Etapas da partida" onKeyDown={onKeyDown}>
+        {STAGES.map((s, i) => (
+          <button key={s.name} type="button" role="tab" id={`step-${i}`} aria-controls="stage-preview"
+            aria-selected={i === step} tabIndex={i === step ? 0 : -1}
+            ref={(el) => { tabs.current[i] = el; }} onClick={() => setStep(i)}>
+            <span className="step-number" aria-hidden="true">{i + 1}</span>{s.name}
+          </button>
+        ))}
+      </div>
+      <div className="stages-panel" id="stage-preview" role="tabpanel" tabIndex={0} aria-labelledby={`step-${step}`}>
+        <div className="stages-copy">
+          <h3>{stage.clause}</h3>
           <p className="lead">{stage.text}</p>
+          <p className="small stage-disclaimer">Ilustrações do fluxo planejado, sem imagens de gameplay.</p>
         </div>
-      </div>
-      <div className="stages-ui" data-reveal="">
-        <div data-ui="">
-          {stage.ui()}
-        </div>
-      </div>
-
-      <div className="stage-track">
-        <div className="range-wrap" style={{ '--progress': progress }}>
-          <span className="range-base" aria-hidden="true" />
-          <span className="range-fill" aria-hidden="true" />
-          <input
-            className="range"
-            type="range"
-            min="0"
-            max={STAGES.length - 1}
-            step="1"
-            value={step}
-            onChange={(e) => setStep(Number(e.target.value))}
-            aria-label="Etapa da partida"
-            aria-valuetext={`${stage.name}: ${stage.clause}`}
-          />
-        </div>
-        <div className="stage-names">
-          {STAGES.map((s, i) => (
-            <button key={s.name} type="button" aria-current={i === step ? 'step' : undefined} onClick={() => setStep(i)}>
-              {s.name}
-            </button>
-          ))}
-        </div>
+        <div className="stages-ui" data-ui="">{stage.ui()}</div>
       </div>
     </section>
   );

@@ -32,12 +32,14 @@ export default function Footer() {
               <li><a href="/#personagens">Personagens</a></li>
               <li><a href="/#como-jogar">Como jogar</a></li>
               <li><a href="/#controles">Controles</a></li>
+              <li><a href="/#modos">Modos de jogo</a></li>
               <li><a href="/#perguntas">Perguntas</a></li>
             </ul>
           </div>
           <div>
             <h3>Projeto</h3>
             <ul>
+              <li><a href="/#estagio">Andamento do projeto</a></li>
               <li><a href={ROADMAP_URL}>Roadmap</a></li>
               <li><a href={LICENSE_URL}>Licença MIT</a></li>
               <li><a href="/creditos/">Créditos das imagens</a></li>

@@ -20,7 +20,7 @@ export function image(id) {
 }
 export { images };
 
-// Cores das feras bit: cada capítulo da página usa a cor de uma delas.
+// Cores das feras bit, restritas à identidade dos personagens.
 export const BEASTS = {
   dragoon: { name: 'Dragoon', color: 'var(--fera-dragoon)', text: 'var(--fera-dragoon-texto)' },
   dranzer: { name: 'Dranzer', color: 'var(--fera-dranzer)', text: 'var(--fera-dranzer-texto)' },

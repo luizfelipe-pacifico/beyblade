@@ -1,8 +1,9 @@
-import { ArrowUpRight, Check, Download, Gamepad2, Keyboard, WifiOff } from 'lucide-react';
+import { ArrowUpRight, Download, Gamepad2, Keyboard, WifiOff } from 'lucide-react';
 import CharacterSelect from './components/CharacterSelect';
 import Footer from './components/Footer';
 import ModesDeck from './components/ModesDeck';
-import PsButtons from './components/PsButtons';
+import ControlGuide from './components/ControlGuide';
+import SiteNav from './components/SiteNav';
 import Reveal from './components/Reveal';
 import StageSlider from './components/StageSlider';
 import HeroBey from './components/HeroBey';
@@ -12,21 +13,7 @@ import { DOWNLOAD_URL, INSTALLER, ISSUES_URL, MILESTONES, RELEASES_URL, ROADMAP_
 function Hero() {
   return (
     <header className="hero" id="topo">
-      <nav className="header" aria-label="Principal">
-        <a className="wordmark" href="#topo">
-          Beyblade Arena
-        </a>
-        <div className="tab">
-          <a href="#personagens">Personagens</a>
-          <a href="#como-jogar">Como jogar</a>
-          <a href="#controles">Controles</a>
-          <a href="#perguntas">Perguntas</a>
-        </div>
-        <a className="button" href={DOWNLOAD_URL}>
-          <Download size={20} strokeWidth={2.5} aria-hidden="true" />
-          Baixar
-        </a>
-      </nav>
+      <SiteNav />
       <div className="hero-body">
         <div className="hero-intro">
           <h1 className="hero-title">
@@ -52,12 +39,12 @@ function Hero() {
                 Baixar para Windows
               </a>
             </div>
+            <p className="hero-meta">Grátis para Windows 10 e 11. Em desenvolvimento, ainda sem versão jogável.</p>
             <div className="hero-features">
               <span><Gamepad2 size={21} aria-hidden="true" /> Dois jogadores</span>
               <span><Keyboard size={21} aria-hidden="true" /> Controle ou teclado</span>
               <span><WifiOff size={21} aria-hidden="true" /> Offline</span>
             </div>
-            <p className="hero-meta">Grátis para Windows 10 e 11. Em desenvolvimento, ainda sem versão jogável.</p>
           </div>
         </div>
         <HeroBey />
@@ -69,70 +56,50 @@ function Hero() {
 function Controls() {
   return (
     <section id="controles" className="controls" aria-labelledby="controles-titulo">
-      <div className="board">
-        <div className="piece piece--photo"><BattleLoop /></div>
-        <div className="piece piece--title" data-reveal="">
-          <h2 id="controles-titulo" style={{ '--i': 0 }}>
-            Dois no mesmo PC
-          </h2>
-          <p className="lead" style={{ '--i': 1 }}>
-            Sentem lado a lado e joguem. Sem conta, sem internet e sem configurar nada para começar.
-          </p>
+      <div className="section-intro" data-reveal="">
+        <h2 id="controles-titulo">Dois no mesmo PC</h2>
+        <p className="lead">Controle ou teclado. Vocês escolhem. Veja os comandos previstos para entrar na arena lado a lado.</p>
+      </div>
+      <div className="controls-layout">
+        <div className="controls-visual">
+          <BattleLoop />
+          <p className="lead">A disputa fica entre vocês.</p>
+          <p>Sem conta, sem internet. O progresso ficará salvo no próprio PC.</p>
         </div>
-        <div className="piece piece--list" data-reveal="">
-          <h3 style={{ '--i': 0 }}>Jogue do seu jeito</h3>
-          <ul className="checks" style={{ '--i': 1 }}>
-            <li>
-              <Gamepad2 size={26} aria-hidden="true" />
-              <span>Dois DualShock 4, por USB ou Bluetooth</span>
-            </li>
-            <li>
-              <Keyboard size={26} aria-hidden="true" />
-              <span>
-                Os dois no teclado: <span className="key">W</span> <span className="key">A</span>{' '}
-                <span className="key">S</span> <span className="key">D</span> e as setas
-              </span>
-            </li>
-            <li>
-              <Check size={26} aria-hidden="true" />
-              <span>Misto: um no controle, outro no teclado</span>
-            </li>
-            <li>
-              <Check size={26} aria-hidden="true" />
-              <span>Botões e teclas remapeáveis</span>
-            </li>
-          </ul>
-        </div>
-        <div className="controls-note" data-reveal="">
-          <p>Os comandos aparecem como no controle de PS4.</p>
-          <PsButtons size={32} />
-          <p>Sem controle? O teclado funciona nos menus também. O progresso fica salvo no seu PC, sem internet.</p>
-        </div>
+        <ControlGuide />
       </div>
     </section>
   );
 }
 
 function Status() {
+  const current = MILESTONES[0];
   return (
     <section id="estagio" className="status" aria-labelledby="estagio-titulo">
-      <div className="status-board" data-reveal="">
-        <div className="status-tile status-tile--head" style={{ '--i': 0 }}>
+      <div className="status-board">
+        <div className="status-intro" data-reveal="">
           <h2 id="estagio-titulo">O próximo lançamento</h2>
-          <p>
-            O jogo ainda não tem uma versão jogável. Estas são as etapas até o Beta, as mesmas do{' '}
-            <a href={ROADMAP_URL}>roadmap no GitHub</a>.
-          </p>
+          <p className="lead">O jogo está em construção. Ainda não há uma versão jogável, mas você pode acompanhar cada etapa.</p>
+          <a className="text-link" href={ROADMAP_URL}>Acompanhar no GitHub <ArrowUpRight size={18} aria-hidden="true" /></a>
         </div>
-        {MILESTONES.map((m, i) => (
-          <div key={m.name} className={`status-tile${i === 0 ? ' is-now' : ''}`} style={{ '--i': i + 1 }}>
-            <h3>{m.name}</h3>
-            <div>
-              <p className="state">{m.status}</p>
-              <p className="small">{m.note}</p>
-            </div>
+        <div className="roadmap">
+          <div className="milestone-current">
+            <h3>{current.name}</h3>
+            <p className="state">{current.status}</p>
+            <p>{current.note}.</p>
           </div>
-        ))}
+          <details className="roadmap-next">
+            <summary>Ver próximas etapas</summary>
+            <ol>
+              {MILESTONES.slice(1).map((m) => (
+                <li className="milestone" key={m.name}>
+                  <div><strong>{m.name}</strong><p>{m.note}</p></div>
+                  <span className="small">{m.status}</span>
+                </li>
+              ))}
+            </ol>
+          </details>
+        </div>
       </div>
     </section>
   );
@@ -140,14 +107,17 @@ function Status() {
 
 function DownloadBand() {
   return (
-    <a className="download" href={DOWNLOAD_URL} id="baixar">
-      <div className="download-top">
-        <p>Baixa o instalador da versão mais recente para Windows 10 e 11, de graça, direto do GitHub.</p>
-        <ArrowUpRight className="download-arrow" size={48} strokeWidth={2.25} aria-hidden="true" />
+    <section className="download" id="baixar" aria-labelledby="download-titulo">
+      <div>
+        <h2 id="download-titulo">A próxima disputa é no PC</h2>
+        <p className="lead">Beyblade Arena será gratuito para Windows 10 e 11. O instalador estará aqui quando a primeira versão sair.</p>
       </div>
-      <span className="download-word">Baixar</span>
-      <span className="sr-only"> o instalador {INSTALLER}</span>
-    </a>
+      <div className="download-actions">
+        <a className="button" href={DOWNLOAD_URL}><Download size={22} aria-hidden="true" />Baixar para Windows</a>
+        <p className="small">Em desenvolvimento. Download disponível após a primeira release.</p>
+        <a className="text-link" href={RELEASES_URL}>Ver versões no GitHub <ArrowUpRight size={18} aria-hidden="true" /></a>
+      </div>
+    </section>
   );
 }
 
@@ -168,7 +138,7 @@ const FAQ = [
     ),
   },
   {
-    q: 'O Windows disse que protegeu o computador. E agora?',
+    q: 'Por que o Windows mostra um aviso?',
     a: (
       <>
         <p>
@@ -245,7 +215,7 @@ function Faq() {
         <h2 id="perguntas-titulo">Perguntas</h2>
       </div>
       {FAQ.map(({ q, a }) => (
-        <details className="qa" key={q}>
+        <details name="questions" className="qa" key={q}>
           <summary>{q}</summary>
           <div className="qa-answer">
             {a}
