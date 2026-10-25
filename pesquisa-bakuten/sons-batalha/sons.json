@@ -1,0 +1,69 @@
+{
+  "sounds": {
+    "lancamento": {
+      "duration": 1.1, "reverb": { "mix": 0.15, "decay": 0.5 },
+      "layers": [
+        { "wave": "noise", "gain": [[0, 0], [0.02, 0.9], [0.35, 0.6], [0.5, 0]], "growl": { "rate": 180, "depth": 0.8 },
+          "filter": { "type": "bandpass", "freq": [[0, 900], [0.45, 3200]], "q": 1.4 } },
+        { "wave": "saw", "freq": [[0, 120], [0.45, 900], [1.1, 1100]], "gain": [[0, 0], [0.1, 0.25], [0.45, 0.5], [1.1, 0]],
+          "filter": { "type": "lowpass", "freq": [[0, 600], [0.5, 4000]], "q": 2 } },
+        { "wave": "triangle", "start": 0.45, "freq": [[0, 2200], [0.6, 1800]], "gain": [[0, 0.5], [0.05, 0.2], [0.6, 0]] },
+        { "wave": "noise", "start": 0.46, "length": 0.08, "gain": [[0, 1], [0.08, 0]], "filter": { "type": "highpass", "freq": 2500, "q": 0.8 } }
+      ]
+    },
+    "giro": {
+      "duration": 2.0,
+      "layers": [
+        { "wave": "saw", "freq": 340, "unison": 3, "detune": 18, "gain": 0.35, "vibrato": { "rate": 2, "depth": 0.05 },
+          "filter": { "type": "bandpass", "freq": 1400, "q": 1.5 } },
+        { "wave": "noise", "gain": 0.4, "growl": { "rate": 85, "depth": 0.5 }, "filter": { "type": "bandpass", "freq": 3000, "q": 2.5 } },
+        { "wave": "sine", "freq": 85, "gain": 0.25 }
+      ]
+    },
+    "choque-leve": {
+      "duration": 0.35, "reverb": { "mix": 0.12, "decay": 0.4 },
+      "layers": [
+        { "wave": "noise", "gain": [[0, 1], [0.04, 0.2], [0.2, 0]], "filter": { "type": "bandpass", "freq": 3500, "q": 3 } },
+        { "wave": "triangle", "freq": [[0, 2600], [0.2, 2300]], "gain": [[0, 0.6], [0.25, 0]] },
+        { "wave": "triangle", "freq": [[0, 3900], [0.2, 3500]], "gain": [[0, 0.3], [0.15, 0]] }
+      ]
+    },
+    "choque-forte": {
+      "duration": 0.9, "reverb": { "mix": 0.25, "decay": 0.6 },
+      "layers": [
+        { "wave": "noise", "gain": [[0, 1], [0.06, 0.4], [0.5, 0]], "drive": 3, "filter": { "type": "lowpass", "freq": [[0, 7000], [0.4, 1200]], "q": 0.9 } },
+        { "wave": "sine", "freq": [[0, 140], [0.4, 45]], "gain": [[0, 1], [0.5, 0]], "drive": 2 },
+        { "wave": "triangle", "freq": [[0, 1800], [0.6, 1500]], "gain": [[0, 0.5], [0.7, 0]] },
+        { "wave": "square", "freq": [[0, 2900], [0.4, 2700]], "gain": [[0, 0.12], [0.35, 0]], "filter": { "type": "bandpass", "freq": 2800, "q": 6 } }
+      ]
+    },
+    "ring-out": {
+      "duration": 1.6, "reverb": { "mix": 0.3, "decay": 0.65 },
+      "layers": [
+        { "wave": "saw", "freq": [[0, 900], [0.6, 300]], "gain": [[0, 0.4], [0.6, 0]], "filter": { "type": "bandpass", "freq": [[0, 2000], [0.6, 600]], "q": 1.5 } },
+        { "wave": "noise", "start": 0.55, "gain": [[0, 1], [0.05, 0.5], [0.4, 0]], "filter": { "type": "lowpass", "freq": 2500, "q": 0.8 }, "drive": 2 },
+        { "wave": "sine", "start": 0.55, "freq": [[0, 110], [0.5, 50]], "gain": [[0, 0.9], [0.6, 0]] },
+        { "wave": "triangle", "start": 0.8, "freq": 660, "gain": [[0, 0], [0.02, 0.5], [0.8, 0]] },
+        { "wave": "triangle", "start": 0.8, "freq": 990, "gain": [[0, 0], [0.02, 0.35], [0.8, 0]] }
+      ]
+    },
+    "parada": {
+      "duration": 2.2, "reverb": { "mix": 0.15, "decay": 0.5 },
+      "layers": [
+        { "wave": "saw", "freq": [[0, 340], [1.4, 60]], "gain": [[0, 0.4], [1.4, 0.15], [1.6, 0]], "filter": { "type": "bandpass", "freq": [[0, 1400], [1.4, 300]], "q": 1.5 } },
+        { "wave": "noise", "gain": [[0, 0.3], [1.5, 0]], "growl": { "rate": 40, "depth": 0.9 }, "filter": { "type": "bandpass", "freq": [[0, 3000], [1.5, 700]], "q": 2 } },
+        { "wave": "triangle", "start": 1.45, "freq": [[0, 900], [0.4, 700]], "gain": [[0, 0.5], [0.05, 0.1], [0.12, 0.35], [0.17, 0.05], [0.24, 0.2], [0.6, 0]] }
+      ]
+    },
+    "contagem": {
+      "duration": 3.6, "reverb": { "mix": 0.2, "decay": 0.5 },
+      "layers": [
+        { "wave": "square", "start": 0.0, "length": 0.25, "freq": 660, "gain": [[0, 0.5], [0.25, 0]], "filter": { "type": "lowpass", "freq": 3000 } },
+        { "wave": "square", "start": 0.8, "length": 0.25, "freq": 660, "gain": [[0, 0.5], [0.25, 0]], "filter": { "type": "lowpass", "freq": 3000 } },
+        { "wave": "square", "start": 1.6, "length": 0.25, "freq": 660, "gain": [[0, 0.5], [0.25, 0]], "filter": { "type": "lowpass", "freq": 3000 } },
+        { "wave": "saw", "start": 2.4, "freq": [[0, 880], [0.1, 990]], "unison": 3, "detune": 12, "gain": [[0, 0.6], [0.9, 0.4], [1.2, 0]], "filter": { "type": "lowpass", "freq": 4000 } },
+        { "wave": "noise", "start": 2.4, "gain": [[0, 0.5], [0.6, 0]], "filter": { "type": "bandpass", "freq": [[0, 1000], [0.6, 4000]], "q": 1 } }
+      ]
+    }
+  }
+}
