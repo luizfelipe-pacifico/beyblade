@@ -153,7 +153,7 @@ Formato:
 - Status: Aceita
 - Contexto: o usuário quer imagens padronizadas e de qualidade bem superior às baixadas da wiki (que são de terceiros, de tamanhos e ângulos variados e, em parte, bloqueadas pelo CDN), além de feras bit animadas com som para aparecer em cima da beyblade.
 - Decisão:
-  - peças, beys montadas, vistas explodidas e lançadores são **SVG gerados por script** a partir dos parâmetros de forma de cada peça (`scripts/render-art.js`), com padrão único de ângulo, escala (mm) e iluminação;
+  - peças, beys montadas, vistas explodidas e lançadores são **SVG gerados por script** a partir dos parâmetros de forma de cada peça (`scripts/build-research.js`), com padrão único de ângulo, escala (mm) e iluminação;
   - feras bit e retratos de personagens são **SVG vetoriais originais**, com animações CSS (idle, invocação, ataque) seguindo [`ART.md`](ART.md);
   - sons das feras e da batalha são **sintetizados** a partir de receitas JSON (`scripts/synth.js`, ver [`AUDIO.md`](AUDIO.md));
   - fotos da wiki ficam só como referência, em subpastas `referencia/`.

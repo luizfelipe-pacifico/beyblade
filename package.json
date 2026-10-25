@@ -10,6 +10,7 @@
     "predev": "node scripts/sync-art.js",
     "dev": "node --watch server.js",
     "art:sync": "node scripts/sync-art.js",
+    "build:research": "node scripts/build-research.js",
     "test": "node --test",
     "db:up": "docker compose up -d --wait",
     "db:down": "docker compose down",
