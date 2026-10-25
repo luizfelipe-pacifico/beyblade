@@ -1,2 +1,12 @@
 node_modules/
 data/
+.env
+.next/
+out/
+
+/src/generated/prisma
+
+# ROM e assets extraídos (D-007): nunca versionar
+*.gba
+*.sav
+assets-rom/

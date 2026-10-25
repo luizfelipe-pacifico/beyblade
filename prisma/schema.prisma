@@ -1,0 +1,68 @@
+// Schema do banco do jogo (PostgreSQL). Documentação: docs/DATABASE.md.
+// Toda mudança aqui vira uma migração nova com `npm run db:migrate -- --name <nome>`.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum FinishType {
+  spin
+  ringout
+  xtreme
+  burst
+  decision
+  draw
+}
+
+// Configuração de controle por jogador (slot 1 ou 2). `config` segue o formato validado em src/validate.js.
+model ControllerConfig {
+  slot      Int      @id @db.SmallInt
+  config    Json
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  @@map("controller_configs")
+}
+
+// Preferências simples em chave/valor (ex.: "lastSetup").
+model Setting {
+  key       String   @id @db.VarChar(64)
+  value     Json
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  @@map("settings")
+}
+
+model Match {
+  id           Int          @id @default(autoincrement())
+  p1Name       String       @map("p1_name") @db.VarChar(24)
+  p1Bey        String       @map("p1_bey") @db.VarChar(32)
+  p1Score      Int          @map("p1_score") @db.SmallInt
+  p2Name       String       @map("p2_name") @db.VarChar(24)
+  p2Bey        String       @map("p2_bey") @db.VarChar(32)
+  p2Score      Int          @map("p2_score") @db.SmallInt
+  winner       Int          @db.SmallInt
+  targetPoints Int          @map("target_points") @db.SmallInt
+  durationMs   Int          @map("duration_ms")
+  playedAt     DateTime     @default(now()) @map("played_at") @db.Timestamptz(3)
+  rounds       MatchRound[]
+
+  @@index([playedAt(sort: Desc)])
+  @@map("matches")
+}
+
+model MatchRound {
+  matchId Int        @map("match_id")
+  number  Int        @db.SmallInt
+  winner  Int        @db.SmallInt
+  finish  FinishType
+  points  Int        @db.SmallInt
+  match   Match      @relation(fields: [matchId], references: [id], onDelete: Cascade)
+
+  @@id([matchId, number])
+  @@map("match_rounds")
+}

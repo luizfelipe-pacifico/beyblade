@@ -16,51 +16,63 @@ function parseSlot(raw) {
   return slot === 1 || slot === 2 ? slot : null;
 }
 
-app.get('/api/config', (req, res) => {
-  res.json(store.getConfigs());
+app.get('/api/config', async (req, res) => {
+  res.json(await store.getConfigs());
 });
 
-app.put('/api/config/:slot', (req, res) => {
+app.put('/api/config/:slot', async (req, res) => {
   const slot = parseSlot(req.params.slot);
   if (!slot) return res.status(400).json({ error: 'Jogador inválido' });
   const { value, error } = parseConfig(req.body);
   if (error) return res.status(400).json({ error });
-  store.saveConfig(slot, value);
+  await store.saveConfig(slot, value);
   res.status(204).end();
 });
 
-app.get('/api/setup', (req, res) => {
-  res.json(store.getSetting('lastSetup'));
+app.get('/api/setup', async (req, res) => {
+  res.json(await store.getSetting('lastSetup'));
 });
 
-app.put('/api/setup', (req, res) => {
+app.put('/api/setup', async (req, res) => {
   const { value, error } = parseSetup(req.body);
   if (error) return res.status(400).json({ error });
-  store.setSetting('lastSetup', value);
+  await store.setSetting('lastSetup', value);
   res.status(204).end();
 });
 
-app.post('/api/matches', (req, res) => {
+app.post('/api/matches', async (req, res) => {
   const { value, error } = parseMatch(req.body);
   if (error) return res.status(400).json({ error });
-  res.status(201).json({ id: store.insertMatch(value) });
+  res.status(201).json({ id: await store.insertMatch(value) });
 });
 
-app.get('/api/matches', (req, res) => {
+app.get('/api/matches', async (req, res) => {
   const limit = Math.min(200, Math.max(1, Number.parseInt(req.query.limit, 10) || 30));
-  res.json(store.listMatches(limit));
+  res.json(await store.listMatches(limit));
 });
 
-app.get('/api/stats', (req, res) => {
-  res.json(store.getStats());
+app.get('/api/stats', async (req, res) => {
+  res.json(await store.getStats());
 });
 
 app.use('/api', (req, res) => {
   res.status(404).json({ error: 'Rota não encontrada' });
 });
 
+// Banco fora do ar (container parado) vira 503 com instrução, não um 500 genérico.
+function isDbUnavailable(err) {
+  for (let e = err; e; e = e.cause) {
+    if (e.code === 'ECONNREFUSED' || e.code === 'P1001' || e.kind === 'DatabaseNotReachable') return true;
+  }
+  return false;
+}
+
 app.use((err, req, res, next) => {
   if (err.type === 'entity.parse.failed') return res.status(400).json({ error: 'JSON inválido' });
+  if (isDbUnavailable(err)) {
+    console.error('Banco de dados indisponível. Rode `npm run db:up`.');
+    return res.status(503).json({ error: 'Banco de dados indisponível' });
+  }
   console.error(err);
   res.status(500).json({ error: 'Erro interno' });
 });
@@ -75,7 +87,15 @@ server.on('error', (err) => {
   throw err;
 });
 
-server.listen(PORT, () => {
+// Só na interface local: o jogo não fica acessível por outros dispositivos da rede.
+server.listen(PORT, '127.0.0.1', () => {
   console.log(`Beyblade Arena rodando em http://localhost:${PORT}`);
-  console.log(`Banco de dados: ${store.DB_PATH}`);
+  console.log(`Banco de dados: ${store.DB_LABEL}`);
 });
+
+for (const signal of ['SIGINT', 'SIGTERM']) {
+  process.on(signal, () => {
+    server.close();
+    store.prisma.$disconnect().finally(() => process.exit(0));
+  });
+}

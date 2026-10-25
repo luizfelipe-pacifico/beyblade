@@ -1,132 +1,137 @@
-import { DatabaseSync } from 'node:sqlite';
-import { mkdirSync } from 'node:fs';
-import path from 'node:path';
+import { PrismaPg } from '@prisma/adapter-pg';
+import { PrismaClient } from './generated/prisma/client.ts';
 
-const DATA_DIR = path.join(import.meta.dirname, '..', 'data');
-mkdirSync(DATA_DIR, { recursive: true });
+// Sem arquivo .env, usa as variáveis já definidas no ambiente.
+try {
+  process.loadEnvFile();
+} catch {}
 
-export const DB_PATH = path.join(DATA_DIR, 'beyblade.db');
-const db = new DatabaseSync(DB_PATH);
+if (!process.env.DATABASE_URL) {
+  throw new Error('DATABASE_URL não definida. Copie .env.example para .env e rode `npm run db:up`.');
+}
 
-db.exec(`
-  PRAGMA journal_mode = WAL;
+export const prisma = new PrismaClient({
+  adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL }),
+});
 
-  CREATE TABLE IF NOT EXISTS controller_configs (
-    slot       INTEGER PRIMARY KEY CHECK (slot IN (1, 2)),
-    config     TEXT    NOT NULL,
-    updated_at TEXT    NOT NULL DEFAULT (datetime('now'))
-  );
+// Endereço do banco para log, sem usuário e senha.
+export const DB_LABEL = (() => {
+  const url = new URL(process.env.DATABASE_URL);
+  return `${url.hostname}:${url.port}${url.pathname}`;
+})();
 
-  CREATE TABLE IF NOT EXISTS settings (
-    key   TEXT PRIMARY KEY,
-    value TEXT NOT NULL
-  );
-
-  CREATE TABLE IF NOT EXISTS matches (
-    id            INTEGER PRIMARY KEY AUTOINCREMENT,
-    p1_name       TEXT    NOT NULL,
-    p1_bey        TEXT    NOT NULL,
-    p1_score      INTEGER NOT NULL,
-    p2_name       TEXT    NOT NULL,
-    p2_bey        TEXT    NOT NULL,
-    p2_score      INTEGER NOT NULL,
-    winner        INTEGER NOT NULL CHECK (winner IN (1, 2)),
-    target_points INTEGER NOT NULL,
-    rounds        TEXT    NOT NULL,
-    duration_ms   INTEGER NOT NULL,
-    played_at     TEXT    NOT NULL DEFAULT (datetime('now'))
-  );
-
-  CREATE INDEX IF NOT EXISTS idx_matches_played_at ON matches (played_at DESC);
-`);
-
-const stmts = {
-  getConfigs: db.prepare('SELECT slot, config FROM controller_configs'),
-  saveConfig: db.prepare(`
-    INSERT INTO controller_configs (slot, config, updated_at) VALUES (?, ?, datetime('now'))
-    ON CONFLICT (slot) DO UPDATE SET config = excluded.config, updated_at = excluded.updated_at
-  `),
-  getSetting: db.prepare('SELECT value FROM settings WHERE key = ?'),
-  setSetting: db.prepare(`
-    INSERT INTO settings (key, value) VALUES (?, ?)
-    ON CONFLICT (key) DO UPDATE SET value = excluded.value
-  `),
-  insertMatch: db.prepare(`
-    INSERT INTO matches (p1_name, p1_bey, p1_score, p2_name, p2_bey, p2_score, winner, target_points, rounds, duration_ms)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-  `),
-  listMatches: db.prepare(`
-    SELECT id, p1_name, p1_bey, p1_score, p2_name, p2_bey, p2_score, winner, target_points, rounds, duration_ms, played_at
-    FROM matches ORDER BY id DESC LIMIT ?
-  `),
-  leaderboard: db.prepare(`
-    WITH entries AS (
-      SELECT p1_name AS name, p1_score AS points, winner = 1 AS won FROM matches
-      UNION ALL
-      SELECT p2_name, p2_score, winner = 2 FROM matches
-    )
-    SELECT MIN(name) AS name, COUNT(*) AS matches, SUM(won) AS wins, SUM(points) AS points
-    FROM entries
-    GROUP BY name COLLATE NOCASE
-    ORDER BY wins DESC, points DESC, matches ASC
-    LIMIT 20
-  `),
-  beyStats: db.prepare(`
-    WITH entries AS (
-      SELECT p1_bey AS bey, winner = 1 AS won FROM matches
-      UNION ALL
-      SELECT p2_bey, winner = 2 FROM matches
-    )
-    SELECT bey, COUNT(*) AS matches, SUM(won) AS wins
-    FROM entries
-    GROUP BY bey
-    ORDER BY wins DESC, matches DESC
-  `),
-  totals: db.prepare('SELECT COUNT(*) AS matches, COALESCE(SUM(duration_ms), 0) AS duration_ms FROM matches'),
-  finishes: db.prepare(`
-    SELECT json_extract(r.value, '$.finish') AS finish, COUNT(*) AS count
-    FROM matches m, json_each(m.rounds) r
-    GROUP BY finish
-  `),
-};
-
-export function getConfigs() {
+export async function getConfigs() {
   const out = { 1: null, 2: null };
-  for (const row of stmts.getConfigs.all()) out[row.slot] = JSON.parse(row.config);
+  for (const row of await prisma.controllerConfig.findMany()) out[row.slot] = row.config;
   return out;
 }
 
-export function saveConfig(slot, config) {
-  stmts.saveConfig.run(slot, JSON.stringify(config));
+export async function saveConfig(slot, config) {
+  await prisma.controllerConfig.upsert({
+    where: { slot },
+    create: { slot, config },
+    update: { config },
+  });
 }
 
-export function getSetting(key) {
-  const row = stmts.getSetting.get(key);
-  return row ? JSON.parse(row.value) : null;
+export async function getSetting(key) {
+  const row = await prisma.setting.findUnique({ where: { key } });
+  return row?.value ?? null;
 }
 
-export function setSetting(key, value) {
-  stmts.setSetting.run(key, JSON.stringify(value));
+export async function setSetting(key, value) {
+  await prisma.setting.upsert({
+    where: { key },
+    create: { key, value },
+    update: { value },
+  });
 }
 
-export function insertMatch(m) {
-  const result = stmts.insertMatch.run(
-    m.p1.name, m.p1.bey, m.p1.score,
-    m.p2.name, m.p2.bey, m.p2.score,
-    m.winner, m.targetPoints, JSON.stringify(m.rounds), m.durationMs,
-  );
-  return Number(result.lastInsertRowid);
+// Partida e rodadas entram juntas: o create aninhado do Prisma roda numa transação só.
+export async function insertMatch(m) {
+  const match = await prisma.match.create({
+    data: {
+      p1Name: m.p1.name,
+      p1Bey: m.p1.bey,
+      p1Score: m.p1.score,
+      p2Name: m.p2.name,
+      p2Bey: m.p2.bey,
+      p2Score: m.p2.score,
+      winner: m.winner,
+      targetPoints: m.targetPoints,
+      durationMs: m.durationMs,
+      rounds: { create: m.rounds.map((r, i) => ({ number: i + 1, ...r })) },
+    },
+    select: { id: true },
+  });
+  return match.id;
 }
 
-export function listMatches(limit) {
-  return stmts.listMatches.all(limit).map((row) => ({ ...row, rounds: JSON.parse(row.rounds) }));
+export async function listMatches(limit) {
+  return prisma.match.findMany({
+    orderBy: { id: 'desc' },
+    take: limit,
+    include: {
+      rounds: { orderBy: { number: 'asc' }, select: { winner: true, finish: true, points: true } },
+    },
+  });
 }
 
-export function getStats() {
+// Soma os grupos de P1 e P2 numa linha por chave. `keyOf` decide o que conta como "o mesmo"
+// (nomes de jogador ignoram maiúsculas; a primeira grafia encontrada é a exibida).
+function mergeSides(groups, keyOf) {
+  const rows = new Map();
+  for (const { key, label, matches, wins, points } of groups) {
+    const id = keyOf(key);
+    const row = rows.get(id) ?? { label, matches: 0, wins: 0, points: 0 };
+    row.matches += matches;
+    row.wins += wins;
+    row.points += points;
+    rows.set(id, row);
+  }
+  return [...rows.values()];
+}
+
+// Agrega uma coluna de um lado (P1 ou P2): partidas e pontos por valor, vitórias por valor.
+async function sideGroups(field, scoreField, winner) {
+  const [all, won] = await Promise.all([
+    prisma.match.groupBy({ by: [field], _count: { _all: true }, _sum: { [scoreField]: true } }),
+    prisma.match.groupBy({ by: [field], where: { winner }, _count: { _all: true } }),
+  ]);
+  const winsBy = new Map(won.map((g) => [g[field], g._count._all]));
+  return all.map((g) => ({
+    key: g[field],
+    label: g[field],
+    matches: g._count._all,
+    wins: winsBy.get(g[field]) ?? 0,
+    points: g._sum[scoreField] ?? 0,
+  }));
+}
+
+// Só API do Prisma, sem SQL específico: precisa rodar igual no PostgreSQL (dev) e no SQLite (.exe, D-014).
+export async function getStats() {
+  const [totals, finishes, p1Names, p2Names, p1Beys, p2Beys] = await Promise.all([
+    prisma.match.aggregate({ _count: { _all: true }, _sum: { durationMs: true } }),
+    prisma.matchRound.groupBy({ by: ['finish'], _count: { _all: true } }),
+    sideGroups('p1Name', 'p1Score', 1),
+    sideGroups('p2Name', 'p2Score', 2),
+    sideGroups('p1Bey', 'p1Score', 1),
+    sideGroups('p2Bey', 'p2Score', 2),
+  ]);
+
+  const players = mergeSides([...p1Names, ...p2Names], (name) => name.toLowerCase())
+    .sort((a, b) => b.wins - a.wins || b.points - a.points || a.matches - b.matches)
+    .slice(0, 20)
+    .map(({ label, matches, wins, points }) => ({ name: label, matches, wins, points }));
+
+  const beys = mergeSides([...p1Beys, ...p2Beys], (bey) => bey)
+    .sort((a, b) => b.wins - a.wins || b.matches - a.matches)
+    .map(({ label, matches, wins }) => ({ bey: label, matches, wins }));
+
   return {
-    totals: stmts.totals.get(),
-    finishes: stmts.finishes.all(),
-    players: stmts.leaderboard.all(),
-    beys: stmts.beyStats.all(),
+    totals: { matches: totals._count._all, durationMs: totals._sum.durationMs ?? 0 },
+    finishes: finishes.map((f) => ({ finish: f.finish, count: f._count._all })),
+    players,
+    beys,
   };
 }
