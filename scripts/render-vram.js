@@ -6,7 +6,7 @@ import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { encodePng, parseOam, renderSprite } from './lib/gba-gfx.js';
 
-const [snapDir = 'assets-rom/mgba', outDir = 'assets-rom/sprites'] = process.argv.slice(2);
+const [snapDir = 'assets-rom/mgba', outDir = 'assets-rom/sprites-vram'] = process.argv.slice(2);
 
 const prefixes = [...new Set(readdirSync(snapDir).filter((f) => f.endsWith('-oam.bin')).map((f) => f.slice(0, -'oam.bin'.length)))].sort();
 if (prefixes.length === 0) {

@@ -23,15 +23,34 @@ node scripts/extract-rom.js "<caminho>/Beyblade G-Revolution (USA).gba"
 
 O script confere o código e o SHA-1 da ROM, lê as tabelas abaixo (`scripts/lib/rom.js`) e grava `assets-rom/data/catalog.json` (fora do git). Os testes (`tests/rom.test.js`) usam uma ROM sintética, então a suíte não precisa da ROM real.
 
-### Sprites pelo emulador
+### Sprites
 
-Os gráficos das beys (ponteiro `0x14` do registro) usam um formato próprio: cabeçalho com tamanho (`20 20` = 32×32), tabela de offsets e dados comprimidos que **não** são o LZ77 da BIOS (testado sem e com cabeçalho). Em vez de decodificar o formato, deixamos o jogo descomprimir e lemos a VRAM:
+```
+node scripts/extract-sprites.js "<caminho>/Beyblade G-Revolution (USA).gba"
+```
 
-1. No mGBA: **Tools > Scripting > File > Load script** e escolha `scripts/mgba/dump-vram.lua` (o mGBA 0.10 não tem opção de linha de comando para scripts).
-2. Jogue normalmente: menus, seleção, lançamento e batalha. A cada 30 frames, se os sprites mudaram, o script grava VRAM, paletas, OAM, registradores de vídeo e um screenshot em `assets-rom/mgba/` (até 400 snapshots).
-3. `node scripts/render-vram.js` decodifica os sprites de cada snapshot (4bpp/8bpp, mapeamento 1D/2D, flip) e grava um PNG por sprite distinto em `assets-rom/sprites/`, com `sprites.json` dizendo em que snapshots cada um apareceu.
+Extrai direto da ROM os **328 conjuntos de quadros** (beys, bladers, interface, fontes, efeitos) para `assets-rom/sprites/` (fora do git): uma folha PNG por conjunto, com os quadros lado a lado, e `sprites.json` com endereço, tamanho, nº de quadros e paleta. As 83 beys vão para `beys/` com a paleta do próprio registro (3 quadros de 32×32: dois girando, com borrão de movimento, e um parado).
 
-Decodificação em `scripts/lib/gba-gfx.js` (testes em `tests/gba-gfx.test.js`, com dados sintéticos). Sprites affine (rotação/escala) saem sem a transformação; backgrounds (arenas) ainda não são renderizados.
+**Formato** (reimplementação de `copyFrameToVramARM`, ROM `0x083D36F4`, rotina ARM copiada para a IWRAM no boot pelo ponteiro em `0x08000258`; código em `scripts/lib/rom-frames.js`):
+
+| Offset | Tipo | Campo |
+| --- | --- | --- |
+| `0x00` | u32 | Nº de quadros |
+| `0x04` / `0x05` | u8 | Largura / altura em pixels |
+| `0x07` | u8 | Bit `0x80`: quadros comprimidos |
+| `0x0c` | u8 | Bit `0x01`: 4bpp (32 bytes/tile); senão 8bpp |
+| `0x0d` | u8 | Tamanho do cabeçalho de cada quadro (4 ou 8) |
+| `0x0e` | u16 | Tiles por quadro |
+| `0x10` | u32 | Offset base dos dados dos quadros |
+| `0x1c` | u32 | Offset da tabela de quadros (u32 por quadro, relativo à base) |
+
+Cada quadro começa com uma **máscara de 32 bits** lida a partir do bit 0: sequências de 1 são tiles vazios (zerados), sequências de 0 são tiles que vêm dos dados; com cabeçalho de 8 bytes, a 2ª palavra é a máscara dos 32 tiles seguintes. Um **tile comprimido** tem: byte de controle (2 bits por par de linhas: trocar a palavra-base por uma do dicionário), `ceil(popcount(controle)/2)` bytes de índices de 4 bits e, por par de linhas, um byte de flags (4 bits por linha) dizendo quais bytes da palavra-base são substituídos por literais. O dicionário (ROM `0x083D2808`) é `i × 0x11111111`: linhas de cor única. A palavra-base passa de uma linha para a outra.
+
+**Paletas:** beys pelo ponteiro `0x18` do registro (os 16 primeiros valores BGR555). Para os outros conjuntos, a paleta é **deduzida**: nos scripts de cena (`0x090000`–`0x0BFFFF`) o ponteiro do sprite costuma vir seguido do ponteiro da paleta; o extrator escolhe o mais frequente e confere se são 16 cores BGR555 válidas. Assim saíram 90 conjuntos; os 155 restantes (incluindo a maioria dos bladers andando, 16×32) saem em tons de cinza até acharmos de onde vem a paleta deles.
+
+### Sprites pelo emulador (alternativa)
+
+Para backgrounds, sprites affine ou para conferir algo na tela: no mGBA, **Tools > Scripting > File > Load script** com `scripts/mgba/dump-vram.lua` e jogue. A cada 30 frames, se os sprites mudaram, ele grava VRAM, paletas, OAM, registradores de vídeo e screenshot em `assets-rom/mgba/`. Depois, `node scripts/render-vram.js` grava um PNG por sprite distinto em `assets-rom/sprites-vram/` (decodificação em `scripts/lib/gba-gfx.js`).
 
 ## Descobertas
 
@@ -137,7 +156,7 @@ O lançador e a corda **não somam stats** à bey. O efeito encontrado é o desg
 - Significado de `+2` do blader, do byte `0x1c` da bey e da faixa de `0x0803EBD8`.
 - Efeito do Spin Gear / Engine Gear na batalha (`"do an ENGINE GEAR of %d"` em `0x0833C5C8`) e do especial da fera bit (`"start bit beast from select : power %d"`).
 - Os números das tabelas de IA (abaixo). O cálculo local de dano foi identificado em `0x0802FFAC` / `0x080300D4` (seção abaixo); ainda falta mapear todos os estados que permitem ou impedem chamar essa rotina, os efeitos posteriores e os caminhos próprios de especiais/Engine Gear.
-- Gráficos: sprites via emulador (ver [Sprites pelo emulador](#sprites-pelo-emulador)); backgrounds das arenas e o formato comprimido próprio (ponteiro `0x14`) ainda não. Paleta da bey (ponteiro `0x18`): blocos de 512 bytes (256 cores BGR555).
+- Gráficos: paleta dos 155 conjuntos de sprites ainda em cinza (bladers andando e parte da interface) e os backgrounds (arenas, telas).
 - Áudio.
 
 ### Dano e defesa: avanço de 2026-10-25
