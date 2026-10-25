@@ -176,7 +176,7 @@ O lançador e a corda **não somam stats** à bey. O efeito encontrado é o desg
 - Efeito do Spin Gear / Engine Gear na batalha (`"do an ENGINE GEAR of %d"` em `0x0833C5C8`) e do especial da fera bit (`"start bit beast from select : power %d"`).
 - Os números das tabelas de IA (abaixo). O cálculo local de dano foi identificado em `0x0802FFAC` / `0x080300D4` (seção abaixo); ainda falta mapear todos os estados que permitem ou impedem chamar essa rotina, os efeitos posteriores e os caminhos próprios de especiais/Engine Gear.
 - Gráficos: paleta dos 141 conjuntos de sprites ainda em cinza (figurantes, Tyson e parte da interface), a paleta da camada "tigela" dos estádios e a compressão do mapa dos outros fundos (cidades, menus).
-- Áudio.
+- Áudio. O motor de som é próprio (sem assinatura de M4A/Sappy, Krawall ou GAX; mensagens `"Not enough RAM for sound mixer"`, `"Out of audio channels"`, `"End Track Here"` em `0x083D250B`–`0x083D2590`). A lista de nomes dos 16 efeitos fica em `0x08077FA4` (`SFXID_impact1`–`3`, `jump`, `land`, `evade`, `defend`, `eg_active`, `beast1`–`2`, `ripper`, `ripperboost`, `ripperpulled`, `menuyes`, `menuno`, `select`), mas é só debug: não aponta para as amostras. Caminho mais curto: gravar o som pelo mGBA (File > Record A/V) em vez de decodificar o formato.
 
 ### Dano e defesa: avanço de 2026-10-25
 
