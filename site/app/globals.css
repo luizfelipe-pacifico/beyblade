@@ -62,7 +62,7 @@ h3 { font-size: var(--type-lead); font-weight: 800; line-height: 1.25; }
 .hero-bey-scene { display: grid; grid-template-rows: 1fr auto auto; gap: 20px; padding: 32px var(--gutter); background: var(--tinta-2); min-width: 0; overflow: clip; }
 .hero-bey-stage { position: relative; width: 100%; max-width: 680px; aspect-ratio: 1; align-self: center; margin-inline: auto; perspective: 1000px; }
 .hero-stadium { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotateX(22deg); }
-.hero-bey-plane { position: absolute; inset: 12%; transform: rotateX(22deg); }
+.hero-bey-plane { position: absolute; inset: 12%; }
 .hero-bey-rotor { width: 100%; height: 100%; object-fit: contain; transform: rotate(-14deg); }
 .hero-bey-caption { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .hero-bey-caption > div { display: grid; gap: 4px; }

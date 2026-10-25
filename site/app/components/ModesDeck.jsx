@@ -1,5 +1,6 @@
 import { ArrowUpRight } from 'lucide-react';
 import { ROADMAP_URL } from '../site';
+import BeyArtwork from './BeyArtwork';
 
 const MODES = [
   ['1 contra 1', 'Dois jogadores no mesmo PC: dois DualShock 4, os dois no teclado ou um de cada.'],
@@ -18,9 +19,9 @@ export default function ModesDeck() {
       <article className="mode-feature" data-reveal="">
         <div><h3>{MODES[0][0]}</h3><p>{MODES[0][1]}</p></div>
         <div className="versus-art" role="img" aria-label="Dragoon e Dranzer frente a frente">
-          <img src="/beyblades/dragoon-s.svg" alt="" width="768" height="768" loading="lazy" />
+          <BeyArtwork model="dragoon-s" alt="" sizes="(max-width: 800px) 38vw, 24vw" />
           <span aria-hidden="true">VS</span>
-          <img src="/beyblades/dranzer-s.svg" alt="" width="768" height="768" loading="lazy" />
+          <BeyArtwork model="dranzer-s" alt="" sizes="(max-width: 800px) 38vw, 24vw" />
         </div>
       </article>
       <div className="mode-list">

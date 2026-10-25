@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { RotateCcw, RotateCw } from 'lucide-react';
 import Picture from './Picture';
+import BeyArtwork from './BeyArtwork';
 import { BEASTS, BLADERS } from '../site';
 
 const MAX_STAT = 10;
@@ -106,7 +107,7 @@ export default function CharacterSelect() {
               <span className="card-tag">{BEASTS[blader.beast].name}</span>
             </div>
             <div className="card-bey">
-              <img src={`/beyblades/${blader.beast}-s.svg`} alt={`Ilustração da ${blader.bey}`} width="768" height="768" loading="lazy" />
+              <BeyArtwork model={`${blader.beast}-s`} alt={`Modelo físico da ${blader.bey}, com peças e adesivos originais`} />
             </div>
           </div>
           <div className="card-body">

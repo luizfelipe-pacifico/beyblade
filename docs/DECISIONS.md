@@ -15,10 +15,18 @@ Formato:
 
 ---
 
-## D-019: hero vetorial com giro na rolagem e demonstrações animadas
+## D-020: modelos físicos reais como referência das artes da landing
 
 - Data: 2026-10-25
 - Status: Aceita
+- Contexto: o usuário rejeitou a aparência dos sprites simplificados e pediu beyblades reais, vetorizadas, com detalhes e nitidez.
+- Decisão: substituir as quatro matrizes por traçados em curvas de fotografias dos brinquedos clássicos, preservando peças, cores e adesivos. Guardar as fontes e sua procedência localmente. Não embutir raster em SVG nem inventar detalhe ausente na referência. Entregar WebP responsivo para evitar o peso dos vetores detalhados no navegador; manter os SVGs completos. Regenerar a animação em 1152 × 648 com as mesmas artes.
+- Consequências: o pipeline usa VTracer apenas em desenvolvimento, verifica checksums e produz máscaras vetoriais de transparência. Créditos deixam de atribuir essas artes como originais do catálogo. Os direitos das fotos permanecem com seus titulares. Giro por scroll, pausa, movimento reduzido, duas fontes e paleta 60/30/10 continuam definidos por D-019 e D-018.
+
+## D-019: hero vetorial com giro na rolagem e demonstrações animadas
+
+- Data: 2026-10-25
+- Status: Substituída por D-020 quanto às fontes das artes; comportamento de movimento mantido
 - Contexto: o usuário pediu uma hero mais visual, com uma beyblade girando ao rolar, ícones e imagens animadas de melhor qualidade.
 - Decisão: usar a arte própria da Dragoon S em SVG na hero, com rotação vinculada à rolagem; substituir a imagem da seção de controles por uma demonstração de batalha em WebP animado gerado dos SVGs, também usado na etapa Batalha. Manter as duas fontes e a paleta 60/30/10.
 - Consequências: a hero não perde resolução ao ampliar; a demonstração tem poster e pausa, respeita movimento reduzido e não roda fora da tela. As ilustrações e sua origem ficam creditadas em `site/public/beyblades/README.md` e na página de créditos. Não são capturas de gameplay.

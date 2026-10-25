@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { ArrowDown, RotateCcw } from 'lucide-react';
+import BeyArtwork from './BeyArtwork';
 
 export default function HeroBey() {
   const scene = useRef(null);
@@ -60,9 +61,9 @@ export default function HeroBey() {
           <circle cx="350" cy="350" r="215" fill="none" stroke="var(--tinta-3)" strokeWidth="3" />
         </svg>
         <div className="hero-bey-plane">
-          <img ref={rotor} className="hero-bey-rotor" src="/beyblades/dragoon-s.svg" width="768" height="768"
-            alt="Dragoon S de Tyson, com anel branco e emblema azul do Dragoon, vista de cima"
-            fetchPriority="high" decoding="async" />
+          <BeyArtwork ref={rotor} className="hero-bey-rotor" model="dragoon-s" loading="eager"
+            sizes="(max-width: 480px) 240px, (max-width: 800px) 320px, 42vw"
+            alt="Modelo físico da Dragoon S de Tyson, com plástico branco, adesivos vermelhos e emblema do dragão" />
         </div>
       </div>
       <figcaption className="hero-bey-caption">

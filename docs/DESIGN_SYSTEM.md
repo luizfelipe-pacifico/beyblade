@@ -47,9 +47,11 @@ Curvas compartilhadas: `--ease-out` para entradas e feedback, `--ease-in-out` pa
 
 Na landing, `Reveal.jsx` usa IntersectionObserver como scroll trigger. Cada bloco entra uma única vez com 20px de deslocamento e opacidade, em 480ms, com defasagem curta de 60ms entre filhos (máximo de 180ms). O observer ativa keyframes CSS de uma única execução; a preferência por movimento reduzido cancela o deslocamento e desativa novas entradas. O HTML é visível por padrão; falhas de JS não escondem conteúdo.
 
-A hero tem um efeito autoral: a Dragoon S vetorial gira em função da rolagem. `HeroBey.jsx` agenda no máximo um requestAnimationFrame por evento de scroll, sem renderizar estado React a cada frame. O efeito para fora da tela, na aba oculta e com movimento reduzido. A área da ilustração reserva espaço para o limite diagonal do SVG durante a rotação, evitando rolagem horizontal em ângulos intermediários.
+A hero tem um efeito autoral: a Dragoon S gira em função da rolagem. Sua matriz é um SVG traçado de fotografia do brinquedo real, entregue na página por WebP responsivo. `HeroBey.jsx` agenda no máximo um requestAnimationFrame por evento de scroll, sem renderizar estado React a cada frame. O efeito para fora da tela, na aba oculta e com movimento reduzido. A área da ilustração reserva espaço para o limite diagonal durante a rotação, evitando rolagem horizontal em ângulos intermediários.
 
-As demonstrações de batalha usam WebP animado gerado dos mesmos SVGs: mais cores e melhor compressão que GIF. Sempre existe poster estático; o loop pausa fora da tela, na aba oculta, com movimento reduzido ou pelo botão de pausa. Os controles continuam utilizáveis por teclado. Créditos identificam a animação como ilustração própria, sem apresentá-la como gameplay.
+As demonstrações de batalha usam WebP animado gerado dos mesmos SVGs, em 1152 × 648: mais cores e melhor compressão que GIF. Sempre existe poster estático; o loop pausa fora da tela, na aba oculta, com movimento reduzido ou pelo botão de pausa. Os controles continuam utilizáveis por teclado. Créditos identificam as fotografias de referência e distinguem a animação conceitual de gameplay.
+
+Artes das beyblades: usar os modelos físicos da geração clássica, com peças e adesivos reconhecíveis. `site/assets/beyblades/` guarda as fotografias e suas origens; `npm run bey:assets` em `site/` gera SVGs em curvas, máscara vetorial de transparência e versões WebP de 480/960/1440px. Não encapsular PNG/JPEG em SVG para chamá-lo de vetor. O traçado mantém a aparência da referência, sem inventar detalhes inexistentes na foto. `BeyArtwork.jsx` centraliza a entrega responsiva e o carregamento prioritário da hero.
 
 ## Qualidade e manutenção
 
