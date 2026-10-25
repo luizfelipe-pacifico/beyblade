@@ -1,0 +1,48 @@
+{
+  "id": "dragoon-g",
+  "nome": "Dragoon G (Dragoon Galaxy)",
+  "nome_jp": "ドラグーンＧ〈ギャラクシー〉 (Doragūn Gyarakushī)",
+  "dono": "tyson-granger",
+  "codigo_produto": "A-89",
+  "tipo": "attack",
+  "sistema": "engine-gear",
+  "rotacao": "esquerda",
+  "fera_bit": "Dragoon (dragão azul / Seiryū, vento)",
+  "temporada": "g-revolution",
+  "pecas": {
+    "bit_chip": "Dragoon",
+    "attack_ring": "Eight Spiker",
+    "weight_disk": "Ten Wide",
+    "spin_gear": "Left Engine Gear (CEW Metal Semi-Flat)",
+    "support_part": null,
+    "blade_base": "First Clutch Base (Instant Release - Dragoon G Version)"
+  },
+  "ponta": "flat (metal, bordas levemente arredondadas)",
+  "atributos": {
+    "ataque": 8, "defesa": 5, "stamina": 5, "velocidade": 8,
+    "peso": 7, "equilibrio": 5, "resistencia_knockout": 5
+  },
+  "fisica": {
+    "massa_relativa": 1.15,
+    "raio_relativo": 1.05,
+    "atrito_ponta": 0.5,
+    "restituicao": 0.6,
+    "padrao_movimento": "agressivo"
+  },
+  "especiais": [
+    { "nome": "Galaxy Storm", "efeito": "Tornado gigante por 4 s: puxa e arremessa quem estiver no raio. A bey se move devagar", "custo": 100, "cooldown_s": 22 },
+    { "nome": "Twin Tornado Attack (dupla com Daichi)", "efeito": "Dois tornados sincronizados; se um cancelar, o outro também cai", "custo": 120, "cooldown_s": 30 },
+    { "nome": "Engine Gear (passiva)", "efeito": "+60% de velocidade por 1,5 s no início; 10% de chance de auto-KO perto da borda", "custo": 0, "cooldown_s": 0 }
+  ],
+  "antecessora": "dragoon-v2-high-power-custom",
+  "sucessora": "dragoon-gt",
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dragoon_G",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Eight_Spiker",
+    "https://beyblade.fandom.com/wiki/Engine_Gear_-_Metal_Semi-Flat",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_First_Clutch",
+    "https://beyblade.fandom.com/wiki/Galaxy_Storm",
+    "https://beyblade.fandom.com/wiki/Twin_Tornado_Attack"
+  ]
+}

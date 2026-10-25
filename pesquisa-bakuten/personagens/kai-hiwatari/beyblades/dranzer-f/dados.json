@@ -1,0 +1,45 @@
+{
+  "id": "dranzer-f",
+  "nome": "Dranzer F",
+  "nome_jp": "ドランザーF (Doranzā Fureimu / Dranzer Flame)",
+  "dono": "kai-hiwatari",
+  "codigo_produto": "A-27",
+  "tipo": "balance",
+  "sistema": "spin-gear",
+  "rotacao": "direita",
+  "fera_bit": "Dranzer (fênix)",
+  "temporada": "bakuten-shoot",
+  "pecas": {
+    "bit_chip": "Dranzer (F Version)",
+    "attack_ring": "Flame Wing",
+    "weight_disk": "Eight Heavy",
+    "spin_gear": "Right SG (Triple Change Version)",
+    "support_part": null,
+    "blade_base": "Flame Change Base"
+  },
+  "ponta": "flat / sharp / semi-flat (troca manual)",
+  "atributos": {
+    "ataque": 6, "defesa": 5, "stamina": 5, "velocidade": 6,
+    "peso": 5, "equilibrio": 5, "resistencia_knockout": 5
+  },
+  "fisica": {
+    "massa_relativa": 0.9,
+    "raio_relativo": 1.05,
+    "atrito_ponta": 0.45,
+    "restituicao": 0.6,
+    "padrao_movimento": "orbita"
+  },
+  "especiais": [
+    { "nome": "Flame Saber", "efeito": "Sobe e mergulha envolta em chamas sobre o alvo; dano alto, exige mira", "custo": 100, "cooldown_s": 22 },
+    { "nome": "Flame Thrower", "efeito": "Rajada de fogo frontal; dano contínuo leve + empurrão (descrição do anime não confirmada)", "custo": 60, "cooldown_s": 14 }
+  ],
+  "antecessora": "dranzer-s",
+  "sucessora": "dranzer-v",
+  "imagens": [],
+  "imagens_pendentes": ["imagem.jpg", "anime.jpg", "pecas/attack-ring.jpg", "pecas/weight-disk.gif", "pecas/spin-gear.jpg", "pecas/blade-base.jpg", "pecas/todas-pecas.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dranzer_F",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Flame_Wing",
+    "https://beyblade.fandom.com/wiki/Flame_Saber"
+  ]
+}

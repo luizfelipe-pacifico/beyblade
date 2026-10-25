@@ -1,0 +1,44 @@
+{
+  "id": "dranzer-v2",
+  "nome": "Dranzer V2",
+  "nome_jp": "ドランザーV2 (Doranzā V2 / Borukēno Tsū)",
+  "dono": "kai-hiwatari",
+  "codigo_produto": "A-81",
+  "tipo": "balance",
+  "sistema": "magnacore",
+  "rotacao": "direita",
+  "fera_bit": "Dranzer (fênix)",
+  "temporada": "v-force",
+  "pecas": {
+    "bit_chip": "Dranzer",
+    "attack_ring": "Cross Dranzer",
+    "weight_disk": "Ten Balance",
+    "spin_gear": "Neo Right SG (MW Core)",
+    "support_part": "Cross Survivor",
+    "blade_base": "Customize Clutch Base"
+  },
+  "ponta": "sharp -> semi-flat (clutch automático por RPM)",
+  "atributos": {
+    "ataque": 6, "defesa": 6, "stamina": 6, "velocidade": 6,
+    "peso": 5, "equilibrio": 7, "resistencia_knockout": 6
+  },
+  "fisica": {
+    "massa_relativa": 0.95,
+    "raio_relativo": 1.0,
+    "atrito_ponta": 0.15,
+    "restituicao": 0.6,
+    "padrao_movimento": "centro -> flower (clutch abaixo de ~55% da rotação)"
+  },
+  "especiais": [
+    { "nome": "Volcano Excellent Emission", "efeito": "Investida em velocidade máxima envolta em chamas; dano muito alto + knockback", "custo": 100, "cooldown_s": 22 }
+  ],
+  "antecessora": "dranzer-v",
+  "sucessora": "dranzer-g",
+  "imagens": [],
+  "imagens_pendentes": ["imagem.jpg", "anime.jpg", "pecas/attack-ring.jpg", "pecas/weight-disk.jpg", "pecas/spin-gear.jpg", "pecas/support-part.jpg", "pecas/blade-base.jpg", "pecas/todas-pecas.png"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dranzer_V2",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Customize_Clutch_Base",
+    "https://beyblade.fandom.com/wiki/Volcano_Excellent_Emission"
+  ]
+}

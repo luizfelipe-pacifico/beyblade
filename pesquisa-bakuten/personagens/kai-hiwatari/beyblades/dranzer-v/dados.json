@@ -1,0 +1,45 @@
+{
+  "id": "dranzer-v",
+  "nome": "Dranzer V",
+  "nome_jp": "ドランザーV (Doranzā Borukēno / Dranzer Volcano)",
+  "dono": "kai-hiwatari",
+  "codigo_produto": "A-47",
+  "tipo": "balance",
+  "sistema": "magnacore",
+  "rotacao": "direita",
+  "fera_bit": "Dranzer (fênix)",
+  "temporada": "v-force",
+  "pecas": {
+    "bit_chip": "Dranzer (V Version)",
+    "attack_ring": "Cross Attacker",
+    "weight_disk": "Ten Balance",
+    "spin_gear": "Neo Right SG (South Magnecore, Dranzer V Version)",
+    "support_part": null,
+    "blade_base": "Volcano Change Base"
+  },
+  "ponta": "metal flat (Attack Mode) / metal sharp (Endurance Mode)",
+  "atributos": {
+    "ataque": 6, "defesa": 5, "stamina": 6, "velocidade": 7,
+    "peso": 4, "equilibrio": 6, "resistencia_knockout": 5
+  },
+  "fisica": {
+    "massa_relativa": 0.9,
+    "raio_relativo": 0.95,
+    "atrito_ponta": 0.3,
+    "restituicao": 0.65,
+    "padrao_movimento": "flower"
+  },
+  "especiais": [
+    { "nome": "Volcano Emission", "efeito": "Aura de fogo (+20% ataque por 3 s) seguida de investida", "custo": 100, "cooldown_s": 20 },
+    { "nome": "Flame Saber", "efeito": "Investida flamejante de golpe único, dano alto", "custo": 80, "cooldown_s": 18 }
+  ],
+  "antecessora": "dranzer-f",
+  "sucessora": "dranzer-v2",
+  "imagens": [],
+  "imagens_pendentes": ["imagem.jpg", "anime.jpg", "pecas/attack-ring.jpg", "pecas/weight-disk.gif", "pecas/spin-gear.jpg", "pecas/blade-base-superior.jpg", "pecas/blade-base-inferior-attack.jpg", "pecas/blade-base-inferior-endurance.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dranzer_V",
+    "https://beyblade.fandom.com/wiki/Volcano_Emission",
+    "https://beyblade.fandom.com/wiki/Flame_Saber"
+  ]
+}

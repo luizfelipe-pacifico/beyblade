@@ -1,0 +1,47 @@
+{
+  "id": "dranzer-s",
+  "nome": "Dranzer S",
+  "nome_jp": "ドランザーS (Doranzā Supairaru / Dranzer Spiral)",
+  "dono": "kai-hiwatari",
+  "codigo_produto": "A-2",
+  "tipo": "balance",
+  "sistema": "spin-gear",
+  "rotacao": "direita",
+  "fera_bit": "Dranzer (fênix)",
+  "temporada": "bakuten-shoot",
+  "pecas": {
+    "bit_chip": "Dranzer",
+    "attack_ring": "Double Wing",
+    "weight_disk": "Eight Balance",
+    "spin_gear": "Right SG (Free Shaft Version)",
+    "support_part": null,
+    "blade_base": "Spiral Change Base"
+  },
+  "ponta": "sharp (metal) / flat (plástico) - troca manual",
+  "atributos": {
+    "ataque": 5, "defesa": 4, "stamina": 6, "velocidade": 6,
+    "peso": 3, "equilibrio": 5, "resistencia_knockout": 4
+  },
+  "fisica": {
+    "massa_relativa": 0.8,
+    "raio_relativo": 0.95,
+    "atrito_ponta": 0.45,
+    "restituicao": 0.65,
+    "padrao_movimento": "flower"
+  },
+  "especiais": [
+    { "nome": "Spin Fire", "efeito": "Salto aéreo e mergulho flamejante sobre o alvo; dano alto + knockback vertical", "custo": 100, "cooldown_s": 22 },
+    { "nome": "Fire Arrow", "efeito": "Investida em linha reta envolta em fogo; dano médio + pequena explosão em área", "custo": 70, "cooldown_s": 15 }
+  ],
+  "antecessora": null,
+  "sucessora": "dranzer-f",
+  "imagens": [],
+  "imagens_pendentes": ["imagem.png", "pecas/attack-ring.gif", "pecas/weight-disk.gif", "pecas/spin-gear.gif", "pecas/blade-base.gif", "pecas/todas-pecas.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dranzer_S",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Double_Wing",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Spiral_Change_Base",
+    "https://beyblade.fandom.com/wiki/Spin_Fire",
+    "https://beyblade.fandom.com/wiki/Fire_Arrow"
+  ]
+}

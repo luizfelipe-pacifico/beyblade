@@ -1,0 +1,46 @@
+{
+  "id": "dranzer-f",
+  "nome": "Dranzer F (Dranzer Flame) - emprestada",
+  "nome_jp": "não confirmado (campo vazio na wiki)",
+  "dono": "kai-hiwatari",
+  "codigo_produto": "A-27",
+  "tipo": "balance",
+  "sistema": "spin-gear",
+  "rotacao": "direita",
+  "fera_bit": "Dranzer (fênix / Suzaku, fogo)",
+  "temporada": "bakuten-shoot",
+  "pecas": {
+    "bit_chip": "Dranzer (F)",
+    "attack_ring": "Flame Wing",
+    "weight_disk": "Eight Heavy",
+    "spin_gear": "Right SG (Triple Change Version)",
+    "support_part": null,
+    "blade_base": "Flame Change Base"
+  },
+  "ponta": "flat / sharp / semi-flat (troca)",
+  "atributos": {
+    "ataque": 6, "defesa": 6, "stamina": 6, "velocidade": 6,
+    "peso": 6, "equilibrio": 5, "resistencia_knockout": 6
+  },
+  "fisica": {
+    "massa_relativa": 1.0,
+    "raio_relativo": 1.0,
+    "atrito_ponta": 0.5,
+    "restituicao": 0.55,
+    "padrao_movimento": "flower"
+  },
+  "especiais": [
+    { "nome": "Flame Saber", "efeito": "Investida flamejante com dano direto alto (golpe do Kai)", "custo": 100, "cooldown_s": 20 },
+    { "nome": "Fúria da Dranzer (nome sugerido, sem nome no anime)", "efeito": "+30% de ataque por 6 s quando usada junto com outra bey (evento do ep. 45)", "custo": 80, "cooldown_s": 25 },
+    { "nome": "Troca de ponta (Triple Change)", "efeito": "Alterna sharp/semi-flat/flat uma vez por partida", "custo": 0, "cooldown_s": 0 }
+  ],
+  "antecessora": "dranzer-s",
+  "sucessora": "dranzer-v",
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dranzer_F",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Flame_Wing",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_44",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_45"
+  ]
+}

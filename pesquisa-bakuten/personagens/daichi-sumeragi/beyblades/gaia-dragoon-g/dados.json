@@ -1,0 +1,50 @@
+{
+  "id": "gaia-dragoon-g",
+  "nome": "Gaia Dragoon G (Strata Dragoon G / Great)",
+  "nome_jp": "ガイアドラグーンＧ〈グレート〉 (Gaia Doragūn Gurēto)",
+  "dono": "daichi-sumeragi",
+  "codigo_produto": "A-108",
+  "tipo": "attack",
+  "sistema": "engine-gear",
+  "rotacao": "direita",
+  "fera_bit": "Gaia Dragoon / Strata Dragoon (dragão dourado)",
+  "temporada": "g-revolution",
+  "pecas": {
+    "bit_chip": "Strata Dragoon",
+    "attack_ring": "Dragon Saucer (+ Sub-AR em engrenagem)",
+    "weight_disk": "Ten Heavy",
+    "spin_gear": "Right Engine Gear (Metal Flat)",
+    "support_part": null,
+    "blade_base": "Final Clutch Base (Strata Dragoon G Version)"
+  },
+  "ponta": "metal flat",
+  "atributos": {
+    "ataque": 8, "defesa": 5, "stamina": 5, "velocidade": 8,
+    "peso": 8, "equilibrio": 5, "resistencia_knockout": 5
+  },
+  "fisica": {
+    "massa_relativa": 1.15,
+    "raio_relativo": 1.0,
+    "atrito_ponta": 0.45,
+    "restituicao": 0.55,
+    "padrao_movimento": "orbita"
+  },
+  "especiais": [
+    { "nome": "Great Cutter (Gōten Hadan)", "efeito": "vira serra circular de energia e rola de lado por 2,5 s: +70% dano, atravessa obstáculos", "custo": 100, "cooldown_s": 22 },
+    { "nome": "Twin Tornado Attack (com Tyson)", "efeito": "modo dupla: dois tornados sincronizados empurram os oponentes; cancela se o parceiro perder sincronia", "custo": 150, "cooldown_s": 35 },
+    { "nome": "Dragoon Tank (com Tyson)", "efeito": "modo dupla: as duas beys avançam unidas em linha reta com +60% knockback", "custo": 150, "cooldown_s": 35 }
+  ],
+  "antecessora": "gaia-dragoon-v",
+  "sucessora": "gaia-dragoon-ms",
+  "imagens": ["imagem.jpg", "imagem-produto.png", "anime.png", "pecas/attack-ring.jpg", "pecas/sub-attack-ring.jpg", "pecas/weight-disk.png", "pecas/engine-gear.jpg", "pecas/blade-base.jpg", "pecas/montada-lateral.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Strata_Dragoon_G",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Dragon_Saucer",
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Ten_Heavy",
+    "https://beyblade.fandom.com/wiki/Engine_Gear_-_Right_Engine_Gear_(Metal_Flat)",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Final_Clutch_Base_(Strata_Dragoon_G_Version)",
+    "https://beyblade.fandom.com/wiki/Great_Cutter",
+    "https://beyblade.fandom.com/wiki/Twin_Tornado_Attack",
+    "https://beyblade.fandom.com/wiki/Dragoon_Tank"
+  ]
+}

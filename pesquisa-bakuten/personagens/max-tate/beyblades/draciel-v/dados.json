@@ -1,0 +1,44 @@
+{
+  "id": "draciel-v",
+  "nome": "Draciel V",
+  "nome_jp": "ドラシエルV (Dorashieru V / Viper)",
+  "dono": "max-tate",
+  "codigo_produto": "A-69",
+  "tipo": "defense",
+  "sistema": "magnacore",
+  "rotacao": "direita",
+  "fera_bit": "Draciel (tartaruga / Genbu)",
+  "temporada": "v-force",
+  "pecas": {
+    "bit_chip": "Draciel (V)",
+    "attack_ring": "Ten Spike",
+    "weight_disk": "Ten Balance",
+    "spin_gear": "Neo Right SG (North Magnecore)",
+    "support_part": null,
+    "blade_base": "Viper Metal Ball Base"
+  },
+  "ponta": "bola-metal (semi-livre)",
+  "atributos": {
+    "ataque": 3, "defesa": 9, "stamina": 6, "velocidade": 3,
+    "peso": 8, "equilibrio": 5, "resistencia_knockout": 8
+  },
+  "fisica": {
+    "massa_relativa": 1.15,
+    "raio_relativo": 1.05,
+    "atrito_ponta": 0.2,
+    "restituicao": 0.5,
+    "padrao_movimento": "centro"
+  },
+  "especiais": [
+    { "nome": "Viper Wall", "efeito": "Zona de 4 s ao redor de Draciel que reduz em 40% a velocidade de quem entra", "custo": 80, "cooldown_s": 18 },
+    { "nome": "Heavy Viper Wall", "efeito": "Onda de água radial que empurra o oponente para a borda (knockback forte)", "custo": 120, "cooldown_s": 28 }
+  ],
+  "antecessora": "draciel-f",
+  "sucessora": "draciel-v2",
+  "imagens": ["imagem.png", "anime.png", "pecas/attack-ring.gif", "pecas/weight-disk.gif", "pecas/spin-gear.gif", "pecas/blade-base.gif", "pecas/pecas-desmontadas.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Draciel_V",
+    "https://beyblade.fandom.com/wiki/Viper_Wall",
+    "https://beyblade.fandom.com/wiki/Heavy_Viper_Wall"
+  ]
+}

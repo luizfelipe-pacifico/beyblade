@@ -1,0 +1,46 @@
+{
+  "id": "dragoon-f",
+  "nome": "Dragoon F (Dragoon Fantom)",
+  "nome_jp": "ドラグーン ファントム (Doragūn Fantomu)",
+  "dono": "tyson-granger",
+  "codigo_produto": "A-25",
+  "tipo": "attack",
+  "sistema": "spin-gear",
+  "rotacao": "esquerda",
+  "fera_bit": "Dragoon (dragão azul / Seiryū, vento)",
+  "temporada": "bakuten-shoot",
+  "pecas": {
+    "bit_chip": "Dragoon (F)",
+    "attack_ring": "Dual Dragon",
+    "weight_disk": "Eight Wide",
+    "spin_gear": "Left SG",
+    "support_part": null,
+    "blade_base": "Fantom Grip Base"
+  },
+  "ponta": "grip (borracha dura, eixo alto)",
+  "atributos": {
+    "ataque": 7, "defesa": 5, "stamina": 3, "velocidade": 7,
+    "peso": 4, "equilibrio": 5, "resistencia_knockout": 5
+  },
+  "fisica": {
+    "massa_relativa": 0.9,
+    "raio_relativo": 1.0,
+    "atrito_ponta": 0.75,
+    "restituicao": 0.62,
+    "padrao_movimento": "agressivo"
+  },
+  "especiais": [
+    { "nome": "Phantom Hurricane", "efeito": "Tornado grande por 5 s: knockback alto e dano de rotação contínuo no raio. A bey fica quase parada", "custo": 100, "cooldown_s": 22 },
+    { "nome": "Storm Attack", "efeito": "Tornado menor por 3 s com knockback", "custo": 70, "cooldown_s": 15 }
+  ],
+  "antecessora": "dragoon-s",
+  "sucessora": "dragoon-v",
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dragoon_F",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Dual_Dragon",
+    "https://beyblade.fandom.com/wiki/Phantom_Hurricane",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_23",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_45"
+  ]
+}

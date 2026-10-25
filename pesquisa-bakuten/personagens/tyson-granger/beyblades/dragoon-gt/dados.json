@@ -1,0 +1,47 @@
+{
+  "id": "dragoon-gt",
+  "nome": "Dragoon GT (Dragoon Galaxy Turbo)",
+  "nome_jp": "ドラグーンＧＴ〈ギャラクシーターボ〉 (Doragūn Gyarakushī Tābo)",
+  "dono": "tyson-granger",
+  "codigo_produto": "A-112",
+  "tipo": "attack",
+  "sistema": "engine-gear",
+  "rotacao": "esquerda",
+  "fera_bit": "Dragoon (dragão azul / Seiryū, vento)",
+  "temporada": "g-revolution",
+  "pecas": {
+    "bit_chip": "Dragoon",
+    "attack_ring": "G-Upper",
+    "weight_disk": "Ten Wide",
+    "spin_gear": "Left Engine Gear Turbo (CEW Metal Grip)",
+    "support_part": null,
+    "blade_base": "Instant Release Base (Dragoon GT Version)"
+  },
+  "ponta": "grip (borracha flat no CEW Metal Grip)",
+  "atributos": {
+    "ataque": 9, "defesa": 5, "stamina": 3, "velocidade": 9,
+    "peso": 7, "equilibrio": 5, "resistencia_knockout": 5
+  },
+  "fisica": {
+    "massa_relativa": 1.15,
+    "raio_relativo": 1.15,
+    "atrito_ponta": 0.85,
+    "restituicao": 0.62,
+    "padrao_movimento": "agressivo"
+  },
+  "especiais": [
+    { "nome": "Galaxy Turbo Twister", "efeito": "Tornado multivórtice por 4 s com área grande: atinge todos no raio, knockback alto para cima", "custo": 100, "cooldown_s": 22 },
+    { "nome": "Dragoon Tank (dupla com Daichi)", "efeito": "Acopla com a Strata Dragoon G por 3 s; investida conjunta com massa somada", "custo": 120, "cooldown_s": 30 },
+    { "nome": "Engine Gear Turbo (passiva)", "efeito": "+80% de velocidade por 1,5 s no início", "custo": 0, "cooldown_s": 0 }
+  ],
+  "antecessora": "dragoon-g",
+  "sucessora": "dragoon-ms",
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dragoon_GT",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_G-Upper",
+    "https://beyblade.fandom.com/wiki/Galaxy_Turbo_Twister",
+    "https://beyblade.fandom.com/wiki/Dragoon_Tank",
+    "https://beyblade.fandom.com/wiki/Beyblade:_G-Revolution_-_Episode_37"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "driger-v",
+  "nome": "Driger V",
+  "nome_jp": "ドライガーV（バルカン） (Doraigā Barukan)",
+  "dono": "ray-kon",
+  "codigo_produto": "A-53",
+  "tipo": "attack",
+  "sistema": "magnacore",
+  "rotacao": "direita",
+  "fera_bit": "Driger (tigre branco)",
+  "temporada": "v-force",
+  "pecas": {
+    "bit_chip": "Driger",
+    "attack_ring": "Sonic Tiger",
+    "weight_disk": "Ten Balance",
+    "spin_gear": "Neo Right SG (South Core)",
+    "support_part": null,
+    "blade_base": "SG Metal Flat Base"
+  },
+  "ponta": "flat (metal, magnética; Takara semi-flat)",
+  "atributos": {
+    "ataque": 8, "defesa": 4, "stamina": 5, "velocidade": 8,
+    "peso": 5, "equilibrio": 5, "resistencia_knockout": 4
+  },
+  "fisica": {
+    "massa_relativa": 0.95,
+    "raio_relativo": 1.05,
+    "atrito_ponta": 0.65,
+    "restituicao": 0.65,
+    "padrao_movimento": "agressivo"
+  },
+  "especiais": [
+    { "nome": "Vulcan Claw", "efeito": "Aura de garras orbitais por 3 s: dano multi-hit por contato e knockback ampliado", "custo": 120, "cooldown_s": 22 }
+  ],
+  "antecessora": "driger-f",
+  "sucessora": "driger-v2",
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Driger_V",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Sonic_Tiger",
+    "https://beyblade.fandom.com/wiki/Vulcan_Claw"
+  ]
+}

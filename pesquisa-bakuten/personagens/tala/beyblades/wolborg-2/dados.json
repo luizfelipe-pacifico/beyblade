@@ -1,0 +1,56 @@
+{
+  "id": "wolborg-2",
+  "nome": "Wolborg 2",
+  "nome_jp": "ウルボーグ2 (Urubōgu 2)",
+  "dono": "tala",
+  "codigo_produto": "A-39",
+  "tipo": "balance",
+  "sistema": "spin-gear",
+  "rotacao": "direita",
+  "fera_bit": "Wolborg (lobo prateado de gelo, fera bit artificial)",
+  "temporada": "bakuten-shoot",
+  "pecas": {
+    "bit_chip": "Wolborg",
+    "attack_ring": "Upper Wolf",
+    "weight_disk": "Eight Balance",
+    "spin_gear": "Right SG (Bearing Version 2)",
+    "support_part": null,
+    "blade_base": "Defense Grip Base 2"
+  },
+  "ponta": "grip (borracha sobre eixo com rolamento)",
+  "atributos": {
+    "ataque": 4, "defesa": 6, "stamina": 10, "velocidade": 3,
+    "peso": 5, "equilibrio": 8, "resistencia_knockout": 7
+  },
+  "fisica": {
+    "massa_relativa": 0.95,
+    "raio_relativo": 1.0,
+    "atrito_ponta": 0.75,
+    "restituicao": 0.65,
+    "padrao_movimento": "centro"
+  },
+  "especiais": [
+    { "nome": "Blizzalog", "efeito": "Campo de gelo por 6 s: adversário perde 25% de controle/atrito e 2%/s de rotação extra (nevasca/iceberg da final do Mundial)", "custo": 100, "cooldown_s": 25 }
+  ],
+  "antecessora": null,
+  "sucessora": "wolborg-4",
+  "imagens": [
+    "imagem.jpg",
+    "imagem-frente.jpg",
+    "anime.jpg",
+    "pecas/pecas-separadas.jpg",
+    "pecas/spin-gear.jpg",
+    "pecas/spin-gear-aberto.jpg",
+    "pecas/blade-base.jpg",
+    "pecas/bit-chip.png"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Wolborg_2",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Upper_Wolf",
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Eight_Balance",
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_Right_SG_(Bearing_Version_2)",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Defense_Grip_2",
+    "https://beyblade.fandom.com/wiki/Blizzalog",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_51"
+  ]
+}

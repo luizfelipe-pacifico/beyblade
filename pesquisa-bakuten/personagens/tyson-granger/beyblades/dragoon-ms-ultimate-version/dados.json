@@ -1,0 +1,45 @@
+{
+  "id": "dragoon-ms-ultimate-version",
+  "nome": "Dragoon MS Ultimate Version",
+  "nome_jp": "ドラグーンMS〈メタルストーム〉 アルティメットバージョン (Doragūn Metaru Sutōmu Arutimetto Bājon)",
+  "dono": "tyson-granger",
+  "codigo_produto": "MA-01",
+  "tipo": "attack",
+  "sistema": "hms",
+  "rotacao": "esquerda",
+  "fera_bit": "Dragoon (dragão azul / Seiryū, vento; forma alada com aura de fogo no final)",
+  "temporada": "g-revolution",
+  "pecas": {
+    "bit_chip": "Bit Protector - Dragoon Emblem",
+    "attack_ring": "Ultimate Attacker",
+    "weight_disk": "Circle Wide",
+    "spin_gear": "Running Core - Grip Flat Core (Ultimate Mode)",
+    "support_part": null,
+    "blade_base": null
+  },
+  "ponta": "grip (borracha vermelha macia, 5 mm)",
+  "atributos": {
+    "ataque": 10, "defesa": 5, "stamina": 3, "velocidade": 10,
+    "peso": 6, "equilibrio": 6, "resistencia_knockout": 6
+  },
+  "fisica": {
+    "massa_relativa": 1.1,
+    "raio_relativo": 0.85,
+    "atrito_ponta": 0.95,
+    "restituicao": 0.65,
+    "padrao_movimento": "agressivo"
+  },
+  "especiais": [
+    { "nome": "Evolution Storm", "efeito": "Tornado gigante que puxa, seguido de dash do Dragoon (+10% em relação à MS)", "custo": 100, "cooldown_s": 22 },
+    { "nome": "Ultimate Dragoon - Poder dos Amigos (nome sugerido)", "efeito": "Uso único abaixo de 30% de rotação: recupera 25% da rotação e faz um dash de dano máximo", "custo": 150, "cooldown_s": 0 },
+    { "nome": "Ridge Boost (passiva)", "efeito": "+25% de velocidade por 1 s perto do tornado ridge", "custo": 0, "cooldown_s": 0 }
+  ],
+  "antecessora": "dragoon-ms",
+  "sucessora": null,
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dragoon_MS_Ultimate_Version",
+    "https://beyblade.fandom.com/wiki/Beyblade:_G-Revolution_-_Episode_52",
+    "https://beyblade.fandom.com/wiki/Ultimate_Storm_(Manga)"
+  ]
+}

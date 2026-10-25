@@ -1,0 +1,48 @@
+{
+  "id": "gaia-dragoon",
+  "nome": "Gaia Dragoon (Strata Dragoon)",
+  "nome_jp": "ガイアドラグーン (Gaia Doragūn)",
+  "dono": "daichi-sumeragi",
+  "codigo_produto": "CoroCoro Comic Limited (sem código A-)",
+  "tipo": "attack",
+  "sistema": "spin-gear",
+  "rotacao": "direita",
+  "fera_bit": "Gaia Dragoon / Strata Dragoon (dragão dourado)",
+  "temporada": "v-force",
+  "pecas": {
+    "bit_chip": "Gaia Dragoon (Strata Dragoon)",
+    "attack_ring": "Great Dragon (+ Sub-AR wing laranja translúcido)",
+    "weight_disk": "Heavy Attack",
+    "spin_gear": "Right Spin Gear (G Ball)",
+    "support_part": null,
+    "blade_base": "Gaia Dragoon G Special Base"
+  },
+  "ponta": "flat",
+  "atributos": {
+    "ataque": 6, "defesa": 3, "stamina": 4, "velocidade": 7,
+    "peso": 5, "equilibrio": 3, "resistencia_knockout": 4
+  },
+  "fisica": {
+    "massa_relativa": 0.9,
+    "raio_relativo": 1.05,
+    "atrito_ponta": 0.6,
+    "restituicao": 0.7,
+    "padrao_movimento": "ziguezague"
+  },
+  "especiais": [
+    { "nome": "Co-Ring Cutter (Kōrin Hadan)", "efeito": "anel-lâmina de energia por 2 s: +40% dano de contato e +20% knockback (uso no filme não confirmado)", "custo": 100, "cooldown_s": 20 },
+    { "nome": "Spike Slash", "efeito": "investida curta em linha reta com +25% dano (citado na wiki; uso no filme não confirmado)", "custo": 60, "cooldown_s": 12 }
+  ],
+  "antecessora": null,
+  "sucessora": "gaia-dragoon-v",
+  "imagens": ["imagem.jpg", "anime.png", "anime-grev.png", "pecas/attack-ring.jpg", "pecas/weight-disk.jpg", "pecas/spin-gear.jpg", "pecas/spin-gear-core.jpg", "pecas/blade-base.jpg", "pecas/blade-base-lateral.jpg", "pecas/montada-inferior.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Gaia_Dragoon",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Great_Dragon",
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Heavy_Attack",
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_Right_Spin_Gear_(G_Ball)",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Gaia_Dragoon_G_Special_Base",
+    "https://beyblade.fandom.com/wiki/Co-Ring_Cutter",
+    "https://beyblade.fandom.com/wiki/Daichi_Sumeragi"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "driger-ms",
+  "nome": "Driger MS",
+  "nome_jp": "ドライガーMS（メタルスラッシュ） (Doraigā Metaru Surasshu)",
+  "dono": "ray-kon",
+  "codigo_produto": "A-124",
+  "tipo": "balance",
+  "sistema": "hms",
+  "rotacao": "ambas",
+  "fera_bit": "Driger (tigre branco)",
+  "temporada": "g-revolution",
+  "pecas": {
+    "bit_chip": "Driger Emblem (Bit Protector)",
+    "attack_ring": "Metal Upper",
+    "weight_disk": "Circle Balance",
+    "spin_gear": "Semi-Flat Core (Running Core)",
+    "support_part": null,
+    "blade_base": null
+  },
+  "ponta": "semi-flat",
+  "atributos": {
+    "ataque": 8, "defesa": 6, "stamina": 6, "velocidade": 7,
+    "peso": 8, "equilibrio": 7, "resistencia_knockout": 7
+  },
+  "fisica": {
+    "massa_relativa": 1.25,
+    "raio_relativo": 0.9,
+    "atrito_ponta": 0.45,
+    "restituicao": 0.5,
+    "padrao_movimento": "orbita"
+  },
+  "especiais": [
+    { "nome": "Thunder Slash", "efeito": "Carga de 1 s com aura elétrica e um golpe único de altíssimo dano e knockback", "custo": 160, "cooldown_s": 35 }
+  ],
+  "antecessora": "driger-g",
+  "sucessora": null,
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Driger_MS",
+    "https://beyblade.fandom.com/wiki/Thunder_Slash"
+  ]
+}

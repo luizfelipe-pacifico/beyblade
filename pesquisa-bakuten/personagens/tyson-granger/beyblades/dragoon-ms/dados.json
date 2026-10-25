@@ -1,0 +1,45 @@
+{
+  "id": "dragoon-ms",
+  "nome": "Dragoon MS (Dragoon Metal Storm)",
+  "nome_jp": "ドラグーンＭＳ〈メタルストーム〉 (Doragūn Metaru Sutōmu)",
+  "dono": "tyson-granger",
+  "codigo_produto": "A-126",
+  "tipo": "attack",
+  "sistema": "hms",
+  "rotacao": "esquerda (anime) / ambas (brinquedo HMS, 'Dual-Spin' na wiki)",
+  "fera_bit": "Dragoon (dragão azul / Seiryū, vento)",
+  "temporada": "g-revolution",
+  "pecas": {
+    "bit_chip": "Bit Protector - Dragoon Emblem",
+    "attack_ring": "Metal Attacker",
+    "weight_disk": "Circle Wide",
+    "spin_gear": "Running Core - Grip Flat Core",
+    "support_part": null,
+    "blade_base": null
+  },
+  "ponta": "grip (borracha macia, ~4 mm)",
+  "atributos": {
+    "ataque": 9, "defesa": 5, "stamina": 3, "velocidade": 9,
+    "peso": 6, "equilibrio": 6, "resistencia_knockout": 6
+  },
+  "fisica": {
+    "massa_relativa": 1.1,
+    "raio_relativo": 0.85,
+    "atrito_ponta": 0.9,
+    "restituicao": 0.65,
+    "padrao_movimento": "agressivo"
+  },
+  "especiais": [
+    { "nome": "Evolution Storm", "efeito": "Tornado gigante por 2 s que puxa os adversários, seguido de dash do Dragoon com dano muito alto e knockback", "custo": 100, "cooldown_s": 24 },
+    { "nome": "Ridge Boost (passiva)", "efeito": "+20% de velocidade por 1 s ao passar perto do tornado ridge", "custo": 0, "cooldown_s": 0 }
+  ],
+  "antecessora": "dragoon-gt",
+  "sucessora": "dragoon-ms-ultimate-version",
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dragoon_MS",
+    "https://beyblade.fandom.com/wiki/Evolution_Storm",
+    "https://beyblade.fandom.com/wiki/Beyblade:_G-Revolution_-_Episode_40",
+    "https://beyblade.fandom.com/wiki/Beyblade:_G-Revolution_-_Episode_52"
+  ]
+}

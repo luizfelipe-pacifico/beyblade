@@ -1,0 +1,45 @@
+{
+  "id": "dranzer-g",
+  "nome": "Dranzer G",
+  "nome_jp": "ドランザーG〈ギグス〉 (Doranzā Gigusu / Dranzer Gigs)",
+  "dono": "kai-hiwatari",
+  "codigo_produto": "A-99",
+  "tipo": "balance",
+  "sistema": "engine-gear",
+  "rotacao": "direita",
+  "fera_bit": "Dranzer (fênix)",
+  "temporada": "g-revolution",
+  "pecas": {
+    "bit_chip": "Dranzer (G Version)",
+    "attack_ring": "Wing Survivor",
+    "weight_disk": "Ten Balance",
+    "spin_gear": "Right EG (Metal Semi-Flat)",
+    "support_part": null,
+    "blade_base": "Hit Release (Dranzer Version)"
+  },
+  "ponta": "metal semi-flat (quase flat)",
+  "atributos": {
+    "ataque": 7, "defesa": 6, "stamina": 5, "velocidade": 7,
+    "peso": 7, "equilibrio": 5, "resistencia_knockout": 5
+  },
+  "fisica": {
+    "massa_relativa": 1.1,
+    "raio_relativo": 1.0,
+    "atrito_ponta": 0.4,
+    "restituicao": 0.7,
+    "padrao_movimento": "orbita + arrancada (engine burst no primeiro impacto)"
+  },
+  "especiais": [
+    { "nome": "Blazing Gigs", "efeito": "Projétil-fênix flamejante; dano alto à distância; versão azul (+25%) com rotação > 70%", "custo": 90, "cooldown_s": 18 },
+    { "nome": "Blazing Gigs Tempest", "efeito": "Chuva de penas de fogo: -60% velocidade do oponente por 2 s, depois investida", "custo": 120, "cooldown_s": 30 }
+  ],
+  "antecessora": "dranzer-v2",
+  "sucessora": "dranzer-gt",
+  "imagens": [],
+  "imagens_pendentes": ["imagem.jpg", "anime.png", "pecas/attack-ring.jpg", "pecas/todas-pecas.jpg", "pecas/vista-inferior.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dranzer_G",
+    "https://beyblade.fandom.com/wiki/Blazing_Gigs",
+    "https://beyblade.fandom.com/wiki/Blazing_Gigs_Tempest"
+  ]
+}

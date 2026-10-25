@@ -1,0 +1,45 @@
+{
+  "id": "driger-f",
+  "nome": "Driger F",
+  "nome_jp": "ドライガーF（ファング） (Doraigā Fangu)",
+  "dono": "ray-kon",
+  "codigo_produto": "A-24",
+  "tipo": "balance",
+  "sistema": "spin-gear",
+  "rotacao": "direita",
+  "fera_bit": "Driger (tigre branco)",
+  "temporada": "bakuten-shoot",
+  "pecas": {
+    "bit_chip": "Driger (F Version)",
+    "attack_ring": "Cross Fang",
+    "weight_disk": "Eight Balance",
+    "spin_gear": "Right SG (Full Auto Clutch Version)",
+    "support_part": null,
+    "blade_base": "Full Auto Clutch Base"
+  },
+  "ponta": "flat (metal, eixo livre)",
+  "atributos": {
+    "ataque": 6, "defesa": 4, "stamina": 6, "velocidade": 7,
+    "peso": 5, "equilibrio": 4, "resistencia_knockout": 4
+  },
+  "fisica": {
+    "massa_relativa": 0.95,
+    "raio_relativo": 1.0,
+    "atrito_ponta": 0.6,
+    "restituicao": 0.55,
+    "padrao_movimento": "orbita"
+  },
+  "especiais": [
+    { "nome": "Tiger Claw", "efeito": "Rajada de 3-4 golpes de garra", "custo": 100, "cooldown_s": 18 },
+    { "nome": "Tiger Fang", "efeito": "Investida única forte com Driger (alto knockback)", "custo": 140, "cooldown_s": 28 }
+  ],
+  "antecessora": "driger-s",
+  "sucessora": "driger-v",
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Driger_F",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Cross_Fang",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Full_Auto_Clutch_Base",
+    "https://beyblade.fandom.com/wiki/Tiger_Fang"
+  ]
+}

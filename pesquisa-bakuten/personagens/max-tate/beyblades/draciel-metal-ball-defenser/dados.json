@@ -1,0 +1,44 @@
+{
+  "id": "draciel-metal-ball-defenser",
+  "nome": "Draciel Metal Ball Defenser",
+  "nome_jp": "ドラシエルメタルボールディフェンサー (Dorashieru Metaru Bōru Difensā)",
+  "dono": "max-tate",
+  "codigo_produto": null,
+  "tipo": "defense",
+  "sistema": "4-layer",
+  "rotacao": "direita",
+  "fera_bit": "Draciel (tartaruga / Genbu)",
+  "temporada": "bakuten-shoot",
+  "pecas": {
+    "bit_chip": "Draciel",
+    "attack_ring": "Max Shield",
+    "weight_disk": "Heavy (Six Heavy)",
+    "spin_gear": "Right SG (segundo o infobox)",
+    "support_part": null,
+    "blade_base": "Metal Ball Base"
+  },
+  "ponta": "bola",
+  "atributos": {
+    "ataque": 2, "defesa": 7, "stamina": 6, "velocidade": 2,
+    "peso": 7, "equilibrio": 6, "resistencia_knockout": 7
+  },
+  "fisica": {
+    "massa_relativa": 1.05,
+    "raio_relativo": 0.9,
+    "atrito_ponta": 0.2,
+    "restituicao": 0.45,
+    "padrao_movimento": "centro"
+  },
+  "especiais": [
+    { "nome": "Metal Ball Guard (nome de jogo)", "efeito": "5 s com +30% de massa efetiva e -20% de recoil recebido", "custo": 80, "cooldown_s": 20 }
+  ],
+  "antecessora": null,
+  "sucessora": "draciel-s",
+  "imagens": ["imagem.jpg", "anime.png", "pecas/attack-ring.gif", "pecas/weight-disk.gif", "pecas/blade-base.gif", "pecas/pecas-desmontadas.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Draciel_Metal_Ball_Defenser",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Metal_Ball_Base",
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Heavy",
+    "https://beyblade.fandom.com/wiki/Max_Tate"
+  ]
+}

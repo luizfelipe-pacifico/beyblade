@@ -1,0 +1,45 @@
+{
+  "id": "driger-g",
+  "nome": "Driger G",
+  "nome_jp": "ドライガーG（ガトリング） (Doraigā Gatoringu)",
+  "dono": "ray-kon",
+  "codigo_produto": "A-94",
+  "tipo": "attack",
+  "sistema": "engine-gear",
+  "rotacao": "direita",
+  "fera_bit": "Driger (tigre branco)",
+  "temporada": "g-revolution",
+  "pecas": {
+    "bit_chip": "Driger (G Version)",
+    "attack_ring": "Triple Tiger",
+    "weight_disk": "Ten Balance",
+    "spin_gear": "Right Engine Gear (Metal Semi-Flat)",
+    "support_part": null,
+    "blade_base": "First Clutch Base (Driger G Version)"
+  },
+  "ponta": "semi-flat (metal, quase flat)",
+  "atributos": {
+    "ataque": 9, "defesa": 4, "stamina": 4, "velocidade": 9,
+    "peso": 7, "equilibrio": 5, "resistencia_knockout": 5
+  },
+  "fisica": {
+    "massa_relativa": 1.1,
+    "raio_relativo": 1.05,
+    "atrito_ponta": 0.6,
+    "restituicao": 0.6,
+    "padrao_movimento": "agressivo"
+  },
+  "especiais": [
+    { "nome": "Gatling Claw", "efeito": "3 clones elétricos atacam junto por 2 s (multi-hit)", "custo": 120, "cooldown_s": 22 },
+    { "nome": "Gatling Claw Maximum", "efeito": "Velocidade x2 e dano alto por 3 s; consome 25% da própria rotação", "custo": 180, "cooldown_s": 40 }
+  ],
+  "antecessora": "driger-v2",
+  "sucessora": "driger-ms",
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Driger_G",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Triple_Tiger",
+    "https://beyblade.fandom.com/wiki/Gatling_Claw",
+    "https://beyblade.fandom.com/wiki/Gatling_Claw_Maximum"
+  ]
+}

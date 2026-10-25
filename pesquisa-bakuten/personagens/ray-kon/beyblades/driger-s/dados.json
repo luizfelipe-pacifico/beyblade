@@ -1,0 +1,44 @@
+{
+  "id": "driger-s",
+  "nome": "Driger S",
+  "nome_jp": "ドライガーS（スラッシュ） (Doraigā Surasshu)",
+  "dono": "ray-kon",
+  "codigo_produto": "35 (Takara, segundo a wiki; não confirmado)",
+  "tipo": "balance",
+  "sistema": "spin-gear",
+  "rotacao": "direita",
+  "fera_bit": "Driger (tigre branco)",
+  "temporada": "bakuten-shoot",
+  "pecas": {
+    "bit_chip": "Driger",
+    "attack_ring": "Tiger Defenser",
+    "weight_disk": "Eight Heavy",
+    "spin_gear": "Right SG",
+    "support_part": null,
+    "blade_base": "Metal Change Base"
+  },
+  "ponta": "metal change (metal: agudo no centro / plano nas bordas)",
+  "atributos": {
+    "ataque": 6, "defesa": 5, "stamina": 7, "velocidade": 6,
+    "peso": 4, "equilibrio": 7, "resistencia_knockout": 5
+  },
+  "fisica": {
+    "massa_relativa": 0.8,
+    "raio_relativo": 0.9,
+    "atrito_ponta": 0.35,
+    "restituicao": 0.5,
+    "padrao_movimento": "centro"
+  },
+  "especiais": [
+    { "nome": "Tiger Claw", "efeito": "Dash com 3-4 golpes rápidos de garra (multi-hit, dano médio por golpe)", "custo": 100, "cooldown_s": 18 }
+  ],
+  "antecessora": null,
+  "sucessora": "driger-f",
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Driger_S",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Tiger_Defenser",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Metal_Change_Base",
+    "https://beyblade.fandom.com/wiki/Tiger_Claw"
+  ]
+}

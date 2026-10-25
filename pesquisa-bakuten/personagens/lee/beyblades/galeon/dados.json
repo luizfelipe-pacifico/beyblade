@@ -1,0 +1,43 @@
+{
+  "id": "galeon",
+  "nome": "Galeon",
+  "nome_jp": "ガルオン (Garuon)",
+  "dono": "lee",
+  "codigo_produto": "A-3 (não confirmado)",
+  "tipo": "balance",
+  "sistema": "spin-gear",
+  "rotacao": "direita",
+  "fera_bit": "Galeon (leão negro)",
+  "temporada": "bakuten-shoot",
+  "pecas": {
+    "bit_chip": "Galeon",
+    "attack_ring": "War Lion (com Sub-Attack Ring livre)",
+    "weight_disk": "Eight Heavy",
+    "spin_gear": "Right SG",
+    "support_part": null,
+    "blade_base": "SG Semi-Flat"
+  },
+  "ponta": "semi-flat",
+  "atributos": {
+    "ataque": 5, "defesa": 7, "stamina": 7, "velocidade": 5,
+    "peso": 5, "equilibrio": 7, "resistencia_knockout": 6
+  },
+  "fisica": {
+    "massa_relativa": 0.85,
+    "raio_relativo": 0.9,
+    "atrito_ponta": 0.35,
+    "restituicao": 0.4,
+    "padrao_movimento": "centro"
+  },
+  "especiais": [
+    { "nome": "Black Thunder (Dark Lightning)", "efeito": "Aura elétrica por 3 s: contato causa dano e repulsão forte (knockback x2)", "custo": 120, "cooldown_s": 24 }
+  ],
+  "antecessora": null,
+  "sucessora": "galeon-2",
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Galeon",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_War_Lion",
+    "https://beyblade.fandom.com/wiki/Dark_Lightning_(Black_Thunder)"
+  ]
+}

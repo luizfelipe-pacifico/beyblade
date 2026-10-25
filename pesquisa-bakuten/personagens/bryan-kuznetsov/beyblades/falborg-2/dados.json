@@ -1,0 +1,50 @@
+{
+  "id": "falborg-2",
+  "nome": "Falborg 2",
+  "nome_jp": "ファルボーグ2 (Farubōgu 2)",
+  "dono": "bryan-kuznetsov",
+  "codigo_produto": null,
+  "tipo": "attack",
+  "sistema": "engine-gear",
+  "rotacao": "direita",
+  "fera_bit": "Falborg (falcão de vento, fera bit artificial)",
+  "temporada": "g-revolution",
+  "pecas": {
+    "bit_chip": "Falborg",
+    "attack_ring": "não confirmado",
+    "weight_disk": "não confirmado",
+    "spin_gear": "Right SG (infobox) / Engine Gear no anime (trivia) - não confirmado",
+    "support_part": null,
+    "blade_base": "não confirmado"
+  },
+  "ponta": "não confirmado (estimativa: semi-flat de ataque)",
+  "atributos": {
+    "ataque": 8, "defesa": 5, "stamina": 6, "velocidade": 8,
+    "peso": 7, "equilibrio": 6, "resistencia_knockout": 5
+  },
+  "fisica": {
+    "massa_relativa": 1.1,
+    "raio_relativo": 1.0,
+    "atrito_ponta": 0.55,
+    "restituicao": 0.65,
+    "padrao_movimento": "agressivo"
+  },
+  "especiais": [
+    { "nome": "Stroblitz Attack", "efeito": "Carga de 0,8 s e feixe/dash em linha reta que atravessa o adversário: dano 2,2x ataque; se o adversário estiver abaixo de 30% de rotação, perde 15% extra (quebra). Se errar, 1 s exposto", "custo": 100, "cooldown_s": 20 },
+    { "nome": "Engine Gear (passivo)", "efeito": "1x por batalha: +20% de velocidade e +8% de rotação por 3 s", "custo": 0, "cooldown_s": 0 }
+  ],
+  "antecessora": "falborg",
+  "sucessora": null,
+  "imagens": [
+    "imagem.jpg",
+    "anime.jpg",
+    "anime-2.jpg",
+    "manga.jpg"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Falborg_2",
+    "https://beyblade.fandom.com/wiki/Stroblitz_Attack",
+    "https://beyblade.fandom.com/wiki/Beyblade:_G-Revolution_-_Episode_35",
+    "https://beyblade.fandom.com/wiki/Bryan_Kuznetsov"
+  ]
+}

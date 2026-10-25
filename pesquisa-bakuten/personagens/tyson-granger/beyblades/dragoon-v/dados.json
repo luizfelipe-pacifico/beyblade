@@ -1,0 +1,45 @@
+{
+  "id": "dragoon-v",
+  "nome": "Dragoon V (Dragoon Victory)",
+  "nome_jp": "ドラグーンＶ〈ビクトリー〉 (Doragūn Bikutorī)",
+  "dono": "tyson-granger",
+  "codigo_produto": "A-41",
+  "tipo": "attack",
+  "sistema": "magnacore",
+  "rotacao": "esquerda",
+  "fera_bit": "Dragoon (dragão azul / Seiryū, vento)",
+  "temporada": "v-force",
+  "pecas": {
+    "bit_chip": "Dragoon",
+    "attack_ring": "Eight Attacker",
+    "weight_disk": "Ten Wide",
+    "spin_gear": "Neo Left SG (Metal Weight Core)",
+    "support_part": null,
+    "blade_base": "Magne Flat Base"
+  },
+  "ponta": "flat (plástico com ímã)",
+  "atributos": {
+    "ataque": 7, "defesa": 4, "stamina": 4, "velocidade": 7,
+    "peso": 5, "equilibrio": 5, "resistencia_knockout": 4
+  },
+  "fisica": {
+    "massa_relativa": 0.95,
+    "raio_relativo": 1.05,
+    "atrito_ponta": 0.55,
+    "restituicao": 0.72,
+    "padrao_movimento": "flower"
+  },
+  "especiais": [
+    { "nome": "Victory Tornado", "efeito": "Dash guiado de 1,5 s envolto em vórtice: dano alto e knockback médio (a bey se move durante o golpe)", "custo": 100, "cooldown_s": 20 },
+    { "nome": "Magnacore (passiva)", "efeito": "Atração ou repulsão contra outras beys Magnacore conforme o polo", "custo": 0, "cooldown_s": 0 }
+  ],
+  "antecessora": "dragoon-f",
+  "sucessora": "dragoon-v2",
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dragoon_V",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Eight_Attacker",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Magne_Flat_Base",
+    "https://beyblade.fandom.com/wiki/Victory_Tornado"
+  ]
+}

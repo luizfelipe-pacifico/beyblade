@@ -1,0 +1,44 @@
+{
+  "id": "dragoon-grip-attacker",
+  "nome": "Dragoon Grip Attacker",
+  "nome_jp": "ドラグーングリップアタッカー (Doragūn Gurippu Atakkā)",
+  "dono": "tyson-granger",
+  "codigo_produto": "17",
+  "tipo": "attack",
+  "sistema": "4-layer",
+  "rotacao": "direita",
+  "fera_bit": "nenhuma no anime (bit chip do Dragoon, dragão azul)",
+  "temporada": "bakuten-shoot",
+  "pecas": {
+    "bit_chip": "Dragoon",
+    "attack_ring": "Dragon Head",
+    "weight_disk": "Wide",
+    "spin_gear": null,
+    "support_part": null,
+    "blade_base": "Grip Base"
+  },
+  "ponta": "grip (borracha flat larga)",
+  "atributos": {
+    "ataque": 4, "defesa": 2, "stamina": 2, "velocidade": 9,
+    "peso": 2, "equilibrio": 4, "resistencia_knockout": 2
+  },
+  "fisica": {
+    "massa_relativa": 0.75,
+    "raio_relativo": 0.9,
+    "atrito_ponta": 0.9,
+    "restituicao": 0.65,
+    "padrao_movimento": "agressivo"
+  },
+  "especiais": [
+    { "nome": "Lançamento com corrida (habilidade de lançamento, não é especial de fera)", "efeito": "+25% de velocidade inicial por 5 s", "custo": 0, "cooldown_s": 0 }
+  ],
+  "antecessora": null,
+  "sucessora": "dragoon-s",
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dragoon_Grip_Attacker",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Dragon_Head",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Grip_Base",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_01"
+  ]
+}

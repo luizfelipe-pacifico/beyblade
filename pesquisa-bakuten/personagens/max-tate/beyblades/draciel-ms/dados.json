@@ -1,0 +1,43 @@
+{
+  "id": "draciel-ms",
+  "nome": "Draciel MS",
+  "nome_jp": "ドラシエルMS（メタルシールド） (Dorashieru MS / Metaru Shīrudo)",
+  "dono": "max-tate",
+  "codigo_produto": "A-125",
+  "tipo": "defense",
+  "sistema": "hms",
+  "rotacao": "ambas",
+  "fera_bit": "Draciel (tartaruga / Genbu)",
+  "temporada": "g-revolution",
+  "pecas": {
+    "bit_chip": "Bit Protector - Draciel Emblem",
+    "attack_ring": "Metal Defense (Metal Frame Cross Shield + ABS Caul Draciel)",
+    "weight_disk": "Circle Wide",
+    "spin_gear": "Running Core: Sharp Core",
+    "support_part": null,
+    "blade_base": null
+  },
+  "ponta": "sharp",
+  "atributos": {
+    "ataque": 4, "defesa": 10, "stamina": 8, "velocidade": 2,
+    "peso": 9, "equilibrio": 6, "resistencia_knockout": 9
+  },
+  "fisica": {
+    "massa_relativa": 1.25,
+    "raio_relativo": 0.8,
+    "atrito_ponta": 0.1,
+    "restituicao": 0.35,
+    "padrao_movimento": "centro"
+  },
+  "especiais": [
+    { "nome": "Aqua Shield", "efeito": "Muralha de água de 4 s: -60% de dano e velocidade de especial/investida que a atravesse; atacante fica 1 s vulnerável (+50% knockback no contra-ataque)", "custo": 120, "cooldown_s": 26 }
+  ],
+  "antecessora": "draciel-g",
+  "sucessora": null,
+  "imagens": ["imagem.jpg", "anime.jpg", "pecas/bit-protector.jpg", "pecas/attack-ring.jpg", "pecas/weight-disk.jpg", "pecas/running-core.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Draciel_MS",
+    "https://beyblade.fandom.com/wiki/Aqua_Shield",
+    "https://beyblade.fandom.com/wiki/Hard_Metal_System"
+  ]
+}

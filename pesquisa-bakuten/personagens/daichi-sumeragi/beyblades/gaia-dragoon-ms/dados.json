@@ -1,0 +1,46 @@
+{
+  "id": "gaia-dragoon-ms",
+  "nome": "Gaia Dragoon MS (Strata Dragoon MS / Metal Spike)",
+  "nome_jp": "ガイアドラグーンＭＳ〈メタルスパイク〉 (Gaia Doragūn Metaru Supaiku)",
+  "dono": "daichi-sumeragi",
+  "codigo_produto": "A-123",
+  "tipo": "attack",
+  "sistema": "hms",
+  "rotacao": "ambas",
+  "fera_bit": "Gaia Dragoon / Strata Dragoon (dragão dourado)",
+  "temporada": "g-revolution",
+  "pecas": {
+    "bit_chip": "Bit Protector - Strata Dragoon",
+    "attack_ring": "Metal Saucer (Metal Frame + ABS Caul)",
+    "weight_disk": "Circle Heavy",
+    "spin_gear": null,
+    "support_part": null,
+    "blade_base": "Running Core - Flat Core"
+  },
+  "ponta": "flat",
+  "atributos": {
+    "ataque": 7, "defesa": 6, "stamina": 4, "velocidade": 8,
+    "peso": 8, "equilibrio": 6, "resistencia_knockout": 6
+  },
+  "fisica": {
+    "massa_relativa": 1.2,
+    "raio_relativo": 0.9,
+    "atrito_ponta": 0.6,
+    "restituicao": 0.5,
+    "padrao_movimento": "agressivo"
+  },
+  "especiais": [
+    { "nome": "Spike Saw (Bakukyō Hadan)", "efeito": "emerge do chão (0,5 s invulnerável) e investe incandescente: +90% dano e knockback forte no 1º contato", "custo": 100, "cooldown_s": 24 }
+  ],
+  "antecessora": "gaia-dragoon-g",
+  "sucessora": null,
+  "imagens": ["imagem.jpg", "pecas/attack-ring.jpg", "pecas/metal-frame.jpg", "pecas/running-core.jpg", "pecas/montada-lateral.jpg", "pecas/montada-inferior.jpg", "pecas/montada-hasbro.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Strata_Dragoon_MS",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Metal_Saucer",
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Circle_Heavy",
+    "https://beyblade.fandom.com/wiki/Running_Core_-_Flat_Core",
+    "https://beyblade.fandom.com/wiki/Bit_Protector_-_Strata_Dragoon",
+    "https://beyblade.fandom.com/wiki/Spike_Saw"
+  ]
+}

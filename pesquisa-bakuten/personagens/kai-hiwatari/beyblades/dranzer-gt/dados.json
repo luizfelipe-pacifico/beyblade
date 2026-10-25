@@ -1,0 +1,46 @@
+{
+  "id": "dranzer-gt",
+  "nome": "Dranzer GT",
+  "nome_jp": "ドランザーGT〈ギグス・ターボ〉 (Doranzā Gigusu Tābo / Dranzer Gigs Turbo)",
+  "dono": "kai-hiwatari",
+  "codigo_produto": "A-117",
+  "tipo": "balance",
+  "sistema": "engine-gear",
+  "rotacao": "direita",
+  "fera_bit": "Dranzer (fênix)",
+  "temporada": "g-revolution",
+  "pecas": {
+    "bit_chip": "Dranzer (GT Version)",
+    "attack_ring": "Triangle Wing",
+    "weight_disk": "Ten Balance",
+    "spin_gear": "Right EG Reverse (CEW Metal Semi-Flat)",
+    "support_part": null,
+    "blade_base": "Hit Release (Dranzer GT Version)"
+  },
+  "ponta": "metal semi-flat",
+  "atributos": {
+    "ataque": 7, "defesa": 6, "stamina": 4, "velocidade": 7,
+    "peso": 7, "equilibrio": 5, "resistencia_knockout": 5
+  },
+  "fisica": {
+    "massa_relativa": 1.1,
+    "raio_relativo": 1.0,
+    "atrito_ponta": 0.4,
+    "restituicao": 0.65,
+    "padrao_movimento": "orbita -> ziguezague (engine gear reverso no meio da luta)"
+  },
+  "especiais": [
+    { "nome": "Reverse Flame Gigs", "efeito": "Inverte direção, prende o oponente em anel de fogo (dano contínuo 2 s) e golpeia forte", "custo": 110, "cooldown_s": 26 },
+    { "nome": "Blazing Gigs Tempest", "efeito": "Chuva de penas de fogo: -60% velocidade do oponente por 2 s, depois investida", "custo": 120, "cooldown_s": 30 }
+  ],
+  "antecessora": "dranzer-g",
+  "sucessora": "dranzer-ms",
+  "imagens": [],
+  "imagens_pendentes": ["imagem.jpg", "anime.jpg", "pecas/attack-ring.jpg", "pecas/weight-disk.jpg", "pecas/blade-base.jpg", "pecas/engine-gear.jpg", "pecas/todas-pecas.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dranzer_GT",
+    "https://beyblade.fandom.com/wiki/Engine_Gear_-_Right_EG_Reverse",
+    "https://beyblade.fandom.com/wiki/Reverse_Flame_Gigs",
+    "https://beyblade.fandom.com/wiki/Blazing_Gigs_Tempest"
+  ]
+}

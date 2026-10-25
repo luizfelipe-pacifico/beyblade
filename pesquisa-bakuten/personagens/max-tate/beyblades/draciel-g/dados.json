@@ -1,0 +1,44 @@
+{
+  "id": "draciel-g",
+  "nome": "Draciel G",
+  "nome_jp": "ドラシエルG (Dorashieru G / Gravity)",
+  "dono": "max-tate",
+  "codigo_produto": "A-104",
+  "tipo": "defense",
+  "sistema": "engine-gear",
+  "rotacao": "direita",
+  "fera_bit": "Draciel (tartaruga / Genbu)",
+  "temporada": "g-revolution",
+  "pecas": {
+    "bit_chip": "Draciel (G)",
+    "attack_ring": "Shield Hammer",
+    "weight_disk": "Ten Wide",
+    "spin_gear": "Right Engine Gear (Metal Ball)",
+    "support_part": null,
+    "blade_base": "Hit Release (Final Clutch, versão Draciel)"
+  },
+  "ponta": "bola-metal (cone)",
+  "atributos": {
+    "ataque": 3, "defesa": 10, "stamina": 8, "velocidade": 3,
+    "peso": 8, "equilibrio": 6, "resistencia_knockout": 9
+  },
+  "fisica": {
+    "massa_relativa": 1.2,
+    "raio_relativo": 1.1,
+    "atrito_ponta": 0.2,
+    "restituicao": 0.45,
+    "padrao_movimento": "centro"
+  },
+  "especiais": [
+    { "nome": "Gravity Control", "efeito": "Vórtice de 5 s ao redor do oponente: -30% de equilíbrio e dreno de 2% RPM/s", "custo": 100, "cooldown_s": 22 },
+    { "nome": "Ultra Gravity Control", "efeito": "Vórtice de 7 s: -45% de equilíbrio e dreno de 3% RPM/s", "custo": 150, "cooldown_s": 35 }
+  ],
+  "antecessora": "draciel-v2",
+  "sucessora": "draciel-ms",
+  "imagens": ["imagem.png", "anime.jpg", "pecas/attack-ring.jpg", "pecas/engine-gear.jpg", "pecas/blade-base.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Draciel_G",
+    "https://beyblade.fandom.com/wiki/Gravity_Control",
+    "https://beyblade.fandom.com/wiki/Ultra_Gravity_Control"
+  ]
+}

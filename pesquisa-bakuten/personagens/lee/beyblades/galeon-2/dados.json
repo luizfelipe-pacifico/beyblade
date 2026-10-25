@@ -1,0 +1,43 @@
+{
+  "id": "galeon-2",
+  "nome": "Galeon 2",
+  "nome_jp": "ガルオン2 (Garuon 2)",
+  "dono": "lee",
+  "codigo_produto": "Random Booster 9 (brinde Takara; sem código próprio)",
+  "tipo": "balance",
+  "sistema": "magnacore",
+  "rotacao": "direita",
+  "fera_bit": "Galeon (leão negro)",
+  "temporada": "g-revolution",
+  "pecas": {
+    "bit_chip": "Galeon",
+    "attack_ring": "Howling Leo",
+    "weight_disk": "Ten Wide",
+    "spin_gear": "Neo Right SG (Metal Weight Core)",
+    "support_part": null,
+    "blade_base": "SG Semi-Flat Base"
+  },
+  "ponta": "semi-flat",
+  "atributos": {
+    "ataque": 8, "defesa": 6, "stamina": 6, "velocidade": 6,
+    "peso": 6, "equilibrio": 6, "resistencia_knockout": 6
+  },
+  "fisica": {
+    "massa_relativa": 1.0,
+    "raio_relativo": 1.05,
+    "atrito_ponta": 0.4,
+    "restituicao": 0.5,
+    "padrao_movimento": "orbita"
+  },
+  "especiais": [
+    { "nome": "Spiral Lightning", "efeito": "Onda elétrica em espiral: desorienta o alvo por 1,5 s e o empurra para a borda", "custo": 130, "cooldown_s": 26 }
+  ],
+  "antecessora": "galeon",
+  "sucessora": "galeon-2-eg",
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Galeon_2",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Howling_Leo",
+    "https://beyblade.fandom.com/wiki/Spiral_Lightning"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": "gaia-dragoon-v",
+  "nome": "Gaia Dragoon V (Strata Dragoon V / Vast)",
+  "nome_jp": "ガイアドラグーンV〈バースト〉 (Gaia Doragūn Bāsuto)",
+  "dono": "daichi-sumeragi",
+  "codigo_produto": "A-78",
+  "tipo": "attack",
+  "sistema": "magnacore",
+  "rotacao": "direita",
+  "fera_bit": "Gaia Dragoon / Strata Dragoon (dragão dourado)",
+  "temporada": "g-revolution",
+  "pecas": {
+    "bit_chip": "Strata Dragoon (V Version)",
+    "attack_ring": "Dragon Breaker (+ Sub-AR livre de 4 pontas)",
+    "weight_disk": "Ten Wide",
+    "spin_gear": "Neo Right SG (S-MG Core)",
+    "support_part": null,
+    "blade_base": "SG Metal Flat 2"
+  },
+  "ponta": "metal flat",
+  "atributos": {
+    "ataque": 8, "defesa": 4, "stamina": 5, "velocidade": 8,
+    "peso": 6, "equilibrio": 5, "resistencia_knockout": 4
+  },
+  "fisica": {
+    "massa_relativa": 1.0,
+    "raio_relativo": 1.05,
+    "atrito_ponta": 0.45,
+    "restituicao": 0.7,
+    "padrao_movimento": "flower"
+  },
+  "especiais": [
+    { "nome": "Vast Hurricane (Burst Hurricane)", "efeito": "gira em círculos criando redemoinho de poeira por 3 s; +50% knockback em área curta", "custo": 80, "cooldown_s": 18 },
+    { "nome": "Vast Cutter (Burst Cutter / Gōten Hadan)", "efeito": "a fera vira uma serra circular de energia; golpe único +80% dano, quebra obstáculos da arena", "custo": 100, "cooldown_s": 25 }
+  ],
+  "antecessora": "gaia-dragoon",
+  "sucessora": "gaia-dragoon-g",
+  "imagens": ["imagem.jpg", "anime.png", "anime-grev.png", "pecas/attack-ring.jpg", "pecas/weight-disk.jpg", "pecas/blade-base.jpg", "pecas/montada.jpg", "pecas/montada-lateral.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Strata_Dragoon_V",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Dragon_Breaker",
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Ten_Wide",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_SG_Metal_Flat_2",
+    "https://beyblade.fandom.com/wiki/Vast_Hurricane",
+    "https://beyblade.fandom.com/wiki/Burst_Cutter",
+    "https://beyblade.fandom.com/wiki/Daichi_Sumeragi"
+  ]
+}

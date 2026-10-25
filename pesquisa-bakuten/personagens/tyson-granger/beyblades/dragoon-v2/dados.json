@@ -1,0 +1,47 @@
+{
+  "id": "dragoon-v2",
+  "nome": "Dragoon V2 (Dragoon Victory 2)",
+  "nome_jp": "ドラグーンV2〈ビクトリー・ツー〉 (Doragūn Bikutorī Tsū)",
+  "dono": "tyson-granger",
+  "codigo_produto": "A-69",
+  "tipo": "attack",
+  "sistema": "magnacore",
+  "rotacao": "esquerda",
+  "fera_bit": "Dragoon (dragão azul / Seiryū, vento)",
+  "temporada": "v-force",
+  "pecas": {
+    "bit_chip": "Dragoon (V)",
+    "attack_ring": "Spike Dragon",
+    "weight_disk": "Magne Weight Disk",
+    "spin_gear": "Neo Left SG (Normal Core)",
+    "support_part": "Reverse Attack",
+    "blade_base": "Customize Grip Base"
+  },
+  "ponta": "grip (borracha flat removível com ímã)",
+  "atributos": {
+    "ataque": 10, "defesa": 4, "stamina": 3, "velocidade": 9,
+    "peso": 5, "equilibrio": 4, "resistencia_knockout": 4
+  },
+  "fisica": {
+    "massa_relativa": 1.0,
+    "raio_relativo": 1.05,
+    "atrito_ponta": 0.85,
+    "restituicao": 0.8,
+    "padrao_movimento": "orbita"
+  },
+  "especiais": [
+    { "nome": "Hyper Victory Tornado", "efeito": "Dash vermelho de 2 s com tornado: dano muito alto, knockback alto, imune a recoil durante o golpe", "custo": 100, "cooldown_s": 22 },
+    { "nome": "Vanishing Attack (efeito estimado)", "efeito": "1,5 s sem ser alvo; o próximo choque causa +40% de dano", "custo": 60, "cooldown_s": 15 },
+    { "nome": "Wave Attack (efeito estimado)", "efeito": "3 investidas curtas em ziguezague", "custo": 60, "cooldown_s": 15 }
+  ],
+  "antecessora": "dragoon-v",
+  "sucessora": "dragoon-v2-high-power-custom",
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dragoon_V2",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Spike_Dragon",
+    "https://beyblade.fandom.com/wiki/Hyper_Victory_Tornado",
+    "https://beyblade.fandom.com/wiki/Vanishing_Attack",
+    "https://beyblade.fandom.com/wiki/Wave_Attack"
+  ]
+}

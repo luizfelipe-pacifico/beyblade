@@ -1,0 +1,42 @@
+{
+  "id": "galeon-2-eg",
+  "nome": "Galeon 2 (Engine Gear)",
+  "nome_jp": "ガルオン2 (Garuon 2)",
+  "dono": "lee",
+  "codigo_produto": "nenhum (exclusiva do anime)",
+  "tipo": "balance",
+  "sistema": "engine-gear",
+  "rotacao": "direita",
+  "fera_bit": "Galeon (leão negro)",
+  "temporada": "g-revolution",
+  "pecas": {
+    "bit_chip": "Galeon",
+    "attack_ring": "Howling Leo",
+    "weight_disk": "Wide Attack",
+    "spin_gear": "Right EG (Metal Semi-Flat)",
+    "support_part": null,
+    "blade_base": "First Clutch Base"
+  },
+  "ponta": "semi-flat (metal, quase flat)",
+  "atributos": {
+    "ataque": 8, "defesa": 5, "stamina": 5, "velocidade": 8,
+    "peso": 7, "equilibrio": 5, "resistencia_knockout": 6
+  },
+  "fisica": {
+    "massa_relativa": 1.1,
+    "raio_relativo": 1.05,
+    "atrito_ponta": 0.6,
+    "restituicao": 0.55,
+    "padrao_movimento": "agressivo"
+  },
+  "especiais": [
+    { "nome": "Spiral Lightning", "efeito": "Onda elétrica em espiral: desorienta o alvo por 1,5 s e o empurra para a borda", "custo": 130, "cooldown_s": 26 }
+  ],
+  "antecessora": "galeon-2",
+  "sucessora": null,
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Galeon_2_(Engine_Gear)",
+    "https://beyblade.fandom.com/wiki/Spiral_Lightning"
+  ]
+}

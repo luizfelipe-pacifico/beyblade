@@ -1,0 +1,46 @@
+{
+  "id": "griffolyon",
+  "nome": "Griffolyon",
+  "nome_jp": "グリフォリオン (Guriforion)",
+  "dono": "robert-jurgen",
+  "codigo_produto": "A-28",
+  "tipo": "attack",
+  "sistema": "spin-gear",
+  "rotacao": "direita",
+  "fera_bit": "Griffolyon (grifo)",
+  "temporada": "bakuten-shoot",
+  "pecas": {
+    "bit_chip": "Griffolyon",
+    "attack_ring": "Cross Griffon",
+    "weight_disk": "Eight Balance",
+    "spin_gear": "Integrado à base (direita)",
+    "support_part": null,
+    "blade_base": "Griffolyon Base"
+  },
+  "ponta": "bola-estreita-alta (semi free-spin)",
+  "atributos": {
+    "ataque": 9, "defesa": 4, "stamina": 3, "velocidade": 7,
+    "peso": 5, "equilibrio": 3, "resistencia_knockout": 4
+  },
+  "fisica": {
+    "massa_relativa": 0.95,
+    "raio_relativo": 1.1,
+    "atrito_ponta": 0.35,
+    "restituicao": 0.75,
+    "padrao_movimento": "agressivo"
+  },
+  "especiais": [
+    { "nome": "Wing Dagger", "efeito": "Dispara 5-6 projéteis (penas) em leque: dano de rotação e empurrão leve", "custo": 100, "cooldown_s": 18 },
+    { "nome": "Wind Swords", "efeito": "Investida aérea com dano x1.8 e knockback alto em um golpe (descrição do anime não confirmada)", "custo": 100, "cooldown_s": 25 }
+  ],
+  "antecessora": null,
+  "sucessora": null,
+  "imagens": ["imagem.jpg", "anime.jpg", "fera-bit.jpg", "pecas/bit-chip.png", "pecas/attack-ring.jpg", "pecas/weight-disk.gif", "pecas/blade-base.jpg", "pecas/pecas-desmontadas.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Griffolyon",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Cross_Griffon",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Griffolyon_Base",
+    "https://beyblade.fandom.com/wiki/Wing_Dagger",
+    "https://beyblade.fandom.com/wiki/Robert_J%C3%BCrgens"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "draciel-v2",
+  "nome": "Draciel V2",
+  "nome_jp": "ドラシエルV2 (バイパー・ツー) (Dorashieru V2 / Baipā Tsū)",
+  "dono": "max-tate",
+  "codigo_produto": "A-85",
+  "tipo": "defense",
+  "sistema": "magnacore",
+  "rotacao": "direita",
+  "fera_bit": "Draciel (tartaruga / Genbu)",
+  "temporada": "v-force",
+  "pecas": {
+    "bit_chip": "Draciel (V)",
+    "attack_ring": "Strike Turtle",
+    "weight_disk": "Ten Heavy",
+    "spin_gear": "Neo Right SG (MG Core)",
+    "support_part": "Fin Tector",
+    "blade_base": "Switch Metal Ball Base"
+  },
+  "ponta": "bola-alta",
+  "atributos": {
+    "ataque": 4, "defesa": 10, "stamina": 6, "velocidade": 3,
+    "peso": 9, "equilibrio": 6, "resistencia_knockout": 9
+  },
+  "fisica": {
+    "massa_relativa": 1.25,
+    "raio_relativo": 1.05,
+    "atrito_ponta": 0.25,
+    "restituicao": 0.4,
+    "padrao_movimento": "centro"
+  },
+  "especiais": [
+    { "nome": "Heavy Viper Wall", "efeito": "Onda radial de água com knockback forte e -15% de equilíbrio no alvo", "custo": 120, "cooldown_s": 25 }
+  ],
+  "antecessora": "draciel-v",
+  "sucessora": "draciel-g",
+  "imagens": ["imagem.jpg", "anime.jpg", "pecas/attack-ring.jpg", "pecas/support-part.jpg", "pecas/blade-base.jpg", "pecas/pecas-desmontadas.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Draciel_V2",
+    "https://beyblade.fandom.com/wiki/Heavy_Viper_Wall",
+    "https://beyblade.fandom.com/wiki/Max_Tate"
+  ]
+}

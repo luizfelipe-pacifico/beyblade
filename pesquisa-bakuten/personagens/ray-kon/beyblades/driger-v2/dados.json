@@ -1,0 +1,43 @@
+{
+  "id": "driger-v2",
+  "nome": "Driger V2",
+  "nome_jp": "ドライガーV2（バルカン・ツー） (Doraigā Barukan Tsū)",
+  "dono": "ray-kon",
+  "codigo_produto": "A-75",
+  "tipo": "balance",
+  "sistema": "magnacore",
+  "rotacao": "direita",
+  "fera_bit": "Driger (tigre branco)",
+  "temporada": "v-force",
+  "pecas": {
+    "bit_chip": "Driger (V2 Version)",
+    "attack_ring": "Upper Claw",
+    "weight_disk": "Ten Balance",
+    "spin_gear": "Neo Right SG (Metal Weight Core)",
+    "support_part": "Upper Attack SP",
+    "blade_base": "Customize Change Base (Custom Metal Change)"
+  },
+  "ponta": "metal change (metal, 2 modos)",
+  "atributos": {
+    "ataque": 8, "defesa": 5, "stamina": 6, "velocidade": 7,
+    "peso": 6, "equilibrio": 6, "resistencia_knockout": 6
+  },
+  "fisica": {
+    "massa_relativa": 1.05,
+    "raio_relativo": 1.0,
+    "atrito_ponta": 0.45,
+    "restituicao": 0.55,
+    "padrao_movimento": "flower"
+  },
+  "especiais": [
+    { "nome": "Vulcan Power Claw", "efeito": "Investida com aura; próximo impacto aplica lift alto + knockback (chance de KO)", "custo": 130, "cooldown_s": 25 }
+  ],
+  "antecessora": "driger-v",
+  "sucessora": "driger-g",
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Driger_V2",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Upper_Claw",
+    "https://beyblade.fandom.com/wiki/Vulcan_Power_Claw"
+  ]
+}

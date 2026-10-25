@@ -1,0 +1,43 @@
+{
+  "id": "draciel-f",
+  "nome": "Draciel F",
+  "nome_jp": "ドラシエルF (Dorashieru F / Fortress)",
+  "dono": "max-tate",
+  "codigo_produto": "A-35",
+  "tipo": "defense",
+  "sistema": "spin-gear",
+  "rotacao": "direita",
+  "fera_bit": "Draciel (tartaruga / Genbu)",
+  "temporada": "bakuten-shoot",
+  "pecas": {
+    "bit_chip": "Draciel (F)",
+    "attack_ring": "Eight Spike",
+    "weight_disk": "Eight Balance",
+    "spin_gear": "Right SG (Oil Ball / Ball Bearing ver.)",
+    "support_part": null,
+    "blade_base": "Fortress Base"
+  },
+  "ponta": "bola-metal (com óleo)",
+  "atributos": {
+    "ataque": 2, "defesa": 9, "stamina": 7, "velocidade": 2,
+    "peso": 8, "equilibrio": 7, "resistencia_knockout": 9
+  },
+  "fisica": {
+    "massa_relativa": 1.15,
+    "raio_relativo": 1.0,
+    "atrito_ponta": 0.15,
+    "restituicao": 0.4,
+    "padrao_movimento": "centro"
+  },
+  "especiais": [
+    { "nome": "Fortress Defense", "efeito": "Escudo de 6 s: absorve 50% do dano de colisão e devolve 20% como recoil ao atacante", "custo": 100, "cooldown_s": 22 }
+  ],
+  "antecessora": "draciel-s",
+  "sucessora": "draciel-v",
+  "imagens": ["imagem.jpg", "anime.jpg", "pecas/attack-ring.gif", "pecas/weight-disk.gif", "pecas/spin-gear.gif", "pecas/blade-base.gif", "pecas/pecas-desmontadas.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Draciel_F",
+    "https://beyblade.fandom.com/wiki/Fortress_Defense",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_45"
+  ]
+}

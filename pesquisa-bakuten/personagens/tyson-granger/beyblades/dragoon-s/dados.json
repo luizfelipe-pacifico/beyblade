@@ -1,0 +1,46 @@
+{
+  "id": "dragoon-s",
+  "nome": "Dragoon S (Dragoon Storm)",
+  "nome_jp": "ドラグーンS〈ストーム〉 (Doragūn Sutōmu)",
+  "dono": "tyson-granger",
+  "codigo_produto": "34",
+  "tipo": "attack",
+  "sistema": "spin-gear",
+  "rotacao": "esquerda",
+  "fera_bit": "Dragoon (dragão azul / Seiryū, vento)",
+  "temporada": "bakuten-shoot",
+  "pecas": {
+    "bit_chip": "Dragoon",
+    "attack_ring": "Reverse Dragon",
+    "weight_disk": "Eight Wide",
+    "spin_gear": "Left SG",
+    "support_part": null,
+    "blade_base": "Storm Grip Base"
+  },
+  "ponta": "grip (borracha)",
+  "atributos": {
+    "ataque": 7, "defesa": 4, "stamina": 3, "velocidade": 9,
+    "peso": 3, "equilibrio": 5, "resistencia_knockout": 4
+  },
+  "fisica": {
+    "massa_relativa": 0.85,
+    "raio_relativo": 0.95,
+    "atrito_ponta": 0.85,
+    "restituicao": 0.7,
+    "padrao_movimento": "agressivo"
+  },
+  "especiais": [
+    { "nome": "Storm Attack", "efeito": "Tornado de 4 s em volta da bey: knockback alto para cima/para fora em quem encosta. A bey fica quase parada (velocidade -80%)", "custo": 100, "cooldown_s": 20 },
+    { "nome": "Lançamento invertido", "efeito": "2 s sem ser alvo do adversário logo após o lançamento (uso único)", "custo": 0, "cooldown_s": 0 }
+  ],
+  "antecessora": "dragoon-grip-attacker",
+  "sucessora": "dragoon-f",
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dragoon_S",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Reverse_Dragon",
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Eight_Wide",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Storm_Grip",
+    "https://beyblade.fandom.com/wiki/Storm_Attack"
+  ]
+}

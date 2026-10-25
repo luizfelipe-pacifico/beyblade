@@ -1,0 +1,50 @@
+{
+  "id": "zeus",
+  "nome": "Zeus",
+  "nome_jp": "ゼウス (Zeusu)",
+  "dono": "brooklyn-masefield",
+  "codigo_produto": "A-129",
+  "tipo": "stamina",
+  "sistema": "engine-gear",
+  "rotacao": "direita",
+  "fera_bit": "Zeus (Deus das Trevas; quimera/demônio alado negro)",
+  "temporada": "g-revolution",
+  "pecas": {
+    "bit_chip": "Zeus",
+    "attack_ring": "Screw Zeus (AR livre) + Holy Despell (Attack Ring Supporter)",
+    "weight_disk": "Ten Wide",
+    "spin_gear": "Right Customize Gear (Free Shaft Version, double bearing) + Light Sharp (Customize Engine Weight); Hasbro: Right EG (Metal Ball)",
+    "support_part": null,
+    "blade_base": "First Clutch Base (Zeus Version)"
+  },
+  "ponta": "sharp",
+  "atributos": {
+    "ataque": 6, "defesa": 8, "stamina": 10, "velocidade": 4,
+    "peso": 6, "equilibrio": 9, "resistencia_knockout": 8
+  },
+  "fisica": {
+    "massa_relativa": 1.05,
+    "raio_relativo": 1.05,
+    "atrito_ponta": 0.15,
+    "restituicao": 0.35,
+    "padrao_movimento": "centro"
+  },
+  "especiais": [
+    { "nome": "King of Darkness", "efeito": "escurece a arena por 3 s (oponente -30% precisão), 4-5 golpes rápidos e smash final com +120% knockback", "custo": 120, "cooldown_s": 30 },
+    { "nome": "Asas Negras / Buraco Negro (modo chefe)", "efeito": "berserk por 8 s: +50% ataque, -30% equilíbrio; uso único por luta", "custo": 150, "cooldown_s": 999 }
+  ],
+  "antecessora": null,
+  "sucessora": null,
+  "imagens": ["imagem.jpg", "imagem-infobox.jpg", "imagem-hasbro.png", "fera-bit.png", "anime.png", "anime-king-of-darkness.png", "pecas/caixa-verso-pecas.jpg", "pecas/montada-inferior.jpg", "pecas/montada-com-launcher.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Zeus",
+    "https://beyblade.fandom.com/wiki/Zeus_(Hasbro)",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Holy_Despell",
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Ten_Wide",
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_Right_Customize_Gear_(Free_Shaft_Version)",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_First_Clutch_Base_(Zeus_Version)",
+    "https://beyblade.fandom.com/wiki/King_of_Darkness",
+    "https://beyblade.fandom.com/wiki/Brooklyn",
+    "https://beyblade.fandom.com/wiki/File:Zeus_Box_Back.jpg"
+  ]
+}

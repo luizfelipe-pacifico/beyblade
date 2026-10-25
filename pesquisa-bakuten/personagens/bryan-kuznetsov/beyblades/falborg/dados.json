@@ -1,0 +1,53 @@
+{
+  "id": "falborg",
+  "nome": "Falborg",
+  "nome_jp": "ファルボーグ (Farubōgu)",
+  "dono": "bryan-kuznetsov",
+  "codigo_produto": null,
+  "tipo": "attack",
+  "sistema": "spin-gear",
+  "rotacao": "direita",
+  "fera_bit": "Falborg (falcão de vento, fera bit artificial)",
+  "temporada": "bakuten-shoot",
+  "pecas": {
+    "bit_chip": "Falborg",
+    "attack_ring": "Fal Wing",
+    "weight_disk": "Eight Heavy",
+    "spin_gear": "Right SG",
+    "support_part": null,
+    "blade_base": "Drag Saucer"
+  },
+  "ponta": "não confirmado (estimativa: flat/semi-flat)",
+  "atributos": {
+    "ataque": 8, "defesa": 4, "stamina": 5, "velocidade": 8,
+    "peso": 6, "equilibrio": 5, "resistencia_knockout": 5
+  },
+  "fisica": {
+    "massa_relativa": 1.0,
+    "raio_relativo": 1.1,
+    "atrito_ponta": 0.6,
+    "restituicao": 0.7,
+    "padrao_movimento": "agressivo"
+  },
+  "especiais": [
+    { "nome": "Stroblitz", "efeito": "3 lâminas de vento em leque; cada acerto tira 5% de rotação e empurra o adversário 0,5 raio", "custo": 100, "cooldown_s": 18 }
+  ],
+  "antecessora": null,
+  "sucessora": "falborg-2",
+  "imagens": [
+    "imagem.png",
+    "anime.jpg",
+    "anime-destruida.jpg",
+    "anime-fera-bit.jpg",
+    "pecas/gba-pecas-e-stats.png",
+    "pecas/weight-disk.png"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Falborg",
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Falborg",
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Eight_Heavy",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_46",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_49",
+    "https://ja.wikipedia.org/wiki/爆転シュート_ベイブレード_(アニメ)"
+  ]
+}

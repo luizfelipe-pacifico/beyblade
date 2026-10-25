@@ -1,0 +1,44 @@
+{
+  "id": "dragoon-v2-high-power-custom",
+  "nome": "Dragoon V2 High Power Custom",
+  "nome_jp": "ドラグーンV2〈ビクトリー・ツー〉ハイパワーカスタム (Doragūn Bikutorī Tsū Hai Pawā Kasutamu)",
+  "dono": "tyson-granger",
+  "codigo_produto": "RA-01",
+  "tipo": "attack",
+  "sistema": "magnacore",
+  "rotacao": "esquerda (anime, inferida) / direita (brinquedo RC, segundo a wiki)",
+  "fera_bit": "Dragoon (dragão azul / Seiryū, vento)",
+  "temporada": "v-force",
+  "pecas": {
+    "bit_chip": "Dragoon (V)",
+    "attack_ring": "Spike Dragon",
+    "weight_disk": "não confirmado",
+    "spin_gear": "não confirmado",
+    "support_part": "Reverse Attack",
+    "blade_base": "RC Flat Base"
+  },
+  "ponta": "semi-flat",
+  "atributos": {
+    "ataque": 10, "defesa": 5, "stamina": 4, "velocidade": 8,
+    "peso": 8, "equilibrio": 6, "resistencia_knockout": 6
+  },
+  "fisica": {
+    "massa_relativa": 1.3,
+    "raio_relativo": 1.1,
+    "atrito_ponta": 0.55,
+    "restituicao": 0.7,
+    "padrao_movimento": "orbita"
+  },
+  "especiais": [
+    { "nome": "Hyper Victory Tornado (Custom)", "efeito": "Dash vermelho de 2,5 s com tornado: +15% de dano em relação à V2, knockback alto", "custo": 100, "cooldown_s": 22 },
+    { "nome": "Tune Up (passiva)", "efeito": "Recoil sofrido -30% em relação à V2", "custo": 0, "cooldown_s": 0 }
+  ],
+  "antecessora": "dragoon-v2",
+  "sucessora": "dragoon-g",
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dragoon_V2_High_Power_Custom",
+    "https://beyblade.fandom.com/wiki/Beyblade:_V-Force_-_Episode_47",
+    "https://beyblade.fandom.com/wiki/Beyblade:_V-Force_-_Episode_51"
+  ]
+}

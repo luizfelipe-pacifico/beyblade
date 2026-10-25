@@ -1,0 +1,43 @@
+{
+  "id": "draciel-s",
+  "nome": "Draciel S",
+  "nome_jp": "ドラシエルS (Dorashieru S / Shield)",
+  "dono": "max-tate",
+  "codigo_produto": "A-14",
+  "tipo": "defense",
+  "sistema": "spin-gear",
+  "rotacao": "direita",
+  "fera_bit": "Draciel (tartaruga / Genbu)",
+  "temporada": "bakuten-shoot",
+  "pecas": {
+    "bit_chip": "Draciel",
+    "attack_ring": "Cross Spike",
+    "weight_disk": "Eight Balance",
+    "spin_gear": "Right SG",
+    "support_part": null,
+    "blade_base": "SG Metal Ball Base"
+  },
+  "ponta": "bola-metal",
+  "atributos": {
+    "ataque": 2, "defesa": 8, "stamina": 6, "velocidade": 2,
+    "peso": 8, "equilibrio": 6, "resistencia_knockout": 8
+  },
+  "fisica": {
+    "massa_relativa": 1.1,
+    "raio_relativo": 1.0,
+    "atrito_ponta": 0.2,
+    "restituicao": 0.45,
+    "padrao_movimento": "centro"
+  },
+  "especiais": [
+    { "nome": "Metal Ball Defense", "efeito": "6 s com +40% de massa efetiva; o atacante perde 5% de RPM por colisão", "custo": 100, "cooldown_s": 22 }
+  ],
+  "antecessora": "draciel-metal-ball-defenser",
+  "sucessora": "draciel-f",
+  "imagens": ["imagem.png", "anime.jpg", "pecas/attack-ring.gif", "pecas/weight-disk.gif", "pecas/spin-gear.gif", "pecas/blade-base.gif", "pecas/pecas-desmontadas.jpg"],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Draciel_S",
+    "https://beyblade.fandom.com/wiki/Metal_Ball_Defense",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_14"
+  ]
+}

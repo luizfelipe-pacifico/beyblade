@@ -1,0 +1,43 @@
+{
+  "id": "master-dragoon",
+  "nome": "Master Dragoon (genérica, uso temporário)",
+  "nome_jp": "não confirmado (campo vazio na wiki)",
+  "dono": "kenny",
+  "codigo_produto": "A-31",
+  "tipo": "attack",
+  "sistema": "spin-gear",
+  "rotacao": "direita",
+  "fera_bit": "nenhuma",
+  "temporada": "v-force",
+  "pecas": {
+    "bit_chip": "Master Dragoon",
+    "attack_ring": "Upper Dragoon",
+    "weight_disk": "Eight Heavy",
+    "spin_gear": "Right SG",
+    "support_part": null,
+    "blade_base": "SG Flat Base"
+  },
+  "ponta": "flat (plástico)",
+  "atributos": {
+    "ataque": 6, "defesa": 5, "stamina": 4, "velocidade": 6,
+    "peso": 6, "equilibrio": 6, "resistencia_knockout": 5
+  },
+  "fisica": {
+    "massa_relativa": 0.95,
+    "raio_relativo": 0.95,
+    "atrito_ponta": 0.5,
+    "restituicao": 0.5,
+    "padrao_movimento": "flower"
+  },
+  "especiais": [
+    { "nome": "Upper (passiva)", "efeito": "25% de chance por choque frontal de desestabilizar o adversário", "custo": 0, "cooldown_s": 0 }
+  ],
+  "antecessora": null,
+  "sucessora": null,
+  "imagens": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Master_Dragoon",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_SG_Flat_Base",
+    "https://beyblade.fandom.com/wiki/Beyblade:_V-Force_-_Episode_28"
+  ]
+}
