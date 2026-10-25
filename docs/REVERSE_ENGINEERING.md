@@ -23,6 +23,16 @@ node scripts/extract-rom.js "<caminho>/Beyblade G-Revolution (USA).gba"
 
 O script confere o código e o SHA-1 da ROM, lê as tabelas abaixo (`scripts/lib/rom.js`) e grava `assets-rom/data/catalog.json` (fora do git). Os testes (`tests/rom.test.js`) usam uma ROM sintética, então a suíte não precisa da ROM real.
 
+### Sprites pelo emulador
+
+Os gráficos das beys (ponteiro `0x14` do registro) usam um formato próprio: cabeçalho com tamanho (`20 20` = 32×32), tabela de offsets e dados comprimidos que **não** são o LZ77 da BIOS (testado sem e com cabeçalho). Em vez de decodificar o formato, deixamos o jogo descomprimir e lemos a VRAM:
+
+1. No mGBA: **Tools > Scripting > File > Load script** e escolha `scripts/mgba/dump-vram.lua` (o mGBA 0.10 não tem opção de linha de comando para scripts).
+2. Jogue normalmente: menus, seleção, lançamento e batalha. A cada 30 frames, se os sprites mudaram, o script grava VRAM, paletas, OAM, registradores de vídeo e um screenshot em `assets-rom/mgba/` (até 400 snapshots).
+3. `node scripts/render-vram.js` decodifica os sprites de cada snapshot (4bpp/8bpp, mapeamento 1D/2D, flip) e grava um PNG por sprite distinto em `assets-rom/sprites/`, com `sprites.json` dizendo em que snapshots cada um apareceu.
+
+Decodificação em `scripts/lib/gba-gfx.js` (testes em `tests/gba-gfx.test.js`, com dados sintéticos). Sprites affine (rotação/escala) saem sem a transformação; backgrounds (arenas) ainda não são renderizados.
+
 ## Descobertas
 
 - **Textos sem compressão, em ASCII.** Cada texto existe em 5 idiomas, na ordem `en, fr, es, it, de`. O slot `fr` costuma estar vazio ou em inglês (a versão USA não tem francês completo).
@@ -127,7 +137,8 @@ O lançador e a corda **não somam stats** à bey. O efeito encontrado é o desg
 - Significado de `+2` do blader, do byte `0x1c` da bey e da faixa de `0x0803EBD8`.
 - Efeito do Spin Gear / Engine Gear na batalha (`"do an ENGINE GEAR of %d"` em `0x0833C5C8`) e do especial da fera bit (`"start bit beast from select : power %d"`).
 - Os números das tabelas de IA (abaixo). O cálculo local de dano foi identificado em `0x0802FFAC` / `0x080300D4` (seção abaixo); ainda falta mapear todos os estados que permitem ou impedem chamar essa rotina, os efeitos posteriores e os caminhos próprios de especiais/Engine Gear.
-- Gráficos (a partir dos ponteiros `0x14`/`0x18` de cada bey) e áudio.
+- Gráficos: sprites via emulador (ver [Sprites pelo emulador](#sprites-pelo-emulador)); backgrounds das arenas e o formato comprimido próprio (ponteiro `0x14`) ainda não. Paleta da bey (ponteiro `0x18`): blocos de 512 bytes (256 cores BGR555).
+- Áudio.
 
 ### Dano e defesa: avanço de 2026-10-25
 
