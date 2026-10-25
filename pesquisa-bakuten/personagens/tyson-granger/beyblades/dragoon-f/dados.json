@@ -7,31 +7,45 @@
   "tipo": "attack",
   "sistema": "spin-gear",
   "rotacao": "esquerda",
-  "fera_bit": "Dragoon (dragão azul / Seiryū, vento)",
+  "fera_bit": "dragoon",
   "temporada": "bakuten-shoot",
   "pecas": {
-    "bit_chip": "Dragoon (F)",
-    "attack_ring": "Dual Dragon",
-    "weight_disk": "Eight Wide",
-    "spin_gear": "Left SG",
-    "support_part": null,
-    "blade_base": "Fantom Grip Base"
+    "bit_chip": "bit-chip/dragoon-f",
+    "attack_ring": "attack-ring/dual-dragon",
+    "weight_disk": "weight-disk/eight-wide",
+    "spin_gear": "spin-gear/left-sg",
+    "blade_base": "blade-base/fantom-grip-base"
   },
   "ponta": "grip (borracha dura, eixo alto)",
   "atributos": {
-    "ataque": 7, "defesa": 5, "stamina": 3, "velocidade": 7,
-    "peso": 4, "equilibrio": 5, "resistencia_knockout": 5
+    "ataque": 7.4,
+    "defesa": 3.9,
+    "stamina": 6,
+    "velocidade": 9.2,
+    "peso": 4.2,
+    "equilibrio": 5,
+    "resistencia_knockout": 6.4
   },
   "fisica": {
     "massa_relativa": 0.9,
-    "raio_relativo": 1.0,
+    "raio_relativo": 1,
     "atrito_ponta": 0.75,
     "restituicao": 0.62,
     "padrao_movimento": "agressivo"
   },
   "especiais": [
-    { "nome": "Phantom Hurricane", "efeito": "Tornado grande por 5 s: knockback alto e dano de rotação contínuo no raio. A bey fica quase parada", "custo": 100, "cooldown_s": 22 },
-    { "nome": "Storm Attack", "efeito": "Tornado menor por 3 s com knockback", "custo": 70, "cooldown_s": 15 }
+    {
+      "nome": "Phantom Hurricane",
+      "efeito": "Tornado grande por 5 s: knockback alto e dano de rotação contínuo no raio. A bey fica quase parada",
+      "custo": 100,
+      "cooldown_s": 22
+    },
+    {
+      "nome": "Storm Attack",
+      "efeito": "Tornado menor por 3 s com knockback",
+      "custo": 70,
+      "cooldown_s": 15
+    }
   ],
   "antecessora": "dragoon-s",
   "sucessora": "dragoon-v",
@@ -42,5 +56,66 @@
     "https://beyblade.fandom.com/wiki/Phantom_Hurricane",
     "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_23",
     "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_45"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 7,
+    "defesa": 5,
+    "stamina": 3,
+    "velocidade": 7,
+    "peso": 4,
+    "equilibrio": 5,
+    "resistencia_knockout": 5
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Dragoon (F)",
+    "attack_ring": "Dual Dragon",
+    "weight_disk": "Eight Wide",
+    "spin_gear": "Left SG",
+    "support_part": null,
+    "blade_base": "Fantom Grip Base"
+  },
+  "lancador": "lancadores/dragoon-shooter-dx",
+  "medidas": {
+    "peso_g": 30.3,
+    "diametro_mm": 44,
+    "altura_mm": 25.2
+  },
+  "atributos_brinquedo": {
+    "ataque": 6.4,
+    "defesa": 3.9,
+    "stamina": 5,
+    "velocidade": 9.2,
+    "peso": 4.2,
+    "equilibrio": 5,
+    "resistencia_knockout": 5.4
+  },
+  "ajuste_anime": {
+    "ataque": 1,
+    "stamina": 1,
+    "resistencia_knockout": 1
+  },
+  "calculo": {
+    "ponta": "grip",
+    "origem_ponta": "blade-base/fantom-grip-base",
+    "atrito_ponta": 0.85,
+    "tipo_contato": "smash",
+    "recoil": 0.5,
+    "distribuicao_peso": "periferia",
+    "simetria": 4,
+    "engine_gear": null,
+    "inercia_g_mm2": 6742,
+    "estrelas_takara": {
+      "ataque": 7.5,
+      "defesa": 5,
+      "stamina": 7,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.67,
+      "defesa": 0.35,
+      "stamina": 0.37
+    }
+  },
+  "ripcord": "lancadores/ripcords/dragon-winder",
+  "fera_bit_descricao": "Dragoon (dragão azul / Seiryū, vento)"
 }

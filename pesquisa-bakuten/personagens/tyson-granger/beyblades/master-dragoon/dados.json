@@ -7,20 +7,24 @@
   "tipo": "attack",
   "sistema": "spin-gear",
   "rotacao": "direita",
-  "fera_bit": "nenhuma",
+  "fera_bit": null,
   "temporada": "v-force",
   "pecas": {
-    "bit_chip": "Master Dragoon",
-    "attack_ring": "Upper Dragoon",
-    "weight_disk": "Eight Heavy",
-    "spin_gear": "Right SG",
-    "support_part": null,
-    "blade_base": "SG Flat Base"
+    "bit_chip": "bit-chip/master-dragoon",
+    "attack_ring": "attack-ring/upper-dragoon",
+    "weight_disk": "weight-disk/eight-heavy",
+    "spin_gear": "spin-gear/right-sg",
+    "blade_base": "blade-base/sg-flat-base"
   },
   "ponta": "flat (plástico)",
   "atributos": {
-    "ataque": 6, "defesa": 5, "stamina": 4, "velocidade": 6,
-    "peso": 6, "equilibrio": 6, "resistencia_knockout": 5
+    "ataque": 5.5,
+    "defesa": 5.1,
+    "stamina": 3.6,
+    "velocidade": 6.7,
+    "peso": 5.1,
+    "equilibrio": 7.8,
+    "resistencia_knockout": 6
   },
   "fisica": {
     "massa_relativa": 0.95,
@@ -30,7 +34,12 @@
     "padrao_movimento": "flower"
   },
   "especiais": [
-    { "nome": "Upper (passiva)", "efeito": "25% de chance por choque frontal de desestabilizar o adversário", "custo": 0, "cooldown_s": 0 }
+    {
+      "nome": "Upper (passiva)",
+      "efeito": "25% de chance por choque frontal de desestabilizar o adversário",
+      "custo": 0,
+      "cooldown_s": 0
+    }
   ],
   "antecessora": null,
   "sucessora": null,
@@ -39,5 +48,62 @@
     "https://beyblade.fandom.com/wiki/Master_Dragoon",
     "https://beyblade.fandom.com/wiki/Blade_Base_-_SG_Flat_Base",
     "https://beyblade.fandom.com/wiki/Beyblade:_V-Force_-_Episode_28"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 6,
+    "defesa": 5,
+    "stamina": 4,
+    "velocidade": 6,
+    "peso": 6,
+    "equilibrio": 6,
+    "resistencia_knockout": 5
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Master Dragoon",
+    "attack_ring": "Upper Dragoon",
+    "weight_disk": "Eight Heavy",
+    "spin_gear": "Right SG",
+    "support_part": null,
+    "blade_base": "SG Flat Base"
+  },
+  "lancador": "lancadores/ez-shooter",
+  "medidas": {
+    "peso_g": 32.3,
+    "diametro_mm": 44,
+    "altura_mm": 22.5
+  },
+  "atributos_brinquedo": {
+    "ataque": 5.5,
+    "defesa": 5.1,
+    "stamina": 3.6,
+    "velocidade": 6.7,
+    "peso": 5.1,
+    "equilibrio": 7.8,
+    "resistencia_knockout": 6
+  },
+  "ajuste_anime": {},
+  "calculo": {
+    "ponta": "flat",
+    "origem_ponta": "blade-base/sg-flat-base",
+    "atrito_ponta": 0.5,
+    "tipo_contato": "upper",
+    "recoil": 0.25,
+    "distribuicao_peso": "centro",
+    "simetria": 3,
+    "engine_gear": null,
+    "inercia_g_mm2": 5855,
+    "estrelas_takara": {
+      "ataque": 6.5,
+      "defesa": 6,
+      "stamina": 4,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.59,
+      "defesa": 0.53,
+      "stamina": 0.41
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "nenhuma"
 }

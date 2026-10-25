@@ -7,9 +7,69 @@
   "tipo": "balance",
   "sistema": "magnacore",
   "rotacao": "direita",
-  "fera_bit": "Dranzer (fênix)",
+  "fera_bit": "dranzer",
   "temporada": "v-force",
   "pecas": {
+    "bit_chip": "bit-chip/dranzer-v2",
+    "attack_ring": "attack-ring/cross-dranzer",
+    "support_part": "support-part/cross-survivor",
+    "weight_disk": "weight-disk/ten-balance",
+    "spin_gear": "spin-gear/neo-right-sg-mw-core",
+    "blade_base": "blade-base/customize-clutch-base"
+  },
+  "ponta": "sharp -> semi-flat (clutch automático por RPM)",
+  "atributos": {
+    "ataque": 6.9,
+    "defesa": 4.7,
+    "stamina": 6,
+    "velocidade": 4.4,
+    "peso": 5.9,
+    "equilibrio": 6,
+    "resistencia_knockout": 5.3
+  },
+  "fisica": {
+    "massa_relativa": 0.95,
+    "raio_relativo": 1,
+    "atrito_ponta": 0.15,
+    "restituicao": 0.6,
+    "padrao_movimento": "centro -> flower (clutch abaixo de ~55% da rotação)"
+  },
+  "especiais": [
+    {
+      "nome": "Volcano Excellent Emission",
+      "efeito": "Investida em velocidade máxima envolta em chamas; dano muito alto + knockback",
+      "custo": 100,
+      "cooldown_s": 22
+    }
+  ],
+  "antecessora": "dranzer-v",
+  "sucessora": "dranzer-g",
+  "imagens": [],
+  "imagens_pendentes": [
+    "imagem.jpg",
+    "anime.jpg",
+    "pecas/attack-ring.jpg",
+    "pecas/weight-disk.jpg",
+    "pecas/spin-gear.jpg",
+    "pecas/support-part.jpg",
+    "pecas/blade-base.jpg",
+    "pecas/todas-pecas.png"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dranzer_V2",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Customize_Clutch_Base",
+    "https://beyblade.fandom.com/wiki/Volcano_Excellent_Emission"
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 6,
+    "defesa": 6,
+    "stamina": 6,
+    "velocidade": 6,
+    "peso": 5,
+    "equilibrio": 7,
+    "resistencia_knockout": 6
+  },
+  "pecas_nomes_originais": {
     "bit_chip": "Dranzer",
     "attack_ring": "Cross Dranzer",
     "weight_disk": "Ten Balance",
@@ -17,28 +77,47 @@
     "support_part": "Cross Survivor",
     "blade_base": "Customize Clutch Base"
   },
-  "ponta": "sharp -> semi-flat (clutch automático por RPM)",
-  "atributos": {
-    "ataque": 6, "defesa": 6, "stamina": 6, "velocidade": 6,
-    "peso": 5, "equilibrio": 7, "resistencia_knockout": 6
+  "lancador": "lancadores/customize-grip-kai",
+  "medidas": {
+    "peso_g": 33.9,
+    "diametro_mm": 44,
+    "altura_mm": 24.6
   },
-  "fisica": {
-    "massa_relativa": 0.95,
-    "raio_relativo": 1.0,
-    "atrito_ponta": 0.15,
-    "restituicao": 0.6,
-    "padrao_movimento": "centro -> flower (clutch abaixo de ~55% da rotação)"
+  "atributos_brinquedo": {
+    "ataque": 4.9,
+    "defesa": 4.7,
+    "stamina": 6,
+    "velocidade": 3.4,
+    "peso": 5.9,
+    "equilibrio": 6,
+    "resistencia_knockout": 5.3
   },
-  "especiais": [
-    { "nome": "Volcano Excellent Emission", "efeito": "Investida em velocidade máxima envolta em chamas; dano muito alto + knockback", "custo": 100, "cooldown_s": 22 }
-  ],
-  "antecessora": "dranzer-v",
-  "sucessora": "dranzer-g",
-  "imagens": [],
-  "imagens_pendentes": ["imagem.jpg", "anime.jpg", "pecas/attack-ring.jpg", "pecas/weight-disk.jpg", "pecas/spin-gear.jpg", "pecas/support-part.jpg", "pecas/blade-base.jpg", "pecas/todas-pecas.png"],
-  "fontes": [
-    "https://beyblade.fandom.com/wiki/Dranzer_V2",
-    "https://beyblade.fandom.com/wiki/Blade_Base_-_Customize_Clutch_Base",
-    "https://beyblade.fandom.com/wiki/Volcano_Excellent_Emission"
-  ]
+  "ajuste_anime": {
+    "ataque": 2,
+    "velocidade": 1
+  },
+  "calculo": {
+    "ponta": "sharp",
+    "origem_ponta": "blade-base/customize-clutch-base",
+    "atrito_ponta": 0.2,
+    "tipo_contato": "upper",
+    "recoil": 0.35,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 2,
+    "engine_gear": null,
+    "inercia_g_mm2": 6991,
+    "estrelas_takara": {
+      "ataque": 6,
+      "defesa": 5,
+      "stamina": 7,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.5,
+      "defesa": 0.56,
+      "stamina": 0.63
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Dranzer (fênix)"
 }

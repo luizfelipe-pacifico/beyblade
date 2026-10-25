@@ -7,20 +7,23 @@
   "tipo": "attack",
   "sistema": "hms",
   "rotacao": "ambas",
-  "fera_bit": "Gaia Dragoon / Strata Dragoon (dragão dourado)",
+  "fera_bit": "gaia-dragoon",
   "temporada": "g-revolution",
   "pecas": {
-    "bit_chip": "Bit Protector - Strata Dragoon",
-    "attack_ring": "Metal Saucer (Metal Frame + ABS Caul)",
-    "weight_disk": "Circle Heavy",
-    "spin_gear": null,
-    "support_part": null,
-    "blade_base": "Running Core - Flat Core"
+    "bit_chip": "bit-chip/gaia-dragoon-emblem",
+    "attack_ring": "attack-ring/metal-saucer",
+    "weight_disk": "weight-disk/circle-heavy",
+    "spin_gear": "spin-gear/flat-core"
   },
   "ponta": "flat",
   "atributos": {
-    "ataque": 7, "defesa": 6, "stamina": 4, "velocidade": 8,
-    "peso": 8, "equilibrio": 6, "resistencia_knockout": 6
+    "ataque": 6.3,
+    "defesa": 5,
+    "stamina": 4,
+    "velocidade": 6.5,
+    "peso": 5.2,
+    "equilibrio": 5.8,
+    "resistencia_knockout": 5.7
   },
   "fisica": {
     "massa_relativa": 1.2,
@@ -30,11 +33,24 @@
     "padrao_movimento": "agressivo"
   },
   "especiais": [
-    { "nome": "Spike Saw (Bakukyō Hadan)", "efeito": "emerge do chão (0,5 s invulnerável) e investe incandescente: +90% dano e knockback forte no 1º contato", "custo": 100, "cooldown_s": 24 }
+    {
+      "nome": "Spike Saw (Bakukyō Hadan)",
+      "efeito": "emerge do chão (0,5 s invulnerável) e investe incandescente: +90% dano e knockback forte no 1º contato",
+      "custo": 100,
+      "cooldown_s": 24
+    }
   ],
   "antecessora": "gaia-dragoon-g",
   "sucessora": null,
-  "imagens": ["imagem.jpg", "pecas/attack-ring.jpg", "pecas/metal-frame.jpg", "pecas/running-core.jpg", "pecas/montada-lateral.jpg", "pecas/montada-inferior.jpg", "pecas/montada-hasbro.jpg"],
+  "imagens": [
+    "imagem.jpg",
+    "pecas/attack-ring.jpg",
+    "pecas/metal-frame.jpg",
+    "pecas/running-core.jpg",
+    "pecas/montada-lateral.jpg",
+    "pecas/montada-inferior.jpg",
+    "pecas/montada-hasbro.jpg"
+  ],
   "fontes": [
     "https://beyblade.fandom.com/wiki/Strata_Dragoon_MS",
     "https://beyblade.fandom.com/wiki/Attack_Ring_-_Metal_Saucer",
@@ -42,5 +58,64 @@
     "https://beyblade.fandom.com/wiki/Running_Core_-_Flat_Core",
     "https://beyblade.fandom.com/wiki/Bit_Protector_-_Strata_Dragoon",
     "https://beyblade.fandom.com/wiki/Spike_Saw"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 7,
+    "defesa": 6,
+    "stamina": 4,
+    "velocidade": 8,
+    "peso": 8,
+    "equilibrio": 6,
+    "resistencia_knockout": 6
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Bit Protector - Strata Dragoon",
+    "attack_ring": "Metal Saucer (Metal Frame + ABS Caul)",
+    "weight_disk": "Circle Heavy",
+    "spin_gear": null,
+    "support_part": null,
+    "blade_base": "Running Core - Flat Core"
+  },
+  "lancador": "lancadores/dual-shooter",
+  "medidas": {
+    "peso_g": 32.4,
+    "diametro_mm": 43,
+    "altura_mm": 24.3
+  },
+  "atributos_brinquedo": {
+    "ataque": 5.3,
+    "defesa": 5,
+    "stamina": 4,
+    "velocidade": 6.5,
+    "peso": 5.2,
+    "equilibrio": 5.8,
+    "resistencia_knockout": 5.7
+  },
+  "ajuste_anime": {
+    "ataque": 1
+  },
+  "calculo": {
+    "ponta": "flat",
+    "origem_ponta": "spin-gear/flat-core",
+    "atrito_ponta": 0.5,
+    "tipo_contato": "survival",
+    "recoil": 0.3,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 2,
+    "engine_gear": null,
+    "inercia_g_mm2": 7206,
+    "estrelas_takara": {
+      "ataque": 8,
+      "defesa": 6,
+      "stamina": 4,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.3,
+      "defesa": 0.52,
+      "stamina": 0.54
+    }
+  },
+  "ripcord": "lancadores/ripcords/g-winder",
+  "fera_bit_descricao": "Gaia Dragoon / Strata Dragoon (dragão dourado)"
 }

@@ -7,20 +7,23 @@
   "tipo": "balance",
   "sistema": "hms",
   "rotacao": "ambas",
-  "fera_bit": "Driger (tigre branco)",
+  "fera_bit": "driger",
   "temporada": "g-revolution",
   "pecas": {
-    "bit_chip": "Driger Emblem (Bit Protector)",
-    "attack_ring": "Metal Upper",
-    "weight_disk": "Circle Balance",
-    "spin_gear": "Semi-Flat Core (Running Core)",
-    "support_part": null,
-    "blade_base": null
+    "bit_chip": "bit-chip/driger-emblem",
+    "attack_ring": "attack-ring/metal-upper",
+    "weight_disk": "weight-disk/circle-balance",
+    "spin_gear": "spin-gear/semi-flat-core"
   },
   "ponta": "semi-flat",
   "atributos": {
-    "ataque": 8, "defesa": 6, "stamina": 6, "velocidade": 7,
-    "peso": 8, "equilibrio": 7, "resistencia_knockout": 7
+    "ataque": 5.8,
+    "defesa": 4.9,
+    "stamina": 6.2,
+    "velocidade": 4,
+    "peso": 7.9,
+    "equilibrio": 6.5,
+    "resistencia_knockout": 6.4
   },
   "fisica": {
     "massa_relativa": 1.25,
@@ -30,7 +33,12 @@
     "padrao_movimento": "orbita"
   },
   "especiais": [
-    { "nome": "Thunder Slash", "efeito": "Carga de 1 s com aura elétrica e um golpe único de altíssimo dano e knockback", "custo": 160, "cooldown_s": 35 }
+    {
+      "nome": "Thunder Slash",
+      "efeito": "Carga de 1 s com aura elétrica e um golpe único de altíssimo dano e knockback",
+      "custo": 160,
+      "cooldown_s": 35
+    }
   ],
   "antecessora": "driger-g",
   "sucessora": null,
@@ -38,5 +46,64 @@
   "fontes": [
     "https://beyblade.fandom.com/wiki/Driger_MS",
     "https://beyblade.fandom.com/wiki/Thunder_Slash"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 8,
+    "defesa": 6,
+    "stamina": 6,
+    "velocidade": 7,
+    "peso": 8,
+    "equilibrio": 7,
+    "resistencia_knockout": 7
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Driger Emblem (Bit Protector)",
+    "attack_ring": "Metal Upper",
+    "weight_disk": "Circle Balance",
+    "spin_gear": "Semi-Flat Core (Running Core)",
+    "support_part": null,
+    "blade_base": null
+  },
+  "lancador": "lancadores/hms-customize-grip",
+  "medidas": {
+    "peso_g": 37.7,
+    "diametro_mm": 40,
+    "altura_mm": 25.4
+  },
+  "atributos_brinquedo": {
+    "ataque": 4.8,
+    "defesa": 4.9,
+    "stamina": 6.2,
+    "velocidade": 4,
+    "peso": 7.9,
+    "equilibrio": 6.5,
+    "resistencia_knockout": 6.4
+  },
+  "ajuste_anime": {
+    "ataque": 1
+  },
+  "calculo": {
+    "ponta": "semi-flat",
+    "origem_ponta": "spin-gear/semi-flat-core",
+    "atrito_ponta": 0.3,
+    "tipo_contato": "upper",
+    "recoil": 0.35,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 2,
+    "engine_gear": null,
+    "inercia_g_mm2": 8562,
+    "estrelas_takara": {
+      "ataque": 5.5,
+      "defesa": 4.5,
+      "stamina": 7,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.52,
+      "defesa": 0.71,
+      "stamina": 0.69
+    }
+  },
+  "ripcord": "lancadores/ripcords/g-winder",
+  "fera_bit_descricao": "Driger (tigre branco)"
 }

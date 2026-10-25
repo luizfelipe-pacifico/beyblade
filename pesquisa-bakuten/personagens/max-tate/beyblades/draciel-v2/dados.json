@@ -7,20 +7,25 @@
   "tipo": "defense",
   "sistema": "magnacore",
   "rotacao": "direita",
-  "fera_bit": "Draciel (tartaruga / Genbu)",
+  "fera_bit": "draciel",
   "temporada": "v-force",
   "pecas": {
-    "bit_chip": "Draciel (V)",
-    "attack_ring": "Strike Turtle",
-    "weight_disk": "Ten Heavy",
-    "spin_gear": "Neo Right SG (MG Core)",
-    "support_part": "Fin Tector",
-    "blade_base": "Switch Metal Ball Base"
+    "bit_chip": "bit-chip/draciel-v2",
+    "attack_ring": "attack-ring/strike-turtle",
+    "support_part": "support-part/fin-tector",
+    "weight_disk": "weight-disk/ten-heavy",
+    "spin_gear": "spin-gear/neo-right-sg-south-magnecore",
+    "blade_base": "blade-base/switch-metal-ball-base"
   },
   "ponta": "bola-alta",
   "atributos": {
-    "ataque": 4, "defesa": 10, "stamina": 6, "velocidade": 3,
-    "peso": 9, "equilibrio": 6, "resistencia_knockout": 9
+    "ataque": 4.5,
+    "defesa": 9.7,
+    "stamina": 6.2,
+    "velocidade": 3.3,
+    "peso": 7.6,
+    "equilibrio": 8.7,
+    "resistencia_knockout": 6.8
   },
   "fisica": {
     "massa_relativa": 1.25,
@@ -30,14 +35,86 @@
     "padrao_movimento": "centro"
   },
   "especiais": [
-    { "nome": "Heavy Viper Wall", "efeito": "Onda radial de água com knockback forte e -15% de equilíbrio no alvo", "custo": 120, "cooldown_s": 25 }
+    {
+      "nome": "Heavy Viper Wall",
+      "efeito": "Onda radial de água com knockback forte e -15% de equilíbrio no alvo",
+      "custo": 120,
+      "cooldown_s": 25
+    }
   ],
   "antecessora": "draciel-v",
   "sucessora": "draciel-g",
-  "imagens": ["imagem.jpg", "anime.jpg", "pecas/attack-ring.jpg", "pecas/support-part.jpg", "pecas/blade-base.jpg", "pecas/pecas-desmontadas.jpg"],
+  "imagens": [
+    "imagem.jpg",
+    "anime.jpg",
+    "pecas/attack-ring.jpg",
+    "pecas/support-part.jpg",
+    "pecas/blade-base.jpg",
+    "pecas/pecas-desmontadas.jpg"
+  ],
   "fontes": [
     "https://beyblade.fandom.com/wiki/Draciel_V2",
     "https://beyblade.fandom.com/wiki/Heavy_Viper_Wall",
     "https://beyblade.fandom.com/wiki/Max_Tate"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 4,
+    "defesa": 10,
+    "stamina": 6,
+    "velocidade": 3,
+    "peso": 9,
+    "equilibrio": 6,
+    "resistencia_knockout": 9
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Draciel (V)",
+    "attack_ring": "Strike Turtle",
+    "weight_disk": "Ten Heavy",
+    "spin_gear": "Neo Right SG (MG Core)",
+    "support_part": "Fin Tector",
+    "blade_base": "Switch Metal Ball Base"
+  },
+  "lancador": "lancadores/marksmen-grip",
+  "medidas": {
+    "peso_g": 37.1,
+    "diametro_mm": 46,
+    "altura_mm": 27.2
+  },
+  "atributos_brinquedo": {
+    "ataque": 4.5,
+    "defesa": 7.7,
+    "stamina": 6.2,
+    "velocidade": 3.3,
+    "peso": 7.6,
+    "equilibrio": 8.7,
+    "resistencia_knockout": 5.8
+  },
+  "ajuste_anime": {
+    "defesa": 2,
+    "resistencia_knockout": 1
+  },
+  "calculo": {
+    "ponta": "ball",
+    "origem_ponta": "blade-base/switch-metal-ball-base",
+    "atrito_ponta": 0.25,
+    "tipo_contato": "smash",
+    "recoil": 0.55,
+    "distribuicao_peso": "centro",
+    "simetria": 2,
+    "engine_gear": null,
+    "inercia_g_mm2": 7147,
+    "estrelas_takara": {
+      "ataque": 4.5,
+      "defesa": 9.5,
+      "stamina": 7.5,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.58,
+      "defesa": 0.73,
+      "stamina": 0.63
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Draciel (tartaruga / Genbu)"
 }

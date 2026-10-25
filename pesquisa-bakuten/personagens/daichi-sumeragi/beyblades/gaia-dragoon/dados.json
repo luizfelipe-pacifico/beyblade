@@ -7,20 +7,27 @@
   "tipo": "attack",
   "sistema": "spin-gear",
   "rotacao": "direita",
-  "fera_bit": "Gaia Dragoon / Strata Dragoon (dragão dourado)",
+  "fera_bit": "gaia-dragoon",
   "temporada": "v-force",
   "pecas": {
-    "bit_chip": "Gaia Dragoon (Strata Dragoon)",
-    "attack_ring": "Great Dragon (+ Sub-AR wing laranja translúcido)",
-    "weight_disk": "Heavy Attack",
-    "spin_gear": "Right Spin Gear (G Ball)",
-    "support_part": null,
-    "blade_base": "Gaia Dragoon G Special Base"
+    "bit_chip": "bit-chip/gaia-dragoon",
+    "attack_ring": [
+      "attack-ring/great-dragon",
+      "attack-ring/great-dragon-sub-ar"
+    ],
+    "weight_disk": "weight-disk/heavy-attack",
+    "spin_gear": "spin-gear/right-sg-g-ball",
+    "blade_base": "blade-base/gaia-dragoon-g-special-base"
   },
   "ponta": "flat",
   "atributos": {
-    "ataque": 6, "defesa": 3, "stamina": 4, "velocidade": 7,
-    "peso": 5, "equilibrio": 3, "resistencia_knockout": 4
+    "ataque": 7.3,
+    "defesa": 5.4,
+    "stamina": 3.4,
+    "velocidade": 5.7,
+    "peso": 7.1,
+    "equilibrio": 7.2,
+    "resistencia_knockout": 5.7
   },
   "fisica": {
     "massa_relativa": 0.9,
@@ -30,12 +37,33 @@
     "padrao_movimento": "ziguezague"
   },
   "especiais": [
-    { "nome": "Co-Ring Cutter (Kōrin Hadan)", "efeito": "anel-lâmina de energia por 2 s: +40% dano de contato e +20% knockback (uso no filme não confirmado)", "custo": 100, "cooldown_s": 20 },
-    { "nome": "Spike Slash", "efeito": "investida curta em linha reta com +25% dano (citado na wiki; uso no filme não confirmado)", "custo": 60, "cooldown_s": 12 }
+    {
+      "nome": "Co-Ring Cutter (Kōrin Hadan)",
+      "efeito": "anel-lâmina de energia por 2 s: +40% dano de contato e +20% knockback (uso no filme não confirmado)",
+      "custo": 100,
+      "cooldown_s": 20
+    },
+    {
+      "nome": "Spike Slash",
+      "efeito": "investida curta em linha reta com +25% dano (citado na wiki; uso no filme não confirmado)",
+      "custo": 60,
+      "cooldown_s": 12
+    }
   ],
   "antecessora": null,
   "sucessora": "gaia-dragoon-v",
-  "imagens": ["imagem.jpg", "anime.png", "anime-grev.png", "pecas/attack-ring.jpg", "pecas/weight-disk.jpg", "pecas/spin-gear.jpg", "pecas/spin-gear-core.jpg", "pecas/blade-base.jpg", "pecas/blade-base-lateral.jpg", "pecas/montada-inferior.jpg"],
+  "imagens": [
+    "imagem.jpg",
+    "anime.png",
+    "anime-grev.png",
+    "pecas/attack-ring.jpg",
+    "pecas/weight-disk.jpg",
+    "pecas/spin-gear.jpg",
+    "pecas/spin-gear-core.jpg",
+    "pecas/blade-base.jpg",
+    "pecas/blade-base-lateral.jpg",
+    "pecas/montada-inferior.jpg"
+  ],
   "fontes": [
     "https://beyblade.fandom.com/wiki/Gaia_Dragoon",
     "https://beyblade.fandom.com/wiki/Attack_Ring_-_Great_Dragon",
@@ -44,5 +72,62 @@
     "https://beyblade.fandom.com/wiki/Blade_Base_-_Gaia_Dragoon_G_Special_Base",
     "https://beyblade.fandom.com/wiki/Co-Ring_Cutter",
     "https://beyblade.fandom.com/wiki/Daichi_Sumeragi"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 6,
+    "defesa": 3,
+    "stamina": 4,
+    "velocidade": 7,
+    "peso": 5,
+    "equilibrio": 3,
+    "resistencia_knockout": 4
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Gaia Dragoon (Strata Dragoon)",
+    "attack_ring": "Great Dragon (+ Sub-AR wing laranja translúcido)",
+    "weight_disk": "Heavy Attack",
+    "spin_gear": "Right Spin Gear (G Ball)",
+    "support_part": null,
+    "blade_base": "Gaia Dragoon G Special Base"
+  },
+  "lancador": "lancadores/ez-shooter",
+  "medidas": {
+    "peso_g": 36.3,
+    "diametro_mm": 50,
+    "altura_mm": 25.2
+  },
+  "atributos_brinquedo": {
+    "ataque": 7.3,
+    "defesa": 5.4,
+    "stamina": 3.4,
+    "velocidade": 5.7,
+    "peso": 7.1,
+    "equilibrio": 7.2,
+    "resistencia_knockout": 5.7
+  },
+  "ajuste_anime": {},
+  "calculo": {
+    "ponta": "flat",
+    "origem_ponta": "blade-base/gaia-dragoon-g-special-base",
+    "atrito_ponta": 0.5,
+    "tipo_contato": "smash",
+    "recoil": 0.75,
+    "distribuicao_peso": "centro",
+    "simetria": 2,
+    "engine_gear": null,
+    "inercia_g_mm2": 6873,
+    "estrelas_takara": {
+      "ataque": 9.5,
+      "defesa": 7,
+      "stamina": 3,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.62,
+      "defesa": 0.47,
+      "stamina": 0.51
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Gaia Dragoon / Strata Dragoon (dragão dourado)"
 }

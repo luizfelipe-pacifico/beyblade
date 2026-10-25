@@ -7,30 +7,39 @@
   "tipo": "balance",
   "sistema": "magnacore",
   "rotacao": "direita",
-  "fera_bit": "Galeon (leão negro)",
+  "fera_bit": "galeon",
   "temporada": "g-revolution",
   "pecas": {
-    "bit_chip": "Galeon",
-    "attack_ring": "Howling Leo",
-    "weight_disk": "Ten Wide",
-    "spin_gear": "Neo Right SG (Metal Weight Core)",
-    "support_part": null,
-    "blade_base": "SG Semi-Flat Base"
+    "bit_chip": "bit-chip/galeon-2",
+    "attack_ring": "attack-ring/howling-leo",
+    "weight_disk": "weight-disk/ten-wide",
+    "spin_gear": "spin-gear/neo-right-sg-mw-core",
+    "blade_base": "blade-base/sg-semi-flat-base"
   },
   "ponta": "semi-flat",
   "atributos": {
-    "ataque": 8, "defesa": 6, "stamina": 6, "velocidade": 6,
-    "peso": 6, "equilibrio": 6, "resistencia_knockout": 6
+    "ataque": 5.7,
+    "defesa": 4.2,
+    "stamina": 6.1,
+    "velocidade": 4.5,
+    "peso": 4.1,
+    "equilibrio": 6.5,
+    "resistencia_knockout": 4.9
   },
   "fisica": {
-    "massa_relativa": 1.0,
+    "massa_relativa": 1,
     "raio_relativo": 1.05,
     "atrito_ponta": 0.4,
     "restituicao": 0.5,
     "padrao_movimento": "orbita"
   },
   "especiais": [
-    { "nome": "Spiral Lightning", "efeito": "Onda elétrica em espiral: desorienta o alvo por 1,5 s e o empurra para a borda", "custo": 130, "cooldown_s": 26 }
+    {
+      "nome": "Spiral Lightning",
+      "efeito": "Onda elétrica em espiral: desorienta o alvo por 1,5 s e o empurra para a borda",
+      "custo": 130,
+      "cooldown_s": 26
+    }
   ],
   "antecessora": "galeon",
   "sucessora": "galeon-2-eg",
@@ -39,5 +48,64 @@
     "https://beyblade.fandom.com/wiki/Galeon_2",
     "https://beyblade.fandom.com/wiki/Attack_Ring_-_Howling_Leo",
     "https://beyblade.fandom.com/wiki/Spiral_Lightning"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 8,
+    "defesa": 6,
+    "stamina": 6,
+    "velocidade": 6,
+    "peso": 6,
+    "equilibrio": 6,
+    "resistencia_knockout": 6
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Galeon",
+    "attack_ring": "Howling Leo",
+    "weight_disk": "Ten Wide",
+    "spin_gear": "Neo Right SG (Metal Weight Core)",
+    "support_part": null,
+    "blade_base": "SG Semi-Flat Base"
+  },
+  "lancador": "lancadores/ez-shooter",
+  "medidas": {
+    "peso_g": 30.1,
+    "diametro_mm": 43,
+    "altura_mm": 22.1
+  },
+  "atributos_brinquedo": {
+    "ataque": 4.7,
+    "defesa": 4.2,
+    "stamina": 6.1,
+    "velocidade": 4.5,
+    "peso": 4.1,
+    "equilibrio": 6.5,
+    "resistencia_knockout": 4.9
+  },
+  "ajuste_anime": {
+    "ataque": 1
+  },
+  "calculo": {
+    "ponta": "semi-flat",
+    "origem_ponta": "blade-base/sg-semi-flat-base",
+    "atrito_ponta": 0.3,
+    "tipo_contato": "smash",
+    "recoil": 0.45,
+    "distribuicao_peso": "periferia",
+    "simetria": 6,
+    "engine_gear": null,
+    "inercia_g_mm2": 6977,
+    "estrelas_takara": {
+      "ataque": 5.5,
+      "defesa": 4.5,
+      "stamina": 7.5,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.5,
+      "defesa": 0.51,
+      "stamina": 0.59
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Galeon (leão negro)"
 }

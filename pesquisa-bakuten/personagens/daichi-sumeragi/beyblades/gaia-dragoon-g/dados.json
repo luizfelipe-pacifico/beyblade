@@ -7,36 +7,68 @@
   "tipo": "attack",
   "sistema": "engine-gear",
   "rotacao": "direita",
-  "fera_bit": "Gaia Dragoon / Strata Dragoon (dragão dourado)",
+  "fera_bit": "gaia-dragoon",
   "temporada": "g-revolution",
   "pecas": {
-    "bit_chip": "Strata Dragoon",
-    "attack_ring": "Dragon Saucer (+ Sub-AR em engrenagem)",
-    "weight_disk": "Ten Heavy",
-    "spin_gear": "Right Engine Gear (Metal Flat)",
-    "support_part": null,
-    "blade_base": "Final Clutch Base (Strata Dragoon G Version)"
+    "bit_chip": "bit-chip/gaia-dragoon-g",
+    "attack_ring": [
+      "attack-ring/dragon-saucer",
+      "attack-ring/dragon-saucer-sub-ar"
+    ],
+    "weight_disk": "weight-disk/ten-heavy",
+    "spin_gear": "spin-gear/right-eg-metal-flat",
+    "blade_base": "blade-base/final-clutch-base-strata-dragoon-g"
   },
   "ponta": "metal flat",
   "atributos": {
-    "ataque": 8, "defesa": 5, "stamina": 5, "velocidade": 8,
-    "peso": 8, "equilibrio": 5, "resistencia_knockout": 5
+    "ataque": 7.1,
+    "defesa": 7.2,
+    "stamina": 6.6,
+    "velocidade": 6.4,
+    "peso": 10,
+    "equilibrio": 7.1,
+    "resistencia_knockout": 6.8
   },
   "fisica": {
     "massa_relativa": 1.15,
-    "raio_relativo": 1.0,
+    "raio_relativo": 1,
     "atrito_ponta": 0.45,
     "restituicao": 0.55,
     "padrao_movimento": "orbita"
   },
   "especiais": [
-    { "nome": "Great Cutter (Gōten Hadan)", "efeito": "vira serra circular de energia e rola de lado por 2,5 s: +70% dano, atravessa obstáculos", "custo": 100, "cooldown_s": 22 },
-    { "nome": "Twin Tornado Attack (com Tyson)", "efeito": "modo dupla: dois tornados sincronizados empurram os oponentes; cancela se o parceiro perder sincronia", "custo": 150, "cooldown_s": 35 },
-    { "nome": "Dragoon Tank (com Tyson)", "efeito": "modo dupla: as duas beys avançam unidas em linha reta com +60% knockback", "custo": 150, "cooldown_s": 35 }
+    {
+      "nome": "Great Cutter (Gōten Hadan)",
+      "efeito": "vira serra circular de energia e rola de lado por 2,5 s: +70% dano, atravessa obstáculos",
+      "custo": 100,
+      "cooldown_s": 22
+    },
+    {
+      "nome": "Twin Tornado Attack (com Tyson)",
+      "efeito": "modo dupla: dois tornados sincronizados empurram os oponentes; cancela se o parceiro perder sincronia",
+      "custo": 150,
+      "cooldown_s": 35
+    },
+    {
+      "nome": "Dragoon Tank (com Tyson)",
+      "efeito": "modo dupla: as duas beys avançam unidas em linha reta com +60% knockback",
+      "custo": 150,
+      "cooldown_s": 35
+    }
   ],
   "antecessora": "gaia-dragoon-v",
   "sucessora": "gaia-dragoon-ms",
-  "imagens": ["imagem.jpg", "imagem-produto.png", "anime.png", "pecas/attack-ring.jpg", "pecas/sub-attack-ring.jpg", "pecas/weight-disk.png", "pecas/engine-gear.jpg", "pecas/blade-base.jpg", "pecas/montada-lateral.jpg"],
+  "imagens": [
+    "imagem.jpg",
+    "imagem-produto.png",
+    "anime.png",
+    "pecas/attack-ring.jpg",
+    "pecas/sub-attack-ring.jpg",
+    "pecas/weight-disk.png",
+    "pecas/engine-gear.jpg",
+    "pecas/blade-base.jpg",
+    "pecas/montada-lateral.jpg"
+  ],
   "fontes": [
     "https://beyblade.fandom.com/wiki/Strata_Dragoon_G",
     "https://beyblade.fandom.com/wiki/Attack_Ring_-_Dragon_Saucer",
@@ -46,5 +78,65 @@
     "https://beyblade.fandom.com/wiki/Great_Cutter",
     "https://beyblade.fandom.com/wiki/Twin_Tornado_Attack",
     "https://beyblade.fandom.com/wiki/Dragoon_Tank"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 8,
+    "defesa": 5,
+    "stamina": 5,
+    "velocidade": 8,
+    "peso": 8,
+    "equilibrio": 5,
+    "resistencia_knockout": 5
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Strata Dragoon",
+    "attack_ring": "Dragon Saucer (+ Sub-AR em engrenagem)",
+    "weight_disk": "Ten Heavy",
+    "spin_gear": "Right Engine Gear (Metal Flat)",
+    "support_part": null,
+    "blade_base": "Final Clutch Base (Strata Dragoon G Version)"
+  },
+  "lancador": "lancadores/ez-shooter",
+  "medidas": {
+    "peso_g": 44.2,
+    "diametro_mm": 46,
+    "altura_mm": 28.2
+  },
+  "atributos_brinquedo": {
+    "ataque": 6.1,
+    "defesa": 7.2,
+    "stamina": 6.6,
+    "velocidade": 5.4,
+    "peso": 10,
+    "equilibrio": 7.1,
+    "resistencia_knockout": 6.8
+  },
+  "ajuste_anime": {
+    "ataque": 1,
+    "velocidade": 1
+  },
+  "calculo": {
+    "ponta": "metal-flat",
+    "origem_ponta": "blade-base/final-clutch-base-strata-dragoon-g",
+    "atrito_ponta": 0.4,
+    "tipo_contato": "smash",
+    "recoil": 0.55,
+    "distribuicao_peso": "centro",
+    "simetria": 2,
+    "engine_gear": "clutch",
+    "inercia_g_mm2": 8414,
+    "estrelas_takara": {
+      "ataque": 6,
+      "defesa": 9,
+      "stamina": 8,
+      "partes": 4
+    },
+    "fisica": {
+      "ataque": 0.68,
+      "defesa": 0.67,
+      "stamina": 0.66
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Gaia Dragoon / Strata Dragoon (dragão dourado)"
 }

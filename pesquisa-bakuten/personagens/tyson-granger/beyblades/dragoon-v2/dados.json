@@ -7,32 +7,52 @@
   "tipo": "attack",
   "sistema": "magnacore",
   "rotacao": "esquerda",
-  "fera_bit": "Dragoon (dragão azul / Seiryū, vento)",
+  "fera_bit": "dragoon",
   "temporada": "v-force",
   "pecas": {
-    "bit_chip": "Dragoon (V)",
-    "attack_ring": "Spike Dragon",
-    "weight_disk": "Magne Weight Disk",
-    "spin_gear": "Neo Left SG (Normal Core)",
-    "support_part": "Reverse Attack",
-    "blade_base": "Customize Grip Base"
+    "bit_chip": "bit-chip/dragoon-v2",
+    "attack_ring": "attack-ring/spike-dragon",
+    "support_part": "support-part/reverse-attack",
+    "weight_disk": "weight-disk/magne-weight-disk",
+    "spin_gear": "spin-gear/neo-left-sg-normal-core",
+    "blade_base": "blade-base/customize-grip-base"
   },
   "ponta": "grip (borracha flat removível com ímã)",
   "atributos": {
-    "ataque": 10, "defesa": 4, "stamina": 3, "velocidade": 9,
-    "peso": 5, "equilibrio": 4, "resistencia_knockout": 4
+    "ataque": 8.7,
+    "defesa": 4.1,
+    "stamina": 4,
+    "velocidade": 8.9,
+    "peso": 5.3,
+    "equilibrio": 6,
+    "resistencia_knockout": 6.2
   },
   "fisica": {
-    "massa_relativa": 1.0,
+    "massa_relativa": 1,
     "raio_relativo": 1.05,
     "atrito_ponta": 0.85,
     "restituicao": 0.8,
     "padrao_movimento": "orbita"
   },
   "especiais": [
-    { "nome": "Hyper Victory Tornado", "efeito": "Dash vermelho de 2 s com tornado: dano muito alto, knockback alto, imune a recoil durante o golpe", "custo": 100, "cooldown_s": 22 },
-    { "nome": "Vanishing Attack (efeito estimado)", "efeito": "1,5 s sem ser alvo; o próximo choque causa +40% de dano", "custo": 60, "cooldown_s": 15 },
-    { "nome": "Wave Attack (efeito estimado)", "efeito": "3 investidas curtas em ziguezague", "custo": 60, "cooldown_s": 15 }
+    {
+      "nome": "Hyper Victory Tornado",
+      "efeito": "Dash vermelho de 2 s com tornado: dano muito alto, knockback alto, imune a recoil durante o golpe",
+      "custo": 100,
+      "cooldown_s": 22
+    },
+    {
+      "nome": "Vanishing Attack (efeito estimado)",
+      "efeito": "1,5 s sem ser alvo; o próximo choque causa +40% de dano",
+      "custo": 60,
+      "cooldown_s": 15
+    },
+    {
+      "nome": "Wave Attack (efeito estimado)",
+      "efeito": "3 investidas curtas em ziguezague",
+      "custo": 60,
+      "cooldown_s": 15
+    }
   ],
   "antecessora": "dragoon-v",
   "sucessora": "dragoon-v2-high-power-custom",
@@ -43,5 +63,65 @@
     "https://beyblade.fandom.com/wiki/Hyper_Victory_Tornado",
     "https://beyblade.fandom.com/wiki/Vanishing_Attack",
     "https://beyblade.fandom.com/wiki/Wave_Attack"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 10,
+    "defesa": 4,
+    "stamina": 3,
+    "velocidade": 9,
+    "peso": 5,
+    "equilibrio": 4,
+    "resistencia_knockout": 4
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Dragoon (V)",
+    "attack_ring": "Spike Dragon",
+    "weight_disk": "Magne Weight Disk",
+    "spin_gear": "Neo Left SG (Normal Core)",
+    "support_part": "Reverse Attack",
+    "blade_base": "Customize Grip Base"
+  },
+  "lancador": "lancadores/neo-reverse-shooter",
+  "medidas": {
+    "peso_g": 32.5,
+    "diametro_mm": 45,
+    "altura_mm": 27.2
+  },
+  "atributos_brinquedo": {
+    "ataque": 7.7,
+    "defesa": 4.1,
+    "stamina": 4,
+    "velocidade": 8.9,
+    "peso": 5.3,
+    "equilibrio": 6,
+    "resistencia_knockout": 5.2
+  },
+  "ajuste_anime": {
+    "ataque": 1,
+    "resistencia_knockout": 1
+  },
+  "calculo": {
+    "ponta": "grip",
+    "origem_ponta": "blade-base/customize-grip-base",
+    "atrito_ponta": 0.85,
+    "tipo_contato": "spike",
+    "recoil": 0.75,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 4,
+    "engine_gear": null,
+    "inercia_g_mm2": 6763,
+    "estrelas_takara": {
+      "ataque": 10,
+      "defesa": 5.5,
+      "stamina": 5,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.66,
+      "defesa": 0.32,
+      "stamina": 0.38
+    }
+  },
+  "ripcord": "lancadores/ripcords/dragon-winder",
+  "fera_bit_descricao": "Dragoon (dragão azul / Seiryū, vento)"
 }

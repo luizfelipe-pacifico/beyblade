@@ -7,20 +7,24 @@
   "tipo": "balance",
   "sistema": "spin-gear",
   "rotacao": "direita",
-  "fera_bit": "Dranzer (fênix)",
+  "fera_bit": "dranzer",
   "temporada": "bakuten-shoot",
   "pecas": {
-    "bit_chip": "Dranzer",
-    "attack_ring": "Double Wing",
-    "weight_disk": "Eight Balance",
-    "spin_gear": "Right SG (Free Shaft Version)",
-    "support_part": null,
-    "blade_base": "Spiral Change Base"
+    "bit_chip": "bit-chip/dranzer-s",
+    "attack_ring": "attack-ring/double-wing",
+    "weight_disk": "weight-disk/eight-balance",
+    "spin_gear": "spin-gear/right-sg-free-shaft-version",
+    "blade_base": "blade-base/spiral-change-base"
   },
   "ponta": "sharp (metal) / flat (plástico) - troca manual",
   "atributos": {
-    "ataque": 5, "defesa": 4, "stamina": 6, "velocidade": 6,
-    "peso": 3, "equilibrio": 5, "resistencia_knockout": 4
+    "ataque": 6.7,
+    "defesa": 4.5,
+    "stamina": 6.7,
+    "velocidade": 5.5,
+    "peso": 4.9,
+    "equilibrio": 5.8,
+    "resistencia_knockout": 5.5
   },
   "fisica": {
     "massa_relativa": 0.8,
@@ -30,18 +34,95 @@
     "padrao_movimento": "flower"
   },
   "especiais": [
-    { "nome": "Spin Fire", "efeito": "Salto aéreo e mergulho flamejante sobre o alvo; dano alto + knockback vertical", "custo": 100, "cooldown_s": 22 },
-    { "nome": "Fire Arrow", "efeito": "Investida em linha reta envolta em fogo; dano médio + pequena explosão em área", "custo": 70, "cooldown_s": 15 }
+    {
+      "nome": "Spin Fire",
+      "efeito": "Salto aéreo e mergulho flamejante sobre o alvo; dano alto + knockback vertical",
+      "custo": 100,
+      "cooldown_s": 22
+    },
+    {
+      "nome": "Fire Arrow",
+      "efeito": "Investida em linha reta envolta em fogo; dano médio + pequena explosão em área",
+      "custo": 70,
+      "cooldown_s": 15
+    }
   ],
   "antecessora": null,
   "sucessora": "dranzer-f",
   "imagens": [],
-  "imagens_pendentes": ["imagem.png", "pecas/attack-ring.gif", "pecas/weight-disk.gif", "pecas/spin-gear.gif", "pecas/blade-base.gif", "pecas/todas-pecas.jpg"],
+  "imagens_pendentes": [
+    "imagem.png",
+    "pecas/attack-ring.gif",
+    "pecas/weight-disk.gif",
+    "pecas/spin-gear.gif",
+    "pecas/blade-base.gif",
+    "pecas/todas-pecas.jpg"
+  ],
   "fontes": [
     "https://beyblade.fandom.com/wiki/Dranzer_S",
     "https://beyblade.fandom.com/wiki/Attack_Ring_-_Double_Wing",
     "https://beyblade.fandom.com/wiki/Blade_Base_-_Spiral_Change_Base",
     "https://beyblade.fandom.com/wiki/Spin_Fire",
     "https://beyblade.fandom.com/wiki/Fire_Arrow"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 5,
+    "defesa": 4,
+    "stamina": 6,
+    "velocidade": 6,
+    "peso": 3,
+    "equilibrio": 5,
+    "resistencia_knockout": 4
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Dranzer",
+    "attack_ring": "Double Wing",
+    "weight_disk": "Eight Balance",
+    "spin_gear": "Right SG (Free Shaft Version)",
+    "support_part": null,
+    "blade_base": "Spiral Change Base"
+  },
+  "lancador": "lancadores/spring-shooter",
+  "medidas": {
+    "peso_g": 31.8,
+    "diametro_mm": 46,
+    "altura_mm": 23.6
+  },
+  "atributos_brinquedo": {
+    "ataque": 4.7,
+    "defesa": 4.5,
+    "stamina": 6.7,
+    "velocidade": 5.5,
+    "peso": 4.9,
+    "equilibrio": 5.8,
+    "resistencia_knockout": 4.5
+  },
+  "ajuste_anime": {
+    "ataque": 2,
+    "resistencia_knockout": 1
+  },
+  "calculo": {
+    "ponta": "flat",
+    "origem_ponta": "blade-base/spiral-change-base",
+    "atrito_ponta": 0.29,
+    "tipo_contato": "smash",
+    "recoil": 0.7,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 2,
+    "engine_gear": null,
+    "inercia_g_mm2": 5767,
+    "estrelas_takara": {
+      "ataque": 5.5,
+      "defesa": 6,
+      "stamina": 8,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.51,
+      "defesa": 0.38,
+      "stamina": 0.67
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Dranzer (fênix)"
 }

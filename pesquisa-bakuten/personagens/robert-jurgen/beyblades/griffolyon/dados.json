@@ -7,20 +7,23 @@
   "tipo": "attack",
   "sistema": "spin-gear",
   "rotacao": "direita",
-  "fera_bit": "Griffolyon (grifo)",
+  "fera_bit": "griffolyon",
   "temporada": "bakuten-shoot",
   "pecas": {
-    "bit_chip": "Griffolyon",
-    "attack_ring": "Cross Griffon",
-    "weight_disk": "Eight Balance",
-    "spin_gear": "Integrado à base (direita)",
-    "support_part": null,
-    "blade_base": "Griffolyon Base"
+    "bit_chip": "bit-chip/griffolyon",
+    "attack_ring": "attack-ring/cross-griffon",
+    "weight_disk": "weight-disk/eight-balance",
+    "blade_base": "blade-base/griffolyon-base"
   },
   "ponta": "bola-estreita-alta (semi free-spin)",
   "atributos": {
-    "ataque": 9, "defesa": 4, "stamina": 3, "velocidade": 7,
-    "peso": 5, "equilibrio": 3, "resistencia_knockout": 4
+    "ataque": 7.3,
+    "defesa": 5.5,
+    "stamina": 5.1,
+    "velocidade": 6.2,
+    "peso": 2.9,
+    "equilibrio": 8,
+    "resistencia_knockout": 3.9
   },
   "fisica": {
     "massa_relativa": 0.95,
@@ -30,17 +33,96 @@
     "padrao_movimento": "agressivo"
   },
   "especiais": [
-    { "nome": "Wing Dagger", "efeito": "Dispara 5-6 projéteis (penas) em leque: dano de rotação e empurrão leve", "custo": 100, "cooldown_s": 18 },
-    { "nome": "Wind Swords", "efeito": "Investida aérea com dano x1.8 e knockback alto em um golpe (descrição do anime não confirmada)", "custo": 100, "cooldown_s": 25 }
+    {
+      "nome": "Wing Dagger",
+      "efeito": "Dispara 5-6 projéteis (penas) em leque: dano de rotação e empurrão leve",
+      "custo": 100,
+      "cooldown_s": 18
+    },
+    {
+      "nome": "Wind Swords",
+      "efeito": "Investida aérea com dano x1.8 e knockback alto em um golpe (descrição do anime não confirmada)",
+      "custo": 100,
+      "cooldown_s": 25
+    }
   ],
   "antecessora": null,
   "sucessora": null,
-  "imagens": ["imagem.jpg", "anime.jpg", "fera-bit.jpg", "pecas/bit-chip.png", "pecas/attack-ring.jpg", "pecas/weight-disk.gif", "pecas/blade-base.jpg", "pecas/pecas-desmontadas.jpg"],
+  "imagens": [
+    "imagem.jpg",
+    "anime.jpg",
+    "fera-bit.jpg",
+    "pecas/bit-chip.png",
+    "pecas/attack-ring.jpg",
+    "pecas/weight-disk.gif",
+    "pecas/blade-base.jpg",
+    "pecas/pecas-desmontadas.jpg"
+  ],
   "fontes": [
     "https://beyblade.fandom.com/wiki/Griffolyon",
     "https://beyblade.fandom.com/wiki/Attack_Ring_-_Cross_Griffon",
     "https://beyblade.fandom.com/wiki/Blade_Base_-_Griffolyon_Base",
     "https://beyblade.fandom.com/wiki/Wing_Dagger",
     "https://beyblade.fandom.com/wiki/Robert_J%C3%BCrgens"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 9,
+    "defesa": 4,
+    "stamina": 3,
+    "velocidade": 7,
+    "peso": 5,
+    "equilibrio": 3,
+    "resistencia_knockout": 4
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Griffolyon",
+    "attack_ring": "Cross Griffon",
+    "weight_disk": "Eight Balance",
+    "spin_gear": "Integrado à base (direita)",
+    "support_part": null,
+    "blade_base": "Griffolyon Base"
+  },
+  "lancador": "lancadores/griffolyon-flail",
+  "medidas": {
+    "peso_g": 27.8,
+    "diametro_mm": 47,
+    "altura_mm": 28.6
+  },
+  "atributos_brinquedo": {
+    "ataque": 5.3,
+    "defesa": 5.5,
+    "stamina": 5.1,
+    "velocidade": 5.2,
+    "peso": 2.9,
+    "equilibrio": 8,
+    "resistencia_knockout": 3.9
+  },
+  "ajuste_anime": {
+    "ataque": 2,
+    "velocidade": 1
+  },
+  "calculo": {
+    "ponta": "ball",
+    "origem_ponta": "blade-base/griffolyon-base",
+    "atrito_ponta": 0.25,
+    "tipo_contato": "smash",
+    "recoil": 0.35,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 4,
+    "engine_gear": null,
+    "inercia_g_mm2": 6287,
+    "estrelas_takara": {
+      "ataque": 6.5,
+      "defesa": 6.5,
+      "stamina": 6,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.53,
+      "defesa": 0.58,
+      "stamina": 0.54
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Griffolyon (grifo)"
 }

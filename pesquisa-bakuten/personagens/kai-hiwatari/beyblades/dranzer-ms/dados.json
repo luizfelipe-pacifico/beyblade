@@ -7,20 +7,23 @@
   "tipo": "balance",
   "sistema": "hms",
   "rotacao": "ambas",
-  "fera_bit": "Dranzer (fênix)",
+  "fera_bit": "dranzer",
   "temporada": "g-revolution",
   "pecas": {
-    "bit_chip": "Bit Protector - Dranzer Emblem",
-    "attack_ring": "Spiral Upper (Metal Frame Left Upper + ABS Spiral Upper)",
-    "weight_disk": "Circle Balance",
-    "spin_gear": "Manual Change Core (Running Core)",
-    "support_part": null,
-    "blade_base": "Manual Change Core (Running Core integrado)"
+    "bit_chip": "bit-chip/dranzer-emblem",
+    "attack_ring": "attack-ring/spiral-upper",
+    "weight_disk": "weight-disk/circle-balance",
+    "spin_gear": "spin-gear/manual-change-core"
   },
   "ponta": "attack / endurance (troca manual); Hasbro: semi-flat",
   "atributos": {
-    "ataque": 8, "defesa": 6, "stamina": 6, "velocidade": 7,
-    "peso": 8, "equilibrio": 5, "resistencia_knockout": 7
+    "ataque": 8.4,
+    "defesa": 3.7,
+    "stamina": 7.4,
+    "velocidade": 4.3,
+    "peso": 8,
+    "equilibrio": 6,
+    "resistencia_knockout": 8.4
   },
   "fisica": {
     "massa_relativa": 1.2,
@@ -30,16 +33,94 @@
     "padrao_movimento": "agressivo (Attack) | centro (Endurance)"
   },
   "especiais": [
-    { "nome": "Spiral Fireball", "efeito": "Salto vertical, carga 0,8 s e mergulho flamejante; dano muito alto + knockback vertical; +30% se rotação < 20%", "custo": 120, "cooldown_s": 28 }
+    {
+      "nome": "Spiral Fireball",
+      "efeito": "Salto vertical, carga 0,8 s e mergulho flamejante; dano muito alto + knockback vertical; +30% se rotação < 20%",
+      "custo": 120,
+      "cooldown_s": 28
+    }
   ],
   "antecessora": "dranzer-gt",
   "sucessora": null,
   "imagens": [],
-  "imagens_pendentes": ["imagem.jpg", "anime.png", "pecas/weight-disk.jpg", "pecas/dranzerms-1.jpg", "pecas/dranzerms-5.jpg", "pecas/dranzerms-6.jpg", "pecas/dranzerms-7.jpg", "pecas/dranzerms-8.jpg", "pecas/dranzerms-9.jpg", "pecas/dranzerms-10.jpg"],
+  "imagens_pendentes": [
+    "imagem.jpg",
+    "anime.png",
+    "pecas/weight-disk.jpg",
+    "pecas/dranzerms-1.jpg",
+    "pecas/dranzerms-5.jpg",
+    "pecas/dranzerms-6.jpg",
+    "pecas/dranzerms-7.jpg",
+    "pecas/dranzerms-8.jpg",
+    "pecas/dranzerms-9.jpg",
+    "pecas/dranzerms-10.jpg"
+  ],
   "fontes": [
     "https://beyblade.fandom.com/wiki/Dranzer_MS",
     "https://beyblade.fandom.com/wiki/Attack_Ring_-_Spiral_Upper",
     "https://beyblade.fandom.com/wiki/Running_Core_-_Manual_Change_Core",
     "https://beyblade.fandom.com/wiki/Spiral_Fireball"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 8,
+    "defesa": 6,
+    "stamina": 6,
+    "velocidade": 7,
+    "peso": 8,
+    "equilibrio": 5,
+    "resistencia_knockout": 7
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Bit Protector - Dranzer Emblem",
+    "attack_ring": "Spiral Upper (Metal Frame Left Upper + ABS Spiral Upper)",
+    "weight_disk": "Circle Balance",
+    "spin_gear": "Manual Change Core (Running Core)",
+    "support_part": null,
+    "blade_base": "Manual Change Core (Running Core integrado)"
+  },
+  "lancador": "lancadores/dual-shooter",
+  "medidas": {
+    "peso_g": 37.9,
+    "diametro_mm": 41,
+    "altura_mm": 25.4
+  },
+  "atributos_brinquedo": {
+    "ataque": 5.4,
+    "defesa": 4.7,
+    "stamina": 6.4,
+    "velocidade": 4.3,
+    "peso": 8,
+    "equilibrio": 6,
+    "resistencia_knockout": 6.4
+  },
+  "ajuste_anime": {
+    "ataque": 3,
+    "defesa": -1,
+    "stamina": 1,
+    "resistencia_knockout": 2
+  },
+  "calculo": {
+    "ponta": null,
+    "origem_ponta": null,
+    "atrito_ponta": 0.35,
+    "tipo_contato": "upper",
+    "recoil": 0.35,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 2,
+    "engine_gear": null,
+    "inercia_g_mm2": 8768,
+    "estrelas_takara": {
+      "ataque": 6.5,
+      "defesa": 4.5,
+      "stamina": 7.5,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.55,
+      "defesa": 0.65,
+      "stamina": 0.68
+    }
+  },
+  "ripcord": "lancadores/ripcords/g-winder",
+  "fera_bit_descricao": "Dranzer (fênix)"
 }

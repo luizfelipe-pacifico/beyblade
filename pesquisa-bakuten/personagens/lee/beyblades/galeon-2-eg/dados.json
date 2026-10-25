@@ -7,20 +7,24 @@
   "tipo": "balance",
   "sistema": "engine-gear",
   "rotacao": "direita",
-  "fera_bit": "Galeon (leão negro)",
+  "fera_bit": "galeon",
   "temporada": "g-revolution",
   "pecas": {
-    "bit_chip": "Galeon",
-    "attack_ring": "Howling Leo",
-    "weight_disk": "Wide Attack",
-    "spin_gear": "Right EG (Metal Semi-Flat)",
-    "support_part": null,
-    "blade_base": "First Clutch Base"
+    "bit_chip": "bit-chip/galeon-2",
+    "attack_ring": "attack-ring/howling-leo",
+    "weight_disk": "weight-disk/wide-attack",
+    "spin_gear": "spin-gear/right-eg-metal-semi-flat",
+    "blade_base": "blade-base/first-clutch-base"
   },
   "ponta": "semi-flat (metal, quase flat)",
   "atributos": {
-    "ataque": 8, "defesa": 5, "stamina": 5, "velocidade": 8,
-    "peso": 7, "equilibrio": 5, "resistencia_knockout": 6
+    "ataque": 10,
+    "defesa": 4,
+    "stamina": 6.2,
+    "velocidade": 5.4,
+    "peso": 8,
+    "equilibrio": 7.5,
+    "resistencia_knockout": 6.5
   },
   "fisica": {
     "massa_relativa": 1.1,
@@ -30,7 +34,12 @@
     "padrao_movimento": "agressivo"
   },
   "especiais": [
-    { "nome": "Spiral Lightning", "efeito": "Onda elétrica em espiral: desorienta o alvo por 1,5 s e o empurra para a borda", "custo": 130, "cooldown_s": 26 }
+    {
+      "nome": "Spiral Lightning",
+      "efeito": "Onda elétrica em espiral: desorienta o alvo por 1,5 s e o empurra para a borda",
+      "custo": 130,
+      "cooldown_s": 26
+    }
   ],
   "antecessora": "galeon-2",
   "sucessora": null,
@@ -38,5 +47,64 @@
   "fontes": [
     "https://beyblade.fandom.com/wiki/Galeon_2_(Engine_Gear)",
     "https://beyblade.fandom.com/wiki/Spiral_Lightning"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 8,
+    "defesa": 5,
+    "stamina": 5,
+    "velocidade": 8,
+    "peso": 7,
+    "equilibrio": 5,
+    "resistencia_knockout": 6
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Galeon",
+    "attack_ring": "Howling Leo",
+    "weight_disk": "Wide Attack",
+    "spin_gear": "Right EG (Metal Semi-Flat)",
+    "support_part": null,
+    "blade_base": "First Clutch Base"
+  },
+  "lancador": "lancadores/ez-shooter",
+  "medidas": {
+    "peso_g": 38,
+    "diametro_mm": 43,
+    "altura_mm": 23.5
+  },
+  "atributos_brinquedo": {
+    "ataque": 8.2,
+    "defesa": 4,
+    "stamina": 6.2,
+    "velocidade": 5.4,
+    "peso": 8,
+    "equilibrio": 7.5,
+    "resistencia_knockout": 6.5
+  },
+  "ajuste_anime": {
+    "ataque": 2
+  },
+  "calculo": {
+    "ponta": "metal-semi-flat",
+    "origem_ponta": "blade-base/first-clutch-base",
+    "atrito_ponta": 0.25,
+    "tipo_contato": "smash",
+    "recoil": 0.45,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 6,
+    "engine_gear": "clutch",
+    "inercia_g_mm2": 7197,
+    "estrelas_takara": {
+      "ataque": 10.5,
+      "defesa": 3,
+      "stamina": 7.5,
+      "partes": 4
+    },
+    "fisica": {
+      "ataque": 0.58,
+      "defesa": 0.69,
+      "stamina": 0.63
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Galeon (leão negro)"
 }

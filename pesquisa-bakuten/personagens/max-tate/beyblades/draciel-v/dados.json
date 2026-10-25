@@ -7,20 +7,24 @@
   "tipo": "defense",
   "sistema": "magnacore",
   "rotacao": "direita",
-  "fera_bit": "Draciel (tartaruga / Genbu)",
+  "fera_bit": "draciel",
   "temporada": "v-force",
   "pecas": {
-    "bit_chip": "Draciel (V)",
-    "attack_ring": "Ten Spike",
-    "weight_disk": "Ten Balance",
-    "spin_gear": "Neo Right SG (North Magnecore)",
-    "support_part": null,
-    "blade_base": "Viper Metal Ball Base"
+    "bit_chip": "bit-chip/draciel-v",
+    "attack_ring": "attack-ring/ten-spike",
+    "weight_disk": "weight-disk/ten-balance",
+    "spin_gear": "spin-gear/neo-right-sg-north-magnecore",
+    "blade_base": "blade-base/viper-metal-ball-base"
   },
   "ponta": "bola-metal (semi-livre)",
   "atributos": {
-    "ataque": 3, "defesa": 9, "stamina": 6, "velocidade": 3,
-    "peso": 8, "equilibrio": 5, "resistencia_knockout": 8
+    "ataque": 2.8,
+    "defesa": 8.3,
+    "stamina": 6.1,
+    "velocidade": 3.1,
+    "peso": 6.6,
+    "equilibrio": 8.2,
+    "resistencia_knockout": 6.1
   },
   "fisica": {
     "massa_relativa": 1.15,
@@ -30,15 +34,93 @@
     "padrao_movimento": "centro"
   },
   "especiais": [
-    { "nome": "Viper Wall", "efeito": "Zona de 4 s ao redor de Draciel que reduz em 40% a velocidade de quem entra", "custo": 80, "cooldown_s": 18 },
-    { "nome": "Heavy Viper Wall", "efeito": "Onda de água radial que empurra o oponente para a borda (knockback forte)", "custo": 120, "cooldown_s": 28 }
+    {
+      "nome": "Viper Wall",
+      "efeito": "Zona de 4 s ao redor de Draciel que reduz em 40% a velocidade de quem entra",
+      "custo": 80,
+      "cooldown_s": 18
+    },
+    {
+      "nome": "Heavy Viper Wall",
+      "efeito": "Onda de água radial que empurra o oponente para a borda (knockback forte)",
+      "custo": 120,
+      "cooldown_s": 28
+    }
   ],
   "antecessora": "draciel-f",
   "sucessora": "draciel-v2",
-  "imagens": ["imagem.png", "anime.png", "pecas/attack-ring.gif", "pecas/weight-disk.gif", "pecas/spin-gear.gif", "pecas/blade-base.gif", "pecas/pecas-desmontadas.jpg"],
+  "imagens": [
+    "imagem.png",
+    "anime.png",
+    "pecas/attack-ring.gif",
+    "pecas/weight-disk.gif",
+    "pecas/spin-gear.gif",
+    "pecas/blade-base.gif",
+    "pecas/pecas-desmontadas.jpg"
+  ],
   "fontes": [
     "https://beyblade.fandom.com/wiki/Draciel_V",
     "https://beyblade.fandom.com/wiki/Viper_Wall",
     "https://beyblade.fandom.com/wiki/Heavy_Viper_Wall"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 3,
+    "defesa": 9,
+    "stamina": 6,
+    "velocidade": 3,
+    "peso": 8,
+    "equilibrio": 5,
+    "resistencia_knockout": 8
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Draciel (V)",
+    "attack_ring": "Ten Spike",
+    "weight_disk": "Ten Balance",
+    "spin_gear": "Neo Right SG (North Magnecore)",
+    "support_part": null,
+    "blade_base": "Viper Metal Ball Base"
+  },
+  "lancador": "lancadores/marksmen-grip",
+  "medidas": {
+    "peso_g": 35.3,
+    "diametro_mm": 43,
+    "altura_mm": 26.6
+  },
+  "atributos_brinquedo": {
+    "ataque": 2.8,
+    "defesa": 6.3,
+    "stamina": 6.1,
+    "velocidade": 3.1,
+    "peso": 6.6,
+    "equilibrio": 8.2,
+    "resistencia_knockout": 5.1
+  },
+  "ajuste_anime": {
+    "defesa": 2,
+    "resistencia_knockout": 1
+  },
+  "calculo": {
+    "ponta": "metal-ball",
+    "origem_ponta": "blade-base/viper-metal-ball-base",
+    "atrito_ponta": 0.18,
+    "tipo_contato": "defesa",
+    "recoil": 0.7,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 5,
+    "engine_gear": null,
+    "inercia_g_mm2": 6484,
+    "estrelas_takara": {
+      "ataque": 4,
+      "defesa": 7.5,
+      "stamina": 7.5,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.21,
+      "defesa": 0.64,
+      "stamina": 0.58
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Draciel (tartaruga / Genbu)"
 }

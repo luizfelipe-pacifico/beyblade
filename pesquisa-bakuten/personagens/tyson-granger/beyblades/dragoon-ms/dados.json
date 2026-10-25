@@ -7,20 +7,23 @@
   "tipo": "attack",
   "sistema": "hms",
   "rotacao": "esquerda (anime) / ambas (brinquedo HMS, 'Dual-Spin' na wiki)",
-  "fera_bit": "Dragoon (dragão azul / Seiryū, vento)",
+  "fera_bit": "dragoon",
   "temporada": "g-revolution",
   "pecas": {
-    "bit_chip": "Bit Protector - Dragoon Emblem",
-    "attack_ring": "Metal Attacker",
-    "weight_disk": "Circle Wide",
-    "spin_gear": "Running Core - Grip Flat Core",
-    "support_part": null,
-    "blade_base": null
+    "bit_chip": "bit-chip/dragoon-emblem",
+    "attack_ring": "attack-ring/metal-attacker",
+    "weight_disk": "weight-disk/circle-wide",
+    "spin_gear": "spin-gear/grip-flat-core"
   },
   "ponta": "grip (borracha macia, ~4 mm)",
   "atributos": {
-    "ataque": 9, "defesa": 5, "stamina": 3, "velocidade": 9,
-    "peso": 6, "equilibrio": 6, "resistencia_knockout": 6
+    "ataque": 7.4,
+    "defesa": 3.4,
+    "stamina": 5.6,
+    "velocidade": 8.1,
+    "peso": 3.8,
+    "equilibrio": 5.5,
+    "resistencia_knockout": 5.4
   },
   "fisica": {
     "massa_relativa": 1.1,
@@ -30,8 +33,18 @@
     "padrao_movimento": "agressivo"
   },
   "especiais": [
-    { "nome": "Evolution Storm", "efeito": "Tornado gigante por 2 s que puxa os adversários, seguido de dash do Dragoon com dano muito alto e knockback", "custo": 100, "cooldown_s": 24 },
-    { "nome": "Ridge Boost (passiva)", "efeito": "+20% de velocidade por 1 s ao passar perto do tornado ridge", "custo": 0, "cooldown_s": 0 }
+    {
+      "nome": "Evolution Storm",
+      "efeito": "Tornado gigante por 2 s que puxa os adversários, seguido de dash do Dragoon com dano muito alto e knockback",
+      "custo": 100,
+      "cooldown_s": 24
+    },
+    {
+      "nome": "Ridge Boost (passiva)",
+      "efeito": "+20% de velocidade por 1 s ao passar perto do tornado ridge",
+      "custo": 0,
+      "cooldown_s": 0
+    }
   ],
   "antecessora": "dragoon-gt",
   "sucessora": "dragoon-ms-ultimate-version",
@@ -41,5 +54,65 @@
     "https://beyblade.fandom.com/wiki/Evolution_Storm",
     "https://beyblade.fandom.com/wiki/Beyblade:_G-Revolution_-_Episode_40",
     "https://beyblade.fandom.com/wiki/Beyblade:_G-Revolution_-_Episode_52"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 9,
+    "defesa": 5,
+    "stamina": 3,
+    "velocidade": 9,
+    "peso": 6,
+    "equilibrio": 6,
+    "resistencia_knockout": 6
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Bit Protector - Dragoon Emblem",
+    "attack_ring": "Metal Attacker",
+    "weight_disk": "Circle Wide",
+    "spin_gear": "Running Core - Grip Flat Core",
+    "support_part": null,
+    "blade_base": null
+  },
+  "lancador": "lancadores/dual-shooter",
+  "medidas": {
+    "peso_g": 29.6,
+    "diametro_mm": 42,
+    "altura_mm": 22.1
+  },
+  "atributos_brinquedo": {
+    "ataque": 6.4,
+    "defesa": 3.4,
+    "stamina": 4.6,
+    "velocidade": 8.1,
+    "peso": 3.8,
+    "equilibrio": 5.5,
+    "resistencia_knockout": 5.4
+  },
+  "ajuste_anime": {
+    "ataque": 1,
+    "stamina": 1
+  },
+  "calculo": {
+    "ponta": "grip-flat",
+    "origem_ponta": "spin-gear/grip-flat-core",
+    "atrito_ponta": 0.7,
+    "tipo_contato": "smash",
+    "recoil": 0.45,
+    "distribuicao_peso": "periferia",
+    "simetria": 4,
+    "engine_gear": null,
+    "inercia_g_mm2": 7875,
+    "estrelas_takara": {
+      "ataque": 8,
+      "defesa": 4,
+      "stamina": 5,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.6,
+      "defesa": 0.38,
+      "stamina": 0.54
+    }
+  },
+  "ripcord": "lancadores/ripcords/g-winder",
+  "fera_bit_descricao": "Dragoon (dragão azul / Seiryū, vento)"
 }

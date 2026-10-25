@@ -1,5 +1,9 @@
 # Tyson Granger (木ノ宮タカオ / Kinomiya Takao)
 
+![Tyson](retrato.svg)
+
+Retrato original do jogo ([retrato.svg](retrato.svg)). Sem foto de referência no repositório (o CDN da wiki bloqueou o download); o retrato foi feito a partir da descrição da wiki e do visual conhecido do anime.
+
 > **Imagem faltante**: o CDN da wiki (static.wikia.nocookie.net) devolve um desafio anti-bot da Cloudflare para `curl -A "Mozilla/5.0"`, então a foto não foi baixada. Arquivos de origem:
 > - S1: https://beyblade.fandom.com/wiki/File:TysonSeason1.jpg (deve ser salva como `foto.jpg`)
 > - V-Force: https://beyblade.fandom.com/wiki/File:TysonVForceUpdated.jpg
@@ -14,6 +18,27 @@
 | Fera Bit | Dragoon (青龍 Seiryū, o Dragão Azul do Leste da mitologia chinesa; elemento vento) |
 | Estilo de batalha | Attack: beys rápidas com ponta de borracha, rotação **esquerda** e especiais de tornado |
 | Dublador(a) JP / EN / PT-BR | Motoko Kumai / Marlowe Gardiner-Heslin / João Cappelli |
+
+## Visual
+
+Padrão do retrato: visual da **temporada 1 (2001)**.
+
+- **S1 (2001)**: cabelo **azul-marinho** com franja espetada saindo por baixo do boné e **rabo de cavalo** preso atrás, que cai até a altura dos ombros. Olhos azuis (a wiki descreve olhos azuis na 1ª temporada), pele clara-pêssego, sorriso confiante. **Boné vermelho, azul e branco usado virado para trás** (aba azul na nuca e a abertura de ajuste na testa, por onde escapa a franja); o boné foi do irmão Hiro. **Jaqueta vermelha aberta com gola branca**, camiseta **amarela** por baixo, luvas sem dedos, bermuda azul e meias brancas longas (fora do busto).
+- **V-Force (2002)**: olhos passam a castanhos, mesmo cabelo azul. O boné continua virado para trás, mas a parte branca vira vermelha e o contorno azul vira branco. Mantém a jaqueta aberta com gola (sem os botões amarelos), camiseta amarela de manga mais longa, luvas azuis, calça jeans cinza e tênis vermelho, cinza e azul.
+- **G-Revolution (2003)**: volta à jaqueta vermelha com camiseta amarela, luvas azul-escuras, jeans azul-escuro, tênis vermelho e branco e um porta-bey azul e amarelo no braço esquerdo.
+- Elementos obrigatórios no retrato: boné virado para trás (vermelho/branco/azul), cabelo azul-marinho com rabo de cavalo, jaqueta vermelha de gola branca, camiseta amarela.
+- Nota: a aba do boné foi desenhada azul e a lateral branca; a wiki só lista as três cores, então a distribuição exata é interpretação.
+
+| Uso | Hex |
+|---|---|
+| Disco de fundo (Dragoon, dragão azul; proposta até existir `feras-bit/dragoon/dados.json`) | `#2f6fd6` (borda `#0d1226`) |
+| Cabelo base / sombra / brilho | `#25397c` / `#14245a` / `#5770c0` |
+| Olhos (íris) | `#3b5aa8` |
+| Pele base / sombra | `#f6cfab` / `#e6a882` |
+| Boné vermelho / azul / branco | `#d8343a` / `#2457c5` / `#f4f4f8` |
+| Jaqueta / gola (sombra da gola) | `#d9363e` / `#f4f4f8` (`#c6cadf`) |
+| Camiseta | `#f5c331` |
+| Contorno | `#0d1226` |
 
 ## Personalidade e papel na história
 - Protagonista da série original. Neto de Ryu Granger, um mestre de kendô dono de um dojo. Irmão mais novo de Hiro Granger ("Jin of the Gale"). O boné que usa foi de Hiro.
@@ -34,20 +59,20 @@
 - **Frases de efeito**: "Let it rip!" (EN), "Go Shoot!" (JP). "Dragoon, attack!", "I would be scared if I wasn't so darn good."
 
 ## Beyblades utilizadas no anime (ordem cronológica)
-| # | Beyblade | Temporada | Episódio de estreia | Pasta |
-|---|---|---|---|---|
-| 1 | Dragoon Grip Attacker | S1 | Ep. 01 "The Blade Raider" (destruída pelo Kai no ep. 01–02) | [dragoon-grip-attacker](beyblades/dragoon-grip-attacker/) |
-| 2 | Dragoon S (Storm) | S1 | Ep. 02 "Day of the Dragoon" (usada até o ep. 23) | [dragoon-s](beyblades/dragoon-s/) |
-| 3 | Dragoon F (Fantom) | S1 | Ep. 23 "Showdown in Vegas" (até o fim da S1) | [dragoon-f](beyblades/dragoon-f/) |
-| 4 | Dranzer F (**emprestada** do Kai) | S1 | Ep. 44 "Losing Kai" (recebe), usada no ep. 45 "Breaking the Ice" contra a Black Dranzer | [dranzer-f](beyblades/dranzer-f/) |
-| 5 | Dragoon V (Victory) | V-Force | Ep. 01 "Shot Down in Flames" (V-Force ep. 1 = ep. 52 no total) | [dragoon-v](beyblades/dragoon-v/) |
-| 6 | Master Dragoon (bey genérica de treino, **uso temporário**) | V-Force | Ep. 28: lançada para estourar o pneu do carro dos ladrões (não foi uma batalha) | [master-dragoon](beyblades/master-dragoon/) |
-| 7 | Dragoon V2 | V-Force | Ep. 30 "Get a Piece of the Rock" | [dragoon-v2](beyblades/dragoon-v2/) |
-| 8 | Dragoon V2 High Power Custom (customização do Kenny) | V-Force | Ep. 47 "Deceit From Above" (até o ep. 51, final contra o Zeo) | [dragoon-v2-high-power-custom](beyblades/dragoon-v2-high-power-custom/) |
-| 9 | Dragoon G (Galaxy) | G-Rev | Ep. 01 "New Kid in Town" | [dragoon-g](beyblades/dragoon-g/) |
-| 10 | Dragoon GT (Galaxy Turbo) | G-Rev | Ep. 26 "Familiar Faces" (destruída no ep. 37) | [dragoon-gt](beyblades/dragoon-gt/) |
-| 11 | Dragoon MS (Metal Storm) | G-Rev | Ep. 39 "Rebel Alliance" | [dragoon-ms](beyblades/dragoon-ms/) |
-| 12 | Dragoon MS Ultimate Version | G-Rev | Ep. 52 "Beybattle for the Ages" (a MS evolui durante a luta com o Brooklyn) | [dragoon-ms-ultimate-version](beyblades/dragoon-ms-ultimate-version/) |
+| # | Beyblade | Temporada | Episódio de estreia | Miniatura | Lançador | Pasta |
+|---|---|---|---|---|---|---|
+| 1 | Dragoon Grip Attacker | S1 | Ep. 01 "The Blade Raider" (destruída pelo Kai no ep. 01–02) | <img src="beyblades/dragoon-grip-attacker/sprite.svg" width="56"> | [EZ Shooter (Easy Shooter, rotação direita)](../../lancadores/ez-shooter/) | [dragoon-grip-attacker](beyblades/dragoon-grip-attacker/) |
+| 2 | Dragoon S (Storm) | S1 | Ep. 02 "Day of the Dragoon" (usada até o ep. 23) | <img src="beyblades/dragoon-s/sprite.svg" width="56"> | [Left EZ Shooter (lançador esquerdo original, "Dragoon")](../../lancadores/left-ez-shooter/) | [dragoon-s](beyblades/dragoon-s/) |
+| 3 | Dragoon F (Fantom) | S1 | Ep. 23 "Showdown in Vegas" (até o fim da S1) | <img src="beyblades/dragoon-f/sprite.svg" width="56"> | [Dragoon Shooter DX](../../lancadores/dragoon-shooter-dx/) | [dragoon-f](beyblades/dragoon-f/) |
+| 4 | Dranzer F (**emprestada** do Kai) | S1 | Ep. 44 "Losing Kai" (recebe), usada no ep. 45 "Breaking the Ice" contra a Black Dranzer | <img src="beyblades/dranzer-f/sprite.svg" width="56"> | [EZ Shooter (Easy Shooter, rotação direita)](../../lancadores/ez-shooter/) | [dranzer-f](beyblades/dranzer-f/) |
+| 5 | Dragoon V (Victory) | V-Force | Ep. 01 "Shot Down in Flames" (V-Force ep. 1 = ep. 52 no total) | <img src="beyblades/dragoon-v/sprite.svg" width="56"> | [Neo Reverse Shooter (Neo Left EZ Shooter)](../../lancadores/neo-reverse-shooter/) | [dragoon-v](beyblades/dragoon-v/) |
+| 6 | Master Dragoon (bey genérica de treino, **uso temporário**) | V-Force | Ep. 28: lançada para estourar o pneu do carro dos ladrões (não foi uma batalha) | <img src="beyblades/master-dragoon/sprite.svg" width="56"> | [EZ Shooter (Easy Shooter, rotação direita)](../../lancadores/ez-shooter/) | [master-dragoon](beyblades/master-dragoon/) |
+| 7 | Dragoon V2 | V-Force | Ep. 30 "Get a Piece of the Rock" | <img src="beyblades/dragoon-v2/sprite.svg" width="56"> | [Neo Reverse Shooter (Neo Left EZ Shooter)](../../lancadores/neo-reverse-shooter/) | [dragoon-v2](beyblades/dragoon-v2/) |
+| 8 | Dragoon V2 High Power Custom (customização do Kenny) | V-Force | Ep. 47 "Deceit From Above" (até o ep. 51, final contra o Zeo) | <img src="beyblades/dragoon-v2-high-power-custom/sprite.svg" width="56"> | [Neo Reverse Shooter (Neo Left EZ Shooter)](../../lancadores/neo-reverse-shooter/) | [dragoon-v2-high-power-custom](beyblades/dragoon-v2-high-power-custom/) |
+| 9 | Dragoon G (Galaxy) | G-Rev | Ep. 01 "New Kid in Town" | <img src="beyblades/dragoon-g/sprite.svg" width="56"> | [Customize Grip (Off-White) - versão Tyson](../../lancadores/customize-grip-tyson/) | [dragoon-g](beyblades/dragoon-g/) |
+| 10 | Dragoon GT (Galaxy Turbo) | G-Rev | Ep. 26 "Familiar Faces" (destruída no ep. 37) | <img src="beyblades/dragoon-gt/sprite.svg" width="56"> | [Customize Grip (Off-White) - versão Tyson](../../lancadores/customize-grip-tyson/) | [dragoon-gt](beyblades/dragoon-gt/) |
+| 11 | Dragoon MS (Metal Storm) | G-Rev | Ep. 39 "Rebel Alliance" | <img src="beyblades/dragoon-ms/sprite.svg" width="56"> | [Dual Shooter (HMS)](../../lancadores/dual-shooter/) | [dragoon-ms](beyblades/dragoon-ms/) |
+| 12 | Dragoon MS Ultimate Version | G-Rev | Ep. 52 "Beybattle for the Ages" (a MS evolui durante a luta com o Brooklyn) | <img src="beyblades/dragoon-ms-ultimate-version/sprite.svg" width="56"> | [Dual Shooter (HMS)](../../lancadores/dual-shooter/) | [dragoon-ms-ultimate-version](beyblades/dragoon-ms-ultimate-version/) |
 
 **Ficaram sem pasta** (fora do escopo de batalha no anime):
 - **Spin Dragoon / Ultimate Dragoon** (01, Takara 1999). Aparece só num flashback da infância em G-Rev ep. 40 "Back to Basics", sem batalha. No mangá é a primeira bey dele.

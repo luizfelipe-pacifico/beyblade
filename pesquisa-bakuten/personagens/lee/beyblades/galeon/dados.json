@@ -7,20 +7,27 @@
   "tipo": "balance",
   "sistema": "spin-gear",
   "rotacao": "direita",
-  "fera_bit": "Galeon (leão negro)",
+  "fera_bit": "galeon",
   "temporada": "bakuten-shoot",
   "pecas": {
-    "bit_chip": "Galeon",
-    "attack_ring": "War Lion (com Sub-Attack Ring livre)",
-    "weight_disk": "Eight Heavy",
-    "spin_gear": "Right SG",
-    "support_part": null,
-    "blade_base": "SG Semi-Flat"
+    "bit_chip": "bit-chip/galeon",
+    "attack_ring": [
+      "attack-ring/war-lion",
+      "attack-ring/war-lion-sub-ar"
+    ],
+    "weight_disk": "weight-disk/eight-heavy",
+    "spin_gear": "spin-gear/right-sg",
+    "blade_base": "blade-base/sg-semi-flat"
   },
   "ponta": "semi-flat",
   "atributos": {
-    "ataque": 5, "defesa": 7, "stamina": 7, "velocidade": 5,
-    "peso": 5, "equilibrio": 7, "resistencia_knockout": 6
+    "ataque": 5.6,
+    "defesa": 6.2,
+    "stamina": 4,
+    "velocidade": 4.4,
+    "peso": 4.7,
+    "equilibrio": 8.8,
+    "resistencia_knockout": 5.2
   },
   "fisica": {
     "massa_relativa": 0.85,
@@ -30,7 +37,12 @@
     "padrao_movimento": "centro"
   },
   "especiais": [
-    { "nome": "Black Thunder (Dark Lightning)", "efeito": "Aura elétrica por 3 s: contato causa dano e repulsão forte (knockback x2)", "custo": 120, "cooldown_s": 24 }
+    {
+      "nome": "Black Thunder (Dark Lightning)",
+      "efeito": "Aura elétrica por 3 s: contato causa dano e repulsão forte (knockback x2)",
+      "custo": 120,
+      "cooldown_s": 24
+    }
   ],
   "antecessora": null,
   "sucessora": "galeon-2",
@@ -39,5 +51,64 @@
     "https://beyblade.fandom.com/wiki/Galeon",
     "https://beyblade.fandom.com/wiki/Attack_Ring_-_War_Lion",
     "https://beyblade.fandom.com/wiki/Dark_Lightning_(Black_Thunder)"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 5,
+    "defesa": 7,
+    "stamina": 7,
+    "velocidade": 5,
+    "peso": 5,
+    "equilibrio": 7,
+    "resistencia_knockout": 6
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Galeon",
+    "attack_ring": "War Lion (com Sub-Attack Ring livre)",
+    "weight_disk": "Eight Heavy",
+    "spin_gear": "Right SG",
+    "support_part": null,
+    "blade_base": "SG Semi-Flat"
+  },
+  "lancador": "lancadores/ez-shooter",
+  "medidas": {
+    "peso_g": 31.3,
+    "diametro_mm": 43,
+    "altura_mm": 26.5
+  },
+  "atributos_brinquedo": {
+    "ataque": 3.6,
+    "defesa": 6.2,
+    "stamina": 4,
+    "velocidade": 4.4,
+    "peso": 4.7,
+    "equilibrio": 8.8,
+    "resistencia_knockout": 5.2
+  },
+  "ajuste_anime": {
+    "ataque": 2
+  },
+  "calculo": {
+    "ponta": "semi-flat",
+    "origem_ponta": "blade-base/sg-semi-flat",
+    "atrito_ponta": 0.3,
+    "tipo_contato": "defesa",
+    "recoil": 0.15,
+    "distribuicao_peso": "centro",
+    "simetria": 4,
+    "engine_gear": null,
+    "inercia_g_mm2": 5527,
+    "estrelas_takara": {
+      "ataque": 5,
+      "defesa": 7.5,
+      "stamina": 4.5,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.26,
+      "defesa": 0.63,
+      "stamina": 0.45
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Galeon (leão negro)"
 }

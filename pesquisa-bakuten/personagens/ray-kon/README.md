@@ -1,5 +1,9 @@
 # Ray Kon (Rei Kon / 金李, Kon Rei)
 
+![Ray](retrato.svg)
+
+Retrato original do jogo ([retrato.svg](retrato.svg)). Sem foto de referência no repositório (download bloqueado).
+
 > **Imagem faltante** (`foto`): o CDN da wiki (static.wikia.nocookie.net) devolveu desafio Cloudflare ao `curl -A "Mozilla/5.0"`. Arquivo de referência: `File:RAY KON 2000 PROMO.png` em https://beyblade.fandom.com/wiki/Ray_Kon
 
 | Campo | Valor |
@@ -11,6 +15,26 @@
 | Fera Bit | Driger (白虎, Byakko) – Tigre Branco, uma das 4 feras sagradas, "espírito do trovão" |
 | Estilo de batalha | Balance com viés de ataque: velocidade, precisão e golpes de garra em rajada (multi-hit) |
 | Dublador(a) JP / EN / PT-BR | Aya Hisakawa / Daniel DeSanto / não confirmado |
+
+## Visual
+
+Padrão do retrato: visual da **temporada 1 (2001)**.
+
+- **S1 (2001)**: cabelo **preto** com franja espetada e mechas laterais longas emoldurando o rosto; o resto do cabelo é **muito longo (até as panturrilhas), preso e envolto num tecido branco e vermelho**, que no retrato cai pela frente do ombro. **Faixa vermelha na testa com o símbolo yin-yang** no centro, pontas da faixa soltas atrás. Olhos **dourados com pupila em fenda, de gato**, e uma **presa** visível no sorriso. Veste um **changshan branco** (casaco chinês de gola mandarim) com faixa vermelha na cintura; camiseta azul por baixo e sapatilhas pretas de kung fu (fora do busto).
+- **V-Force (2002)**: aparência quase igual; os olhos ficam cor de cobre e o corpo mais definido.
+- **G-Revolution (2003)**: olhos voltam ao dourado e o visual fica "mais felino"; corpo esguio e flexível (treino com os White Tigers).
+- Elementos obrigatórios no retrato: faixa vermelha com yin-yang, olhos felinos dourados, presa, cabelo preto longo envolto em tecido, roupa chinesa branca.
+- Nota: os fechos vermelhos em diagonal no changshan são interpretação (a wiki só cita o casaco branco e a faixa vermelha).
+
+| Uso | Hex |
+|---|---|
+| Disco de fundo (Driger, tigre branco do trovão; verde da bey/aura, proposta até existir `feras-bit/driger/dados.json`) | `#3d9e5a` (borda `#0d1226`) |
+| Cabelo base / sombra / brilho | `#1f2233` / `#14151f` / `#58689a` |
+| Olhos (íris) / pupila | `#e3a419` / `#0d1226` |
+| Pele base / sombra | `#f4cfa8` / `#e2a980` |
+| Faixa, fechos e listras do tecido | `#d63434` |
+| Changshan e tecido do cabelo base / sombra | `#f4f2ec` / `#c3c6da` |
+| Contorno | `#0d1226` |
 
 ## Personalidade e papel na história
 - Deuteragonista da série original. Calmo, educado, aberto a aprender técnicas novas — a filosofia "yin-yang" do personagem (calmo fora da arena, feroz dentro dela).
@@ -27,14 +51,14 @@
 - **Frases de efeito**: "Tiger Claw Attack!", "Give me 100%!", "Feel the power of White Tiger X!".
 
 ## Beyblades utilizadas no anime (ordem cronológica)
-| # | Beyblade | Temporada | Episódio de estreia | Pasta |
-|---|---|---|---|---|
-| 1 | Driger S (Slash) | S1 | ep 5–6 (1ª batalha ep 5; infobox da wiki diz ep 6) — usada até o ep 20 | [beyblades/driger-s](beyblades/driger-s/) |
-| 2 | Driger F (Fang) | S1 → V-Force | S1 ep 21 — usada até V-Force ep ~7 | [beyblades/driger-f](beyblades/driger-f/) |
-| 3 | Driger V (Vulcan; "Driger Five" no dub EN) | V-Force | V-Force ep 8 | [beyblades/driger-v](beyblades/driger-v/) |
-| 4 | Driger V2 (Vulcan 2) | V-Force → G-Rev | V-Force ep 38 — usada ainda em G-Rev eps 2–3 | [beyblades/driger-v2](beyblades/driger-v2/) |
-| 5 | Driger G (Gatling) | G-Revolution | G-Rev ep 4 | [beyblades/driger-g](beyblades/driger-g/) |
-| 6 | Driger MS (Metal Slash) | G-Revolution | G-Rev ep 40 | [beyblades/driger-ms](beyblades/driger-ms/) |
+| # | Beyblade | Temporada | Episódio de estreia | Pasta | Miniatura | Lançador | Ripcord |
+|---|---|---|---|---|---|---|---|
+| 1 | Driger S (Slash) | S1 | ep 5–6 (1ª batalha ep 5; infobox da wiki diz ep 6) — usada até o ep 20 | [beyblades/driger-s](beyblades/driger-s/) | <img src="beyblades/driger-s/sprite.svg" width="56"> | [EZ Shooter (Easy Shooter, rotação direita)](../../lancadores/ez-shooter/) | [Winder padrão](../../lancadores/ripcords/winder-padrao/) |
+| 2 | Driger F (Fang) | S1 → V-Force | S1 ep 21 — usada até V-Force ep ~7 | [beyblades/driger-f](beyblades/driger-f/) | <img src="beyblades/driger-f/sprite.svg" width="56"> | [Driger Shooter DX](../../lancadores/driger-shooter-dx/) | [Winder padrão](../../lancadores/ripcords/winder-padrao/) |
+| 3 | Driger V (Vulcan; "Driger Five" no dub EN) | V-Force | V-Force ep 8 | [beyblades/driger-v](beyblades/driger-v/) | <img src="beyblades/driger-v/sprite.svg" width="56"> | [Driger Shooter DX](../../lancadores/driger-shooter-dx/) | [Winder padrão](../../lancadores/ripcords/winder-padrao/) → [Ultimate Winder](../../lancadores/ripcords/ultimate-winder/) (V-Force ep. 12 em diante) |
+| 4 | Driger V2 (Vulcan 2) | V-Force → G-Rev | V-Force ep 38 — usada ainda em G-Rev eps 2–3 | [beyblades/driger-v2](beyblades/driger-v2/) | <img src="beyblades/driger-v2/sprite.svg" width="56"> | [Bey Ultimate Shooter (BeyUltimate Shooter)](../../lancadores/bey-ultimate-shooter/) | [Ultimate Winder](../../lancadores/ripcords/ultimate-winder/) |
+| 5 | Driger G (Gatling) | G-Revolution | G-Rev ep 4 | [beyblades/driger-g](beyblades/driger-g/) | <img src="beyblades/driger-g/sprite.svg" width="56"> | [Customize Grip (Sky Blue) - versão Ray](../../lancadores/customize-grip-ray/) | [Winder padrão](../../lancadores/ripcords/winder-padrao/) |
+| 6 | Driger MS (Metal Slash) | G-Revolution | G-Rev ep 40 | [beyblades/driger-ms](beyblades/driger-ms/) | <img src="beyblades/driger-ms/sprite.svg" width="56"> | [HMS Customize Grip (Ray: Dual Shooter preto + G-Winder azul)](../../lancadores/hms-customize-grip/) | [G-Winder](../../lancadores/ripcords/g-winder/) |
 
 Fora do escopo (só mangá / Beyblade: Rising): Driger Slash Heavy Fusion, Darkness Driger Heavy Fusion, Driger Fang 0 Xtend, Driger Vulcan 10Reach Weight. No filme "Fierce Battle" (2002) Ray luta contra os Shadow Bladers (empate); a bey usada no filme não foi confirmada nas fontes (cronologicamente seria Driger V/V2).
 

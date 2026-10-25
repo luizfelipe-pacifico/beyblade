@@ -1,6 +1,8 @@
 # Daichi Sumeragi (皇大地 / Sumeragi Daichi)
 
-![Personagem](foto.jpg)
+![Daichi](retrato.svg)
+
+Retrato original do jogo ([retrato.svg](retrato.svg)). Referência: [referencia/foto.jpg](referencia/foto.jpg) (arte promocional de G-Revolution).
 
 Fera bit: ![Gaia Dragoon](fera-bit.jpg)
 
@@ -15,6 +17,25 @@ Fera bit: ![Gaia Dragoon](fera-bit.jpg)
 | Dublador(a) JP / EN / PT-BR | Naomi (Nao) Nagasawa / Mary Long / não confirmado |
 
 Aniversário: 30 de junho (Câncer). Aparência: cabelo ruivo-escuro espetado, olhos verdes, cicatriz em X na testa, regata azul rasgada.
+
+## Visual
+
+Padrão do retrato: visual de **G-Revolution (2003)**, a temporada em que ele aparece (estreia no filme *Fierce Battle*).
+
+- **G-Revolution (2003)**: baixinho, cabelo **ruivo-escuro** volumoso, em pontas grandes para cima e para trás, com franja espetada que deixa à mostra a **cicatriz em X no meio da testa**. Sobrancelhas grossas, olhos **verdes**, pele bronzeada, sorriso largo de boca aberta. **Regata azul rasgada** (com debrum claro nas cavas na arte promocional), munhequeiras vermelhas quase da cor do cabelo, jeans azul-claro rasgado numa perna, cinto preto com fivela de bronze e tênis com tira azul (fora do busto).
+- **Filme *Fierce Battle* (2002)**: mesma roupa, mais "surrada": mangas cortadas e a barra da perna comprida rasgada; em G-Rev as mangas estão enroladas e a barra inteira.
+- **S1 / V-Force**: não aparece na série de TV.
+- Correção: Daichi **não usa faixa na cabeça**; a marca da testa é a cicatriz em X (wiki e foto de referência).
+- Elementos obrigatórios no retrato: cabelo ruivo espetado, cicatriz em X, sobrancelhas grossas, olhos verdes, regata azul rasgada.
+
+| Uso | Hex |
+|---|---|
+| Disco de fundo (Gaia Dragoon, dragão dourado; proposta até existir `feras-bit/gaia-dragoon/dados.json`) | `#e3b51c` (borda `#0d1226`) |
+| Cabelo base / sombra / brilho | `#b8261f` / `#7a1612` / `#ee6a58` |
+| Olhos (íris) | `#2e9a4c` |
+| Pele base / sombra / cicatriz | `#efb88c` / `#d48c60` / `#b8653c` |
+| Regata / debrum | `#1f528f` / `#e8eef8` |
+| Contorno | `#0d1226` |
 
 ## Personalidade e papel na história
 - Garoto hiperativo, teimoso, comilão e excessivamente confiante; alívio cômico do grupo (enjoo em aviões, briga constante com Tyson, chama Hilary de "velha").
@@ -31,12 +52,12 @@ Aniversário: 30 de junho (Câncer). Aparência: cabelo ruivo-escuro espetado, o
 - Frases: "My name's Daichi. I challenge you! And when I win, I'll be Japan's number one Beyblader!"; "I'm not leaving without a rematch!"
 
 ## Beyblades utilizadas no anime (ordem cronológica)
-| # | Beyblade | Temporada | Episódio de estreia | Pasta |
-|---|---|---|---|---|
-| 1 | Gaia Dragoon (Strata Dragoon / "Gaia Dragoon S") | Filme *Fierce Battle* (2002); flashback em G-Rev | Filme; G-Rev ep. 40 (flashback, "Back to Basics") | [gaia-dragoon](beyblades/gaia-dragoon/) |
-| 2 | Gaia Dragoon V (Vurst / Strata Dragoon V) | Final do filme + G-Revolution | Filme (evolução no final); G-Rev ep. 1 "New Kid in Town" | [gaia-dragoon-v](beyblades/gaia-dragoon-v/) |
-| 3 | Gaia Dragoon G (Great / Strata Dragoon G) | G-Revolution | ep. 18 "Beyblade Like an Egyptian" | [gaia-dragoon-g](beyblades/gaia-dragoon-g/) |
-| 4 | Gaia Dragoon MS (Metal Spike / Strata Dragoon MS) | G-Revolution (fase BEGA) | ep. 40 "Back to Basics" (lista da wiki); primeiro especial no ep. 43 | [gaia-dragoon-ms](beyblades/gaia-dragoon-ms/) |
+| # | Beyblade | Temporada | Episódio de estreia | Pasta | Miniatura | Lançador + ripcord |
+|---|---|---|---|---|---|---|
+| 1 | Gaia Dragoon (Strata Dragoon / "Gaia Dragoon S") | Filme *Fierce Battle* (2002); flashback em G-Rev | Filme; G-Rev ep. 40 (flashback, "Back to Basics") | [gaia-dragoon](beyblades/gaia-dragoon/) | <img src="beyblades/gaia-dragoon/sprite.svg" width="56"> | [EZ Shooter (Easy Shooter, rotação direita)](../../lancadores/ez-shooter/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
+| 2 | Gaia Dragoon V (Vurst / Strata Dragoon V) | Final do filme + G-Revolution | Filme (evolução no final); G-Rev ep. 1 "New Kid in Town" | [gaia-dragoon-v](beyblades/gaia-dragoon-v/) | <img src="beyblades/gaia-dragoon-v/sprite.svg" width="56"> | [EZ Shooter (Easy Shooter, rotação direita)](../../lancadores/ez-shooter/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
+| 3 | Gaia Dragoon G (Great / Strata Dragoon G) | G-Revolution | ep. 18 "Beyblade Like an Egyptian" | [gaia-dragoon-g](beyblades/gaia-dragoon-g/) | <img src="beyblades/gaia-dragoon-g/sprite.svg" width="56"> | [EZ Shooter (Easy Shooter, rotação direita)](../../lancadores/ez-shooter/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
+| 4 | Gaia Dragoon MS (Metal Spike / Strata Dragoon MS) | G-Revolution (fase BEGA) | ep. 40 "Back to Basics" (lista da wiki); primeiro especial no ep. 43 | [gaia-dragoon-ms](beyblades/gaia-dragoon-ms/) | <img src="beyblades/gaia-dragoon-ms/sprite.svg" width="56"> | [Dual Shooter (HMS)](../../lancadores/dual-shooter/) + [G-Winder (HMS)](../../lancadores/ripcords/g-winder/) |
 
 Não incluídas (fora do escopo do anime): Kids Draciel / "A-Dragoon" (só videogames), Gaia Dragoon Around Hunter' (só mangá *Rising*), Bakutenhenkei Gaia Dragoon (só CoroCoro). **Dark Gaia Dragoon** existe como brinquedo (Magnacore, dez/2002) e como design de mangá do especial do filme; a página de desambiguação da wiki diz que Daichi a usou temporariamente no filme, mas a própria página da bey não lista aparição no anime e a página dos Shadow Bladers diz que no filme Daichi usava Gaia Dragoon — não confirmado, portanto não documentada.
 

@@ -7,9 +7,66 @@
   "tipo": "defense",
   "sistema": "spin-gear",
   "rotacao": "direita",
-  "fera_bit": "Draciel (tartaruga / Genbu)",
+  "fera_bit": "draciel",
   "temporada": "bakuten-shoot",
   "pecas": {
+    "bit_chip": "bit-chip/draciel-s",
+    "attack_ring": "attack-ring/cross-spike",
+    "weight_disk": "weight-disk/eight-balance",
+    "spin_gear": "spin-gear/right-sg",
+    "blade_base": "blade-base/sg-metal-ball-base"
+  },
+  "ponta": "bola-metal",
+  "atributos": {
+    "ataque": 4.1,
+    "defesa": 7,
+    "stamina": 5.7,
+    "velocidade": 3.2,
+    "peso": 6.1,
+    "equilibrio": 8.3,
+    "resistencia_knockout": 5.3
+  },
+  "fisica": {
+    "massa_relativa": 1.1,
+    "raio_relativo": 1,
+    "atrito_ponta": 0.2,
+    "restituicao": 0.45,
+    "padrao_movimento": "centro"
+  },
+  "especiais": [
+    {
+      "nome": "Metal Ball Defense",
+      "efeito": "6 s com +40% de massa efetiva; o atacante perde 5% de RPM por colisão",
+      "custo": 100,
+      "cooldown_s": 22
+    }
+  ],
+  "antecessora": "draciel-metal-ball-defenser",
+  "sucessora": "draciel-f",
+  "imagens": [
+    "imagem.png",
+    "anime.jpg",
+    "pecas/attack-ring.gif",
+    "pecas/weight-disk.gif",
+    "pecas/spin-gear.gif",
+    "pecas/blade-base.gif",
+    "pecas/pecas-desmontadas.jpg"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Draciel_S",
+    "https://beyblade.fandom.com/wiki/Metal_Ball_Defense",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_14"
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 2,
+    "defesa": 8,
+    "stamina": 6,
+    "velocidade": 2,
+    "peso": 8,
+    "equilibrio": 6,
+    "resistencia_knockout": 8
+  },
+  "pecas_nomes_originais": {
     "bit_chip": "Draciel",
     "attack_ring": "Cross Spike",
     "weight_disk": "Eight Balance",
@@ -17,27 +74,46 @@
     "support_part": null,
     "blade_base": "SG Metal Ball Base"
   },
-  "ponta": "bola-metal",
-  "atributos": {
-    "ataque": 2, "defesa": 8, "stamina": 6, "velocidade": 2,
-    "peso": 8, "equilibrio": 6, "resistencia_knockout": 8
+  "lancador": "lancadores/marksmen-grip",
+  "medidas": {
+    "peso_g": 34.3,
+    "diametro_mm": 43,
+    "altura_mm": 23.6
   },
-  "fisica": {
-    "massa_relativa": 1.1,
-    "raio_relativo": 1.0,
-    "atrito_ponta": 0.2,
-    "restituicao": 0.45,
-    "padrao_movimento": "centro"
+  "atributos_brinquedo": {
+    "ataque": 4.1,
+    "defesa": 6,
+    "stamina": 5.7,
+    "velocidade": 3.2,
+    "peso": 6.1,
+    "equilibrio": 8.3,
+    "resistencia_knockout": 5.3
   },
-  "especiais": [
-    { "nome": "Metal Ball Defense", "efeito": "6 s com +40% de massa efetiva; o atacante perde 5% de RPM por colisão", "custo": 100, "cooldown_s": 22 }
-  ],
-  "antecessora": "draciel-metal-ball-defenser",
-  "sucessora": "draciel-f",
-  "imagens": ["imagem.png", "anime.jpg", "pecas/attack-ring.gif", "pecas/weight-disk.gif", "pecas/spin-gear.gif", "pecas/blade-base.gif", "pecas/pecas-desmontadas.jpg"],
-  "fontes": [
-    "https://beyblade.fandom.com/wiki/Draciel_S",
-    "https://beyblade.fandom.com/wiki/Metal_Ball_Defense",
-    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_14"
-  ]
+  "ajuste_anime": {
+    "defesa": 1
+  },
+  "calculo": {
+    "ponta": "metal-ball",
+    "origem_ponta": "blade-base/sg-metal-ball-base",
+    "atrito_ponta": 0.18,
+    "tipo_contato": "spike",
+    "recoil": 0.65,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 4,
+    "engine_gear": null,
+    "inercia_g_mm2": 6304,
+    "estrelas_takara": {
+      "ataque": 4.5,
+      "defesa": 7,
+      "stamina": 7,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.47,
+      "defesa": 0.63,
+      "stamina": 0.57
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Draciel (tartaruga / Genbu)"
 }

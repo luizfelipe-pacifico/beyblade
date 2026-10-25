@@ -7,20 +7,24 @@
   "tipo": "balance",
   "sistema": "magnacore",
   "rotacao": "direita",
-  "fera_bit": "Dranzer (fênix)",
+  "fera_bit": "dranzer",
   "temporada": "v-force",
   "pecas": {
-    "bit_chip": "Dranzer (V Version)",
-    "attack_ring": "Cross Attacker",
-    "weight_disk": "Ten Balance",
-    "spin_gear": "Neo Right SG (South Magnecore, Dranzer V Version)",
-    "support_part": null,
-    "blade_base": "Volcano Change Base"
+    "bit_chip": "bit-chip/dranzer-v",
+    "attack_ring": "attack-ring/cross-attacker",
+    "weight_disk": "weight-disk/ten-balance",
+    "spin_gear": "spin-gear/neo-right-sg-south-magnecore-dranzer-v",
+    "blade_base": "blade-base/volcano-change-base"
   },
   "ponta": "metal flat (Attack Mode) / metal sharp (Endurance Mode)",
   "atributos": {
-    "ataque": 6, "defesa": 5, "stamina": 6, "velocidade": 7,
-    "peso": 4, "equilibrio": 6, "resistencia_knockout": 5
+    "ataque": 6.6,
+    "defesa": 4.5,
+    "stamina": 5.3,
+    "velocidade": 4.9,
+    "peso": 5.8,
+    "equilibrio": 6.7,
+    "resistencia_knockout": 5
   },
   "fisica": {
     "massa_relativa": 0.9,
@@ -30,16 +34,94 @@
     "padrao_movimento": "flower"
   },
   "especiais": [
-    { "nome": "Volcano Emission", "efeito": "Aura de fogo (+20% ataque por 3 s) seguida de investida", "custo": 100, "cooldown_s": 20 },
-    { "nome": "Flame Saber", "efeito": "Investida flamejante de golpe único, dano alto", "custo": 80, "cooldown_s": 18 }
+    {
+      "nome": "Volcano Emission",
+      "efeito": "Aura de fogo (+20% ataque por 3 s) seguida de investida",
+      "custo": 100,
+      "cooldown_s": 20
+    },
+    {
+      "nome": "Flame Saber",
+      "efeito": "Investida flamejante de golpe único, dano alto",
+      "custo": 80,
+      "cooldown_s": 18
+    }
   ],
   "antecessora": "dranzer-f",
   "sucessora": "dranzer-v2",
   "imagens": [],
-  "imagens_pendentes": ["imagem.jpg", "anime.jpg", "pecas/attack-ring.jpg", "pecas/weight-disk.gif", "pecas/spin-gear.jpg", "pecas/blade-base-superior.jpg", "pecas/blade-base-inferior-attack.jpg", "pecas/blade-base-inferior-endurance.jpg"],
+  "imagens_pendentes": [
+    "imagem.jpg",
+    "anime.jpg",
+    "pecas/attack-ring.jpg",
+    "pecas/weight-disk.gif",
+    "pecas/spin-gear.jpg",
+    "pecas/blade-base-superior.jpg",
+    "pecas/blade-base-inferior-attack.jpg",
+    "pecas/blade-base-inferior-endurance.jpg"
+  ],
   "fontes": [
     "https://beyblade.fandom.com/wiki/Dranzer_V",
     "https://beyblade.fandom.com/wiki/Volcano_Emission",
     "https://beyblade.fandom.com/wiki/Flame_Saber"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 6,
+    "defesa": 5,
+    "stamina": 6,
+    "velocidade": 7,
+    "peso": 4,
+    "equilibrio": 6,
+    "resistencia_knockout": 5
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Dranzer (V Version)",
+    "attack_ring": "Cross Attacker",
+    "weight_disk": "Ten Balance",
+    "spin_gear": "Neo Right SG (South Magnecore, Dranzer V Version)",
+    "support_part": null,
+    "blade_base": "Volcano Change Base"
+  },
+  "lancador": "lancadores/customize-grip-kai",
+  "medidas": {
+    "peso_g": 33.6,
+    "diametro_mm": 43,
+    "altura_mm": 25.6
+  },
+  "atributos_brinquedo": {
+    "ataque": 4.6,
+    "defesa": 4.5,
+    "stamina": 5.3,
+    "velocidade": 4.9,
+    "peso": 5.8,
+    "equilibrio": 6.7,
+    "resistencia_knockout": 5
+  },
+  "ajuste_anime": {
+    "ataque": 2
+  },
+  "calculo": {
+    "ponta": "metal-flat",
+    "origem_ponta": "blade-base/volcano-change-base",
+    "atrito_ponta": 0.24000000000000002,
+    "tipo_contato": "upper",
+    "recoil": 0.45,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 4,
+    "engine_gear": null,
+    "inercia_g_mm2": 6171,
+    "estrelas_takara": {
+      "ataque": 5.5,
+      "defesa": 5,
+      "stamina": 6.5,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.47,
+      "defesa": 0.51,
+      "stamina": 0.53
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Dranzer (fênix)"
 }

@@ -1,6 +1,8 @@
 # Kai Hiwatari (火渡カイ / Hiwatari Kai)
 
-![Personagem](foto.jpg)
+![Kai](retrato.svg)
+
+Retrato original do jogo ([retrato.svg](retrato.svg)). Sem foto de referência no repositório (download bloqueado; ver "Imagens pendentes").
 
 > **Imagem pendente**: o download de imagens do CDN da Fandom (`static.wikia.nocookie.net`) foi bloqueado por um desafio anti-bot da Cloudflare durante a pesquisa. Os arquivos ainda não estão na pasta; as URLs originais estão em "Imagens pendentes", no fim deste arquivo.
 
@@ -16,6 +18,27 @@
 
 Aniversário: 1º de agosto (Takao Aoki / *Rising*). Primeira aparição: ep. 1 "The Blade Raider".
 
+## Visual
+
+Padrão do retrato: visual da **temporada 1 (2001)**.
+
+- **S1 (2001)**: cabelo **bicolor**: franja e parte da frente **cinza-azulada clara**, em mechas longas e pontudas (uma desce entre os olhos), e nuca/parte de trás **azul-escura quase preta**, curta e espetada. Olhos castanho-avermelhados (carmim), pele clara, expressão fria (sobrancelhas baixas, boca reta). **Duas marcas triangulares azul-cobalto em cada bochecha** ("pintura de guerra" que lembra dentes de tubarão, herança dos Blade Sharks). **Cachecol branco longo e grosso**, com as pontas voando para trás. Regata escura justa e ombros à mostra; protetores de braço vermelhos e calça larga azul (fora do busto).
+- **V-Force (2002)**: sem o cachecol; regata roxa de gola alta com listras vermelhas e botões amarelos, mangas roxas, calça cinza e botas. Olhos azul-acinzentados, franja cinza-escura e nuca quase preta; usa um brinco preto na orelha esquerda e, no colégio, aparece sem as marcas (que se revelam pintadas).
+- **G-Revolution (2003)**: o cachecol volta (cheio de pesos, racha o chão quando jogado). Roupa roxa com jaqueta preta de listras vermelhas e botões amarelos, luvas pretas sem dedos; olhos lilás e cabelo ainda mais escuro.
+- Elementos obrigatórios no retrato: cabelo bicolor, marcas azuis nas bochechas, cachecol branco longo.
+
+| Uso | Hex |
+|---|---|
+| Disco de fundo (Dranzer, fênix de fogo; proposta até existir `feras-bit/dranzer/dados.json`) | `#d8402e` (borda `#0d1226`) |
+| Franja base / sombra / brilho | `#a5b5d0` / `#7182a8` / `#e4ebf6` |
+| Nuca base / sombra | `#2a3352` / `#1a223c` |
+| Olhos (íris) | `#9c2f3e` |
+| Pele base / sombra | `#f8dac4` / `#e6b39a` |
+| Marcas no rosto | `#2a63da` |
+| Cachecol base / sombra | `#f3f3f8` / `#bcc1da` |
+| Regata | `#272d44` |
+| Contorno | `#0d1226` |
+
 ## Personalidade e papel na história
 - É o deuteragonista e o grande rival de Tyson (Takao). Frio, calado, orgulhoso, solitário e muito disciplinado. Treina sozinho, até em isolamento extremo na Sibéria (G-Rev).
 - **S1**: começa como líder tirânico dos Blade Sharks, que quebra as beys de quem perde, e campeão regional que volta para defender o título. Perde a final regional para Tyson e entra nos Bladebreakers. Na Rússia, seduzido pelo poder, deserta para os Demolition Boys e usa a **Black Dranzer** para capturar feras bit (All Starz e White Tigers). No Lago Baikal é derrotado pelos amigos e se redime. Perde a Dranzer para Spencer (ep. 48), mas recusa a Black Dranzer e luta com o próprio espírito.
@@ -30,16 +53,16 @@ Aniversário: 1º de agosto (Takao Aoki / *Rising*). Primeira aparição: ep. 1 
 - **Frases de efeito**: "Dranzer! Flame Saber!", "Ha! I invented the word impossible. That's why I'm the champ."
 
 ## Beyblades utilizadas no anime (ordem cronológica)
-| # | Beyblade | Temporada | Episódio de estreia | Pasta |
-|---|---|---|---|---|
-| 1 | Dranzer S (A-2) | S1 | Ep. 1 "The Blade Raider" (primeira batalha no ep. 2) | [beyblades/dranzer-s](beyblades/dranzer-s/) |
-| 2 | Dranzer F (A-27) | S1 → início de V-Force | S1 ep. 33 "Last Tangle in Paris" | [beyblades/dranzer-f](beyblades/dranzer-f/) |
-| 3 | Black Dranzer (A-38) | S1 | Ep. 42 "Drawn to the Darkness" | [beyblades/black-dranzer](beyblades/black-dranzer/) |
-| 4 | Dranzer V (A-47) | V-Force | V-Force ep. 16 "Team Psykick's New Recruit" | [beyblades/dranzer-v](beyblades/dranzer-v/) |
-| 5 | Dranzer V2 (A-81) | V-Force → início de G-Rev | V-Force ep. 43 "Kai's Royal Flush" | [beyblades/dranzer-v2](beyblades/dranzer-v2/) |
-| 6 | Dranzer G (A-99) | G-Revolution | G-Rev ep. 11 "The Blame Game" | [beyblades/dranzer-g](beyblades/dranzer-g/) |
-| 7 | Dranzer GT (A-117) | G-Revolution | G-Rev ep. 29 "And Then There Were Two" | [beyblades/dranzer-gt](beyblades/dranzer-gt/) |
-| 8 | Dranzer MS (A-131) | G-Revolution | G-Rev ep. 42 "When You Wish Upon a Star" | [beyblades/dranzer-ms](beyblades/dranzer-ms/) |
+| # | Beyblade | Temporada | Episódio de estreia | Pasta | Miniatura | Lançador | Ripcord |
+|---|---|---|---|---|---|---|---|
+| 1 | Dranzer S (A-2) | S1 | Ep. 1 "The Blade Raider" (primeira batalha no ep. 2) | [beyblades/dranzer-s](beyblades/dranzer-s/) | <img src="beyblades/dranzer-s/sprite.svg" width="56"> | [Spring Shooter](../../lancadores/spring-shooter/) | — |
+| 2 | Dranzer F (A-27) | S1 → início de V-Force | S1 ep. 33 "Last Tangle in Paris" | [beyblades/dranzer-f](beyblades/dranzer-f/) | <img src="beyblades/dranzer-f/sprite.svg" width="56"> | [Dranzer Shooter DX](../../lancadores/dranzer-shooter-dx/) | — |
+| 3 | Black Dranzer (A-38) | S1 | Ep. 42 "Drawn to the Darkness" | [beyblades/black-dranzer](beyblades/black-dranzer/) | <img src="beyblades/black-dranzer/sprite.svg" width="56"> | [Dranzer Shooter DX](../../lancadores/dranzer-shooter-dx/) | — |
+| 4 | Dranzer V (A-47) | V-Force | V-Force ep. 16 "Team Psykick's New Recruit" | [beyblades/dranzer-v](beyblades/dranzer-v/) | <img src="beyblades/dranzer-v/sprite.svg" width="56"> | [Customize Grip (Gun Metallic / preto) - versão Kai](../../lancadores/customize-grip-kai/) | — |
+| 5 | Dranzer V2 (A-81) | V-Force → início de G-Rev | V-Force ep. 43 "Kai's Royal Flush" | [beyblades/dranzer-v2](beyblades/dranzer-v2/) | <img src="beyblades/dranzer-v2/sprite.svg" width="56"> | [Customize Grip (Gun Metallic / preto) - versão Kai](../../lancadores/customize-grip-kai/) | — |
+| 6 | Dranzer G (A-99) | G-Revolution | G-Rev ep. 11 "The Blame Game" | [beyblades/dranzer-g](beyblades/dranzer-g/) | <img src="beyblades/dranzer-g/sprite.svg" width="56"> | [Customize Grip (Gun Metallic / preto) - versão Kai](../../lancadores/customize-grip-kai/) | — |
+| 7 | Dranzer GT (A-117) | G-Revolution | G-Rev ep. 29 "And Then There Were Two" | [beyblades/dranzer-gt](beyblades/dranzer-gt/) | <img src="beyblades/dranzer-gt/sprite.svg" width="56"> | [Customize Grip (Gun Metallic / preto) - versão Kai](../../lancadores/customize-grip-kai/) | — |
+| 8 | Dranzer MS (A-131) | G-Revolution | G-Rev ep. 42 "When You Wish Upon a Star" | [beyblades/dranzer-ms](beyblades/dranzer-ms/) | <img src="beyblades/dranzer-ms/sprite.svg" width="56"> | [Dual Shooter (HMS)](../../lancadores/dual-shooter/) | — |
 
 Fora do escopo, porque não aparecem no anime: Frostic Dranzer / Ultimate Frostic Dranzer e Dranzer Auto Change Balancer (jogo e mangá), Dranzer MF (só no epílogo do mangá; a wiki apenas especula que a Dranzer do ep. 52 "possivelmente" seria uma MF) e as Dranzer da linha Burst (mangá *Rising*). **Não foi encontrado registro de Kai usando uma bey emprestada** (Wolborg ou outra) no anime. Na S1 foi o contrário: Tyson usou a Dranzer F de Kai no Lago Baikal.
 Filme *Fierce Battle* (2002): Kai luta contra Tyson e contra os Shadow Bladers. A bey usada não foi confirmada; pela data de lançamento (agosto de 2002, entre as A-47 e A-81), provavelmente é a Dranzer V.

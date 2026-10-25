@@ -1,6 +1,8 @@
 # Max Tate (Max Mizuhara / 水原 マックス)
 
-![Personagem](foto.jpg)
+![Max](retrato.svg)
+
+Retrato original do jogo ([retrato.svg](retrato.svg)). Referência: [referencia/foto.jpg](referencia/foto.jpg) (arte promocional da S1).
 
 Fera bit: ![Draciel](fera-bit.jpg)
 
@@ -13,6 +15,26 @@ Fera bit: ![Draciel](fera-bit.jpg)
 | Fera Bit | Draciel (玄武 Genbu) – a Tartaruga Negra do Norte (Xuan Wu), uma das 4 Feras Sagradas; elemento água |
 | Estilo de batalha | Defesa pura (o único defensor puro dos Bladebreakers) |
 | Dublador(a) JP / EN / PT-BR | Ai Orikasa / Gage Knox / não confirmado |
+
+## Visual
+
+Padrão do retrato: visual da **temporada 1 (2001)**.
+
+- **S1 (2001)**: cabelo **loiro**, espetado para cima e para os lados, com franja em mechas grossas sobre a testa. Olhos **azuis** grandes, pele clara, **sardas** nas bochechas e sorriso aberto. Veste **macacão laranja** (alças com fivelas e bolso no peito) preso por cinto preto, sobre uma **camiseta verde** com debrum branco na gola e nas mangas; munhequeiras verdes longas e tênis verde e branco (fora do busto). Correção: o macacão é **laranja**, não verde (o verde é a camiseta), conforme a foto de referência e a wiki.
+- **V-Force (2002)**: cabelo loiro-escuro puxando para o laranja, olhos de azul mais escuro. Camiseta azul com estrelas amarelas por cima do macacão, que fica cinza; camiseta verde-clara por baixo, luvas vermelhas sem dedos, munhequeira azul na mão esquerda e tênis azul e vermelho.
+- **G-Revolution (2003)**: cabelo loiro-claro. Camiseta raglã verde e creme com um "M" laranja no peito, blusa laranja amarrada na cintura, calça laranja, luvas verde-escuras e tênis verde, branco e laranja.
+- Elementos obrigatórios no retrato: cabelo loiro espetado, sardas, olhos azuis, camiseta verde e macacão laranja com fivelas.
+
+| Uso | Hex |
+|---|---|
+| Disco de fundo (Draciel, tartaruga cinza-violeta com aura roxa; proposta até existir `feras-bit/draciel/dados.json`) | `#8a78c0` (borda `#0d1226`) |
+| Cabelo base / sombra / brilho | `#f6d23c` / `#dc9a24` / `#fff6c0` |
+| Olhos (íris) | `#2d6bd9` |
+| Pele base / sombra / sardas | `#f9d6b6` / `#eaae8c` / `#b86a3c` |
+| Camiseta / debrum | `#4fb340` / `#ffffff` |
+| Macacão | `#f08a2e` |
+| Fivelas | `#c9ced8` |
+| Contorno | `#0d1226` |
 
 ## Personalidade e papel na história
 - Garoto alegre, otimista e muito esportivo; sempre sorrindo, raramente fica triste. Tempera macarrão com mostarda (maionese no original japonês) e mistura palavras em inglês na fala japonesa ("so cool").
@@ -29,15 +51,15 @@ Fera bit: ![Draciel](fera-bit.jpg)
 - **Frases de efeito**: "Draciel, he's back!", "We're a team!"; ao chamar a fera: "Draciel!" seguido do nome do especial (Viper Wall, Gravity Control...).
 
 ## Beyblades utilizadas no anime (ordem cronológica)
-| # | Beyblade | Temporada | Episódio de estreia | Pasta |
-|---|---|---|---|---|
-| 1 | Draciel Metal Ball Defenser | Bakuten Shoot (S1) | S1 ep. 3 "Take It to the Max!" | [beyblades/draciel-metal-ball-defenser](beyblades/draciel-metal-ball-defenser/) |
-| 2 | Draciel S (Shield) | Bakuten Shoot (S1) | S1 ep. 14 "The Race is On" | [beyblades/draciel-s](beyblades/draciel-s/) |
-| 3 | Draciel F (Fortress) | S1 (fim) e V-Force (início) | S1 ep. 45 "Breaking the Ice" | [beyblades/draciel-f](beyblades/draciel-f/) |
-| 4 | Draciel V (Viper) | V-Force (e filme Fierce Battle) | V-Force ep. 29 "Bad Seed in the Big Apple" | [beyblades/draciel-v](beyblades/draciel-v/) |
-| 5 | Draciel V2 (Viper 2) | V-Force (fim) e G-Rev (início) | V-Force ep. 47 "Deceit From Above" | [beyblades/draciel-v2](beyblades/draciel-v2/) |
-| 6 | Draciel G (Gravity) | G-Revolution | G-Rev ep. 16 "Fire and Water" | [beyblades/draciel-g](beyblades/draciel-g/) |
-| 7 | Draciel MS (Metal Shield) | G-Revolution | G-Rev ep. 40 "Back to Basics" | [beyblades/draciel-ms](beyblades/draciel-ms/) |
+| # | Beyblade | Temporada | Episódio de estreia | Pasta | Miniatura | Lançador + ripcord |
+|---|---|---|---|---|---|---|
+| 1 | Draciel Metal Ball Defenser | Bakuten Shoot (S1) | S1 ep. 3 "Take It to the Max!" | [beyblades/draciel-metal-ball-defenser](beyblades/draciel-metal-ball-defenser/) | <img src="beyblades/draciel-metal-ball-defenser/sprite.svg" width="56"> | [EZ Shooter Grip (Easy Shooter Grip)](../../lancadores/ez-shooter-grip/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
+| 2 | Draciel S (Shield) | Bakuten Shoot (S1) | S1 ep. 14 "The Race is On" | [beyblades/draciel-s](beyblades/draciel-s/) | <img src="beyblades/draciel-s/sprite.svg" width="56"> | [Marksmen Grip (Sniper Grip)](../../lancadores/marksmen-grip/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
+| 3 | Draciel F (Fortress) | S1 (fim) e V-Force (início) | S1 ep. 45 "Breaking the Ice" | [beyblades/draciel-f](beyblades/draciel-f/) | <img src="beyblades/draciel-f/sprite.svg" width="56"> | [Marksmen Grip (Sniper Grip)](../../lancadores/marksmen-grip/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
+| 4 | Draciel V (Viper) | V-Force (e filme Fierce Battle) | V-Force ep. 29 "Bad Seed in the Big Apple" | [beyblades/draciel-v](beyblades/draciel-v/) | <img src="beyblades/draciel-v/sprite.svg" width="56"> | [Marksmen Grip (Sniper Grip)](../../lancadores/marksmen-grip/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
+| 5 | Draciel V2 (Viper 2) | V-Force (fim) e G-Rev (início) | V-Force ep. 47 "Deceit From Above" | [beyblades/draciel-v2](beyblades/draciel-v2/) | <img src="beyblades/draciel-v2/sprite.svg" width="56"> | [Marksmen Grip (Sniper Grip)](../../lancadores/marksmen-grip/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
+| 6 | Draciel G (Gravity) | G-Revolution | G-Rev ep. 16 "Fire and Water" | [beyblades/draciel-g](beyblades/draciel-g/) | <img src="beyblades/draciel-g/sprite.svg" width="56"> | [Customize Grip (Dark Green) - versão Max](../../lancadores/customize-grip-max/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
+| 7 | Draciel MS (Metal Shield) | G-Revolution | G-Rev ep. 40 "Back to Basics" | [beyblades/draciel-ms](beyblades/draciel-ms/) | <img src="beyblades/draciel-ms/sprite.svg" width="56"> | [Dual Shooter (HMS)](../../lancadores/dual-shooter/) + [G-Winder (HMS)](../../lancadores/ripcords/g-winder/) |
 
 Fora do escopo (só mangá / outras séries): Draciel Shield Central Press, Draciel Fortress 10 Planet, Draciel Viper Around Orbit Metal (Burst). No mangá a primeira bey (sem bit chip) se chama "Protociel"/"Protoshell".
 

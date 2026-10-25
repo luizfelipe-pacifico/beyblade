@@ -2,26 +2,36 @@
 
 Base de conhecimento para o jogo offline de Beyblade. Cobre o anime **Bakuten Shoot Beyblade** (爆転シュート ベイブレード, 2001–2003) em suas três temporadas, os 10 principais personagens que batalham e **todas as beyblades que cada um usa no anime**, estudadas individualmente.
 
-> As imagens nesta pasta vêm da Beyblade Wiki (fandom) e de fotos de produto Takara/Hasbro. São **referência interna de estudo** e não devem ir para o build do jogo — os assets finais precisam ser arte própria.
+Tudo o que é visual ou sonoro aqui é **arte própria** ([D-008](../docs/DECISIONS.md)): retratos, feras bit animadas, sons sintetizados e desenhos gerados das peças, beys, lançadores e ripcords, em escala real (mm). As fotos de terceiros (Beyblade Wiki, Takara/Hasbro) ficam só nas subpastas `referencia/`, como material de estudo, e nunca vão para o jogo.
+
+**Comece pela [galeria](galeria/index.html)** (abra o arquivo no navegador): escolha um personagem e uma bey, veja a bey girando, invoque a fera bit com som e consulte atributos, peças, vistas montada e explodida, lançador e ripcord.
 
 ## Estrutura
 
 ```
 pesquisa-bakuten/
-  README.md                      ← este arquivo (visão geral, sistemas, arena, escala)
-  _template/                     ← templates e brief usados na pesquisa
-  personagens/
-    <personagem>/
-      README.md                  ← estudo do personagem
-      foto.*                     ← imagem do personagem
-      beyblades/
-        <beyblade>/
-          README.md              ← estudo individual: peças, formato, arena, anime, jogo
-          imagem.*               ← beyblade montada
-          anime.*                ← (quando houver) frame do anime
-          pecas/                 ← (quando houver) fotos das peças
-          dados.json             ← atributos e física prontos para o jogo
+  README.md                ← este arquivo
+  INDICE.md                ← todas as beys com peso e atributos (gerado)
+  ATRIBUTOS-ORIGEM.md      ← como Takara, Hasbro e os jogos pensaram os atributos
+  galeria/                 ← galeria interativa (index.html + dados.js gerado)
+  personagens/<personagem>/
+    README.md  retrato.svg  referencia/
+    beyblades/<bey>/
+      README.md            ← ficha gerada + estudo (formato, arena, anime, mecânica no jogo, ajuste do anime)
+      dados.json           ← peças (ids do catálogo), medidas, atributos calculados, fera, lançador, ripcord
+      montada.svg  explodida.svg  sprite.svg  pecas/*.svg   (gerados)
+      referencia/          ← fotos de terceiros
+  pecas/<categoria>/<peça>/      ← catálogo único: 172 peças (bit-chip, attack-ring, support-part,
+    dados.json  README.md          weight-disk, spin-gear, blade-base) com medidas, material,
+    topo.svg  lateral.svg          estrelas Takara, física e forma; ESTRELAS.md = tabela das estrelas
+  lancadores/<lançador>/   ← 25 lançadores (dados, README, lancador.svg)
+  lancadores/ripcords/<ripcord>/ ← 13 ripcords (dados, README, ripcord.svg)
+  feras-bit/<fera>/        ← 11 feras: emblema, idle, invocacao e ataque (SVG animado) + sons/*.wav
+  sons-batalha/            ← lançamento, giro, choques, ring-out, parada, contagem (WAV sintetizado)
+  _template/               ← briefs e templates usados na pesquisa
 ```
+
+Os arquivos marcados como gerados saem de `npm run build:research` a partir dos `dados.json` (detalhes em [docs/BEYBLADES.md](../docs/BEYBLADES.md#build)). Sons: `node scripts/synth.js <sons.json> <pasta>` ([docs/AUDIO.md](../docs/AUDIO.md)). Padrão visual: [docs/ART.md](../docs/ART.md).
 
 ## As temporadas
 
@@ -43,7 +53,7 @@ pesquisa-bakuten/
 | 6 | Tala (ユーリ Yuriy Ivanov) | Demolition Boys / Blitzkrieg Boys | Wolborg (lobo) | [tala](personagens/tala/) |
 | 7 | Bryan Kuznetsov (ボリス Boris) | Demolition Boys / Blitzkrieg Boys | Falborg (falcão) | [bryan-kuznetsov](personagens/bryan-kuznetsov/) |
 | 8 | Brooklyn Masefield (ブルックリン) | BEGA | Zeus | [brooklyn-masefield](personagens/brooklyn-masefield/) |
-| 9 | Lee (雷 Rai) | White Tigers (White Tiger X) | Galeon (pantera negra) | [lee](personagens/lee/) |
+| 9 | Lee (雷 Rai) | White Tigers (White Tiger X) | Galeon (leão negro) | [lee](personagens/lee/) |
 | 10 | Robert Jurgen (ロバート) | Majestics | Griffolyon (grifo) | [robert-jurgen](personagens/robert-jurgen/) |
 
 O índice completo de beyblades por personagem está em [INDICE.md](INDICE.md).
@@ -77,41 +87,13 @@ De cima para baixo:
 - **Recoil**: quanto mais "pontudo" o AR, mais o golpe empurra o adversário **e** o próprio atacante. Beys de ataque arriscam se auto-eliminar.
 - **Ímãs (MG)**: estádios com ímãs puxam ou repelem beys com Magnecore — ótimo gancho de mecânica de arena para o jogo.
 
-## Escala de atributos (1–10) usada em todos os `dados.json`
+## Atributos
 
-| Atributo | O que mede | Âncoras |
-|---|---|---|
-| **Ataque** | Força do golpe e chance de ring out no adversário | 10 ≈ Dragoon V2 / Driger V · 3 ≈ stamina pura |
-| **Defesa** | Absorção de impacto, desvio | 10 ≈ Draciel V2 / Draciel G · 3 ≈ attacker leve de ponta flat |
-| **Stamina** | Tempo de rotação | 10 ≈ Wolborg 2 / Zeus · 3 ≈ grip/flat attacker |
-| **Velocidade** | Deslocamento na arena | flat/grip alto · sharp/bola baixo |
-| **Peso** | Massa relativa | metal weight / magnecore / engine gear / HMS pesam mais |
-| **Equilíbrio** | Estabilidade, resistência a *wobble* | |
-| **Resistência a knockout** | Capacidade de não ser expulsa | |
-
-Sugestão de conversão para o motor de física (ponto de partida para tuning):
-
-```
-massa           = 0.8 + peso * 0.05           # 0.85 .. 1.3
-atrito_ponta    = ver tabela de pontas (sharp 0.15, semi-flat 0.35, flat 0.55, grip 0.85, bola 0.30)
-spin_inicial    = 100 * (força do lançamento)
-decaimento_spin = base * (1.6 - stamina * 0.1) * atrito_ponta
-impulso_golpe   = ataque * velocidade_relativa * (mesma_rotacao ? 1.3 : 0.8)
-spin_transferido = rotacao_oposta ? (spin_a - spin_b) * 0.05 : 0   # equalização
-recoil_proprio  = impulso_golpe * fator_AR (smash 0.6, upper 0.4, defesa 0.2)
-dano_recebido   = impulso / (1 + defesa * 0.15 + resistencia_knockout * 0.1)
-```
+Sete atributos de 1 a 10 (Ataque, Defesa, Stamina, Velocidade, Peso, Equilíbrio, Resistência a KO), **calculados das peças** como a Takara pensava: estrelas oficiais de 0 a 4 por peça somadas (AR + WD + Base, mais Engine Gear e anéis extras) com 60% de peso, e física medida (massa, inércia, atrito da ponta, recoil, tipo de contato) com 40%. Velocidade, Peso, Equilíbrio e Resistência a KO vêm só das medidas. Um `ajuste_anime` por bey (–3 a +3, justificado no README) representa o desempenho no anime. Modelo completo e fontes: [docs/BEYBLADES.md](../docs/BEYBLADES.md#modelo-de-atributos-do-jogo) e [ATRIBUTOS-ORIGEM.md](ATRIBUTOS-ORIGEM.md); código em `src/beyblade/stats.js`.
 
 ## Fontes gerais
 - Beyblade Wiki (fandom): https://beyblade.fandom.com — páginas `Spin_Gear_System`, `Magnacore_System`, `Engine_Gear_System`, `Beystadium`, e as páginas individuais de cada personagem/beyblade/peça citadas em cada estudo.
 - Cada estudo lista as fontes específicas usadas.
-
-## Status das imagens
-
-| Personagens | Situação |
-|---|---|
-| Max, Robert, Daichi, Brooklyn, Tala, Bryan | Imagens baixadas (personagem, bey montada, peças e frames do anime quando disponíveis) |
-| Tyson, Kai, Ray, Lee | **Pendentes**: o CDN da wiki (`static.wikia.nocookie.net`) passou a responder com o desafio anti-bot da Cloudflare. Cada README tem uma seção "Imagens pendentes/faltantes" com o nome de arquivo esperado e o link da página `File:` da wiki; nos `dados.json`, `imagens` está vazio |
 
 ## Pontos em aberto nas fontes
 
@@ -120,3 +102,6 @@ Cada estudo marca como **"não confirmado"** o que a wiki não sustenta (dublado
 - Falborg (S1) nunca saiu como brinquedo; as peças vêm do jogo de GBA.
 - As Dragoons do Tyson giram para a **esquerda** no anime (exceto a Grip Attacker), embora algumas versões de brinquedo divirjam.
 - Galeon 2 (Engine Gear) existe só no anime; o brinquedo Galeon 2 é Magnacore.
+- A Dragoon V2 High Power Custom é modelada pelo brinquedo RC (base com motor, 37,7 g), por isso pesa ~62 g; o anime fica no `ajuste_anime`.
+- Medidas de diâmetro e altura são estimadas na maioria das peças (a fonte de cada valor está na ficha); pesos vêm da wiki/comunidade quando existem.
+- Os retratos de Tyson, Kai, Ray e Lee foram desenhados sem foto de referência local e merecem conferência.

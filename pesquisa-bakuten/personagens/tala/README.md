@@ -1,8 +1,8 @@
 # Tala (Yuriy Ivanov / ユーリ・イヴァノーフ)
 
-![Personagem](foto.jpg)
+![Tala](retrato.svg)
 
-Imagem extra: [foto-grev.jpg](foto-grev.jpg) (visual de G-Revolution).
+Retrato original do jogo ([retrato.svg](retrato.svg)). Referências: [referencia/foto.jpg](referencia/foto.jpg) (S1) e [referencia/foto-grev.jpg](referencia/foto-grev.jpg) (visual de G-Revolution).
 
 | Campo | Valor |
 |---|---|
@@ -13,6 +13,25 @@ Imagem extra: [foto-grev.jpg](foto-grev.jpg) (visual de G-Revolution).
 | Fera Bit | Wolborg (ウルボーグ) — lobo prateado (銀狼) de gelo, fera bit **artificial** criada por Boris/Volkov |
 | Estilo de batalha | Stamina/resistência com controle de gelo; desgasta o adversário e finaliza com o especial |
 | Dublador(a) JP / EN / PT-BR | Chiaki Morita (森田チアキ) / Jamie Haydon-Devlin / não confirmado |
+
+## Visual
+
+Padrão do retrato: visual da **primeira aparição (S1, 2001)**.
+
+- **S1 (2001)**: cabelo **ruivo/vermelho vivo** puxado para cima e para trás em duas grandes pontas laterais, como chifres (JP: 髪型は左右に尖らせた独特の赤い髪), com bico de viúva na testa e **duas mechas finas soltas** caindo sobre o rosto (wiki EN: "two strands hanging loose from a widow's peak"). Olhos **azul-gelo**, pele bem clara, expressão fria e sarcástica (sobrancelhas baixas, olhar semicerrado). Usa um **fone de ouvido com microfone** (concha cinza arredondada sobre a orelha e haste até a boca) e um **casaco branco de gola alta** com forro/painéis **laranja** (uniforme dos Demolition Boys/Abadia).
+- **G-Revolution (2003)**: mesmo penteado em chifres, um pouco mais curto e de vermelho mais escuro; a wiki registra olhos **violeta** nessa temporada. Troca o casaco por um macacão justo **laranja e branco com faixas azul-marinho**, luvas sem dedos e botas (Blitzkrieg Boys). Sem o fone.
+- Elementos obrigatórios no retrato: chifres de cabelo, mechas sobre o rosto, fone com microfone, gola branca alta com laranja.
+
+| Uso | Hex |
+|---|---|
+| Disco de fundo (Wolborg, lobo prateado de gelo; proposta até existir `feras-bit/wolborg/dados.json`) | `#7fb9dc` (borda `#0d1226`, brilho `#e6f6ff`) |
+| Cabelo base / sombra / brilho | `#d8283a` / `#9a1230` / `#ff7a6e` |
+| Pele base / sombra | `#fbe3d2` / `#e8b9a4` |
+| Íris base / sombra | `#3bb4ec` / `#1a5fa8` |
+| Casaco branco base / sombra | `#f2f5fa` / `#b7c3da` |
+| Laranja base / sombra | `#f26a1b` / `#bf4512` |
+| Fone (metal) base / sombra | `#b6bcc8` / `#7d8597` |
+| Contorno | `#0d1226` |
 
 ## Personalidade e papel na história
 - **S1 (2001)**: ás e capitão dos Demolition Boys, chamado de "arma final" de Boris (fica numa incubadora; no dub EN é "Cyber Tala", aprimoramento cibernético que **não existe** no original japonês). Frio, sarcástico, orgulhoso e com ciúme do favoritismo de Boris por Kai. Vence Eddy (All Starz) num golpe só (ep. 43). Na final do Mundial (eps. 50–51) enfrenta Tyson usando todas as feras bit roubadas (Dranzer, Draciel, All Starz, White Tigers), cria uma dimensão de gelo dentro de um iceberg, vence a 2ª rodada e perde a 3ª. Aperta a mão de Tyson no fim.
@@ -26,10 +45,10 @@ Imagem extra: [foto-grev.jpg](foto-grev.jpg) (visual de G-Revolution).
 - Frases/atitude: confiança gélida, menospreza adversários "fracos" (Kenny, Daichi).
 
 ## Beyblades utilizadas no anime (ordem cronológica)
-| # | Beyblade | Temporada | Episódio de estreia | Pasta |
-|---|---|---|---|---|
-| 1 | Wolborg 2 (ウルボーグ2) | S1 (2001) e início de G-Rev | S1 ep. 42 (flashback) / ep. 43 (batalha vs. Eddy) | [beyblades/wolborg-2](beyblades/wolborg-2/README.md) |
-| 2 | Wolborg 4 (ウルボーグ4) | G-Revolution | G-Rev ep. 13 "Kenny's Big Battle" | [beyblades/wolborg-4](beyblades/wolborg-4/README.md) |
+| # | Beyblade | Temporada | Episódio de estreia | Pasta | Miniatura | Lançador + ripcord |
+|---|---|---|---|---|---|---|
+| 1 | Wolborg 2 (ウルボーグ2) | S1 (2001) e início de G-Rev | S1 ep. 42 (flashback) / ep. 43 (batalha vs. Eddy) | [beyblades/wolborg-2](beyblades/wolborg-2/README.md) | <img src="beyblades/wolborg-2/sprite.svg" width="56"> | [EZ Shooter (Easy Shooter, rotação direita)](../../lancadores/ez-shooter/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
+| 2 | Wolborg 4 (ウルボーグ4) | G-Revolution | G-Rev ep. 13 "Kenny's Big Battle" | [beyblades/wolborg-4](beyblades/wolborg-4/README.md) | <img src="beyblades/wolborg-4/sprite.svg" width="56"> | [EZ Shooter (Easy Shooter, rotação direita)](../../lancadores/ez-shooter/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
 
 **Correções em relação à lista inicial** (verificado na Beyblade Wiki e na Wikipedia JP):
 - **Wolborg (A-11, a 1ª)** — só no **mangá** (e no mangá *Rising*). No anime S1 Tala já usa Wolborg 2. Não documentada como bey de batalha.

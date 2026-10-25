@@ -7,9 +7,71 @@
   "tipo": "balance",
   "sistema": "engine-gear",
   "rotacao": "direita",
-  "fera_bit": "Dranzer (fênix)",
+  "fera_bit": "dranzer",
   "temporada": "g-revolution",
   "pecas": {
+    "bit_chip": "bit-chip/dranzer-g",
+    "attack_ring": "attack-ring/wing-survivor",
+    "weight_disk": "weight-disk/ten-balance",
+    "spin_gear": "spin-gear/right-eg-metal-semi-flat",
+    "blade_base": "blade-base/final-clutch-base-dranzer"
+  },
+  "ponta": "metal semi-flat (quase flat)",
+  "atributos": {
+    "ataque": 9.1,
+    "defesa": 3.8,
+    "stamina": 7,
+    "velocidade": 6.3,
+    "peso": 8.8,
+    "equilibrio": 6.6,
+    "resistencia_knockout": 7.2
+  },
+  "fisica": {
+    "massa_relativa": 1.1,
+    "raio_relativo": 1,
+    "atrito_ponta": 0.4,
+    "restituicao": 0.7,
+    "padrao_movimento": "orbita + arrancada (engine burst no primeiro impacto)"
+  },
+  "especiais": [
+    {
+      "nome": "Blazing Gigs",
+      "efeito": "Projétil-fênix flamejante; dano alto à distância; versão azul (+25%) com rotação > 70%",
+      "custo": 90,
+      "cooldown_s": 18
+    },
+    {
+      "nome": "Blazing Gigs Tempest",
+      "efeito": "Chuva de penas de fogo: -60% velocidade do oponente por 2 s, depois investida",
+      "custo": 120,
+      "cooldown_s": 30
+    }
+  ],
+  "antecessora": "dranzer-v2",
+  "sucessora": "dranzer-gt",
+  "imagens": [],
+  "imagens_pendentes": [
+    "imagem.jpg",
+    "anime.png",
+    "pecas/attack-ring.jpg",
+    "pecas/todas-pecas.jpg",
+    "pecas/vista-inferior.jpg"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dranzer_G",
+    "https://beyblade.fandom.com/wiki/Blazing_Gigs",
+    "https://beyblade.fandom.com/wiki/Blazing_Gigs_Tempest"
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 7,
+    "defesa": 6,
+    "stamina": 5,
+    "velocidade": 7,
+    "peso": 7,
+    "equilibrio": 5,
+    "resistencia_knockout": 5
+  },
+  "pecas_nomes_originais": {
     "bit_chip": "Dranzer (G Version)",
     "attack_ring": "Wing Survivor",
     "weight_disk": "Ten Balance",
@@ -17,29 +79,48 @@
     "support_part": null,
     "blade_base": "Hit Release (Dranzer Version)"
   },
-  "ponta": "metal semi-flat (quase flat)",
-  "atributos": {
-    "ataque": 7, "defesa": 6, "stamina": 5, "velocidade": 7,
-    "peso": 7, "equilibrio": 5, "resistencia_knockout": 5
+  "lancador": "lancadores/customize-grip-kai",
+  "medidas": {
+    "peso_g": 39.5,
+    "diametro_mm": 45,
+    "altura_mm": 24.6
   },
-  "fisica": {
-    "massa_relativa": 1.1,
-    "raio_relativo": 1.0,
-    "atrito_ponta": 0.4,
-    "restituicao": 0.7,
-    "padrao_movimento": "orbita + arrancada (engine burst no primeiro impacto)"
+  "atributos_brinquedo": {
+    "ataque": 6.1,
+    "defesa": 3.8,
+    "stamina": 7,
+    "velocidade": 5.3,
+    "peso": 8.8,
+    "equilibrio": 6.6,
+    "resistencia_knockout": 6.2
   },
-  "especiais": [
-    { "nome": "Blazing Gigs", "efeito": "Projétil-fênix flamejante; dano alto à distância; versão azul (+25%) com rotação > 70%", "custo": 90, "cooldown_s": 18 },
-    { "nome": "Blazing Gigs Tempest", "efeito": "Chuva de penas de fogo: -60% velocidade do oponente por 2 s, depois investida", "custo": 120, "cooldown_s": 30 }
-  ],
-  "antecessora": "dranzer-v2",
-  "sucessora": "dranzer-gt",
-  "imagens": [],
-  "imagens_pendentes": ["imagem.jpg", "anime.png", "pecas/attack-ring.jpg", "pecas/todas-pecas.jpg", "pecas/vista-inferior.jpg"],
-  "fontes": [
-    "https://beyblade.fandom.com/wiki/Dranzer_G",
-    "https://beyblade.fandom.com/wiki/Blazing_Gigs",
-    "https://beyblade.fandom.com/wiki/Blazing_Gigs_Tempest"
-  ]
+  "ajuste_anime": {
+    "ataque": 3,
+    "velocidade": 1,
+    "resistencia_knockout": 1
+  },
+  "calculo": {
+    "ponta": "metal-semi-flat",
+    "origem_ponta": "blade-base/final-clutch-base-dranzer",
+    "atrito_ponta": 0.25,
+    "tipo_contato": "slope",
+    "recoil": 0.75,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 2,
+    "engine_gear": "clutch",
+    "inercia_g_mm2": 7006,
+    "estrelas_takara": {
+      "ataque": 8,
+      "defesa": 3,
+      "stamina": 9,
+      "partes": 4
+    },
+    "fisica": {
+      "ataque": 0.38,
+      "defesa": 0.63,
+      "stamina": 0.61
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Dranzer (fênix)"
 }

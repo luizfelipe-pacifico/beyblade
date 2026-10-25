@@ -1,8 +1,8 @@
 # Bryan Kuznetsov (Boris Kuznetsov / ボリス・クズネツォーフ)
 
-![Personagem](foto.png)
+![Bryan Kuznetsov](retrato.svg)
 
-Imagem extra: [foto-grev.png](foto-grev.png) (visual de G-Revolution, cabelo cinza espetado).
+Retrato original do jogo ([retrato.svg](retrato.svg)). Referências: [referencia/foto.png](referencia/foto.png) (S1) e [referencia/foto-grev.png](referencia/foto-grev.png) (visual de G-Revolution, cabelo cinza espetado).
 
 | Campo | Valor |
 |---|---|
@@ -13,6 +13,26 @@ Imagem extra: [foto-grev.png](foto-grev.png) (visual de G-Revolution, cabelo cin
 | Fera Bit | Falborg (ファルボーグ) — falcão (隼 / hayabusa) de vento, fera bit **artificial** |
 | Estilo de batalha | Attack agressivo e cruel; lâminas de vento (鎌鼬 kamaitachi) que atingem a bey **e o blader** |
 | Dublador(a) JP / EN / PT-BR | Wasabi Mizuta (水田わさび) / Craig Lauzon / não confirmado |
+
+## Visual
+
+Padrão do retrato: visual da **primeira aparição (S1, 2001)**.
+
+- **S1 (2001)**: cabelo **lavanda** curto e repicado (JP: 薄紫色をやや「シャギー」にした短髪), franja em pontas até as sobrancelhas e laterais cobrindo as orelhas. Olhos **lavanda**, pele clara, expressão **fria e vazia** (pálpebras semicerradas, boca reta); em batalha vira um esgar de dentes cerrados. Roupa de inverno **azul-marinho e bordô** (wiki EN): casaco cinza-azulado com **gola grande de pele amarelo-creme**, gola alta azul-marinho por dentro e camada bordô.
+- **G-Revolution (2003)**: o cabelo fica **cinza** e mais espetado, sobrancelhas também mais pontudas (motivo não explicado no anime); mantém a gola de pele, agora com blusa amarela por baixo.
+- Elementos obrigatórios no retrato: franja lavanda repicada, olhar semicerrado, gola de pele.
+
+| Uso | Hex |
+|---|---|
+| Disco de fundo (Falborg, falcão azul-turquesa; proposta até existir `feras-bit/falborg/dados.json`) | `#33aeb4` (borda `#0d1226`, brilho `#d8fbf7`) |
+| Cabelo base / sombra / brilho | `#c3b0ec` / `#8d78c4` / `#ece4ff` |
+| Pele base / sombra | `#fbe5d6` / `#e7bba8` |
+| Íris base / sombra | `#9c86d4` / `#5b4596` |
+| Casaco base / sombra | `#7d8ca6` / `#55617c` |
+| Gola de pele base / sombra / brilho | `#f2da7e` / `#c9a648` / `#fff4c4` |
+| Azul-marinho base / sombra | `#2c3f7c` / `#1c2a58` |
+| Bordô base / sombra | `#8e2b3c` / `#5e1828` |
+| Contorno | `#0d1226` |
 
 ## Personalidade e papel na história
 - **S1 (2001)**: o "arma secreta" dos Demolition Boys, normalmente calmo, mas sádico e astuto — prefere atacar o blader em vez da bey. Com Spencer, embosca Max e rouba Draciel (ep. 46, 2 contra 1). Na semifinal/final do Mundial contra Ray (ep. 49): na 1ª rodada joga Falborg de propósito contra a parede para arremessar um pedaço do estádio no estômago de Ray e vence; na 2ª usa lâminas de vento "assassinas", se apressa e perde; na 3ª, Driger protege Ray e despedaça Falborg (ep. 49). Ray vai para o hospital. (A Wikipedia JP afirma ainda que o 白虎/Driger foi "absorvido" por Falborg no último golpe — informação não corroborada pela wiki EN; tratar como não confirmada.)
@@ -26,10 +46,10 @@ Imagem extra: [foto-grev.png](foto-grev.png) (visual de G-Revolution, cabelo cin
 - Frases (dub EN): "Aw, don't like the wind? Well, I have bad news for you! There's a tornado coming!", "Quit blowing hot air! ... And feel this breeze!".
 
 ## Beyblades utilizadas no anime (ordem cronológica)
-| # | Beyblade | Temporada | Episódio de estreia | Pasta |
-|---|---|---|---|---|
-| 1 | Falborg (ファルボーグ; às vezes listada como "Falborg S" na wiki) | S1 (2001) | ep. 46 "First Strike" | [beyblades/falborg](beyblades/falborg/README.md) |
-| 2 | Falborg 2 (ファルボーグ2) | G-Revolution | G-Rev ep. 35 "Pros and Ex-cons" | [beyblades/falborg-2](beyblades/falborg-2/README.md) |
+| # | Beyblade | Temporada | Episódio de estreia | Pasta | Miniatura | Lançador + ripcord |
+|---|---|---|---|---|---|---|
+| 1 | Falborg (ファルボーグ; às vezes listada como "Falborg S" na wiki) | S1 (2001) | ep. 46 "First Strike" | [beyblades/falborg](beyblades/falborg/README.md) | <img src="beyblades/falborg/sprite.svg" width="56"> | [EZ Shooter (Easy Shooter, rotação direita)](../../lancadores/ez-shooter/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
+| 2 | Falborg 2 (ファルボーグ2) | G-Revolution | G-Rev ep. 35 "Pros and Ex-cons" | [beyblades/falborg-2](beyblades/falborg-2/README.md) | <img src="beyblades/falborg-2/sprite.svg" width="56"> | [EZ Shooter (Easy Shooter, rotação direita)](../../lancadores/ez-shooter/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
 
 **Correções em relação à lista inicial**:
 - **Falborg 3 não existe** (nem anime, nem mangá, nem brinquedo — a página não existe na Beyblade Wiki).

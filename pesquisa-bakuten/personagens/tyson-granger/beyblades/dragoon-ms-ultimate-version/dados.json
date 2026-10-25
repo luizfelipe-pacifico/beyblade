@@ -7,20 +7,23 @@
   "tipo": "attack",
   "sistema": "hms",
   "rotacao": "esquerda",
-  "fera_bit": "Dragoon (dragão azul / Seiryū, vento; forma alada com aura de fogo no final)",
+  "fera_bit": "dragoon",
   "temporada": "g-revolution",
   "pecas": {
-    "bit_chip": "Bit Protector - Dragoon Emblem",
-    "attack_ring": "Ultimate Attacker",
-    "weight_disk": "Circle Wide",
-    "spin_gear": "Running Core - Grip Flat Core (Ultimate Mode)",
-    "support_part": null,
-    "blade_base": null
+    "bit_chip": "bit-chip/dragoon-emblem",
+    "attack_ring": "attack-ring/ultimate-attacker",
+    "weight_disk": "weight-disk/circle-wide",
+    "spin_gear": "spin-gear/grip-flat-core-ultimate-mode"
   },
   "ponta": "grip (borracha vermelha macia, 5 mm)",
   "atributos": {
-    "ataque": 10, "defesa": 5, "stamina": 3, "velocidade": 10,
-    "peso": 6, "equilibrio": 6, "resistencia_knockout": 6
+    "ataque": 10,
+    "defesa": 3.8,
+    "stamina": 6.3,
+    "velocidade": 8.1,
+    "peso": 3.8,
+    "equilibrio": 5.5,
+    "resistencia_knockout": 6.5
   },
   "fisica": {
     "massa_relativa": 1.1,
@@ -30,9 +33,24 @@
     "padrao_movimento": "agressivo"
   },
   "especiais": [
-    { "nome": "Evolution Storm", "efeito": "Tornado gigante que puxa, seguido de dash do Dragoon (+10% em relação à MS)", "custo": 100, "cooldown_s": 22 },
-    { "nome": "Ultimate Dragoon - Poder dos Amigos (nome sugerido)", "efeito": "Uso único abaixo de 30% de rotação: recupera 25% da rotação e faz um dash de dano máximo", "custo": 150, "cooldown_s": 0 },
-    { "nome": "Ridge Boost (passiva)", "efeito": "+25% de velocidade por 1 s perto do tornado ridge", "custo": 0, "cooldown_s": 0 }
+    {
+      "nome": "Evolution Storm",
+      "efeito": "Tornado gigante que puxa, seguido de dash do Dragoon (+10% em relação à MS)",
+      "custo": 100,
+      "cooldown_s": 22
+    },
+    {
+      "nome": "Ultimate Dragoon - Poder dos Amigos (nome sugerido)",
+      "efeito": "Uso único abaixo de 30% de rotação: recupera 25% da rotação e faz um dash de dano máximo",
+      "custo": 150,
+      "cooldown_s": 0
+    },
+    {
+      "nome": "Ridge Boost (passiva)",
+      "efeito": "+25% de velocidade por 1 s perto do tornado ridge",
+      "custo": 0,
+      "cooldown_s": 0
+    }
   ],
   "antecessora": "dragoon-ms",
   "sucessora": null,
@@ -41,5 +59,66 @@
     "https://beyblade.fandom.com/wiki/Dragoon_MS_Ultimate_Version",
     "https://beyblade.fandom.com/wiki/Beyblade:_G-Revolution_-_Episode_52",
     "https://beyblade.fandom.com/wiki/Ultimate_Storm_(Manga)"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 10,
+    "defesa": 5,
+    "stamina": 3,
+    "velocidade": 10,
+    "peso": 6,
+    "equilibrio": 6,
+    "resistencia_knockout": 6
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Bit Protector - Dragoon Emblem",
+    "attack_ring": "Ultimate Attacker",
+    "weight_disk": "Circle Wide",
+    "spin_gear": "Running Core - Grip Flat Core (Ultimate Mode)",
+    "support_part": null,
+    "blade_base": null
+  },
+  "lancador": "lancadores/dual-shooter",
+  "medidas": {
+    "peso_g": 29.6,
+    "diametro_mm": 43,
+    "altura_mm": 22.1
+  },
+  "atributos_brinquedo": {
+    "ataque": 7.3,
+    "defesa": 3.8,
+    "stamina": 4.3,
+    "velocidade": 8.1,
+    "peso": 3.8,
+    "equilibrio": 5.5,
+    "resistencia_knockout": 5.5
+  },
+  "ajuste_anime": {
+    "ataque": 3,
+    "stamina": 2,
+    "resistencia_knockout": 1
+  },
+  "calculo": {
+    "ponta": "grip-flat",
+    "origem_ponta": "spin-gear/grip-flat-core-ultimate-mode",
+    "atrito_ponta": 0.7,
+    "tipo_contato": "smash",
+    "recoil": 0.4,
+    "distribuicao_peso": "periferia",
+    "simetria": 4,
+    "engine_gear": null,
+    "inercia_g_mm2": 8024,
+    "estrelas_takara": {
+      "ataque": 9.5,
+      "defesa": 4.5,
+      "stamina": 4.5,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.63,
+      "defesa": 0.39,
+      "stamina": 0.55
+    }
+  },
+  "ripcord": "lancadores/ripcords/g-winder",
+  "fera_bit_descricao": "Dragoon (dragão azul / Seiryū, vento; forma alada com aura de fogo no final)"
 }

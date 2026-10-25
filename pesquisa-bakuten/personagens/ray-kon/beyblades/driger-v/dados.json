@@ -7,20 +7,24 @@
   "tipo": "attack",
   "sistema": "magnacore",
   "rotacao": "direita",
-  "fera_bit": "Driger (tigre branco)",
+  "fera_bit": "driger",
   "temporada": "v-force",
   "pecas": {
-    "bit_chip": "Driger",
-    "attack_ring": "Sonic Tiger",
-    "weight_disk": "Ten Balance",
-    "spin_gear": "Neo Right SG (South Core)",
-    "support_part": null,
-    "blade_base": "SG Metal Flat Base"
+    "bit_chip": "bit-chip/driger-v",
+    "attack_ring": "attack-ring/sonic-tiger",
+    "weight_disk": "weight-disk/ten-balance",
+    "spin_gear": "spin-gear/neo-right-sg-south-magnecore",
+    "blade_base": "blade-base/sg-metal-flat-base"
   },
   "ponta": "flat (metal, magnética; Takara semi-flat)",
   "atributos": {
-    "ataque": 8, "defesa": 4, "stamina": 5, "velocidade": 8,
-    "peso": 5, "equilibrio": 5, "resistencia_knockout": 4
+    "ataque": 7.6,
+    "defesa": 4.4,
+    "stamina": 4.8,
+    "velocidade": 7.2,
+    "peso": 4.9,
+    "equilibrio": 6,
+    "resistencia_knockout": 5.4
   },
   "fisica": {
     "massa_relativa": 0.95,
@@ -30,7 +34,12 @@
     "padrao_movimento": "agressivo"
   },
   "especiais": [
-    { "nome": "Vulcan Claw", "efeito": "Aura de garras orbitais por 3 s: dano multi-hit por contato e knockback ampliado", "custo": 120, "cooldown_s": 22 }
+    {
+      "nome": "Vulcan Claw",
+      "efeito": "Aura de garras orbitais por 3 s: dano multi-hit por contato e knockback ampliado",
+      "custo": 120,
+      "cooldown_s": 22
+    }
   ],
   "antecessora": "driger-f",
   "sucessora": "driger-v2",
@@ -39,5 +48,65 @@
     "https://beyblade.fandom.com/wiki/Driger_V",
     "https://beyblade.fandom.com/wiki/Attack_Ring_-_Sonic_Tiger",
     "https://beyblade.fandom.com/wiki/Vulcan_Claw"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 8,
+    "defesa": 4,
+    "stamina": 5,
+    "velocidade": 8,
+    "peso": 5,
+    "equilibrio": 5,
+    "resistencia_knockout": 4
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Driger",
+    "attack_ring": "Sonic Tiger",
+    "weight_disk": "Ten Balance",
+    "spin_gear": "Neo Right SG (South Core)",
+    "support_part": null,
+    "blade_base": "SG Metal Flat Base"
+  },
+  "lancador": "lancadores/driger-shooter-dx",
+  "medidas": {
+    "peso_g": 31.8,
+    "diametro_mm": 45,
+    "altura_mm": 22.6
+  },
+  "atributos_brinquedo": {
+    "ataque": 4.6,
+    "defesa": 4.4,
+    "stamina": 4.8,
+    "velocidade": 6.2,
+    "peso": 4.9,
+    "equilibrio": 6,
+    "resistencia_knockout": 5.4
+  },
+  "ajuste_anime": {
+    "ataque": 3,
+    "velocidade": 1
+  },
+  "calculo": {
+    "ponta": "metal-flat",
+    "origem_ponta": "blade-base/sg-metal-flat-base",
+    "atrito_ponta": 0.4,
+    "tipo_contato": "slope",
+    "recoil": 0.4,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 2,
+    "engine_gear": null,
+    "inercia_g_mm2": 5989,
+    "estrelas_takara": {
+      "ataque": 6,
+      "defesa": 5,
+      "stamina": 6,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.41,
+      "defesa": 0.49,
+      "stamina": 0.46
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Driger (tigre branco)"
 }

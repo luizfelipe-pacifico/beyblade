@@ -1,72 +1,115 @@
 # Draciel V2 (Draciel Viper 2 / ドラシエルV2 (バイパー・ツー) – Dorashieru V2 (Baipā Tsū))
 
-![Beyblade](imagem.jpg)
+<!-- auto:inicio (gerado por npm run build:research; não edite este bloco) -->
+![Draciel V2: montada](montada.svg)
 
-Anime: ![Draciel V2 no anime](anime.jpg)
+| Ficha | |
+|---|---|
+| Dono | [Max Tate (Max Mizuhara / 水原 マックス)](../../README.md) |
+| Tipo · sistema · rotação | defense · magnacore · direita |
+| Código do produto | A-85 |
+| Montada | Ø 46 mm · altura 27,2 mm · **37,1 g** (soma das peças) |
+| Fera bit | [Draciel](../../../../feras-bit/draciel/) |
+| Lançador | [Marksmen Grip (Sniper Grip)](../../../../lancadores/marksmen-grip/) |
+| Ripcord | [winder-padrao](../../../../lancadores/ripcords/winder-padrao/) |
+
+### Peças
+
+| Camada | Peça | Material | Ø mm | Altura mm | Peso g | Estrelas Takara (A / D / S) | Desenho |
+|---|---|---|---|---|---|---|---|
+| Bit Chip | [Draciel (V2 Version)](../../../../pecas/bit-chip/draciel-v2/) | plástico (ABS presumido) + adesivo impresso com a fera | 14 <sub>estimado</sub> | 8 <sub>estimado</sub> | 0,7 <sub>comunidade</sub> | — | [ver](pecas/bit-chip.svg) |
+| Attack Ring | [Strike Turtle](../../../../pecas/attack-ring/strike-turtle/) | ABS | 46 <sub>estimado</sub> | 6 <sub>estimado</sub> | 6 <sub>wiki</sub> | 2,5 / 2,5 / 2 | [ver](pecas/attack-ring.svg) |
+| Support Part | [Fin Tector](../../../../pecas/support-part/fin-tector/) | ABS | 46 <sub>estimado</sub> | 4 <sub>estimado</sub> | 2 <sub>wiki</sub> | 1,5 / 1 / 0 | [ver](pecas/support-part.svg) |
+| Weight Disk | [Ten Heavy](../../../../pecas/weight-disk/ten-heavy/) | Metal | 35 <sub>estimado</sub> | 4,2 <sub>estimado</sub> | 16,4 <sub>wiki</sub> | 1 / 3 / 2 | [ver](pecas/weight-disk.svg) |
+| Spin Gear / Core | [Neo Right SG (South Magnecore)](../../../../pecas/spin-gear/neo-right-sg-south-magnecore/) | ABS + ímã (polo Sul) no núcleo | 18 <sub>estimado</sub> | 10 <sub>estimado</sub> | 6 <sub>wiki</sub> | — | [ver](pecas/spin-gear.svg) |
+| Blade Base | [Switch Metal Ball Base](../../../../pecas/blade-base/switch-metal-ball-base/) | ABS + Aço (2 esferas fixas) | 40 <sub>estimado</sub> | 17 <sub>estimado</sub> | 6 <sub>wiki</sub> | 1 / 4 / 3,5 | [ver](pecas/blade-base.svg) |
+
+<sub>Fonte de cada medida em subscrito (wiki, comunidade, estimado). Detalhes em cada ficha de peça.</sub>
+
+![Vista explodida](explodida.svg)
+
+### Atributos
+
+| Atributo | Brinquedo (calculado) | Ajuste anime | Jogo |
+|---|---|---|---|
+| Ataque | 4,5 | — | **4,5** |
+| Defesa | 7,7 | +2 | **9,7** |
+| Stamina | 6,2 | — | **6,2** |
+| Velocidade | 3,3 | — | **3,3** |
+| Peso | 7,6 | — | **7,6** |
+| Equilíbrio | 8,7 | — | **8,7** |
+| Resistência a KO | 5,8 | +1 | **6,8** |
+
+Calculado por `src/beyblade/stats.js` a partir de: ponta ball (atrito 0,3), contato smash (recoil 0,6), peso do WD na centro. Modelo em [docs/BEYBLADES.md](../../../../../docs/BEYBLADES.md).
+
+### Fera bit em cima da bey
+
+<img src="../../../../feras-bit/draciel/idle.svg" width="240" alt="Draciel"> <img src="sprite.svg" width="120" alt="sprite">
+
+Sons: [invocacao](../../../../feras-bit/draciel/sons/invocacao.wav) · [rugido](../../../../feras-bit/draciel/sons/rugido.wav) · [ataque](../../../../feras-bit/draciel/sons/ataque.wav). Animações: [invocação](../../../../feras-bit/draciel/invocacao.svg) · [ataque](../../../../feras-bit/draciel/ataque.svg).
+
+<details><summary>Fotos de referência (terceiros, só para estudo)</summary>
+
+[anime.jpg](referencia/anime.jpg) · [imagem.jpg](referencia/imagem.jpg) · [pecas-attack-ring.jpg](referencia/pecas-attack-ring.jpg) · [pecas-blade-base.jpg](referencia/pecas-blade-base.jpg) · [pecas-pecas-desmontadas.jpg](referencia/pecas-pecas-desmontadas.jpg) · [pecas-support-part.jpg](referencia/pecas-support-part.jpg)
+
+</details>
+<!-- auto:fim -->
+
+Anime: ![Draciel V2 no anime](referencia/anime.jpg)
 
 | Campo | Valor |
 |---|---|
 | Dono | Max Tate |
 | Código do produto | A-85 (Takara, novembro de 2002) |
-| Tipo | Defense |
-| Sistema | Magnacore System |
-| Rotação | Direita |
-| Fera Bit (Bit-Beast) | Draciel (Genbu – tartaruga negra) |
-| Série / temporada | V-Force (2002) – fim; G-Revolution (2003) – início |
+| Fera Bit (Bit-Beast) | Draciel (Genbu, tartaruga negra) |
+| Série / temporada | V-Force (2002), fim; G-Revolution (2003), início |
 | Primeira aparição (anime) | V-Force ep. 47 "Deceit From Above" |
-| Antecessora → Sucessora | Draciel V → Draciel G |
+| Antecessora → Sucessora | [Draciel V](../draciel-v/) → [Draciel G](../draciel-g/) |
 
-## 1. Peças (de cima para baixo)
-
-| Camada | Peça | Descrição física | Função em batalha |
-|---|---|---|---|
-| Bit Chip | Draciel (versão V) | Chip da tartaruga | identidade / fera bit |
-| Attack Ring (AR) | Strike Turtle (6 g) | Elíptico; 3 pequenas "garras" de cada lado e uma "cabeça" logo atrás | Desempenho médio: garras pouco pronunciadas para smash; grande e com recoil para defesa/stamina (o mais "equilibrado" dos ARs de Draciel) |
-| Weight Disk (WD) | Ten Heavy (17 g) | 10 lados, o mais pesado da família Heavy; peso compacto no centro | Massa máxima para defesa e mais RPM |
-| Spin Gear (SG) / Core | Neo Right SG (MG Core / Magnecore) (6 g) | SG direito atualizado com núcleo magnético | Rotação direita |
-| Support Part / Sub Ring | Fin Tector (2 g) | Peças reversíveis na base: modo Ataque (ótimo para smash em customização) ou modo Defesa | Ajuste de modo; frágil |
-| Blade Base (BB) | Switch Metal Ball Base (6 g) | Ponta redonda e alta; 2 bolas de metal fixas que podem ser posicionadas para dentro ou para fora | Alterna distribuição de peso (dentro = mais RPM/estabilidade compacta; fora = mais inércia/defesa); ponta alta limita desempenho |
-
-Fotos das peças: `pecas/attack-ring.jpg`, `pecas/support-part.jpg` (Fin Tector), `pecas/blade-base.jpg`, `pecas/pecas-desmontadas.jpg`. (Sem foto isolada do Ten Heavy/Neo Right SG na wiki.)
-
-## 2. Formato e geometria
+## Formato e geometria
 - Silhueta elíptica/ovalada com 2 "cabeças" e 6 garras; simetria de 2 lados; raio médio-grande.
 - Peso fortemente central (Ten Heavy) + bolas de metal comutáveis (centro × periferia).
 - Perfil alto (ponta redonda alta).
 
-## 3. Comportamento na arena
-- **Movimento**: centro; a ponta redonda alta oscila mais que as bases anteriores.
-- **Ataque**: baixo-médio (garras pequenas; Fin Tector em modo ataque ajuda pouco no setup de série).
-- **Defesa**: no anime é o auge do V-Force (âncora do BRIEF: "Defesa 10 ≈ Draciel V2"); no brinquedo, a altura da ponta enfraquece.
-- **Stamina**: média.
-- **Matchups**: anime – vence Queen (Burning Kerberous), Emily (Trygator) e Julia; perde para Zeo (Cerberus) e para Tyson (Dragoon V2).
-- **Gimmick**: Switch Metal Ball (bolas internas/externas) + Fin Tector reversível + Magnecore.
+Análise das peças:
+- [Strike Turtle](../../../../pecas/attack-ring/strike-turtle/) (6 g): elíptico; 3 pequenas "garras" de cada lado e uma "cabeça" logo atrás. Desempenho médio: garras pouco pronunciadas para smash, grande e com recoil para defesa/stamina (o mais equilibrado dos ARs de Draciel).
+- [Fin Tector](../../../../pecas/support-part/fin-tector/) (2 g): peças reversíveis na base, modo Ataque (bom para smash em customização) ou modo Defesa; frágil.
+- [Ten Heavy](../../../../pecas/weight-disk/ten-heavy/) (17 g): 10 lados, o mais pesado da família Heavy; massa compacta no centro para defesa e RPM.
+- [Neo Right SG (South Magnecore)](../../../../pecas/spin-gear/neo-right-sg-south-magnecore/) (6 g): SG direito com núcleo magnético.
+- [Switch Metal Ball Base](../../../../pecas/blade-base/switch-metal-ball-base/) (6 g): ponta redonda e alta; 2 bolas de metal fixas que podem ficar para dentro (mais RPM, estabilidade compacta) ou para fora (mais inércia e defesa). A ponta alta limita o desempenho.
 
-## 4. No anime
+Fotos das peças (terceiros): [AR](referencia/pecas-attack-ring.jpg), [Fin Tector](referencia/pecas-support-part.jpg), [base](referencia/pecas-blade-base.jpg), [desmontada](referencia/pecas-pecas-desmontadas.jpg).
+
+## Comportamento na arena
+- **Movimento**: centro; a ponta redonda alta oscila mais que as bases anteriores.
+- **Ataque**: baixo-médio (garras pequenas; Fin Tector em modo ataque ajuda pouco na montagem de série).
+- **Defesa**: no anime é o auge do V-Force; no brinquedo, a altura da ponta enfraquece.
+- **Stamina**: média.
+- **Matchups**: no anime vence Queen (Burning Kerberous), Emily (Trygator) e Julia; perde para Zeo (Cerberus) e para Tyson (Dragoon V2).
+- **Gimmick**: Switch Metal Ball (bolas internas/externas) + Fin Tector reversível + Magnacore.
+
+## No anime
 - Estreia no V-Force ep. 47 contra Queen (vitória). Perde para Tyson (ep. 49) e para Zeo Zagart (ep. 50), que captura Draciel de novo.
-- G-Revolution (ep. 1–15): continua sendo a bey de Max no torneio de duplas pelos PPB All Starz – vence Emily (ep. 7), Aaron (ep. 11) e Julia (ep. 13).
+- G-Revolution (ep. 1–15): continua sendo a bey de Max no torneio de duplas pelos PPB All Starz; vence Emily (ep. 7), Aaron (ep. 11) e Julia (ep. 13).
 - Especial: *Heavy Viper Wall* (ondas de água que afogam e arremessam o rival), mais forte em G-Rev.
 - Substituída pela Draciel G (G-Rev ep. 16).
 
-## 5. Tradução para o jogo
+## Mecânica no jogo
+- **Movimento (IA)**: padrão "centro", com oscilação leve da ponta alta.
+- **Gimmick (troca de modo)**: o jogador alterna as bolas de metal com um botão (a IA troca quando o oponente entra em fase de ataque). Bolas para fora: +1 de defesa e +10% de resistência a empurrão, −10% de RPM inicial. Bolas para dentro: +10% de RPM e +0,5 de equilíbrio. Fin Tector em modo ataque: +0,5 de ataque, −0,5 de defesa. Magnecore Sul atrai beys de polo Norte (ver Draciel V).
+- **Especial**: *Heavy Viper Wall*. Onda radial de água com knockback forte (1,8×) e −15% de equilíbrio no alvo; custo 120 de energia, recarga 25 s. Visual: o [ataque de Draciel](../../../../feras-bit/draciel/ataque.svg).
+- **Física**: massa relativa 1,25; raio 1,05; atrito da ponta 0,25; restituição 0,4.
 
-| Atributo | Valor | Justificativa |
+## Ajuste do anime
+
+| Atributo | Delta | Justificativa (episódio/batalha) |
 |---|---|---|
-| Ataque | 4 | Strike Turtle médio; Heavy Viper Wall tem função ofensiva |
-| Defesa | 10 | Âncora de defesa do BRIEF; Ten Heavy + bolas de metal; no anime segura Kerberous |
-| Stamina | 6 | Ponta redonda alta, AR com recoil |
-| Velocidade | 3 | Centro |
-| Peso | 9 | Ten Heavy (17 g, o WD mais pesado) + bolas + Magnecore |
-| Equilíbrio | 6 | Peso central ajuda; ponta alta atrapalha |
-| Burst/Knockout-resist | 9 | Muito pesada |
+| Defesa | +2 | Segura Burning Kerberous (V-Force ep. 47), Trygator (G-Rev ep. 7) e Julia (ep. 13) com Heavy Viper Wall. |
+| Resistência a KO | +1 | Heavy Viper Wall mais forte em G-Rev: Draciel não sai do estádio nas vitórias de duplas (ep. 7–13). |
 
-- **Movimento em IA**: "centro"; alterna modo (bolas para fora = +defesa, −velocidade de rotação) via comando/IA quando o oponente está em fase de ataque.
-- **Especiais (no jogo)**: *Heavy Viper Wall*: onda radial de água com knockback forte e −15% de equilíbrio no alvo; custo 120, cooldown 25 s.
-- **Física sugerida**: massa relativa 1,25; raio 1,05; atrito da ponta 0,25; restituição 0,4.
+Resultado esperado: a defensora mais forte da era Magnacore; perde para Dragoon V2 (ep. 49) e para Cerberus de Zeo (ep. 50), que superam a defesa no ataque.
 
-Os mesmos dados ficam em `dados.json`.
-
-## 6. Fontes
+## Fontes
 - https://beyblade.fandom.com/wiki/Draciel_V2
 - https://beyblade.fandom.com/wiki/Heavy_Viper_Wall
 - https://beyblade.fandom.com/wiki/Weight_Disk_-_Heavy

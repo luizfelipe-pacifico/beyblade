@@ -7,20 +7,24 @@
   "tipo": "attack",
   "sistema": "magnacore",
   "rotacao": "esquerda",
-  "fera_bit": "Dragoon (dragão azul / Seiryū, vento)",
+  "fera_bit": "dragoon",
   "temporada": "v-force",
   "pecas": {
-    "bit_chip": "Dragoon",
-    "attack_ring": "Eight Attacker",
-    "weight_disk": "Ten Wide",
-    "spin_gear": "Neo Left SG (Metal Weight Core)",
-    "support_part": null,
-    "blade_base": "Magne Flat Base"
+    "bit_chip": "bit-chip/dragoon-v",
+    "attack_ring": "attack-ring/eight-attacker",
+    "weight_disk": "weight-disk/ten-wide",
+    "spin_gear": "spin-gear/neo-left-sg-mw-core",
+    "blade_base": "blade-base/magne-flat-base"
   },
   "ponta": "flat (plástico com ímã)",
   "atributos": {
-    "ataque": 7, "defesa": 4, "stamina": 4, "velocidade": 7,
-    "peso": 5, "equilibrio": 5, "resistencia_knockout": 4
+    "ataque": 6.3,
+    "defesa": 3.8,
+    "stamina": 5.1,
+    "velocidade": 6.9,
+    "peso": 4.4,
+    "equilibrio": 5.7,
+    "resistencia_knockout": 5
   },
   "fisica": {
     "massa_relativa": 0.95,
@@ -30,8 +34,18 @@
     "padrao_movimento": "flower"
   },
   "especiais": [
-    { "nome": "Victory Tornado", "efeito": "Dash guiado de 1,5 s envolto em vórtice: dano alto e knockback médio (a bey se move durante o golpe)", "custo": 100, "cooldown_s": 20 },
-    { "nome": "Magnacore (passiva)", "efeito": "Atração ou repulsão contra outras beys Magnacore conforme o polo", "custo": 0, "cooldown_s": 0 }
+    {
+      "nome": "Victory Tornado",
+      "efeito": "Dash guiado de 1,5 s envolto em vórtice: dano alto e knockback médio (a bey se move durante o golpe)",
+      "custo": 100,
+      "cooldown_s": 20
+    },
+    {
+      "nome": "Magnacore (passiva)",
+      "efeito": "Atração ou repulsão contra outras beys Magnacore conforme o polo",
+      "custo": 0,
+      "cooldown_s": 0
+    }
   ],
   "antecessora": "dragoon-f",
   "sucessora": "dragoon-v2",
@@ -41,5 +55,64 @@
     "https://beyblade.fandom.com/wiki/Attack_Ring_-_Eight_Attacker",
     "https://beyblade.fandom.com/wiki/Blade_Base_-_Magne_Flat_Base",
     "https://beyblade.fandom.com/wiki/Victory_Tornado"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 7,
+    "defesa": 4,
+    "stamina": 4,
+    "velocidade": 7,
+    "peso": 5,
+    "equilibrio": 5,
+    "resistencia_knockout": 4
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Dragoon",
+    "attack_ring": "Eight Attacker",
+    "weight_disk": "Ten Wide",
+    "spin_gear": "Neo Left SG (Metal Weight Core)",
+    "support_part": null,
+    "blade_base": "Magne Flat Base"
+  },
+  "lancador": "lancadores/neo-reverse-shooter",
+  "medidas": {
+    "peso_g": 30.8,
+    "diametro_mm": 44,
+    "altura_mm": 23.1
+  },
+  "atributos_brinquedo": {
+    "ataque": 5.3,
+    "defesa": 3.8,
+    "stamina": 5.1,
+    "velocidade": 6.9,
+    "peso": 4.4,
+    "equilibrio": 5.7,
+    "resistencia_knockout": 5
+  },
+  "ajuste_anime": {
+    "ataque": 1
+  },
+  "calculo": {
+    "ponta": "flat",
+    "origem_ponta": "blade-base/magne-flat-base",
+    "atrito_ponta": 0.5,
+    "tipo_contato": "smash",
+    "recoil": 0.6,
+    "distribuicao_peso": "periferia",
+    "simetria": 8,
+    "engine_gear": null,
+    "inercia_g_mm2": 7057,
+    "estrelas_takara": {
+      "ataque": 6.5,
+      "defesa": 4.5,
+      "stamina": 6,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.53,
+      "defesa": 0.39,
+      "stamina": 0.53
+    }
+  },
+  "ripcord": "lancadores/ripcords/dragon-winder",
+  "fera_bit_descricao": "Dragoon (dragão azul / Seiryū, vento)"
 }

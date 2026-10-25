@@ -7,32 +7,51 @@
   "tipo": "balance",
   "sistema": "spin-gear",
   "rotacao": "direita",
-  "fera_bit": "Dranzer (fênix / Suzaku, fogo)",
+  "fera_bit": "dranzer",
   "temporada": "bakuten-shoot",
   "pecas": {
-    "bit_chip": "Dranzer (F)",
-    "attack_ring": "Flame Wing",
-    "weight_disk": "Eight Heavy",
-    "spin_gear": "Right SG (Triple Change Version)",
-    "support_part": null,
-    "blade_base": "Flame Change Base"
+    "bit_chip": "bit-chip/dranzer-f",
+    "attack_ring": "attack-ring/flame-wing",
+    "weight_disk": "weight-disk/eight-heavy",
+    "spin_gear": "spin-gear/right-sg-triple-change-version",
+    "blade_base": "blade-base/flame-change-base"
   },
   "ponta": "flat / sharp / semi-flat (troca)",
   "atributos": {
-    "ataque": 6, "defesa": 6, "stamina": 6, "velocidade": 6,
-    "peso": 6, "equilibrio": 5, "resistencia_knockout": 6
+    "ataque": 4.7,
+    "defesa": 6.3,
+    "stamina": 5,
+    "velocidade": 5.2,
+    "peso": 6.4,
+    "equilibrio": 8,
+    "resistencia_knockout": 5.6
   },
   "fisica": {
-    "massa_relativa": 1.0,
-    "raio_relativo": 1.0,
+    "massa_relativa": 1,
+    "raio_relativo": 1,
     "atrito_ponta": 0.5,
     "restituicao": 0.55,
     "padrao_movimento": "flower"
   },
   "especiais": [
-    { "nome": "Flame Saber", "efeito": "Investida flamejante com dano direto alto (golpe do Kai)", "custo": 100, "cooldown_s": 20 },
-    { "nome": "Fúria da Dranzer (nome sugerido, sem nome no anime)", "efeito": "+30% de ataque por 6 s quando usada junto com outra bey (evento do ep. 45)", "custo": 80, "cooldown_s": 25 },
-    { "nome": "Troca de ponta (Triple Change)", "efeito": "Alterna sharp/semi-flat/flat uma vez por partida", "custo": 0, "cooldown_s": 0 }
+    {
+      "nome": "Flame Saber",
+      "efeito": "Investida flamejante com dano direto alto (golpe do Kai)",
+      "custo": 100,
+      "cooldown_s": 20
+    },
+    {
+      "nome": "Fúria da Dranzer (nome sugerido, sem nome no anime)",
+      "efeito": "+30% de ataque por 6 s quando usada junto com outra bey (evento do ep. 45)",
+      "custo": 80,
+      "cooldown_s": 25
+    },
+    {
+      "nome": "Troca de ponta (Triple Change)",
+      "efeito": "Alterna sharp/semi-flat/flat uma vez por partida",
+      "custo": 0,
+      "cooldown_s": 0
+    }
   ],
   "antecessora": "dranzer-s",
   "sucessora": "dranzer-v",
@@ -42,5 +61,62 @@
     "https://beyblade.fandom.com/wiki/Attack_Ring_-_Flame_Wing",
     "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_44",
     "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_45"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 6,
+    "defesa": 6,
+    "stamina": 6,
+    "velocidade": 6,
+    "peso": 6,
+    "equilibrio": 5,
+    "resistencia_knockout": 6
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Dranzer (F)",
+    "attack_ring": "Flame Wing",
+    "weight_disk": "Eight Heavy",
+    "spin_gear": "Right SG (Triple Change Version)",
+    "support_part": null,
+    "blade_base": "Flame Change Base"
+  },
+  "lancador": "lancadores/ez-shooter",
+  "medidas": {
+    "peso_g": 34.8,
+    "diametro_mm": 47,
+    "altura_mm": 24.5
+  },
+  "atributos_brinquedo": {
+    "ataque": 4.7,
+    "defesa": 6.3,
+    "stamina": 5,
+    "velocidade": 5.2,
+    "peso": 6.4,
+    "equilibrio": 8,
+    "resistencia_knockout": 5.6
+  },
+  "ajuste_anime": {},
+  "calculo": {
+    "ponta": "semi-flat",
+    "origem_ponta": "blade-base/flame-change-base",
+    "atrito_ponta": 0.3,
+    "tipo_contato": "smash",
+    "recoil": 0.55,
+    "distribuicao_peso": "centro",
+    "simetria": 2,
+    "engine_gear": null,
+    "inercia_g_mm2": 6090,
+    "estrelas_takara": {
+      "ataque": 5,
+      "defesa": 8,
+      "stamina": 6,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.59,
+      "defesa": 0.59,
+      "stamina": 0.5
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Dranzer (fênix / Suzaku, fogo)"
 }

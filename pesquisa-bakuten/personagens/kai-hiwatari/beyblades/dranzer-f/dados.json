@@ -7,20 +7,24 @@
   "tipo": "balance",
   "sistema": "spin-gear",
   "rotacao": "direita",
-  "fera_bit": "Dranzer (fênix)",
+  "fera_bit": "dranzer",
   "temporada": "bakuten-shoot",
   "pecas": {
-    "bit_chip": "Dranzer (F Version)",
-    "attack_ring": "Flame Wing",
-    "weight_disk": "Eight Heavy",
-    "spin_gear": "Right SG (Triple Change Version)",
-    "support_part": null,
-    "blade_base": "Flame Change Base"
+    "bit_chip": "bit-chip/dranzer-f",
+    "attack_ring": "attack-ring/flame-wing",
+    "weight_disk": "weight-disk/eight-heavy",
+    "spin_gear": "spin-gear/right-sg-triple-change-version",
+    "blade_base": "blade-base/flame-change-base"
   },
   "ponta": "flat / sharp / semi-flat (troca manual)",
   "atributos": {
-    "ataque": 6, "defesa": 5, "stamina": 5, "velocidade": 6,
-    "peso": 5, "equilibrio": 5, "resistencia_knockout": 5
+    "ataque": 5.7,
+    "defesa": 6.3,
+    "stamina": 5,
+    "velocidade": 5.2,
+    "peso": 6.4,
+    "equilibrio": 8,
+    "resistencia_knockout": 5.6
   },
   "fisica": {
     "massa_relativa": 0.9,
@@ -30,16 +34,93 @@
     "padrao_movimento": "orbita"
   },
   "especiais": [
-    { "nome": "Flame Saber", "efeito": "Sobe e mergulha envolta em chamas sobre o alvo; dano alto, exige mira", "custo": 100, "cooldown_s": 22 },
-    { "nome": "Flame Thrower", "efeito": "Rajada de fogo frontal; dano contínuo leve + empurrão (descrição do anime não confirmada)", "custo": 60, "cooldown_s": 14 }
+    {
+      "nome": "Flame Saber",
+      "efeito": "Sobe e mergulha envolta em chamas sobre o alvo; dano alto, exige mira",
+      "custo": 100,
+      "cooldown_s": 22
+    },
+    {
+      "nome": "Flame Thrower",
+      "efeito": "Rajada de fogo frontal; dano contínuo leve + empurrão (descrição do anime não confirmada)",
+      "custo": 60,
+      "cooldown_s": 14
+    }
   ],
   "antecessora": "dranzer-s",
   "sucessora": "dranzer-v",
   "imagens": [],
-  "imagens_pendentes": ["imagem.jpg", "anime.jpg", "pecas/attack-ring.jpg", "pecas/weight-disk.gif", "pecas/spin-gear.jpg", "pecas/blade-base.jpg", "pecas/todas-pecas.jpg"],
+  "imagens_pendentes": [
+    "imagem.jpg",
+    "anime.jpg",
+    "pecas/attack-ring.jpg",
+    "pecas/weight-disk.gif",
+    "pecas/spin-gear.jpg",
+    "pecas/blade-base.jpg",
+    "pecas/todas-pecas.jpg"
+  ],
   "fontes": [
     "https://beyblade.fandom.com/wiki/Dranzer_F",
     "https://beyblade.fandom.com/wiki/Attack_Ring_-_Flame_Wing",
     "https://beyblade.fandom.com/wiki/Flame_Saber"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 6,
+    "defesa": 5,
+    "stamina": 5,
+    "velocidade": 6,
+    "peso": 5,
+    "equilibrio": 5,
+    "resistencia_knockout": 5
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Dranzer (F Version)",
+    "attack_ring": "Flame Wing",
+    "weight_disk": "Eight Heavy",
+    "spin_gear": "Right SG (Triple Change Version)",
+    "support_part": null,
+    "blade_base": "Flame Change Base"
+  },
+  "lancador": "lancadores/dranzer-shooter-dx",
+  "medidas": {
+    "peso_g": 34.8,
+    "diametro_mm": 47,
+    "altura_mm": 24.5
+  },
+  "atributos_brinquedo": {
+    "ataque": 4.7,
+    "defesa": 6.3,
+    "stamina": 5,
+    "velocidade": 5.2,
+    "peso": 6.4,
+    "equilibrio": 8,
+    "resistencia_knockout": 5.6
+  },
+  "ajuste_anime": {
+    "ataque": 1
+  },
+  "calculo": {
+    "ponta": "semi-flat",
+    "origem_ponta": "blade-base/flame-change-base",
+    "atrito_ponta": 0.3,
+    "tipo_contato": "smash",
+    "recoil": 0.55,
+    "distribuicao_peso": "centro",
+    "simetria": 2,
+    "engine_gear": null,
+    "inercia_g_mm2": 6090,
+    "estrelas_takara": {
+      "ataque": 5,
+      "defesa": 8,
+      "stamina": 6,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.59,
+      "defesa": 0.59,
+      "stamina": 0.5
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Dranzer (fênix)"
 }

@@ -7,20 +7,23 @@
   "tipo": "attack",
   "sistema": "4-layer",
   "rotacao": "direita",
-  "fera_bit": "nenhuma no anime (bit chip do Dragoon, dragão azul)",
+  "fera_bit": null,
   "temporada": "bakuten-shoot",
   "pecas": {
-    "bit_chip": "Dragoon",
-    "attack_ring": "Dragon Head",
-    "weight_disk": "Wide",
-    "spin_gear": null,
-    "support_part": null,
-    "blade_base": "Grip Base"
+    "bit_chip": "bit-chip/dragoon",
+    "attack_ring": "attack-ring/dragon-head",
+    "weight_disk": "weight-disk/wide",
+    "blade_base": "blade-base/grip-base"
   },
   "ponta": "grip (borracha flat larga)",
   "atributos": {
-    "ataque": 4, "defesa": 2, "stamina": 2, "velocidade": 9,
-    "peso": 2, "equilibrio": 4, "resistencia_knockout": 2
+    "ataque": 5.7,
+    "defesa": 2.6,
+    "stamina": 3.8,
+    "velocidade": 9.8,
+    "peso": 1.7,
+    "equilibrio": 5.3,
+    "resistencia_knockout": 5.2
   },
   "fisica": {
     "massa_relativa": 0.75,
@@ -30,7 +33,12 @@
     "padrao_movimento": "agressivo"
   },
   "especiais": [
-    { "nome": "Lançamento com corrida (habilidade de lançamento, não é especial de fera)", "efeito": "+25% de velocidade inicial por 5 s", "custo": 0, "cooldown_s": 0 }
+    {
+      "nome": "Lançamento com corrida (habilidade de lançamento, não é especial de fera)",
+      "efeito": "+25% de velocidade inicial por 5 s",
+      "custo": 0,
+      "cooldown_s": 0
+    }
   ],
   "antecessora": null,
   "sucessora": "dragoon-s",
@@ -40,5 +48,62 @@
     "https://beyblade.fandom.com/wiki/Attack_Ring_-_Dragon_Head",
     "https://beyblade.fandom.com/wiki/Blade_Base_-_Grip_Base",
     "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_01"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 4,
+    "defesa": 2,
+    "stamina": 2,
+    "velocidade": 9,
+    "peso": 2,
+    "equilibrio": 4,
+    "resistencia_knockout": 2
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Dragoon",
+    "attack_ring": "Dragon Head",
+    "weight_disk": "Wide",
+    "spin_gear": null,
+    "support_part": null,
+    "blade_base": "Grip Base"
+  },
+  "lancador": "lancadores/ez-shooter",
+  "medidas": {
+    "peso_g": 25.4,
+    "diametro_mm": 42,
+    "altura_mm": 18
+  },
+  "atributos_brinquedo": {
+    "ataque": 5.7,
+    "defesa": 2.6,
+    "stamina": 3.8,
+    "velocidade": 9.8,
+    "peso": 1.7,
+    "equilibrio": 5.3,
+    "resistencia_knockout": 5.2
+  },
+  "ajuste_anime": {},
+  "calculo": {
+    "ponta": "grip",
+    "origem_ponta": "blade-base/grip-base",
+    "atrito_ponta": 0.85,
+    "tipo_contato": "smash",
+    "recoil": 0.3,
+    "distribuicao_peso": "periferia",
+    "simetria": 4,
+    "engine_gear": null,
+    "inercia_g_mm2": 5575,
+    "estrelas_takara": {
+      "ataque": 7,
+      "defesa": 3,
+      "stamina": 5.5,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.56,
+      "defesa": 0.3,
+      "stamina": 0.26
+    }
+  },
+  "ripcord": "lancadores/ripcords/ripcord-alongado-tyson",
+  "fera_bit_descricao": "nenhuma no anime (bit chip do Dragoon, dragão azul)"
 }

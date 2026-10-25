@@ -7,9 +7,66 @@
   "tipo": "defense",
   "sistema": "spin-gear",
   "rotacao": "direita",
-  "fera_bit": "Draciel (tartaruga / Genbu)",
+  "fera_bit": "draciel",
   "temporada": "bakuten-shoot",
   "pecas": {
+    "bit_chip": "bit-chip/draciel-f",
+    "attack_ring": "attack-ring/eight-spike",
+    "weight_disk": "weight-disk/eight-balance",
+    "spin_gear": "spin-gear/right-sg-oil-ball-version",
+    "blade_base": "blade-base/fortress-base"
+  },
+  "ponta": "bola-metal (com óleo)",
+  "atributos": {
+    "ataque": 3.4,
+    "defesa": 7.9,
+    "stamina": 7.2,
+    "velocidade": 2.7,
+    "peso": 8.3,
+    "equilibrio": 8.3,
+    "resistencia_knockout": 7.6
+  },
+  "fisica": {
+    "massa_relativa": 1.15,
+    "raio_relativo": 1,
+    "atrito_ponta": 0.15,
+    "restituicao": 0.4,
+    "padrao_movimento": "centro"
+  },
+  "especiais": [
+    {
+      "nome": "Fortress Defense",
+      "efeito": "Escudo de 6 s: absorve 50% do dano de colisão e devolve 20% como recoil ao atacante",
+      "custo": 100,
+      "cooldown_s": 22
+    }
+  ],
+  "antecessora": "draciel-s",
+  "sucessora": "draciel-v",
+  "imagens": [
+    "imagem.jpg",
+    "anime.jpg",
+    "pecas/attack-ring.gif",
+    "pecas/weight-disk.gif",
+    "pecas/spin-gear.gif",
+    "pecas/blade-base.gif",
+    "pecas/pecas-desmontadas.jpg"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Draciel_F",
+    "https://beyblade.fandom.com/wiki/Fortress_Defense",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_45"
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 2,
+    "defesa": 9,
+    "stamina": 7,
+    "velocidade": 2,
+    "peso": 8,
+    "equilibrio": 7,
+    "resistencia_knockout": 9
+  },
+  "pecas_nomes_originais": {
     "bit_chip": "Draciel (F)",
     "attack_ring": "Eight Spike",
     "weight_disk": "Eight Balance",
@@ -17,27 +74,47 @@
     "support_part": null,
     "blade_base": "Fortress Base"
   },
-  "ponta": "bola-metal (com óleo)",
-  "atributos": {
-    "ataque": 2, "defesa": 9, "stamina": 7, "velocidade": 2,
-    "peso": 8, "equilibrio": 7, "resistencia_knockout": 9
+  "lancador": "lancadores/marksmen-grip",
+  "medidas": {
+    "peso_g": 38.5,
+    "diametro_mm": 44,
+    "altura_mm": 24.6
   },
-  "fisica": {
-    "massa_relativa": 1.15,
-    "raio_relativo": 1.0,
-    "atrito_ponta": 0.15,
-    "restituicao": 0.4,
-    "padrao_movimento": "centro"
+  "atributos_brinquedo": {
+    "ataque": 3.4,
+    "defesa": 6.9,
+    "stamina": 7.2,
+    "velocidade": 2.7,
+    "peso": 8.3,
+    "equilibrio": 8.3,
+    "resistencia_knockout": 6.6
   },
-  "especiais": [
-    { "nome": "Fortress Defense", "efeito": "Escudo de 6 s: absorve 50% do dano de colisão e devolve 20% como recoil ao atacante", "custo": 100, "cooldown_s": 22 }
-  ],
-  "antecessora": "draciel-s",
-  "sucessora": "draciel-v",
-  "imagens": ["imagem.jpg", "anime.jpg", "pecas/attack-ring.gif", "pecas/weight-disk.gif", "pecas/spin-gear.gif", "pecas/blade-base.gif", "pecas/pecas-desmontadas.jpg"],
-  "fontes": [
-    "https://beyblade.fandom.com/wiki/Draciel_F",
-    "https://beyblade.fandom.com/wiki/Fortress_Defense",
-    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_45"
-  ]
+  "ajuste_anime": {
+    "defesa": 1,
+    "resistencia_knockout": 1
+  },
+  "calculo": {
+    "ponta": "metal-ball",
+    "origem_ponta": "blade-base/fortress-base",
+    "atrito_ponta": 0.18,
+    "tipo_contato": "defesa",
+    "recoil": 0.4,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 8,
+    "engine_gear": null,
+    "inercia_g_mm2": 6777,
+    "estrelas_takara": {
+      "ataque": 4.5,
+      "defesa": 7.5,
+      "stamina": 8,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.3,
+      "defesa": 0.8,
+      "stamina": 0.81
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Draciel (tartaruga / Genbu)"
 }

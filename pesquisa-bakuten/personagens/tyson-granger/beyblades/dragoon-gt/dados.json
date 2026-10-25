@@ -7,20 +7,24 @@
   "tipo": "attack",
   "sistema": "engine-gear",
   "rotacao": "esquerda",
-  "fera_bit": "Dragoon (dragão azul / Seiryū, vento)",
+  "fera_bit": "dragoon",
   "temporada": "g-revolution",
   "pecas": {
-    "bit_chip": "Dragoon",
-    "attack_ring": "G-Upper",
-    "weight_disk": "Ten Wide",
-    "spin_gear": "Left Engine Gear Turbo (CEW Metal Grip)",
-    "support_part": null,
-    "blade_base": "Instant Release Base (Dragoon GT Version)"
+    "bit_chip": "bit-chip/dragoon-gt",
+    "attack_ring": "attack-ring/g-upper",
+    "weight_disk": "weight-disk/ten-wide",
+    "spin_gear": "spin-gear/left-eg-turbo",
+    "blade_base": "blade-base/first-clutch-base-dragoon-gt"
   },
   "ponta": "grip (borracha flat no CEW Metal Grip)",
   "atributos": {
-    "ataque": 9, "defesa": 5, "stamina": 3, "velocidade": 9,
-    "peso": 7, "equilibrio": 5, "resistencia_knockout": 5
+    "ataque": 10,
+    "defesa": 5.6,
+    "stamina": 7,
+    "velocidade": 9.7,
+    "peso": 8.4,
+    "equilibrio": 5.1,
+    "resistencia_knockout": 7.7
   },
   "fisica": {
     "massa_relativa": 1.15,
@@ -30,9 +34,24 @@
     "padrao_movimento": "agressivo"
   },
   "especiais": [
-    { "nome": "Galaxy Turbo Twister", "efeito": "Tornado multivórtice por 4 s com área grande: atinge todos no raio, knockback alto para cima", "custo": 100, "cooldown_s": 22 },
-    { "nome": "Dragoon Tank (dupla com Daichi)", "efeito": "Acopla com a Strata Dragoon G por 3 s; investida conjunta com massa somada", "custo": 120, "cooldown_s": 30 },
-    { "nome": "Engine Gear Turbo (passiva)", "efeito": "+80% de velocidade por 1,5 s no início", "custo": 0, "cooldown_s": 0 }
+    {
+      "nome": "Galaxy Turbo Twister",
+      "efeito": "Tornado multivórtice por 4 s com área grande: atinge todos no raio, knockback alto para cima",
+      "custo": 100,
+      "cooldown_s": 22
+    },
+    {
+      "nome": "Dragoon Tank (dupla com Daichi)",
+      "efeito": "Acopla com a Strata Dragoon G por 3 s; investida conjunta com massa somada",
+      "custo": 120,
+      "cooldown_s": 30
+    },
+    {
+      "nome": "Engine Gear Turbo (passiva)",
+      "efeito": "+80% de velocidade por 1,5 s no início",
+      "custo": 0,
+      "cooldown_s": 0
+    }
   ],
   "antecessora": "dragoon-g",
   "sucessora": "dragoon-ms",
@@ -43,5 +62,65 @@
     "https://beyblade.fandom.com/wiki/Galaxy_Turbo_Twister",
     "https://beyblade.fandom.com/wiki/Dragoon_Tank",
     "https://beyblade.fandom.com/wiki/Beyblade:_G-Revolution_-_Episode_37"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 9,
+    "defesa": 5,
+    "stamina": 3,
+    "velocidade": 9,
+    "peso": 7,
+    "equilibrio": 5,
+    "resistencia_knockout": 5
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Dragoon",
+    "attack_ring": "G-Upper",
+    "weight_disk": "Ten Wide",
+    "spin_gear": "Left Engine Gear Turbo (CEW Metal Grip)",
+    "support_part": null,
+    "blade_base": "Instant Release Base (Dragoon GT Version)"
+  },
+  "lancador": "lancadores/customize-grip-tyson",
+  "medidas": {
+    "peso_g": 38.8,
+    "diametro_mm": 48,
+    "altura_mm": 24.1
+  },
+  "atributos_brinquedo": {
+    "ataque": 10,
+    "defesa": 5.6,
+    "stamina": 6,
+    "velocidade": 9.7,
+    "peso": 8.4,
+    "equilibrio": 5.1,
+    "resistencia_knockout": 7.7
+  },
+  "ajuste_anime": {
+    "ataque": 1,
+    "stamina": 1
+  },
+  "calculo": {
+    "ponta": "grip",
+    "origem_ponta": "blade-base/first-clutch-base-dragoon-gt",
+    "atrito_ponta": 0.85,
+    "tipo_contato": "smash",
+    "recoil": 0.3,
+    "distribuicao_peso": "periferia",
+    "simetria": 4,
+    "engine_gear": "turbo",
+    "inercia_g_mm2": 8947,
+    "estrelas_takara": {
+      "ataque": 12,
+      "defesa": 6.5,
+      "stamina": 8,
+      "partes": 4
+    },
+    "fisica": {
+      "ataque": 0.85,
+      "defesa": 0.6,
+      "stamina": 0.5
+    }
+  },
+  "ripcord": "lancadores/ripcords/neo-dragon-winder",
+  "fera_bit_descricao": "Dragoon (dragão azul / Seiryū, vento)"
 }

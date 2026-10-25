@@ -7,20 +7,25 @@
   "tipo": "attack",
   "sistema": "magnacore",
   "rotacao": "esquerda (anime, inferida) / direita (brinquedo RC, segundo a wiki)",
-  "fera_bit": "Dragoon (dragão azul / Seiryū, vento)",
+  "fera_bit": "dragoon",
   "temporada": "v-force",
   "pecas": {
-    "bit_chip": "Dragoon (V)",
-    "attack_ring": "Spike Dragon",
-    "weight_disk": "não confirmado",
-    "spin_gear": "não confirmado",
-    "support_part": "Reverse Attack",
-    "blade_base": "RC Flat Base"
+    "bit_chip": "bit-chip/dragoon-v2",
+    "attack_ring": "attack-ring/spike-dragon",
+    "support_part": "support-part/reverse-attack",
+    "weight_disk": null,
+    "spin_gear": null,
+    "blade_base": "blade-base/rc-flat-base"
   },
   "ponta": "semi-flat",
   "atributos": {
-    "ataque": 10, "defesa": 5, "stamina": 4, "velocidade": 8,
-    "peso": 8, "equilibrio": 6, "resistencia_knockout": 6
+    "ataque": 6.9,
+    "defesa": 5.4,
+    "stamina": 6.1,
+    "velocidade": 6.3,
+    "peso": 10,
+    "equilibrio": 7.3,
+    "resistencia_knockout": 7.4
   },
   "fisica": {
     "massa_relativa": 1.3,
@@ -30,8 +35,18 @@
     "padrao_movimento": "orbita"
   },
   "especiais": [
-    { "nome": "Hyper Victory Tornado (Custom)", "efeito": "Dash vermelho de 2,5 s com tornado: +15% de dano em relação à V2, knockback alto", "custo": 100, "cooldown_s": 22 },
-    { "nome": "Tune Up (passiva)", "efeito": "Recoil sofrido -30% em relação à V2", "custo": 0, "cooldown_s": 0 }
+    {
+      "nome": "Hyper Victory Tornado (Custom)",
+      "efeito": "Dash vermelho de 2,5 s com tornado: +15% de dano em relação à V2, knockback alto",
+      "custo": 100,
+      "cooldown_s": 22
+    },
+    {
+      "nome": "Tune Up (passiva)",
+      "efeito": "Recoil sofrido -30% em relação à V2",
+      "custo": 0,
+      "cooldown_s": 0
+    }
   ],
   "antecessora": "dragoon-v2",
   "sucessora": "dragoon-g",
@@ -40,5 +55,67 @@
     "https://beyblade.fandom.com/wiki/Dragoon_V2_High_Power_Custom",
     "https://beyblade.fandom.com/wiki/Beyblade:_V-Force_-_Episode_47",
     "https://beyblade.fandom.com/wiki/Beyblade:_V-Force_-_Episode_51"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 10,
+    "defesa": 5,
+    "stamina": 4,
+    "velocidade": 8,
+    "peso": 8,
+    "equilibrio": 6,
+    "resistencia_knockout": 6
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Dragoon (V)",
+    "attack_ring": "Spike Dragon",
+    "weight_disk": "não confirmado",
+    "spin_gear": "não confirmado",
+    "support_part": "Reverse Attack",
+    "blade_base": "RC Flat Base"
+  },
+  "lancador": "lancadores/neo-reverse-shooter",
+  "medidas": {
+    "peso_g": 62,
+    "diametro_mm": 48,
+    "altura_mm": 28
+  },
+  "atributos_brinquedo": {
+    "ataque": 5.9,
+    "defesa": 5.4,
+    "stamina": 5.1,
+    "velocidade": 4.3,
+    "peso": 10,
+    "equilibrio": 7.3,
+    "resistencia_knockout": 6.4
+  },
+  "ajuste_anime": {
+    "ataque": 1,
+    "velocidade": 2,
+    "stamina": 1,
+    "resistencia_knockout": 1
+  },
+  "calculo": {
+    "ponta": "semi-flat",
+    "origem_ponta": "blade-base/rc-flat-base",
+    "atrito_ponta": 0.3,
+    "tipo_contato": "spike",
+    "recoil": 0.75,
+    "distribuicao_peso": null,
+    "simetria": 4,
+    "engine_gear": null,
+    "inercia_g_mm2": 8689,
+    "estrelas_takara": {
+      "ataque": 7,
+      "defesa": 5.5,
+      "stamina": 5,
+      "partes": 1
+    },
+    "fisica": {
+      "ataque": 0.6,
+      "defesa": 0.69,
+      "stamina": 0.69
+    }
+  },
+  "ripcord": "lancadores/ripcords/neo-dragon-winder",
+  "fera_bit_descricao": "Dragoon (dragão azul / Seiryū, vento)"
 }

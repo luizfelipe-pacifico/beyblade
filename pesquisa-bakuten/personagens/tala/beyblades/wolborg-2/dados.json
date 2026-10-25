@@ -7,30 +7,39 @@
   "tipo": "balance",
   "sistema": "spin-gear",
   "rotacao": "direita",
-  "fera_bit": "Wolborg (lobo prateado de gelo, fera bit artificial)",
+  "fera_bit": "wolborg",
   "temporada": "bakuten-shoot",
   "pecas": {
-    "bit_chip": "Wolborg",
-    "attack_ring": "Upper Wolf",
-    "weight_disk": "Eight Balance",
-    "spin_gear": "Right SG (Bearing Version 2)",
-    "support_part": null,
-    "blade_base": "Defense Grip Base 2"
+    "bit_chip": "bit-chip/wolborg",
+    "attack_ring": "attack-ring/upper-wolf",
+    "weight_disk": "weight-disk/eight-balance",
+    "spin_gear": "spin-gear/right-sg-bearing-version-2",
+    "blade_base": "blade-base/defense-grip-base-2"
   },
   "ponta": "grip (borracha sobre eixo com rolamento)",
   "atributos": {
-    "ataque": 4, "defesa": 6, "stamina": 10, "velocidade": 3,
-    "peso": 5, "equilibrio": 8, "resistencia_knockout": 7
+    "ataque": 6.8,
+    "defesa": 4.8,
+    "stamina": 6.1,
+    "velocidade": 7.9,
+    "peso": 4.4,
+    "equilibrio": 5.8,
+    "resistencia_knockout": 5.6
   },
   "fisica": {
     "massa_relativa": 0.95,
-    "raio_relativo": 1.0,
+    "raio_relativo": 1,
     "atrito_ponta": 0.75,
     "restituicao": 0.65,
     "padrao_movimento": "centro"
   },
   "especiais": [
-    { "nome": "Blizzalog", "efeito": "Campo de gelo por 6 s: adversário perde 25% de controle/atrito e 2%/s de rotação extra (nevasca/iceberg da final do Mundial)", "custo": 100, "cooldown_s": 25 }
+    {
+      "nome": "Blizzalog",
+      "efeito": "Campo de gelo por 6 s: adversário perde 25% de controle/atrito e 2%/s de rotação extra (nevasca/iceberg da final do Mundial)",
+      "custo": 100,
+      "cooldown_s": 25
+    }
   ],
   "antecessora": null,
   "sucessora": "wolborg-4",
@@ -52,5 +61,66 @@
     "https://beyblade.fandom.com/wiki/Blade_Base_-_Defense_Grip_2",
     "https://beyblade.fandom.com/wiki/Blizzalog",
     "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_51"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 4,
+    "defesa": 6,
+    "stamina": 10,
+    "velocidade": 3,
+    "peso": 5,
+    "equilibrio": 8,
+    "resistencia_knockout": 7
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Wolborg",
+    "attack_ring": "Upper Wolf",
+    "weight_disk": "Eight Balance",
+    "spin_gear": "Right SG (Bearing Version 2)",
+    "support_part": null,
+    "blade_base": "Defense Grip Base 2"
+  },
+  "lancador": "lancadores/ez-shooter",
+  "medidas": {
+    "peso_g": 30.9,
+    "diametro_mm": 45,
+    "altura_mm": 22.6
+  },
+  "atributos_brinquedo": {
+    "ataque": 5.8,
+    "defesa": 3.8,
+    "stamina": 4.1,
+    "velocidade": 7.9,
+    "peso": 4.4,
+    "equilibrio": 5.8,
+    "resistencia_knockout": 5.6
+  },
+  "ajuste_anime": {
+    "stamina": 2,
+    "defesa": 1,
+    "ataque": 1
+  },
+  "calculo": {
+    "ponta": "grip",
+    "origem_ponta": "blade-base/defense-grip-base-2",
+    "atrito_ponta": 0.85,
+    "tipo_contato": "smash",
+    "recoil": 0.6,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 3,
+    "engine_gear": null,
+    "inercia_g_mm2": 5855,
+    "estrelas_takara": {
+      "ataque": 6.5,
+      "defesa": 5,
+      "stamina": 4.5,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.67,
+      "defesa": 0.33,
+      "stamina": 0.49
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Wolborg (lobo prateado de gelo, fera bit artificial)"
 }

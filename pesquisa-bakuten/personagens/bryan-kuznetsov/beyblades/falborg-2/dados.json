@@ -7,31 +7,45 @@
   "tipo": "attack",
   "sistema": "engine-gear",
   "rotacao": "direita",
-  "fera_bit": "Falborg (falcão de vento, fera bit artificial)",
+  "fera_bit": "falborg",
   "temporada": "g-revolution",
   "pecas": {
-    "bit_chip": "Falborg",
-    "attack_ring": "não confirmado",
-    "weight_disk": "não confirmado",
-    "spin_gear": "Right SG (infobox) / Engine Gear no anime (trivia) - não confirmado",
-    "support_part": null,
-    "blade_base": "não confirmado"
+    "bit_chip": "bit-chip/falborg",
+    "attack_ring": "attack-ring/falborg-2-ar-hipotetico",
+    "weight_disk": null,
+    "spin_gear": "spin-gear/right-sg",
+    "blade_base": null
   },
   "ponta": "não confirmado (estimativa: semi-flat de ataque)",
   "atributos": {
-    "ataque": 8, "defesa": 5, "stamina": 6, "velocidade": 8,
-    "peso": 7, "equilibrio": 6, "resistencia_knockout": 5
+    "ataque": 7.9,
+    "defesa": 5.3,
+    "stamina": 2.6,
+    "velocidade": 6,
+    "peso": 4.9,
+    "equilibrio": 7.2,
+    "resistencia_knockout": 5.5
   },
   "fisica": {
     "massa_relativa": 1.1,
-    "raio_relativo": 1.0,
+    "raio_relativo": 1,
     "atrito_ponta": 0.55,
     "restituicao": 0.65,
     "padrao_movimento": "agressivo"
   },
   "especiais": [
-    { "nome": "Stroblitz Attack", "efeito": "Carga de 0,8 s e feixe/dash em linha reta que atravessa o adversário: dano 2,2x ataque; se o adversário estiver abaixo de 30% de rotação, perde 15% extra (quebra). Se errar, 1 s exposto", "custo": 100, "cooldown_s": 20 },
-    { "nome": "Engine Gear (passivo)", "efeito": "1x por batalha: +20% de velocidade e +8% de rotação por 3 s", "custo": 0, "cooldown_s": 0 }
+    {
+      "nome": "Stroblitz Attack",
+      "efeito": "Carga de 0,8 s e feixe/dash em linha reta que atravessa o adversário: dano 2,2x ataque; se o adversário estiver abaixo de 30% de rotação, perde 15% extra (quebra). Se errar, 1 s exposto",
+      "custo": 100,
+      "cooldown_s": 20
+    },
+    {
+      "nome": "Engine Gear (passivo)",
+      "efeito": "1x por batalha: +20% de velocidade e +8% de rotação por 3 s",
+      "custo": 0,
+      "cooldown_s": 0
+    }
   ],
   "antecessora": "falborg",
   "sucessora": null,
@@ -46,5 +60,60 @@
     "https://beyblade.fandom.com/wiki/Stroblitz_Attack",
     "https://beyblade.fandom.com/wiki/Beyblade:_G-Revolution_-_Episode_35",
     "https://beyblade.fandom.com/wiki/Bryan_Kuznetsov"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 8,
+    "defesa": 5,
+    "stamina": 6,
+    "velocidade": 8,
+    "peso": 7,
+    "equilibrio": 6,
+    "resistencia_knockout": 5
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Falborg",
+    "attack_ring": "não confirmado",
+    "weight_disk": "não confirmado",
+    "spin_gear": "Right SG (infobox) / Engine Gear no anime (trivia) - não confirmado",
+    "support_part": null,
+    "blade_base": "não confirmado"
+  },
+  "lancador": "lancadores/ez-shooter",
+  "medidas": {
+    "peso_g": 31.8,
+    "diametro_mm": 44,
+    "altura_mm": 6
+  },
+  "atributos_brinquedo": {
+    "ataque": 5.9,
+    "defesa": 5.3,
+    "stamina": 2.6,
+    "velocidade": 5,
+    "peso": 4.9,
+    "equilibrio": 7.2,
+    "resistencia_knockout": 5.5
+  },
+  "ajuste_anime": {
+    "ataque": 2,
+    "velocidade": 1
+  },
+  "calculo": {
+    "ponta": null,
+    "origem_ponta": null,
+    "atrito_ponta": 0.35,
+    "tipo_contato": "smash",
+    "recoil": 0.5,
+    "distribuicao_peso": null,
+    "simetria": 4,
+    "engine_gear": null,
+    "inercia_g_mm2": 1808,
+    "estrelas_takara": null,
+    "fisica": {
+      "ataque": 0.54,
+      "defesa": 0.47,
+      "stamina": 0.18
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Falborg (falcão de vento, fera bit artificial)"
 }

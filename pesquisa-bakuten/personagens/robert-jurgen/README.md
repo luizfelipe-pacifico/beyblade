@@ -1,8 +1,8 @@
 # Robert Jürgens (Ralph Jürgens / ラルフ・ユルゲンス)
 
-![Personagem](foto.png)
+![Robert Jürgens](retrato.svg)
 
-Visual em G-Revolution: ![Robert G-Rev](foto-grev.png)
+Retrato original do jogo ([retrato.svg](retrato.svg)). Referências: [referencia/foto.png](referencia/foto.png) (S1) e [referencia/foto-grev.png](referencia/foto-grev.png) (visual de G-Revolution).
 
 > Grafia: a Beyblade Wiki usa "Robert **Jürgens**" (com "s"); a pasta mantém o slug `robert-jurgen` pedido no projeto.
 
@@ -15,6 +15,26 @@ Visual em G-Revolution: ![Robert G-Rev](foto-grev.png)
 | Fera Bit | Griffolyon (grifo – leão com cabeça e asas de águia); elemento vento |
 | Estilo de batalha | Ataque (smash) poderoso e "aéreo"; pressão de espírito de luta herdado da família |
 | Dublador(a) JP / EN / PT-BR | Yuki Matsuda / Vince Corazza (S1; Robert Tinkler no ep. 33), Robert Smith (G-Rev) / não confirmado |
+
+## Visual
+
+Padrão do retrato: visual da **primeira aparição (S1, 2001)**.
+
+- **S1 (2001)**: cabelo **roxo** curto penteado para trás (JP: 紫のオールバックの短髪), erguido numa crista pontuda sobre a testa, com brilho em zigue-zague; testa alta e orelhas à mostra. Olhos **castanho-avermelhados** (wiki: "Brown") com contorno grosso, sobrancelhas grossas e franzidas, expressão **severa e altiva**. Roupa aristocrática: **gola alta roxa com dois frisos amarelos** e **fecho dourado** ornamental, **colete verde** e **camisa branca de mangas bufantes**. Nos torneios europeus veste **armadura prateada** e usa um **mangual (morning star)** como lançador.
+- **G-Revolution (2003)**: mesmo cabelo roxo em crista; roupa trocada por **jaqueta verde-escura com detalhes laranja/vermelhos** e **cachecol listrado azul e branco**.
+- Elementos obrigatórios no retrato: crista roxa penteada para trás, gola alta roxa com frisos amarelos e fecho dourado, colete verde, mangas brancas.
+
+| Uso | Hex |
+|---|---|
+| Disco de fundo (Griffolyon, grifo de brilho magenta; proposta até existir `feras-bit/griffolyon/dados.json`) | `#b83fb4` (borda `#0d1226`, brilho `#ffd6fb`) |
+| Cabelo base / sombra / brilho | `#8c5ce8` / `#5a33b0` / `#d6c0ff` |
+| Pele base / sombra | `#f7d6b8` / `#dca787` |
+| Íris base / sombra | `#b0402e` / `#5c1a12` |
+| Gola roxa base / sombra | `#5a31a6` / `#3a1d74` |
+| Dourado base / sombra | `#f2c420` / `#b98a0c` |
+| Colete verde base / sombra / brilho | `#4f8c3e` / `#33652a` / `#79b064` |
+| Mangas brancas base / sombra | `#f2f3f8` / `#bcc3d6` |
+| Contorno | `#0d1226` |
 
 ## Personalidade e papel na história
 - Aristocrata orgulhoso que valoriza a honra e o jogo limpo, mas é arrogante na estreia: no navio para a Europa (S1 ep. 30) destrói as beys de vários bladers e humilha Tyson, mostrando que existem bladers fortíssimos fora do Campeonato Mundial.
@@ -29,9 +49,9 @@ Visual em G-Revolution: ![Robert G-Rev](foto-grev.png)
 - **Frases de efeito**: "The name is Robert."; "No, alas I am talking to trash." (para Tyson).
 
 ## Beyblades utilizadas no anime (ordem cronológica)
-| # | Beyblade | Temporada | Episódio de estreia | Pasta |
-|---|---|---|---|---|
-| 1 | Griffolyon (A-28) | Bakuten Shoot (S1); reaparece em G-Revolution | S1 ep. 30 "Cruising for a Bruising" | [beyblades/griffolyon](beyblades/griffolyon/) |
+| # | Beyblade | Temporada | Episódio de estreia | Pasta | Miniatura | Lançador + ripcord |
+|---|---|---|---|---|---|---|
+| 1 | Griffolyon (A-28) | Bakuten Shoot (S1); reaparece em G-Revolution | S1 ep. 30 "Cruising for a Bruising" | [beyblades/griffolyon](beyblades/griffolyon/) | <img src="beyblades/griffolyon/sprite.svg" width="56"> | [Mangual-lançador do Robert (anime)](../../lancadores/griffolyon-flail/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
 
 Verificado na wiki: Robert só usa **Griffolyon** no anime. Não há "Griffolyon 2" no anime – "Griffolyon 2" é apenas um recolor roxo da Hasbro (brinquedo), e "Bakutenryu Etanzel" (2004) é um relançamento vermelho da Takara; ambos fora do escopo.
 

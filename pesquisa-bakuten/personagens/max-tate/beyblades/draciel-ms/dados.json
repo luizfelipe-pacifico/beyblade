@@ -7,20 +7,23 @@
   "tipo": "defense",
   "sistema": "hms",
   "rotacao": "ambas",
-  "fera_bit": "Draciel (tartaruga / Genbu)",
+  "fera_bit": "draciel",
   "temporada": "g-revolution",
   "pecas": {
-    "bit_chip": "Bit Protector - Draciel Emblem",
-    "attack_ring": "Metal Defense (Metal Frame Cross Shield + ABS Caul Draciel)",
-    "weight_disk": "Circle Wide",
-    "spin_gear": "Running Core: Sharp Core",
-    "support_part": null,
-    "blade_base": null
+    "bit_chip": "bit-chip/draciel-emblem",
+    "attack_ring": "attack-ring/metal-defense",
+    "weight_disk": "weight-disk/circle-wide",
+    "spin_gear": "spin-gear/sharp-core"
   },
   "ponta": "sharp",
   "atributos": {
-    "ataque": 4, "defesa": 10, "stamina": 8, "velocidade": 2,
-    "peso": 9, "equilibrio": 6, "resistencia_knockout": 9
+    "ataque": 2.7,
+    "defesa": 7.3,
+    "stamina": 7,
+    "velocidade": 3.2,
+    "peso": 5.8,
+    "equilibrio": 6.8,
+    "resistencia_knockout": 6.4
   },
   "fisica": {
     "massa_relativa": 1.25,
@@ -30,14 +33,87 @@
     "padrao_movimento": "centro"
   },
   "especiais": [
-    { "nome": "Aqua Shield", "efeito": "Muralha de água de 4 s: -60% de dano e velocidade de especial/investida que a atravesse; atacante fica 1 s vulnerável (+50% knockback no contra-ataque)", "custo": 120, "cooldown_s": 26 }
+    {
+      "nome": "Aqua Shield",
+      "efeito": "Muralha de água de 4 s: -60% de dano e velocidade de especial/investida que a atravesse; atacante fica 1 s vulnerável (+50% knockback no contra-ataque)",
+      "custo": 120,
+      "cooldown_s": 26
+    }
   ],
   "antecessora": "draciel-g",
   "sucessora": null,
-  "imagens": ["imagem.jpg", "anime.jpg", "pecas/bit-protector.jpg", "pecas/attack-ring.jpg", "pecas/weight-disk.jpg", "pecas/running-core.jpg"],
+  "imagens": [
+    "imagem.jpg",
+    "anime.jpg",
+    "pecas/bit-protector.jpg",
+    "pecas/attack-ring.jpg",
+    "pecas/weight-disk.jpg",
+    "pecas/running-core.jpg"
+  ],
   "fontes": [
     "https://beyblade.fandom.com/wiki/Draciel_MS",
     "https://beyblade.fandom.com/wiki/Aqua_Shield",
     "https://beyblade.fandom.com/wiki/Hard_Metal_System"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 4,
+    "defesa": 10,
+    "stamina": 8,
+    "velocidade": 2,
+    "peso": 9,
+    "equilibrio": 6,
+    "resistencia_knockout": 9
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Bit Protector - Draciel Emblem",
+    "attack_ring": "Metal Defense (Metal Frame Cross Shield + ABS Caul Draciel)",
+    "weight_disk": "Circle Wide",
+    "spin_gear": "Running Core: Sharp Core",
+    "support_part": null,
+    "blade_base": null
+  },
+  "lancador": "lancadores/dual-shooter",
+  "medidas": {
+    "peso_g": 33.6,
+    "diametro_mm": 43,
+    "altura_mm": 25.1
+  },
+  "atributos_brinquedo": {
+    "ataque": 2.7,
+    "defesa": 4.3,
+    "stamina": 7,
+    "velocidade": 3.2,
+    "peso": 5.8,
+    "equilibrio": 5.8,
+    "resistencia_knockout": 4.4
+  },
+  "ajuste_anime": {
+    "defesa": 3,
+    "resistencia_knockout": 2,
+    "equilibrio": 1
+  },
+  "calculo": {
+    "ponta": "sharp",
+    "origem_ponta": "spin-gear/sharp-core",
+    "atrito_ponta": 0.1,
+    "tipo_contato": "defesa",
+    "recoil": 0.7,
+    "distribuicao_peso": "periferia",
+    "simetria": 4,
+    "engine_gear": null,
+    "inercia_g_mm2": 8863,
+    "estrelas_takara": {
+      "ataque": 4,
+      "defesa": 5,
+      "stamina": 8,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.17,
+      "defesa": 0.45,
+      "stamina": 0.76
+    }
+  },
+  "ripcord": "lancadores/ripcords/g-winder",
+  "fera_bit_descricao": "Draciel (tartaruga / Genbu)"
 }

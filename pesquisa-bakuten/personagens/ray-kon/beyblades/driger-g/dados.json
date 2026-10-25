@@ -7,20 +7,24 @@
   "tipo": "attack",
   "sistema": "engine-gear",
   "rotacao": "direita",
-  "fera_bit": "Driger (tigre branco)",
+  "fera_bit": "driger",
   "temporada": "g-revolution",
   "pecas": {
-    "bit_chip": "Driger (G Version)",
-    "attack_ring": "Triple Tiger",
-    "weight_disk": "Ten Balance",
-    "spin_gear": "Right Engine Gear (Metal Semi-Flat)",
-    "support_part": null,
-    "blade_base": "First Clutch Base (Driger G Version)"
+    "bit_chip": "bit-chip/driger-g",
+    "attack_ring": "attack-ring/triple-tiger",
+    "weight_disk": "weight-disk/ten-balance",
+    "spin_gear": "spin-gear/right-eg-metal-semi-flat",
+    "blade_base": "blade-base/first-clutch-base-driger-g"
   },
   "ponta": "semi-flat (metal, quase flat)",
   "atributos": {
-    "ataque": 9, "defesa": 4, "stamina": 4, "velocidade": 9,
-    "peso": 7, "equilibrio": 5, "resistencia_knockout": 5
+    "ataque": 9.1,
+    "defesa": 5.5,
+    "stamina": 5.5,
+    "velocidade": 6.2,
+    "peso": 9.1,
+    "equilibrio": 6.9,
+    "resistencia_knockout": 6.9
   },
   "fisica": {
     "massa_relativa": 1.1,
@@ -30,8 +34,18 @@
     "padrao_movimento": "agressivo"
   },
   "especiais": [
-    { "nome": "Gatling Claw", "efeito": "3 clones elétricos atacam junto por 2 s (multi-hit)", "custo": 120, "cooldown_s": 22 },
-    { "nome": "Gatling Claw Maximum", "efeito": "Velocidade x2 e dano alto por 3 s; consome 25% da própria rotação", "custo": 180, "cooldown_s": 40 }
+    {
+      "nome": "Gatling Claw",
+      "efeito": "3 clones elétricos atacam junto por 2 s (multi-hit)",
+      "custo": 120,
+      "cooldown_s": 22
+    },
+    {
+      "nome": "Gatling Claw Maximum",
+      "efeito": "Velocidade x2 e dano alto por 3 s; consome 25% da própria rotação",
+      "custo": 180,
+      "cooldown_s": 40
+    }
   ],
   "antecessora": "driger-v2",
   "sucessora": "driger-ms",
@@ -41,5 +55,65 @@
     "https://beyblade.fandom.com/wiki/Attack_Ring_-_Triple_Tiger",
     "https://beyblade.fandom.com/wiki/Gatling_Claw",
     "https://beyblade.fandom.com/wiki/Gatling_Claw_Maximum"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 9,
+    "defesa": 4,
+    "stamina": 4,
+    "velocidade": 9,
+    "peso": 7,
+    "equilibrio": 5,
+    "resistencia_knockout": 5
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Driger (G Version)",
+    "attack_ring": "Triple Tiger",
+    "weight_disk": "Ten Balance",
+    "spin_gear": "Right Engine Gear (Metal Semi-Flat)",
+    "support_part": null,
+    "blade_base": "First Clutch Base (Driger G Version)"
+  },
+  "lancador": "lancadores/customize-grip-ray",
+  "medidas": {
+    "peso_g": 40.3,
+    "diametro_mm": 45,
+    "altura_mm": 26.6
+  },
+  "atributos_brinquedo": {
+    "ataque": 7.1,
+    "defesa": 5.5,
+    "stamina": 5.5,
+    "velocidade": 5.2,
+    "peso": 9.1,
+    "equilibrio": 6.9,
+    "resistencia_knockout": 6.9
+  },
+  "ajuste_anime": {
+    "ataque": 2,
+    "velocidade": 1
+  },
+  "calculo": {
+    "ponta": "metal-semi-flat",
+    "origem_ponta": "blade-base/first-clutch-base-driger-g",
+    "atrito_ponta": 0.25,
+    "tipo_contato": "smash",
+    "recoil": 0.25,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 3,
+    "engine_gear": "clutch",
+    "inercia_g_mm2": 7327,
+    "estrelas_takara": {
+      "ataque": 8,
+      "defesa": 5,
+      "stamina": 6,
+      "partes": 4
+    },
+    "fisica": {
+      "ataque": 0.67,
+      "defesa": 0.8,
+      "stamina": 0.64
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Driger (tigre branco)"
 }

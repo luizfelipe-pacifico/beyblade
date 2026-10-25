@@ -7,30 +7,39 @@
   "tipo": "attack",
   "sistema": "spin-gear",
   "rotacao": "direita",
-  "fera_bit": "Falborg (falcão de vento, fera bit artificial)",
+  "fera_bit": "falborg",
   "temporada": "bakuten-shoot",
   "pecas": {
-    "bit_chip": "Falborg",
-    "attack_ring": "Fal Wing",
-    "weight_disk": "Eight Heavy",
-    "spin_gear": "Right SG",
-    "support_part": null,
-    "blade_base": "Drag Saucer"
+    "bit_chip": "bit-chip/falborg",
+    "attack_ring": "attack-ring/fal-wing",
+    "weight_disk": "weight-disk/eight-heavy",
+    "spin_gear": "spin-gear/right-sg",
+    "blade_base": "blade-base/drag-saucer"
   },
   "ponta": "não confirmado (estimativa: flat/semi-flat)",
   "atributos": {
-    "ataque": 8, "defesa": 4, "stamina": 5, "velocidade": 8,
-    "peso": 6, "equilibrio": 5, "resistencia_knockout": 5
+    "ataque": 5.3,
+    "defesa": 5.5,
+    "stamina": 4.6,
+    "velocidade": 6.5,
+    "peso": 4.9,
+    "equilibrio": 8,
+    "resistencia_knockout": 4.8
   },
   "fisica": {
-    "massa_relativa": 1.0,
+    "massa_relativa": 1,
     "raio_relativo": 1.1,
     "atrito_ponta": 0.6,
     "restituicao": 0.7,
     "padrao_movimento": "agressivo"
   },
   "especiais": [
-    { "nome": "Stroblitz", "efeito": "3 lâminas de vento em leque; cada acerto tira 5% de rotação e empurra o adversário 0,5 raio", "custo": 100, "cooldown_s": 18 }
+    {
+      "nome": "Stroblitz",
+      "efeito": "3 lâminas de vento em leque; cada acerto tira 5% de rotação e empurra o adversário 0,5 raio",
+      "custo": 100,
+      "cooldown_s": 18
+    }
   ],
   "antecessora": null,
   "sucessora": "falborg-2",
@@ -49,5 +58,65 @@
     "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_46",
     "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_49",
     "https://ja.wikipedia.org/wiki/爆転シュート_ベイブレード_(アニメ)"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 8,
+    "defesa": 4,
+    "stamina": 5,
+    "velocidade": 8,
+    "peso": 6,
+    "equilibrio": 5,
+    "resistencia_knockout": 5
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Falborg",
+    "attack_ring": "Fal Wing",
+    "weight_disk": "Eight Heavy",
+    "spin_gear": "Right SG",
+    "support_part": null,
+    "blade_base": "Drag Saucer"
+  },
+  "lancador": "lancadores/ez-shooter",
+  "medidas": {
+    "peso_g": 31.8,
+    "diametro_mm": 48,
+    "altura_mm": 24.5
+  },
+  "atributos_brinquedo": {
+    "ataque": 4.3,
+    "defesa": 5.5,
+    "stamina": 4.6,
+    "velocidade": 5.5,
+    "peso": 4.9,
+    "equilibrio": 8,
+    "resistencia_knockout": 4.8
+  },
+  "ajuste_anime": {
+    "ataque": 1,
+    "velocidade": 1
+  },
+  "calculo": {
+    "ponta": "semi-flat",
+    "origem_ponta": "blade-base/drag-saucer",
+    "atrito_ponta": 0.3,
+    "tipo_contato": "smash",
+    "recoil": 0.6,
+    "distribuicao_peso": "centro",
+    "simetria": 2,
+    "engine_gear": null,
+    "inercia_g_mm2": 5849,
+    "estrelas_takara": {
+      "ataque": 4.5,
+      "defesa": 7,
+      "stamina": 5.5,
+      "partes": 1
+    },
+    "fisica": {
+      "ataque": 0.55,
+      "defesa": 0.5,
+      "stamina": 0.48
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Falborg (falcão de vento, fera bit artificial)"
 }

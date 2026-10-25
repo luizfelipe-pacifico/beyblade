@@ -7,30 +7,40 @@
   "tipo": "balance",
   "sistema": "magnacore",
   "rotacao": "direita",
-  "fera_bit": "Driger (tigre branco)",
+  "fera_bit": "driger",
   "temporada": "v-force",
   "pecas": {
-    "bit_chip": "Driger (V2 Version)",
-    "attack_ring": "Upper Claw",
-    "weight_disk": "Ten Balance",
-    "spin_gear": "Neo Right SG (Metal Weight Core)",
-    "support_part": "Upper Attack SP",
-    "blade_base": "Customize Change Base (Custom Metal Change)"
+    "bit_chip": "bit-chip/driger-v2",
+    "attack_ring": "attack-ring/upper-claw",
+    "support_part": "support-part/upper-attack-sp",
+    "weight_disk": "weight-disk/ten-balance",
+    "spin_gear": "spin-gear/neo-right-sg-mw-core",
+    "blade_base": "blade-base/customize-metal-change-base"
   },
   "ponta": "metal change (metal, 2 modos)",
   "atributos": {
-    "ataque": 8, "defesa": 5, "stamina": 6, "velocidade": 7,
-    "peso": 6, "equilibrio": 6, "resistencia_knockout": 6
+    "ataque": 8.3,
+    "defesa": 4.5,
+    "stamina": 6.3,
+    "velocidade": 4.1,
+    "peso": 8.3,
+    "equilibrio": 5.9,
+    "resistencia_knockout": 6.2
   },
   "fisica": {
     "massa_relativa": 1.05,
-    "raio_relativo": 1.0,
+    "raio_relativo": 1,
     "atrito_ponta": 0.45,
     "restituicao": 0.55,
     "padrao_movimento": "flower"
   },
   "especiais": [
-    { "nome": "Vulcan Power Claw", "efeito": "Investida com aura; próximo impacto aplica lift alto + knockback (chance de KO)", "custo": 130, "cooldown_s": 25 }
+    {
+      "nome": "Vulcan Power Claw",
+      "efeito": "Investida com aura; próximo impacto aplica lift alto + knockback (chance de KO)",
+      "custo": 130,
+      "cooldown_s": 25
+    }
   ],
   "antecessora": "driger-v",
   "sucessora": "driger-g",
@@ -39,5 +49,65 @@
     "https://beyblade.fandom.com/wiki/Driger_V2",
     "https://beyblade.fandom.com/wiki/Attack_Ring_-_Upper_Claw",
     "https://beyblade.fandom.com/wiki/Vulcan_Power_Claw"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 8,
+    "defesa": 5,
+    "stamina": 6,
+    "velocidade": 7,
+    "peso": 6,
+    "equilibrio": 6,
+    "resistencia_knockout": 6
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Driger (V2 Version)",
+    "attack_ring": "Upper Claw",
+    "weight_disk": "Ten Balance",
+    "spin_gear": "Neo Right SG (Metal Weight Core)",
+    "support_part": "Upper Attack SP",
+    "blade_base": "Customize Change Base (Custom Metal Change)"
+  },
+  "lancador": "lancadores/bey-ultimate-shooter",
+  "medidas": {
+    "peso_g": 38.5,
+    "diametro_mm": 44,
+    "altura_mm": 26.6
+  },
+  "atributos_brinquedo": {
+    "ataque": 6.3,
+    "defesa": 4.5,
+    "stamina": 6.3,
+    "velocidade": 3.1,
+    "peso": 8.3,
+    "equilibrio": 5.9,
+    "resistencia_knockout": 6.2
+  },
+  "ajuste_anime": {
+    "ataque": 2,
+    "velocidade": 1
+  },
+  "calculo": {
+    "ponta": "metal-sharp",
+    "origem_ponta": "blade-base/customize-metal-change-base",
+    "atrito_ponta": 0.24000000000000002,
+    "tipo_contato": "upper",
+    "recoil": 0.35,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 2,
+    "engine_gear": null,
+    "inercia_g_mm2": 8208,
+    "estrelas_takara": {
+      "ataque": 8,
+      "defesa": 4,
+      "stamina": 7,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.56,
+      "defesa": 0.67,
+      "stamina": 0.72
+    }
+  },
+  "ripcord": "lancadores/ripcords/ultimate-winder",
+  "fera_bit_descricao": "Driger (tigre branco)"
 }

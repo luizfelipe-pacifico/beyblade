@@ -7,20 +7,27 @@
   "tipo": "stamina",
   "sistema": "engine-gear",
   "rotacao": "direita",
-  "fera_bit": "Zeus (Deus das Trevas; quimera/demônio alado negro)",
+  "fera_bit": "zeus",
   "temporada": "g-revolution",
   "pecas": {
-    "bit_chip": "Zeus",
-    "attack_ring": "Screw Zeus (AR livre) + Holy Despell (Attack Ring Supporter)",
-    "weight_disk": "Ten Wide",
-    "spin_gear": "Right Customize Gear (Free Shaft Version, double bearing) + Light Sharp (Customize Engine Weight); Hasbro: Right EG (Metal Ball)",
-    "support_part": null,
-    "blade_base": "First Clutch Base (Zeus Version)"
+    "bit_chip": "bit-chip/zeus",
+    "attack_ring": [
+      "attack-ring/holy-despell",
+      "attack-ring/screw-zeus"
+    ],
+    "weight_disk": "weight-disk/ten-wide",
+    "spin_gear": "spin-gear/right-customize-gear-free-shaft-version",
+    "blade_base": "blade-base/first-clutch-base-zeus"
   },
   "ponta": "sharp",
   "atributos": {
-    "ataque": 6, "defesa": 8, "stamina": 10, "velocidade": 4,
-    "peso": 6, "equilibrio": 9, "resistencia_knockout": 8
+    "ataque": 7.9,
+    "defesa": 8.2,
+    "stamina": 9.1,
+    "velocidade": 2,
+    "peso": 8.9,
+    "equilibrio": 6.7,
+    "resistencia_knockout": 5.9
   },
   "fisica": {
     "massa_relativa": 1.05,
@@ -30,12 +37,32 @@
     "padrao_movimento": "centro"
   },
   "especiais": [
-    { "nome": "King of Darkness", "efeito": "escurece a arena por 3 s (oponente -30% precisão), 4-5 golpes rápidos e smash final com +120% knockback", "custo": 120, "cooldown_s": 30 },
-    { "nome": "Asas Negras / Buraco Negro (modo chefe)", "efeito": "berserk por 8 s: +50% ataque, -30% equilíbrio; uso único por luta", "custo": 150, "cooldown_s": 999 }
+    {
+      "nome": "King of Darkness",
+      "efeito": "escurece a arena por 3 s (oponente -30% precisão), 4-5 golpes rápidos e smash final com +120% knockback",
+      "custo": 120,
+      "cooldown_s": 30
+    },
+    {
+      "nome": "Asas Negras / Buraco Negro (modo chefe)",
+      "efeito": "berserk por 8 s: +50% ataque, -30% equilíbrio; uso único por luta",
+      "custo": 150,
+      "cooldown_s": 999
+    }
   ],
   "antecessora": null,
   "sucessora": null,
-  "imagens": ["imagem.jpg", "imagem-infobox.jpg", "imagem-hasbro.png", "fera-bit.png", "anime.png", "anime-king-of-darkness.png", "pecas/caixa-verso-pecas.jpg", "pecas/montada-inferior.jpg", "pecas/montada-com-launcher.jpg"],
+  "imagens": [
+    "imagem.jpg",
+    "imagem-infobox.jpg",
+    "imagem-hasbro.png",
+    "fera-bit.png",
+    "anime.png",
+    "anime-king-of-darkness.png",
+    "pecas/caixa-verso-pecas.jpg",
+    "pecas/montada-inferior.jpg",
+    "pecas/montada-com-launcher.jpg"
+  ],
   "fontes": [
     "https://beyblade.fandom.com/wiki/Zeus",
     "https://beyblade.fandom.com/wiki/Zeus_(Hasbro)",
@@ -46,5 +73,66 @@
     "https://beyblade.fandom.com/wiki/King_of_Darkness",
     "https://beyblade.fandom.com/wiki/Brooklyn",
     "https://beyblade.fandom.com/wiki/File:Zeus_Box_Back.jpg"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 6,
+    "defesa": 8,
+    "stamina": 10,
+    "velocidade": 4,
+    "peso": 6,
+    "equilibrio": 9,
+    "resistencia_knockout": 8
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Zeus",
+    "attack_ring": "Screw Zeus (AR livre) + Holy Despell (Attack Ring Supporter)",
+    "weight_disk": "Ten Wide",
+    "spin_gear": "Right Customize Gear (Free Shaft Version, double bearing) + Light Sharp (Customize Engine Weight); Hasbro: Right EG (Metal Ball)",
+    "support_part": null,
+    "blade_base": "First Clutch Base (Zeus Version)"
+  },
+  "lancador": "lancadores/ez-shooter",
+  "medidas": {
+    "peso_g": 39.8,
+    "diametro_mm": 48,
+    "altura_mm": 28.1
+  },
+  "atributos_brinquedo": {
+    "ataque": 4.9,
+    "defesa": 7.2,
+    "stamina": 9.1,
+    "velocidade": 2,
+    "peso": 8.9,
+    "equilibrio": 4.7,
+    "resistencia_knockout": 5.9
+  },
+  "ajuste_anime": {
+    "ataque": 3,
+    "equilibrio": 2,
+    "defesa": 1
+  },
+  "calculo": {
+    "ponta": "sharp",
+    "origem_ponta": "blade-base/first-clutch-base-zeus",
+    "atrito_ponta": 0.1,
+    "tipo_contato": "smash",
+    "recoil": 0.4,
+    "distribuicao_peso": "periferia",
+    "simetria": 2,
+    "engine_gear": null,
+    "inercia_g_mm2": 9257,
+    "estrelas_takara": {
+      "ataque": 6,
+      "defesa": 9,
+      "stamina": 10.5,
+      "partes": 5
+    },
+    "fisica": {
+      "ataque": 0.47,
+      "defesa": 0.68,
+      "stamina": 0.96
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Zeus (Deus das Trevas; quimera/demônio alado negro)"
 }

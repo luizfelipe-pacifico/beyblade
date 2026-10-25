@@ -1,6 +1,8 @@
 # Brooklyn Masefield (ブルックリン / Burukkurin)
 
-![Personagem](foto.png)
+![Brooklyn](retrato.svg)
+
+Retrato original do jogo ([retrato.svg](retrato.svg)). Referência: [referencia/foto.png](referencia/foto.png).
 
 | Campo | Valor |
 |---|---|
@@ -13,6 +15,25 @@
 | Dublador(a) JP / EN / PT-BR | Sōichirō Hoshi / Robert Tinkler / não confirmado |
 
 Aniversário: 14 de julho. Aparência: cabelo laranja, olhos verde-água, casaco branco longo com detalhes dourados, luvas sem dedos bordô.
+
+## Visual
+
+Padrão do retrato: visual de **G-Revolution (2003)**, única temporada em que aparece.
+
+- Cabelo **laranja** volumoso e bagunçado, com mechas caídas para baixo e para os lados e **franja longa que cai entre e sobre os olhos**. Olhos **verde-água (aqua)**, grandes e serenos; expressão calma com leve sorriso (no modo "trevas" os olhos se arregalam e o rosto se contorce). **Brinco de argola dourado** visível na foto de referência (lado esquerdo dele).
+- Roupa (wiki EN): **casaco branco longo** com **gola alta preta/azul-marinho**, detalhes escuros nos ombros, **friso dourado** descendo pelo centro e na barra, botões dourados dos dois lados, cinto branco, calça branca, sapatos marrons e **luvas sem dedos bordô**.
+- Elementos obrigatórios no retrato: franja laranja sobre os olhos, olhos aqua calmos, brinco de argola, gola alta escura com friso dourado.
+
+| Uso | Hex |
+|---|---|
+| Disco de fundo (Zeus, armadura azul-escura com detalhes vermelho/laranja; proposta até existir `feras-bit/zeus/dados.json`) | `#2e3672` (borda `#0d1226`, brilho `#ffb35c`) |
+| Cabelo base / sombra / brilho | `#f47a22` / `#c24a12` / `#ffc07a` |
+| Pele base / sombra | `#fbe2cf` / `#e9b9a0` |
+| Íris base / sombra | `#3cc8b4` / `#13807a` |
+| Casaco branco base / sombra | `#f4f6fb` / `#bcc6dc` |
+| Gola/ombros escuros base / sombra | `#1f2a5c` / `#121a3d` |
+| Dourado base / sombra | `#e8b630` / `#b07f14` |
+| Contorno | `#0d1226` |
 
 ## Personalidade e papel na história
 - Principal antagonista de G-Revolution. Personalidade dupla "Jekyll & Hyde": calmo, gentil, amante da natureza (cuida de pássaros e animais, odeia treinar em lugares fechados) e, sob pressão, psicótico e destrutivo.
@@ -30,9 +51,9 @@ Aniversário: 14 de julho. Aparência: cabelo laranja, olhos verde-água, casaco
 - Frases: "King of Darkness Attack!"; "You're history."; "If you want me to put you out of your misery I will."
 
 ## Beyblades utilizadas no anime (ordem cronológica)
-| # | Beyblade | Temporada | Episódio de estreia | Pasta |
-|---|---|---|---|---|
-| 1 | Zeus (A-129, Engine Gear System) | G-Revolution | ep. 41 "And Justice Five For All" (King of Darkness estreia no ep. 42) | [zeus](beyblades/zeus/) |
+| # | Beyblade | Temporada | Episódio de estreia | Pasta | Miniatura | Lançador + ripcord |
+|---|---|---|---|---|---|---|
+| 1 | Zeus (A-129, Engine Gear System) | G-Revolution | ep. 41 "And Justice Five For All" (King of Darkness estreia no ep. 42) | [zeus](beyblades/zeus/) | <img src="beyblades/zeus/sprite.svg" width="56"> | [EZ Shooter (Easy Shooter, rotação direita)](../../lancadores/ez-shooter/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
 
 Brooklyn só usa Zeus no anime (a wiki não registra outra bey; não existe versão HMS/"Zeus MS" no anime). Ele aparece pela primeira vez no ep. 33 "Out of Their League", sem batalhar.
 

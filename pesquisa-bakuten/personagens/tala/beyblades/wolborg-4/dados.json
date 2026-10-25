@@ -7,31 +7,45 @@
   "tipo": "stamina",
   "sistema": "engine-gear",
   "rotacao": "direita",
-  "fera_bit": "Wolborg (lobo prateado de gelo; às vezes Yuki-onna)",
+  "fera_bit": "wolborg",
   "temporada": "g-revolution",
   "pecas": {
-    "bit_chip": "Wolborg",
-    "attack_ring": "Star Wolf",
-    "weight_disk": "Ten Wide",
-    "spin_gear": "Right EG (Circle Survivor) com CEW de plástico em tigela",
-    "support_part": null,
-    "blade_base": "Normal Base (Wolborg 4 Version)"
+    "bit_chip": "bit-chip/wolborg",
+    "attack_ring": "attack-ring/star-wolf",
+    "weight_disk": "weight-disk/ten-wide",
+    "spin_gear": "spin-gear/right-eg-circle-survivor",
+    "blade_base": "blade-base/normal-base-wolborg-4"
   },
   "ponta": "bola larga (CEW Circle Survivor, tipo D)",
   "atributos": {
-    "ataque": 5, "defesa": 7, "stamina": 9, "velocidade": 4,
-    "peso": 7, "equilibrio": 7, "resistencia_knockout": 7
+    "ataque": 7.1,
+    "defesa": 7.4,
+    "stamina": 9.3,
+    "velocidade": 4.4,
+    "peso": 7.4,
+    "equilibrio": 7,
+    "resistencia_knockout": 6.5
   },
   "fisica": {
     "massa_relativa": 1.15,
-    "raio_relativo": 1.0,
+    "raio_relativo": 1,
     "atrito_ponta": 0.35,
     "restituicao": 0.55,
     "padrao_movimento": "centro"
   },
   "especiais": [
-    { "nome": "Novae Rog", "efeito": "Névoa de gelo em cone: congela o adversário por 1,5 s e aplica smash com dano 2x ataque; depois Wolborg fica 1,5 s vulnerável (defesa -50%), penalidade dobrada se errar", "custo": 100, "cooldown_s": 22 },
-    { "nome": "Recarga do Engine Gear (passivo)", "efeito": "Ao receber golpe de bey de rotação direita ganha +3% de rotação (máx. 1x a cada 3 s)", "custo": 0, "cooldown_s": 3 }
+    {
+      "nome": "Novae Rog",
+      "efeito": "Névoa de gelo em cone: congela o adversário por 1,5 s e aplica smash com dano 2x ataque; depois Wolborg fica 1,5 s vulnerável (defesa -50%), penalidade dobrada se errar",
+      "custo": 100,
+      "cooldown_s": 22
+    },
+    {
+      "nome": "Recarga do Engine Gear (passivo)",
+      "efeito": "Ao receber golpe de bey de rotação direita ganha +3% de rotação (máx. 1x a cada 3 s)",
+      "custo": 0,
+      "cooldown_s": 3
+    }
   ],
   "antecessora": "wolborg-2",
   "sucessora": null,
@@ -56,5 +70,66 @@
     "https://beyblade.fandom.com/wiki/Novae_Rog",
     "https://beyblade.fandom.com/wiki/Beyblade:_G-Revolution_-_Episode_14",
     "https://beyblade.fandom.com/wiki/Beyblade_G-Revolution_-_Episode_36"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 5,
+    "defesa": 7,
+    "stamina": 9,
+    "velocidade": 4,
+    "peso": 7,
+    "equilibrio": 7,
+    "resistencia_knockout": 7
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Wolborg",
+    "attack_ring": "Star Wolf",
+    "weight_disk": "Ten Wide",
+    "spin_gear": "Right EG (Circle Survivor) com CEW de plástico em tigela",
+    "support_part": null,
+    "blade_base": "Normal Base (Wolborg 4 Version)"
+  },
+  "lancador": "lancadores/ez-shooter",
+  "medidas": {
+    "peso_g": 36.8,
+    "diametro_mm": 46,
+    "altura_mm": 20.1
+  },
+  "atributos_brinquedo": {
+    "ataque": 5.1,
+    "defesa": 5.4,
+    "stamina": 7.3,
+    "velocidade": 4.4,
+    "peso": 7.4,
+    "equilibrio": 7,
+    "resistencia_knockout": 6.5
+  },
+  "ajuste_anime": {
+    "ataque": 2,
+    "stamina": 2,
+    "defesa": 2
+  },
+  "calculo": {
+    "ponta": "ball",
+    "origem_ponta": "blade-base/normal-base-wolborg-4",
+    "atrito_ponta": 0.25,
+    "tipo_contato": "smash",
+    "recoil": 0.65,
+    "distribuicao_peso": "periferia",
+    "simetria": 3,
+    "engine_gear": "instantaneo",
+    "inercia_g_mm2": 9203,
+    "estrelas_takara": {
+      "ataque": 5,
+      "defesa": 5.5,
+      "stamina": 9,
+      "partes": 4
+    },
+    "fisica": {
+      "ataque": 0.56,
+      "defesa": 0.69,
+      "stamina": 0.71
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Wolborg (lobo prateado de gelo; às vezes Yuki-onna)"
 }

@@ -7,31 +7,45 @@
   "tipo": "balance",
   "sistema": "spin-gear",
   "rotacao": "direita",
-  "fera_bit": "Driger (tigre branco)",
+  "fera_bit": "driger",
   "temporada": "bakuten-shoot",
   "pecas": {
-    "bit_chip": "Driger (F Version)",
-    "attack_ring": "Cross Fang",
-    "weight_disk": "Eight Balance",
-    "spin_gear": "Right SG (Full Auto Clutch Version)",
-    "support_part": null,
-    "blade_base": "Full Auto Clutch Base"
+    "bit_chip": "bit-chip/driger-f",
+    "attack_ring": "attack-ring/cross-fang",
+    "weight_disk": "weight-disk/eight-balance",
+    "spin_gear": "spin-gear/right-sg-full-auto-clutch-version",
+    "blade_base": "blade-base/full-auto-clutch-base"
   },
   "ponta": "flat (metal, eixo livre)",
   "atributos": {
-    "ataque": 6, "defesa": 4, "stamina": 6, "velocidade": 7,
-    "peso": 5, "equilibrio": 4, "resistencia_knockout": 4
+    "ataque": 7.7,
+    "defesa": 5.4,
+    "stamina": 6.4,
+    "velocidade": 4.9,
+    "peso": 9.9,
+    "equilibrio": 6.8,
+    "resistencia_knockout": 7.3
   },
   "fisica": {
     "massa_relativa": 0.95,
-    "raio_relativo": 1.0,
+    "raio_relativo": 1,
     "atrito_ponta": 0.6,
     "restituicao": 0.55,
     "padrao_movimento": "orbita"
   },
   "especiais": [
-    { "nome": "Tiger Claw", "efeito": "Rajada de 3-4 golpes de garra", "custo": 100, "cooldown_s": 18 },
-    { "nome": "Tiger Fang", "efeito": "Investida única forte com Driger (alto knockback)", "custo": 140, "cooldown_s": 28 }
+    {
+      "nome": "Tiger Claw",
+      "efeito": "Rajada de 3-4 golpes de garra",
+      "custo": 100,
+      "cooldown_s": 18
+    },
+    {
+      "nome": "Tiger Fang",
+      "efeito": "Investida única forte com Driger (alto knockback)",
+      "custo": 140,
+      "cooldown_s": 28
+    }
   ],
   "antecessora": "driger-s",
   "sucessora": "driger-v",
@@ -41,5 +55,64 @@
     "https://beyblade.fandom.com/wiki/Attack_Ring_-_Cross_Fang",
     "https://beyblade.fandom.com/wiki/Blade_Base_-_Full_Auto_Clutch_Base",
     "https://beyblade.fandom.com/wiki/Tiger_Fang"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 6,
+    "defesa": 4,
+    "stamina": 6,
+    "velocidade": 7,
+    "peso": 5,
+    "equilibrio": 4,
+    "resistencia_knockout": 4
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Driger (F Version)",
+    "attack_ring": "Cross Fang",
+    "weight_disk": "Eight Balance",
+    "spin_gear": "Right SG (Full Auto Clutch Version)",
+    "support_part": null,
+    "blade_base": "Full Auto Clutch Base"
+  },
+  "lancador": "lancadores/driger-shooter-dx",
+  "medidas": {
+    "peso_g": 41.8,
+    "diametro_mm": 42,
+    "altura_mm": 24.6
+  },
+  "atributos_brinquedo": {
+    "ataque": 5.7,
+    "defesa": 5.4,
+    "stamina": 6.4,
+    "velocidade": 4.9,
+    "peso": 9.9,
+    "equilibrio": 6.8,
+    "resistencia_knockout": 7.3
+  },
+  "ajuste_anime": {
+    "ataque": 2
+  },
+  "calculo": {
+    "ponta": "metal-flat",
+    "origem_ponta": "blade-base/full-auto-clutch-base",
+    "atrito_ponta": 0.4,
+    "tipo_contato": "smash",
+    "recoil": 0.45,
+    "distribuicao_peso": "equilibrado",
+    "simetria": 4,
+    "engine_gear": null,
+    "inercia_g_mm2": 6962,
+    "estrelas_takara": {
+      "ataque": 6.5,
+      "defesa": 5.5,
+      "stamina": 7,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.64,
+      "defesa": 0.7,
+      "stamina": 0.76
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Driger (tigre branco)"
 }

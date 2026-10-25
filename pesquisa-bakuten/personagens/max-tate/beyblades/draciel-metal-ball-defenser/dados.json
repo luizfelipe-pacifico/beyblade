@@ -7,20 +7,24 @@
   "tipo": "defense",
   "sistema": "4-layer",
   "rotacao": "direita",
-  "fera_bit": "Draciel (tartaruga / Genbu)",
+  "fera_bit": "draciel",
   "temporada": "bakuten-shoot",
   "pecas": {
-    "bit_chip": "Draciel",
-    "attack_ring": "Max Shield",
-    "weight_disk": "Heavy (Six Heavy)",
-    "spin_gear": "Right SG (segundo o infobox)",
-    "support_part": null,
-    "blade_base": "Metal Ball Base"
+    "bit_chip": "bit-chip/draciel",
+    "attack_ring": "attack-ring/max-shield",
+    "weight_disk": "weight-disk/heavy",
+    "spin_gear": "spin-gear/right-sg",
+    "blade_base": "blade-base/metal-ball-base"
   },
   "ponta": "bola",
   "atributos": {
-    "ataque": 2, "defesa": 7, "stamina": 6, "velocidade": 2,
-    "peso": 7, "equilibrio": 6, "resistencia_knockout": 7
+    "ataque": 3.1,
+    "defesa": 7,
+    "stamina": 4.6,
+    "velocidade": 3.2,
+    "peso": 8,
+    "equilibrio": 9.7,
+    "resistencia_knockout": 6.5
   },
   "fisica": {
     "massa_relativa": 1.05,
@@ -30,15 +34,84 @@
     "padrao_movimento": "centro"
   },
   "especiais": [
-    { "nome": "Metal Ball Guard (nome de jogo)", "efeito": "5 s com +30% de massa efetiva e -20% de recoil recebido", "custo": 80, "cooldown_s": 20 }
+    {
+      "nome": "Metal Ball Guard (nome de jogo)",
+      "efeito": "5 s com +30% de massa efetiva e -20% de recoil recebido",
+      "custo": 80,
+      "cooldown_s": 20
+    }
   ],
   "antecessora": null,
   "sucessora": "draciel-s",
-  "imagens": ["imagem.jpg", "anime.png", "pecas/attack-ring.gif", "pecas/weight-disk.gif", "pecas/blade-base.gif", "pecas/pecas-desmontadas.jpg"],
+  "imagens": [
+    "imagem.jpg",
+    "anime.png",
+    "pecas/attack-ring.gif",
+    "pecas/weight-disk.gif",
+    "pecas/blade-base.gif",
+    "pecas/pecas-desmontadas.jpg"
+  ],
   "fontes": [
     "https://beyblade.fandom.com/wiki/Draciel_Metal_Ball_Defenser",
     "https://beyblade.fandom.com/wiki/Blade_Base_-_Metal_Ball_Base",
     "https://beyblade.fandom.com/wiki/Weight_Disk_-_Heavy",
     "https://beyblade.fandom.com/wiki/Max_Tate"
-  ]
+  ],
+  "atributos_primeira_pesquisa": {
+    "ataque": 2,
+    "defesa": 7,
+    "stamina": 6,
+    "velocidade": 2,
+    "peso": 7,
+    "equilibrio": 6,
+    "resistencia_knockout": 7
+  },
+  "pecas_nomes_originais": {
+    "bit_chip": "Draciel",
+    "attack_ring": "Max Shield",
+    "weight_disk": "Heavy (Six Heavy)",
+    "spin_gear": "Right SG (segundo o infobox)",
+    "support_part": null,
+    "blade_base": "Metal Ball Base"
+  },
+  "lancador": "lancadores/ez-shooter-grip",
+  "medidas": {
+    "peso_g": 37.9,
+    "diametro_mm": 41,
+    "altura_mm": 24.5
+  },
+  "atributos_brinquedo": {
+    "ataque": 3.1,
+    "defesa": 7,
+    "stamina": 4.6,
+    "velocidade": 3.2,
+    "peso": 8,
+    "equilibrio": 9.7,
+    "resistencia_knockout": 6.5
+  },
+  "ajuste_anime": {},
+  "calculo": {
+    "ponta": "ball",
+    "origem_ponta": "blade-base/metal-ball-base",
+    "atrito_ponta": 0.25,
+    "tipo_contato": "defesa",
+    "recoil": 0.45,
+    "distribuicao_peso": "centro",
+    "simetria": 4,
+    "engine_gear": null,
+    "inercia_g_mm2": 6298,
+    "estrelas_takara": {
+      "ataque": 4,
+      "defesa": 8,
+      "stamina": 5,
+      "partes": 3
+    },
+    "fisica": {
+      "ataque": 0.29,
+      "defesa": 0.77,
+      "stamina": 0.54
+    }
+  },
+  "ripcord": "lancadores/ripcords/winder-padrao",
+  "fera_bit_descricao": "Draciel (tartaruga / Genbu)"
 }

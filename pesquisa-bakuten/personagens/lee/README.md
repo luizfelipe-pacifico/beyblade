@@ -1,6 +1,8 @@
 # Lee (Rai Chen / ライ・チェン — "Lai"; às vezes citado como "Lee Wong")
 
-> **Imagem faltante** (`foto`): o CDN da wiki (static.wikia.nocookie.net) devolveu desafio Cloudflare ao `curl -A "Mozilla/5.0"`. Referências: `File:025645654.jpg` (S1) e `File:Lee Wong.png` (G-Rev) em https://beyblade.fandom.com/wiki/Lee
+![Lee](retrato.svg)
+
+Retrato original do jogo ([retrato.svg](retrato.svg)). **Sem foto de referência no repositório** (o CDN da wiki bloqueia download); imagens na wiki: `File:025645654.jpg` (S1) e `File:Lee Wong.png` (G-Rev) em https://beyblade.fandom.com/wiki/Lee
 
 | Campo | Valor |
 |---|---|
@@ -11,6 +13,26 @@
 | Fera Bit | Galeon – leão negro (pantera/leão) |
 | Estilo de batalha | Balance pesado e frontal; força bruta e técnicas tradicionais da tribo aperfeiçoadas |
 | Dublador(a) JP / EN / PT-BR | Kouichi Nagano / Peter Cugno / não confirmado |
+
+## Visual
+
+Padrão do retrato: visual da **primeira aparição (S1, 2001)**. **Atenção**: como não há imagem de referência no repositório, o retrato foi feito a partir de texto e precisa ser conferido com a imagem oficial.
+
+- **Confirmado** (Beyblade Wiki: Hair = Black, Eyes = Gold; Wikipedia JP: 無造作な黒髪を束ねている, "cabelo preto desalinhado e preso"): cabelo **preto, rebelde/espetado e preso atrás**; olhos **dourados**. Michael e Rick o chamam de "gato preto" (黒ネコ); a irmã Mariah tem os mesmos olhos dourados de felino.
+- **Não confirmado** (desenhado por coerência com o clã White Tigers; conferir): pupila em fenda, **presa** à mostra, pele levemente bronzeada, prendedor de cabelo vermelho, **blusa chinesa sem mangas de gola mandarim**, branca com acabamento escuro e **alamares vermelhos**. Nenhuma fonte consultada fala de **marcas/pinturas no rosto**, então o retrato não tem marcas.
+- **G-Revolution (2003)**: mesmo cabelo e olhos; diferenças de roupa não confirmadas.
+- Elementos obrigatórios no retrato: cabelo preto espetado preso em rabo, olhos dourados, expressão intensa e passional.
+
+| Uso | Hex |
+|---|---|
+| Disco de fundo (Galeon, leão negro do relâmpago; proposta até existir `feras-bit/galeon/dados.json`) | `#4e5396` (borda `#0d1226`, brilho `#f7e86a`) |
+| Cabelo base / sombra / brilho | `#363852` / `#1d1e30` / `#7680b8` |
+| Pele base / sombra | `#f0c9a2` / `#d29b74` |
+| Íris base / sombra | `#f2b62a` / `#b06d0c` |
+| Blusa base / sombra | `#f3f1ea` / `#c4c0b4` |
+| Acabamento escuro | `#1f2238` |
+| Vermelho (alamares, prendedor) base / sombra | `#c8303a` / `#8e1a26` |
+| Contorno | `#0d1226` |
 
 ## Personalidade e papel na história
 - Irmão mais velho de Mariah e melhor amigo de infância de Ray. Neto do ancião da vila, que entregou Driger a Ray em vez de Lee — origem do rancor.
@@ -26,11 +48,11 @@
 - **Frases de efeito**: "You dare to insult me?!", "You forgot about me, did you? I'll make sure you never forget me again!".
 
 ## Beyblades utilizadas no anime (ordem cronológica)
-| # | Beyblade | Temporada | Episódio de estreia | Pasta |
-|---|---|---|---|---|
-| 1 | Galeon (Hasbro: Galeon Attacker) | S1 → G-Rev | S1 ep 13 (Lee estreia no ep 9); ainda usada em G-Rev ep 4 | [beyblades/galeon](beyblades/galeon/) |
-| 2 | Galeon 2 (Magnacore; brinde Random Booster 9) | G-Rev | G-Rev ep 7 | [beyblades/galeon-2](beyblades/galeon-2/) |
-| 3 | Galeon 2 (Engine Gear) — versão exclusiva do anime | G-Rev | G-Rev ep 10 (segundo a wiki) | [beyblades/galeon-2-eg](beyblades/galeon-2-eg/) |
+| # | Beyblade | Temporada | Episódio de estreia | Pasta | Miniatura | Lançador + ripcord |
+|---|---|---|---|---|---|---|
+| 1 | Galeon (Hasbro: Galeon Attacker) | S1 → G-Rev | S1 ep 13 (Lee estreia no ep 9); ainda usada em G-Rev ep 4 | [beyblades/galeon](beyblades/galeon/) | <img src="beyblades/galeon/sprite.svg" width="56"> | [EZ Shooter (Easy Shooter, rotação direita)](../../lancadores/ez-shooter/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
+| 2 | Galeon 2 (Magnacore; brinde Random Booster 9) | G-Rev | G-Rev ep 7 | [beyblades/galeon-2](beyblades/galeon-2/) | <img src="beyblades/galeon-2/sprite.svg" width="56"> | [EZ Shooter (Easy Shooter, rotação direita)](../../lancadores/ez-shooter/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
+| 3 | Galeon 2 (Engine Gear) — versão exclusiva do anime | G-Rev | G-Rev ep 10 (segundo a wiki) | [beyblades/galeon-2-eg](beyblades/galeon-2-eg/) | <img src="beyblades/galeon-2-eg/sprite.svg" width="56"> | [EZ Shooter (Easy Shooter, rotação direita)](../../lancadores/ez-shooter/) + [Winder padrão (Beyblade Winder)](../../lancadores/ripcords/winder-padrao/) |
 
 Correção em relação à lista inicial: "Galeon Attacker" **não** é a Galeon 2 — é o nome Hasbro da primeira Galeon (A-3). Fora do escopo: Galeon MS (só mangá G-Rev) e Galeon (Burst) (só mangá Beyblade: Rising).
 
