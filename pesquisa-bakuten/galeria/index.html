@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galeria Bakuten</title>
+<style>
+  :root {
+    --bg: #0f1424; --panel: #182038; --panel-2: #212b4a; --ink: #eef1f8; --muted: #9aa5c4;
+    --accent: #ff6b3d; --accent-2: #4fb3ff; --line: #2c3760;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 "Segoe UI", Roboto, Arial, sans-serif; }
+  header { padding: 14px 20px; border-bottom: 1px solid var(--line); display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  header h1 { margin: 0; font-size: 20px; letter-spacing: .02em; }
+  header p { margin: 0; color: var(--muted); font-size: 13px; }
+  main { display: grid; grid-template-columns: 240px minmax(320px, 1fr) 400px; gap: 16px; padding: 16px 20px; }
+  @media (max-width: 1100px) { main { grid-template-columns: 1fr; } }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 10px; }
+  .chars { display: grid; gap: 6px; }
+  .char { display: flex; align-items: center; gap: 10px; width: 100%; padding: 6px; border-radius: 10px; border: 1px solid transparent;
+    background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+  .char img, .char .ph { width: 44px; height: 55px; object-fit: cover; border-radius: 8px; background: var(--panel-2); }
+  .char[aria-pressed="true"], .char:hover { background: var(--panel-2); border-color: var(--line); }
+  .char:focus-visible, button:focus-visible, select:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+  .beys { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .chip { padding: 6px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: inherit; font: inherit; font-size: 13px; cursor: pointer; }
+  .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #1a0d07; font-weight: 600; }
+  .stage { position: relative; aspect-ratio: 1 / 1; max-width: 640px; margin: 0 auto; border-radius: 50%;
+    background: radial-gradient(circle at 50% 55%, #3a4a7a 0 30%, #26325a 52%, #141a30 70%, #0b0f1d 71%); box-shadow: inset 0 -20px 60px #0008, 0 20px 50px #0006; overflow: visible; }
+  .stage::after { content: ""; position: absolute; inset: 6%; border-radius: 50%; border: 2px dashed #ffffff14; }
+  .bey { position: absolute; left: 50%; top: 62%; width: 30%; transform: translate(-50%, -50%); filter: drop-shadow(0 8px 10px #0009); }
+  .bey img { width: 100%; display: block; animation: spin var(--spin, .35s) linear infinite; }
+  .bey.left img { animation-direction: reverse; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .beast { position: absolute; pointer-events: none; mix-blend-mode: screen; opacity: .95; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 14px; }
+  .btn { padding: 9px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel-2); color: inherit; font: inherit; cursor: pointer; }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #1a0d07; font-weight: 700; }
+  .btn:disabled { opacity: .4; cursor: default; }
+  .title { text-align: center; margin: 10px 0 0; }
+  .title strong { font-size: 18px; display: block; }
+  .title span { color: var(--muted); font-size: 13px; }
+  .tabs { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
+  .bars { display: grid; gap: 7px; }
+  .bar { display: grid; grid-template-columns: 92px 1fr 36px; align-items: center; gap: 8px; font-size: 13px; }
+  .bar .track { height: 8px; border-radius: 4px; background: #2c3760; overflow: hidden; }
+  .bar .fill { height: 100%; background: linear-gradient(90deg, var(--accent), #ffb03d); border-radius: 4px; }
+  .bar .toy { height: 3px; margin-top: 2px; background: var(--accent-2); border-radius: 2px; }
+  .muted { color: var(--muted); font-size: 12px; }
+  .parts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .part { background: #f4f1ea; color: #0d1226; border-radius: 10px; padding: 6px; font-size: 12px; }
+  .part img { width: 100%; display: block; }
+  .big img { width: 100%; border-radius: 10px; background: #f4f1ea; }
+  @media (prefers-reduced-motion: reduce) { .bey img { animation-duration: 3s; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Galeria Bakuten</h1>
+  <p>Personagens, beyblades, peças, lançadores e feras bit gerados pela pesquisa. Escolha uma bey e invoque a fera.</p>
+</header>
+<main>
+  <section class="panel" aria-labelledby="h-chars">
+    <h2 id="h-chars">Personagens</h2>
+    <div class="chars" id="chars"></div>
+  </section>
+
+  <section class="panel" aria-labelledby="h-arena">
+    <h2 id="h-arena">Arena</h2>
+    <div class="beys" id="beys" role="group" aria-label="Beyblades"></div>
+    <div class="stage" id="stage">
+      <img class="beast" id="beast" alt="" hidden>
+      <div class="bey" id="bey"><img id="sprite" alt=""></div>
+    </div>
+    <div class="title"><strong id="bey-name"></strong><span id="bey-sub"></span></div>
+    <div class="controls">
+      <button class="btn primary" id="btn-launch" type="button">Lançar</button>
+      <button class="btn" id="btn-summon" type="button">Invocar fera</button>
+      <button class="btn" id="btn-attack" type="button">Ataque especial</button>
+      <button class="btn" id="btn-roar" type="button">Rugido</button>
+      <button class="btn" id="btn-hit" type="button">Choque</button>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="h-info">
+    <h2 id="h-info">Ficha</h2>
+    <div class="tabs" role="tablist">
+      <button class="chip" role="tab" data-tab="attrs" aria-pressed="true">Atributos</button>
+      <button class="chip" role="tab" data-tab="parts">Peças</button>
+      <button class="chip" role="tab" data-tab="assembled">Montada</button>
+      <button class="chip" role="tab" data-tab="exploded">Explodida</button>
+      <button class="chip" role="tab" data-tab="launcher">Lançador</button>
+    </div>
+    <div id="tab"></div>
+  </section>
+</main>
+
+<script src="dados.js"></script>
+<script>
+  const DATA = window.GALERIA ?? { personagens: [], feras: {}, sons: {} };
+  const LABELS = { ataque: 'Ataque', defesa: 'Defesa', stamina: 'Stamina', velocidade: 'Velocidade', peso: 'Peso', equilibrio: 'Equilíbrio', resistencia_knockout: 'Resist. KO' };
+  const ANCHOR = [256, 448]; // where the bey sits inside the 512×512 beast art (docs/ART.md)
+  const state = { char: null, bey: null, tab: 'attrs', beastTimer: null, plays: 0 };
+  const $ = (id) => document.getElementById(id);
+  const el = (tag, props = {}, ...children) => {
+    const node = Object.assign(document.createElement(tag), props);
+    for (const c of children) node.append(c);
+    return node;
+  };
+
+  function play(src, volume = 1) {
+    if (!src) return;
+    const a = new Audio(src);
+    a.volume = volume;
+    a.play().catch(() => {});
+  }
+
+  function renderChars() {
+    const box = $('chars');
+    box.replaceChildren(...DATA.personagens.map((c) => {
+      const pic = c.retrato ? el('img', { src: c.retrato, alt: '' }) : el('div', { className: 'ph' });
+      const b = el('button', { className: 'char', type: 'button' }, pic, el('span', { textContent: c.nome }));
+      b.setAttribute('aria-pressed', String(state.char === c));
+      b.addEventListener('click', () => selectChar(c));
+      return b;
+    }));
+  }
+
+  function selectChar(c) {
+    state.char = c;
+    renderChars();
+    $('beys').replaceChildren(...c.beys.map((bey) => {
+      const b = el('button', { className: 'chip', type: 'button', textContent: bey.nome });
+      b.addEventListener('click', () => selectBey(bey));
+      return b;
+    }));
+    selectBey(c.beys[0]);
+  }
+
+  function selectBey(bey) {
+    state.bey = bey;
+    if (!bey) return;
+    [...$('beys').children].forEach((b) => b.setAttribute('aria-pressed', String(b.textContent === bey.nome)));
+    $('sprite').src = bey.sprite;
+    $('sprite').alt = bey.nome;
+    $('bey').classList.toggle('left', /^esq/.test(bey.rotacao ?? ''));
+    // Faster beys spin faster on screen.
+    $('bey').style.setProperty('--spin', `${(0.9 - (bey.atributos?.velocidade ?? 5) * 0.06).toFixed(2)}s`);
+    $('bey-name').textContent = bey.nome;
+    $('bey-sub').textContent = [bey.tipo, bey.sistema, bey.rotacao, bey.medidas?.peso_g && `${bey.medidas.peso_g} g`].filter(Boolean).join(' · ');
+    const fera = DATA.feras[bey.fera];
+    for (const id of ['btn-summon', 'btn-attack', 'btn-roar']) $(id).disabled = !fera;
+    showBeast('idle');
+    renderTab();
+  }
+
+  // Positions the 512×512 beast art so its anchor sits on the bey centre.
+  function placeBeast(img) {
+    const stage = $('stage').getBoundingClientRect();
+    const bey = $('bey').getBoundingClientRect();
+    const fera = DATA.feras[state.bey?.fera];
+    // Keep the beast inside the stadium so it never covers the controls.
+    const wanted = (fera?.overlay?.escala_rel_bey ?? 3) * bey.width;
+    const scale = Math.min(wanted, stage.width * 0.8, (bey.top - stage.top + bey.height / 2) / (ANCHOR[1] / 512)) / 512;
+    const size = 512 * scale;
+    img.style.width = `${size}px`;
+    img.style.left = `${bey.left - stage.left + bey.width / 2 - ANCHOR[0] * scale}px`;
+    img.style.top = `${bey.top - stage.top + bey.height / 2 - ANCHOR[1] * scale}px`;
+    img.style.opacity = fera?.overlay?.opacidade ?? 0.95;
+    // Dark beasts (Zeus, Black Dranzer) vanish under "screen", so each beast picks its blend.
+    img.style.mixBlendMode = fera?.overlay?.blend ?? 'screen';
+  }
+
+  function showBeast(anim, backToIdleMs) {
+    const fera = DATA.feras[state.bey?.fera];
+    const img = $('beast');
+    clearTimeout(state.beastTimer);
+    if (!fera?.anim?.[anim]) { img.hidden = true; return; }
+    // A fresh query string restarts the SVG's CSS animation.
+    img.src = `${fera.anim[anim]}?r=${++state.plays}`;
+    img.hidden = false;
+    placeBeast(img);
+    if (backToIdleMs) state.beastTimer = setTimeout(() => showBeast('idle'), backToIdleMs);
+  }
+
+  function renderTab() {
+    const bey = state.bey;
+    const box = $('tab');
+    document.querySelectorAll('[data-tab]').forEach((t) => t.setAttribute('aria-pressed', String(t.dataset.tab === state.tab)));
+    if (!bey) { box.replaceChildren(); return; }
+    if (state.tab === 'attrs') {
+      const bars = Object.entries(LABELS).map(([k, label]) => {
+        const v = bey.atributos?.[k] ?? 0;
+        const toy = bey.atributos_brinquedo?.[k] ?? v;
+        const track = el('div', {}, el('div', { className: 'track' }, Object.assign(el('div', { className: 'fill' }), { style: `width:${v * 10}%` })),
+          Object.assign(el('div', { className: 'toy' }), { style: `width:${toy * 10}%` }));
+        return el('div', { className: 'bar' }, el('span', { textContent: label }), track, el('span', { textContent: String(v).replace('.', ',') }));
+      });
+      const m = bey.medidas ?? {};
+      box.replaceChildren(el('div', { className: 'bars' }, ...bars),
+        el('p', { className: 'muted', textContent: `Barra laranja: valor de jogo (peças + ajuste do anime). Linha azul: só o brinquedo. Ø ${m.diametro_mm ?? '?'} mm · altura ${m.altura_mm ?? '?'} mm · ${m.peso_g ?? '?'} g` }));
+    } else if (state.tab === 'parts') {
+      box.replaceChildren(el('div', { className: 'parts' }, ...bey.pecas.map((p) =>
+        el('div', { className: 'part' }, el('img', { src: p.imagem, alt: p.nome }),
+          el('div', { textContent: `${p.categoria} · ${p.material ?? '?'} · ${p.peso_g ?? '?'} g` })))));
+    } else if (state.tab === 'assembled' || state.tab === 'exploded') {
+      const src = state.tab === 'assembled' ? bey.montada : bey.explodida;
+      box.replaceChildren(el('div', { className: 'big' }, el('img', { src, alt: bey.nome })));
+    } else {
+      const l = bey.lancador;
+      const r = bey.ripcord;
+      box.replaceChildren(
+        l ? el('div', { className: 'big' }, el('img', { src: l.imagem, alt: l.nome }), el('p', { textContent: l.nome }),
+          el('p', { className: 'muted', textContent: Object.entries(l.atributos ?? {}).filter(([k]) => typeof l.atributos[k] !== 'object').map(([k, v]) => `${k}: ${v}`).join(' · ') }))
+          : el('p', { className: 'muted', textContent: 'Lançador ainda não mapeado.' }),
+        r ? el('div', { className: 'big' }, el('img', { src: r.imagem, alt: r.nome }), el('p', { textContent: `Ripcord: ${r.nome}` }))
+          : el('p', { className: 'muted', textContent: 'Ripcord ainda não mapeado.' }));
+    }
+  }
+
+  document.querySelectorAll('[data-tab]').forEach((t) => t.addEventListener('click', () => { state.tab = t.dataset.tab; renderTab(); }));
+  $('btn-launch').addEventListener('click', () => {
+    play(DATA.sons.contagem, 0.7);
+    setTimeout(() => { play(DATA.sons.lancamento); $('bey').animate([{ transform: 'translate(-50%,-260%) scale(1.3)' }, { transform: 'translate(-50%,-50%)' }], { duration: 450, easing: 'cubic-bezier(.2,.8,.3,1)' }); }, 2400);
+  });
+  $('btn-summon').addEventListener('click', () => { play(DATA.feras[state.bey.fera]?.sons?.invocacao); showBeast('invocacao', 2600); });
+  $('btn-attack').addEventListener('click', () => {
+    play(DATA.feras[state.bey.fera]?.sons?.ataque);
+    showBeast('ataque', 1600);
+    setTimeout(() => play(DATA.sons['choque-forte'], 0.8), 500);
+  });
+  $('btn-roar').addEventListener('click', () => play(DATA.feras[state.bey.fera]?.sons?.rugido));
+  $('btn-hit').addEventListener('click', () => {
+    play(DATA.sons[Math.random() < 0.5 ? 'choque-leve' : 'choque-forte']);
+    $('bey').animate([{ translate: '0 0' }, { translate: '8px -4px' }, { translate: '-6px 3px' }, { translate: '0 0' }], { duration: 220 });
+  });
+  addEventListener('resize', () => { if (!$('beast').hidden) placeBeast($('beast')); });
+  $('sprite').addEventListener('load', () => { if (!$('beast').hidden) placeBeast($('beast')); });
+
+  renderChars();
+  if (DATA.personagens[0]) selectChar(DATA.personagens[0]);
+</script>
+</body>
+</html>

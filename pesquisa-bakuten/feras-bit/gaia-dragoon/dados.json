@@ -1,0 +1,104 @@
+{
+  "id": "gaia-dragoon",
+  "nome": "Gaia Dragoon (Strata Dragoon)",
+  "nome_jp": "ガイアドラグーン (聖獣: 黄龍 Kōryū)",
+  "inspiracao": "Kōryū/Huanglong, o Dragão Amarelo do Centro, a quinta fera sagrada que completa os Quatro Símbolos (o 'Dragão Dourado' do filme Fierce Battle)",
+  "animal": "dragão alado",
+  "elemento": "terra",
+  "cores": {
+    "primaria": "#ffd23f",
+    "secundaria": "#c46fd0",
+    "brilho": "#ffd24a"
+  },
+  "paleta": {
+    "corpo": "#ffd23f",
+    "corpo_sombra": "#d99a1e",
+    "corpo_escuro": "#a8700e",
+    "membrana_asa": "#c46fd0",
+    "membrana_sombra": "#8c3f9c",
+    "ventre": "#f7f1df",
+    "ventre_sombra": "#d2c39c",
+    "juba": "#ff8fc0",
+    "juba_sombra": "#d45a93",
+    "chifres_garras": "#3d74e0",
+    "chifres_sombra": "#24479c",
+    "olhos": "#3cff7a",
+    "rocha": "#9a7550",
+    "poeira": "#e9cf94",
+    "contorno": "#0d1226"
+  },
+  "donos": [
+    "daichi-sumeragi"
+  ],
+  "beys": [
+    "daichi-sumeragi/gaia-dragoon",
+    "daichi-sumeragi/gaia-dragoon-v",
+    "daichi-sumeragi/gaia-dragoon-g",
+    "daichi-sumeragi/gaia-dragoon-ms"
+  ],
+  "aparencia": "Dragão ocidental bípede de corpo amarelo-dourado, ventre e focinho brancos, grandes asas de morcego com ossos dourados e membrana rosa-arroxeada, juba/cristas rosa atrás da cabeça, chifres e garras azuis e cauda longa (referência: pesquisa-bakuten/personagens/daichi-sumeragi/fera-bit.jpg, legenda '聖獣：黄龍'). Cor dos olhos não confirmada (verde é escolha de design). No jogo: de pé sobre a bey com asas abertas, aura-serra dourada atrás (Co-Ring/Kōrin Hadan) e rochas flutuando.",
+  "especiais": [
+    {
+      "nome": "Co-Ring Cutter (Kōrin Hadan / Core Ring Cutter)",
+      "bey": "gaia-dragoon",
+      "visual": "Anel-lâmina (halo serrilhado) de energia em volta da bey; uso no filme não confirmado.",
+      "efeito_jogo": "Anel-lâmina por 2 s: +40% dano de contato e +20% knockback."
+    },
+    {
+      "nome": "Spike Slash",
+      "bey": "gaia-dragoon",
+      "visual": "Investida curta em linha reta (citado na wiki, sem descrição visual).",
+      "efeito_jogo": "Investida reta com +25% dano."
+    },
+    {
+      "nome": "Vast Hurricane (Burst Hurricane)",
+      "bey": "gaia-dragoon-v",
+      "visual": "A bey gira em círculos levantando um redemoinho de poeira que arremessa o adversário (G-Rev ep. 1).",
+      "efeito_jogo": "Redemoinho de poeira por 3 s; +50% knockback em área curta."
+    },
+    {
+      "nome": "Vast Cutter (Burst Cutter / Gōten Hadan)",
+      "bey": "gaia-dragoon-v",
+      "visual": "A fera vira uma serra circular gigante de energia que corta estruturas (derruba o estádio da Torre de Pisa, ep. 14).",
+      "efeito_jogo": "Golpe único +80% dano; quebra obstáculos da arena."
+    },
+    {
+      "nome": "Great Cutter (Gōten Hadan)",
+      "bey": "gaia-dragoon-g",
+      "visual": "Serra de energia em volta do anel Saucer; a bey rola de lado sobre a lâmina.",
+      "efeito_jogo": "Serra rolando por 2,5 s: +70% dano, atravessa obstáculos."
+    },
+    {
+      "nome": "Spike Saw (Bakukyō Hadan)",
+      "bey": "gaia-dragoon-ms",
+      "visual": "A fera irrompe do chão e cospe uma rocha flamejante; a rocha se desfaz revelando a bey incandescente (ep. 43).",
+      "efeito_jogo": "Emerge do chão (0,5 s invulnerável) e investe: +90% dano no 1º contato."
+    }
+  ],
+  "animacoes": {
+    "idle": "idle.svg",
+    "invocacao": "invocacao.svg",
+    "ataque": "ataque.svg"
+  },
+  "sons": {
+    "invocacao": "sons/invocacao.wav",
+    "rugido": "sons/rugido.wav",
+    "ataque": "sons/ataque.wav"
+  },
+  "overlay": {
+    "ancora": [
+      256,
+      448
+    ],
+    "escala_rel_bey": 3,
+    "opacidade": 0.9,
+    "blend": "screen"
+  },
+  "fontes": [
+    "pesquisa-bakuten/personagens/daichi-sumeragi/fera-bit.jpg",
+    "https://beyblade.fandom.com/wiki/Daichi_Sumeragi",
+    "https://beyblade.fandom.com/wiki/Gaia_Dragoon",
+    "pesquisa-bakuten/personagens/daichi-sumeragi/beyblades/*/README.md"
+  ],
+  "notas": "Elemento 'terra' deduzido de Kōryū (centro/terra no Wu Xing) e do nome Gaia/Daichi; a wiki não tem página da fera com elemento."
+}

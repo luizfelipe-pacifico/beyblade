@@ -1,0 +1,45 @@
+{
+  "sounds": {
+    "invocacao": {
+      "duration": 2.6,
+      "gain": 0.9,
+      "seed": 11,
+      "reverb": { "mix": 0.32, "decay": 0.78, "size": 1.1 },
+      "layers": [
+        { "wave": "noise", "start": 0.05, "length": 0.35, "gain": [[0, 1], [0.04, 0.6], [0.35, 0]], "filter": { "type": "highpass", "freq": 2500, "q": 0.7 } },
+        { "wave": "pink", "start": 0.08, "length": 1.6, "gain": [[0, 0.9], [0.5, 0.5], [1.6, 0]], "filter": { "type": "lowpass", "freq": [[0, 900], [1.6, 180]], "q": 0.8 } },
+        { "wave": "saw", "start": 0.15, "length": 1.1, "freq": [[0, 110], [1.1, 520]], "gain": [[0, 0], [0.2, 0.35], [0.9, 0.45], [1.1, 0]], "unison": 3, "detune": 30, "vibrato": { "rate": 28, "depth": 0.4 }, "growl": { "rate": 90, "depth": 0.6 }, "filter": { "type": "bandpass", "freq": [[0, 600], [1.1, 2600]], "q": 1.5 } },
+        { "wave": "saw", "start": 1.05, "length": 1.45, "freq": [[0, 120], [0.25, 175], [0.9, 150], [1.45, 85]], "gain": [[0, 0], [0.15, 1], [0.9, 0.8], [1.45, 0]], "unison": 3, "detune": 22, "growl": { "rate": 48, "depth": 0.7 }, "drive": 2.6, "formants": [{ "freq": 620, "q": 4, "gain": 1 }, { "freq": 1180, "q": 6, "gain": 0.65 }, { "freq": 2400, "q": 8, "gain": 0.3 }] },
+        { "wave": "pink", "start": 1.05, "length": 1.4, "gain": [[0, 0], [0.2, 0.5], [1.4, 0]], "filter": { "type": "bandpass", "freq": [[0, 1400], [1.4, 700]], "q": 1.2 }, "growl": { "rate": 40, "depth": 0.6 } },
+        { "wave": "square", "start": 1.2, "length": 0.9, "freq": [[0, 1800], [0.9, 2400]], "gain": [[0, 0.12], [0.9, 0]], "growl": { "rate": 140, "depth": 0.95 }, "filter": { "type": "highpass", "freq": 1500, "q": 0.7 } }
+      ]
+    },
+    "rugido": {
+      "duration": 1.7,
+      "gain": 0.9,
+      "seed": 12,
+      "reverb": { "mix": 0.22, "decay": 0.6, "size": 0.9 },
+      "layers": [
+        { "wave": "saw", "freq": [[0, 105], [0.2, 170], [0.8, 155], [1.6, 80]], "gain": [[0, 0], [0.1, 1], [0.9, 0.8], [1.65, 0]], "unison": 3, "detune": 25, "growl": { "rate": 52, "depth": 0.75 }, "drive": 2.8, "formants": [{ "freq": 640, "q": 4, "gain": 1 }, { "freq": 1220, "q": 6, "gain": 0.6 }, { "freq": 2450, "q": 8, "gain": 0.3 }] },
+        { "wave": "saw", "freq": [[0, 52], [0.2, 85], [1.6, 40]], "gain": [[0, 0], [0.12, 0.5], [1.65, 0]], "growl": { "rate": 30, "depth": 0.5 }, "filter": { "type": "lowpass", "freq": 400, "q": 0.9 } },
+        { "wave": "pink", "gain": [[0, 0], [0.08, 0.45], [1.1, 0.3], [1.65, 0]], "filter": { "type": "bandpass", "freq": [[0, 1800], [1.6, 900]], "q": 1.3 }, "growl": { "rate": 45, "depth": 0.6 } },
+        { "wave": "noise", "start": 0.02, "length": 0.18, "gain": [[0, 0.5], [0.18, 0]], "filter": { "type": "highpass", "freq": 3000, "q": 0.7 } }
+      ]
+    },
+    "ataque": {
+      "duration": 1.3,
+      "gain": 0.9,
+      "seed": 13,
+      "reverb": { "mix": 0.2, "decay": 0.55, "size": 0.8 },
+      "layers": [
+        { "wave": "noise", "start": 0.12, "length": 0.16, "gain": [[0, 0], [0.02, 1], [0.16, 0]], "filter": { "type": "bandpass", "freq": [[0, 5000], [0.16, 1500]], "q": 2 } },
+        { "wave": "noise", "start": 0.26, "length": 0.16, "gain": [[0, 0], [0.02, 1], [0.16, 0]], "filter": { "type": "bandpass", "freq": [[0, 5500], [0.16, 1700]], "q": 2 } },
+        { "wave": "noise", "start": 0.4, "length": 0.18, "gain": [[0, 0], [0.02, 1], [0.18, 0]], "filter": { "type": "bandpass", "freq": [[0, 6000], [0.18, 1600]], "q": 2 } },
+        { "wave": "square", "start": 0.1, "length": 0.7, "freq": [[0, 220], [0.7, 900]], "gain": [[0, 0.25], [0.5, 0.2], [0.7, 0]], "growl": { "rate": 120, "depth": 0.9 }, "filter": { "type": "bandpass", "freq": 2200, "q": 1.4 } },
+        { "wave": "saw", "start": 0.0, "length": 0.55, "freq": [[0, 150], [0.15, 210], [0.55, 120]], "gain": [[0, 0], [0.06, 0.6], [0.55, 0]], "unison": 2, "detune": 20, "growl": { "rate": 55, "depth": 0.7 }, "drive": 2.5, "formants": [{ "freq": 700, "q": 4, "gain": 1 }, { "freq": 1300, "q": 6, "gain": 0.5 }] },
+        { "wave": "sine", "start": 0.42, "length": 0.6, "freq": [[0, 120], [0.6, 45]], "gain": [[0, 0.9], [0.6, 0]] },
+        { "wave": "pink", "start": 0.42, "length": 0.85, "gain": [[0, 0.6], [0.85, 0]], "filter": { "type": "lowpass", "freq": [[0, 1600], [0.85, 200]], "q": 0.8 } }
+      ]
+    }
+  }
+}

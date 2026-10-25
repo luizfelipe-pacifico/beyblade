@@ -1,0 +1,80 @@
+{
+  "id": "black-dranzer",
+  "nome": "Black Dranzer",
+  "nome_jp": "ブラックドランザー",
+  "inspiracao": "Cópia artificial da Dranzer (Suzaku) criada pela BioVolt / Abadia Balkov (Boris Balkov); fênix negra que representa a tentação do poder. Não é uma das Feras Sagradas e perde força diante delas",
+  "animal": "fênix",
+  "elemento": "fogo (chamas negras)",
+  "cores": {
+    "primaria": "#2a2536",
+    "secundaria": "#b8892a",
+    "brilho": "#9b3dff"
+  },
+  "paleta": {
+    "corpo": "#2a2536",
+    "corpo_sombra": "#14111c",
+    "penas_brilho": "#6e6290",
+    "armadura_ouro_velho": "#b8892a",
+    "armadura_sombra": "#7a5a14",
+    "faixa_carmesim": "#c41e3a",
+    "chamas_negras": [
+      "#24082e",
+      "#6a1fb0",
+      "#b44cff",
+      "#f3d6ff"
+    ],
+    "nucleo_chama": "#0e0618",
+    "olho": "#ff4a4a",
+    "gema": "#ff2a3a",
+    "contorno": "#0d1226"
+  },
+  "donos": [
+    "kai-hiwatari"
+  ],
+  "beys": [
+    "kai-hiwatari/black-dranzer"
+  ],
+  "aparencia": "Mesma aparência da Dranzer, com o vermelho trocado por preto (wiki). No desenho do jogo: corpo e penas negro-arroxeados com reflexos lilás, armadura em ouro velho, faixas carmesim nas ombreiras, bico escuro, olhos vermelhos brilhantes, gema vermelha no peito e chamas negras com borda violeta (núcleo escuro). As chamas negras e o violeta são interpretação de design: a wiki só diz que o golpe vem num clarão de luz intensa.",
+  "especiais": [
+    {
+      "nome": "Black Flame Saber",
+      "nome_jp": "ブラックフレイムセイバー (Burakku Fureimu Seibā)",
+      "bey": "black-dranzer",
+      "visual": "A fera sai do bit chip e ataca a bey inimiga num clarão de luz intensa (estreia no ep. 43).",
+      "efeito_jogo": "Clarão e dano alto que ignora a defesa comum. Custo 100, recarga 25 s."
+    },
+    {
+      "nome": "Captura de feras bit",
+      "nome_jp": "não é golpe nomeado",
+      "bey": "black-dranzer",
+      "visual": "Absorve a fera bit do oponente derrotado (Kai captura 7 feras dos All Starz e White Tigers).",
+      "efeito_jogo": "Passiva de chefe: ao derrotar um oponente, copia o especial dele; -30% de eficácia contra as 4 Feras Sagradas."
+    }
+  ],
+  "animacoes": {
+    "idle": "idle.svg",
+    "invocacao": "invocacao.svg",
+    "ataque": "ataque.svg"
+  },
+  "sons": {
+    "invocacao": "sons/invocacao.wav",
+    "rugido": "sons/rugido.wav",
+    "ataque": "sons/ataque.wav"
+  },
+  "overlay": {
+    "ancora": [
+      256,
+      448
+    ],
+    "escala_rel_bey": 3,
+    "opacidade": 0.92,
+    "blend": "normal",
+    "obs": "Fera escura: com blend screen quase some; usar normal (ou screen só na aura)."
+  },
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Black_Dranzer",
+    "https://beyblade.fandom.com/wiki/Black_Flame_Saber",
+    "https://beyblade.fandom.com/wiki/Dranzer_(Bit-Beast)",
+    "pesquisa-bakuten/personagens/kai-hiwatari/beyblades/black-dranzer/README.md"
+  ]
+}

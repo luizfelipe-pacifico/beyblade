@@ -1,0 +1,49 @@
+{
+  "sounds": {
+    "invocacao": {
+      "duration": 2.8,
+      "gain": 0.9,
+      "seed": 21,
+      "reverb": { "mix": 0.35, "decay": 0.8, "size": 1.2 },
+      "layers": [
+        { "wave": "sine", "freq": [[0, 38], [1.2, 62], [2.8, 45]], "gain": [[0, 0], [0.5, 0.9], [2.0, 0.7], [2.8, 0]] },
+        { "wave": "triangle", "freq": [[0, 76], [1.2, 124], [2.8, 90]], "gain": [[0, 0], [0.6, 0.35], [2.8, 0]] },
+        { "wave": "pink", "start": 0.1, "length": 1.3, "gain": [[0, 0], [0.25, 0.9], [1.0, 0.6], [1.3, 0]], "filter": { "type": "bandpass", "freq": [[0, 300], [1.0, 2600], [1.3, 1800]], "q": 1.1 } },
+        { "wave": "noise", "start": 0.35, "length": 1.2, "gain": [[0, 0], [0.1, 0.5], [1.2, 0]], "filter": { "type": "bandpass", "freq": [[0, 1200], [1.2, 3500]], "q": 1.5 }, "growl": { "rate": 18, "depth": 0.8 } },
+        { "wave": "noise", "start": 0.3, "length": 1.6, "gain": [[0, 0], [0.3, 0.7], [1.6, 0]], "filter": { "type": "lowpass", "freq": [[0, 500], [1.6, 160]], "q": 0.8 } },
+        { "wave": "sine", "start": 0.9, "length": 0.14, "freq": [[0, 500], [0.14, 1400]], "gain": [[0, 0.35], [0.14, 0]] },
+        { "wave": "sine", "start": 1.1, "length": 0.12, "freq": [[0, 650], [0.12, 1700]], "gain": [[0, 0.3], [0.12, 0]] },
+        { "wave": "sine", "start": 1.25, "length": 0.12, "freq": [[0, 420], [0.12, 1200]], "gain": [[0, 0.3], [0.12, 0]] },
+        { "wave": "saw", "start": 1.5, "length": 1.25, "freq": [[0, 70], [0.3, 92], [1.25, 58]], "gain": [[0, 0], [0.2, 0.8], [0.9, 0.6], [1.25, 0]], "unison": 3, "detune": 18, "growl": { "rate": 36, "depth": 0.7 }, "drive": 2.2, "formants": [{ "freq": 420, "q": 4, "gain": 1 }, { "freq": 900, "q": 5, "gain": 0.5 }] }
+      ]
+    },
+    "rugido": {
+      "duration": 1.9,
+      "gain": 0.9,
+      "seed": 22,
+      "reverb": { "mix": 0.25, "decay": 0.65, "size": 1.0 },
+      "layers": [
+        { "wave": "saw", "freq": [[0, 62], [0.35, 88], [1.2, 80], [1.85, 50]], "gain": [[0, 0], [0.25, 1], [1.3, 0.7], [1.85, 0]], "unison": 3, "detune": 15, "growl": { "rate": 34, "depth": 0.8 }, "drive": 2.4, "formants": [{ "freq": 400, "q": 4, "gain": 1 }, { "freq": 850, "q": 5, "gain": 0.55 }, { "freq": 2200, "q": 8, "gain": 0.15 }] },
+        { "wave": "sine", "freq": [[0, 42], [0.4, 55], [1.85, 38]], "gain": [[0, 0], [0.4, 0.8], [1.85, 0]] },
+        { "wave": "noise", "start": 0.0, "length": 0.6, "gain": [[0, 0], [0.15, 0.35], [0.6, 0]], "filter": { "type": "bandpass", "freq": 3200, "q": 1.2 } },
+        { "wave": "pink", "gain": [[0, 0], [0.3, 0.4], [1.85, 0]], "filter": { "type": "lowpass", "freq": 350, "q": 0.7 } }
+      ]
+    },
+    "ataque": {
+      "duration": 1.5,
+      "gain": 0.9,
+      "seed": 23,
+      "reverb": { "mix": 0.3, "decay": 0.72, "size": 1.1 },
+      "layers": [
+        { "wave": "sine", "freq": [[0, 90], [0.3, 40]], "gain": [[0, 1], [0.35, 0]] },
+        { "wave": "pink", "start": 0.1, "length": 1.35, "gain": [[0, 0], [0.35, 1], [0.8, 0.7], [1.35, 0]], "filter": { "type": "bandpass", "freq": [[0, 300], [0.4, 1600], [1.35, 500]], "q": 0.9 } },
+        { "wave": "noise", "start": 0.3, "length": 1.0, "gain": [[0, 0], [0.15, 0.7], [1.0, 0]], "filter": { "type": "lowpass", "freq": [[0, 3000], [1.0, 600]], "q": 0.8 }, "growl": { "rate": 12, "depth": 0.6 } },
+        { "wave": "noise", "start": 0.45, "length": 0.5, "gain": [[0, 0.6], [0.5, 0]], "filter": { "type": "highpass", "freq": 4000, "q": 0.7 } },
+        { "wave": "saw", "start": 0.15, "length": 0.8, "freq": [[0, 140], [0.4, 260], [0.8, 180]], "gain": [[0, 0], [0.3, 0.3], [0.8, 0]], "vibrato": { "rate": 7, "depth": 1.2 }, "filter": { "type": "bandpass", "freq": [[0, 500], [0.8, 1500]], "q": 3 } },
+        { "wave": "sine", "start": 0.7, "length": 0.1, "freq": [[0, 600], [0.1, 1500]], "gain": [[0, 0.3], [0.1, 0]] },
+        { "wave": "sine", "start": 0.85, "length": 0.1, "freq": [[0, 450], [0.1, 1300]], "gain": [[0, 0.25], [0.1, 0]] },
+        { "wave": "sine", "start": 1.0, "length": 0.1, "freq": [[0, 700], [0.1, 1800]], "gain": [[0, 0.2], [0.1, 0]] }
+      ]
+    }
+  }
+}

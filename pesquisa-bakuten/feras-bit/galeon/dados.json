@@ -1,0 +1,103 @@
+{
+  "id": "galeon",
+  "nome": "Galeon",
+  "nome_jp": "ガルオン (Garuon)",
+  "inspiracao": "Leão negro (ligado ao nome japonês de Lee, \"Rai\", de \"Laion\"/lion), em rivalidade com o tigre Byakko de Ray (leão e tigre como reis das feras do Oeste e do Leste, segundo a trivia da wiki). Muitos fãs o descrevem como pantera negra; o desenho mistura os dois: corpo esguio de pantera com juba espetada de leão.",
+  "animal": "leão negro (pantera negra)",
+  "elemento": "trovão negro",
+  "elemento_nota": "A wiki não tem página da fera nem campo de elemento; o elemento vem dos especiais (Dark Lightning/Black Thunder, Spiral Lightning) e de fonte de fã (leão negro com poderes de relâmpago).",
+  "cores": {
+    "primaria": "#2b2840",
+    "secundaria": "#3e2a78",
+    "brilho": "#a066ff"
+  },
+  "paleta": {
+    "pelo": "#2b2840",
+    "pelo_distante": "#1f1c30",
+    "luz_de_borda": "#7d76b8",
+    "juba": "#3e2a78",
+    "juba_brilho": "#8a6ae0",
+    "olhos": "#ffc93a",
+    "boca": "#5a0f2a",
+    "raio_nucleo": "#fbf7ff",
+    "raio_corpo": "#2a0f5c",
+    "raio_luz": "#c9a6ff",
+    "brilho": "#a066ff"
+  },
+  "donos": [
+    "lee"
+  ],
+  "beys": [
+    "lee/galeon",
+    "lee/galeon-2",
+    "lee/galeon-2-eg"
+  ],
+  "aparencia": "Grande felino negro de quatro patas, esguio e musculoso como uma pantera, com juba curta e espetada roxo-escura em volta da cabeça e do pescoço (traço de leão) e tufo espetado na ponta da cauda. Olhos dourados, boca rosnando com presas brancas, rosetas quase invisíveis no pelo. Silhueta contornada por brilho violeta; envolto em raios negros de núcleo claro (Black Thunder). A aparência exata no anime não foi confirmada por fonte de texto (sem imagem local); cores são interpretação de design.",
+  "especiais": [
+    {
+      "nome": "Dark Lightning",
+      "nome_alt": "Black Thunder",
+      "nome_dublado": "Black Thunder / Dark Lightning (EN, conforme a wiki); PT-BR não confirmado",
+      "bey": "galeon",
+      "estreia": "S1 ep 17 (vs Ray)",
+      "visual": "Galeon se cobre de raios e qualquer bey que encosta é repelida com uma explosão para fora do estádio. Lee o aperfeiçoou a ponto de não precisar invocar a fera.",
+      "efeito_jogo": "Aura elétrica de 3 s: contato causa repulsão forte (knockback x2) e dano. É o golpe do ataque.svg (gaiola de raios + ondas de choque)."
+    },
+    {
+      "nome": "Tiger Claw",
+      "nome_dublado": "Tiger Claw (EN)",
+      "bey": "galeon",
+      "estreia": "S1",
+      "visual": "Técnica da tribo do Tigre Branco; rajada de arranhões.",
+      "efeito_jogo": "Como o Tiger Claw de Driger, com rastro violeta."
+    },
+    {
+      "nome": "Spiral Lightning",
+      "nome_dublado": "não confirmado",
+      "bey": "galeon-2",
+      "outras_beys": [
+        "galeon-2-eg"
+      ],
+      "estreia": "G-Rev ep 10 (vs Tyson)",
+      "visual": "Galeon dispara raios que desorientam a bey adversária e a fazem voar para fora do estádio.",
+      "efeito_jogo": "Espiral elétrica que embaralha a direção do alvo por 1,5 s e o empurra para a borda (rastro espiral no ataque.svg)."
+    }
+  ],
+  "notas": [
+    "\"Galeon Attacker\" é o nome Hasbro da primeira Galeon (A-3).",
+    "O pedido citava \"pantera negra\"; as fontes encontradas dizem leão negro. Mantido o slug galeon e um design híbrido.",
+    "O retrato de Lee usa um disco com cor proposta (#4e5396); com este dados.json a cor primária da fera passa a ser #2b2840.",
+    "Corpo escuro: overlay com blend \"normal\"."
+  ],
+  "animacoes": {
+    "idle": "idle.svg",
+    "invocacao": "invocacao.svg",
+    "ataque": "ataque.svg"
+  },
+  "sons": {
+    "invocacao": "sons/invocacao.wav",
+    "rugido": "sons/rugido.wav",
+    "ataque": "sons/ataque.wav"
+  },
+  "overlay": {
+    "ancora": [
+      256,
+      448
+    ],
+    "escala_rel_bey": 3,
+    "opacidade": 0.92,
+    "blend": "normal"
+  },
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Galeon",
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Galeon",
+    "https://beyblade.fandom.com/wiki/Galeon_2",
+    "https://beyblade.fandom.com/wiki/Dark_Lightning_(Black_Thunder)",
+    "https://beyblade.fandom.com/wiki/Spiral_Lightning",
+    "https://beyblade.fandom.com/wiki/Tiger_Claw",
+    "https://beyblade.fandom.com/wiki/Lee",
+    "https://beyblade.fandom.com/wiki/List_of_Bit_Beasts",
+    "https://manga.fandom.com/wiki/Lee_Wong (fã: leão negro com poderes de relâmpago)",
+    "pesquisa-bakuten/personagens/lee (READMEs das beys)"
+  ]
+}

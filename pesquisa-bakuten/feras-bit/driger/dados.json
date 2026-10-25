@@ -1,0 +1,144 @@
+{
+  "id": "driger",
+  "nome": "Driger",
+  "nome_jp": "ドライガー",
+  "inspiracao": "Byakko (白虎), o Tigre Branco do Oeste, um dos Quatro Símbolos da mitologia chinesa; divindade cultuada pela tribo do Tigre Branco (White Tigers) da vila de Ray",
+  "animal": "tigre branco",
+  "elemento": "trovão",
+  "elemento_nota": "A página da fera (wiki) diz \"Thunder Spirit\"/elemento trovão; o infobox do Bit Chip - Driger lista \"Earth\". O jogo usa trovão (coerente com os especiais elétricos verdes).",
+  "cores": {
+    "primaria": "#f3f6f1",
+    "secundaria": "#1f8a4c",
+    "brilho": "#7cff6b"
+  },
+  "paleta": {
+    "pelo": "#f3f6f1",
+    "pelo_distante": "#d5dde6",
+    "listras": "#1f8a4c",
+    "armadura": "#2fb35f",
+    "armadura_sombra": "#0b3f24",
+    "armadura_brilho": "#c4ffd6",
+    "olhos": "#ffd23f",
+    "boca": "#6e1029",
+    "lingua": "#d9566e",
+    "sombra": "#22336e (overlay 34%)",
+    "brilho": "#7cff6b"
+  },
+  "donos": [
+    "ray-kon"
+  ],
+  "beys": [
+    "ray-kon/driger-s",
+    "ray-kon/driger-f",
+    "ray-kon/driger-v",
+    "ray-kon/driger-v2",
+    "ray-kon/driger-g",
+    "ray-kon/driger-ms"
+  ],
+  "aparencia": "Tigre branco musculoso, de quatro patas, com listras verdes em pinceladas (tronco, patas, cauda e cara). Armaduras verdes em forma de lâmina: crista curva na testa que corre para trás, lâminas nos antebraços e jarretes e cauda com anéis/placas blindadas terminando em ponta de lâmina. Olhos amarelos estreitos, presas brancas, orelhas pequenas e arredondadas, tufos de pelo nas bochechas. Na S1 o anime o mostra monocromático verde-claro; a partir da V-Force volta às cores do bit chip (branco e verde). Aura e raios verdes.",
+  "especiais": [
+    {
+      "nome": "Tiger Claw",
+      "nome_jp": "白虎爪撃 (Taigā Kurō)",
+      "nome_dublado": "Tiger Claw (EN); PT-BR não confirmado",
+      "bey": "driger-s",
+      "outras_beys": [
+        "driger-f"
+      ],
+      "estreia": "S1 ep 6",
+      "visual": "A bey acelera a rotação e Driger surge golpeando o alvo com uma rajada de arranhões; o adversário costuma ficar com marcas de garra. No GBA 2002 é um \"Weak Finish\": flash amarelo de eletricidade e Driger passa rasgando o alvo.",
+      "efeito_jogo": "Investida com 3-4 acertos rápidos de dano médio (rastro de 3 garras verdes no ataque.svg)."
+    },
+    {
+      "nome": "Tiger Fang",
+      "nome_jp": "白虎牙撃 (Taigā Fangu)",
+      "nome_dublado": "não confirmado",
+      "bey": "driger-f",
+      "estreia": "S1 ep 49 (vs Bryan)",
+      "visual": "Invocação de Driger atacando diretamente o oponente.",
+      "efeito_jogo": "Investida única forte (ver driger-f)."
+    },
+    {
+      "nome": "Vulcan Claw",
+      "nome_jp": "白虎連射爪 (Barukan Kurō)",
+      "nome_dublado": "não confirmado",
+      "bey": "driger-v",
+      "estreia": "V-Force ep 15 (vs Vanishing Moot)",
+      "visual": "Cria uma barreira cortante de garras ao redor da bey (encantamento ofensivo).",
+      "efeito_jogo": "Garras orbitais de luz por alguns segundos: cada contato aplica um acerto extra."
+    },
+    {
+      "nome": "Vulcan Power Claw",
+      "nome_jp": "バルカンパワークロー (Barukan Pawā Kurō)",
+      "nome_dublado": "não confirmado",
+      "bey": "driger-v2",
+      "estreia": "V-Force ep 40 (vs Max)",
+      "visual": "Driger é invocado, a bey irradia poder e investe com um upper attack enquanto Driger rasga a fera inimiga com golpes pesados de garra.",
+      "efeito_jogo": "Próximo impacto com lift alto + knockback (chance de KO)."
+    },
+    {
+      "nome": "Gatling Claw",
+      "nome_jp": "ガトリングクロー (Gatoringu Kurō)",
+      "nome_dublado": "não confirmado",
+      "bey": "driger-g",
+      "estreia": "G-Rev ep 7 (vs Lee)",
+      "visual": "Erupção de eletricidade verde; a bey cria vários clones em forma de tigre elétrico que atacam juntos (ataque em barragem).",
+      "efeito_jogo": "3 clones fantasmas verdes atacam junto por 2 s (multi-hit); são os \"fantasmas\" do ataque.svg."
+    },
+    {
+      "nome": "Gatling Claw Maximum",
+      "nome_jp": "ガトリングクローマキシマム",
+      "nome_dublado": "não confirmado",
+      "bey": "driger-g",
+      "estreia": "G-Rev ep 23 (vs Kai)",
+      "visual": "Ray gera eletricidade verde, os olhos brilham dourados, um raio verde sobe ao céu e cai na bey, que fica envolta em brilho verde intenso e ataca em velocidade imperceptível.",
+      "efeito_jogo": "Velocidade x2 e dano alto por 3 s, custando rotação própria."
+    },
+    {
+      "nome": "Thunder Slash",
+      "nome_jp": "サンダースラッシュ (Sandā Surasshu)",
+      "nome_dublado": "não confirmado",
+      "bey": "driger-ms",
+      "estreia": "G-Rev ep 44 (vs Gigars)",
+      "visual": "Ray canaliza energia; Driger irradia eletricidade antes de colidir num golpe cortante devastador.",
+      "efeito_jogo": "Carga de 1 s com aura elétrica e um único golpe de altíssimo dano e knockback."
+    }
+  ],
+  "notas": [
+    "No S1 ep 17 Ray vence Lee usando o Black Thunder (golpe de Lee) somado ao Tiger Claw.",
+    "A Galeon de Lee também usa o Tiger Claw (wiki).",
+    "Driger deixa a bey de Ray quando ele perde a confiança (S1) e é selado pelos Saint Shields (V-Force); volta nas duas vezes."
+  ],
+  "animacoes": {
+    "idle": "idle.svg",
+    "invocacao": "invocacao.svg",
+    "ataque": "ataque.svg"
+  },
+  "sons": {
+    "invocacao": "sons/invocacao.wav",
+    "rugido": "sons/rugido.wav",
+    "ataque": "sons/ataque.wav"
+  },
+  "overlay": {
+    "ancora": [
+      256,
+      448
+    ],
+    "escala_rel_bey": 3,
+    "opacidade": 0.9,
+    "blend": "screen"
+  },
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Driger",
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Driger",
+    "https://beyblade.fandom.com/wiki/Tiger_Claw",
+    "https://beyblade.fandom.com/wiki/Tiger_Fang",
+    "https://beyblade.fandom.com/wiki/Vulcan_Claw",
+    "https://beyblade.fandom.com/wiki/Vulcan_Power_Claw",
+    "https://beyblade.fandom.com/wiki/Gatling_Claw",
+    "https://beyblade.fandom.com/wiki/Gatling_Claw_Maximum",
+    "https://beyblade.fandom.com/wiki/Thunder_Slash",
+    "https://beyblade.fandom.com/wiki/Ray_Kon",
+    "pesquisa-bakuten/personagens/ray-kon (READMEs das beys)"
+  ]
+}

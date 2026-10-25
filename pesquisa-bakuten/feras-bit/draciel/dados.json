@@ -1,0 +1,138 @@
+{
+  "id": "draciel",
+  "nome": "Draciel",
+  "nome_jp": "ドラシエル",
+  "inspiracao": "Genbu (玄武) / Xuan Wu, a Tartaruga Negra do Norte, um dos Quatro Símbolos da mitologia chinesa (tradicionalmente entrelaçada com uma serpente); modelada na tartaruga-aligátor/tartaruga-mordedora. O nome segue o padrão \"dra(gon)\" + unidade militar (\"SEAL\", dos Navy SEALs), segundo a wiki.",
+  "animal": "tartaruga",
+  "elemento": "água",
+  "cores": {
+    "primaria": "#3b2d66",
+    "secundaria": "#6f6b94",
+    "brilho": "#b58cff"
+  },
+  "paleta": {
+    "casco": "#3b2d66",
+    "borda_e_espinhos": "#9a80d8",
+    "pele": "#6f6b94",
+    "pele_distante": "#5a567c",
+    "plastrao": "#dcd2a8",
+    "linhas_plastrao": "#8f8460",
+    "olhos": "#ffb12e",
+    "boca": "#5e1030",
+    "agua": "#4cc7ff",
+    "agua_clara": "#d9f6ff",
+    "agua_escura": "#1f6fb8",
+    "sombra": "#1a1446 (overlay 42%)",
+    "brilho": "#b58cff"
+  },
+  "donos": [
+    "max-tate"
+  ],
+  "beys": [
+    "max-tate/draciel-metal-ball-defenser",
+    "max-tate/draciel-s",
+    "max-tate/draciel-f",
+    "max-tate/draciel-v",
+    "max-tate/draciel-v2",
+    "max-tate/draciel-g",
+    "max-tate/draciel-ms"
+  ],
+  "aparencia": "Tartaruga gigante antropomórfica e blindada, de pé sobre duas patas grossas, com braços musculosos e garras. Casco escuro (preto/roxo) com placas hexagonais e borda serrilhada de espinhos lilases; plastrão creme segmentado no peito e barriga; protetores do casco sobre os ombros e placas lilases nos antebraços. Cabeça de tartaruga-mordedora com bico em gancho, fileira de calombos sobre o crânio e olhos âmbar pequenos e bravos. Na S1 aparece monocromático roxo-rosado com brilho roxo; depois assume as cores do bit chip (preto e roxo). Poderes de água.",
+  "especiais": [
+    {
+      "nome": "Metal Ball Defense",
+      "nome_dublado": "não confirmado",
+      "bey": "draciel-s",
+      "estreia": "S1",
+      "visual": "Usa as bolas de metal da base para uma defesa sólida: o oponente bate até perder rotação e parar.",
+      "efeito_jogo": "+40% de massa efetiva por 6 s; o atacante perde RPM a cada colisão."
+    },
+    {
+      "nome": "Fortress Defense",
+      "nome_dublado": "não confirmado",
+      "bey": "draciel-f",
+      "estreia": "V-Force ep 21",
+      "visual": "Draciel usa as bolas de metal para erguer uma barreira ao redor de si (\"DRACIEL! FORTRESS DEFENSE!\").",
+      "efeito_jogo": "Escudo hexagonal de 6 s que absorve 50% do dano e devolve 20% como recoil."
+    },
+    {
+      "nome": "Viper Wall",
+      "nome_dublado": "não confirmado",
+      "bey": "draciel-v",
+      "estreia": "V-Force ep 29",
+      "visual": "Cria uma tempestade de serpentes (referência à serpente enroscada em Genbu).",
+      "efeito_jogo": "Zona de 4 s que reduz a velocidade de quem entra."
+    },
+    {
+      "nome": "Heavy Viper Wall",
+      "nome_dublado": "não confirmado",
+      "bey": "draciel-v",
+      "outras_beys": [
+        "draciel-v2"
+      ],
+      "estreia": "V-Force ep 29 (vs Alan McKenzie)",
+      "visual": "Draciel solta ondas de água que afogam o oponente e o arremessam; mais forte na G-Rev (vs Emily e Julia).",
+      "efeito_jogo": "Onda radial de água com knockback forte. É o golpe do ataque.svg (muralha de água + duas serpentes de água + escudo hexagonal)."
+    },
+    {
+      "nome": "Gravity Control",
+      "nome_dublado": "não confirmado",
+      "bey": "draciel-g",
+      "estreia": "G-Rev",
+      "visual": "Draciel circula o oponente criando uma tromba de água gravitacional e gira no sentido oposto, desequilibrando a bey presa.",
+      "efeito_jogo": "Vórtice que reduz equilíbrio e drena RPM (ver draciel-g)."
+    },
+    {
+      "nome": "Ultra Gravity Control",
+      "nome_dublado": "não confirmado",
+      "bey": "draciel-g",
+      "estreia": "G-Rev",
+      "visual": "Versão mais forte do Gravity Control (sem descrição detalhada nas fontes).",
+      "efeito_jogo": "Vórtice mais longo e forte."
+    },
+    {
+      "nome": "Aqua Shield",
+      "nome_dublado": "não confirmado",
+      "bey": "draciel-ms",
+      "estreia": "G-Rev ep 45 (vs Mystel)",
+      "visual": "Max e Draciel erguem uma muralha de água enorme que desacelera e enfraquece o golpe inimigo; quando o atacante atravessa, fica exposto ao contra-ataque.",
+      "efeito_jogo": "Muralha de água de 4 s: -60% de dano/velocidade de quem atravessa; contra-ataque com +50% de knockback."
+    }
+  ],
+  "notas": [
+    "Draciel pertencia à avó de Max no dub (à mãe, Judy, no original) e estava num pingente; aparece pela primeira vez no S1 ep 5.",
+    "Max perde Draciel para Spencer (Seaborg), Jim (Cyber Draciel) e Zeo (Burning Kerberous).",
+    "Como o corpo é escuro, o overlay usa blend \"normal\" (com \"screen\" a fera sumiria)."
+  ],
+  "animacoes": {
+    "idle": "idle.svg",
+    "invocacao": "invocacao.svg",
+    "ataque": "ataque.svg"
+  },
+  "sons": {
+    "invocacao": "sons/invocacao.wav",
+    "rugido": "sons/rugido.wav",
+    "ataque": "sons/ataque.wav"
+  },
+  "overlay": {
+    "ancora": [
+      256,
+      448
+    ],
+    "escala_rel_bey": 3,
+    "opacidade": 0.92,
+    "blend": "normal"
+  },
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Draciel",
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Draciel",
+    "https://beyblade.fandom.com/wiki/Metal_Ball_Defense",
+    "https://beyblade.fandom.com/wiki/Fortress_Defense",
+    "https://beyblade.fandom.com/wiki/Viper_Wall",
+    "https://beyblade.fandom.com/wiki/Heavy_Viper_Wall",
+    "https://beyblade.fandom.com/wiki/Aqua_Shield",
+    "https://beyblade.fandom.com/wiki/Max_Tate",
+    "pesquisa-bakuten/personagens/max-tate/fera-bit.jpg (frame do anime já existente no repositório)",
+    "pesquisa-bakuten/personagens/max-tate (READMEs das beys)"
+  ]
+}

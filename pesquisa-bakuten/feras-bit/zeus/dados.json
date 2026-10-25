@@ -1,0 +1,79 @@
+{
+  "id": "zeus",
+  "nome": "Zeus",
+  "nome_jp": "ゼウス (Zeusu) — 闇の神 'Deus das Trevas'",
+  "inspiracao": "Zeus, rei dos deuses gregos, reinterpretado como deus das trevas; a wiki diz que a fera lembra uma Quimera",
+  "animal": "demônio alado / quimera",
+  "elemento": "trevas",
+  "cores": {
+    "primaria": "#272c4a",
+    "secundaria": "#e8421c",
+    "brilho": "#5a6cff"
+  },
+  "paleta": {
+    "armadura": "#272c4a",
+    "armadura_sombra": "#151a30",
+    "armadura_escuro": "#0e1122",
+    "asas_aco": "#34437e",
+    "asas_sombra": "#1f2952",
+    "fio_das_laminas": "#8ea2ff",
+    "peito_vermelho": "#e8421c",
+    "vermelho_sombra": "#a8260f",
+    "listras_crista": "#ffd23a",
+    "amarelo_sombra": "#d99a12",
+    "cabelo": "#eef1f8",
+    "cabelo_sombra": "#a9b2cf",
+    "olhos": "#55ff7a",
+    "nevoa": "#151827",
+    "contorno": "#0d1226"
+  },
+  "donos": [
+    "brooklyn-masefield"
+  ],
+  "beys": [
+    "brooklyn-masefield/zeus"
+  ],
+  "aparencia": "Figura demoníaca humanoide de armadura negra-azulada, olhos verdes brilhantes, rosto emoldurado por lâminas vermelho-alaranjadas, crista em V dourada na testa, cabelo/plumagem branca no alto da cabeça, peitoral vermelho com listras amarelas em V, braços e asas enormes azul-aço com garras (frames do anime em pesquisa-bakuten/personagens/brooklyn-masefield/beyblades/zeus/fera-bit.png e anime-king-of-darkness.png). Sai de uma névoa/vórtice negro com tentáculos em forma de serpente (anime.png). A forma exata das asas não é visível nos frames do repositório; no jogo foram desenhadas como asas de lâminas.",
+  "especiais": [
+    {
+      "nome": "King of Darkness",
+      "bey": "zeus",
+      "visual": "Trevas surgem atrás de Brooklyn, que 'desaparece'; Zeus emerge da névoa negra, desfere uma rajada de golpes e termina com um smash intenso (wiki). O oponente parece se afogar em água negra.",
+      "efeito_jogo": "Escurece a arena por 3 s (oponente −30% precisão), 4–5 golpes rápidos e smash final com +120% knockback."
+    },
+    {
+      "nome": "Asas Negras / Buraco Negro (sem nome oficial)",
+      "bey": "zeus",
+      "visual": "Na final (G-Rev ep. 51–52) Brooklyn funde as emoções com Zeus, cria um buraco negro/mundo de trevas e ganha asas negras.",
+      "efeito_jogo": "Modo chefe berserk por 8 s: +50% ataque, −30% equilíbrio; uso único por luta."
+    }
+  ],
+  "animacoes": {
+    "idle": "idle.svg",
+    "invocacao": "invocacao.svg",
+    "ataque": "ataque.svg"
+  },
+  "sons": {
+    "invocacao": "sons/invocacao.wav",
+    "rugido": "sons/rugido.wav",
+    "ataque": "sons/ataque.wav"
+  },
+  "overlay": {
+    "ancora": [
+      256,
+      448
+    ],
+    "escala_rel_bey": 3.2,
+    "opacidade": 0.95,
+    "blend": "normal"
+  },
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/King_of_Darkness",
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Zeus",
+    "https://beyblade.fandom.com/wiki/Zeus",
+    "https://beyblade.fandom.com/wiki/Brooklyn",
+    "https://myanimelist.net/character/7122",
+    "pesquisa-bakuten/personagens/brooklyn-masefield/beyblades/zeus/"
+  ],
+  "notas": "blend 'normal' em vez de 'screen': a fera é quase negra e sumiria com screen."
+}

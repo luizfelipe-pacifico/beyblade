@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<title>Wolborg: emblema</title>
+<g stroke="#0d1226" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<path d="M32,16L24,14L14,2L11,24L4,28L10,33L3,40L12,42L9,50L20,52L27,62L32,61L37,62L44,52L55,50L52,42L61,40L54,33L60,28L53,24L50,2L40,14Z" fill="#e8f1f8"/><path d="M15,6 L18,19 L23,16Z M49,6 L46,19 L41,16Z" fill="#6fb8e6" stroke-width="1.2"/>
+<path d="M32,18 L36,27 L32,37 L28,27Z" fill="#6fb8e6" stroke-width="1.4"/><path d="M17,30 L28,32 L22,35Z M47,30 L36,32 L42,35Z" fill="#6fb8e6" stroke-width="1.6"/>
+<path d="M26,38C27,36 30,36 32,36C34,36 37,36 38,38C39,40 38,47 37,50C36,53 34,55 32,55C30,55 28,53 27,50C26,47 25,40 26,38Z" fill="#e8f1f8" stroke-width="1.6"/><path d="M28,46 L36,46 L32,50Z" fill="#0d1226"/>
+<path d="M11,24 L19,27 M53,24 L45,27" stroke="#6fb8e6" stroke-width="2"/>
+</g>
+</svg>

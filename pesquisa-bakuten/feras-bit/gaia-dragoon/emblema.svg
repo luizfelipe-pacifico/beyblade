@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<title>Gaia Dragoon - emblema</title><desc>Cabeca dourada do Gaia Dragoon com chifre e aureola-serra.</desc>
+<g stroke="#0d1226" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+<path d="M32 4L36 9L42 6L43 12L50 11L48 17L55 19L50 24L56 29L50 32L54 38L47 39L48 46L41 44L40 51L34 47L30 52L27 46L20 49L21 42L14 42L17 36L10 33L16 29L11 24L18 22L16 15L23 16L23 9L29 12Z" fill="#ffffff"/>
+<path d="M44 34C44 26 38 20 30 20C24 20 20 23 16 27L8 30C4 32 4 37 8 38L22 39L20 44C28 47 36 48 41 44C44 41 45 38 44 34Z" fill="#ffd23f"/>
+<path d="M34 22C38 14 44 10 54 8C50 14 46 20 42 26Z" fill="#0d1226"/>
+<path d="M20 30L27 26L29 30L22 33Z" fill="#0d1226" stroke-width="1.6"/>
+<path d="M8 38L22 39L20 44C14 43 10 41 8 38Z" fill="#0d1226"/>
+</g></svg>

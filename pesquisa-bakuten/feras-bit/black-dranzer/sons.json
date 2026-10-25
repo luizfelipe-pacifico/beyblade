@@ -1,0 +1,58 @@
+{
+  "fera": "black-dranzer",
+  "descricao": "Fênix negra artificial: o mesmo grito de ave da Dranzer, porém mais grave, distorcido e dissonante (unison com detune largo, growl), sobre um zumbido sombrio sub-grave e chamas negras abafadas; o golpe termina num clarão estridente (noise em highpass) e estrondo.",
+  "sounds": {
+    "invocacao": {
+      "duration": 2.9,
+      "gain": 0.92,
+      "seed": 53,
+      "reverb": { "mix": 0.4, "decay": 0.86, "size": 1.3 },
+      "layers": [
+        { "wave": "saw", "start": 0, "length": 2.9, "unison": 4, "detune": 45, "freq": [[0, 48], [1.2, 55], [2.9, 41]], "gain": [[0, 0], [0.8, 0.5], [2.2, 0.45], [2.9, 0]],
+          "filter": { "type": "lowpass", "freq": [[0, 150], [1.2, 500], [2.9, 200]], "q": 2 } },
+        { "wave": "pink", "start": 0, "length": 2.3, "gain": [[0, 0], [0.6, 0.6], [1.5, 0.8], [2.3, 0]],
+          "filter": { "type": "bandpass", "freq": [[0, 180], [1.0, 700], [2.3, 300]], "q": 1.4 } },
+        { "wave": "noise", "start": 0.2, "length": 2.2, "gain": [[0, 0], [0.6, 0.25], [2.2, 0]], "growl": { "rate": 40, "depth": 0.95 },
+          "filter": { "type": "bandpass", "freq": [[0, 900], [1.2, 2000], [2.2, 1000]], "q": 2 } },
+        { "wave": "saw", "start": 1.2, "length": 1.6, "unison": 4, "detune": 38, "freq": [[0, 800], [0.15, 1350], [0.6, 1150], [1.6, 640]],
+          "gain": [[0, 0], [0.1, 0.9], [1.0, 0.6], [1.6, 0]], "vibrato": { "rate": 8, "depth": 0.7 }, "growl": { "rate": 55, "depth": 0.5 }, "drive": 2.6,
+          "formants": [ { "freq": 1500, "q": 4, "gain": 1 }, { "freq": 2400, "q": 6, "gain": 0.6 }, { "freq": 900, "q": 4, "gain": 0.5 } ] },
+        { "wave": "square", "start": 1.25, "length": 1.3, "freq": [[0, 560], [0.15, 760], [1.3, 380]], "gain": [[0, 0], [0.1, 0.22], [1.3, 0]], "growl": { "rate": 70, "depth": 0.6 },
+          "filter": { "type": "lowpass", "freq": 1800, "q": 1 } }
+      ]
+    },
+    "rugido": {
+      "duration": 1.9,
+      "gain": 0.9,
+      "seed": 59,
+      "reverb": { "mix": 0.4, "decay": 0.84, "size": 1.3 },
+      "layers": [
+        { "wave": "saw", "start": 0, "length": 1.8, "unison": 4, "detune": 40, "freq": [[0, 900], [0.08, 1450], [0.5, 1250], [1.1, 1100], [1.8, 560]],
+          "gain": [[0, 0], [0.05, 1], [0.9, 0.65], [1.8, 0]], "vibrato": { "rate": 8, "depth": 0.8 }, "growl": { "rate": 50, "depth": 0.55 }, "drive": 2.8,
+          "formants": [ { "freq": [[0, 1600], [1.8, 1000]], "q": 4, "gain": 1 }, { "freq": 2500, "q": 6, "gain": 0.5 } ] },
+        { "wave": "saw", "start": 0.02, "length": 1.6, "unison": 2, "detune": 30, "freq": [[0, 640], [0.08, 1010], [1.6, 400]],
+          "gain": [[0, 0], [0.06, 0.35], [1.6, 0]], "drive": 2, "filter": { "type": "lowpass", "freq": 1600, "q": 1 } },
+        { "wave": "sine", "start": 0, "length": 1.9, "freq": [[0, 52], [1.9, 40]], "gain": [[0, 0], [0.2, 0.5], [1.9, 0]] },
+        { "wave": "noise", "start": 0, "length": 1.8, "gain": [[0, 0], [0.15, 0.18], [1.8, 0]], "growl": { "rate": 45, "depth": 0.9 },
+          "filter": { "type": "bandpass", "freq": 1400, "q": 2 } }
+      ]
+    },
+    "ataque": {
+      "duration": 1.5,
+      "gain": 0.95,
+      "seed": 61,
+      "reverb": { "mix": 0.3, "decay": 0.78, "size": 1.1 },
+      "layers": [
+        { "wave": "pink", "start": 0, "length": 0.8, "gain": [[0, 0], [0.55, 1], [0.8, 0]], "filter": { "type": "bandpass", "freq": [[0, 2200], [0.8, 260]], "q": 1.6 } },
+        { "wave": "saw", "start": 0, "length": 0.8, "unison": 4, "detune": 50, "freq": [[0, 60], [0.8, 120]], "gain": [[0, 0], [0.7, 0.5], [0.8, 0]], "filter": { "type": "lowpass", "freq": 700, "q": 3 } },
+        { "wave": "noise", "start": 0.05, "length": 1.2, "gain": [[0, 0], [0.5, 0.35], [1.2, 0]], "growl": { "rate": 45, "depth": 0.95 },
+          "filter": { "type": "bandpass", "freq": [[0, 800], [0.7, 1800], [1.2, 700]], "q": 2 } },
+        { "wave": "noise", "start": 0.74, "length": 0.35, "gain": [[0, 0.8], [0.35, 0]], "filter": { "type": "highpass", "freq": 3500, "q": 0.8 } },
+        { "wave": "sine", "start": 0.74, "length": 0.7, "freq": [[0, 95], [0.7, 30]], "gain": [[0, 1], [0.7, 0]] },
+        { "wave": "square", "start": 0.74, "length": 0.5, "freq": [[0, 120], [0.5, 45]], "gain": [[0, 0.35], [0.5, 0]], "drive": 3.5, "filter": { "type": "lowpass", "freq": 800, "q": 1.2 } },
+        { "wave": "saw", "start": 0.76, "length": 0.7, "unison": 3, "detune": 35, "freq": [[0, 1300], [0.7, 700]], "gain": [[0, 0], [0.05, 0.3], [0.7, 0]], "vibrato": { "rate": 8, "depth": 0.6 },
+          "formants": [ { "freq": 1600, "q": 4, "gain": 1 } ] }
+      ]
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "id": "dragoon",
+  "nome": "Dragoon",
+  "nome_jp": "ドラグーン (聖獣: 青龍 Seiryū)",
+  "inspiracao": "Seiryū (Qinglong), o Dragão Azul do Leste, um dos Quatro Símbolos da mitologia chinesa/japonesa; o nome mistura 'dragon' e 'dragoon'",
+  "animal": "dragão",
+  "elemento": "vento",
+  "cores": {
+    "primaria": "#2a6fd1",
+    "secundaria": "#43d3c8",
+    "brilho": "#7fe9ff"
+  },
+  "paleta": {
+    "corpo": "#2a6fd1",
+    "corpo_sombra": "#1a449a",
+    "ventre_espinhos": "#43d3c8",
+    "ventre_sombra": "#2a98a0",
+    "juba_bigodes": "#eef7ff",
+    "juba_sombra": "#a8c4e8",
+    "chifres": "#f4e3b0",
+    "chifres_sombra": "#c79f55",
+    "olhos": "#ff2f4a",
+    "garras": "#eef2f8",
+    "boca": "#6d1630",
+    "contorno": "#0d1226"
+  },
+  "donos": [
+    "tyson-granger"
+  ],
+  "beys": [
+    "tyson-granger/dragoon-s",
+    "tyson-granger/dragoon-f",
+    "tyson-granger/dragoon-v",
+    "tyson-granger/dragoon-v2",
+    "tyson-granger/dragoon-v2-high-power-custom",
+    "tyson-granger/dragoon-g",
+    "tyson-granger/dragoon-gt",
+    "tyson-granger/dragoon-ms",
+    "tyson-granger/dragoon-ms-ultimate-version"
+  ],
+  "aparencia": "Dragão antropomórfico azul e turquesa (wiki): pescoço e cauda longos, braços longos com garras dispostas como dedos humanos, espinhos descendo da cabeça pelas costas e cauda (inspiração dos Attack Rings pontudos). Na 1ª temporada aparece como espírito monocromático turquesa; em V-Force ganha cores como na imagem do bit chip. No desenho do jogo: corpo serpentino saindo de um redemoinho, ventre em placas turquesa, juba branca esvoaçante, chifres cor de marfim voltados para trás, bigodes longos, olhos vermelhos (detalhes de juba/chifres/olhos são interpretação de design, não confirmados em texto).",
+  "especiais": [
+    {
+      "nome": "Storm Attack",
+      "bey": "dragoon-s",
+      "visual": "Tornado em volta da bey; o Dragoon surge dentro do vórtice.",
+      "efeito_jogo": "Tornado de 4 s em volta da bey: knockback alto para cima/fora em quem encosta; bey quase parada."
+    },
+    {
+      "nome": "Phantom Hurricane",
+      "bey": "dragoon-f",
+      "visual": "Furacão gigante com o dragão enrolado no funil.",
+      "efeito_jogo": "Tornado grande por 5 s, knockback alto e dano contínuo no raio."
+    },
+    {
+      "nome": "Victory Tornado",
+      "bey": "dragoon-v",
+      "visual": "Investida guiada envolta num vórtice azul.",
+      "efeito_jogo": "Dash guiado de 1,5 s com dano alto e knockback médio."
+    },
+    {
+      "nome": "Hyper Victory Tornado",
+      "bey": "dragoon-v2",
+      "visual": "Investida envolta em tornado com brilho avermelhado.",
+      "efeito_jogo": "Dash de 2 s com tornado: dano muito alto, imune a recoil."
+    },
+    {
+      "nome": "Galaxy Storm",
+      "bey": "dragoon-g",
+      "visual": "Tornado colossal que puxa tudo para o centro (gif da wiki).",
+      "efeito_jogo": "Tornado gigante de 4 s que puxa e arremessa quem está no raio."
+    },
+    {
+      "nome": "Galaxy Turbo Twister",
+      "bey": "dragoon-gt",
+      "visual": "Vários vórtices simultâneos lançando para cima.",
+      "efeito_jogo": "Tornado multivórtice de 4 s em área grande."
+    },
+    {
+      "nome": "Evolution Storm",
+      "bey": "dragoon-ms",
+      "visual": "Tornado que suga seguido do mergulho do dragão.",
+      "efeito_jogo": "Tornado de 2 s que puxa + dash com dano muito alto."
+    }
+  ],
+  "animacoes": {
+    "idle": "idle.svg",
+    "invocacao": "invocacao.svg",
+    "ataque": "ataque.svg"
+  },
+  "sons": {
+    "invocacao": "sons/invocacao.wav",
+    "rugido": "sons/rugido.wav",
+    "ataque": "sons/ataque.wav"
+  },
+  "overlay": {
+    "ancora": [
+      256,
+      448
+    ],
+    "escala_rel_bey": 3,
+    "opacidade": 0.9,
+    "blend": "screen"
+  },
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dragoon",
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Dragoon",
+    "https://beyblade.fandom.com/wiki/List_of_Bit_Beasts",
+    "pesquisa-bakuten/personagens/tyson-granger/beyblades/*/dados.json"
+  ]
+}

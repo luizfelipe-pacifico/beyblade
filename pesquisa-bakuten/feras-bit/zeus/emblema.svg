@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<title>Zeus - emblema</title><desc>Elmo negro do Zeus com crista em V dourada e olhos verdes.</desc>
+<g stroke="#0d1226" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+<path d="M18 30C18 18 24 12 32 12C40 12 46 18 46 30C46 42 40 52 32 56C24 52 18 42 18 30Z" fill="#272c4a"/>
+<path d="M28 20L32 28L36 20L58 4L52 4L36 16L32 10L28 16L12 4L6 4Z" fill="#ffd23a"/>
+<path d="M22 30L30 34L29 37L23 34Z" fill="#55ff7a" stroke-width="1.4"/><path d="M42 30L34 34L35 37L41 34Z" fill="#55ff7a" stroke-width="1.4"/>
+<path d="M20 22C14 32 18 46 28 54M44 22C50 32 46 46 36 54" fill="none" stroke="#ffd23a" stroke-width="2.6"/>
+</g></svg>

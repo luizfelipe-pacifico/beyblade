@@ -1,0 +1,80 @@
+{
+  "id": "falborg",
+  "nome": "Falborg",
+  "nome_jp": "ファルボーグ",
+  "inspiracao": "Falcão (隼, hayabusa) de vento; fera bit artificial criada na Abadia Balkov para os Demolition Boys (Borg). O especial evoca o kamaitachi (鎌鼬), lâmina de vento invisível do folclore japonês",
+  "animal": "falcão",
+  "elemento": "vento",
+  "cores": {
+    "primaria": "#2fa7c9",
+    "secundaria": "#f2c230",
+    "brilho": "#8fe8ff"
+  },
+  "paleta": {
+    "corpo": "#2fa7c9",
+    "corpo_sombra": "#1b7393",
+    "peito": "#8fdcef",
+    "penas": "#2b97bd",
+    "pontas_amarelas": "#f2c230",
+    "vermelho_crista_mascara": "#d63a3a",
+    "roxo_coberteiras": "#7b4bb3",
+    "bico_garras": "#f2c230",
+    "vento": [
+      "#ffffff",
+      "#bff4ff",
+      "#6fd6f0"
+    ],
+    "contorno": "#0d1226"
+  },
+  "donos": [
+    "bryan-kuznetsov"
+  ],
+  "beys": [
+    "bryan-kuznetsov/falborg",
+    "bryan-kuznetsov/falborg-2"
+  ],
+  "aparencia": "Pelo frame do anime guardado no repositório (falborg/anime-fera-bit.jpg): ave de rapina azul-turquesa com penas de ponta amarela na borda das asas, toques vermelhos nas pontas e na cabeça e bico aberto. No desenho do jogo: falcão de asas longas e pontudas abertas na horizontal, borda de ataque vermelha, pontas das primárias vermelhas e amarelas, fileira de coberteiras roxas, peito claro com chevrons amarelos, máscara vermelha no olho com faixa malar, crista de penas vermelhas, bico amarelo em gancho com ponta escura e garras amarelas abertas (crista, chevrons e faixa malar são interpretação de design).",
+  "especiais": [
+    {
+      "nome": "Stroblitz",
+      "nome_jp": "não confirmado (a Wikipedia JP só fala em \"ataque assassino com kamaitachi\")",
+      "bey": "falborg",
+      "visual": "Tornado e lâminas de vento invisíveis que cortam a bey adversária e ferem o próprio blader (Ray, ep. 49).",
+      "efeito_jogo": "3 lâminas de vento em leque; cada acerto tira 5% de rotação e empurra o oponente 0,5 raio. Custo 100, recarga 18 s."
+    },
+    {
+      "nome": "Stroblitz Attack",
+      "nome_jp": "não confirmado",
+      "bey": "falborg-2",
+      "visual": "Um feixe branco ofuscante mira a bey adversária, atravessa-a no impacto e pode estilhaçá-la em pedaços.",
+      "efeito_jogo": "Carga 0,8 s e feixe/dash em linha reta que atravessa o oponente: dano 2,2x ataque e chance de \"quebra\" (-15% de rotação) abaixo de 30%. Custo 100, recarga 20 s."
+    }
+  ],
+  "animacoes": {
+    "idle": "idle.svg",
+    "invocacao": "invocacao.svg",
+    "ataque": "ataque.svg"
+  },
+  "sons": {
+    "invocacao": "sons/invocacao.wav",
+    "rugido": "sons/rugido.wav",
+    "ataque": "sons/ataque.wav"
+  },
+  "overlay": {
+    "ancora": [
+      256,
+      448
+    ],
+    "escala_rel_bey": 3,
+    "opacidade": 0.9,
+    "blend": "screen"
+  },
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Falborg",
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Falborg",
+    "https://beyblade.fandom.com/wiki/Stroblitz_Attack",
+    "https://ja.wikipedia.org/wiki/爆転シュート_ベイブレード_(アニメ)",
+    "pesquisa-bakuten/personagens/bryan-kuznetsov/README.md",
+    "pesquisa-bakuten/personagens/bryan-kuznetsov/beyblades/falborg/anime-fera-bit.jpg"
+  ]
+}

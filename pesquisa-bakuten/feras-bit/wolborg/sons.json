@@ -1,0 +1,60 @@
+{
+  "fera": "wolborg",
+  "descricao": "Lobo de gelo: uivo longo (saw 300–700 Hz subindo e descendo devagar, vibrato 5 Hz, lowpass abrindo, formantes de vogal 'u-o', segunda voz em terça) sobre vento de nevasca; o gelo aparece como notas curtas de cristal (sine/triangle 2–5 kHz com reverb alto) e estalos (noise em highpass).",
+  "sounds": {
+    "invocacao": {
+      "duration": 2.9,
+      "gain": 0.9,
+      "seed": 83,
+      "reverb": { "mix": 0.42, "decay": 0.86, "size": 1.3 },
+      "layers": [
+        { "wave": "pink", "start": 0, "length": 2.9, "gain": [[0, 0], [0.5, 0.55], [2.2, 0.5], [2.9, 0]], "filter": { "type": "bandpass", "freq": [[0, 500], [1.2, 1800], [2.9, 900]], "q": 1.5 } },
+        { "wave": "sine", "start": 0.05, "length": 0.35, "freq": 3520, "gain": [[0, 0], [0.005, 0.4], [0.35, 0]] },
+        { "wave": "triangle", "start": 0.15, "length": 0.35, "freq": 4186, "gain": [[0, 0], [0.005, 0.35], [0.35, 0]] },
+        { "wave": "sine", "start": 0.25, "length": 0.35, "freq": 2637, "gain": [[0, 0], [0.005, 0.4], [0.35, 0]] },
+        { "wave": "triangle", "start": 0.33, "length": 0.4, "freq": 4699, "gain": [[0, 0], [0.005, 0.3], [0.4, 0]] },
+        { "wave": "sine", "start": 0.42, "length": 0.5, "freq": 3136, "gain": [[0, 0], [0.005, 0.4], [0.5, 0]] },
+        { "wave": "noise", "start": 0.55, "length": 0.3, "gain": [[0, 0.9], [0.3, 0]], "filter": { "type": "highpass", "freq": 2500, "q": 0.8 } },
+        { "wave": "sine", "start": 0.55, "length": 0.6, "freq": [[0, 90], [0.6, 40]], "gain": [[0, 0.8], [0.6, 0]] },
+        { "wave": "saw", "start": 1.0, "length": 1.85, "unison": 3, "detune": 14, "freq": [[0, 330], [0.5, 560], [1.2, 600], [1.85, 420]],
+          "gain": [[0, 0], [0.35, 0.9], [1.4, 0.7], [1.85, 0]], "vibrato": { "rate": 5, "depth": 0.35 },
+          "filter": { "type": "lowpass", "freq": [[0, 600], [0.6, 2400], [1.85, 1200]], "q": 1 },
+          "formants": [ { "freq": [[0, 450], [1.0, 750], [1.85, 500]], "q": 5, "gain": 1 }, { "freq": 1100, "q": 6, "gain": 0.4 } ] },
+        { "wave": "triangle", "start": 1.1, "length": 1.7, "freq": [[0, 412], [0.5, 700], [1.1, 750], [1.7, 525]], "gain": [[0, 0], [0.4, 0.3], [1.7, 0]], "vibrato": { "rate": 5, "depth": 0.35 } }
+      ]
+    },
+    "rugido": {
+      "duration": 2.0,
+      "gain": 0.9,
+      "seed": 89,
+      "reverb": { "mix": 0.4, "decay": 0.84, "size": 1.3 },
+      "layers": [
+        { "wave": "saw", "start": 0, "length": 2.0, "unison": 3, "detune": 12, "freq": [[0, 320], [0.45, 540], [1.1, 640], [1.6, 600], [2.0, 400]],
+          "gain": [[0, 0], [0.3, 0.95], [1.4, 0.75], [2.0, 0]], "vibrato": { "rate": 5, "depth": 0.3 },
+          "filter": { "type": "lowpass", "freq": [[0, 500], [0.6, 2600], [2.0, 1000]], "q": 1 },
+          "formants": [ { "freq": [[0, 420], [0.9, 780], [2.0, 480]], "q": 5, "gain": 1 }, { "freq": [[0, 900], [2.0, 1150]], "q": 6, "gain": 0.45 } ] },
+        { "wave": "triangle", "start": 0.08, "length": 1.9, "freq": [[0, 400], [0.45, 675], [1.1, 800], [1.6, 750], [1.9, 500]], "gain": [[0, 0], [0.35, 0.3], [1.9, 0]], "vibrato": { "rate": 5.2, "depth": 0.3 } },
+        { "wave": "noise", "start": 0, "length": 2.0, "gain": [[0, 0], [0.4, 0.12], [2.0, 0]], "filter": { "type": "bandpass", "freq": [[0, 900], [1.0, 1800], [2.0, 900]], "q": 3 } },
+        { "wave": "pink", "start": 0, "length": 2.0, "gain": [[0, 0], [0.5, 0.25], [2.0, 0]], "filter": { "type": "bandpass", "freq": [[0, 700], [2.0, 2000]], "q": 1.4 } }
+      ]
+    },
+    "ataque": {
+      "duration": 1.5,
+      "gain": 0.95,
+      "seed": 97,
+      "reverb": { "mix": 0.34, "decay": 0.8, "size": 1.2 },
+      "layers": [
+        { "wave": "noise", "start": 0, "length": 0.75, "gain": [[0, 0], [0.3, 0.6], [0.75, 0]], "filter": { "type": "highpass", "freq": [[0, 2000], [0.75, 5000]], "q": 0.7 } },
+        { "wave": "pink", "start": 0, "length": 0.8, "gain": [[0, 0], [0.4, 0.5], [0.8, 0]], "filter": { "type": "bandpass", "freq": [[0, 1200], [0.8, 3000]], "q": 1.5 } },
+        { "wave": "sine", "start": 0.35, "length": 0.25, "freq": 3951, "gain": [[0, 0], [0.005, 0.3], [0.25, 0]] },
+        { "wave": "triangle", "start": 0.42, "length": 0.25, "freq": 2960, "gain": [[0, 0], [0.005, 0.3], [0.25, 0]] },
+        { "wave": "sine", "start": 0.5, "length": 0.3, "freq": 4699, "gain": [[0, 0], [0.005, 0.28], [0.3, 0]] },
+        { "wave": "sine", "start": 0.86, "length": 0.6, "freq": [[0, 100], [0.6, 32]], "gain": [[0, 1], [0.6, 0]] },
+        { "wave": "noise", "start": 0.86, "length": 0.45, "gain": [[0, 1], [0.45, 0]], "filter": { "type": "highpass", "freq": [[0, 1500], [0.45, 4000]], "q": 0.7 } },
+        { "wave": "triangle", "start": 0.9, "length": 0.5, "freq": 3520, "gain": [[0, 0], [0.005, 0.25], [0.5, 0]] },
+        { "wave": "sine", "start": 0.98, "length": 0.45, "freq": 5274, "gain": [[0, 0], [0.005, 0.2], [0.45, 0]] },
+        { "wave": "triangle", "start": 1.06, "length": 0.4, "freq": 2637, "gain": [[0, 0], [0.005, 0.22], [0.4, 0]] }
+      ]
+    }
+  }
+}

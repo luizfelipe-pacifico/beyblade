@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<title>Griffolyon - emblema</title><desc>Cabeca de aguia do Griffolyon com crista e bico dourado.</desc>
+<g stroke="#0d1226" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+<path d="M36 14L58 4L50 16L62 16L50 24L60 30L46 32Z" fill="#ffffff"/>
+<path d="M46 36C48 24 40 14 30 14C22 14 18 18 16 24L15 30C16 36 22 42 30 44C38 45 44 42 46 36Z" fill="#ffffff"/>
+<path d="M17 22C10 20 4 26 3 34C3 38 5 42 8 44C8 38 10 34 15 33L18 30Z" fill="#f2c23a"/>
+<path d="M22 24L30 20L33 24L26 27Z" fill="#0d1226" stroke-width="1.6"/>
+<path d="M30 44L26 54L34 48L36 58L40 46L46 52L45 40" fill="#ffffff"/>
+</g></svg>

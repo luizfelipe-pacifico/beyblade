@@ -1,0 +1,152 @@
+{
+  "id": "dranzer",
+  "nome": "Dranzer",
+  "nome_jp": "ドランザー (聖獣: 朱雀 Suzaku)",
+  "inspiracao": "Suzaku (Zhu Que), o Pássaro Vermelhão do Sul, um dos Quatro Símbolos (Feras Sagradas) da mitologia chinesa/japonesa; representada como fênix. O nome vem da bit \"Dranzer\" do jogo Next Generation Beigoma Battle (Ultimate Frostic Dranzer), segundo a wiki",
+  "animal": "fênix",
+  "elemento": "fogo",
+  "cores": {
+    "primaria": "#d7262e",
+    "secundaria": "#f4b322",
+    "brilho": "#ff8a2a"
+  },
+  "paleta": {
+    "corpo": "#d7262e",
+    "corpo_sombra": "#9a1424",
+    "penas_brilho": "#ff7a6a",
+    "armadura_ouro": "#f4b322",
+    "armadura_sombra": "#c07a0c",
+    "placa_branca": "#fff4dc",
+    "fogo": [
+      "#e8261f",
+      "#ff7a1a",
+      "#ffc23a",
+      "#fff4b0"
+    ],
+    "olho": "#ffd23f",
+    "gema": "#3fb6ff",
+    "contorno": "#0d1226"
+  },
+  "donos": [
+    "kai-hiwatari",
+    "tyson-granger"
+  ],
+  "beys": [
+    "kai-hiwatari/dranzer-s",
+    "kai-hiwatari/dranzer-f",
+    "kai-hiwatari/dranzer-v",
+    "kai-hiwatari/dranzer-v2",
+    "kai-hiwatari/dranzer-g",
+    "kai-hiwatari/dranzer-gt",
+    "kai-hiwatari/dranzer-ms",
+    "tyson-granger/dranzer-f"
+  ],
+  "aparencia": "Fênix vermelha e dourada (wiki): asas enormes, cauda longa e dividida em plumas, armadura dourada e branca no peito, na cabeça e nas asas. Na 1ª temporada aparece num vermelho quase monocromático; a partir de V-Force volta ao esquema vermelho e dourado. No desenho do jogo: asas abertas em V com penas vermelhas de pontas em fogo laranja e amarelo, ombreiras douradas com faixa branca, capacete dourado em ponta, crista de 4 penas flamejantes, bico dourado em gancho, placa peitoral dourada com gema azul, 7 plumas de cauda flamejantes descendo até a bey (detalhes de crista, gema e número de plumas são interpretação de design).",
+  "especiais": [
+    {
+      "nome": "Fire Arrow",
+      "nome_jp": "não confirmado",
+      "bey": "dranzer-s",
+      "visual": "Dranzer se cobre de fogo e se choca contra o oponente numa explosão de chamas.",
+      "efeito_jogo": "Investida em linha reta envolta em fogo; dano médio + pequena explosão em área. Custo 70, recarga 15 s."
+    },
+    {
+      "nome": "Spin Fire",
+      "nome_jp": "não confirmado",
+      "bey": "dranzer-s",
+      "visual": "Dranzer voa alto, forma fogo na ponta e ataca de cima, arremessando o oponente.",
+      "efeito_jogo": "Salto aéreo e mergulho flamejante; dano alto + knockback vertical. Custo 100, recarga 22 s."
+    },
+    {
+      "nome": "Flame Saber",
+      "nome_jp": "斬炎剣 (Fureimu Seibā)",
+      "bey": "dranzer-f",
+      "visual": "S1: mergulho do alto envolto em chamas, batendo com a ponta da base. V-Force: investida flamejante de golpe único.",
+      "efeito_jogo": "Sobe e mergulha envolta em chamas; dano alto, exige mira. Custo 100, recarga 22 s (Dranzer V: 80 / 18 s)."
+    },
+    {
+      "nome": "Flame Thrower",
+      "nome_jp": "não confirmado",
+      "bey": "dranzer-f",
+      "visual": "Dranzer sopra fogo pelo bico e depois a bey em chamas colide com o oponente.",
+      "efeito_jogo": "Rajada de fogo frontal (cone): dano contínuo leve + empurrão. Custo 60, recarga 14 s."
+    },
+    {
+      "nome": "Volcano Emission",
+      "nome_jp": "não confirmado",
+      "bey": "dranzer-v",
+      "visual": "Erupção vulcânica de chamas em volta da bey.",
+      "efeito_jogo": "Aura de fogo (+20% ataque por 3 s) seguida de investida. Custo 100, recarga 20 s."
+    },
+    {
+      "nome": "Volcano Excellent Emission",
+      "nome_jp": "超爆炎放射 (Borukēno Ekuserento Emisshon)",
+      "bey": "dranzer-v2",
+      "visual": "Investida em alta velocidade envolta em chamas grossas.",
+      "efeito_jogo": "Investida em velocidade máxima; dano muito alto + knockback. Custo 100, recarga 22 s."
+    },
+    {
+      "nome": "Blazing Gigs",
+      "nome_jp": "ブレイジングギグス (Bureijingu Gigusu; kanji segundo a wiki: 暗殺爆炎)",
+      "bey": "dranzer-g",
+      "visual": "A bey entra em erupção; as chamas formam uma fênix que dispara a bey pelo bico como projétil. Chamas laranja (normal) ou azuis (versão mais forte).",
+      "efeito_jogo": "Projétil-fênix; dano alto à distância; versão azul (+25%) com rotação > 70%. Custo 90, recarga 18 s."
+    },
+    {
+      "nome": "Blazing Gigs Tempest",
+      "nome_jp": "ブレイジングギグス・テンペスト",
+      "bey": "dranzer-g, dranzer-gt",
+      "visual": "Kai acende asas de fogo nas costas; elas explodem numa chuva de penas em chamas que cercam e prendem o oponente, e a bey surge das penas num mergulho.",
+      "efeito_jogo": "Chuva de penas de fogo: -60% de velocidade do oponente por 2 s, depois investida. Custo 120, recarga 30 s."
+    },
+    {
+      "nome": "Reverse Flame Gigs",
+      "nome_jp": "não confirmado",
+      "bey": "dranzer-gt",
+      "visual": "As engrenagens giram ao contrário; chamas saem da bey, cercam o oponente e a Dranzer aparece para o golpe.",
+      "efeito_jogo": "Inverte a direção, prende o oponente num anel de fogo (dano contínuo 2 s) e golpeia forte. Custo 110, recarga 26 s."
+    },
+    {
+      "nome": "Spiral Fireball",
+      "nome_jp": "não confirmado",
+      "bey": "dranzer-ms",
+      "visual": "Dranzer se envolve em chamas, sobe acima do estádio, fica envolta numa luz intensa e mergulha sobre o oponente.",
+      "efeito_jogo": "Salto vertical, carga 0,8 s e mergulho flamejante; dano muito alto + knockback vertical; +30% com rotação < 20%. Custo 120, recarga 28 s."
+    }
+  ],
+  "animacoes": {
+    "idle": "idle.svg",
+    "invocacao": "invocacao.svg",
+    "ataque": "ataque.svg"
+  },
+  "sons": {
+    "invocacao": "sons/invocacao.wav",
+    "rugido": "sons/rugido.wav",
+    "ataque": "sons/ataque.wav"
+  },
+  "overlay": {
+    "ancora": [
+      256,
+      448
+    ],
+    "escala_rel_bey": 3,
+    "opacidade": 0.9,
+    "blend": "screen"
+  },
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dranzer_(Bit-Beast)",
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Dranzer",
+    "https://beyblade.fandom.com/wiki/Fire_Arrow",
+    "https://beyblade.fandom.com/wiki/Spin_Fire",
+    "https://beyblade.fandom.com/wiki/Flame_Saber",
+    "https://beyblade.fandom.com/wiki/Flame_Thrower",
+    "https://beyblade.fandom.com/wiki/Volcano_Emission",
+    "https://beyblade.fandom.com/wiki/Volcano_Excellent_Emission",
+    "https://beyblade.fandom.com/wiki/Blazing_Gigs",
+    "https://beyblade.fandom.com/wiki/Blazing_Gigs_Tempest",
+    "https://beyblade.fandom.com/wiki/Reverse_Flame_Gigs",
+    "https://beyblade.fandom.com/wiki/Spiral_Fireball",
+    "pesquisa-bakuten/personagens/kai-hiwatari/README.md",
+    "pesquisa-bakuten/personagens/kai-hiwatari/beyblades/*/dados.json"
+  ]
+}

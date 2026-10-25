@@ -1,0 +1,74 @@
+{
+  "id": "griffolyon",
+  "nome": "Griffolyon",
+  "nome_jp": "グリフォリオン (Guriforion)",
+  "inspiracao": "Grifo da heráldica europeia (corpo de leão, cabeça, asas e garras de águia), coerente com o castelo e a linhagem nobre alemã de Robert",
+  "animal": "grifo",
+  "elemento": "vento",
+  "cores": {
+    "primaria": "#ffffff",
+    "secundaria": "#7d43d6",
+    "brilho": "#c98bff"
+  },
+  "paleta": {
+    "penas_corpo": "#ffffff",
+    "penas_sombra": "#cfc2f2",
+    "penas_escuro": "#a08fd0",
+    "pontas_penas_crista": "#7d43d6",
+    "roxo_sombra": "#57279e",
+    "leao": "#f6f2ff",
+    "leao_sombra": "#c9bbec",
+    "bico_patas": "#f2c23a",
+    "bico_sombra": "#c48a18",
+    "garras": "#2a1d3f",
+    "olhos": "#ff3048",
+    "contorno": "#0d1226"
+  },
+  "donos": [
+    "robert-jurgen"
+  ],
+  "beys": [
+    "robert-jurgen/griffolyon"
+  ],
+  "aparencia": "Grifo gigante (no ep. 30 faz o Dragoon parecer um lagarto): cabeça de águia com bico em gancho e crista de penas, asas enormes, patas dianteiras de ave e corpo/cauda de leão com tufo na ponta. No anime (1ª temporada) aparece como espírito claro envolto em brilho roxo (referência: pesquisa-bakuten/personagens/robert-jurgen/beyblades/griffolyon/fera-bit.jpg). No jogo: penas brancas com pontas roxas, bico e patas dourados, olhos vermelhos (bico/olhos são escolha de design).",
+  "especiais": [
+    {
+      "nome": "Wing Dagger",
+      "bey": "griffolyon",
+      "visual": "Griffolyon dispara penas das asas que chovem sobre o oponente (wiki).",
+      "efeito_jogo": "Dispara 5–6 penas-projétil em leque: dano de rotação e empurrão leve."
+    },
+    {
+      "nome": "Wind Swords",
+      "bey": "griffolyon",
+      "visual": "Citado no infobox da wiki; descrição visual não confirmada (proposta: lâminas de vento em meia-lua).",
+      "efeito_jogo": "Investida aérea com dano x1,8 e knockback alto em um golpe."
+    }
+  ],
+  "animacoes": {
+    "idle": "idle.svg",
+    "invocacao": "invocacao.svg",
+    "ataque": "ataque.svg"
+  },
+  "sons": {
+    "invocacao": "sons/invocacao.wav",
+    "rugido": "sons/rugido.wav",
+    "ataque": "sons/ataque.wav"
+  },
+  "overlay": {
+    "ancora": [
+      256,
+      448
+    ],
+    "escala_rel_bey": 3.2,
+    "opacidade": 0.9,
+    "blend": "screen"
+  },
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Griffolyon",
+    "https://beyblade.fandom.com/wiki/Wing_Dagger",
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Griffolyon",
+    "https://beyblade.fandom.com/wiki/Bit-Beast",
+    "pesquisa-bakuten/personagens/robert-jurgen/"
+  ]
+}

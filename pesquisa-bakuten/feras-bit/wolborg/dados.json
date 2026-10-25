@@ -1,0 +1,80 @@
+{
+  "id": "wolborg",
+  "nome": "Wolborg",
+  "nome_jp": "ウルボーグ",
+  "inspiracao": "Lobo prateado (銀狼) de gelo; fera bit artificial criada por Boris (Volkov no JP) na Abadia Balkov. Nos especiais às vezes aparece como Yuki-onna, a mulher das neves do folclore japonês",
+  "animal": "lobo",
+  "elemento": "gelo",
+  "cores": {
+    "primaria": "#e8f1f8",
+    "secundaria": "#6fb8e6",
+    "brilho": "#9ff4ff"
+  },
+  "paleta": {
+    "pelo": "#e8f1f8",
+    "pelo_sombra": "#a9bfd6",
+    "pelo_fundo": "#bccde0",
+    "marcas": "#3d6c99",
+    "gelo": "#6fb8e6",
+    "gelo_sombra": "#3f86c0",
+    "pontas_juba": "#9fdcf6",
+    "olho": "#7ff6ff",
+    "brilho_olho": "#3ad8ff",
+    "focinho": "#25304a",
+    "contorno": "#0d1226"
+  },
+  "donos": [
+    "tala"
+  ],
+  "beys": [
+    "tala/wolborg-2",
+    "tala/wolborg-4"
+  ],
+  "aparencia": "Pelo frame do anime guardado no repositório (wolborg-2/anime.jpg): lobo branco brilhante, quase translúcido, com contornos verde-água e listras escuras. No desenho do jogo: lobo branco-prateado em 3/4 olhando para a esquerda, cabeça grande com orelhas altas de interior azul-gelo, olhos ciano brilhantes, listras azul-escuras no rosto, dorso e pata, juba longa de mechas pontudas com pontas azul-gelo, cristais de gelo saindo das costas, pata dianteira erguida com garras de gelo, cauda espessa e franjada; a parte traseira se dissolve num rastro de gelo que desce até a bey (cristais, garras de gelo e rastro são interpretação de design).",
+  "especiais": [
+    {
+      "nome": "Blizzalog",
+      "nome_jp": "ブリザローグ (Burizarōgu; nome do especial da Wolborg 1 no mangá). Para a Wolborg 2 a tabela do mangá na Wikipedia JP traz 闘神氷弾; nome usado no anime JP não confirmado",
+      "bey": "wolborg-2",
+      "visual": "Nevasca gigante que prende blader, oponente, beys e estádio numa cúpula de gelo; o frio reduz concentração e resistência até Tala finalizar (final do Mundial, eps. 50-51).",
+      "efeito_jogo": "Campo de gelo por 6 s: oponente perde 25% de atrito/controle e 2%/s de rotação extra. Custo 100, recarga 25 s."
+    },
+    {
+      "nome": "Novae Rog",
+      "nome_jp": "真闘神氷撃 (ノーヴァエ・ローグ, Nōvae Rōgu)",
+      "bey": "wolborg-4",
+      "visual": "Wolborg solta ar gelado e vapor da base, envolve e congela a bey adversária num bloco de gelo e salta para esmagá-la; às vezes surge uma Yuki-onna.",
+      "efeito_jogo": "Névoa em cone; se acertar, o oponente fica congelado 1,5 s e recebe smash forte (2x ataque). Depois, Wolborg fica 1,5 s \"no ar\" (defesa -50%); se errar, a penalidade dobra. Custo 100, recarga 22 s."
+    }
+  ],
+  "animacoes": {
+    "idle": "idle.svg",
+    "invocacao": "invocacao.svg",
+    "ataque": "ataque.svg"
+  },
+  "sons": {
+    "invocacao": "sons/invocacao.wav",
+    "rugido": "sons/rugido.wav",
+    "ataque": "sons/ataque.wav"
+  },
+  "overlay": {
+    "ancora": [
+      256,
+      448
+    ],
+    "escala_rel_bey": 3,
+    "opacidade": 0.9,
+    "blend": "screen",
+    "obs": "O rastro de gelo da parte traseira termina sobre a âncora (256,448)."
+  },
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Wolborg",
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Wolborg",
+    "https://beyblade.fandom.com/wiki/Blizzalog",
+    "https://beyblade.fandom.com/wiki/Novae_Rog",
+    "https://ja.wikipedia.org/wiki/爆転シュート_ベイブレード_(アニメ)",
+    "pesquisa-bakuten/personagens/tala/README.md",
+    "pesquisa-bakuten/personagens/tala/beyblades/wolborg-2/anime.jpg",
+    "pesquisa-bakuten/personagens/tala/beyblades/wolborg-4/anime-novae-rog.png"
+  ]
+}

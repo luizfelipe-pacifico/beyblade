@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<title>Dragoon - emblema</title><desc>Cabeca do Dragoon de perfil com chifre e juba de vento.</desc>
+<g stroke="#0d1226" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+<path d="M40 22C46 12 54 8 62 8C56 12 52 18 50 24Z" fill="#eef7ff"/>
+<path d="M44 30C52 28 58 32 62 40C56 38 50 40 46 44C52 46 56 52 56 60C50 54 44 52 38 52Z" fill="#eef7ff"/>
+<path d="M44 34C44 24 38 18 30 18C24 18 18 22 14 26C10 28 5 29 3 32C2 35 4 37 8 37L22 38L18 44C26 48 34 50 40 46C44 42 45 38 44 34Z" fill="#2a6fd1"/>
+<path d="M30 20C36 14 42 10 52 8C46 14 42 18 40 24Z" fill="#eef7ff"/>
+<path d="M20 28L27 24L29 28L22 31Z" fill="#eef7ff" stroke-width="1.6"/>
+<path d="M8 37C6 44 10 50 4 56" fill="none" stroke="#eef7ff" stroke-width="2.6"/>
+</g></svg>
