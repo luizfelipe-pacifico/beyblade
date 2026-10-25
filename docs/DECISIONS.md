@@ -15,6 +15,25 @@ Formato:
 
 ---
 
+## D-022: direção visual "Abertura do Anime" e shadcn/ui no jogo
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu um design system e uma rota para ele, validados com as skills taste, impeccable e Emil Kowalski, e o shadcn/ui como biblioteca de componentes do jogo. Nas perguntas, ele escolheu a sensação "abertura do anime" e marcou como errado: cara de app/dashboard, infantil demais, pesado no notebook e fugir da 1ª geração. Na página de decisão do impeccable (sorteio: transmissão do torneio BBA), ele escolheu a alternativa "Abertura do Anime".
+- Decisão:
+  - toda tela do jogo é um quadro da abertura de Bakuten Shoot: o **campo da fera bit** do personagem toma a área inteira, com linhas de velocidade de borda dura, nome em cartela de título (Dela Gothic One) e VS amarelo inclinado;
+  - **shadcn/ui** (base Radix, estilo `radix-nova`, JavaScript) para os componentes de interface, ajustados aos tokens: cantos retos, foco amarelo de 4px (o cursor de quem joga no controle), pressão em `scale(0.97)`, sem desfoque nem `transition-all`;
+  - componentes do jogo em `src/components/game/` e a galeria viva em `/design-system`.
+- Consequências: os tokens seguem a fonte única da D-018. O Express em `server.js` repassa ao Next tudo o que não é `/api`, para o jogo e a API ficarem juntos na porta 5000 até a D-013 ser confirmada. A arte própria (D-008) é copiada de `pesquisa-bakuten/` para `public/art/` por `scripts/sync-art.js` (gerado, fora do git). Detalhes em [`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md#componentes-do-jogo).
+
+## D-021: ripcords catalogados junto com os lançadores
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu para lembrar dos ripcords. No brinquedo, a corda dentada é uma peça própria (curta, longa, de lançador de corda, de Engine Gear, com pegador diferente); no jogo de GBA, lançador e ripcord são itens separados (4 de cada), com durabilidade que cai a cada batalha.
+- Decisão: cada ripcord vira uma ficha em `pesquisa-bakuten/lancadores/ripcords/<slug>/` (medidas, nº de dentes, comprimento, material, sentido, compatibilidade com lançadores, atributos de lançamento e arte gerada). Cada lançador indica os ripcords compatíveis, e cada personagem/bey aponta para o ripcord que usa no anime quando a fonte disser.
+- Consequências: no mini-game de lançamento, a força vem do lançador e o comprimento/dentes do ripcord definem quanto spin a puxada entrega (ver [`BEYBLADES.md`](BEYBLADES.md)).
+
 ## D-020: modelos físicos reais como referência das artes da landing
 
 - Data: 2026-10-25
@@ -38,6 +57,145 @@ Formato:
 - Contexto: o usuário pediu a refatoração da landing com Taste, Impeccable e Emil Kowalski, unificando o design system durante o processo e seguindo o princípio de menos é mais.
 - Decisão: usar Dela Gothic One e Barlow; tinta azul profunda como base (60%), superfícies azuis de apoio (30%) e amarelo de ação (10%). As cores das feras ficam no conteúdo de identidade. Tokens comuns em `design-system/tokens.json`, com CSS gerado para jogo e landing. Animações da landing disparam na rolagem, uma vez por bloco, respeitando movimento reduzido.
 - Consequências: `docs/DESIGN_SYSTEM.md` documenta o contrato; testes detectam divergências entre as saídas. `site/` continua independente para o build na Vercel. Pesquisa e backend em andamento não entram nesta refatoração.
+
+## D-016: landing page pública em Next.js, com download do `.exe` pelo GitHub Releases
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu uma landing page em português com um botão que baixa o instalador do jogo, usando Next.js, imagens da web e as skills de design instaladas.
+- Decisão:
+  - a landing é um **app Next.js separado em `site/`** (não é o app do jogo da D-013), com **export estático** (`output: 'export'`), publicado na **Vercel** (Root Directory = `site`);
+  - o botão principal baixa o **instalador `.exe` para Windows** (D-004) pelo link fixo `https://github.com/luizfelipe-pacifico/beyblade/releases/latest/download/BeybladeArena-Setup.exe`. O instalador fica **anexado às GitHub Releases, nunca commitado** (o GitHub recusa arquivos acima de 100 MB);
+  - enquanto não houver release, o botão continua ativo e a página avisa que o jogo está **em desenvolvimento**, mostrando o estágio atual do [`ROADMAP.md`](ROADMAP.md);
+  - **público principal:** amigos e conhecidos que recebem o link;
+  - **imagens do anime** (*Beyblade*, Bakuten Shoot) podem ser usadas na landing, por decisão do usuário (substitui a proposta inicial de usar só imagens livres). Fonte e créditos ficam em `site/CREDITS.md`;
+  - a página é **`noindex`** (meta `robots` + cabeçalho `X-Robots-Tag` na Vercel): não aparece em buscadores e só é acessada por quem recebe o link;
+  - **contato público** pelas Issues do GitHub (sem e-mail exposto).
+- Consequências: o `noindex` reduz a exposição, mas não muda os direitos autorais: o detentor ainda pode pedir remoção à Vercel/GitHub. Por isso o nome "Beyblade" e as imagens do anime vêm com aviso de **projeto de fã, sem fins lucrativos e não afiliado à Takara Tomy, Hasbro, Nelvana ou d-rights**. A página não coleta dados (sem analytics, cookies ou formulários), o que mantém a política de privacidade simples. O instalador não pode conter material extraído da ROM (D-007): só arte própria (D-008). Detalhes em [`LANDING.md`](LANDING.md).
+
+## D-017: licença MIT para o código
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o projeto vai ter download público e precisava de uma licença definida.
+- Decisão: código sob **licença MIT** (`LICENSE` na raiz). A licença cobre só o código e a arte própria; marcas, personagens e nomes da franquia Beyblade pertencem aos donos e não são licenciados.
+- Consequências: `LICENSE`, `README.md` e a página de termos deixam claro o que a MIT cobre e o que não cobre. Imagens de terceiros seguem as próprias licenças, listadas em `site/CREDITS.md`.
+
+## D-015: jogo completo pelo teclado quando não há controle
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu que quem não tiver controle consiga jogar com o teclado do computador. A D-001 já previa o teclado como fallback, mas sem definir até onde.
+- Decisão:
+  - **tudo** é jogável pelo teclado, não só a batalha: menus, seleção de personagem e bey, lançamento, pausa e tela de Controles;
+  - **dois jogadores no mesmo teclado**, com blocos de teclas separados (P1 à esquerda, P2 à direita), e também **misto** (um no DualShock 4, outro no teclado);
+  - sem controle na porta do jogador, o teclado dele fica ativo automaticamente e a interface mostra as teclas em vez dos símbolos do PS4; com controle, os dois funcionam ao mesmo tempo;
+  - teclas remapeáveis na tela de Controles e salvas no banco, como os botões do controle. Mapeamento padrão em [`CONTROLLERS.md`](CONTROLLERS.md#teclado).
+- Consequências: o input converte teclado e gamepad no mesmo `InputFrame` ([`ARCHITECTURE.md`](ARCHITECTURE.md#6-input)), então a simulação não sabe de onde veio o comando. Teclados de notebook têm limite de teclas simultâneas (*ghosting*), por isso o layout padrão evita juntar as teclas dos dois jogadores na mesma região. Os testes de input cobrem o teclado, e "pronto" exige testar com teclado também.
+
+## D-014: PostgreSQL só no desenvolvimento; SQLite no `.exe`
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: D-012 deixava o `.exe` dependente do Docker Desktop para salvar dados (risco registrado em [`DATABASE.md`](DATABASE.md#risco-conhecido) e no [`ROADMAP.md`](ROADMAP.md)). O usuário definiu o papel de cada banco.
+- Decisão:
+  - **PostgreSQL no Docker** é usado só no desenvolvimento e nos testes em `localhost`;
+  - o **`.exe` empacotado usa SQLite**: um arquivo local na pasta de dados do usuário (`app.getPath('userData')`), sem Docker nem serviço externo.
+- Consequências:
+  - substitui em parte a D-012, que vale só para o ambiente de desenvolvimento;
+  - o schema do Prisma tem um `provider` fixo, então os dois bancos exigem **um schema e um client por provider** (ex.: `prisma/schema.prisma` para PostgreSQL e um schema SQLite gerado a partir dele), com migrações separadas. O adapter SQLite do Prisma 7 e o jeito de compilar o driver nativo para o Electron ainda precisam ser escolhidos e registrados;
+  - o código de acesso a dados (`src/db.js`) não pode usar recurso exclusivo do PostgreSQL (tipos, `$queryRaw` com SQL específico), para funcionar nos dois;
+  - os testes precisam cobrir as queries também no SQLite, que é o banco que o jogador usa de verdade.
+
+## D-013: Next.js serve interface e API na porta 5000, dentro do Electron
+
+- Data: 2026-10-25
+- Status: Proposta (aguardando confirmação do usuário)
+- Contexto: com D-004 (Electron + Next.js) e D-012 (PostgreSQL), falta definir quem fala com o banco. O `server.js` com Express é da stack original e duplicaria o servidor do Next.
+- Decisão: o servidor do Next.js (App Router) roda em `127.0.0.1:5000` e expõe a API em *route handlers* (`app/api/**/route.js`), que usam `src/validate.js` e o Prisma. O processo principal do Electron sobe esse servidor (`next dev -p 5000` em dev, saída `standalone` no build) e abre a janela nele. O renderer não tem acesso a Node (`contextIsolation`, `sandbox`); tudo passa pela API HTTP local.
+- Consequências: o Express em `server.js` é **transitório** e sai quando as rotas forem migradas (marco M0 do [`ROADMAP.md`](ROADMAP.md)). Detalhes em [`ARCHITECTURE.md`](ARCHITECTURE.md).
+
+## D-012: banco PostgreSQL em container Docker
+
+- Data: 2026-10-25
+- Status: Aceita, restrita ao desenvolvimento pela D-014
+- Contexto: o usuário pediu o banco rodando em container Docker. O SQLite é um arquivo embutido no processo e não roda como serviço, então foi preciso escolher um banco cliente-servidor. Opções apresentadas: PostgreSQL no Docker, manter SQLite sem Docker, ou SQLite agora e Postgres depois. O usuário escolheu PostgreSQL no Docker.
+- Decisão: **PostgreSQL 18** (`postgres:18-alpine`) via `docker-compose.yml`, publicado só em `127.0.0.1:5434` (5432/5433 já estavam ocupadas na máquina), volume nomeado `pgdata`, healthcheck com `pg_isready` e credenciais no `.env` (fora do git).
+- Consequências: substitui o "SQLite nativo via `node:sqlite`" da stack original e define a persistência que a D-004 deixou em aberto. O Docker Desktop precisa estar rodando para o jogo salvar dados (`npm run db:up`); isso entra como risco para o `.exe` no [`ROADMAP.md`](ROADMAP.md). Schema, migrações e operação em [`DATABASE.md`](DATABASE.md).
+
+## D-011: Prisma como ORM
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu um ORM. Opções apresentadas: Drizzle ou Prisma. O usuário escolheu Prisma.
+- Decisão: **Prisma ORM 7** (`prisma`, `@prisma/client`) com o driver adapter `@prisma/adapter-pg` (`pg`). Generator `prisma-client`, com client gerado em `src/generated/prisma/` (fora do git, regerado no `postinstall`). Configuração em `prisma7.config.ts`, que carrega o `.env` com `process.loadEnvFile()` (nativo, sem `dotenv`). Migrações versionadas em `prisma/migrations/`.
+- Consequências: substitui o "sem ORM" e as migrações por `PRAGMA user_version` da stack original. O Prisma 8 ainda está em release candidate e só será adotado quando sair estável, com nova entrada aqui. SQL manual só via `$queryRaw` com template literal (parametrizado), nunca `$queryRawUnsafe`.
+
+## D-010: lançadores fazem parte do catálogo
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu os lançadores junto com as beyblades; o fluxo de D-005 tem uma etapa de lançamento.
+- Decisão: cada lançador usado no anime (e os modelos de brinquedo da época) vira uma ficha em `pesquisa-bakuten/lancadores/` com medidas, material, sentido de rotação, atributos (força, RPM, precisão, controle) e arte própria. Cada personagem aponta para o lançador que usa.
+- Consequências: a fase de lançamento do jogo usa os atributos do lançador junto com os da beyblade (ver [`BEYBLADES.md`](BEYBLADES.md)).
+
+## D-009: atributos calculados a partir das peças
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário quer atributos base (velocidade, força etc.) mapeados como os criadores pensaram, para cada peça e para a bey completa.
+- Decisão: cada peça tem medidas físicas (mm, g), material, os stats oficiais Ataque/Defesa/Stamina (wiki/Takara) e, quando extraídos, os valores do jogo de GBA (D-007). Os atributos da bey são **calculados** dessas peças por fórmulas documentadas em [`BEYBLADES.md`](BEYBLADES.md) e implementadas em `src/beyblade/stats.js` (com testes). Um ajuste separado (`ajuste_anime`) representa o desempenho exagerado do anime.
+- Consequências: os atributos escritos à mão na primeira pesquisa passam a ser só referência; o valor de jogo é o calculado. Mudou peça → recalcula com `npm run build:research`.
+
+## D-008: arte e som próprios gerados a partir dos dados
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário quer imagens padronizadas e de qualidade bem superior às baixadas da wiki (que são de terceiros, de tamanhos e ângulos variados e, em parte, bloqueadas pelo CDN), além de feras bit animadas com som para aparecer em cima da beyblade.
+- Decisão:
+  - peças, beys montadas, vistas explodidas e lançadores são **SVG gerados por script** a partir dos parâmetros de forma de cada peça (`scripts/render-art.js`), com padrão único de ângulo, escala (mm) e iluminação;
+  - feras bit e retratos de personagens são **SVG vetoriais originais**, com animações CSS (idle, invocação, ataque) seguindo [`ART.md`](ART.md);
+  - sons das feras e da batalha são **sintetizados** a partir de receitas JSON (`scripts/synth.js`, ver [`AUDIO.md`](AUDIO.md));
+  - fotos da wiki ficam só como referência, em subpastas `referencia/`.
+- Consequências: esses assets são próprios e podem ir para o git (diferente do material extraído da ROM em D-007). A extração de sprites da ROM continua possível, mas não é a fonte desses assets.
+
+## D-007: ROM de GBA como referência e fonte inicial de assets
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário quer recriar a batalha do *Beyblade G-Revolution* (GBA, Atari/Hasbro, 2003) e usar o jogo original como base, ajustando depois. É um projeto pessoal, sem comercialização, para rodar só no PC dele.
+- Decisão:
+  - a ROM `Beyblade G-Revolution (USA).gba` (código `BB2E`, SHA-1 `a89f7b4eb77dc986022201db51a676451ba7c5e4`) é a referência de engenharia reversa: regras, números, fluxo de telas e dados de peças;
+  - **inicialmente**, sprites, retratos e sons podem ser **extraídos da ROM** para uso no jogo; depois serão ajustados ou trocados aos poucos;
+  - a ROM e tudo o que for extraído dela **nunca entram no git** (ficam fora do repositório ou em pasta no `.gitignore`).
+- Consequências: substitui em parte a regra de assets de [`BEST_PRACTICES.md`](BEST_PRACTICES.md#13-assets-e-direitos-autorais) para este uso pessoal; o build/exe não deve ser distribuído. Descobertas da engenharia reversa vão em [`REVERSE_ENGINEERING.md`](REVERSE_ENGINEERING.md).
+
+## D-006: batalha em 2D agora, refatoração para 3D depois
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário quer começar em 2D e depois refatorar tudo para 3D.
+- Decisão: a primeira versão é 2D com arena vista de cima (canvas). Tudo é documentado pensando na migração para 3D.
+- Consequências: a simulação (física, regras, IA, input) fica totalmente separada da renderização e trabalha em unidades do mundo (não em pixels), para que o renderer 2D possa ser trocado por um 3D sem reescrever a lógica. Valores calibrados e limitações do 2D vão para os docs do assunto.
+
+## D-005: formato de luta estilo Street Fighter e modos de jogo
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: não vamos replicar a história do jogo de GBA; o foco é a batalha.
+- Decisão:
+  - fluxo: **seleção de personagem** (todos disponíveis desde o início: Tyson, Kai, Ray, Max, Daichi etc.) → **seleção da beyblade** daquele personagem → **lançamento** → **batalha na arena**;
+  - modos da primeira versão: **1 vs 1 local**, **1 vs CPU**, **Arcade** (sequência de CPUs até um chefe) e **Treino**;
+  - todo o controle pelo DualShock 4 (D-001), incluindo menus e lançamento.
+- Consequências: personagens e beyblades vêm da pesquisa em `pesquisa-bakuten/` (perfis de IA já descritos lá); a IA da CPU usa o perfil de cada personagem.
+
+## D-004: jogo como executável Windows (Electron + Next.js)
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário quer jogar por um `.exe` no Windows em vez de um emulador de `.gba`.
+- Decisão: frontend em **Next.js** rodando dentro do **Electron**, empacotado como `.exe` para Windows. Em desenvolvimento, o servidor continua na porta 5000 (`CLAUDE.md`).
+- Consequências: substitui o "frontend estático em `public/`" da stack original. A forma de persistência no app empacotado (banco, API) ainda precisa ser definida e registrada.
 
 ## D-003: testes automáticos antes de todo push
 

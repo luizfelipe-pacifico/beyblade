@@ -1,15 +1,21 @@
 import http from 'node:http';
-import path from 'node:path';
 import express from 'express';
+import next from 'next';
 import * as store from './src/db.js';
 import { parseConfig, parseMatch, parseSetup } from './src/validate.js';
 
 // O projeto roda sempre na porta 5000 (ver CLAUDE.md). Sem fallback para outra porta.
 const PORT = 5000;
+const HOST = '127.0.0.1';
+
+// A interface do jogo é o app Next.js (app/). O Express responde /api e repassa o resto ao Next,
+// para tudo ficar numa porta só até a API migrar para route handlers (D-013).
+const nextApp = next({ dev: process.env.NODE_ENV !== 'production', hostname: HOST, port: PORT });
+const handleNext = nextApp.getRequestHandler();
 
 const app = express();
-app.use(express.json({ limit: '64kb' }));
-app.use(express.static(path.join(import.meta.dirname, 'public')));
+app.disable('x-powered-by');
+app.use('/api', express.json({ limit: '64kb' }));
 
 function parseSlot(raw) {
   const slot = Number(raw);
@@ -59,6 +65,8 @@ app.use('/api', (req, res) => {
   res.status(404).json({ error: 'Rota não encontrada' });
 });
 
+app.use((req, res) => handleNext(req, res));
+
 // Banco fora do ar (container parado) vira 503 com instrução, não um 500 genérico.
 function isDbUnavailable(err) {
   for (let e = err; e; e = e.cause) {
@@ -67,7 +75,7 @@ function isDbUnavailable(err) {
   return false;
 }
 
-app.use((err, req, res, next) => {
+app.use((err, req, res, _next) => {
   if (err.type === 'entity.parse.failed') return res.status(400).json({ error: 'JSON inválido' });
   if (isDbUnavailable(err)) {
     console.error('Banco de dados indisponível. Rode `npm run db:up`.');
@@ -77,7 +85,12 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Erro interno' });
 });
 
+await nextApp.prepare();
+
 const server = http.createServer(app);
+// Recarga ao vivo do Next em desenvolvimento usa WebSocket pela mesma porta.
+const handleUpgrade = nextApp.getUpgradeHandler();
+server.on('upgrade', (req, socket, head) => handleUpgrade(req, socket, head));
 
 server.on('error', (err) => {
   if (err.code === 'EADDRINUSE') {
@@ -88,7 +101,7 @@ server.on('error', (err) => {
 });
 
 // Só na interface local: o jogo não fica acessível por outros dispositivos da rede.
-server.listen(PORT, '127.0.0.1', () => {
+server.listen(PORT, HOST, () => {
   console.log(`Beyblade Arena rodando em http://localhost:${PORT}`);
   console.log(`Banco de dados: ${store.DB_LABEL}`);
 });

@@ -64,3 +64,24 @@ Texto normal ≥4,5:1; texto grande ≥3:1. Foco amarelo visível, alvos de toqu
 A galeria do jogo está em `app/design-system/page.js`; seus componentes vivem em `src/components/game/` e `src/components/ui/`. A landing é um app estático independente em `site/`; seu build não depende de Docker, Prisma ou do banco.
 
 As regras deste documento seguem os tokens implementados. O brief histórico em `.impeccable/` contém uma paleta de exploração anterior e não é fonte de valores para produção.
+
+## Componentes do jogo
+
+Direção "Abertura do Anime" ([D-022](DECISIONS.md#d-022-direção-visual-abertura-do-anime-e-shadcnui-no-jogo)). Base de interface: shadcn/ui em `src/components/ui/`, ajustado aos tokens. Componentes próprios em `src/components/game/`, todos vistos funcionando em `/design-system`:
+
+| Componente | Arquivo | Regra |
+| --- | --- | --- |
+| Campo de fera | `fera-field.jsx` | Cor da fera na área inteira; linhas de velocidade numa camada que anda só por `transform` e para com movimento reduzido ou qualidade Baixa |
+| Cartela e VS | `title-card.jsx` | Nome em Dela Gothic One maiúscula; linha de apoio em Barlow 20px negrito (texto grande sobre o campo) |
+| Glifos e dicas | `pad-glyph.jsx` | Botões do DualShock 4 desenhados em SVG; a dica mostra glifo **e** tecla (D-015) |
+| Anel de giro | `spin-ring.jsx` | Mais giro = mais marcas e rotação mais rápida; abaixo de 25% o arco fica amarelo |
+| Barras do HUD | `gauge-bar.jsx` | 20 segmentos chapados; especial cheio vira amarelo e diz "Pronto" |
+| Fileira de rodadas | `round-row.jsx` | Uma linha que nunca quebra; rodada ganha na cor da fera de quem venceu |
+| Anúncio de finalização | `announcement.jsx` | Faixa amarela inclinada que entra por varredura (`role="status"`) |
+| Seleção versus | `versus-select.jsx` | Cada metade no campo da fera do jogador; navega por controle e teclado (`src/hooks/use-menu-nav.js`) |
+
+Cuidados descobertos:
+
+- **Hidratação com coordenadas calculadas:** servidor e navegador divergem na última casa de `Math.cos`/`Math.sin`, e o React acusa erro de hidratação. Arredonde coordenadas de SVG geradas em código (o anel de giro usa 3 casas).
+- **Texto sobre campo de fera:** os campos passam 3:1, não 4,5:1, com o texto da fera. Texto menor que 20px negrito não vai direto sobre o campo.
+- **Botão desabilitado** é neutro (`tinta-3` com `texto-3`), nunca o amarelo transparente.

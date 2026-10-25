@@ -13,3 +13,7 @@ assets-rom/
 
 .taste-skill/
 .impeccable/
+
+# Gerados
+/public/art
+/public/audio/tts
