@@ -57,9 +57,32 @@ h3 { font-size: var(--type-lead); font-weight: 800; line-height: 1.25; }
 .hero-copy .lead { color: var(--texto-2); }
 .hero-meta { display: flex; flex-wrap: wrap; gap: 4px 24px; font-size: var(--type-small); color: var(--texto-2); }
 .hero-meta span:last-child { flex-basis: 100%; }
-.hero-art { position: relative; overflow: clip; background: var(--tinta-2); min-height: 420px; }
-.hero-art img { width: 100%; height: 100%; object-fit: cover; object-position: 35% center; }
-.hero-art figcaption { position: absolute; bottom: 0; left: 0; background: var(--tinta); padding: 12px 20px; font-size: var(--type-small); }
+
+/* A bey é o conteúdo: SVG nítido, giro ligado à rolagem, sem loop permanente. */
+.hero-bey-scene { display: grid; grid-template-rows: 1fr auto auto; gap: 20px; padding: 32px var(--gutter); background: var(--tinta-2); min-width: 0; overflow: clip; }
+.hero-bey-stage { position: relative; width: 100%; max-width: 680px; aspect-ratio: 1; align-self: center; margin-inline: auto; perspective: 1000px; }
+.hero-stadium { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotateX(22deg); }
+.hero-bey-plane { position: absolute; inset: 12%; transform: rotateX(22deg); }
+.hero-bey-rotor { width: 100%; height: 100%; object-fit: contain; transform: rotate(-14deg); }
+.hero-bey-caption { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.hero-bey-caption > div { display: grid; gap: 4px; }
+.hero-bey-caption strong { font-family: var(--font-display), sans-serif; font-size: var(--type-lead); font-weight: 400; }
+.hero-bey-caption span { font-size: var(--type-small); color: var(--texto-2); }
+.hero-spin-label { display: inline-flex; align-items: center; gap: 8px; }
+.hero-scroll-cue { display: inline-flex; align-items: center; gap: 10px; justify-self: start; min-height: 44px; font-size: var(--type-small); text-decoration: none; font-weight: 600; }
+.hero-scroll-cue:hover { text-decoration: underline; }
+.hero-features { display: flex; flex-wrap: wrap; gap: 8px 20px; color: var(--texto-2); font-size: 16px; }
+.hero-features > span { display: inline-flex; align-items: center; gap: 8px; min-height: 28px; }
+.hero-features svg { flex-shrink: 0; }
+.battle-loop { display: grid; grid-template-rows: 1fr auto; align-items: center; background: var(--tinta); min-width: 0; }
+.battle-loop > img { width: 100%; height: auto; object-fit: contain; }
+.battle-loop-caption { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px; font-size: var(--type-small); }
+.battle-loop-caption > span { font-weight: 600; }
+.battle-loop-caption .small { color: var(--texto-2); font-weight: 400; }
+.battle-loop button { display: inline-flex; justify-content: center; align-items: center; gap: 8px; min-width: 44px; min-height: 44px; padding: 8px 12px; border: 0; background: var(--tinta-3); color: var(--papel); font-size: var(--type-small); font-weight: 600; }
+.battle-loop button:active { transform: scale(.97); }
+.piece--photo .battle-loop { height: 100%; }
+.piece--photo .battle-loop > img { height: auto; }
 
 /* A ficha é conteúdo interativo; somente seu campo usa a cor da fera. */
 .select { display: grid; grid-template-columns: .85fr 1.15fr; gap: 8%; padding: var(--section) var(--gutter); background: var(--tinta); }
@@ -125,8 +148,6 @@ h3 { font-size: var(--type-lead); font-weight: 800; line-height: 1.25; }
 .ui-power .zone { position: absolute; inset: 0 auto 0 72%; width: 14%; background: var(--chamada); }
 .ui-power .needle { position: absolute; top: -6px; bottom: -6px; left: 78%; width: 4px; background: var(--papel); }
 .ui-count { font-family: var(--font-display), sans-serif; font-size: var(--type-lead); }
-.ui-dish { position: relative; aspect-ratio: 16 / 9; background: var(--tinta-2); overflow: clip; }
-.ui-dish::before { content: ''; position: absolute; inset: 8% 22%; border-radius: 50%; background: var(--tinta-3); }
 .key { display: inline-grid; place-items: center; min-width: 1.6em; padding: 0 .3em; background: var(--tinta-3); color: var(--papel); font-weight: 800; }
 .ps { display: inline-flex; gap: 12px; margin-top: 18px; }
 
@@ -215,11 +236,9 @@ code { font-family: ui-monospace, Consolas, monospace; }
   [data-reveal].is-in > :nth-child(3) { animation-delay: 120ms; }
   [data-reveal].is-in > :nth-child(n+4) { animation-delay: 180ms; }
   .hero-title [data-line] { animation: title-enter 640ms var(--ease-out) both; animation-delay: calc(var(--i) * 80ms); }
-  .hero-art img { animation: photo-enter 900ms var(--ease-out) both; }
 }
 @keyframes scroll-enter { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes title-enter { from { transform: translateY(100%); } to { transform: translateY(0); } }
-@keyframes photo-enter { from { transform: scale(1.05); } to { transform: scale(1); } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -233,6 +252,9 @@ code { font-family: ui-monospace, Consolas, monospace; }
   .footer-row { grid-template-columns: 1fr; gap: 40px; }
 }
 @media (max-width: 800px) {
+  .hero-bey-scene { padding-block: 24px; }
+  .hero-bey-stage { max-width: 520px; }
+  .hero-bey-caption { max-width: 520px; width: 100%; margin-inline: auto; }
   .download { grid-template-columns: 1fr; gap: 32px; }
   .download-top { grid-column: 1; grid-row: 2; }
   #perguntas { grid-template-columns: 1fr; }
@@ -242,8 +264,6 @@ code { font-family: ui-monospace, Consolas, monospace; }
   .hero-body { grid-template-columns: 1fr; }
   .hero-intro { padding-block: 48px; gap: 24px; }
   .hero-title { font-size: clamp(2.5rem, 10vw, 5rem); }
-  .hero-art { min-height: 0; height: 42svh; max-height: 440px; }
-  .hero-art figcaption { font-size: 14px; }
   .hero-copy { max-width: 48ch; }
   .select, .stages, .section-intro, .board, .status-board { grid-template-columns: 1fr; gap: 40px; }
   .names { grid-template-columns: repeat(4, 1fr); gap: 12px; }
@@ -265,6 +285,11 @@ code { font-family: ui-monospace, Consolas, monospace; }
   .doc-main > header .display { font-size: clamp(2rem, 7.5vw, 4rem); }
 }
 @media (max-width: 480px) {
+  .hero-bey-caption { align-items: start; gap: 12px; }
+  .hero-bey-caption strong { font-size: 20px; }
+  .hero-spin-label { max-width: 120px; }
+  .hero-bey-scene { gap: 12px; }
+  .battle-loop-caption { flex-wrap: wrap; padding: 12px; }
   .header .wordmark { max-width: 115px; }
   .header .button { min-height: 44px; padding: 8px 16px; font-size: 16px; }
   .hero-copy .button { width: 100%; }

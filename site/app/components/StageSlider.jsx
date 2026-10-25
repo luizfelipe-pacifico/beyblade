@@ -4,16 +4,7 @@ import { useState } from 'react';
 import Picture from './Picture';
 import { BLADERS } from '../site';
 import { PsButton } from './PsButtons';
-
-function Bey({ color, x, y }) {
-  return (
-    <svg className="ui-bey-svg" width="40" height="40" viewBox="0 0 40 40" style={{ position: 'absolute', left: x, top: y }} aria-hidden="true">
-      <circle cx="20" cy="20" r="18" fill="var(--tinta)" />
-      <path d="M20 4l5 11h-10zM36 20l-11 5v-10zM20 36l-5-11h10zM4 20l11-5v10z" fill={color} />
-      <circle cx="20" cy="20" r="6" fill="var(--papel)" stroke="var(--tinta)" strokeWidth="2" />
-    </svg>
-  );
-}
+import BattleLoop from './BattleLoop';
 
 const STAGES = [
   {
@@ -105,13 +96,10 @@ const STAGES = [
           <span>Tyson 2 × 1 Kai</span>
           <span>1:24</span>
         </div>
-        <div className="ui-dish" role="img" aria-label="Duas beyblades girando no estádio">
-          <Bey color="var(--dragoon)" x="38%" y="34%" />
-          <Bey color="var(--dranzer)" x="52%" y="48%" />
-        </div>
+        <BattleLoop />
         {[
-          ['Dragoon S', 72, 'var(--dragoon)'],
-          ['Dranzer S', 51, 'var(--dranzer)'],
+          ['Dragoon S', 72],
+          ['Dranzer S', 51],
         ].map(([name, v]) => (
           <div key={name} style={{ display: 'grid', gap: 6 }}>
             <div className="ui-row">

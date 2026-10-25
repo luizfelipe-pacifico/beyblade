@@ -38,3 +38,11 @@ Jogo e landing compartilham a identidade documentada em `../docs/DESIGN_SYSTEM.m
 A fonte única dos tokens é `../design-system/tokens.json`. Na raiz do repositório, `node scripts/sync-design-tokens.js` atualiza `app/tokens.css`, que é versionado para permitir o build independente desta pasta. Não edite esse CSS gerado à mão.
 
 Entradas na rolagem usam IntersectionObserver e keyframes CSS, uma vez por bloco. O conteúdo aparece mesmo sem JavaScript, e o modo de movimento reduzido desativa as animações. Perguntas usam `details`/`summary` nativos.
+
+### Hero e ilustrações animadas
+
+A hero mostra a Dragoon S em SVG, preservando resolução em telas grandes. `HeroBey.jsx` liga três voltas da bey ao progresso da rolagem da hero, com eventos passivos e no máximo uma atualização por frame. A rolagem não é presa; sem rolar, não há um loop de animação. Fora da tela, com a aba oculta ou com movimento reduzido, o efeito não processa frames.
+
+`BattleLoop.jsx` mostra uma ilustração de Dragoon S × Dranzer S em WebP animado (768 × 432, 48 quadros, cerca de 568 KB), com botão de pausa e poster estático. A animação só carrega quando entra na tela e o visitante permite movimento. Ela aparece na seção de controles e na etapa Batalha. É uma ilustração do conceito, não uma captura de gameplay.
+
+Execute `npm run motion:assets` dentro de `site/` para regenerar o loop e o poster a partir dos SVGs em `public/beyblades/`. O gerador lê as cores de `app/tokens.css`; não depende do catálogo fora desta pasta. Os arquivos gerados são versionados para a publicação continuar independente.

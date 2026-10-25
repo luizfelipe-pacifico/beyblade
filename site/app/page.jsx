@@ -1,67 +1,66 @@
-import { ArrowUpRight, Check, Download, Gamepad2, Keyboard } from 'lucide-react';
+import { ArrowUpRight, Check, Download, Gamepad2, Keyboard, WifiOff } from 'lucide-react';
 import CharacterSelect from './components/CharacterSelect';
 import Footer from './components/Footer';
 import ModesDeck from './components/ModesDeck';
-import Picture from './components/Picture';
 import PsButtons from './components/PsButtons';
 import Reveal from './components/Reveal';
 import StageSlider from './components/StageSlider';
+import HeroBey from './components/HeroBey';
+import BattleLoop from './components/BattleLoop';
 import { DOWNLOAD_URL, INSTALLER, ISSUES_URL, MILESTONES, RELEASES_URL, ROADMAP_URL } from './site';
 
 function Hero() {
   return (
     <header className="hero" id="topo">
-        <nav className="header" aria-label="Principal">
-          <a className="wordmark" href="#topo">
-            Beyblade Arena
-          </a>
-          <div className="tab">
-            <a href="#personagens">Personagens</a>
-            <a href="#como-jogar">Como jogar</a>
-            <a href="#controles">Controles</a>
-            <a href="#perguntas">Perguntas</a>
-          </div>
-          <a className="button" href={DOWNLOAD_URL}>
-            <Download size={20} strokeWidth={2.5} aria-hidden="true" />
-            Baixar
-          </a>
-        </nav>
+      <nav className="header" aria-label="Principal">
+        <a className="wordmark" href="#topo">
+          Beyblade Arena
+        </a>
+        <div className="tab">
+          <a href="#personagens">Personagens</a>
+          <a href="#como-jogar">Como jogar</a>
+          <a href="#controles">Controles</a>
+          <a href="#perguntas">Perguntas</a>
+        </div>
+        <a className="button" href={DOWNLOAD_URL}>
+          <Download size={20} strokeWidth={2.5} aria-hidden="true" />
+          Baixar
+        </a>
+      </nav>
       <div className="hero-body">
         <div className="hero-intro">
-        <h1 className="hero-title">
-          <span className="line">
-            <span data-line="" style={{ '--i': 0 }}>
-              Beyblade
+          <h1 className="hero-title">
+            <span className="line">
+              <span data-line="" style={{ '--i': 0 }}>
+                Beyblade
+              </span>
             </span>
-          </span>
-          <span className="line">
-            <span data-line="" style={{ '--i': 1 }}>
-              Arena
+            <span className="line">
+              <span data-line="" style={{ '--i': 1 }}>
+                Arena
+              </span>
             </span>
-          </span>
-        </h1>
-        <div className="hero-copy">
-          <p className="lead" style={{ '--i': 0 }}>
-            A batalha do anime no seu PC: escolha o blader, lance a beyblade e lute contra um amigo, no controle de
-            PS4 ou no teclado.
-          </p>
-          <div style={{ '--i': 1 }}>
-            <a className="button" href={DOWNLOAD_URL}>
-              <Download size={20} strokeWidth={2.5} aria-hidden="true" />
-              Baixar para Windows
-            </a>
+          </h1>
+          <div className="hero-copy">
+            <p className="lead" style={{ '--i': 0 }}>
+              A batalha do anime no seu PC: escolha o blader, lance a beyblade e lute contra um amigo, no controle de
+              PS4 ou no teclado.
+            </p>
+            <div style={{ '--i': 1 }}>
+              <a className="button" href={DOWNLOAD_URL}>
+                <Download size={20} strokeWidth={2.5} aria-hidden="true" />
+                Baixar para Windows
+              </a>
+            </div>
+            <div className="hero-features">
+              <span><Gamepad2 size={21} aria-hidden="true" /> Dois jogadores</span>
+              <span><Keyboard size={21} aria-hidden="true" /> Controle ou teclado</span>
+              <span><WifiOff size={21} aria-hidden="true" /> Offline</span>
+            </div>
+            <p className="hero-meta">Grátis para Windows 10 e 11. Em desenvolvimento, ainda sem versão jogável.</p>
           </div>
-          <p className="hero-meta" style={{ '--i': 2 }}>
-            <span>Grátis</span>
-            <span>Windows 10 e 11</span>
-            <span>Em desenvolvimento: ainda sem versão jogável</span>
-          </p>
         </div>
-        </div>
-        <figure className="hero-art">
-          <Picture id="ray-lancamento" priority sizes="(max-width: 800px) 100vw, 52vw" />
-          <figcaption>Bakuten Shoot. A geração que começou tudo.</figcaption>
-        </figure>
+        <HeroBey />
       </div>
     </header>
   );
@@ -71,12 +70,7 @@ function Controls() {
   return (
     <section id="controles" className="controls" aria-labelledby="controles-titulo">
       <div className="board">
-        <figure className="piece piece--photo" data-reveal="settle">
-          <div style={{ height: '100%' }}>
-            <Picture id="bladebreakers" sizes="(max-width: 1080px) 100vw, 50vw" />
-            <figcaption>Os Bladebreakers, temporada 1</figcaption>
-          </div>
-        </figure>
+        <div className="piece piece--photo"><BattleLoop /></div>
         <div className="piece piece--title" data-reveal="">
           <h2 id="controles-titulo" style={{ '--i': 0 }}>
             Dois no mesmo PC

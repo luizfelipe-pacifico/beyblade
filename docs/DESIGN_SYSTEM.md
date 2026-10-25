@@ -45,7 +45,11 @@ As cores das feras são **dados de identidade**, usadas no campo do personagem e
 
 Curvas compartilhadas: `--ease-out` para entradas e feedback, `--ease-in-out` para deslocamento. Tempos: pressão 120ms, interface 180ms, corte 260ms. Teclado e navegação repetida respondem imediatamente.
 
-Na landing, `Reveal.jsx` usa IntersectionObserver como scroll trigger. Cada bloco entra uma única vez com 20px de deslocamento e opacidade, em 480ms, com defasagem curta de 60ms entre filhos (máximo de 180ms). O observer ativa keyframes CSS de uma única execução; a preferência por movimento reduzido cancela o deslocamento e desativa novas entradas. O HTML é visível por padrão; falhas de JS não escondem conteúdo. Sem listeners de rolagem por frame.
+Na landing, `Reveal.jsx` usa IntersectionObserver como scroll trigger. Cada bloco entra uma única vez com 20px de deslocamento e opacidade, em 480ms, com defasagem curta de 60ms entre filhos (máximo de 180ms). O observer ativa keyframes CSS de uma única execução; a preferência por movimento reduzido cancela o deslocamento e desativa novas entradas. O HTML é visível por padrão; falhas de JS não escondem conteúdo.
+
+A hero tem um efeito autoral: a Dragoon S vetorial gira em função da rolagem. `HeroBey.jsx` agenda no máximo um requestAnimationFrame por evento de scroll, sem renderizar estado React a cada frame. O efeito para fora da tela, na aba oculta e com movimento reduzido. A área da ilustração reserva espaço para o limite diagonal do SVG durante a rotação, evitando rolagem horizontal em ângulos intermediários.
+
+As demonstrações de batalha usam WebP animado gerado dos mesmos SVGs: mais cores e melhor compressão que GIF. Sempre existe poster estático; o loop pausa fora da tela, na aba oculta, com movimento reduzido ou pelo botão de pausa. Os controles continuam utilizáveis por teclado. Créditos identificam a animação como ilustração própria, sem apresentá-la como gameplay.
 
 ## Qualidade e manutenção
 
