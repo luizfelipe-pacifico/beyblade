@@ -18,7 +18,8 @@
     "db:generate": "prisma generate",
     "db:studio": "prisma studio",
     "postinstall": "prisma generate",
-    "prepare": "git config core.hooksPath .githooks"
+    "prepare": "git config core.hooksPath .githooks",
+    "audio:tts": "node scripts/tts-falas.js"
   },
   "engines": {
     "node": ">=24.11"

@@ -1,0 +1,81 @@
+{
+  "aviso": "Texto das falas. 'origem: anime' = frase do anime já registrada no README do personagem (dublagem em inglês), com tradução nossa em 'pt'. 'origem: jogo' = fala escrita para o jogo, nunca atribuída ao anime. O áudio provisório é TTS (scripts/tts-falas.js), gerado em public/audio/tts/ e fora do git.",
+  "narracao": [
+    { "id": "contagem", "contexto": "lancamento", "origem": "anime", "original": "3, 2, 1... Let it rip!", "pt": "3, 2, 1... Let it rip!" },
+    { "id": "contagem-jp", "contexto": "lancamento", "origem": "anime", "original": "3, 2, 1, Go Shoot!", "pt": "3, 2, 1, Go Shoot!" }
+  ],
+  "personagens": {
+    "tyson-granger": {
+      "fera": "Dragoon", "bey": "dragoon-g",
+      "falas": [
+        { "id": "selecao", "contexto": "selecao", "origem": "anime", "original": "I would be scared if I wasn't so darn good.", "pt": "Eu até teria medo, se não fosse tão bom assim." },
+        { "id": "chamada", "contexto": "especial", "origem": "anime", "original": "Dragoon, attack!", "pt": "Dragoon, ataque!" },
+        { "id": "especial", "contexto": "especial", "origem": "anime", "original": "Dragoon! Galaxy Storm!", "pt": "Dragoon! Galaxy Storm!" }
+      ]
+    },
+    "kai-hiwatari": {
+      "fera": "Dranzer", "bey": "dranzer-g",
+      "falas": [
+        { "id": "selecao", "contexto": "selecao", "origem": "anime", "original": "Ha! I invented the word impossible. That's why I'm the champ.", "pt": "Rá! Eu inventei a palavra impossível. É por isso que sou o campeão." },
+        { "id": "especial", "contexto": "especial", "origem": "anime", "original": "Dranzer! Blazing Gigs!", "pt": "Dranzer! Blazing Gigs!" }
+      ]
+    },
+    "ray-kon": {
+      "fera": "Driger", "bey": "driger-g",
+      "falas": [
+        { "id": "selecao", "contexto": "selecao", "origem": "anime", "original": "Give me 100%!", "pt": "Me dê 100%!" },
+        { "id": "especial", "contexto": "especial", "origem": "anime", "original": "Driger! Gatling Claw!", "pt": "Driger! Gatling Claw!" }
+      ]
+    },
+    "max-tate": {
+      "fera": "Draciel", "bey": "draciel-g",
+      "falas": [
+        { "id": "selecao", "contexto": "selecao", "origem": "anime", "original": "We're a team!", "pt": "Nós somos um time!" },
+        { "id": "especial", "contexto": "especial", "origem": "anime", "original": "Draciel! Gravity Control!", "pt": "Draciel! Gravity Control!" }
+      ]
+    },
+    "daichi-sumeragi": {
+      "fera": "Gaia Dragoon", "bey": "gaia-dragoon-g",
+      "falas": [
+        { "id": "selecao", "contexto": "selecao", "origem": "anime", "original": "I'm not leaving without a rematch!", "pt": "Não saio daqui sem revanche!" },
+        { "id": "desafio", "contexto": "provocacao", "origem": "anime", "original": "My name's Daichi. I challenge you!", "pt": "Meu nome é Daichi. Eu te desafio!" },
+        { "id": "especial", "contexto": "especial", "origem": "anime", "original": "Gaia Dragoon! Great Cutter!", "pt": "Gaia Dragoon! Great Cutter!" }
+      ]
+    },
+    "tala": {
+      "fera": "Wolborg", "bey": "wolborg-4",
+      "falas": [
+        { "id": "selecao", "contexto": "selecao", "origem": "jogo", "original": null, "pt": "Isso é tudo o que você tem?" },
+        { "id": "especial", "contexto": "especial", "origem": "anime", "original": "Wolborg! Novae Rog!", "pt": "Wolborg! Novae Rog!" }
+      ]
+    },
+    "bryan-kuznetsov": {
+      "fera": "Falborg", "bey": "falborg-2",
+      "falas": [
+        { "id": "selecao", "contexto": "provocacao", "origem": "anime", "original": "Aw, don't like the wind? Well, I have bad news for you! There's a tornado coming!", "pt": "Não gosta de vento? Má notícia: vem aí um tornado!" },
+        { "id": "especial", "contexto": "especial", "origem": "anime", "original": "Falborg! Stroblitz!", "pt": "Falborg! Stroblitz!" }
+      ]
+    },
+    "brooklyn-masefield": {
+      "fera": "Zeus", "bey": "zeus",
+      "falas": [
+        { "id": "selecao", "contexto": "provocacao", "origem": "anime", "original": "You're history.", "pt": "Você já era." },
+        { "id": "especial", "contexto": "especial", "origem": "anime", "original": "King of Darkness Attack!", "pt": "King of Darkness!" }
+      ]
+    },
+    "lee": {
+      "fera": "Galeon", "bey": "galeon-2",
+      "falas": [
+        { "id": "selecao", "contexto": "provocacao", "origem": "anime", "original": "You dare to insult me?!", "pt": "Você ousa me insultar?!" },
+        { "id": "especial", "contexto": "especial", "origem": "anime", "original": "Galeon! Spiral Lightning!", "pt": "Galeon! Spiral Lightning!" }
+      ]
+    },
+    "robert-jurgen": {
+      "fera": "Griffolyon", "bey": "griffolyon",
+      "falas": [
+        { "id": "selecao", "contexto": "selecao", "origem": "anime", "original": "The name is Robert.", "pt": "Meu nome é Robert." },
+        { "id": "especial", "contexto": "especial", "origem": "anime", "original": "Griffolyon! Wing Dagger!", "pt": "Griffolyon! Wing Dagger!" }
+      ]
+    }
+  }
+}

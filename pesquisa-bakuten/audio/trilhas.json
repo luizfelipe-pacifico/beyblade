@@ -1,0 +1,43 @@
+{
+  "aviso": "Catálogo de metadados. As gravações do anime têm direitos autorais e não são baixadas nem versionadas. O jogo toca só áudio de origem permitida: extraído da ROM do usuário para uso pessoal (D-007, fora do git) ou original (D-008).",
+  "fonte": "https://ja.wikipedia.org/wiki/爆転シュート_ベイブレード_(アニメ)",
+  "anime": [
+    {
+      "temporada": "Bakuten Shoot Beyblade (2001)",
+      "musica_de_fundo": "Yoshihisa Hirano (平野義久)",
+      "temas": [
+        { "tipo": "abertura", "titulo": "Fighting Spirits -Song for Beyblade-", "artista": "SYSTEM-B (voz: 吉越由美)", "episodios": null },
+        { "tipo": "encerramento", "titulo": "CHEER SONG", "artista": "SYSTEM-B (voz: 大友ジュン)", "episodios": null }
+      ]
+    },
+    {
+      "temporada": "Bakuten Shoot Beyblade 2002 (V-Force)",
+      "musica_de_fundo": "TOSS & TURN",
+      "temas": [
+        { "tipo": "abertura", "titulo": "OFF THE CHAIN", "artista": "TOSS & TURN", "episodios": "1–21" },
+        { "tipo": "abertura", "titulo": "Jet (ジェット)", "artista": "FAIRY FORE", "episodios": "22–final" },
+        { "tipo": "encerramento", "titulo": "URBAN LOVE", "artista": "Shiori", "episodios": "1–21" },
+        { "tipo": "encerramento", "titulo": "What's the answer?", "artista": "Retro G-Style", "episodios": "22–final" }
+      ]
+    },
+    {
+      "temporada": "Bakuten Shoot Beyblade G-Revolution (2003)",
+      "musica_de_fundo": "Yasuharu Takanashi (高梨康治)",
+      "temas": [
+        { "tipo": "abertura", "titulo": "Bokura no Jidai e -go ahead- (僕らの時代へ)", "artista": "Takao Kinomiya (Motoko Kumai)", "episodios": "1–31" },
+        { "tipo": "abertura", "titulo": "Identified", "artista": "Springs", "episodios": "32–final" },
+        { "tipo": "encerramento", "titulo": "OH YES!!", "artista": "SISTA with YUKA", "episodios": "1–17" },
+        { "tipo": "encerramento", "titulo": "Kaze no Fuku Basho (風の吹く場所)", "artista": "Makiyo", "episodios": "18–31 e final" },
+        { "tipo": "encerramento", "titulo": "Sign of Wish", "artista": "Makiyo", "episodios": "32–final" }
+      ]
+    }
+  ],
+  "jogo": [
+    { "id": "menu", "uso": "título e menus", "loop": true, "rom": "a identificar", "original": "a compor", "status": "pendente" },
+    { "id": "selecao", "uso": "seleção de personagem e de bey", "loop": true, "rom": "a identificar", "original": "a compor", "status": "pendente" },
+    { "id": "lancamento", "uso": "contagem 3, 2, 1, Let it rip!", "loop": false, "rom": "a identificar", "original": "a compor", "status": "pendente" },
+    { "id": "batalha", "uso": "batalha na arena (o GBA tem só uma música de combate)", "loop": true, "rom": "a identificar", "original": "a compor", "status": "pendente" },
+    { "id": "vitoria", "uso": "fim de partida, vencedor", "loop": false, "rom": "a identificar", "original": "a compor", "status": "pendente" },
+    { "id": "resultado", "uso": "tela de resultado e histórico", "loop": true, "rom": "a identificar", "original": "a compor", "status": "pendente" }
+  ]
+}
