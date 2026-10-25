@@ -1,0 +1,82 @@
+{
+  "id": "attack-ring/dual-dragon",
+  "categoria": "attack-ring",
+  "nome": "Dual Dragon",
+  "nome_jp": "デュアルドラゴン",
+  "sistema": "spin-gear",
+  "usado_em": [
+    "tyson-granger/dragoon-f"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "PC translúcido"
+    ],
+    "obs": "Camada inferior vermelha em \"Dual Carbonate\" (policarbonato) que absorve choque."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 44,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 7,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 6,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 3,
+    "stamina": 3,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「デュアルドラゴン」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 4,
+    "tipo_contato": "smash",
+    "recoil": 0.5,
+    "sentido_otimo": "esquerda",
+    "raio_contato_mm": 22
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 7,
+    "lobos": [
+      {
+        "inicio": 10,
+        "pico": 20,
+        "fim": 70,
+        "raio_mm": 22,
+        "borda": "reta",
+        "altura_mm": 7
+      },
+      {
+        "inicio": 72,
+        "pico": 76,
+        "fim": 84,
+        "raio_mm": 20,
+        "borda": "curva",
+        "altura_mm": 3
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#2f6fd0",
+    "secundaria": "#d8262c",
+    "detalhe": "#f0f0f0"
+  },
+  "acabamento": "opaco",
+  "descricao": "AR de duas camadas: em cima, 4 cabeças de dragão com projeções para a esquerda; embaixo, anel de 4 lâminas em policarbonato vermelho.",
+  "funcao": "Smash esquerdo; versão mais durável do Reverse Dragon.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Dual_Dragon",
+    "https://beyblade.fandom.com/wiki/Dragoon_F"
+  ]
+}

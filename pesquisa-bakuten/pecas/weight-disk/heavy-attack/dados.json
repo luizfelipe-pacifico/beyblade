@@ -1,0 +1,60 @@
+{
+  "id": "weight-disk/heavy-attack",
+  "categoria": "weight-disk",
+  "nome": "Heavy Attack",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon"
+  ],
+  "material": {
+    "principal": "Metal",
+    "outros": [],
+    "obs": "metal fundido; a liga não é especificada nas fontes"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 35,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 4.7,
+      "fonte": "estimado",
+      "obs": "calculada do peso com densidade 7.1 g/cm³"
+    },
+    "peso_g": {
+      "valor": 15,
+      "fonte": "estimado",
+      "obs": "a wiki só diz que é mais leve que os outros Heavy; sem peso publicado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 3,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2021/06/26/post-16926/), Weight Disk 「ヘビィアタック」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "distribuicao": "centro",
+    "magnetico": false
+  },
+  "forma": {
+    "lados": 6,
+    "raio_externo_mm": 17.5,
+    "raio_interno_mm": 10.5,
+    "espessura_mm": 4.7,
+    "estilo": "attack"
+  },
+  "cores": {
+    "primaria": "#9ea3a8",
+    "secundaria": "#6e7378",
+    "detalhe": "#c9cdd1"
+  },
+  "acabamento": "metalico",
+  "descricao": "Disco da série Heavy em forma de hexágono, como o Six Heavy, mas com entalhes circulares (furos) em cada vértice. A foto mostra o hexágono com seis furos nos cantos e abertura central com recortes de encaixe.",
+  "funcao": "Os vértices deveriam dar ataque, mas o disco é pequeno demais para tocar no adversário. Na prática é um Heavy mais leve: peso no centro, mais RPM.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Heavy_Attack"
+  ]
+}

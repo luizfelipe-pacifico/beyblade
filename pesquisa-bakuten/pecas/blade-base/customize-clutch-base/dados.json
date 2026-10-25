@@ -1,0 +1,93 @@
+{
+  "id": "blade-base/customize-clutch-base",
+  "categoria": "blade-base",
+  "nome": "Customize Clutch Base",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "kai-hiwatari/dranzer-v2"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Mola de aço (clutch)"
+    ],
+    "obs": "Ponta plástica retrátil; mola presumida no mecanismo de clutch (estimado)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 41,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 15,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5.8,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 1,
+    "stamina": 3,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「カスタマイズクラッチベース」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "sharp",
+    "raio_ponta_mm": 1.5,
+    "atrito": 0.1,
+    "padrao_movimento": "centro",
+    "gimmick": "clutch automático por RPM (sharp retrátil)",
+    "modos": [
+      {
+        "nome": "Survival Mode",
+        "tipo_ponta": "sharp",
+        "atrito": 0.1,
+        "gatilho": "lançamento: ponta sharp exposta enquanto a RPM está alta"
+      },
+      {
+        "nome": "Attack Mode",
+        "tipo_ponta": "semi-flat",
+        "atrito": 0.3,
+        "gatilho": "RPM abaixo de um limiar não especificado (varia de peça para peça; WD e SG mais pesados atrasam a troca)"
+      }
+    ]
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 19,
+    "altura_mm": 10,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 25,
+        "pico": 45,
+        "fim": 65,
+        "raio_mm": 20.5,
+        "borda": "reta",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "sharp",
+      "raio_mm": 1.5,
+      "altura_mm": 6
+    }
+  },
+  "cores": {
+    "primaria": "#1f1f24",
+    "secundaria": "#c8102e",
+    "detalhe": "#e0e0e0",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base da Dranzer V2 (série V2, aceita Support Parts) com ponta sharp que recolhe sozinha em batalha, deixando uma ponta mais larga.",
+  "funcao": "Começa no centro em modo Survival e passa sozinha para Attack (flower rápido) quando a rotação cai.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Customize_Clutch_Base",
+    "pesquisa-bakuten/personagens/kai-hiwatari/beyblades/dranzer-v2/dados.json"
+  ]
+}

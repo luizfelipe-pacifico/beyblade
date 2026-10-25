@@ -1,0 +1,81 @@
+{
+  "id": "blade-base/sg-metal-flat-base",
+  "categoria": "blade-base",
+  "nome": "SG Metal Flat Base",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "ray-kon/driger-v"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Metal (ponta)"
+    ],
+    "obs": "Ponta metálica (Takara semi-flat; 1º lote Hasbro saiu sharp, depois corrigido)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 40,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 13,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2.5,
+    "defesa": 1.5,
+    "stamina": 1.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「SGメタルフラットベース（ドライガーV）」"
+  },
+  "stats_oficiais_obs": "O obakeblader se contradiz: o cartão da peça (texto da caixa) mostra ataque 3,5, mas a tabela da peça e a soma da Driger V (6/5/6, página http://obakeblader.com/2018/10/15/post-2212/) usam 2,5. Ficou 2,5; pode ser 3,5.",
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "metal-flat",
+    "raio_ponta_mm": 2.5,
+    "atrito": 0.4,
+    "padrao_movimento": "agressivo",
+    "gimmick": "nenhum",
+    "modos": []
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 19,
+    "altura_mm": 9,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 35,
+        "pico": 45,
+        "fim": 55,
+        "raio_mm": 20,
+        "borda": "reta",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "metal-flat",
+      "raio_mm": 2.5,
+      "altura_mm": 4
+    }
+  },
+  "cores": {
+    "primaria": "#e8e8e8",
+    "secundaria": "#2e8b3a",
+    "detalhe": "#c0c0c0",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Primeira base com ponta metal flat da era Magnacore (Driger V).",
+  "funcao": "Movimento rápido e agressivo com menos atrito que plástico/borracha.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_SG_Metal_Flat_Base",
+    "pesquisa-bakuten/personagens/ray-kon/beyblades/driger-v/dados.json"
+  ]
+}

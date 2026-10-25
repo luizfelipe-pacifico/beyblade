@@ -1,0 +1,64 @@
+{
+  "id": "spin-gear/sharp-core",
+  "categoria": "spin-gear",
+  "nome": "Sharp Core",
+  "nome_jp": null,
+  "sistema": "hms",
+  "usado_em": [
+    "max-tate/draciel-ms"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "foto local: plástico verde, ponta escura"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 2,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 1,
+    "stamina": 3,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「シャープコア」"
+  },
+  "stats_oficiais_obs": "Running Core: entra na soma no lugar da base.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "dupla",
+    "gimmick": "running-core",
+    "ativacao": {
+      "modo": "nenhum",
+      "obs": ""
+    }
+  },
+  "forma": {
+    "tipo": "running-core",
+    "raio_mm": 7,
+    "altura_mm": 14,
+    "dentes": 4,
+    "nucleo": "normal"
+  },
+  "cores": {
+    "primaria": "#1e8a3a",
+    "secundaria": "#1e8a3a",
+    "detalhe": "#5a5a5a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Running Core de ponta fina (sharp), estreia com Draciel MS. A foto mostra o corpo verde cilíndrico com abas e a ponta pequena e escura.",
+  "funcao": "Pouquíssimo atrito com o chão: preserva rotação (stamina). Quase não se move e perde o equilíbrio fácil.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Running_Core_-_Sharp_Core",
+    "http://wiki.worldbeyblade.org/index.php?title=Draciel_MS"
+  ]
+}

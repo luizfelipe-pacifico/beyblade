@@ -1,0 +1,86 @@
+{
+  "id": "blade-base/sg-metal-ball-base",
+  "categoria": "blade-base",
+  "nome": "SG Metal Ball Base",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "max-tate/draciel-s"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Aço (2 esferas de estoque)",
+      "Metal (ponta bola)"
+    ],
+    "obs": "Ponta de bola de metal."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 42,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 10,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 3,
+    "stamina": 3.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「SGメタルボールベース」",
+    "wiki": {
+      "ataque": 1,
+      "defesa": 3,
+      "stamina": 4
+    }
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "metal-ball",
+    "raio_ponta_mm": 3,
+    "atrito": 0.18,
+    "padrao_movimento": "centro",
+    "gimmick": "esferas de metal removíveis",
+    "modos": []
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 19.5,
+    "altura_mm": 10,
+    "perfil": "saia",
+    "lobos": [
+      {
+        "inicio": 15,
+        "pico": 45,
+        "fim": 75,
+        "raio_mm": 21,
+        "borda": "curva",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "metal-ball",
+      "raio_mm": 3,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#1f8a3c",
+    "secundaria": "#0f5a24",
+    "detalhe": "#c0c0c0",
+    "fonte": "diagrama local blade-base.gif"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base verde escalonada com ponta de bola metálica e compartimento para até dois jogos de esferas; aceita Heavy Metal Core.",
+  "funcao": "Uma das melhores bases de defesa: fica no centro e o peso extra compensa o baixo atrito da bola.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_SG_Metal_Ball_Base",
+    "pesquisa-bakuten/personagens/max-tate/beyblades/draciel-s/dados.json"
+  ]
+}

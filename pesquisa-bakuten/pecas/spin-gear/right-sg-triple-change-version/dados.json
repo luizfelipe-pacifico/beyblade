@@ -1,0 +1,65 @@
+{
+  "id": "spin-gear/right-sg-triple-change-version",
+  "categoria": "spin-gear",
+  "nome": "Right SG (Triple Change Version)",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "kai-hiwatari/black-dranzer",
+    "kai-hiwatari/dranzer-f",
+    "tyson-granger/dranzer-f"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "peça de três pontas em plástico vermelho"
+    ],
+    "obs": "Black Dranzer (A-38) vem com SG vermelho; versão BBA Championship, verde"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 12,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "Spin Gear (フレイムチェンジ): a Takara não dá A/D/S.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "direita",
+    "gimmick": "nenhum",
+    "ativacao": {
+      "modo": "manual",
+      "obs": "puxando a peça de três pontas para baixo e girando, escolhe-se ponta flat, sharp ou semi-flat antes da luta"
+    }
+  },
+  "forma": {
+    "tipo": "spin-gear",
+    "raio_mm": 9,
+    "altura_mm": 12,
+    "dentes": 8,
+    "nucleo": "normal"
+  },
+  "cores": {
+    "primaria": "#c8102e",
+    "secundaria": "#d9d9d9",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Spin Gear direito cuja casca abriga uma peça de plástico com três pontas. Só funciona com a Flame Change Base (Dranzer F / Black Dranzer).",
+  "funcao": "Troca manual entre ponta flat (ataque), sharp (stamina) e semi-flat (equilíbrio). Versátil e bom para iniciantes, mas nenhuma das três pontas é excelente.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_Right_SG_(Triple_Change_Version)",
+    "https://beyblade.fandom.com/wiki/Dranzer_F",
+    "https://beyblade.fandom.com/wiki/Black_Dranzer",
+    "http://wiki.worldbeyblade.org/index.php?title=Dranzer_F"
+  ]
+}

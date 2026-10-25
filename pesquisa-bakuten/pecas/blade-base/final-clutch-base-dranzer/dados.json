@@ -1,0 +1,96 @@
+{
+  "id": "blade-base/final-clutch-base-dranzer",
+  "categoria": "blade-base",
+  "nome": "Final Clutch Base (Dranzer Version)",
+  "nome_jp": "ファイナルクラッチベース (ドランザーバージョン)",
+  "sistema": "engine-gear",
+  "usado_em": [
+    "kai-hiwatari/dranzer-g"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Ponta do Engine Gear (Right EG Metal Semi-Flat): metal."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 44,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 15,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 8,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 0,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「ファイナルクラッチベース（ドランザーG）」"
+  },
+  "stats_oficiais_obs": "Defesa 0 estrelas (a wiki deixa em branco).",
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "metal-semi-flat",
+    "raio_ponta_mm": 2,
+    "atrito": 0.25,
+    "padrao_movimento": "agressivo",
+    "gimmick": "final-clutch",
+    "modos": [
+      {
+        "nome": "Engine Gear travado",
+        "tipo_ponta": "metal-semi-flat",
+        "atrito": 0.25,
+        "gatilho": "do lançamento até a trava abrir"
+      },
+      {
+        "nome": "Engine Gear liberado",
+        "tipo_ponta": "metal-semi-flat",
+        "atrito": 0.25,
+        "gatilho": "RPM baixa no fim da batalha (limiar não documentado) ou impacto nas alavancas (Hit Release)"
+      }
+    ],
+    "ponta_origem": "engine-gear (Right EG Metal Semi-Flat)"
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 20,
+    "altura_mm": 11,
+    "perfil": "reto",
+    "lobos": [
+      {
+        "inicio": 30,
+        "pico": 45,
+        "fim": 60,
+        "raio_mm": 22,
+        "borda": "reta",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "metal-semi-flat",
+      "raio_mm": 2,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#b3121f",
+    "secundaria": "#1a1a1a",
+    "detalhe": "#f2b705",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base Final Clutch da Dranzer G: corpo redondo com quatro blocos quadrados laterais (lembram os Support Parts da V2) que abrigam as alavancas da embreagem.",
+  "funcao": "Guarda o motor do Engine Gear para um surto de velocidade tardio, quando a rival já está mais lenta.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Hit_Release_(Dranzer_Version)",
+    "pesquisa-bakuten/personagens/kai-hiwatari/beyblades/dranzer-g/dados.json"
+  ],
+  "aliases": [
+    "Hit Release (Dranzer Version) (Hasbro)"
+  ]
+}

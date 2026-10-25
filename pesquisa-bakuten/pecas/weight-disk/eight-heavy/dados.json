@@ -1,0 +1,66 @@
+{
+  "id": "weight-disk/eight-heavy",
+  "categoria": "weight-disk",
+  "nome": "Eight Heavy",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "bryan-kuznetsov/falborg",
+    "kai-hiwatari/black-dranzer",
+    "kai-hiwatari/dranzer-f",
+    "lee/galeon",
+    "ray-kon/driger-s",
+    "tyson-granger/dranzer-f",
+    "tyson-granger/master-dragoon"
+  ],
+  "material": {
+    "principal": "Metal",
+    "outros": [],
+    "obs": "metal fundido; a liga não é especificada nas fontes"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 34,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 4.5,
+      "fonte": "estimado",
+      "obs": "calculada do peso com densidade 7.1 g/cm³"
+    },
+    "peso_g": {
+      "valor": 15,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 0.5,
+    "defesa": 3,
+    "stamina": 1.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2021/06/26/post-16926/), Weight Disk 「エイトヘビィ」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "distribuicao": "centro",
+    "magnetico": false
+  },
+  "forma": {
+    "lados": 8,
+    "raio_externo_mm": 17,
+    "raio_interno_mm": 10.5,
+    "espessura_mm": 4.5,
+    "estilo": "heavy"
+  },
+  "cores": {
+    "primaria": "#9ea3a8",
+    "secundaria": "#6e7378",
+    "detalhe": "#c9cdd1"
+  },
+  "acabamento": "metalico",
+  "descricao": "Disco octogonal compacto e grosso da série Heavy. A foto mostra o octógono com a abertura central larga, duas pontes internas com dois furos cada e o número \"8\" gravado.",
+  "funcao": "Massa perto do centro: mais RPM e estabilidade, bom para combos compactos e de defesa. Curiosamente é mais leve que o Six Heavy (15 g contra 16 g).",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Eight_Heavy",
+    "http://wiki.worldbeyblade.org/index.php?title=Heavy_Weight_Disks"
+  ]
+}

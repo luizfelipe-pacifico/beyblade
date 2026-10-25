@@ -1,0 +1,72 @@
+{
+  "id": "attack-ring/double-wing",
+  "categoria": "attack-ring",
+  "nome": "Double Wing",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "kai-hiwatari/dranzer-s"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 46,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 4,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 2,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「ダブルウィング」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "smash",
+    "recoil": 0.7,
+    "sentido_otimo": "esquerda",
+    "raio_contato_mm": 23
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 17,
+    "raio_interno_mm": 11,
+    "espessura_mm": 5,
+    "lobos": [
+      {
+        "inicio": 30,
+        "pico": 40,
+        "fim": 140,
+        "raio_mm": 23,
+        "borda": "reta",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#1f5fbf",
+    "secundaria": "#d8262c",
+    "detalhe": "#f2c230"
+  },
+  "acabamento": "opaco",
+  "descricao": "Duas asas, uma de cada lado, feitas para smash em rotação esquerda.",
+  "funcao": "Smash com muito recoil; superado pelo Eight Spiker.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Double_Wing",
+    "https://beyblade.fandom.com/wiki/Dranzer_S"
+  ]
+}

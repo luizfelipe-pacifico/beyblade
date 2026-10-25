@@ -1,0 +1,101 @@
+{
+  "id": "attack-ring/screw-zeus",
+  "categoria": "attack-ring",
+  "nome": "Screw Zeus",
+  "nome_jp": "スクリューゼウス",
+  "sistema": "engine-gear",
+  "usado_em": [
+    "brooklyn-masefield/zeus"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "O AR inteiro gira livre em volta do Holy Despell (caixa: アタックリング全体がフリー回転). Também usado como Sub-AR em customizações (wiki, Dragon Saucer)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 48,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 7,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 6,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 2,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「スクリューゼウス」"
+  },
+  "stats_oficiais_obs": "A wiki não tem página própria (a ficha antiga apontava para a página do Dragon Saucer).",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "upper",
+    "recoil": 0.25,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 24
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 19,
+    "raio_interno_mm": 14.5,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 10,
+        "pico": 60,
+        "fim": 75,
+        "raio_mm": 24,
+        "borda": "gancho",
+        "altura_mm": 7
+      },
+      {
+        "inicio": 90,
+        "pico": 100,
+        "fim": 108,
+        "raio_mm": 21,
+        "borda": "ponta",
+        "altura_mm": 5
+      },
+      {
+        "inicio": 112,
+        "pico": 122,
+        "fim": 130,
+        "raio_mm": 21,
+        "borda": "ponta",
+        "altura_mm": 5
+      },
+      {
+        "inicio": 135,
+        "pico": 145,
+        "fim": 152,
+        "raio_mm": 20.5,
+        "borda": "ponta",
+        "altura_mm": 5
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#141418",
+    "secundaria": "#d8401c",
+    "detalhe": "#f2c230"
+  },
+  "acabamento": "opaco",
+  "descricao": "Anel externo livre, preto, com 2 grandes garras curvas e uma coroa de chamas vermelhas pontiagudas (adesivo \"ZEUS\").",
+  "funcao": "Defesa: o anel livre gira solto no impacto e dissipa o golpe; as garras dão upper attack (caixa Takara).",
+  "pecas_relacionadas": [
+    "attack-ring/holy-despell"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Zeus",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Dragon_Saucer",
+    "Caixa Takara A-129 (foto local)"
+  ]
+}

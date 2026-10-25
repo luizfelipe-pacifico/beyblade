@@ -1,0 +1,206 @@
+{
+  "id": "lancadores/ez-shooter",
+  "nome": "EZ Shooter (Easy Shooter, rotação direita)",
+  "nome_jp": "イージーシューター",
+  "codigo_produto": [
+    "A-22 Easy Shooter (Takara)",
+    "BeyShooter / EZ Shooter (Takara, pré A-series)",
+    "Launcher padrão das Starters Hasbro"
+  ],
+  "tipo": "ripcord",
+  "rotacao": "direita",
+  "sistema": "spin-gear",
+  "anime": true,
+  "usado_por": [
+    {
+      "personagem": "tyson-granger",
+      "temporadas": [
+        "s1"
+      ],
+      "beys": [
+        "dragoon-grip-attacker"
+      ],
+      "obs": "Ep. 1: lança a Grip Attacker (rotação direita) com um lançador comum; depois alonga a corda (winder) para ganhar força contra o Carlos."
+    },
+    {
+      "personagem": "tyson-granger",
+      "temporadas": [
+        "s1",
+        "v-force"
+      ],
+      "beys": [
+        "dranzer-f",
+        "master-dragoon"
+      ],
+      "obs": "Inferido: as duas beys emprestadas são de rotação direita e exigem lançador direito; o modelo exato não aparece descrito nas fontes."
+    },
+    {
+      "personagem": "ray-kon",
+      "temporadas": [
+        "s1"
+      ],
+      "beys": [
+        "driger-s"
+      ],
+      "obs": "Wiki (Ray Kon): EZ Shooter preto com winder preto, usado com a Driger S até o ep. 20."
+    },
+    {
+      "personagem": "kai-hiwatari",
+      "temporadas": [
+        "s1"
+      ],
+      "beys": [
+        "dranzer-s"
+      ],
+      "obs": "Inferido: antes do ep. 14 (Spring Shooter) Kai usa um lançador direito comum."
+    },
+    {
+      "personagem": "lee",
+      "temporadas": [
+        "s1",
+        "g-revolution"
+      ],
+      "beys": [
+        "galeon",
+        "galeon-2",
+        "galeon-2-eg"
+      ],
+      "obs": "Não confirmado: as fontes não citam um lançador especial do Lee; ficha padrão até haver confirmação."
+    },
+    {
+      "personagem": "tala",
+      "temporadas": [
+        "s1",
+        "g-revolution"
+      ],
+      "beys": [
+        "wolborg-2",
+        "wolborg-4"
+      ],
+      "obs": "Não confirmado: nenhuma fonte textual descreve o lançador dos Demolition Boys/Blitzkrieg Boys."
+    },
+    {
+      "personagem": "bryan-kuznetsov",
+      "temporadas": [
+        "s1",
+        "g-revolution"
+      ],
+      "beys": [
+        "falborg",
+        "falborg-2"
+      ],
+      "obs": "Não confirmado (mesmo caso do Tala)."
+    },
+    {
+      "personagem": "daichi-sumeragi",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "gaia-dragoon",
+        "gaia-dragoon-v",
+        "gaia-dragoon-g"
+      ],
+      "obs": "Não confirmado: a wiki só registra que ele \"tira a beyblade e o lançador e dispara\" gritando \"Take that!\"."
+    },
+    {
+      "personagem": "brooklyn-masefield",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "zeus"
+      ],
+      "obs": "Não confirmado: a galeria da wiki tem a imagem \"Brooklyn's Launcher\", mas não há descrição em texto e a imagem não pode ser baixada (CDN bloqueado)."
+    }
+  ],
+  "acessorios": [
+    "Winder padrão (ripcord curto com argola)",
+    "Compatível com EZ Shooter Grip, Catapult Grip, Marksmen Grip e Customize Grip"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/winder-padrao",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/winder-padrao",
+    "lancadores/ripcords/winder-hasbro",
+    "lancadores/ripcords/dragon-winder",
+    "lancadores/ripcords/neo-dragon-winder",
+    "lancadores/ripcords/ultimate-winder",
+    "lancadores/ripcords/ripcord-alongado-tyson"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "POM ou ABS nas engrenagens internas (estimado)"
+    ],
+    "obs": "Corpo em ABS moldado; winder em plástico flexível (PE/PP, estimado)."
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 72,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 52,
+      "fonte": "estimado",
+      "obs": "largura dos dentes de encaixe (prongs) ~ diâmetro do Bit Chip + abas do SG"
+    },
+    "altura_mm": {
+      "valor": 26,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 16,
+      "fonte": "estimado"
+    },
+    "curso_corda_mm": {
+      "valor": 145,
+      "fonte": "estimado",
+      "obs": "winder padrão: \"o mais curto de todos\" segundo a wiki (Ripcord)"
+    }
+  },
+  "atributos": {
+    "forca": 6,
+    "rpm_max": 6550,
+    "precisao": 5,
+    "controle_angulo": 5,
+    "facilidade": 8,
+    "justificativa": "Referência da escala. Pinhão de 10 dentes (wiki) ~5,1 mm de raio primitivo; mão a ~3,5 m/s no fim do curso => ~6550 rpm. Sem grip, a mão segura o próprio corpo pequeno do lançador: precisão e controle de ângulo medianos.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 120,
+    "forca_maxima": 1,
+    "desvio_angular_graus": 6,
+    "tempo_puxada_ideal_ms": 260,
+    "inclinacao_max_graus": 30,
+    "bonus_rpm_pct": 0,
+    "assistencia_mira": 0,
+    "rotacao_selecionavel": false,
+    "obs": "Lançador de referência (multiplicadores = 1)."
+  },
+  "forma": {
+    "corpo": "compacto",
+    "grip": false,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 72,
+    "largura_mm": 52,
+    "cores": {
+      "primaria": "#2b2f36",
+      "secundaria": "#8a9099",
+      "detalhe": "#d8dde3",
+      "corda": "#1a1a1a"
+    },
+    "obs_cores": "Preto como o EZ Shooter do Ray (wiki); os modelos Takara variavam de cor."
+  },
+  "descricao": "Lançador básico de rotação direita da era plástica. O winder (corda dentada) entra pela traseira e os dois dentes de encaixe (prongs) prendem a beyblade nas aberturas ao lado do Bit Chip.",
+  "referencias": [],
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Launcher",
+    "https://beyblade.fandom.com/wiki/Right-Spin_Shooters",
+    "https://beyblade.fandom.com/wiki/Ripcord",
+    "https://beyblade.fandom.com/wiki/Ray_Kon",
+    "https://beyblade.fandom.com/wiki/List_of_Original_Series_products_(Takara)",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_01"
+  ]
+}

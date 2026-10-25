@@ -1,0 +1,55 @@
+{
+  "id": "bit-chip/black-dranzer",
+  "categoria": "bit-chip",
+  "nome": "Black Dranzer",
+  "nome_jp": "ブラックドランザー",
+  "sistema": "spin-gear",
+  "usado_em": [
+    "kai-hiwatari/black-dranzer"
+  ],
+  "material": {
+    "principal": "plástico (ABS presumido)",
+    "outros": [
+      "adesivo impresso com a fera"
+    ],
+    "obs": "Peça única com haste longa que encaixa direto no furo central do Attack Ring. Cor do plástico do chip não confirmada; ABS presumido (estimado)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 8,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 0.8,
+      "fonte": "comunidade"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_gba": null,
+  "fisica": {
+    "fera_bit": "black-dranzer"
+  },
+  "forma": {
+    "raio_mm": 7,
+    "cor_fundo": "#1a1a1a",
+    "emblema": "black-dranzer"
+  },
+  "cores": {
+    "primaria": "#1a1a1a",
+    "secundaria": "#5b2a86",
+    "detalhe": "#c8102e",
+    "fonte": "estimado (fênix negra)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Chip longo de uma peça (encaixa direto no Attack Ring). Fênix negra (Black Dranzer). Algumas versões da Hasbro saíram com o adesivo vermelho da Dranzer comum no lugar do da Black Dranzer (wiki). No anime, o chip \"faz a alma do blader cair na escuridão\" e sobrevive à destruição da bey.",
+  "funcao": "Identifica a bey e a fera bit; no jogo, define o emblema e o especial. Sem efeito físico relevante (menos de 1,5 g, no centro, raio pequeno). Nas regras antigas, perder ou quebrar o chip na batalha dava derrota.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Black_Dranzer",
+    "https://beyblade.fandom.com/wiki/Black_Dranzer",
+    "http://obakeblader.com/2018/06/18/post-436/"
+  ]
+}

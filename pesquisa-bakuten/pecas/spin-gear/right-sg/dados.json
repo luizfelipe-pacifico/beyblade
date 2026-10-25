@@ -1,0 +1,70 @@
+{
+  "id": "spin-gear/right-sg",
+  "categoria": "spin-gear",
+  "nome": "Right SG",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "bryan-kuznetsov/falborg",
+    "bryan-kuznetsov/falborg-2",
+    "lee/galeon",
+    "max-tate/draciel-metal-ball-defenser",
+    "max-tate/draciel-s",
+    "ray-kon/driger-s",
+    "tyson-granger/master-dragoon"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "anel metálico interno"
+    ],
+    "obs": "casca de plástico em duas metades em volta de um anel de metal e da engrenagem; a cor da casca varia por bey"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 10,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 4.5,
+      "fonte": "estimado",
+      "obs": "sem peso publicado; coerente com o Triple Change (5 g) e o Neo SG + Normal Core (3,6 g)"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "Spin Gear comum: a Takara não dá A/D/S.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "direita",
+    "gimmick": "nenhum",
+    "ativacao": {
+      "modo": "nenhum",
+      "obs": ""
+    }
+  },
+  "forma": {
+    "tipo": "spin-gear",
+    "raio_mm": 9,
+    "altura_mm": 10,
+    "dentes": 8,
+    "nucleo": "normal"
+  },
+  "cores": {
+    "primaria": "#d9d9d9",
+    "secundaria": "#8c8c8c",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Spin Gear padrão de rotação direita (estreia com Driger S, jul/2000). Casca de plástico em duas metades, anel de metal interno, peça em estrela embaixo que trava no Blade Base e duas abas perto do lado direito, onde o lançador direito engata.",
+  "funcao": "Define o sentido de rotação (direita) e prende a bey: o WD encaixa nas abas, o AR rosqueia no rebaixo de cima (girando no sentido anti-horário para travar) e a estrela de baixo trava no Blade Base. O núcleo não é trocável.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_Right_SG",
+    "http://wiki.worldbeyblade.org/index.php?title=Spin_Gear",
+    "https://beyblade.fandom.com/wiki/Falborg_2",
+    "https://beyblade.fandom.com/wiki/Draciel_Metal_Ball_Defenser"
+  ]
+}

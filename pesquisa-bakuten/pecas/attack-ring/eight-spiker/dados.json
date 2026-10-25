@@ -1,0 +1,80 @@
+{
+  "id": "attack-ring/eight-spiker",
+  "categoria": "attack-ring",
+  "nome": "Eight Spiker",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "tyson-granger/dragoon-g"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 44,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 2,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「エイトスパイカー」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 8,
+    "tipo_contato": "smash",
+    "recoil": 0.3,
+    "sentido_otimo": "esquerda",
+    "raio_contato_mm": 22
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 5,
+        "pico": 15,
+        "fim": 40,
+        "raio_mm": 22,
+        "borda": "reta",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 50,
+        "pico": 57,
+        "fim": 75,
+        "raio_mm": 21,
+        "borda": "reta",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#2f6fd0",
+    "secundaria": "#f0f0f0",
+    "detalhe": "#f2c230"
+  },
+  "acabamento": "opaco",
+  "descricao": "4 cabeças de dragão seguidas de 4 barbatanas menores (8 contatos), cada uma com pequenos espinhos.",
+  "funcao": "Smash esquerdo forte, consistente e com pouco recoil.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Eight_Spiker",
+    "https://beyblade.fandom.com/wiki/Dragoon_G"
+  ]
+}

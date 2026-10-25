@@ -1,0 +1,80 @@
+{
+  "id": "attack-ring/g-upper",
+  "categoria": "attack-ring",
+  "nome": "G-Upper",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "tyson-granger/dragoon-gt"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 48,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 7,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 7,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 4,
+    "defesa": 3,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「Gアッパー」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 4,
+    "tipo_contato": "smash",
+    "recoil": 0.3,
+    "sentido_otimo": "esquerda",
+    "raio_contato_mm": 24
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 19,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 5,
+        "pico": 15,
+        "fim": 50,
+        "raio_mm": 24,
+        "borda": "reta",
+        "altura_mm": 7
+      },
+      {
+        "inicio": 60,
+        "pico": 72,
+        "fim": 82,
+        "raio_mm": 22,
+        "borda": "curva",
+        "altura_mm": 7
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#f0f0f0",
+    "secundaria": "#2457c5",
+    "detalhe": "#d8262c"
+  },
+  "acabamento": "opaco",
+  "descricao": "4 lâminas curvas (adesivos azuis \"G\") com 4 cabeças de dragão de focinho saliente entre elas. Um dos ARs mais largos.",
+  "funcao": "Smash esquerdo excelente e de grande alcance; rampas curtas dão upper leve e outspin.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_G-Upper",
+    "https://beyblade.fandom.com/wiki/Dragoon_GT"
+  ]
+}

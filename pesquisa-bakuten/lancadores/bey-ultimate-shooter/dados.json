@@ -1,0 +1,110 @@
+{
+  "id": "lancadores/bey-ultimate-shooter",
+  "nome": "Bey Ultimate Shooter (BeyUltimate Shooter)",
+  "nome_jp": "ベイアルティメットシューター",
+  "codigo_produto": [
+    "A-55 Bey Ultimate Shooter (Silver)",
+    "A-62 Bey Ultimate Shooter (Black)",
+    "A-76 Bey Ultimate Shooter (Blue / Right Spin)"
+  ],
+  "tipo": "ripcord",
+  "rotacao": "direita",
+  "sistema": "magnacore",
+  "anime": true,
+  "usado_por": [
+    {
+      "personagem": "ray-kon",
+      "temporadas": [
+        "v-force"
+      ],
+      "beys": [
+        "driger-v",
+        "driger-v2"
+      ],
+      "obs": "V-Force ep. 12: estreia o shooter azul, que substitui o Driger Shooter; Ray usa um \"Ultimate Winder\" verde (wiki)."
+    }
+  ],
+  "acessorios": [
+    "Ultimate Winder (アルティメットワインダー), verde no anime"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/ultimate-winder",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/winder-padrao",
+    "lancadores/ripcords/winder-hasbro",
+    "lancadores/ripcords/dragon-winder",
+    "lancadores/ripcords/neo-dragon-winder",
+    "lancadores/ripcords/ultimate-winder"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 90,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 55,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 60,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 35,
+      "fonte": "estimado"
+    },
+    "curso_corda_mm": {
+      "valor": 230,
+      "fonte": "estimado",
+      "obs": "Ultimate Winder, presumido mais longo que o Dragon Winder"
+    }
+  },
+  "atributos": {
+    "forca": 8,
+    "rpm_max": 7000,
+    "precisao": 7,
+    "controle_angulo": 6,
+    "facilidade": 7,
+    "justificativa": "Descrito como o shooter \"de alto desempenho\" do Ray (wiki). Sem dados da transmissão: estimado ~+7% sobre a referência pelo winder longo e corpo mais robusto.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 115,
+    "forca_maxima": 1.07,
+    "desvio_angular_graus": 4.5,
+    "tempo_puxada_ideal_ms": 310,
+    "inclinacao_max_graus": 30,
+    "bonus_rpm_pct": 7,
+    "assistencia_mira": 0.15,
+    "rotacao_selecionavel": false,
+    "obs": ""
+  },
+  "forma": {
+    "corpo": "arredondado",
+    "grip": true,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 90,
+    "largura_mm": 55,
+    "cores": {
+      "primaria": "#1e6fd9",
+      "secundaria": "#e8edf5",
+      "detalhe": "#1a1a1a",
+      "corda": "#3cb44b"
+    },
+    "obs_cores": "Azul com winder verde, como no anime (wiki)."
+  },
+  "descricao": "Shooter de alto desempenho da linha V-Force (Takara A-55/A-62/A-76). No anime é o lançador azul do Ray a partir da V-Force ep. 12.",
+  "referencias": [],
+  "duvidas": [
+    "Forma e mecanismo do brinquedo não descritos em texto na wiki; medidas e cores estimadas."
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Ray_Kon",
+    "https://beyblade.fandom.com/wiki/List_of_Original_Series_products_(Takara)",
+    "https://beyblade.fandom.com/wiki/Beyblade_VForce_-_Episode_12"
+  ]
+}

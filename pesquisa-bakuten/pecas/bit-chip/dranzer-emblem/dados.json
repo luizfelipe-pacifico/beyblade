@@ -1,0 +1,58 @@
+{
+  "id": "bit-chip/dranzer-emblem",
+  "categoria": "bit-chip",
+  "nome": "Bit Protector - Dranzer Emblem",
+  "nome_jp": "ビットプロテクター ドランザーエンブレム",
+  "sistema": "hms",
+  "usado_em": [
+    "kai-hiwatari/dranzer-ms"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "adesivo impresso (2 opções: emblema ou fera)"
+    ],
+    "obs": "No HMS o Bit Protector é a trava que segura o Attack Ring e as demais peças; 1º molde, o mais frouxo. Plástico azul (ABS) (wiki)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 18.17,
+      "fonte": "comunidade"
+    },
+    "altura_mm": {
+      "valor": 6.65,
+      "fonte": "comunidade"
+    },
+    "peso_g": {
+      "valor": 0.6,
+      "fonte": "comunidade"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "Bit Protector não tem estrelas Takara. A infobox da wiki tem 1/2/1 (campo EnduranceStat): erro de cópia, ignorado.",
+  "stats_gba": null,
+  "fisica": {
+    "fera_bit": "dranzer"
+  },
+  "forma": {
+    "raio_mm": 9.09,
+    "cor_fundo": "#2e9e44",
+    "emblema": "dranzer"
+  },
+  "cores": {
+    "primaria": "#2e9e44",
+    "secundaria": "#1f4fbf",
+    "detalhe": "#ffffff",
+    "fonte": "wiki (protetor de ABS azul; emblema sobre fundo verde); hex estimado"
+  },
+  "acabamento": "opaco",
+  "descricao": "Bit Protector (HMS, 1º molde). Protetor de ABS azul. Dois adesivos: emblema estilizado da cabeça do Dranzer com \"DRANZER\" e \"Heavy/Hard Metal System\" em branco, sobre fundo verde; ou a fera Dranzer (wiki, página Dranzer MS). A página da peça descreve a silhueta estilizada da fênix com \"Dranzer\" e \"Beyblade Metal System\" embaixo.",
+  "funcao": "Trava o Attack Ring e as demais peças no HMS (é o \"parafuso\" da bey) e é onde o lançador Dual Shooter prende. Mostra o emblema da fera. Peso desprezível (0,6 g).",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Bit_Protector_-_Dranzer_Emblem",
+    "https://beyblade.fandom.com/wiki/Dranzer_MS",
+    "https://beyblade.fandom.com/wiki/Bit_Protector",
+    "http://obakeblader.com/2018/09/13/post-1854/",
+    "https://beyblade.fandom.com/wiki/Bit_Protector_-_Strata_Dragoon"
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "id": "attack-ring/cross-attacker",
+  "categoria": "attack-ring",
+  "nome": "Cross Attacker",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "kai-hiwatari/dranzer-v"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 43,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5.6,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2.5,
+    "defesa": 1,
+    "stamina": 1.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「クロスアタッカー」",
+    "wiki": {
+      "ataque": 3,
+      "defesa": 1,
+      "stamina": 2
+    }
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 4,
+    "tipo_contato": "upper",
+    "recoil": 0.45,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 21.5
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 16.5,
+    "raio_interno_mm": 10,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 0,
+        "pico": 15,
+        "fim": 30,
+        "raio_mm": 19.5,
+        "borda": "curva",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 30,
+        "pico": 70,
+        "fim": 78,
+        "raio_mm": 21.5,
+        "borda": "rampa",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 82,
+        "pico": 85,
+        "fim": 88,
+        "raio_mm": 18.5,
+        "borda": "reta",
+        "altura_mm": 5
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#c8202a",
+    "secundaria": "#f2c230",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "opaco",
+  "descricao": "AR pequeno com 4 cabeças de fênix, cada uma seguida de uma asa com rampa íngreme; espinhos minúsculos entre os conjuntos.",
+  "funcao": "Upper e smash moderados na direita; inútil na esquerda.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Cross_Attacker",
+    "https://beyblade.fandom.com/wiki/Dranzer_V"
+  ]
+}

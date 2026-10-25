@@ -1,0 +1,97 @@
+{
+  "id": "attack-ring/dragon-saucer",
+  "categoria": "attack-ring",
+  "nome": "Dragon Saucer",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon-g"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "A wiki dá 8 g para o conjunto AR + Sub-AR; aqui 5,5 g (AR) + 2,5 g (Sub-AR), divisão estimada."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 46,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5.5,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 3,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「ドラゴンソーサー」",
+    "wiki": {
+      "ataque": 3,
+      "defesa": 2,
+      "stamina": 2
+    }
+  },
+  "stats_oficiais_obs": "Wiki dá defesa 2; a Takara dá 3 e a soma da Gaia Dragoon G (6/9/8) só fecha com 3.",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "smash",
+    "recoil": 0.55,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 23
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 12,
+    "espessura_mm": 5,
+    "lobos": [
+      {
+        "inicio": 0,
+        "pico": 70,
+        "fim": 95,
+        "raio_mm": 23,
+        "borda": "gancho",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 110,
+        "pico": 125,
+        "fim": 140,
+        "raio_mm": 19.5,
+        "borda": "reta",
+        "altura_mm": 5
+      },
+      {
+        "inicio": 150,
+        "pico": 160,
+        "fim": 170,
+        "raio_mm": 20.5,
+        "borda": "ponta",
+        "altura_mm": 5
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#5a2d9c",
+    "secundaria": "#d8262c",
+    "detalhe": "#f2d22e"
+  },
+  "acabamento": "opaco",
+  "descricao": "AR roxo com 2 dragões em lados opostos, em asas que varrem em arco com ponta em gancho; segura o Sub-AR em engrenagem.",
+  "funcao": "Smash nas pontas das asas; o Sub-AR serrilhado faz o contato contínuo.",
+  "pecas_relacionadas": [
+    "attack-ring/dragon-saucer-sub-ar"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Dragon_Saucer",
+    "https://beyblade.fandom.com/wiki/Strata_Dragoon_G"
+  ]
+}

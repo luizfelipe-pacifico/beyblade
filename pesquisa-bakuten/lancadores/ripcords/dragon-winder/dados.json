@@ -1,0 +1,110 @@
+{
+  "id": "lancadores/ripcords/dragon-winder",
+  "nome": "Dragon Winder",
+  "nome_jp": "ドラゴンワインダー",
+  "codigo_produto": [
+    "Incluso nas Dragoon da primeira fase (Takara)",
+    "Starter Dragoon V: azul",
+    "Starter Dragoon G: amarelo"
+  ],
+  "tipo": "winder",
+  "sentido": "esquerda",
+  "compativel_com": [
+    "lancadores/ez-shooter",
+    "lancadores/left-ez-shooter",
+    "lancadores/neo-reverse-shooter",
+    "lancadores/ez-shooter-grip",
+    "lancadores/catapult-grip",
+    "lancadores/marksmen-grip",
+    "lancadores/spring-shooter",
+    "lancadores/dragoon-shooter-dx",
+    "lancadores/driger-shooter-dx",
+    "lancadores/dranzer-shooter-dx",
+    "lancadores/bey-ultimate-shooter",
+    "lancadores/customize-grip-tyson",
+    "lancadores/customize-grip-kai",
+    "lancadores/customize-grip-ray",
+    "lancadores/customize-grip-max",
+    "lancadores/ez-shooter-power-custom",
+    "lancadores/ez-shooter-spring-custom",
+    "lancadores/duotron-launcher",
+    "lancadores/griffolyon-flail",
+    "lancadores/rc-shooter"
+  ],
+  "usado_por": [
+    {
+      "personagem": "tyson-granger",
+      "beys": [
+        "dragoon-s",
+        "dragoon-f",
+        "dragoon-v",
+        "dragoon-v2",
+        "dragoon-g"
+      ],
+      "episodios": [],
+      "obs": "Inferido do brinquedo: vem com as Dragoon (wiki). O anime não nomeia o winder do Tyson."
+    }
+  ],
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 270,
+      "fonte": "estimado",
+      "obs": "cremalheira + pegador"
+    },
+    "largura_mm": {
+      "valor": 11,
+      "fonte": "estimado"
+    },
+    "espessura_mm": {
+      "valor": 2.2,
+      "fonte": "estimado"
+    },
+    "numero_dentes": {
+      "valor": 68,
+      "fonte": "wiki"
+    },
+    "passo_dente_mm": {
+      "valor": 3.2,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 6,
+      "fonte": "estimado"
+    }
+  },
+  "material": {
+    "principal": "Plástico flexível (PE/PP, estimado)",
+    "outros": [],
+    "obs": ""
+  },
+  "atributos": {
+    "spin_entregue": 7,
+    "facilidade": 8,
+    "durabilidade": 6,
+    "justificativa": "Mais longo que o padrão: mais curso para a mão acelerar (\"aumenta a velocidade de giro\", wiki). Pegador de dragão para dois dedos. A wiki diz que não há desvantagem em relação ao padrão.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "curso_puxada_mm": 218,
+    "multiplicador_rpm": 1.05,
+    "desgaste_por_batalha": 2,
+    "obs": ""
+  },
+  "forma": {
+    "comprimento_mm": 270,
+    "dentes": 68,
+    "cor": "#1f4fa8",
+    "pegador": "retangular",
+    "cor_pegador": "#1f4fa8",
+    "obs": "Pegador em forma de dragão, horizontal, para dois dedos. Azul (Starter Dragoon V) ou amarelo (Dragoon G)."
+  },
+  "descricao": "Winder das primeiras Dragoon: mais longo que o padrão (68 dentes) e com pegador em forma de dragão para dois dedos. Os dentes eram virados para a esquerda e depois mudaram para a direita, para os Neo Left EZ Shooters (wiki).",
+  "duvidas": [
+    "A wiki diz que os dentes passaram de esquerda para direita para o Neo Left, mas também diz que o Neo Left recebe o winder de cabeça para baixo. O sentido aqui é o da linha de beys (esquerda)."
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Ripcord",
+    "https://beyblade.fandom.com/wiki/Dragoon_V",
+    "https://beyblade.fandom.com/wiki/Dragoon_G"
+  ]
+}

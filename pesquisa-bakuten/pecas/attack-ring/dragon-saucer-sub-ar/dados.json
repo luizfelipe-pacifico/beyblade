@@ -1,0 +1,70 @@
+{
+  "id": "attack-ring/dragon-saucer-sub-ar",
+  "categoria": "attack-ring",
+  "nome": "Dragon Saucer Sub-AR (engrenagem)",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon-g"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Sub-AR livre em forma de engrenagem; pode ser travado para spin steal."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 46,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 2,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 2.5,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "A Takara não dá estrelas ao Sub-AR separado: as estrelas do Dragon Saucer (3/3/2) já incluem o Sub-AR. Não somar.",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 16,
+    "tipo_contato": "survival",
+    "recoil": 0.3,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 23
+  },
+  "forma": {
+    "simetria": 16,
+    "raio_base_mm": 21,
+    "raio_interno_mm": 18,
+    "espessura_mm": 2,
+    "lobos": [
+      {
+        "inicio": 4,
+        "pico": 11,
+        "fim": 18,
+        "raio_mm": 23,
+        "borda": "reta",
+        "altura_mm": 2
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#5a2d9c",
+    "secundaria": "#f2d22e",
+    "detalhe": "#3a1b6b"
+  },
+  "acabamento": "opaco",
+  "descricao": "Aro roxo em forma de engrenagem com 16 dentes retangulares e faixa amarela no topo.",
+  "funcao": "Livre: amortece golpes. Travado: os entalhes \"engatam\" no adversário e roubam rotação (zombie).",
+  "pecas_relacionadas": [
+    "attack-ring/dragon-saucer"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Dragon_Saucer"
+  ]
+}

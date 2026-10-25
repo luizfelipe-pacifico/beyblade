@@ -1,0 +1,64 @@
+{
+  "id": "spin-gear/grip-flat-core-ultimate-mode",
+  "categoria": "spin-gear",
+  "nome": "Grip Flat Core (Ultimate Mode)",
+  "nome_jp": null,
+  "sistema": "hms",
+  "usado_em": [
+    "tyson-granger/dragoon-ms-ultimate-version"
+  ],
+  "material": {
+    "principal": "Borracha",
+    "outros": [],
+    "obs": "borracha mole vermelha (wiki)"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 11,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 1,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 4,
+    "defesa": 1,
+    "stamina": 0.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「グリップフラットコア（アルティメットモード）」"
+  },
+  "stats_oficiais_obs": "Running Core da Dragoon MS UV. A wiki não tem estrelas. Soma da Dragoon MS UV = 9,5/4,5/4,5.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "dupla",
+    "gimmick": "running-core",
+    "ativacao": {
+      "modo": "nenhum",
+      "obs": ""
+    }
+  },
+  "forma": {
+    "tipo": "running-core",
+    "raio_mm": 7,
+    "altura_mm": 11,
+    "dentes": 4,
+    "nucleo": "normal"
+  },
+  "cores": {
+    "primaria": "#c8102e",
+    "secundaria": "#1a1a1a",
+    "detalhe": "#c8102e"
+  },
+  "acabamento": "opaco",
+  "descricao": "Versão do Grip Flat Core do Dragoon MS Ultimate Version: ponta plana de borracha vermelha macia, com 5 mm de diâmetro.",
+  "funcao": "Tração e mobilidade enormes; popular em customizações de ataque HMS, mas difícil de controlar.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Running_Core_-_Grip_Flat_Core_(Ultimate_Mode)",
+    "http://wiki.worldbeyblade.org/index.php?title=Dragoon_MS_UV"
+  ]
+}

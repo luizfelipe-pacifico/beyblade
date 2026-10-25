@@ -1,0 +1,113 @@
+{
+  "id": "attack-ring/dragon-breaker",
+  "categoria": "attack-ring",
+  "nome": "Dragon Breaker",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon-v"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Wiki: 8 g para o conjunto (anel central fixo + Sub-AR livre embaixo); aqui 5,5 g + 2,5 g, divisão estimada."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 46,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5.5,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 2.5,
+    "stamina": 2.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「ドラゴンブレイカー」",
+    "wiki": {
+      "ataque": 3,
+      "defesa": 3,
+      "stamina": 3
+    }
+  },
+  "stats_oficiais_obs": "As estrelas valem para o AR com o Sub-AR (vendidos juntos). A wiki arredonda as meias estrelas para cima.",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "smash",
+    "recoil": 0.7,
+    "sentido_otimo": "esquerda",
+    "raio_contato_mm": 23
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 17,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 0,
+        "pico": 10,
+        "fim": 45,
+        "raio_mm": 23,
+        "borda": "reta",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 60,
+        "pico": 65,
+        "fim": 72,
+        "raio_mm": 20.5,
+        "borda": "ponta",
+        "altura_mm": 5
+      },
+      {
+        "inicio": 76,
+        "pico": 81,
+        "fim": 88,
+        "raio_mm": 20.5,
+        "borda": "ponta",
+        "altura_mm": 5
+      },
+      {
+        "inicio": 92,
+        "pico": 97,
+        "fim": 104,
+        "raio_mm": 20.5,
+        "borda": "ponta",
+        "altura_mm": 5
+      },
+      {
+        "inicio": 130,
+        "pico": 150,
+        "fim": 170,
+        "raio_mm": 19.5,
+        "borda": "curva",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#1f2266",
+    "secundaria": "#e2452a",
+    "detalhe": "#f2b72e"
+  },
+  "acabamento": "opaco",
+  "descricao": "AR oval azul-marinho com 2 conjuntos de pontas: uma ponta grande inclinada e uma fileira de pontas menores; Sub-AR livre de 4 pontas embaixo.",
+  "funcao": "Smash pesado em rotação esquerda, com muito recoil (peso agressivo e contatos grandes).",
+  "pecas_relacionadas": [
+    "attack-ring/dragon-breaker-sub-ar"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Dragon_Breaker",
+    "https://beyblade.fandom.com/wiki/Strata_Dragoon_V"
+  ]
+}

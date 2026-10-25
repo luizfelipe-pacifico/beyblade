@@ -1,0 +1,79 @@
+{
+  "id": "lancadores/ripcords/corda-string-shooter",
+  "nome": "Barbante do String Shooter",
+  "nome_jp": "ストリング",
+  "codigo_produto": [
+    "Incluso no A-134 HMS Dual Shooter (String Version)"
+  ],
+  "tipo": "string",
+  "sentido": "dupla",
+  "compativel_com": [
+    "lancadores/string-shooter"
+  ],
+  "usado_por": [],
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 450,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 1.5,
+      "fonte": "estimado",
+      "obs": "diâmetro do barbante"
+    },
+    "espessura_mm": {
+      "valor": 1.5,
+      "fonte": "estimado"
+    },
+    "numero_dentes": {
+      "valor": 0,
+      "fonte": "oficial",
+      "obs": "barbante liso, sem dentes"
+    },
+    "passo_dente_mm": {
+      "valor": 0,
+      "fonte": "oficial",
+      "obs": "não se aplica"
+    },
+    "peso_g": {
+      "valor": 1,
+      "fonte": "estimado"
+    }
+  },
+  "material": {
+    "principal": "Barbante de náilon (estimado)",
+    "outros": [
+      "Pegador plástico"
+    ],
+    "obs": ""
+  },
+  "atributos": {
+    "spin_entregue": 7,
+    "facilidade": 2,
+    "durabilidade": 6,
+    "justificativa": "Curso longo e sem dentes para empenar; mas é enrolado à mão a cada lançamento (\"muito trabalhoso\", wiki) e não rebobina sozinho.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "curso_puxada_mm": 350,
+    "multiplicador_rpm": 1,
+    "desgaste_por_batalha": 1,
+    "obs": "O multiplicador do barbante já está no rpm do String Shooter; preparo lento (girar o analógico direito)."
+  },
+  "forma": {
+    "comprimento_mm": 450,
+    "dentes": 0,
+    "cor": "#f2f4f7",
+    "pegador": "redondo",
+    "cor_pegador": "#3a3f46",
+    "obs": "Estimado."
+  },
+  "descricao": "Barbante enrolado à mão num eixo do String Shooter HMS. Não há mola de retorno como nos string launchers da era Metal (wiki).",
+  "duvidas": [
+    "Comprimento e pegador do barbante não documentados."
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/String_Shooter",
+    "https://beyblade.fandom.com/wiki/Launcher"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": "lancadores/string-shooter",
+  "nome": "String Shooter (HMS Dual Shooter String Version)",
+  "nome_jp": "ストリングシューター",
+  "codigo_produto": [
+    "A-134 HMS Dual Shooter (String Version) (Takara)"
+  ],
+  "tipo": "string",
+  "rotacao": "dupla",
+  "sistema": "hms",
+  "anime": false,
+  "usado_por": [],
+  "acessorios": [
+    "Barbante (enrolado à mão num eixo interno)"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/corda-string-shooter",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/corda-string-shooter"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Barbante de náilon (estimado)"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 75,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 50,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 32,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 22,
+      "fonte": "estimado"
+    },
+    "curso_corda_mm": {
+      "valor": 350,
+      "fonte": "estimado",
+      "obs": "corda mais longa que um winder"
+    }
+  },
+  "atributos": {
+    "forca": 7,
+    "rpm_max": 7000,
+    "precisao": 6,
+    "controle_angulo": 5,
+    "facilidade": 3,
+    "justificativa": "Sem cremalheira: o barbante enrolado num eixo gira o mecanismo. Curso maior compensa o eixo de raio maior; \"sensação bem diferente\" e \"muito trabalhoso de enrolar\" (wiki). Esconde do adversário o sentido escolhido.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 100,
+    "forca_maxima": 1.07,
+    "desvio_angular_graus": 6,
+    "tempo_puxada_ideal_ms": 420,
+    "inclinacao_max_graus": 30,
+    "bonus_rpm_pct": 7,
+    "assistencia_mira": 0,
+    "rotacao_selecionavel": true,
+    "sentido_oculto": true,
+    "tempo_preparo_s": 4,
+    "obs": "O adversário (IA) não vê o sentido escolhido. Preparar leva tempo (girar o analógico direito para enrolar a corda)."
+  },
+  "forma": {
+    "corpo": "compacto",
+    "grip": false,
+    "tipo_corda": "string",
+    "comprimento_mm": 75,
+    "largura_mm": 50,
+    "cores": {
+      "primaria": "#3a3f46",
+      "secundaria": "#b8bec6",
+      "detalhe": "#c8202c",
+      "corda": "#f2f4f7"
+    },
+    "obs_cores": "Estimado."
+  },
+  "descricao": "Lançador HMS que troca o winder por um barbante: abre-se a caixa e enrola-se a corda num eixo. Esconde o sentido de rotação do adversário, mas é lento de preparar (wiki). Não é o string launcher autorretrátil da era Metal: aqui não há mola de retorno.",
+  "referencias": [],
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/String_Shooter",
+    "https://beyblade.fandom.com/wiki/Launcher",
+    "https://beyblade.fandom.com/wiki/List_of_Original_Series_products_(Takara)"
+  ]
+}

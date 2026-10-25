@@ -1,0 +1,116 @@
+{
+  "id": "lancadores/dragoon-shooter-dx",
+  "nome": "Dragoon Shooter DX",
+  "nome_jp": "ドラグーンシューターDX",
+  "codigo_produto": [
+    "A-19 Dragoon Shooter DX (Takara)",
+    "Frost Silver Version (exclusivo Toys \"R\" Us)",
+    "A-21 DX Shooter Exclusive Code (corda própria)"
+  ],
+  "tipo": "ripcord",
+  "rotacao": "esquerda",
+  "sistema": "spin-gear",
+  "anime": true,
+  "usado_por": [
+    {
+      "personagem": "tyson-granger",
+      "temporadas": [
+        "s1"
+      ],
+      "beys": [
+        "dragoon-s",
+        "dragoon-f"
+      ],
+      "obs": "Ep. 17 (final asiático contra o Lee): o Tyson recebe o Dragoon Shooter DX. Segue com ele na Dragoon F."
+    }
+  ],
+  "acessorios": [
+    "Eletrônica com minijogos (winder e Bit Chips)",
+    "DX Shooter Exclusive Code (A-21)"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/dragon-winder",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/winder-padrao",
+    "lancadores/ripcords/winder-hasbro",
+    "lancadores/ripcords/dragon-winder",
+    "lancadores/ripcords/neo-dragon-winder",
+    "lancadores/ripcords/ultimate-winder"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Circuito eletrônico, LCD/sons e pilhas"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 140,
+      "fonte": "estimado",
+      "obs": "wiki: segundo maior grip da era, atrás só do RC Shooter"
+    },
+    "largura_mm": {
+      "valor": 70,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 125,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 140,
+      "fonte": "estimado",
+      "obs": "com pilhas"
+    },
+    "curso_corda_mm": {
+      "valor": 218,
+      "fonte": "estimado"
+    }
+  },
+  "atributos": {
+    "forca": 7,
+    "rpm_max": 6750,
+    "precisao": 7,
+    "controle_angulo": 7,
+    "facilidade": 6,
+    "justificativa": "Mesma transmissão de pinhão do EZ Shooter; o corpo grande e pesado estabiliza a mão (+3%). Sentido esquerdo inferido: é o lançador temático do Dragoon e o Tyson só usa rotação esquerda a partir da Dragoon S.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 125,
+    "forca_maxima": 1.03,
+    "desvio_angular_graus": 4,
+    "tempo_puxada_ideal_ms": 300,
+    "inclinacao_max_graus": 35,
+    "bonus_rpm_pct": 3,
+    "assistencia_mira": 0.2,
+    "rotacao_selecionavel": false,
+    "obs": "Lançador \"de fera\": tem som/efeito de rugido do Dragoon no HUD ao acertar a janela perfeita."
+  },
+  "forma": {
+    "corpo": "fera",
+    "fera": "dragoon",
+    "grip": true,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 140,
+    "largura_mm": 70,
+    "cores": {
+      "primaria": "#1f4fa8",
+      "secundaria": "#e8edf5",
+      "detalhe": "#f2c230",
+      "corda": "#f2c230"
+    },
+    "obs_cores": "Estimado (azul do Dragoon). Variante Frost Silver existe."
+  },
+  "descricao": "Lançador eletrônico em forma de dragão. Dispensa o EZ Shooter (o mecanismo é embutido) e, ligado, oferece minijogos usando o winder e os Bit Chips (wiki).",
+  "referencias": [],
+  "duvidas": [
+    "Sentido de rotação do brinquedo não está escrito na wiki (inferido: esquerdo)."
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dragoon_Shooter_DX",
+    "https://beyblade.fandom.com/wiki/Launcher",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_17",
+    "https://beyblade.fandom.com/wiki/List_of_Original_Series_products_(Takara)"
+  ]
+}

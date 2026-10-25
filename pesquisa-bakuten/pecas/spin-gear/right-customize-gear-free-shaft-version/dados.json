@@ -1,0 +1,76 @@
+{
+  "id": "spin-gear/right-customize-gear-free-shaft-version",
+  "categoria": "spin-gear",
+  "nome": "Right Customize Gear (Free Shaft Version) + CEW Light Sharp",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "brooklyn-masefield/zeus"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "2 rolamentos",
+      "CEW Light Sharp (ponta sharp leve)"
+    ],
+    "obs": "a ficha do Zeus fala em ponta sharp de POM; cor da casca não confirmada"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 24,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 8,
+      "fonte": "estimado",
+      "obs": "sem peso publicado; mais leve que um EG por não ter mola e com CEW de plástico"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 1.5,
+    "stamina": 3.5,
+    "potencia_engine": 0,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2026/02/22/%E7%88%86%E8%BB%A2%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%88%E3%83%99%E3%82%A4%E3%83%96%E3%83%AC%E3%83%BC%E3%83%89%E3%82%B9%E3%83%94%E3%83%B3%E3%82%AE%E3%82%A2%E3%83%BB%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3/), Spin Gear/Engine Gear 「カスタマイズギア（フリーシャフト）」",
+    "wiki": {
+      "ataque": 2,
+      "defesa": 2,
+      "stamina": 4
+    }
+  },
+  "stats_oficiais_obs": "Estrelas do Customize Gear; o CEW Light Sharp tem estrelas próprias (0/0/3) que o obakeblader não soma (\"EG com ponta separável conta só o corpo\"). Engine Power 0 (não tem mola).",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "direita",
+    "gimmick": "free-shaft",
+    "ativacao": {
+      "modo": "nenhum",
+      "obs": "não tem motor: a Customize Gear ocupa o lugar do Engine Gear e o eixo gira livre sobre dois rolamentos"
+    }
+  },
+  "forma": {
+    "tipo": "engine-gear",
+    "raio_mm": 12,
+    "altura_mm": 18,
+    "dentes": 12,
+    "nucleo": "bearing"
+  },
+  "cores": {
+    "primaria": "#f2f2f2",
+    "secundaria": "#b8bcc2",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Customize Gear do Zeus Takara: peça do tamanho de um Engine Gear, sem motor, com o eixo apoiado em dois rolamentos (double bearing), e a ponta trocável CEW Light Sharp. Aqui Customize Gear + CEW formam uma peça só. O Zeus da Hasbro trocou isso por um Right EG (Metal Ball).",
+  "funcao": "O corpo gira quase sem atrito com o eixo: stamina muito alta. É a peça mais importante da stamina do Zeus.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_Right_Customize_Gear_(Free_Shaft_Version)",
+    "https://beyblade.fandom.com/wiki/Engine_Gear",
+    "https://beyblade.fandom.com/wiki/Engine_Gear_System",
+    "https://beyblade.fandom.com/wiki/Zeus"
+  ]
+}

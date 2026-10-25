@@ -1,0 +1,76 @@
+{
+  "id": "spin-gear/right-eg-reverse",
+  "categoria": "spin-gear",
+  "nome": "Right EG Reverse (CEW Metal Semi-Flat)",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "kai-hiwatari/dranzer-gt"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "mola espiral",
+      "CEW (Customize Engine Weight) Metal Semi-Flat de metal"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 24,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 19,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 10,
+      "fonte": "estimado",
+      "obs": "sem peso publicado; ~7 g do EG + ~3 g do CEW, por analogia com o Left EG Turbo"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 0,
+    "stamina": 0,
+    "potencia_engine": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2026/02/22/%E7%88%86%E8%BB%A2%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%88%E3%83%99%E3%82%A4%E3%83%96%E3%83%AC%E3%83%BC%E3%83%89%E3%82%B9%E3%83%94%E3%83%B3%E3%82%AE%E3%82%A2%E3%83%BB%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3/), Spin Gear/Engine Gear 「ライトエンジンギアリバース」",
+    "wiki": {
+      "ataque": 4,
+      "defesa": 0,
+      "stamina": 0
+    }
+  },
+  "stats_oficiais_obs": "A wiki dá ataque 4; a Takara dá 3 e a soma da Dranzer GT (10/5/7) fecha com 3. O CEW Metal Semi-Flat tem estrelas próprias (2/2/2) que o obakeblader não soma.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "direita",
+    "gimmick": "engine-gear",
+    "ativacao": {
+      "modo": "clutch",
+      "obs": "na Hit Release do Dranzer GT, no meio da luta; ao soltar, o mecanismo gira para a ESQUERDA, contra a rotação da bey"
+    }
+  },
+  "forma": {
+    "tipo": "engine-gear",
+    "raio_mm": 12,
+    "altura_mm": 19,
+    "dentes": 12,
+    "nucleo": "engine"
+  },
+  "cores": {
+    "primaria": "#c8102e",
+    "secundaria": "#a7abb0",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Engine Gear \"reverso\", exclusivo do Dranzer GT (Engine Gear Turbo System): quando ativado, o mecanismo interno gira para a esquerda, contra a rotação direita da bey. Vem com a ponta trocável (CEW) Metal Semi-Flat; aqui EG + CEW formam uma peça só.",
+  "funcao": "Muda o movimento para ziguezague e permite um contra-ataque surpresa (Dranzer Gigs Turbo Reverse Attack), mas o giro contrário drena muita rotação. A wiki o considera pior que os outros Engine Gears.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Engine_Gear_-_Right_EG_Reverse",
+    "https://beyblade.fandom.com/wiki/Engine_Gear",
+    "https://beyblade.fandom.com/wiki/Engine_Gear_System",
+    "https://beyblade.fandom.com/wiki/Dranzer_GT"
+  ]
+}

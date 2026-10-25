@@ -1,0 +1,119 @@
+{
+  "id": "lancadores/ez-shooter-grip",
+  "nome": "EZ Shooter Grip (Easy Shooter Grip)",
+  "nome_jp": "イージーシューターグリップ",
+  "codigo_produto": [
+    "Easy Shooter Grip (Takara, pré A-series)",
+    "EZ Shooter Grip Clear (Takara)"
+  ],
+  "tipo": "ripcord",
+  "rotacao": "direita",
+  "sistema": "spin-gear",
+  "anime": true,
+  "usado_por": [
+    {
+      "personagem": "max-tate",
+      "temporadas": [
+        "s1"
+      ],
+      "beys": [
+        "draciel-metal-ball-defenser"
+      ],
+      "obs": "Ep. 3: Kenny repara que o Max usa um \"EZ Grip Shooter\" para firmar o lançador."
+    },
+    {
+      "personagem": "tyson-granger",
+      "temporadas": [
+        "s1"
+      ],
+      "beys": [
+        "dragoon-s"
+      ],
+      "obs": "A wiki lista \"EZ Shooter Grip\" no equipamento do Tyson (com o lançador esquerdo encaixado); o episódio exato não é citado."
+    }
+  ],
+  "acessorios": [
+    "EZ Shooter (direito ou esquerdo) encaixado no topo do grip"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/winder-padrao",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/winder-padrao",
+    "lancadores/ripcords/winder-hasbro",
+    "lancadores/ripcords/dragon-winder",
+    "lancadores/ripcords/neo-dragon-winder",
+    "lancadores/ripcords/ultimate-winder"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "versão Clear em plástico translúcido"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 80,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 52,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 105,
+      "fonte": "estimado",
+      "obs": "lançador + cabo de pistola ~80 mm"
+    },
+    "peso_g": {
+      "valor": 38,
+      "fonte": "estimado"
+    },
+    "curso_corda_mm": {
+      "valor": 145,
+      "fonte": "estimado"
+    }
+  },
+  "atributos": {
+    "forca": 6,
+    "rpm_max": 6650,
+    "precisao": 7,
+    "controle_angulo": 7,
+    "facilidade": 9,
+    "justificativa": "O grip não muda a relação de engrenagens; ele firma o lançador para a mão puxar em linha reta (menos perda por atrito lateral da corda, ~+1,5%) e segurar o ângulo.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 140,
+    "forca_maxima": 1,
+    "desvio_angular_graus": 4,
+    "tempo_puxada_ideal_ms": 260,
+    "inclinacao_max_graus": 30,
+    "bonus_rpm_pct": 1.5,
+    "assistencia_mira": 0.25,
+    "rotacao_selecionavel": false,
+    "obs": "Grip de iniciante: janela mais larga e menos tremor."
+  },
+  "forma": {
+    "corpo": "pistola",
+    "grip": true,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 80,
+    "largura_mm": 52,
+    "cores": {
+      "primaria": "#2f8f4e",
+      "secundaria": "#d9d9d9",
+      "detalhe": "#1a1a1a",
+      "corda": "#e8e8e8"
+    },
+    "obs_cores": "Estimado (verde do Max)."
+  },
+  "descricao": "Primeiro cabo de pistola da Takara para o EZ Shooter: o lançador encaixa no topo e a mão segura um cabo vertical, como uma pistola.",
+  "referencias": [],
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/List_of_Original_Series_products_(Takara)",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_03",
+    "https://beyblade.fandom.com/wiki/Tyson_Granger",
+    "https://beyblade.fandom.com/wiki/Grip"
+  ]
+}

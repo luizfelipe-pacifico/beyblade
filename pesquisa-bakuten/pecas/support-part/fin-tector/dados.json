@@ -1,0 +1,88 @@
+{
+  "id": "support-part/fin-tector",
+  "categoria": "support-part",
+  "nome": "Fin Tector",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "max-tate/draciel-v2"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Par de peças reversíveis (modo Ataque / modo Defesa); frágeis."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 46,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 4,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 2,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1.5,
+    "defesa": 1,
+    "stamina": 0,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2022/02/22/post-20460/), Support Part 「フィンテクター」"
+  },
+  "stats_oficiais_obs": "Support Part: não somar por padrão.",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "smash",
+    "recoil": 0.45,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 23
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 19,
+    "raio_interno_mm": 16.5,
+    "espessura_mm": 3,
+    "lobos": [
+      {
+        "inicio": 40,
+        "pico": 70,
+        "fim": 80,
+        "raio_mm": 23,
+        "borda": "ponta",
+        "altura_mm": 4
+      },
+      {
+        "inicio": 80,
+        "pico": 84,
+        "fim": 92,
+        "raio_mm": 21,
+        "borda": "reta",
+        "altura_mm": 4
+      },
+      {
+        "inicio": 150,
+        "pico": 160,
+        "fim": 170,
+        "raio_mm": 20,
+        "borda": "reta",
+        "altura_mm": 4
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#16161c",
+    "secundaria": "#c5dc2a",
+    "detalhe": "#2e9e44"
+  },
+  "acabamento": "opaco",
+  "descricao": "Duas peças em \"C\" pretas com aleta em seta amarelo-esverdeada (adesivo \"FIN TECTOR\"), reversíveis.",
+  "funcao": "Modo Ataque: melhor SP para smash (wiki). Modo Defesa: uso moderado em zombie.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Draciel_V2"
+  ]
+}

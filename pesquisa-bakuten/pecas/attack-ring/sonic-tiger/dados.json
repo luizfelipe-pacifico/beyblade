@@ -1,0 +1,85 @@
+{
+  "id": "attack-ring/sonic-tiger",
+  "categoria": "attack-ring",
+  "nome": "Sonic Tiger",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "ray-kon/driger-v"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 45,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2.5,
+    "defesa": 1.5,
+    "stamina": 1.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「ソニックタイガー」",
+    "wiki": {
+      "ataque": 3,
+      "defesa": 2,
+      "stamina": 2
+    }
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "slope",
+    "recoil": 0.4,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 22.5
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 10,
+        "pico": 80,
+        "fim": 105,
+        "raio_mm": 22.5,
+        "borda": "rampa",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 120,
+        "pico": 140,
+        "fim": 160,
+        "raio_mm": 20.5,
+        "borda": "curva",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#2a8f3a",
+    "secundaria": "#f2c230",
+    "detalhe": "#d8262c"
+  },
+  "acabamento": "opaco",
+  "descricao": "2 asas grandes em lâmina + 2 cabeças de tigre (simetria 2).",
+  "funcao": "\"Ataque para todos os fins\": as asas atingem a parte de cima do oponente; bom equilíbrio.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Sonic_Tiger",
+    "https://beyblade.fandom.com/wiki/Driger_V"
+  ]
+}

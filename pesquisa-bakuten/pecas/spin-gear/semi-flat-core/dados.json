@@ -1,0 +1,64 @@
+{
+  "id": "spin-gear/semi-flat-core",
+  "categoria": "spin-gear",
+  "nome": "Semi-Flat Core",
+  "nome_jp": null,
+  "sistema": "hms",
+  "usado_em": [
+    "ray-kon/driger-ms"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "cor não confirmada"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 2,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 1,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「セミフラットコア」"
+  },
+  "stats_oficiais_obs": "Running Core: entra na soma no lugar da base.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "dupla",
+    "gimmick": "running-core",
+    "ativacao": {
+      "modo": "nenhum",
+      "obs": ""
+    }
+  },
+  "forma": {
+    "tipo": "running-core",
+    "raio_mm": 7,
+    "altura_mm": 14,
+    "dentes": 4,
+    "nucleo": "normal"
+  },
+  "cores": {
+    "primaria": "#f2f2f2",
+    "secundaria": "#1e8a3a",
+    "detalhe": "#5a5a5a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Running Core com ponta sharp de extremidade achatada, estreia com Driger MS.",
+  "funcao": "Movimento semi-agressivo, mistura de ataque e stamina; há opções melhores.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Running_Core_-_Semi-Flat_Core",
+    "http://wiki.worldbeyblade.org/index.php?title=Driger_MS"
+  ]
+}

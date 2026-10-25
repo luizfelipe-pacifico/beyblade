@@ -1,0 +1,117 @@
+{
+  "id": "attack-ring/metal-upper",
+  "categoria": "attack-ring",
+  "nome": "Metal Upper",
+  "nome_jp": null,
+  "sistema": "hms",
+  "usado_em": [
+    "ray-kon/driger-ms"
+  ],
+  "material": {
+    "principal": "Metal (zinco)",
+    "outros": [
+      "ABS"
+    ],
+    "obs": "Metal Frame com rampas e cabeças de tigre + ABS Caul."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 40,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 8,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 20,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 2,
+    "stamina": 3,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「メタルアッパー」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "upper",
+    "recoil": 0.35,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 20
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 16.5,
+    "raio_interno_mm": 9,
+    "espessura_mm": 8,
+    "lobos": [
+      {
+        "inicio": 10,
+        "pico": 25,
+        "fim": 40,
+        "raio_mm": 20,
+        "borda": "reta",
+        "altura_mm": 8,
+        "metal": true
+      },
+      {
+        "inicio": 60,
+        "pico": 130,
+        "fim": 150,
+        "raio_mm": 19.5,
+        "borda": "rampa",
+        "altura_mm": 7,
+        "metal": true
+      },
+      {
+        "inicio": 155,
+        "pico": 165,
+        "fim": 175,
+        "raio_mm": 18.5,
+        "borda": "curva",
+        "altura_mm": 7
+      }
+    ],
+    "moldura": {
+      "simetria": 2,
+      "raio_base_mm": 15.5,
+      "raio_interno_mm": 10,
+      "espessura_mm": 4,
+      "lobos": [
+        {
+          "inicio": 10,
+          "pico": 25,
+          "fim": 40,
+          "raio_mm": 20,
+          "borda": "reta",
+          "altura_mm": 4,
+          "metal": true
+        },
+        {
+          "inicio": 60,
+          "pico": 130,
+          "fim": 150,
+          "raio_mm": 19.5,
+          "borda": "rampa",
+          "altura_mm": 4,
+          "metal": true
+        }
+      ]
+    },
+    "metal": true
+  },
+  "cores": {
+    "primaria": "#1a1a1a",
+    "secundaria": "#9ea3a8",
+    "detalhe": "#f2c230"
+  },
+  "acabamento": "metalico",
+  "descricao": "AR de HMS baixo e de diâmetro pequeno: moldura metálica com rampas e cabeças de tigre + capa ABS.",
+  "funcao": "Upper sólido na direita; smash/spike na esquerda com as cabeças de tigre (onde está a maior parte do metal).",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Driger_MS"
+  ]
+}

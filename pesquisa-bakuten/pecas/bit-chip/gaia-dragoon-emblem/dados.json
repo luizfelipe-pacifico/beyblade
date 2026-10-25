@@ -1,0 +1,56 @@
+{
+  "id": "bit-chip/gaia-dragoon-emblem",
+  "categoria": "bit-chip",
+  "nome": "Bit Protector - Strata Dragoon Emblem",
+  "nome_jp": "ビットプロテクター ガイアエンブレム",
+  "sistema": "hms",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon-ms"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "adesivo impresso (2 opções: emblema ou fera)"
+    ],
+    "obs": "No HMS o Bit Protector é a trava que segura o Attack Ring e as demais peças; 1º molde, o mais frouxo."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 18.17,
+      "fonte": "wiki"
+    },
+    "altura_mm": {
+      "valor": 6.65,
+      "fonte": "wiki"
+    },
+    "peso_g": {
+      "valor": 0.6,
+      "fonte": "comunidade"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_gba": null,
+  "fisica": {
+    "fera_bit": "gaia-dragoon"
+  },
+  "forma": {
+    "raio_mm": 9.09,
+    "cor_fundo": "#d4a017",
+    "emblema": "gaia-dragoon"
+  },
+  "cores": {
+    "primaria": "#d4a017",
+    "secundaria": "#1a1a1a",
+    "detalhe": "#ffffff",
+    "fonte": "estimado (sem descrição de cores na wiki)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Bit Protector (HMS, 1º molde). Emblema \"Gaia\" (Strata Dragoon Emblem), 1º molde de Bit Protector. A wiki não descreve cores do adesivo.",
+  "funcao": "Trava o Attack Ring e as demais peças no HMS (é o \"parafuso\" da bey) e é onde o lançador Dual Shooter prende. Mostra o emblema da fera. Peso desprezível (0,6 g).",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Bit_Protector_-_Strata_Dragoon",
+    "https://beyblade.fandom.com/wiki/Bit_Protector_-_Strata_Dragoon_Emblem",
+    "https://beyblade.fandom.com/wiki/Gaia_Dragoon_MS",
+    "http://obakeblader.com/2018/09/13/post-1884/"
+  ]
+}

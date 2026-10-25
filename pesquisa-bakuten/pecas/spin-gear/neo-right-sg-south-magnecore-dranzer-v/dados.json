@@ -1,0 +1,63 @@
+{
+  "id": "spin-gear/neo-right-sg-south-magnecore-dranzer-v",
+  "categoria": "spin-gear",
+  "nome": "Neo Right SG (South Magnecore, Dranzer V Version)",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "kai-hiwatari/dranzer-v"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "ímã (polo Sul)"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 9,
+      "fonte": "estimado",
+      "obs": "mais baixo que o Magnecore comum"
+    },
+    "peso_g": {
+      "valor": 5.6,
+      "fonte": "wiki",
+      "obs": "núcleo sozinho: 3,3 g"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "Spin Gear: a Takara não dá A/D/S, só Magne Power 2.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "direita",
+    "gimmick": "magnecore",
+    "ativacao": {
+      "modo": "nenhum",
+      "obs": "o efeito magnético é passivo"
+    }
+  },
+  "forma": {
+    "tipo": "spin-gear",
+    "raio_mm": 9,
+    "altura_mm": 9,
+    "dentes": 8,
+    "nucleo": "magne-s"
+  },
+  "cores": {
+    "primaria": "#c8102e",
+    "secundaria": "#1f4fbf",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Magnecore Sul exclusivo do Dranzer V, feito para a Volcano Change Base ficar mais baixa: o ímã fica mais alto no núcleo (preso por pequenas saliências, entrando parcialmente na tampa da casca) e a engrenagem de baixo e o cilindro que ela envolve são mais curtos. O nome é não oficial; a Takara só chamava de \"South Magnecore\". A versão Hyper Red do Magne Dome (A-80) traz um Magnecore Norte equivalente.",
+  "funcao": "Igual a um Magnecore Sul, mas deixa a bey mais baixa, o que melhora a Volcano Change Base. Também faz as pontas da Magne Flat Base, SG Grip Base e Customize Grip Base ficarem mais altas.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_Neo_Right_SG_(South_Magnecore_(Dranzer_V_Version))",
+    "http://wiki.worldbeyblade.org/index.php?title=Dranzer_V"
+  ]
+}

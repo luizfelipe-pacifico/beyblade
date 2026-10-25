@@ -1,0 +1,92 @@
+{
+  "id": "blade-base/manual-change-core",
+  "categoria": "blade-base",
+  "nome": "Manual Change Core (Running Core)",
+  "nome_jp": null,
+  "sistema": "hms",
+  "usado_em": [
+    "kai-hiwatari/dranzer-ms"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Takara: ponta de plástico com duas posições; Hasbro: ponta semi-flat fixa (outro molde, mais largo e plano nos primeiros lotes)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 15,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 15,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 3,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 1,
+    "stamina": 3,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「マニュアルチェンジコア」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "flat",
+    "raio_ponta_mm": 3,
+    "atrito": 0.5,
+    "padrao_movimento": "agressivo",
+    "gimmick": "troca manual de modo (Attack / Endurance)",
+    "modos": [
+      {
+        "nome": "Attack Mode",
+        "tipo_ponta": "flat",
+        "atrito": 0.5,
+        "gatilho": "manual: girar/ajustar o core antes do lançamento"
+      },
+      {
+        "nome": "Endurance Mode",
+        "tipo_ponta": "sharp",
+        "atrito": 0.1,
+        "gatilho": "manual: girar/ajustar o core antes do lançamento"
+      }
+    ]
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 7.5,
+    "altura_mm": 10,
+    "perfil": "reto",
+    "lobos": [
+      {
+        "inicio": 30,
+        "pico": 45,
+        "fim": 60,
+        "raio_mm": 8.5,
+        "borda": "reta",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "flat",
+      "raio_mm": 3,
+      "altura_mm": 4
+    }
+  },
+  "cores": {
+    "primaria": "#8c1c22",
+    "secundaria": "#1a1a1a",
+    "detalhe": "#d0d0d0",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Running Core do HMS com ponta de duas posições: uma mais larga (Attack) e uma aguda (Endurance).",
+  "funcao": "Escolher entre ataque e resistência sem trocar peças. Takara tem problemas de equilíbrio em baixa rotação; Hasbro usa ponta semi-flat, mais estável mas com menos stamina.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Running_Core_-_Manual_Change_Core",
+    "pesquisa-bakuten/personagens/kai-hiwatari/beyblades/dranzer-ms/dados.json"
+  ],
+  "duplicata_de": "spin-gear/manual-change-core"
+}

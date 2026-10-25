@@ -1,0 +1,104 @@
+{
+  "id": "blade-base/first-clutch-base-dragoon-g",
+  "categoria": "blade-base",
+  "nome": "First Clutch Base (Dragoon G Version)",
+  "nome_jp": "ファーストクラッチベース",
+  "sistema": "engine-gear",
+  "usado_em": [
+    "tyson-granger/dragoon-g"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Ponta do Engine Gear (Left EG, CEW Metal Semi-Flat): metal."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 46,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 7,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 0,
+    "stamina": 0,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「ファーストクラッチベース（ドラグーンG）」"
+  },
+  "stats_oficiais_obs": "Defesa e stamina 0 estrelas (a wiki deixa em branco, por isso parecia incompleto).",
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "metal-semi-flat",
+    "raio_ponta_mm": 2.5,
+    "atrito": 0.25,
+    "padrao_movimento": "agressivo",
+    "gimmick": "first-clutch",
+    "modos": [
+      {
+        "nome": "Engine Gear travado",
+        "tipo_ponta": "metal-semi-flat",
+        "atrito": 0.25,
+        "gatilho": "só no lançador"
+      },
+      {
+        "nome": "Engine Gear liberado",
+        "tipo_ponta": "metal-semi-flat",
+        "atrito": 0.25,
+        "gatilho": "pouso no estádio, logo após o lançamento"
+      }
+    ],
+    "ponta_origem": "engine-gear (Left EG, CEW Metal Semi-Flat)"
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 20,
+    "altura_mm": 10,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 0,
+        "pico": 15,
+        "fim": 30,
+        "raio_mm": 23,
+        "borda": "ponta",
+        "altura_mm": 4
+      },
+      {
+        "inicio": 50,
+        "pico": 60,
+        "fim": 70,
+        "raio_mm": 21.5,
+        "borda": "reta",
+        "altura_mm": 3
+      }
+    ],
+    "ponta": {
+      "tipo": "metal-semi-flat",
+      "raio_mm": 2.5,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#1d4fa8",
+    "secundaria": "#f2f2f2",
+    "detalhe": "#c8102e",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Primeira base Instant Release (dez/2002): oito saliências, quatro grandes parecidas com as do Eight Spiker e quatro menores sem espinho.",
+  "funcao": "Solta o motor logo no lançamento; as saliências alcançam beys baixas, mas sofrem muito recoil.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Instant_Release_(Dragoon_G_Version)",
+    "pesquisa-bakuten/personagens/tyson-granger/beyblades/dragoon-g/dados.json"
+  ],
+  "aliases": [
+    "Instant Release (Dragoon G Version) (Hasbro)"
+  ]
+}

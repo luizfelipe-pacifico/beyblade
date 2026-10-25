@@ -1,0 +1,103 @@
+{
+  "id": "attack-ring/metal-attacker",
+  "categoria": "attack-ring",
+  "nome": "Metal Attacker",
+  "nome_jp": null,
+  "sistema": "hms",
+  "usado_em": [
+    "tyson-granger/dragoon-ms"
+  ],
+  "material": {
+    "principal": "Metal (zinco)",
+    "outros": [
+      "ABS"
+    ],
+    "obs": "Moldura metálica com 4 pontas expostas + ABS Caul \"Cross Wings\"."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 42,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 8,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 14,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 4,
+    "defesa": 2,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「メタルアタッカー」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 4,
+    "tipo_contato": "smash",
+    "recoil": 0.45,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 21
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 16,
+    "raio_interno_mm": 9,
+    "espessura_mm": 7,
+    "lobos": [
+      {
+        "inicio": 25,
+        "pico": 40,
+        "fim": 50,
+        "raio_mm": 21,
+        "borda": "curva",
+        "altura_mm": 8,
+        "metal": true
+      },
+      {
+        "inicio": 55,
+        "pico": 70,
+        "fim": 85,
+        "raio_mm": 19.5,
+        "borda": "rampa",
+        "altura_mm": 7
+      }
+    ],
+    "moldura": {
+      "simetria": 4,
+      "raio_base_mm": 15,
+      "raio_interno_mm": 10,
+      "espessura_mm": 4,
+      "lobos": [
+        {
+          "inicio": 25,
+          "pico": 40,
+          "fim": 50,
+          "raio_mm": 21,
+          "borda": "curva",
+          "altura_mm": 4,
+          "metal": true
+        }
+      ]
+    },
+    "metal": true
+  },
+  "cores": {
+    "primaria": "#f0f0f0",
+    "secundaria": "#9ea3a8",
+    "detalhe": "#2457c5"
+  },
+  "acabamento": "metalico",
+  "descricao": "4 pontas de metal expostas com pontas arredondadas, sob a capa ABS de 4 asas.",
+  "funcao": "Smash razoável na época; depois superado.",
+  "pecas_relacionadas": [
+    "attack-ring/ultimate-attacker"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Metal_Attacker",
+    "https://beyblade.fandom.com/wiki/Dragoon_MS"
+  ]
+}

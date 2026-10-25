@@ -1,0 +1,77 @@
+{
+  "id": "attack-ring/eight-attacker",
+  "categoria": "attack-ring",
+  "nome": "Eight Attacker",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "tyson-granger/dragoon-v"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 42,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2.5,
+    "defesa": 2,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「エイトアタッカー」",
+    "wiki": {
+      "ataque": 3,
+      "defesa": 2,
+      "stamina": 1
+    }
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 8,
+    "tipo_contato": "smash",
+    "recoil": 0.6,
+    "sentido_otimo": "esquerda",
+    "raio_contato_mm": 21
+  },
+  "forma": {
+    "simetria": 8,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 5,
+        "pico": 10,
+        "fim": 30,
+        "raio_mm": 21,
+        "borda": "reta",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#2457c5",
+    "secundaria": "#f0f0f0",
+    "detalhe": "#d8262c"
+  },
+  "acabamento": "opaco",
+  "descricao": "8 protuberâncias para smash em rotação esquerda, com vãos grandes entre elas.",
+  "funcao": "Smash; o recoil anula boa parte do dano.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Eight_Attacker",
+    "https://beyblade.fandom.com/wiki/Dragoon_V"
+  ]
+}

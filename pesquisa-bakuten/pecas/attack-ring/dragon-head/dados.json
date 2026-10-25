@@ -1,0 +1,72 @@
+{
+  "id": "attack-ring/dragon-head",
+  "categoria": "attack-ring",
+  "nome": "Dragon Head",
+  "nome_jp": null,
+  "sistema": "4-layer",
+  "usado_em": [
+    "tyson-granger/dragoon-grip-attacker"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Frágil. A wiki o lista no Spin Gear System, mas a bey é de 4 camadas (só gira à direita)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 35,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 5,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 4,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 1,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「ドラゴンヘッド」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 4,
+    "tipo_contato": "smash",
+    "recoil": 0.3,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 17.5
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 16,
+    "raio_interno_mm": 10,
+    "espessura_mm": 5,
+    "lobos": [
+      {
+        "inicio": 30,
+        "pico": 70,
+        "fim": 78,
+        "raio_mm": 17.5,
+        "borda": "ponta",
+        "altura_mm": 5
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#6bb6e0",
+    "secundaria": "#f0f0f0",
+    "detalhe": "#d8262c"
+  },
+  "acabamento": "opaco",
+  "descricao": "Um dos menores ARs já feitos, com 4 protuberâncias minúsculas para rotação direita.",
+  "funcao": "Quase não faz contato: o dano vem do Weight Disk (weight disk attack).",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Dragon_Head",
+    "https://beyblade.fandom.com/wiki/Dragoon_Grip_Attacker"
+  ]
+}

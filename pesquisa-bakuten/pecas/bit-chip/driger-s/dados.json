@@ -1,0 +1,57 @@
+{
+  "id": "bit-chip/driger-s",
+  "categoria": "bit-chip",
+  "nome": "Driger",
+  "nome_jp": "ドライガー",
+  "sistema": "spin-gear",
+  "usado_em": [
+    "ray-kon/driger-s"
+  ],
+  "material": {
+    "principal": "plástico (ABS presumido)",
+    "outros": [
+      "tampa de fixação plástica (2ª peça)",
+      "adesivo impresso com a fera"
+    ],
+    "obs": "Chip das primeiras séries (Character Chip): corpo e tampa de fixação separados; o tipo mais pesado de chip. Cor do plástico do chip não confirmada; ABS presumido (estimado)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 15,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 5,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 1.4,
+      "fonte": "comunidade"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_gba": null,
+  "fisica": {
+    "fera_bit": "driger"
+  },
+  "forma": {
+    "raio_mm": 7.5,
+    "cor_fundo": "#2e8b57",
+    "emblema": "driger"
+  },
+  "cores": {
+    "primaria": "#2e8b57",
+    "secundaria": "#f2c200",
+    "detalhe": "#ffffff",
+    "fonte": "estimado (cor da fera)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Chip de duas camadas (corpo + tampa de fixação). Driger (Byakko, tigre branco da terra). Foto da infobox da wiki: \"Driger_S_Bit_Chip.jpg\". A versão japonesa trazia o código \"GER4\" para destravar a fera em Beyblade Fighting Tournament.",
+  "funcao": "Identifica a bey e a fera bit; no jogo, define o emblema e o especial. Sem efeito físico relevante (menos de 1,5 g, no centro, raio pequeno). Nas regras antigas, perder ou quebrar o chip na batalha dava derrota.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Driger",
+    "https://beyblade.fandom.com/wiki/Driger_S",
+    "https://beyblade.fandom.com/wiki/Beyblade_Fighting_Tournament",
+    "http://obakeblader.com/2018/10/16/post-2313/"
+  ]
+}

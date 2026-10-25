@@ -1,0 +1,80 @@
+{
+  "id": "attack-ring/tiger-defenser",
+  "categoria": "attack-ring",
+  "nome": "Tiger Defenser",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "ray-kon/driger-s"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "A Hasbro também o incluiu recolorido na Jumping Base."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 39.6,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 3,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「タイガーディフェンサー」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 4,
+    "tipo_contato": "survival",
+    "recoil": 0.15,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 19.8
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 10,
+        "pico": 45,
+        "fim": 70,
+        "raio_mm": 19.8,
+        "borda": "curva",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 70,
+        "pico": 76,
+        "fim": 82,
+        "raio_mm": 19,
+        "borda": "rampa",
+        "altura_mm": 5
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#2aa04a",
+    "secundaria": "#f0f0f0",
+    "detalhe": "#f2c230"
+  },
+  "acabamento": "opaco",
+  "descricao": "Anel pequeno e quase redondo, com pontas arredondadas (garras curtas) e pequenas rampas de upper.",
+  "funcao": "Pouco recoil: ótima stamina e defesa; algum ataque leve. Muito usado em compactos.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Tiger_Defenser",
+    "https://beyblade.fandom.com/wiki/Driger_S"
+  ]
+}

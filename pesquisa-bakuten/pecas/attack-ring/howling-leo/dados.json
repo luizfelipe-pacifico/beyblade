@@ -1,0 +1,73 @@
+{
+  "id": "attack-ring/howling-leo",
+  "categoria": "attack-ring",
+  "nome": "Howling Leo",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "lee/galeon-2",
+    "lee/galeon-2-eg"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 43,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5.5,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2.5,
+    "defesa": 1,
+    "stamina": 1.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「ハウリングレオ」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 6,
+    "tipo_contato": "smash",
+    "recoil": 0.45,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 21.5
+  },
+  "forma": {
+    "simetria": 6,
+    "raio_base_mm": 17.5,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 20,
+        "pico": 45,
+        "fim": 55,
+        "raio_mm": 21.5,
+        "borda": "reta",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#1d1d24",
+    "secundaria": "#2f6fd0",
+    "detalhe": "#f2c230"
+  },
+  "acabamento": "opaco",
+  "descricao": "AR com 6 pontas de ataque (juba/garras de leão).",
+  "funcao": "Muitos contatos: golpes frequentes de smash leve.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Howling_Leo",
+    "https://beyblade.fandom.com/wiki/Galeon_2"
+  ]
+}

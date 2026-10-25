@@ -1,0 +1,63 @@
+{
+  "brooklyn-masefield/zeus": [
+    "attack-ring/holy-despell",
+    "attack-ring/screw-zeus"
+  ],
+  "bryan-kuznetsov/falborg": "attack-ring/fal-wing",
+  "bryan-kuznetsov/falborg-2": "attack-ring/falborg-2-ar-hipotetico",
+  "daichi-sumeragi/gaia-dragoon": [
+    "attack-ring/great-dragon",
+    "attack-ring/great-dragon-sub-ar"
+  ],
+  "daichi-sumeragi/gaia-dragoon-g": [
+    "attack-ring/dragon-saucer",
+    "attack-ring/dragon-saucer-sub-ar"
+  ],
+  "daichi-sumeragi/gaia-dragoon-ms": "attack-ring/metal-saucer",
+  "daichi-sumeragi/gaia-dragoon-v": [
+    "attack-ring/dragon-breaker",
+    "attack-ring/dragon-breaker-sub-ar"
+  ],
+  "kai-hiwatari/black-dranzer": "attack-ring/flame-wing-black-dranzer",
+  "kai-hiwatari/dranzer-f": "attack-ring/flame-wing",
+  "kai-hiwatari/dranzer-g": "attack-ring/wing-survivor",
+  "kai-hiwatari/dranzer-gt": "attack-ring/triangle-wing",
+  "kai-hiwatari/dranzer-ms": "attack-ring/spiral-upper",
+  "kai-hiwatari/dranzer-s": "attack-ring/double-wing",
+  "kai-hiwatari/dranzer-v": "attack-ring/cross-attacker",
+  "kai-hiwatari/dranzer-v2": "attack-ring/cross-dranzer",
+  "lee/galeon": [
+    "attack-ring/war-lion",
+    "attack-ring/war-lion-sub-ar"
+  ],
+  "lee/galeon-2": "attack-ring/howling-leo",
+  "lee/galeon-2-eg": "attack-ring/howling-leo",
+  "max-tate/draciel-f": "attack-ring/eight-spike",
+  "max-tate/draciel-g": "attack-ring/shield-hammer",
+  "max-tate/draciel-metal-ball-defenser": "attack-ring/max-shield",
+  "max-tate/draciel-ms": "attack-ring/metal-defense",
+  "max-tate/draciel-s": "attack-ring/cross-spike",
+  "max-tate/draciel-v": "attack-ring/ten-spike",
+  "max-tate/draciel-v2": "attack-ring/strike-turtle",
+  "ray-kon/driger-f": "attack-ring/cross-fang",
+  "ray-kon/driger-g": "attack-ring/triple-tiger",
+  "ray-kon/driger-ms": "attack-ring/metal-upper",
+  "ray-kon/driger-s": "attack-ring/tiger-defenser",
+  "ray-kon/driger-v": "attack-ring/sonic-tiger",
+  "ray-kon/driger-v2": "attack-ring/upper-claw",
+  "robert-jurgen/griffolyon": "attack-ring/cross-griffon",
+  "tala/wolborg-2": "attack-ring/upper-wolf",
+  "tala/wolborg-4": "attack-ring/star-wolf",
+  "tyson-granger/dragoon-f": "attack-ring/dual-dragon",
+  "tyson-granger/dragoon-g": "attack-ring/eight-spiker",
+  "tyson-granger/dragoon-grip-attacker": "attack-ring/dragon-head",
+  "tyson-granger/dragoon-gt": "attack-ring/g-upper",
+  "tyson-granger/dragoon-ms": "attack-ring/metal-attacker",
+  "tyson-granger/dragoon-ms-ultimate-version": "attack-ring/ultimate-attacker",
+  "tyson-granger/dragoon-s": "attack-ring/reverse-dragon",
+  "tyson-granger/dragoon-v": "attack-ring/eight-attacker",
+  "tyson-granger/dragoon-v2": "attack-ring/spike-dragon",
+  "tyson-granger/dragoon-v2-high-power-custom": "attack-ring/spike-dragon",
+  "tyson-granger/dranzer-f": "attack-ring/flame-wing",
+  "tyson-granger/master-dragoon": "attack-ring/upper-dragoon"
+}

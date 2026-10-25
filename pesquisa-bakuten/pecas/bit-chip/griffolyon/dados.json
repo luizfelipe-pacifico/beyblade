@@ -1,0 +1,55 @@
+{
+  "id": "bit-chip/griffolyon",
+  "categoria": "bit-chip",
+  "nome": "Griffolyon",
+  "nome_jp": "グリフォリオン",
+  "sistema": "spin-gear",
+  "usado_em": [
+    "robert-jurgen/griffolyon"
+  ],
+  "material": {
+    "principal": "plástico (ABS presumido)",
+    "outros": [
+      "adesivo impresso com a fera"
+    ],
+    "obs": "Peça única com haste longa que encaixa direto no furo central do Attack Ring. Cor do plástico do chip não confirmada; ABS presumido (estimado)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 8,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 0.8,
+      "fonte": "comunidade"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_gba": null,
+  "fisica": {
+    "fera_bit": "griffolyon"
+  },
+  "forma": {
+    "raio_mm": 7,
+    "cor_fundo": "#0b3c9c",
+    "emblema": "griffolyon"
+  },
+  "cores": {
+    "primaria": "#0b3c9c",
+    "secundaria": "#f7ec00",
+    "detalhe": "#1a1a1a",
+    "fonte": "foto local (adesivo): anel azul, disco amarelo, borda preta dentada"
+  },
+  "acabamento": "opaco",
+  "descricao": "Chip longo de uma peça (encaixa direto no Attack Ring). Foto local: anel externo azul, disco central amarelo com borda preta dentada, grifo com asas brancas, corpo azul, patas traseiras vermelhas e garras amarelas.",
+  "funcao": "Identifica a bey e a fera bit; no jogo, define o emblema e o especial. Sem efeito físico relevante (menos de 1,5 g, no centro, raio pequeno). Nas regras antigas, perder ou quebrar o chip na batalha dava derrota.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Griffolyon",
+    "https://beyblade.fandom.com/wiki/Griffolyon",
+    "http://obakeblader.com/2018/09/13/post-2008/"
+  ]
+}

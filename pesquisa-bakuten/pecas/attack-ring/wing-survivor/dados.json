@@ -1,0 +1,80 @@
+{
+  "id": "attack-ring/wing-survivor",
+  "categoria": "attack-ring",
+  "nome": "Wing Survivor",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "kai-hiwatari/dranzer-g"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 45,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 4.7,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 1,
+    "stamina": 3,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「ウイングサバイバー」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "slope",
+    "recoil": 0.75,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 22.5
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 10,
+        "pico": 70,
+        "fim": 100,
+        "raio_mm": 22.5,
+        "borda": "rampa",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 110,
+        "pico": 130,
+        "fim": 150,
+        "raio_mm": 20.5,
+        "borda": "reta",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#c62a2f",
+    "secundaria": "#f5f5f5",
+    "detalhe": "#2a5bc8"
+  },
+  "acabamento": "opaco",
+  "descricao": "Asas de fênix com contatos mal angulados e rampas para upper / force smash.",
+  "funcao": "Muito recoil e smash fraco; o melhor uso é force smash (wiki, Dranzer G).",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Wing_Survivor",
+    "https://beyblade.fandom.com/wiki/Dranzer_G"
+  ]
+}

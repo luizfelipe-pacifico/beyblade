@@ -1,0 +1,101 @@
+{
+  "id": "attack-ring/strike-turtle",
+  "categoria": "attack-ring",
+  "nome": "Strike Turtle",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "max-tate/draciel-v2"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Infobox diz 14 g (provável erro); a descrição da peça e a página da Draciel V2 dão 6 g."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 46,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 6,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2.5,
+    "defesa": 2.5,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「ストライクタートル」",
+    "wiki": {
+      "ataque": 3,
+      "defesa": 2,
+      "stamina": 2
+    }
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 6,
+    "tipo_contato": "smash",
+    "recoil": 0.55,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 23
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 20,
+        "pico": 27,
+        "fim": 34,
+        "raio_mm": 22,
+        "borda": "ponta",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 38,
+        "pico": 45,
+        "fim": 52,
+        "raio_mm": 22.5,
+        "borda": "ponta",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 56,
+        "pico": 63,
+        "fim": 70,
+        "raio_mm": 23,
+        "borda": "ponta",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 95,
+        "pico": 110,
+        "fim": 125,
+        "raio_mm": 20.5,
+        "borda": "curva",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#16161c",
+    "secundaria": "#b7d92a",
+    "detalhe": "#7a3fa0"
+  },
+  "acabamento": "opaco",
+  "descricao": "Elíptico, preto, com 3 pequenas garras de cada lado e uma cabeça logo atrás delas.",
+  "funcao": "Desempenho médio: garras pouco pronunciadas para smash; grande e com recoil para defesa/stamina.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Strike_Turtle",
+    "https://beyblade.fandom.com/wiki/Draciel_V2"
+  ]
+}

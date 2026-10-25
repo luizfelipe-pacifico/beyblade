@@ -1,0 +1,55 @@
+{
+  "id": "bit-chip/gaia-dragoon-v",
+  "categoria": "bit-chip",
+  "nome": "Strata Dragoon (V Version)",
+  "nome_jp": "ガイアドラグーン",
+  "sistema": "magnacore",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon-v"
+  ],
+  "material": {
+    "principal": "plástico (ABS presumido)",
+    "outros": [
+      "adesivo impresso com a fera"
+    ],
+    "obs": "Variante da série V2 descrita como \"compatível com Bit Finder\" (ビットファインダー対応; o que é o Bit Finder não foi confirmado); tem rebaixos internos (肉抜き) e é um pouco mais leve. Cor do plástico do chip não confirmada; ABS presumido (estimado)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 8,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 0.7,
+      "fonte": "comunidade"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_gba": null,
+  "fisica": {
+    "fera_bit": "gaia-dragoon"
+  },
+  "forma": {
+    "raio_mm": 7,
+    "cor_fundo": "#d4a017",
+    "emblema": "gaia-dragoon"
+  },
+  "cores": {
+    "primaria": "#d4a017",
+    "secundaria": "#7a4a12",
+    "detalhe": "#ffffff",
+    "fonte": "estimado"
+  },
+  "acabamento": "opaco",
+  "descricao": "Chip compatível com o Bit Finder (com rebaixos internos). Strata/Gaia Dragoon, arte da série V.",
+  "funcao": "Identifica a bey e a fera bit; no jogo, define o emblema e o especial. Sem efeito físico relevante (menos de 1,5 g, no centro, raio pequeno). Nas regras antigas, perder ou quebrar o chip na batalha dava derrota.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Strata_Dragoon",
+    "https://beyblade.fandom.com/wiki/Gaia_Dragoon_V",
+    "http://obakeblader.com/2018/10/27/post-3634/"
+  ]
+}

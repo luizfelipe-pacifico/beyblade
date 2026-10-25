@@ -1,0 +1,74 @@
+{
+  "id": "support-part/reverse-attack",
+  "categoria": "support-part",
+  "nome": "Reverse Attack",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "tyson-granger/dragoon-v2",
+    "tyson-granger/dragoon-v2-high-power-custom"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Par de peças de 0,9 g cada."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 44,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 4,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 1.8,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 0,
+    "stamina": 0,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2022/02/22/post-20460/), Support Part 「リバースアタック」"
+  },
+  "stats_oficiais_obs": "Support Part: não somar por padrão.",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "smash",
+    "recoil": 0.5,
+    "sentido_otimo": "esquerda",
+    "raio_contato_mm": 22
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 15.5,
+    "espessura_mm": 3,
+    "lobos": [
+      {
+        "inicio": 30,
+        "pico": 40,
+        "fim": 70,
+        "raio_mm": 22,
+        "borda": "reta",
+        "altura_mm": 4
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#2457c5",
+    "secundaria": "#f0f0f0",
+    "detalhe": "#d8262c"
+  },
+  "acabamento": "opaco",
+  "descricao": "Duas peças laterais encaixadas na Customize Grip Base, com contatos baixos.",
+  "funcao": "Mais pontos de contato baixos para smash em rotação esquerda.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dragoon_V2",
+    "https://beyblade.fandom.com/wiki/Special_Parts"
+  ]
+}

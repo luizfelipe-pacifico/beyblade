@@ -1,0 +1,106 @@
+{
+  "id": "lancadores/rc-shooter",
+  "nome": "RC Shooter (lançador-controle das RC Beyblades)",
+  "nome_jp": "RCシューター",
+  "codigo_produto": [
+    "Incluso nas RC Beyblades da Takara (ex.: Dragoon V2 High Power Custom)",
+    "Hasbro RA-01 \"Dragoon V\" (RC)"
+  ],
+  "tipo": "power",
+  "rotacao": "direita",
+  "sistema": "magnacore",
+  "anime": false,
+  "usado_por": [],
+  "acessorios": [
+    "Gatilho de controle (frente/trás)",
+    "Neo-Dragon Winder",
+    "Pilhas"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/neo-dragon-winder",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/winder-padrao",
+    "lancadores/ripcords/winder-hasbro",
+    "lancadores/ripcords/dragon-winder",
+    "lancadores/ripcords/neo-dragon-winder",
+    "lancadores/ripcords/ultimate-winder"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Eletrônica de rádio, pilhas"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 160,
+      "fonte": "estimado",
+      "obs": "wiki: maior grip da era"
+    },
+    "largura_mm": {
+      "valor": 75,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 140,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 180,
+      "fonte": "estimado"
+    },
+    "curso_corda_mm": {
+      "valor": 218,
+      "fonte": "estimado"
+    }
+  },
+  "atributos": {
+    "forca": 6,
+    "rpm_max": 6400,
+    "precisao": 7,
+    "controle_angulo": 6,
+    "facilidade": 5,
+    "justificativa": "Mecanismo de lançamento comum; a eletrônica e a RC Flat Base pesada (37,7 g) reduzem o rpm (~-2%). Depois do lançamento, o gatilho empurrado para frente/trás controla a bey (wiki).",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 120,
+    "forca_maxima": 0.98,
+    "desvio_angular_graus": 5,
+    "tempo_puxada_ideal_ms": 300,
+    "inclinacao_max_graus": 25,
+    "bonus_rpm_pct": -2,
+    "assistencia_mira": 0.2,
+    "rotacao_selecionavel": false,
+    "controle_pos_lancamento": {
+      "entrada": "R2/L2 depois do lançamento = frente/trás",
+      "forca": 0.3,
+      "duracao_s": 20
+    },
+    "obs": "Só para o modo brinquedo/desafio; nenhum personagem usa no anime."
+  },
+  "forma": {
+    "corpo": "controle",
+    "grip": true,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 160,
+    "largura_mm": 75,
+    "antena": true,
+    "cores": {
+      "primaria": "#1f4fa8",
+      "secundaria": "#f2c230",
+      "detalhe": "#1a1a1a",
+      "corda": "#f2c230"
+    },
+    "obs_cores": "Estimado."
+  },
+  "descricao": "Lançador com rádio-controle incluso nas Remote Control Beyblades. Ligado, o gatilho empurrado para frente ou para trás conduz a bey RC (wiki). É o maior grip da era plástica e da HMS.",
+  "referencias": [],
+  "duvidas": [
+    "A Dragoon V2 High Power Custom do anime é de rotação esquerda (inferido) e a do brinquedo RC é direita (wiki); o anime não mostra controle remoto."
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Launcher",
+    "https://beyblade.fandom.com/wiki/Dragoon_V2_High_Power_Custom"
+  ]
+}

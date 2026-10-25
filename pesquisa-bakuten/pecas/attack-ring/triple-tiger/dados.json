@@ -1,0 +1,80 @@
+{
+  "id": "attack-ring/triple-tiger",
+  "categoria": "attack-ring",
+  "nome": "Triple Tiger",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "ray-kon/driger-g"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "As rampas descem até a base do Weight Disk."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 45,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 9,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 6.2,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 1,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「トリプルタイガー」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 3,
+    "tipo_contato": "smash",
+    "recoil": 0.25,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 22.5
+  },
+  "forma": {
+    "simetria": 3,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 0,
+        "pico": 15,
+        "fim": 30,
+        "raio_mm": 20,
+        "borda": "curva",
+        "altura_mm": 7
+      },
+      {
+        "inicio": 30,
+        "pico": 95,
+        "fim": 110,
+        "raio_mm": 22.5,
+        "borda": "rampa",
+        "altura_mm": 9
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#f0f0f0",
+    "secundaria": "#2aa84a",
+    "detalhe": "#d8262c"
+  },
+  "acabamento": "opaco",
+  "descricao": "3 cabeças de tigre seguidas de seções em rampa que descem até a base do WD e terminam em contatos verticais altos.",
+  "funcao": "Híbrido de smash e upper de nível top em rotação direita; pouco recoil; protege contra attackers altos.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Triple_Tiger",
+    "https://beyblade.fandom.com/wiki/Driger_G"
+  ]
+}

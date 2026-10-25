@@ -1,0 +1,56 @@
+{
+  "id": "bit-chip/dragoon-v2",
+  "categoria": "bit-chip",
+  "nome": "Dragoon (V2 Version)",
+  "nome_jp": "ドラグーン",
+  "sistema": "magnacore",
+  "usado_em": [
+    "tyson-granger/dragoon-v2",
+    "tyson-granger/dragoon-v2-high-power-custom"
+  ],
+  "material": {
+    "principal": "plástico (ABS presumido)",
+    "outros": [
+      "adesivo impresso com a fera"
+    ],
+    "obs": "Variante da série V2 descrita como \"compatível com Bit Finder\" (ビットファインダー対応; o que é o Bit Finder não foi confirmado); tem rebaixos internos (肉抜き) e é um pouco mais leve. Cor do plástico do chip não confirmada; ABS presumido (estimado)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 8,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 0.7,
+      "fonte": "comunidade"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_gba": null,
+  "fisica": {
+    "fera_bit": "dragoon"
+  },
+  "forma": {
+    "raio_mm": 7,
+    "cor_fundo": "#1b3a8a",
+    "emblema": "dragoon"
+  },
+  "cores": {
+    "primaria": "#1b3a8a",
+    "secundaria": "#f2c200",
+    "detalhe": "#ffffff",
+    "fonte": "estimado"
+  },
+  "acabamento": "opaco",
+  "descricao": "Chip compatível com o Bit Finder (com rebaixos internos). Dragoon, arte da série V2 (\"Dragoon V2 Bit-Chip.jpg\" na galeria da wiki). A wiki da Dragoon V2 chama o chip de \"Dragoon (V Version)\".",
+  "funcao": "Identifica a bey e a fera bit; no jogo, define o emblema e o especial. Sem efeito físico relevante (menos de 1,5 g, no centro, raio pequeno). Nas regras antigas, perder ou quebrar o chip na batalha dava derrota.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Dragoon",
+    "https://beyblade.fandom.com/wiki/Dragoon_V2",
+    "http://obakeblader.com/2018/10/16/post-2253/"
+  ]
+}

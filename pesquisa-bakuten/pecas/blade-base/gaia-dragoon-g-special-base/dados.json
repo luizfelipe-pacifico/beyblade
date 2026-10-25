@@ -1,0 +1,82 @@
+{
+  "id": "blade-base/gaia-dragoon-g-special-base",
+  "categoria": "blade-base",
+  "nome": "Gaia Dragoon G Special Base",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Aço (4 esferas)",
+      "Plástico translúcido amarelo (ponta)"
+    ],
+    "obs": "Quatro esferas metálicas presas por baixo do núcleo G Ball do Spin Gear; ponta flat de plástico translúcido amarelo."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 44,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 9,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 4,
+    "defesa": 2,
+    "stamina": 0.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「G-スペシャルベース」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "flat",
+    "raio_ponta_mm": 2.5,
+    "atrito": 0.5,
+    "padrao_movimento": "erratico",
+    "gimmick": "g-ball: 4 esferas metálicas seguradas pelo núcleo G Ball",
+    "modos": []
+  },
+  "forma": {
+    "simetria": 8,
+    "raio_corpo_mm": 20,
+    "altura_mm": 10,
+    "perfil": "saia",
+    "lobos": [
+      {
+        "inicio": 14,
+        "pico": 22,
+        "fim": 31,
+        "raio_mm": 22,
+        "borda": "reta",
+        "altura_mm": 3
+      }
+    ],
+    "ponta": {
+      "tipo": "flat",
+      "raio_mm": 2.5,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#4a2a8c",
+    "secundaria": "#bfc3c8",
+    "detalhe": "#e6c24a",
+    "ponta": "#e6c24a",
+    "fonte": "fotos locais blade-base.jpg e blade-base-lateral.jpg"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base roxa, redonda, com oito abas retangulares na borda (duas são os clipes do SG) e quatro torres salientes nas diagonais, cada uma com uma esfera metálica. Ponta flat curta, amarela translúcida, no centro de um cone escalonado.",
+  "funcao": "Ponta flat de ataque com peso extra das esferas. Na prática as torres que seguram as esferas raspam no estádio e a base é instável.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_G_Special_Base",
+    "pesquisa-bakuten/personagens/daichi-sumeragi/beyblades/gaia-dragoon/dados.json"
+  ]
+}

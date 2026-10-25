@@ -1,0 +1,72 @@
+{
+  "id": "attack-ring/triangle-wing",
+  "categoria": "attack-ring",
+  "nome": "Triangle Wing",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "kai-hiwatari/dranzer-gt"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 46,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 7,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 6.5,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 4,
+    "defesa": 1,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「トライアングルウイング」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 3,
+    "tipo_contato": "upper",
+    "recoil": 0.35,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 23
+  },
+  "forma": {
+    "simetria": 3,
+    "raio_base_mm": 18.5,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 5,
+        "pico": 60,
+        "fim": 115,
+        "raio_mm": 23,
+        "borda": "rampa",
+        "altura_mm": 7
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#c8202a",
+    "secundaria": "#f2c230",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Parecido com o Upper Dragoon (Master Dragoon), porém simétrico: rampas que funcionam nos dois sentidos.",
+  "funcao": "Upper attack nas duas rotações; um dos melhores ARs de upper em rotação esquerda.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Triangle_Wing",
+    "https://beyblade.fandom.com/wiki/Dranzer_GT"
+  ]
+}

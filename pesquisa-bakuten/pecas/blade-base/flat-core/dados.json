@@ -1,0 +1,79 @@
+{
+  "id": "blade-base/flat-core",
+  "categoria": "blade-base",
+  "nome": "Flat Core (Running Core)",
+  "nome_jp": null,
+  "sistema": "hms",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon-ms"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Running Core inteiro de plástico, ponta flat do mesmo material."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 15,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 3,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 1,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「フラットコア」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "flat",
+    "raio_ponta_mm": 3,
+    "atrito": 0.5,
+    "padrao_movimento": "agressivo",
+    "gimmick": "nenhum",
+    "modos": []
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 7,
+    "altura_mm": 10,
+    "perfil": "reto",
+    "lobos": [
+      {
+        "inicio": 30,
+        "pico": 45,
+        "fim": 60,
+        "raio_mm": 8,
+        "borda": "reta",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "flat",
+      "raio_mm": 3,
+      "altura_mm": 4
+    }
+  },
+  "cores": {
+    "primaria": "#4b3d9e",
+    "secundaria": "#3a2f80",
+    "detalhe": "#6a5cc0",
+    "fonte": "foto local running-core.jpg"
+  },
+  "acabamento": "opaco",
+  "descricao": "Running Core do HMS (substitui Spin Gear + Blade Base): cilindro roxo com quatro abas laterais de encaixe e ponta escalonada terminando num flat largo.",
+  "funcao": "Primeiro Running Core lançado; ponta flat de ataque com movimento decente, depois superada por Grip Flat Core e Metal Flat Core.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Running_Core_-_Flat_Core",
+    "pesquisa-bakuten/personagens/daichi-sumeragi/beyblades/gaia-dragoon-ms/dados.json"
+  ],
+  "duplicata_de": "spin-gear/flat-core"
+}

@@ -1,0 +1,72 @@
+{
+  "id": "attack-ring/eight-spike",
+  "categoria": "attack-ring",
+  "nome": "Eight Spike",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "max-tate/draciel-f"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 42,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 4.2,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 2,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「エイトスパイク」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 8,
+    "tipo_contato": "defesa",
+    "recoil": 0.4,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 21
+  },
+  "forma": {
+    "simetria": 8,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 10,
+        "pico": 22.5,
+        "fim": 35,
+        "raio_mm": 21,
+        "borda": "reta",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#1f7a3a",
+    "secundaria": "#0f4a22",
+    "detalhe": "#f2c230"
+  },
+  "acabamento": "opaco",
+  "descricao": "Circular com 8 projeções trapezoidais, como uma engrenagem.",
+  "funcao": "Fraco em todos os campos (sem uso competitivo).",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Eight_Spike",
+    "https://beyblade.fandom.com/wiki/Draciel_F"
+  ]
+}

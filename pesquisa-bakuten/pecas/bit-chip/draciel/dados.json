@@ -1,0 +1,56 @@
+{
+  "id": "bit-chip/draciel",
+  "categoria": "bit-chip",
+  "nome": "Draciel",
+  "nome_jp": "ドラシエル",
+  "sistema": "4-layer",
+  "usado_em": [
+    "max-tate/draciel-metal-ball-defenser"
+  ],
+  "material": {
+    "principal": "plástico (ABS presumido)",
+    "outros": [
+      "tampa de fixação plástica (2ª peça)",
+      "adesivo impresso com a fera"
+    ],
+    "obs": "Chip das primeiras séries (Character Chip): corpo e tampa de fixação separados; o tipo mais pesado de chip. Cor do plástico do chip não confirmada; ABS presumido (estimado)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 15,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 5,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 1.4,
+      "fonte": "comunidade"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_gba": null,
+  "fisica": {
+    "fera_bit": "draciel"
+  },
+  "forma": {
+    "raio_mm": 7.5,
+    "cor_fundo": "#1f6fb2",
+    "emblema": "draciel"
+  },
+  "cores": {
+    "primaria": "#1f6fb2",
+    "secundaria": "#f2c200",
+    "detalhe": "#ffffff",
+    "fonte": "estimado (cor da fera)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Chip de duas camadas (corpo + tampa de fixação). Draciel (Genbu, tartaruga negra da água). No mangá, antes de ganhar o chip, a bey se chamava Protociel.",
+  "funcao": "Identifica a bey e a fera bit; no jogo, define o emblema e o especial. Sem efeito físico relevante (menos de 1,5 g, no centro, raio pequeno). Nas regras antigas, perder ou quebrar o chip na batalha dava derrota.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Draciel",
+    "https://beyblade.fandom.com/wiki/Draciel_Metal_Ball_Defenser",
+    "http://obakeblader.com/2018/06/25/post-937/"
+  ]
+}

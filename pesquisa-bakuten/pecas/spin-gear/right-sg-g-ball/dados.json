@@ -1,0 +1,62 @@
+{
+  "id": "spin-gear/right-sg-g-ball",
+  "categoria": "spin-gear",
+  "nome": "Right SG (G Ball)",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "esfera de metal"
+    ],
+    "obs": "casca roxa (foto local) com adesivo \"RIGHT SPIN\""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 10,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5.5,
+      "fonte": "estimado",
+      "obs": "sem peso publicado; casca padrão + 1 esfera metálica"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "Spin Gear: a Takara não dá A/D/S.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "direita",
+    "gimmick": "nenhum",
+    "ativacao": {
+      "modo": "nenhum",
+      "obs": "o núcleo trava nas esferas da G Special Base; não há acionamento"
+    }
+  },
+  "forma": {
+    "tipo": "spin-gear",
+    "raio_mm": 9,
+    "altura_mm": 10,
+    "dentes": 8,
+    "nucleo": "metal"
+  },
+  "cores": {
+    "primaria": "#4b2a8c",
+    "secundaria": "#f2c500",
+    "detalhe": "#c8102e"
+  },
+  "acabamento": "opaco",
+  "descricao": "Casca de Right SG normal (na foto: roxa, com o adesivo \"RIGHT SPIN / 右回転\") e um núcleo exclusivo com uma esfera de metal e quatro formas quadradas que prendem as esferas da base.",
+  "funcao": "Só funciona com a G Special Base do Gaia Dragoon; sem uso competitivo fora dela.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_Right_SG_(G_Ball)",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_G_Special_Base"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "bit-chip/dragoon",
+  "categoria": "bit-chip",
+  "nome": "Dragoon",
+  "nome_jp": "ドラグーン",
+  "sistema": "4-layer",
+  "usado_em": [
+    "tyson-granger/dragoon-grip-attacker",
+    "tyson-granger/dragoon-s"
+  ],
+  "material": {
+    "principal": "plástico (ABS presumido)",
+    "outros": [
+      "tampa de fixação plástica (2ª peça)",
+      "adesivo impresso com a fera"
+    ],
+    "obs": "Chip das primeiras séries (Character Chip): corpo e tampa de fixação separados; o tipo mais pesado de chip. Cor do plástico do chip não confirmada; ABS presumido (estimado)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 15,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 5,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 1.4,
+      "fonte": "comunidade"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_gba": null,
+  "fisica": {
+    "fera_bit": "dragoon"
+  },
+  "forma": {
+    "raio_mm": 7.5,
+    "cor_fundo": "#1b3a8a",
+    "emblema": "dragoon"
+  },
+  "cores": {
+    "primaria": "#1b3a8a",
+    "secundaria": "#f2c200",
+    "detalhe": "#ffffff",
+    "fonte": "estimado (cor da fera; sem foto local do chip)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Chip de duas camadas (corpo + tampa de fixação). Dragoon (Seiryū, dragão azul do vento). A wiki mostra a arte na foto \"DragoonBitChip.jpg\" (infobox), sem descrição de cores.",
+  "funcao": "Identifica a bey e a fera bit; no jogo, define o emblema e o especial. Sem efeito físico relevante (menos de 1,5 g, no centro, raio pequeno). Nas regras antigas, perder ou quebrar o chip na batalha dava derrota.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Dragoon",
+    "https://beyblade.fandom.com/wiki/Dragoon_Grip_Attacker",
+    "https://beyblade.fandom.com/wiki/Dragoon_S",
+    "http://obakeblader.com/2018/06/17/post-233/",
+    "http://obakeblader.com/2018/06/17/post-347/"
+  ]
+}

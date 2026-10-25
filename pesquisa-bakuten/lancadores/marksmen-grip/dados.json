@@ -1,0 +1,129 @@
+{
+  "id": "lancadores/marksmen-grip",
+  "nome": "Marksmen Grip (Sniper Grip)",
+  "nome_jp": "スナイパーグリップ",
+  "codigo_produto": [
+    "A-15 Sniper Grip (Takara)",
+    "Marksmen Grip (Hasbro, embalagens S1 e V-Force)",
+    "A-68 / A-106 Sniper Scope (mira avulsa)",
+    "A-86 Sniper Compass"
+  ],
+  "tipo": "ripcord",
+  "rotacao": "direita",
+  "sistema": "spin-gear",
+  "anime": true,
+  "usado_por": [
+    {
+      "personagem": "max-tate",
+      "temporadas": [
+        "s1"
+      ],
+      "beys": [
+        "draciel-s",
+        "draciel-f"
+      ],
+      "obs": "Ep. 14: Kenny entrega ao Max a Draciel S e o Marksmen Grip. Uso com a Draciel F inferido (não há troca registrada até o fim da S1)."
+    },
+    {
+      "personagem": "max-tate",
+      "temporadas": [
+        "v-force"
+      ],
+      "beys": [
+        "draciel-v",
+        "draciel-v2"
+      ],
+      "obs": "Inferido: a Hasbro relançou o Marksmen Grip em embalagem V-Force; o anime não é citado nas fontes."
+    }
+  ],
+  "acessorios": [
+    "LED Sight / Sniper Scope (mira com luz vermelha)",
+    "EZ Shooter direito ou esquerdo"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/winder-padrao",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/winder-padrao",
+    "lancadores/ripcords/winder-hasbro",
+    "lancadores/ripcords/dragon-winder",
+    "lancadores/ripcords/neo-dragon-winder",
+    "lancadores/ripcords/ultimate-winder"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "LED vermelho + pilhas",
+      "lente translúcida"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 95,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 55,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 120,
+      "fonte": "estimado",
+      "obs": "com a mira levantada"
+    },
+    "peso_g": {
+      "valor": 70,
+      "fonte": "estimado",
+      "obs": "inclui pilhas da mira"
+    },
+    "curso_corda_mm": {
+      "valor": 145,
+      "fonte": "estimado"
+    }
+  },
+  "atributos": {
+    "forca": 6,
+    "rpm_max": 6650,
+    "precisao": 9,
+    "controle_angulo": 8,
+    "facilidade": 7,
+    "justificativa": "Mesma transmissão do EZ Shooter (rpm de referência + ganho do grip). A mira, na posição vertical, projeta uma luz vermelha onde a bey deve cair (wiki): é o lançador de maior precisão da S1.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 130,
+    "forca_maxima": 1,
+    "desvio_angular_graus": 2.5,
+    "tempo_puxada_ideal_ms": 260,
+    "inclinacao_max_graus": 25,
+    "bonus_rpm_pct": 1.5,
+    "assistencia_mira": 0.6,
+    "rotacao_selecionavel": false,
+    "mostra_ponto_de_queda": true,
+    "obs": "No HUD: ponto vermelho no estádio mostrando onde a bey vai cair enquanto o analógico mira."
+  },
+  "forma": {
+    "corpo": "pistola",
+    "grip": true,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 95,
+    "largura_mm": 55,
+    "mira": true,
+    "cores": {
+      "primaria": "#2f8f4e",
+      "secundaria": "#f28c28",
+      "detalhe": "#e02020",
+      "corda": "#e8e8e8"
+    },
+    "obs_cores": "Estimado (verde/laranja do Max); LED vermelho."
+  },
+  "descricao": "Launcher Grip com mira LED (Sniper Scope). Quando a mira fica na vertical, emite luz vermelha para projetar onde a beyblade vai cair (wiki).",
+  "referencias": [],
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Marksmen_Grip",
+    "https://beyblade.fandom.com/wiki/Grip",
+    "https://beyblade.fandom.com/wiki/LED_Sight",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_14",
+    "https://beyblade.fandom.com/wiki/List_of_Original_Series_products_(Takara)"
+  ]
+}

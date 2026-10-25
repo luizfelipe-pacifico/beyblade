@@ -1,0 +1,142 @@
+{
+  "id": "lancadores/dual-shooter",
+  "nome": "Dual Shooter (HMS)",
+  "nome_jp": "デュアルシューター",
+  "codigo_produto": [
+    "Incluso nas Starters HMS (Takara A-123 a A-126, MA-01)",
+    "MA-06 HMS Dual Shooter (Light Blue)",
+    "HMS Boosters: Dual Shooter Silver/Bronze",
+    "Hasbro: \"Dual Launcher\" das Starters Metal System"
+  ],
+  "tipo": "ripcord",
+  "rotacao": "dupla",
+  "sistema": "hms",
+  "anime": true,
+  "usado_por": [
+    {
+      "personagem": "tyson-granger",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "dragoon-ms",
+        "dragoon-ms-ultimate-version"
+      ],
+      "obs": "Wiki do Tyson: \"Dual Shooter (Currently)\". G-Rev ep. 39: na primeira puxada da Dragoon MS, o tranco joga o Tyson para trás e derruba Ray e Rick; a bey abre uma cratera."
+    },
+    {
+      "personagem": "kai-hiwatari",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "dranzer-ms"
+      ],
+      "obs": "Inferido: Dual Shooter é o lançador padrão de toda bey HMS (wiki)."
+    },
+    {
+      "personagem": "max-tate",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "draciel-ms"
+      ],
+      "obs": "Inferido (padrão HMS)."
+    },
+    {
+      "personagem": "daichi-sumeragi",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "gaia-dragoon-ms"
+      ],
+      "obs": "Inferido (padrão HMS)."
+    }
+  ],
+  "acessorios": [
+    "G-Winder (único winder HMS, todos do mesmo comprimento, plástico mais grosso)"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/g-winder",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/g-winder"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "G-Winder em plástico mais rígido e grosso"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 70,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 48,
+      "fonte": "estimado",
+      "obs": "beys HMS são menores"
+    },
+    "altura_mm": {
+      "valor": 26,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 17,
+      "fonte": "estimado"
+    },
+    "curso_corda_mm": {
+      "valor": 218,
+      "fonte": "estimado",
+      "obs": "G-Winder derivado do Dragon Winder"
+    }
+  },
+  "atributos": {
+    "forca": 8,
+    "rpm_max": 7400,
+    "precisao": 6,
+    "controle_angulo": 6,
+    "facilidade": 8,
+    "justificativa": "Duas entradas de winder (esquerda e direita): basta virar o G-Winder (wiki). Beys HMS são menores e com AR metálico; a wiki diz que a velocidade de rotação \"melhorou dramaticamente\". Estimado +13% sobre a referência.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 115,
+    "forca_maxima": 1.13,
+    "desvio_angular_graus": 5,
+    "tempo_puxada_ideal_ms": 290,
+    "inclinacao_max_graus": 30,
+    "bonus_rpm_pct": 13,
+    "assistencia_mira": 0.1,
+    "rotacao_selecionavel": true,
+    "recuo": 0.6,
+    "obs": "L1/R1 escolhe o lado do winder (esquerda/direita) antes da puxada. Recuo forte: tranco de câmera (ep. 39)."
+  },
+  "forma": {
+    "corpo": "compacto",
+    "grip": false,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 70,
+    "largura_mm": 48,
+    "duas_entradas": true,
+    "cores": {
+      "primaria": "#b8bec6",
+      "secundaria": "#1a1a1a",
+      "detalhe": "#1f4fa8",
+      "corda": "#1f4fa8"
+    },
+    "obs_cores": "Prata (versão Silver dos HMS Boosters) com G-Winder azul; estimado."
+  },
+  "descricao": "Lançador padrão do Hard Metal System. Tem duas entradas de winder (uma para cada sentido): o sentido de rotação muda sem trocar peças da bey (wiki).",
+  "referencias": [],
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dual_Shooter",
+    "https://beyblade.fandom.com/wiki/Hard_Metal_System",
+    "https://beyblade.fandom.com/wiki/G-Winder",
+    "https://beyblade.fandom.com/wiki/Tyson_Granger",
+    "https://beyblade.fandom.com/wiki/Beyblade:_G-Revolution_-_Episode_39"
+  ]
+}

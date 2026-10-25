@@ -1,0 +1,68 @@
+{
+  "id": "spin-gear/neo-right-sg-south-magnecore",
+  "categoria": "spin-gear",
+  "nome": "Neo Right SG (South Magnecore)",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon-v",
+    "max-tate/draciel-v2",
+    "ray-kon/driger-v"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "ímã (polo Sul) no núcleo"
+    ],
+    "obs": "WBO: o Magnecore Sul é azul e o Norte é vermelho"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 10,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 6,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "Spin Gear: a Takara não dá A/D/S, só Magne Power 2. Os 1/3/2 da wiki foram copiados por engano e foram removidos.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "direita",
+    "gimmick": "magnecore",
+    "ativacao": {
+      "modo": "nenhum",
+      "obs": "o efeito magnético é passivo, depende dos ímãs do estádio"
+    }
+  },
+  "forma": {
+    "tipo": "spin-gear",
+    "raio_mm": 9,
+    "altura_mm": 10,
+    "dentes": 8,
+    "nucleo": "magne-s"
+  },
+  "cores": {
+    "primaria": "#d9d9d9",
+    "secundaria": "#1f4fbf",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Neo Spin Gear direito com Magnecore polo Sul (núcleo com ímã). Nas fontes aparece como \"S-MG Core\" (Gaia Dragoon V; Draciel V2 na WBO), \"South Core version\" (Driger V) e \"MG Core\" (Draciel V2 na Beyblade Wiki).",
+  "funcao": "Peso extra no centro (6 g, o núcleo comum mais pesado depois do Heavy Metal Core) e interação com os ímãs do estádio Magnacore.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Core_-_Magnecore_(South_Pole)",
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_Neo_Right_SG_(MG_Core)",
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_Neo_Right_SG_(South_Core_version)",
+    "https://beyblade.fandom.com/wiki/Strata_Dragoon_V",
+    "http://wiki.worldbeyblade.org/index.php?title=Magnecore",
+    "http://wiki.worldbeyblade.org/index.php?title=Draciel_V2",
+    "http://wiki.worldbeyblade.org/index.php?title=Gaia_Dragoon_V"
+  ]
+}

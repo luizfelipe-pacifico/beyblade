@@ -1,0 +1,86 @@
+{
+  "id": "lancadores/ripcords/ripcord-alongado-tyson",
+  "nome": "Ripcord alongado do Tyson (anime)",
+  "nome_jp": "",
+  "codigo_produto": [
+    "Exclusivo do anime (montagem caseira)"
+  ],
+  "tipo": "ripcord",
+  "sentido": "direita",
+  "compativel_com": [
+    "lancadores/ez-shooter"
+  ],
+  "usado_por": [
+    {
+      "personagem": "tyson-granger",
+      "beys": [
+        "dragoon-grip-attacker"
+      ],
+      "episodios": [
+        "S1 ep. 1"
+      ],
+      "obs": "O Tyson acha que um ripcord duas vezes mais longo dá mais força contra o Carlos; na versão japonesa a ideia vem dos peixes no espeto do avô. O Carlos diz que ele \"não é o primeiro a tentar isso\"."
+    }
+  ],
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 400,
+      "fonte": "estimado",
+      "obs": "dois winders padrão emendados"
+    },
+    "largura_mm": {
+      "valor": 11,
+      "fonte": "estimado"
+    },
+    "espessura_mm": {
+      "valor": 2.2,
+      "fonte": "estimado"
+    },
+    "numero_dentes": {
+      "valor": 90,
+      "fonte": "estimado",
+      "obs": "2 x 45"
+    },
+    "passo_dente_mm": {
+      "valor": 3.2,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 8,
+      "fonte": "estimado"
+    }
+  },
+  "material": {
+    "principal": "Plástico flexível + emenda (fita/cola)",
+    "outros": [],
+    "obs": "Interpretação: a emenda é o ponto fraco."
+  },
+  "atributos": {
+    "spin_entregue": 8,
+    "facilidade": 3,
+    "durabilidade": 2,
+    "justificativa": "Curso dobrado = muito mais tempo de aceleração, mas a corda longa entorta e a emenda pode prender: força alta, facilidade e durabilidade baixas.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "curso_puxada_mm": 288,
+    "multiplicador_rpm": 1.1,
+    "desgaste_por_batalha": 10,
+    "chance_travar": 0.15,
+    "obs": "Item de história (ep. 1). 15% de chance de travar a puxada se o R2 não for contínuo."
+  },
+  "forma": {
+    "comprimento_mm": 400,
+    "dentes": 90,
+    "cor": "#1a1a1a",
+    "pegador": "anel",
+    "cor_pegador": "#1a1a1a",
+    "emenda_mm": 200,
+    "obs": "Cor estimada; marca de emenda no meio."
+  },
+  "descricao": "No ep. 1, o Tyson monta um ripcord duas vezes mais longo para a Dragoon Grip Attacker (wiki, episódio 1).",
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_01"
+  ]
+}

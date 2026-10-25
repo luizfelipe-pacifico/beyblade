@@ -1,0 +1,81 @@
+{
+  "id": "attack-ring/war-lion",
+  "categoria": "attack-ring",
+  "nome": "War Lion",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "lee/galeon"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Wiki: 6 g com o Sub-AR; aqui 4,5 g (AR) + 1,5 g (Sub-AR), divisão estimada. Quebra fácil."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 39,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 4.5,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2.5,
+    "defesa": 2.5,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「ウォーライオン」",
+    "wiki": {
+      "ataque": 1,
+      "defesa": 3,
+      "stamina": 2
+    }
+  },
+  "stats_oficiais_obs": "A wiki copiou os números da Tiger Defenser. Vale a Takara; a soma da Galeon (5/7,5/4,5) fecha com 2,5/2,5/1. As estrelas incluem o Sub-AR.",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 4,
+    "tipo_contato": "defesa",
+    "recoil": 0.15,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 19.5
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 18.5,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 0,
+        "pico": 45,
+        "fim": 90,
+        "raio_mm": 19.5,
+        "borda": "curva",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#1d1d24",
+    "secundaria": "#2f6fd0",
+    "detalhe": "#f2c230"
+  },
+  "acabamento": "opaco",
+  "descricao": "AR pequeno e quase perfeitamente redondo, com Sub-AR livre que recebe os golpes.",
+  "funcao": "Defesa e sobrevivência excelentes: o Sub-AR leva o golpe e o resto da bey segue girando.",
+  "pecas_relacionadas": [
+    "attack-ring/war-lion-sub-ar"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_War_Lion",
+    "https://beyblade.fandom.com/wiki/Galeon"
+  ]
+}

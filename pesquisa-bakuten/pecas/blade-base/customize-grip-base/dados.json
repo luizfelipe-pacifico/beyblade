@@ -1,0 +1,83 @@
+{
+  "id": "blade-base/customize-grip-base",
+  "categoria": "blade-base",
+  "nome": "Customize Grip Base",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "tyson-granger/dragoon-v2"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Borracha (ponta removível)",
+      "Ímã (na ponta)"
+    ],
+    "obs": "Ponta flat de borracha azul, bordas arredondadas, removível e com ímã."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 42,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 16,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 6.5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 4,
+    "defesa": 1,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「カスタマイズグリップベース」"
+  },
+  "stats_oficiais_obs": "Magne Power 1. A wiki não tem estrelas.",
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "grip",
+    "raio_ponta_mm": 5,
+    "atrito": 0.85,
+    "padrao_movimento": "agressivo",
+    "gimmick": "ponta removível magnética; aceita Support Parts e SGs de rolamento",
+    "modos": []
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 19.5,
+    "altura_mm": 11,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 40,
+        "pico": 45,
+        "fim": 50,
+        "raio_mm": 20.5,
+        "borda": "reta",
+        "altura_mm": 3
+      }
+    ],
+    "ponta": {
+      "tipo": "grip",
+      "raio_mm": 5,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#1a1a1a",
+    "secundaria": "#1f3f9a",
+    "detalhe": "#c0c0c0",
+    "ponta": "#2f6fd0",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base relativamente alta, com fundo liso dividido em quatro quadrantes por uma cruz em relevo com detalhes de parafuso; eixo central largo com ponta azul de borracha removível.",
+  "funcao": "Ataque muito rápido e versátil (aceita núcleos, SPs e outras pontas). A altura atrapalha contra beys baixas e as bordas arredondadas escorregam no tornado ridge (auto-KO).",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Customize_Grip_Base",
+    "pesquisa-bakuten/personagens/tyson-granger/beyblades/dragoon-v2/dados.json"
+  ]
+}

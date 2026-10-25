@@ -1,0 +1,63 @@
+{
+  "id": "spin-gear/right-sg-free-shaft-version",
+  "categoria": "spin-gear",
+  "nome": "Right SG (Free Shaft Version)",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "kai-hiwatari/dranzer-s"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "ponta sharp de metal",
+      "rolamento metálico"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 13,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 6,
+      "fonte": "wiki",
+      "obs": "a infobox diz 7 g; o texto da wiki e a WBO dizem 6 g"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "Spin Gear: a Takara não dá A/D/S.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "direita",
+    "gimmick": "free-shaft",
+    "ativacao": {
+      "modo": "nenhum",
+      "obs": "o eixo gira solto o tempo todo, não há acionamento"
+    }
+  },
+  "forma": {
+    "tipo": "spin-gear",
+    "raio_mm": 9,
+    "altura_mm": 13,
+    "dentes": 8,
+    "nucleo": "bearing"
+  },
+  "cores": {
+    "primaria": "#c8102e",
+    "secundaria": "#b8bcc2",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Spin Gear cuja casca guarda uma ponta sharp de metal sobre um rolamento: o eixo gira livre em relação ao corpo da bey.",
+  "funcao": "O corpo gira em volta do eixo quase sem atrito: menos perda de rotação ao ser atingido e ao tocar no chão (stamina). A casca também aceita o eixo do Driger F, usado em customizações de smash.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_Right_SG_(Free_Shaft_Version)",
+    "http://wiki.worldbeyblade.org/index.php?title=Dranzer_S"
+  ]
+}

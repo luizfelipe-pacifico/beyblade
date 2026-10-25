@@ -1,0 +1,76 @@
+{
+  "id": "attack-ring/fal-wing",
+  "categoria": "attack-ring",
+  "nome": "Fal Wing",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "bryan-kuznetsov/falborg"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Peça só do anime/jogo de GBA (Falborg nunca foi lançada como brinquedo)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 48,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 7,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5.5,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "Sem fonte: a Falborg não aparece nas listas de peças Takara do obakeblader nem tem página de peça na wiki.",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "smash",
+    "recoil": 0.6,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 24
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 17,
+    "raio_interno_mm": 10,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 0,
+        "pico": 120,
+        "fim": 150,
+        "raio_mm": 24,
+        "borda": "gancho",
+        "altura_mm": 7
+      },
+      {
+        "inicio": 160,
+        "pico": 168,
+        "fim": 176,
+        "raio_mm": 18,
+        "borda": "curva",
+        "altura_mm": 8
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#b9a9d9",
+    "secundaria": "#d23a2a",
+    "detalhe": "#f2c230"
+  },
+  "acabamento": "opaco",
+  "descricao": "Duas grandes asas em crescente (lilás com faixas vermelhas e detalhe verde) que terminam em gancho, e 2 pinos amarelos junto ao centro.",
+  "funcao": "Smash de longo alcance: as asas longas tocam cedo no adversário; com só 2 contatos, o recoil tende a ser alto (estimativa).",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Falborg",
+    "Bakuten Shoot Beyblade 2002 (GBA), tela de peças (foto local)"
+  ]
+}

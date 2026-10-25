@@ -1,0 +1,100 @@
+{
+  "id": "blade-base/volcano-change-base",
+  "categoria": "blade-base",
+  "nome": "Volcano Change Base",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "kai-hiwatari/dranzer-v"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Metal (eixo com ponta flat e ponta sharp)",
+      "Plástico (disco de giro livre)"
+    ],
+    "obs": "Metade inferior presa só pelo ímã do Magnecore."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 40,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 16,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 6.6,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 2,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「ボルケーノチェンジベース」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "metal-flat",
+    "raio_ponta_mm": 2,
+    "atrito": 0.4,
+    "padrao_movimento": "flower",
+    "gimmick": "eixo reversível preso por ímã + disco de giro livre",
+    "modos": [
+      {
+        "nome": "Attack Mode (ponta \"semi-flat\", na prática flat estreita)",
+        "tipo_ponta": "metal-flat",
+        "atrito": 0.4,
+        "gatilho": "manual: retirar a metade inferior e virar o eixo"
+      },
+      {
+        "nome": "Endurance Mode",
+        "tipo_ponta": "metal-sharp",
+        "atrito": 0.08,
+        "gatilho": "manual: retirar a metade inferior e virar o eixo"
+      }
+    ]
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 18,
+    "altura_mm": 8,
+    "perfil": "saia",
+    "lobos": [
+      {
+        "inicio": 20,
+        "pico": 45,
+        "fim": 70,
+        "raio_mm": 19.5,
+        "borda": "curva",
+        "altura_mm": 3
+      }
+    ],
+    "ponta": {
+      "tipo": "metal-flat",
+      "raio_mm": 2,
+      "altura_mm": 8
+    }
+  },
+  "cores": {
+    "primaria": "#c8102e",
+    "secundaria": "#bfc3c8",
+    "detalhe": "#f2f2f2",
+    "fonte": "estimado (sem foto local)",
+    "variantes": {
+      "hasbro-white": {
+        "primaria": "#f2f2f2",
+        "obs": "Dranzer V White Version (Hasbro)"
+      }
+    }
+  },
+  "acabamento": "opaco",
+  "descricao": "Base em duas partes: uma metade superior baixa e quase circular que cobre o Spin Gear, e uma metade inferior com eixo metálico de duas pontas (flat de um lado, sharp do outro) e um disco plástico que gira livre em volta.",
+  "funcao": "Attack Mode é controlável, com atrito baixo e bom life after death (útil até em zombie). Endurance Mode é muito instável e quase inútil.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Volcano_Change_Base",
+    "pesquisa-bakuten/personagens/kai-hiwatari/beyblades/dranzer-v/dados.json"
+  ]
+}

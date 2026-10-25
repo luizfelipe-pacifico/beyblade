@@ -1,0 +1,61 @@
+{
+  "id": "weight-disk/eight-wide",
+  "categoria": "weight-disk",
+  "nome": "Eight Wide",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "tyson-granger/dragoon-f",
+    "tyson-granger/dragoon-s"
+  ],
+  "material": {
+    "principal": "Metal",
+    "outros": [],
+    "obs": "metal fundido; a liga não é especificada nas fontes"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 41,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 3.2,
+      "fonte": "estimado",
+      "obs": "calculada do peso com densidade 7.1 g/cm³"
+    },
+    "peso_g": {
+      "valor": 13,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 0.5,
+    "defesa": 1,
+    "stamina": 3.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2021/06/26/post-16926/), Weight Disk 「エイトワイド」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "distribuicao": "periferia",
+    "magnetico": false
+  },
+  "forma": {
+    "lados": 8,
+    "raio_externo_mm": 20.5,
+    "raio_interno_mm": 14,
+    "espessura_mm": 3.2,
+    "estilo": "wide"
+  },
+  "cores": {
+    "primaria": "#9ea3a8",
+    "secundaria": "#6e7378",
+    "detalhe": "#c9cdd1"
+  },
+  "acabamento": "metalico",
+  "descricao": "Disco octogonal, largo e com a massa visivelmente concentrada no perímetro. Segunda geração da série Wide (depois do Wide de 6 lados). Algumas unidades da Hasbro têm um único Attack Point.",
+  "funcao": "Inércia na periferia: ajuda smash attack (mobilidade e impacto) e stamina. Mais leve que os discos Balance e Heavy.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Eight_Wide",
+    "http://wiki.worldbeyblade.org/index.php?title=Wide_Weight_Disks"
+  ]
+}

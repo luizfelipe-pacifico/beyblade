@@ -1,0 +1,79 @@
+{
+  "id": "blade-base/normal-base-wolborg-4",
+  "categoria": "blade-base",
+  "nome": "Normal Base (Wolborg 4 Version)",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "tala/wolborg-4"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Sem mola. A ponta é o CEW Circle Survivor do Engine Gear."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 40,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 11,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 1,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「ノーマルベース（ウルボーグ4）」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "ball",
+    "raio_ponta_mm": 6,
+    "atrito": 0.25,
+    "padrao_movimento": "centro",
+    "gimmick": "nenhum (sem clutch)",
+    "modos": [],
+    "ponta_origem": "engine-gear (Right EG com CEW Circle Survivor)"
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_corpo_mm": 19,
+    "altura_mm": 8,
+    "perfil": "reto",
+    "lobos": [
+      {
+        "inicio": 70,
+        "pico": 90,
+        "fim": 110,
+        "raio_mm": 19.5,
+        "borda": "reta",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "ball",
+      "raio_mm": 6,
+      "altura_mm": 4
+    }
+  },
+  "cores": {
+    "primaria": "#b9bbae",
+    "secundaria": "#1a1a1a",
+    "detalhe": "#ffffff",
+    "fonte": "foto local blade-base.jpg"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base cinza-esverdeada quase lisa e circular, com dois clipes que seguram o Engine Gear e furo central por onde passam os pinos do CEW; adesivo preto \"BEYBLADE WOLBORG IV\".",
+  "funcao": "Estrutural: sem clutch. Mais baixa e leve que a Normal Base do Rock Bison, um pouco menos útil para defesa; boa em combos Circle Survivor.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Normal_Base_(Wolborg_4_Version)",
+    "pesquisa-bakuten/personagens/tala/beyblades/wolborg-4/dados.json"
+  ]
+}

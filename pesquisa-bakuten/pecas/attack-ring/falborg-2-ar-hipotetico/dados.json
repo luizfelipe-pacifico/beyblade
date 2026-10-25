@@ -1,0 +1,76 @@
+{
+  "id": "attack-ring/falborg-2-ar-hipotetico",
+  "categoria": "attack-ring",
+  "nome": "Attack Ring de Falborg 2 (nome desconhecido)",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "hipotetico": true,
+  "usado_em": [
+    "bryan-kuznetsov/falborg-2"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "HIPOTÉTICO: peça só do anime, sem nome nem dados confirmados."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 44,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5.5,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "Peça hipotética (só no anime): não existe estrela oficial.",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 4,
+    "tipo_contato": "smash",
+    "recoil": 0.5,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 22
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 10,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 30,
+        "pico": 45,
+        "fim": 60,
+        "raio_mm": 21,
+        "borda": "reta",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 65,
+        "pico": 75,
+        "fim": 85,
+        "raio_mm": 22,
+        "borda": "reta",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#1f9a9a",
+    "secundaria": "#c8252c",
+    "detalhe": "#f2c230"
+  },
+  "acabamento": "opaco",
+  "descricao": "Ficha hipotética montada a partir do frame do anime: anel quadrangular verde-azulado com 4 blocos/garras laterais vermelhos e amarelos e cantos chanfrados.",
+  "funcao": "Smash de 4 contatos (estimativa visual), coerente com o tipo Attack da bey.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Falborg_2"
+  ]
+}

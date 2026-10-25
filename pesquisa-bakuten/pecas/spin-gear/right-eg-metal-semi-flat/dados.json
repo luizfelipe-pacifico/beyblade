@@ -1,0 +1,73 @@
+{
+  "id": "spin-gear/right-eg-metal-semi-flat",
+  "categoria": "spin-gear",
+  "nome": "Right EG (Metal Semi-Flat)",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "kai-hiwatari/dranzer-g",
+    "lee/galeon-2-eg",
+    "ray-kon/driger-g"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "mola espiral de aço",
+      "ponta de metal"
+    ],
+    "obs": "casca azul e ponta metálica, como nas fotos locais de EGs Takara; a cor exata por bey não foi confirmada"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 24,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 11,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 0,
+    "stamina": 2,
+    "potencia_engine": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2026/02/22/%E7%88%86%E8%BB%A2%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%88%E3%83%99%E3%82%A4%E3%83%96%E3%83%AC%E3%83%BC%E3%83%89%E3%82%B9%E3%83%94%E3%83%B3%E3%82%AE%E3%82%A2%E3%83%BB%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3/), Spin Gear/Engine Gear 「ライトエンジンギア（メタルセミフラット）」"
+  },
+  "stats_oficiais_obs": "Defesa 0 estrelas (a wiki deixa em branco).",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "direita",
+    "gimmick": "engine-gear",
+    "ativacao": {
+      "modo": "clutch",
+      "obs": "o momento da liberação vem do Blade Base de cada bey (First Clutch = logo no início; Final Clutch / Hit Release = no impacto ou com a rotação baixa)"
+    }
+  },
+  "forma": {
+    "tipo": "engine-gear",
+    "raio_mm": 12,
+    "altura_mm": 18,
+    "dentes": 12,
+    "nucleo": "engine"
+  },
+  "cores": {
+    "primaria": "#1f4fbf",
+    "secundaria": "#a7abb0",
+    "detalhe": "#f2f2f2"
+  },
+  "acabamento": "opaco",
+  "descricao": "Engine Gear direito com ponta de metal \"semi-flat\" que, apesar do nome, é quase plana (o \"semi\" se refere ao diâmetro menor). Estreia com Driger G; também em Dranzer G e Strata Dragoon G.",
+  "funcao": "Ponta agressiva, rápida e com stamina razoável para ataque. O Engine Gear dá um surto de velocidade no momento definido pela base, mas é difícil de controlar (às vezes causa auto-KO) e deixa a bey alta, o que atrapalha o contato do AR.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Engine_Gear_-_Right_EG_(Metal_Semi-Flat)",
+    "https://beyblade.fandom.com/wiki/Engine_Gear",
+    "https://beyblade.fandom.com/wiki/Engine_Gear_System",
+    "http://wiki.worldbeyblade.org/index.php?title=Driger_G",
+    "http://wiki.worldbeyblade.org/index.php?title=Spin_Gear"
+  ]
+}

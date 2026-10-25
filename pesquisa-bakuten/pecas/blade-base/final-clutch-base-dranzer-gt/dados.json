@@ -1,0 +1,95 @@
+{
+  "id": "blade-base/final-clutch-base-dranzer-gt",
+  "categoria": "blade-base",
+  "nome": "Final Clutch Base (Dranzer GT Version)",
+  "nome_jp": "ファイナルクラッチベース (ドランザーGTバージョン)",
+  "sistema": "engine-gear",
+  "usado_em": [
+    "kai-hiwatari/dranzer-gt"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Ponta do Engine Gear (Right EG Reverse com CEW Metal Semi-Flat): metal."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 45,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 15,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 8,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 2,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「ファイナルクラッチベース（ドランザーGT）」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "metal-semi-flat",
+    "raio_ponta_mm": 2,
+    "atrito": 0.25,
+    "padrao_movimento": "agressivo",
+    "gimmick": "final-clutch",
+    "modos": [
+      {
+        "nome": "Engine Gear travado",
+        "tipo_ponta": "metal-semi-flat",
+        "atrito": 0.25,
+        "gatilho": "do lançamento até a trava abrir"
+      },
+      {
+        "nome": "Engine Gear liberado",
+        "tipo_ponta": "metal-semi-flat",
+        "atrito": 0.25,
+        "gatilho": "RPM baixa na parte final da batalha (limiar não documentado) ou impacto (Hit Release)"
+      }
+    ],
+    "ponta_origem": "engine-gear (Right EG Reverse, CEW Metal Semi-Flat)"
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 20,
+    "altura_mm": 11,
+    "perfil": "reto",
+    "lobos": [
+      {
+        "inicio": 20,
+        "pico": 40,
+        "fim": 60,
+        "raio_mm": 22.5,
+        "borda": "rampa",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "metal-semi-flat",
+      "raio_mm": 2,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#c41e24",
+    "secundaria": "#1a1a1a",
+    "detalhe": "#d9d9d9",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base Final Clutch da Dranzer GT, redonda, com travas de embreagem laterais; trabalha com o Engine Gear \"Reverse\" da GT.",
+  "funcao": "Solta o motor só depois de algum tempo de batalha, guardando o reforço de rotação para quando a rival enfraquece.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Hit_Release_(Dranzer_GT_Version)",
+    "pesquisa-bakuten/personagens/kai-hiwatari/beyblades/dranzer-gt/dados.json"
+  ],
+  "aliases": [
+    "Hit Release (Dranzer GT Version) (Hasbro)"
+  ]
+}

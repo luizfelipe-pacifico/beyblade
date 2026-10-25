@@ -1,0 +1,72 @@
+{
+  "id": "weight-disk/eight-balance",
+  "categoria": "weight-disk",
+  "nome": "Eight Balance",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "kai-hiwatari/dranzer-s",
+    "max-tate/draciel-f",
+    "max-tate/draciel-s",
+    "ray-kon/driger-f",
+    "robert-jurgen/griffolyon",
+    "tala/wolborg-2"
+  ],
+  "material": {
+    "principal": "Metal",
+    "outros": [],
+    "obs": "metal fundido; a liga não é especificada nas fontes"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 37,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 3.6,
+      "fonte": "estimado",
+      "obs": "calculada do peso com densidade 7.1 g/cm³"
+    },
+    "peso_g": {
+      "valor": 14,
+      "fonte": "wiki",
+      "obs": "WBO mediu 14,3 g na unidade do Wolborg 2"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 0.5,
+    "defesa": 2,
+    "stamina": 2.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2021/06/26/post-16926/), Weight Disk 「エイトバランス」",
+    "wiki": {
+      "ataque": 1,
+      "defesa": 2,
+      "stamina": 3
+    }
+  },
+  "stats_gba": null,
+  "fisica": {
+    "distribuicao": "equilibrado",
+    "magnetico": false
+  },
+  "forma": {
+    "lados": 8,
+    "raio_externo_mm": 18.5,
+    "raio_interno_mm": 11.5,
+    "espessura_mm": 3.6,
+    "estilo": "balance"
+  },
+  "cores": {
+    "primaria": "#9ea3a8",
+    "secundaria": "#6e7378",
+    "detalhe": "#c9cdd1"
+  },
+  "acabamento": "metalico",
+  "descricao": "Disco octogonal de peso intermediário entre Wide e Heavy. O nome oficial é só \"Balance\"; \"Eight\" é usado pelos fãs para diferenciar dos discos de 6 e 10 lados.",
+  "funcao": "Massa bem distribuída, em tese boa para defesa e stamina; na prática é superado por Ten Balance e Ten Heavy.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Eight_Balance",
+    "http://wiki.worldbeyblade.org/index.php?title=Balance_Weight_Disks",
+    "http://wiki.worldbeyblade.org/index.php?title=Wolborg_2"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "lancadores/ez-shooter-power-custom",
+  "nome": "EZ Shooter Power Custom",
+  "nome_jp": "イージーシューターパワーカスタム",
+  "codigo_produto": [
+    "A-119 G-Revolution EZ Shooter Power Custom (Takara)"
+  ],
+  "tipo": "ripcord",
+  "rotacao": "direita",
+  "sistema": "engine-gear",
+  "anime": false,
+  "usado_por": [],
+  "acessorios": [
+    "Winder padrão"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/winder-padrao",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/winder-padrao",
+    "lancadores/ripcords/winder-hasbro",
+    "lancadores/ripcords/dragon-winder",
+    "lancadores/ripcords/neo-dragon-winder",
+    "lancadores/ripcords/ultimate-winder"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 72,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 52,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 26,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 16,
+      "fonte": "estimado"
+    },
+    "curso_corda_mm": {
+      "valor": 145,
+      "fonte": "estimado"
+    }
+  },
+  "atributos": {
+    "forca": 8,
+    "rpm_max": 7270,
+    "precisao": 5,
+    "controle_angulo": 5,
+    "facilidade": 7,
+    "justificativa": "Pinhão de 9 dentes em vez de 10, de diâmetro menor: \"aumenta a força do lançamento em ~11%\" (wiki). 6550 x 10/9 ≈ 7270 rpm; puxada um pouco mais pesada.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 110,
+    "forca_maxima": 1.11,
+    "desvio_angular_graus": 6,
+    "tempo_puxada_ideal_ms": 270,
+    "inclinacao_max_graus": 30,
+    "bonus_rpm_pct": 11,
+    "assistencia_mira": 0,
+    "rotacao_selecionavel": false,
+    "obs": "Item de loja/upgrade."
+  },
+  "forma": {
+    "corpo": "compacto",
+    "grip": false,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 72,
+    "largura_mm": 52,
+    "cores": {
+      "primaria": "#e0e3e8",
+      "secundaria": "#c8202c",
+      "detalhe": "#1a1a1a",
+      "corda": "#1a1a1a"
+    },
+    "obs_cores": "Estimado."
+  },
+  "descricao": "Versão de rotação direita do EZ Shooter com engrenagem de 9 dentes, menor, que dá ~11% mais força. Raro (wiki).",
+  "referencias": [],
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Launcher",
+    "https://beyblade.fandom.com/wiki/List_of_Original_Series_products_(Takara)"
+  ]
+}

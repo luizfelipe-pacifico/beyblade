@@ -1,0 +1,56 @@
+{
+  "id": "bit-chip/driger-emblem",
+  "categoria": "bit-chip",
+  "nome": "Bit Protector - Driger Emblem",
+  "nome_jp": "ビットプロテクター ドライガーエンブレム",
+  "sistema": "hms",
+  "usado_em": [
+    "ray-kon/driger-ms"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "adesivo impresso (2 opções: emblema ou fera)"
+    ],
+    "obs": "No HMS o Bit Protector é a trava que segura o Attack Ring e as demais peças; 1º molde, o mais frouxo. Plástico preto (ABS) (wiki)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 18.17,
+      "fonte": "comunidade"
+    },
+    "altura_mm": {
+      "valor": 6.65,
+      "fonte": "comunidade"
+    },
+    "peso_g": {
+      "valor": 0.6,
+      "fonte": "comunidade"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_gba": null,
+  "fisica": {
+    "fera_bit": "driger"
+  },
+  "forma": {
+    "raio_mm": 9.09,
+    "cor_fundo": "#c8102e",
+    "emblema": "driger"
+  },
+  "cores": {
+    "primaria": "#c8102e",
+    "secundaria": "#1a1a1a",
+    "detalhe": "#ffffff",
+    "fonte": "wiki (protetor de ABS preto; emblema branco sobre adesivo vermelho; alternativa amarela); hex estimado"
+  },
+  "acabamento": "opaco",
+  "descricao": "Bit Protector (HMS, 1º molde). Protetor de ABS preto. Dois adesivos: emblema branco estilizado da cabeça do Driger com \"DRIGER\" e \"Heavy/Hard Metal System\" em letra branca pequena, sobre adesivo redondo vermelho; ou adesivo amarelo com o Driger de corpo inteiro (wiki, página Driger MS).",
+  "funcao": "Trava o Attack Ring e as demais peças no HMS (é o \"parafuso\" da bey) e é onde o lançador Dual Shooter prende. Mostra o emblema da fera. Peso desprezível (0,6 g).",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Driger_MS",
+    "https://beyblade.fandom.com/wiki/Bit_Protector",
+    "http://obakeblader.com/2018/09/13/post-1846/",
+    "https://beyblade.fandom.com/wiki/Bit_Protector_-_Strata_Dragoon"
+  ]
+}

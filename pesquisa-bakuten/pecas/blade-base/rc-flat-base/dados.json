@@ -1,0 +1,91 @@
+{
+  "id": "blade-base/rc-flat-base",
+  "categoria": "blade-base",
+  "nome": "RC Flat Base",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "tyson-granger/dragoon-v2-high-power-custom"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Componentes internos do sistema RC (não detalhados)"
+    ],
+    "obs": "Ponta semi-flat amarela (Takara) ou branca (Hasbro)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 48,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 20,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 37.7,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "Sem fonte: base da linha RC Beyblade, fora das listas de peças do obakeblader e sem infobox na wiki.",
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "semi-flat",
+    "raio_ponta_mm": 2.5,
+    "atrito": 0.3,
+    "padrao_movimento": "agressivo",
+    "gimmick": "radiocontrole (direção comandada pelo lançador RC)",
+    "modos": [
+      {
+        "nome": "Rádio controlado",
+        "tipo_ponta": "semi-flat",
+        "atrito": 0.3,
+        "gatilho": "manual: comando remoto do lançador próprio durante a batalha"
+      }
+    ]
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 23,
+    "altura_mm": 15,
+    "perfil": "saia",
+    "lobos": [
+      {
+        "inicio": 20,
+        "pico": 45,
+        "fim": 70,
+        "raio_mm": 24,
+        "borda": "curva",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "semi-flat",
+      "raio_mm": 2.5,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#1f3f9a",
+    "secundaria": "#1a1a1a",
+    "detalhe": "#c0c0c0",
+    "ponta": "#f2c919",
+    "fonte": "estimado (sem foto local); ponta amarela segundo a wiki",
+    "variantes": {
+      "hasbro-ra-01": {
+        "ponta": "#f2f2f2",
+        "obs": "Hasbro (RA-01 \"Dragoon V\") com ponta branca"
+      }
+    }
+  },
+  "acabamento": "opaco",
+  "descricao": "Base larga e pesada (37,7 g) de rotação direita, com ponta semi-flat, feita para ser radiocontrolada pelo lançador próprio (linha RC Beyblade).",
+  "funcao": "No brinquedo permite guiar a bey à distância. O peso muito maior dá muita inércia e pouca aceleração.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dragoon_V2_High_Power_Custom",
+    "https://beyblade.fandom.com/wiki/RC_Beyblade",
+    "pesquisa-bakuten/personagens/tyson-granger/beyblades/dragoon-v2-high-power-custom/dados.json"
+  ]
+}

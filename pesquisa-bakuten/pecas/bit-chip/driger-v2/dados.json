@@ -1,0 +1,55 @@
+{
+  "id": "bit-chip/driger-v2",
+  "categoria": "bit-chip",
+  "nome": "Driger (V2 Version)",
+  "nome_jp": "ドライガー",
+  "sistema": "magnacore",
+  "usado_em": [
+    "ray-kon/driger-v2"
+  ],
+  "material": {
+    "principal": "plástico (ABS presumido)",
+    "outros": [
+      "adesivo impresso com a fera"
+    ],
+    "obs": "Variante da série V2 descrita como \"compatível com Bit Finder\" (ビットファインダー対応; o que é o Bit Finder não foi confirmado); tem rebaixos internos (肉抜き) e é um pouco mais leve. Cor do plástico do chip não confirmada; ABS presumido (estimado)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 8,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 0.7,
+      "fonte": "comunidade"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_gba": null,
+  "fisica": {
+    "fera_bit": "driger"
+  },
+  "forma": {
+    "raio_mm": 7,
+    "cor_fundo": "#2e8b57",
+    "emblema": "driger"
+  },
+  "cores": {
+    "primaria": "#2e8b57",
+    "secundaria": "#f2c200",
+    "detalhe": "#ffffff",
+    "fonte": "estimado"
+  },
+  "acabamento": "opaco",
+  "descricao": "Chip compatível com o Bit Finder (com rebaixos internos). Driger, arte da série V2 (\"Driger V2.jpg\").",
+  "funcao": "Identifica a bey e a fera bit; no jogo, define o emblema e o especial. Sem efeito físico relevante (menos de 1,5 g, no centro, raio pequeno). Nas regras antigas, perder ou quebrar o chip na batalha dava derrota.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Driger",
+    "https://beyblade.fandom.com/wiki/Driger_V2",
+    "http://obakeblader.com/2018/10/16/post-2222/"
+  ]
+}

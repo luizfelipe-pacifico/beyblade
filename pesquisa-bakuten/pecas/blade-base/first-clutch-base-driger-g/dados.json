@@ -1,0 +1,92 @@
+{
+  "id": "blade-base/first-clutch-base-driger-g",
+  "categoria": "blade-base",
+  "nome": "First Clutch Base (Driger G Version)",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "ray-kon/driger-g"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Ponta do Engine Gear (Right EG Metal Semi-Flat): metal."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 43,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 7.3,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 2,
+    "stamina": 0,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「ファーストクラッチベース（ドライガーG）」",
+    "wiki": {
+      "ataque": 1,
+      "defesa": 0,
+      "stamina": 2
+    }
+  },
+  "stats_oficiais_obs": "A wiki troca defesa e stamina (1/–/2). A soma da Driger G (8/5/6) fecha com a Takara 1/2/0.",
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "metal-semi-flat",
+    "raio_ponta_mm": 2.5,
+    "atrito": 0.25,
+    "padrao_movimento": "agressivo",
+    "gimmick": "first-clutch",
+    "modos": [
+      {
+        "nome": "Engine Gear travado",
+        "tipo_ponta": "metal-semi-flat",
+        "atrito": 0.25,
+        "gatilho": "só no lançador"
+      },
+      {
+        "nome": "Engine Gear liberado",
+        "tipo_ponta": "metal-semi-flat",
+        "atrito": 0.25,
+        "gatilho": "pouso no estádio, logo após o lançamento"
+      }
+    ],
+    "ponta_origem": "engine-gear (Right EG Metal Semi-Flat)"
+  },
+  "forma": {
+    "simetria": 1,
+    "raio_corpo_mm": 21,
+    "altura_mm": 10,
+    "perfil": "conico",
+    "lobos": [],
+    "ponta": {
+      "tipo": "metal-semi-flat",
+      "raio_mm": 2.5,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#2c8f3a",
+    "secundaria": "#1a1a1a",
+    "detalhe": "#f2c919",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base circular e lisa, com fundo inclinado e suave. Projetada para defesa: o contorno redondo desvia golpes.",
+  "funcao": "Libera o Engine Gear logo no início; o formato redondo dá algum life after death, mas o volume impede uso ofensivo.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Instant_Release_(Driger_G_Version)",
+    "pesquisa-bakuten/personagens/ray-kon/beyblades/driger-g/dados.json"
+  ],
+  "aliases": [
+    "Instant Release (Driger G Version) (Hasbro)"
+  ]
+}

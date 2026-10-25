@@ -1,0 +1,111 @@
+{
+  "id": "lancadores/dranzer-shooter-dx",
+  "nome": "Dranzer Shooter DX",
+  "nome_jp": "ドランザーシューターDX",
+  "codigo_produto": [
+    "A-29 Dranzer Shooter DX (Takara)"
+  ],
+  "tipo": "ripcord",
+  "rotacao": "direita",
+  "sistema": "spin-gear",
+  "anime": true,
+  "usado_por": [
+    {
+      "personagem": "kai-hiwatari",
+      "temporadas": [
+        "s1"
+      ],
+      "beys": [
+        "dranzer-f",
+        "black-dranzer"
+      ],
+      "obs": "Ep. 33 (Paris): Dranzer S vira Dranzer F e o Kai troca o lançador pelo Dranzer Shooter DX. Uso com a Black Dranzer inferido (mesmo arco)."
+    }
+  ],
+  "acessorios": [
+    "Eletrônica com minijogos"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/winder-padrao",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/winder-padrao",
+    "lancadores/ripcords/winder-hasbro",
+    "lancadores/ripcords/dragon-winder",
+    "lancadores/ripcords/neo-dragon-winder",
+    "lancadores/ripcords/ultimate-winder"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Circuito eletrônico e pilhas"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 140,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 70,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 125,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 140,
+      "fonte": "estimado"
+    },
+    "curso_corda_mm": {
+      "valor": 145,
+      "fonte": "estimado"
+    }
+  },
+  "atributos": {
+    "forca": 7,
+    "rpm_max": 6750,
+    "precisao": 7,
+    "controle_angulo": 7,
+    "facilidade": 6,
+    "justificativa": "Mesma família dos DX (corpo grande, mecanismo embutido). Direito porque toda a linha Dranzer é de rotação direita.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 125,
+    "forca_maxima": 1.03,
+    "desvio_angular_graus": 4,
+    "tempo_puxada_ideal_ms": 260,
+    "inclinacao_max_graus": 30,
+    "bonus_rpm_pct": 3,
+    "assistencia_mira": 0.2,
+    "rotacao_selecionavel": false,
+    "obs": ""
+  },
+  "forma": {
+    "corpo": "fera",
+    "fera": "dranzer",
+    "grip": true,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 140,
+    "largura_mm": 70,
+    "cores": {
+      "primaria": "#c8202c",
+      "secundaria": "#f28c28",
+      "detalhe": "#1d2a44",
+      "corda": "#1a1a1a"
+    },
+    "obs_cores": "Estimado (fênix vermelha/laranja)."
+  },
+  "descricao": "Lançador eletrônico temático da fênix Dranzer, com minijogos (wiki).",
+  "referencias": [],
+  "duvidas": [
+    "Sentido de rotação inferido (direita)."
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dranzer_Shooter_DX",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_33",
+    "https://beyblade.fandom.com/wiki/Launcher",
+    "https://beyblade.fandom.com/wiki/List_of_Original_Series_products_(Takara)"
+  ]
+}

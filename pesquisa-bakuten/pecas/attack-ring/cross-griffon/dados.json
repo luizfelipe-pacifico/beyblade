@@ -1,0 +1,85 @@
+{
+  "id": "attack-ring/cross-griffon",
+  "categoria": "attack-ring",
+  "nome": "Cross Griffon",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "robert-jurgen/griffolyon"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Grosso e difícil de quebrar. Hasbro: pinos para a figura no topo (mais recoil)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 47,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 7,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 6,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 2,
+    "stamina": 2.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「クロスグリフォン」",
+    "wiki": {
+      "ataque": 3,
+      "defesa": 2,
+      "stamina": 3
+    }
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 4,
+    "tipo_contato": "smash",
+    "recoil": 0.35,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 23.5
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 7,
+    "lobos": [
+      {
+        "inicio": 0,
+        "pico": 15,
+        "fim": 30,
+        "raio_mm": 20,
+        "borda": "curva",
+        "altura_mm": 7
+      },
+      {
+        "inicio": 30,
+        "pico": 75,
+        "fim": 85,
+        "raio_mm": 23.5,
+        "borda": "ponta",
+        "altura_mm": 7
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#6bb6e0",
+    "secundaria": "#d8262c",
+    "detalhe": "#f2d22e"
+  },
+  "acabamento": "opaco",
+  "descricao": "4 conjuntos de cabeça + asa de grifo; AR grosso com 4 pontas de asa afiadas e bem espaçadas.",
+  "funcao": "Smash fortíssimo em rotação direita (comparável ao Triple Wing), grande alcance e enorme \"stopping power\".",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Cross_Griffon",
+    "https://beyblade.fandom.com/wiki/Griffolyon"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "spin-gear/left-eg-turbo",
+  "categoria": "spin-gear",
+  "nome": "Left EG Turbo (CEW Metal Grip)",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "tyson-granger/dragoon-gt"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "mola espiral turbo",
+      "CEW de metal com ponta de borracha azul"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 24,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 19,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 10,
+      "fonte": "wiki",
+      "obs": "EG 7 g + CEW Metal Grip 3 g"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 4,
+    "defesa": 1,
+    "stamina": 1,
+    "potencia_engine": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2026/02/22/%E7%88%86%E8%BB%A2%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%88%E3%83%99%E3%82%A4%E3%83%96%E3%83%AC%E3%83%BC%E3%83%89%E3%82%B9%E3%83%94%E3%83%B3%E3%82%AE%E3%82%A2%E3%83%BB%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3/), Spin Gear/Engine Gear 「レフトエンジンギアターボ」"
+  },
+  "stats_oficiais_obs": "Estrelas do EG; o CEW Metal Grip sozinho também tem 4/1/1. Nas beys Engine Gear o obakeblader soma AR + WD + EG + base.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "esquerda",
+    "gimmick": "engine-gear",
+    "ativacao": {
+      "modo": "turbo",
+      "obs": "mola especial que libera 4x mais força que o EG normal, em tempo mais curto; na Instant Release do Dragoon GT dispara logo no início"
+    }
+  },
+  "forma": {
+    "tipo": "engine-gear",
+    "raio_mm": 12,
+    "altura_mm": 19,
+    "dentes": 12,
+    "nucleo": "engine"
+  },
+  "cores": {
+    "primaria": "#1f4fbf",
+    "secundaria": "#a7abb0",
+    "detalhe": "#1f4fbf"
+  },
+  "acabamento": "opaco",
+  "descricao": "Engine Gear Turbo esquerdo do Dragoon GT, com o CEW Metal Grip: ponta flat de borracha azul presa a um peso de metal prateado. Foi o primeiro EG com ponta de borracha. Aqui EG + CEW formam uma peça só.",
+  "funcao": "Velocidade e ataque altos, stamina baixa. O surto turbo é usado em combos de nocaute de um golpe (arriscados).",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Engine_Gear_-_Left_Engine_Gear_Turbo",
+    "https://beyblade.fandom.com/wiki/Engine_Gear_System",
+    "https://beyblade.fandom.com/wiki/Dragoon_GT",
+    "http://wiki.worldbeyblade.org/index.php?title=Dragoon_GT"
+  ]
+}

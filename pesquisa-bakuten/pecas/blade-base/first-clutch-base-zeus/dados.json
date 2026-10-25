@@ -1,0 +1,93 @@
+{
+  "id": "blade-base/first-clutch-base-zeus",
+  "categoria": "blade-base",
+  "nome": "First Clutch Base (Zeus Version)",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "brooklyn-masefield/zeus"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Corpo de ABS preto-azulado. A ponta não é da base: no Zeus Takara vem do Customize Gear com o CEW Light Sharp (plástico vermelho); a Hasbro usa Right EG com ponta Metal Ball."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 44,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 13,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 8,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 0,
+    "defesa": 3,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「ファーストクラッチベース（ゼウス）」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "sharp",
+    "raio_ponta_mm": 1.5,
+    "atrito": 0.1,
+    "padrao_movimento": "centro",
+    "gimmick": "first-clutch",
+    "modos": [
+      {
+        "nome": "Sem Engine Gear (estoque Takara: Customize Gear sem motor)",
+        "tipo_ponta": "sharp",
+        "atrito": 0.1,
+        "gatilho": "nenhum: a base só segura o SG"
+      },
+      {
+        "nome": "Com Engine Gear: liberação imediata",
+        "tipo_ponta": "sharp",
+        "atrito": 0.1,
+        "gatilho": "pouso no estádio, logo após o lançamento (First Clutch)"
+      }
+    ],
+    "ponta_origem": "spin-gear (CEW Light Sharp do Customize Gear)"
+  },
+  "forma": {
+    "simetria": 8,
+    "raio_corpo_mm": 20,
+    "altura_mm": 11,
+    "perfil": "saia",
+    "lobos": [
+      {
+        "inicio": 12,
+        "pico": 22,
+        "fim": 33,
+        "raio_mm": 22,
+        "borda": "curva",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "sharp",
+      "raio_mm": 1.5,
+      "altura_mm": 6
+    }
+  },
+  "cores": {
+    "primaria": "#1d2030",
+    "secundaria": "#2c5fb5",
+    "detalhe": "#d9d9d9",
+    "ponta": "#e2382d",
+    "fonte": "foto local montada-inferior.jpg"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base redonda e pesada, preta-azulada, com aro defensivo de oito nódulos e fluxo aberto (vazados) entre eles. Adesivos azuis \"BEYBLADE ZEUS\" em volta do furo central, por onde sai a ponta do Spin/Engine Gear.",
+  "funcao": "Dá peso e boa distribuição de massa para a Zeus (tipo stamina). A embreagem First Clutch só tem efeito se um Engine Gear for instalado: aí o motor é liberado logo no começo da batalha.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_First_Clutch_Base_(Zeus_Version)",
+    "pesquisa-bakuten/personagens/brooklyn-masefield/beyblades/zeus/dados.json"
+  ]
+}

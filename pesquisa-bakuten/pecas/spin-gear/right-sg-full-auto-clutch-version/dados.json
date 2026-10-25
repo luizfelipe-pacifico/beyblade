@@ -1,0 +1,62 @@
+{
+  "id": "spin-gear/right-sg-full-auto-clutch-version",
+  "categoria": "spin-gear",
+  "nome": "Right SG (Full Auto Clutch Version)",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "ray-kon/driger-f"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "eixo de metal com ponta metal flat",
+      "rolamento"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 13,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 7,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "Spin Gear: a Takara não dá A/D/S.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "direita",
+    "gimmick": "free-shaft",
+    "ativacao": {
+      "modo": "clutch",
+      "obs": "a Full Auto Clutch Base troca de modo pela rotação: com a bey rápida, a força centrífuga abre as travas e a ponta fica num modo; quando a rotação cai, as molas fecham e o modo muda"
+    }
+  },
+  "forma": {
+    "tipo": "spin-gear",
+    "raio_mm": 9,
+    "altura_mm": 13,
+    "dentes": 8,
+    "nucleo": "bearing"
+  },
+  "cores": {
+    "primaria": "#2e8b3a",
+    "secundaria": "#b8bcc2",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Spin Gear com eixo de metal apoiado num rolamento e terminado em ponta metal flat.",
+  "funcao": "O eixo gira solto e reduz a perda de rotação quando a bey é atingida. Testes da WBO (2011) mostraram que a ponta é muito agressiva e difícil de controlar, boa para ataque.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_Right_SG_(Full_Auto_Clutch_Version)",
+    "http://wiki.worldbeyblade.org/index.php?title=Spin_Gear"
+  ]
+}

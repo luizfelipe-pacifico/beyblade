@@ -1,0 +1,62 @@
+{
+  "id": "weight-disk/circle-balance",
+  "categoria": "weight-disk",
+  "nome": "Circle Balance",
+  "nome_jp": null,
+  "sistema": "hms",
+  "usado_em": [
+    "kai-hiwatari/dranzer-ms",
+    "ray-kon/driger-ms"
+  ],
+  "material": {
+    "principal": "Metal",
+    "outros": [],
+    "obs": "metal fundido; a liga não é especificada nas fontes"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 37,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 3.4,
+      "fonte": "estimado",
+      "obs": "calculada do peso com densidade 7.1 g/cm³"
+    },
+    "peso_g": {
+      "valor": 15.13,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1.5,
+    "defesa": 1.5,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2021/06/26/post-16926/), Weight Disk 「サークルバランス」"
+  },
+  "stats_oficiais_obs": "A wiki não tem estrelas. Soma da Dranzer MS = 6,5/4,5/7,5 e da Driger MS = 5,5/4,5/7.",
+  "stats_gba": null,
+  "fisica": {
+    "distribuicao": "equilibrado",
+    "magnetico": false
+  },
+  "forma": {
+    "lados": 0,
+    "raio_externo_mm": 18.5,
+    "raio_interno_mm": 12,
+    "espessura_mm": 3.4,
+    "estilo": "circle"
+  },
+  "cores": {
+    "primaria": "#9ea3a8",
+    "secundaria": "#6e7378",
+    "detalhe": "#c9cdd1"
+  },
+  "acabamento": "metalico",
+  "descricao": "Disco circular do HMS, intermediário entre Circle Heavy (mais compacto e pesado) e Circle Wide (mais largo e leve).",
+  "funcao": "Versátil, faz um pouco de tudo, mas sem destaque em nada.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Circle_Balance",
+    "http://wiki.worldbeyblade.org/index.php?title=Circle_Balance"
+  ]
+}

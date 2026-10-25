@@ -1,0 +1,104 @@
+{
+  "id": "attack-ring/ultimate-attacker",
+  "categoria": "attack-ring",
+  "nome": "Ultimate Attacker",
+  "nome_jp": null,
+  "sistema": "hms",
+  "usado_em": [
+    "tyson-granger/dragoon-ms-ultimate-version"
+  ],
+  "material": {
+    "principal": "Metal (zinco)",
+    "outros": [
+      "ABS"
+    ],
+    "obs": "Mesma ABS Caul \"Cross Wings\" do Metal Attacker + Metal Frame \"Left Spike\"."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 43,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 8,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 14,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 4.5,
+    "defesa": 2.5,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「アルティメットアタッカー」"
+  },
+  "stats_oficiais_obs": "Único AR com 4,5 de ataque (escala de 5 estrelas no HMS). A wiki não tem estrelas. Soma da Dragoon MS UV = 9,5/4,5/4,5.",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 4,
+    "tipo_contato": "smash",
+    "recoil": 0.4,
+    "sentido_otimo": "esquerda",
+    "raio_contato_mm": 21.5
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 16,
+    "raio_interno_mm": 9,
+    "espessura_mm": 7,
+    "lobos": [
+      {
+        "inicio": 20,
+        "pico": 28,
+        "fim": 50,
+        "raio_mm": 21.5,
+        "borda": "reta",
+        "altura_mm": 8,
+        "metal": true
+      },
+      {
+        "inicio": 55,
+        "pico": 70,
+        "fim": 85,
+        "raio_mm": 19.5,
+        "borda": "rampa",
+        "altura_mm": 7
+      }
+    ],
+    "moldura": {
+      "simetria": 4,
+      "raio_base_mm": 15,
+      "raio_interno_mm": 10,
+      "espessura_mm": 4,
+      "lobos": [
+        {
+          "inicio": 20,
+          "pico": 28,
+          "fim": 50,
+          "raio_mm": 21.5,
+          "borda": "reta",
+          "altura_mm": 4,
+          "metal": true
+        }
+      ]
+    },
+    "metal": true
+  },
+  "cores": {
+    "primaria": "#f0f0f0",
+    "secundaria": "#c9a227",
+    "detalhe": "#2457c5"
+  },
+  "acabamento": "metalico",
+  "descricao": "Capa \"Cross Wings\" (igual à do Metal Attacker) com nova moldura \"Left Spike\": 4 cabeças de dragão e 4 pontas de ataque com pequenas protuberâncias.",
+  "funcao": "Smash confiável, um pouco melhor que o Metal Attacker; depois superado.",
+  "pecas_relacionadas": [
+    "attack-ring/metal-attacker"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Ultimate_Attacker",
+    "https://beyblade.fandom.com/wiki/Dragoon_MS_Ultimate_Version"
+  ]
+}

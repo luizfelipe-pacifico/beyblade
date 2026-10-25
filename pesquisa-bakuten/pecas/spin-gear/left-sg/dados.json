@@ -1,0 +1,63 @@
+{
+  "id": "spin-gear/left-sg",
+  "categoria": "spin-gear",
+  "nome": "Left SG",
+  "nome_jp": "レフトスピンギア",
+  "sistema": "spin-gear",
+  "usado_em": [
+    "tyson-granger/dragoon-f",
+    "tyson-granger/dragoon-s"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "anel metálico interno"
+    ],
+    "obs": "casca de plástico em duas metades em volta de um anel de metal"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 10,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 4.5,
+      "fonte": "estimado",
+      "obs": "mesma construção do Right SG"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "Spin Gear comum: a Takara não dá A/D/S.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "esquerda",
+    "gimmick": "nenhum",
+    "ativacao": {
+      "modo": "nenhum",
+      "obs": ""
+    }
+  },
+  "forma": {
+    "tipo": "spin-gear",
+    "raio_mm": 9,
+    "altura_mm": 10,
+    "dentes": 8,
+    "nucleo": "normal"
+  },
+  "cores": {
+    "primaria": "#1f4fbf",
+    "secundaria": "#8c8c8c",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Spin Gear padrão de rotação esquerda (estreia com Dragoon S, jul/2000). Igual ao Right SG, mas com as abas do lado oposto e um pouco mais salientes, de modo que lançador direito não engata nele e vice-versa.",
+  "funcao": "Permite a rotação esquerda, usada pelo Dragoon do Tyson: contra beys de rotação direita, os contatos se somam (golpes mais fortes e roubo de rotação).",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_Left_SG",
+    "http://wiki.worldbeyblade.org/index.php?title=Spin_Gear"
+  ]
+}

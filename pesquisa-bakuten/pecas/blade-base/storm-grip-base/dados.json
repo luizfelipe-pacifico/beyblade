@@ -1,0 +1,81 @@
+{
+  "id": "blade-base/storm-grip-base",
+  "categoria": "blade-base",
+  "nome": "Storm Grip Base",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "tyson-granger/dragoon-s"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Borracha (ponta)"
+    ],
+    "obs": "A borracha gasta com o uso."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 38,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 10,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 4,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3.5,
+    "defesa": 1,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「ストームグリップベース」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "grip",
+    "raio_ponta_mm": 3.5,
+    "atrito": 0.85,
+    "padrao_movimento": "agressivo",
+    "gimmick": "nenhum",
+    "modos": []
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 18,
+    "altura_mm": 6,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 15,
+        "pico": 40,
+        "fim": 65,
+        "raio_mm": 19.5,
+        "borda": "rampa",
+        "altura_mm": 3
+      }
+    ],
+    "ponta": {
+      "tipo": "grip",
+      "raio_mm": 3.5,
+      "altura_mm": 4
+    }
+  },
+  "cores": {
+    "primaria": "#1f3f9a",
+    "secundaria": "#f2f2f2",
+    "detalhe": "#1a1a1a",
+    "ponta": "#1a1a1a",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base baixa e leve (4 g) com ponta de borracha.",
+  "funcao": "A melhor base de ataque antes do sistema Magne: rápida e baixa, boa para upper attack.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Storm_Grip",
+    "pesquisa-bakuten/personagens/tyson-granger/beyblades/dragoon-s/dados.json"
+  ]
+}

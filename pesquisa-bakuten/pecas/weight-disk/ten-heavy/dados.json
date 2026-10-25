@@ -1,0 +1,63 @@
+{
+  "id": "weight-disk/ten-heavy",
+  "categoria": "weight-disk",
+  "nome": "Ten Heavy",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon-g",
+    "max-tate/draciel-v2"
+  ],
+  "material": {
+    "principal": "Metal",
+    "outros": [],
+    "obs": "metal fundido; a liga não é especificada nas fontes"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 35,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 4.2,
+      "fonte": "estimado",
+      "obs": "calculada do peso com densidade 7.1 g/cm³"
+    },
+    "peso_g": {
+      "valor": 16.4,
+      "fonte": "wiki",
+      "obs": "a página \"Weight Disk - Heavy\" e a WBO arredondam para 17 g"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 3,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2021/06/26/post-16926/), Weight Disk 「テンヘビィ」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "distribuicao": "centro",
+    "magnetico": false
+  },
+  "forma": {
+    "lados": 10,
+    "raio_externo_mm": 17.5,
+    "raio_interno_mm": 10.5,
+    "espessura_mm": 4.2,
+    "estilo": "heavy"
+  },
+  "cores": {
+    "primaria": "#9ea3a8",
+    "secundaria": "#6e7378",
+    "detalhe": "#c9cdd1"
+  },
+  "acabamento": "metalico",
+  "descricao": "Disco decagonal, o mais pesado de toda a série Heavy e de todos os discos de 6/8/10 lados. Tem os dois Attack Points da série \"Ten\".",
+  "funcao": "Massa máxima concentrada perto do eixo: mais RPM, mais peso para defesa e para combos compactos e de upper attack. É o disco \"padrão\" das customizações pesadas.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Ten_Heavy",
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Heavy",
+    "http://wiki.worldbeyblade.org/index.php?title=Heavy_Weight_Disks"
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "id": "attack-ring/metal-defense",
+  "categoria": "attack-ring",
+  "nome": "Metal Defense",
+  "nome_jp": null,
+  "sistema": "hms",
+  "usado_em": [
+    "max-tate/draciel-ms"
+  ],
+  "material": {
+    "principal": "Metal (zinco)",
+    "outros": [
+      "ABS"
+    ],
+    "obs": "Metal Frame \"Cross Shield\" + ABS Caul \"Draciel\". Peso: 17 g na página da peça, 20 g na página da Draciel MS."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 43,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 8,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 17,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 3,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「メタルディフェンス」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 8,
+    "tipo_contato": "defesa",
+    "recoil": 0.7,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 21.5
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 16,
+    "raio_interno_mm": 9,
+    "espessura_mm": 7,
+    "lobos": [
+      {
+        "inicio": 10,
+        "pico": 22.5,
+        "fim": 35,
+        "raio_mm": 21,
+        "borda": "ponta",
+        "altura_mm": 7
+      },
+      {
+        "inicio": 55,
+        "pico": 67.5,
+        "fim": 80,
+        "raio_mm": 21.5,
+        "borda": "reta",
+        "altura_mm": 8,
+        "metal": true
+      }
+    ],
+    "moldura": {
+      "simetria": 4,
+      "raio_base_mm": 15.5,
+      "raio_interno_mm": 9,
+      "espessura_mm": 4,
+      "lobos": [
+        {
+          "inicio": 55,
+          "pico": 67.5,
+          "fim": 80,
+          "raio_mm": 21.5,
+          "borda": "reta",
+          "altura_mm": 4,
+          "metal": true
+        }
+      ]
+    },
+    "metal": true
+  },
+  "cores": {
+    "primaria": "#9ea3a8",
+    "secundaria": "#1f7a3a",
+    "detalhe": "#e8506a"
+  },
+  "acabamento": "metalico",
+  "descricao": "Moldura metálica octogonal com 4 pontas de metal + capa plástica verde com 4 pontas triangulares (8 pontas no total).",
+  "funcao": "Muito recoil; inferior a outros ARs para defesa (wiki), apesar da massa na periferia.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Metal_Defense",
+    "https://beyblade.fandom.com/wiki/Draciel_MS"
+  ]
+}

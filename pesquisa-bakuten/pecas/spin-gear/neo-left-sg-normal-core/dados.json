@@ -1,0 +1,61 @@
+{
+  "id": "spin-gear/neo-left-sg-normal-core",
+  "categoria": "spin-gear",
+  "nome": "Neo Left SG (Normal Core)",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "tyson-granger/dragoon-v2"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "núcleo de tubo de plástico oco, sem metal"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 10,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 3.6,
+      "fonte": "wiki",
+      "obs": "núcleo sozinho: 1,2 g"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "Spin Gear comum: a Takara não dá A/D/S (só Magne Power 0). Os 3/1/2 da wiki foram copiados por engano e foram removidos.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "esquerda",
+    "gimmick": "nenhum",
+    "ativacao": {
+      "modo": "nenhum",
+      "obs": ""
+    }
+  },
+  "forma": {
+    "tipo": "spin-gear",
+    "raio_mm": 9,
+    "altura_mm": 10,
+    "dentes": 8,
+    "nucleo": "normal"
+  },
+  "cores": {
+    "primaria": "#1f4fbf",
+    "secundaria": "#f2f2f2",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Neo Spin Gear esquerdo com o \"Normal Core\", exclusivo do Dragoon V2 Takara: troca os cilindros de metal dos outros núcleos por um tubo de plástico oco. A versão BBA Championship do Dragoon V2 trocou isso por um Magnecore Sul.",
+  "funcao": "Tira peso de cima da ponta e deixa a distribuição de massa mais externa, ideal para smash attack e sobrevivência. Na prática o miolo de um SG comum dentro da casca Neo é ainda mais leve.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_Neo_Left_SG_(Normal_Core)",
+    "http://wiki.worldbeyblade.org/index.php?title=Dragoon_V2",
+    "http://wiki.worldbeyblade.org/index.php?title=Magnecore"
+  ]
+}

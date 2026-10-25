@@ -1,0 +1,86 @@
+{
+  "id": "blade-base/viper-metal-ball-base",
+  "categoria": "blade-base",
+  "nome": "Viper Metal Ball Base",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "max-tate/draciel-v"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Aço (2 esferas fixas no eixo)",
+      "Metal (haste magnetizável e ponta bola)"
+    ],
+    "obs": "Haste adota a polaridade do Magnecore."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 42,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 17,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 8,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 3.5,
+    "stamina": 2.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「バイパーメタルボールベース」",
+    "wiki": {
+      "ataque": 1,
+      "defesa": 4,
+      "stamina": 3
+    }
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "metal-ball",
+    "raio_ponta_mm": 3,
+    "atrito": 0.18,
+    "padrao_movimento": "centro",
+    "gimmick": "haste magnética + esferas fixas no eixo; bola semi-livre",
+    "modos": []
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_corpo_mm": 18,
+    "altura_mm": 10,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 50,
+        "pico": 90,
+        "fim": 130,
+        "raio_mm": 22,
+        "borda": "ponta",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "metal-ball",
+      "raio_mm": 3,
+      "altura_mm": 7
+    }
+  },
+  "cores": {
+    "primaria": "#1b6b34",
+    "secundaria": "#0e4421",
+    "detalhe": "#c0c0c0",
+    "fonte": "diagrama local blade-base.gif"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base verde-escura com abas laterais em forma de asa, eixo longo contendo duas esferas de metal fixas e ponta de bola metálica que gira parcialmente livre.",
+  "funcao": "Gimmick magnético; na prática o eixo alto e os entalhes da base pioram equilíbrio e life after death: base ruim para defesa no brinquedo real.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Viper_Metal_Ball_Base",
+    "pesquisa-bakuten/personagens/max-tate/beyblades/draciel-v/dados.json"
+  ]
+}

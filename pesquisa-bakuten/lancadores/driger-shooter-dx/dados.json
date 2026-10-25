@@ -1,0 +1,113 @@
+{
+  "id": "lancadores/driger-shooter-dx",
+  "nome": "Driger Shooter DX",
+  "nome_jp": "ドライガーシューターDX",
+  "codigo_produto": [
+    "A-20 Driger Shooter DX (Takara)"
+  ],
+  "tipo": "ripcord",
+  "rotacao": "direita",
+  "sistema": "spin-gear",
+  "anime": true,
+  "usado_por": [
+    {
+      "personagem": "ray-kon",
+      "temporadas": [
+        "s1",
+        "v-force"
+      ],
+      "beys": [
+        "driger-f",
+        "driger-v"
+      ],
+      "obs": "S1 ep. 21: Kenny cria o Driger Shooter junto com a Driger F. Usado até a V-Force ep. 12 (wiki). Ray usa um winder preto comum com ele."
+    }
+  ],
+  "acessorios": [
+    "Eletrônica com minijogos",
+    "Winder preto padrão"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/winder-padrao",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/winder-padrao",
+    "lancadores/ripcords/winder-hasbro",
+    "lancadores/ripcords/dragon-winder",
+    "lancadores/ripcords/neo-dragon-winder",
+    "lancadores/ripcords/ultimate-winder"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Circuito eletrônico e pilhas"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 140,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 70,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 125,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 140,
+      "fonte": "estimado"
+    },
+    "curso_corda_mm": {
+      "valor": 145,
+      "fonte": "estimado",
+      "obs": "winder preto padrão (wiki, Ray Kon)"
+    }
+  },
+  "atributos": {
+    "forca": 7,
+    "rpm_max": 6750,
+    "precisao": 7,
+    "controle_angulo": 7,
+    "facilidade": 6,
+    "justificativa": "Igual ao Dragoon Shooter DX, mas de rotação direita (\"tiger-themed electronic, right-spin Launcher\", wiki).",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 125,
+    "forca_maxima": 1.03,
+    "desvio_angular_graus": 4,
+    "tempo_puxada_ideal_ms": 260,
+    "inclinacao_max_graus": 30,
+    "bonus_rpm_pct": 3,
+    "assistencia_mira": 0.2,
+    "rotacao_selecionavel": false,
+    "obs": ""
+  },
+  "forma": {
+    "corpo": "fera",
+    "fera": "driger",
+    "grip": true,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 140,
+    "largura_mm": 70,
+    "cores": {
+      "primaria": "#f2f4f7",
+      "secundaria": "#2f8f4e",
+      "detalhe": "#1a1a1a",
+      "corda": "#1a1a1a"
+    },
+    "obs_cores": "Estimado (tigre branco/verde do Driger); winder preto (wiki)."
+  },
+  "descricao": "Lançador eletrônico temático de tigre, rotação direita, com minijogos (wiki).",
+  "referencias": [],
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Driger_Shooter_DX",
+    "https://beyblade.fandom.com/wiki/Ray_Kon",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_21",
+    "https://beyblade.fandom.com/wiki/Launcher",
+    "https://beyblade.fandom.com/wiki/List_of_Original_Series_products_(Takara)"
+  ]
+}

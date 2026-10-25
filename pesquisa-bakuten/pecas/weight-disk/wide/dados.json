@@ -1,0 +1,60 @@
+{
+  "id": "weight-disk/wide",
+  "categoria": "weight-disk",
+  "nome": "Wide",
+  "nome_jp": "ワイド",
+  "sistema": "4-layer",
+  "usado_em": [
+    "tyson-granger/dragoon-grip-attacker"
+  ],
+  "material": {
+    "principal": "Metal",
+    "outros": [],
+    "obs": "metal fundido; a liga não é especificada nas fontes"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 42,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 3,
+      "fonte": "estimado",
+      "obs": "calculada do peso com densidade 7.1 g/cm³"
+    },
+    "peso_g": {
+      "valor": 13,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 1,
+    "stamina": 3,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2021/06/26/post-16926/), Weight Disk 「ワイド」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "distribuicao": "periferia",
+    "magnetico": false
+  },
+  "forma": {
+    "lados": 6,
+    "raio_externo_mm": 21,
+    "raio_interno_mm": 13,
+    "espessura_mm": 3,
+    "estilo": "wide"
+  },
+  "cores": {
+    "primaria": "#9ea3a8",
+    "secundaria": "#6e7378",
+    "detalhe": "#c9cdd1"
+  },
+  "acabamento": "metalico",
+  "descricao": "O primeiro Weight Disk fabricado (estreia com Spin Dragoon, 1999) e o primeiro da série Wide: hexágono largo, com a massa na borda. Chamado de \"Six Wide\" pelos fãs para diferenciar dos sucessores.",
+  "funcao": "Inércia na periferia para smash attack: o Dragoon Grip Attacker tira boa parte do dano do próprio disco (\"Weight Disk Attack\"), já que o AR Dragon Head é minúsculo.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Wide",
+    "http://wiki.worldbeyblade.org/index.php?title=Wide_Weight_Disks"
+  ]
+}

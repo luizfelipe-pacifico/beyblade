@@ -1,0 +1,92 @@
+{
+  "id": "attack-ring/flame-wing",
+  "categoria": "attack-ring",
+  "nome": "Flame Wing",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "kai-hiwatari/dranzer-f",
+    "tyson-granger/dranzer-f"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Os entalhes das pontas quebram com o uso."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 47,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1.5,
+    "defesa": 3,
+    "stamina": 1.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「フレイムウィング」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "smash",
+    "recoil": 0.55,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 23.5
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 17,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 20,
+        "pico": 90,
+        "fim": 104,
+        "raio_mm": 23.5,
+        "borda": "reta",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 104,
+        "pico": 108,
+        "fim": 112,
+        "raio_mm": 22,
+        "borda": "reta",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 140,
+        "pico": 155,
+        "fim": 170,
+        "raio_mm": 18.5,
+        "borda": "curva",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#c8202a",
+    "secundaria": "#f2c230",
+    "detalhe": "#f5f5f5"
+  },
+  "acabamento": "opaco",
+  "descricao": "AR \"multiuso\" com 2 espinhos longos inclinados para cima (rampa de ~10°) e dois entalhes rombos na ponta de cada espinho.",
+  "funcao": "Smash na rotação direita (entalhes) e upper fraco (rampa de ~10°, contra ~15° do Upper Dragoon).",
+  "pecas_relacionadas": [
+    "attack-ring/flame-wing-black-dranzer"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Flame_Wing",
+    "https://beyblade.fandom.com/wiki/Dranzer_F"
+  ]
+}

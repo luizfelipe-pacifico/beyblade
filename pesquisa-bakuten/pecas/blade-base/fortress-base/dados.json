@@ -1,0 +1,87 @@
+{
+  "id": "blade-base/fortress-base",
+  "categoria": "blade-base",
+  "nome": "Fortress Base",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "max-tate/draciel-f"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Aço (2 esferas de estoque, cabe até 6)",
+      "Metal (ponta bola do SG Oil Ball)"
+    ],
+    "obs": "Ponta de bola de metal com reservatório de óleo (graxa vem no kit Takara)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 44,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 15,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 14,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 3.5,
+    "stamina": 3.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「フォートレスベース」",
+    "wiki": {
+      "ataque": 1,
+      "defesa": 4,
+      "stamina": 4
+    }
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "metal-ball",
+    "raio_ponta_mm": 3,
+    "atrito": 0.18,
+    "padrao_movimento": "centro",
+    "gimmick": "esferas de metal removíveis + ponta com reservatório de óleo",
+    "modos": [],
+    "ponta_origem": "spin-gear (Right SG Oil Ball / Ball Bearing ver.)"
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 20,
+    "altura_mm": 10,
+    "perfil": "saia",
+    "lobos": [
+      {
+        "inicio": 15,
+        "pico": 45,
+        "fim": 75,
+        "raio_mm": 21.5,
+        "borda": "curva",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "metal-ball",
+      "raio_mm": 3,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#1e8c3a",
+    "secundaria": "#0f5a24",
+    "detalhe": "#c0c0c0",
+    "fonte": "diagrama local blade-base.gif"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base verde larga e escalonada, com bolsões internos para até dois jogos de esferas de metal e dois furos extras; aceita SGs de rolamento.",
+  "funcao": "Uma das melhores bases de defesa: a ponta de bola metálica lubrificada fica no centro e o peso extra das esferas impede que seja empurrada.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Fortress",
+    "pesquisa-bakuten/personagens/max-tate/beyblades/draciel-f/dados.json"
+  ]
+}

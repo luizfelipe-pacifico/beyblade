@@ -1,0 +1,92 @@
+{
+  "id": "attack-ring/flame-wing-black-dranzer",
+  "categoria": "attack-ring",
+  "nome": "Flame Wing (Black Dranzer)",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "kai-hiwatari/black-dranzer"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Mesmo molde do Flame Wing da Dranzer F, em preto."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 47,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1.5,
+    "defesa": 3,
+    "stamina": 1.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「フレイムウィング」"
+  },
+  "stats_oficiais_obs": "Mesmo molde do Flame Wing (só a cor muda); a soma da Black Dranzer no obakeblader (5/8/6) é igual à da Dranzer F.",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "smash",
+    "recoil": 0.55,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 23.5
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 17,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 20,
+        "pico": 90,
+        "fim": 104,
+        "raio_mm": 23.5,
+        "borda": "reta",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 104,
+        "pico": 108,
+        "fim": 112,
+        "raio_mm": 22,
+        "borda": "reta",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 140,
+        "pico": 155,
+        "fim": 170,
+        "raio_mm": 18.5,
+        "borda": "curva",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#18181c",
+    "secundaria": "#8a8f99",
+    "detalhe": "#c8202a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Variação de cor do Flame Wing: preto. Mesmos 2 espinhos com entalhes rombos e rampa de ~10°.",
+  "funcao": "Smash na rotação direita + upper fraco, igual ao Flame Wing.",
+  "pecas_relacionadas": [
+    "attack-ring/flame-wing"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Black_Dranzer",
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Flame_Wing"
+  ]
+}

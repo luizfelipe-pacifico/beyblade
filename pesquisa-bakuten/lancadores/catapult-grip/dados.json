@@ -1,0 +1,111 @@
+{
+  "id": "lancadores/catapult-grip",
+  "nome": "Catapult Grip",
+  "nome_jp": "カタパルトグリップ",
+  "codigo_produto": [
+    "Catapult Grip (Takara)",
+    "Dragoon S Special Set com Catapult Grip branco (Takara)"
+  ],
+  "tipo": "power",
+  "rotacao": "esquerda",
+  "sistema": "spin-gear",
+  "anime": true,
+  "usado_por": [
+    {
+      "personagem": "tyson-granger",
+      "temporadas": [
+        "s1"
+      ],
+      "beys": [
+        "dragoon-s"
+      ],
+      "obs": "Ep. 8: Kenny dá ao Tyson um novo \"Catapult Grip Shooter\" antes do torneio asiático (Hong Kong). Usado até o ep. 17."
+    }
+  ],
+  "acessorios": [
+    "EZ Shooter (esquerdo, no caso do Tyson)",
+    "Mola de catapulta"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/dragon-winder",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/winder-padrao",
+    "lancadores/ripcords/winder-hasbro",
+    "lancadores/ripcords/dragon-winder",
+    "lancadores/ripcords/neo-dragon-winder",
+    "lancadores/ripcords/ultimate-winder"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Mola de aço"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 110,
+      "fonte": "estimado",
+      "obs": "trilho da catapulta"
+    },
+    "largura_mm": {
+      "valor": 55,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 110,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 60,
+      "fonte": "estimado"
+    },
+    "curso_corda_mm": {
+      "valor": 218,
+      "fonte": "estimado"
+    }
+  },
+  "atributos": {
+    "forca": 8,
+    "rpm_max": 6650,
+    "precisao": 5,
+    "controle_angulo": 6,
+    "facilidade": 6,
+    "justificativa": "A mola não aumenta o giro: puxar o winder também recua o lançador; ao soltar, a catapulta joga a beyblade para frente (wiki). O ganho é de velocidade linear (avanço inicial), não de rpm; precisão cai porque o tranco desvia o eixo.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 100,
+    "forca_maxima": 1.15,
+    "desvio_angular_graus": 8,
+    "tempo_puxada_ideal_ms": 300,
+    "inclinacao_max_graus": 35,
+    "bonus_rpm_pct": 1.5,
+    "assistencia_mira": 0.1,
+    "rotacao_selecionavel": false,
+    "velocidade_linear_bonus": 0.35,
+    "obs": "forca_maxima > 1 aplica-se ao impulso linear inicial (avanço), não ao rpm."
+  },
+  "forma": {
+    "corpo": "catapulta",
+    "grip": true,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 110,
+    "largura_mm": 55,
+    "cores": {
+      "primaria": "#f2f4f7",
+      "secundaria": "#1f4fa8",
+      "detalhe": "#9aa3ad",
+      "corda": "#f2c230"
+    },
+    "obs_cores": "Branco, como o Catapult Grip do Dragoon S Special Set (wiki); azul do Tyson nos detalhes (estimado)."
+  },
+  "descricao": "Grip com mecanismo de catapulta: o EZ Shooter corre num trilho com mola. Puxar o winder recua o lançador e gira a bey; no fim da puxada a mola dispara o lançador para frente e a bey sai com avanço (wiki, Grip).",
+  "referencias": [],
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Grip",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_08",
+    "https://beyblade.fandom.com/wiki/Dragoon_S",
+    "https://beyblade.fandom.com/wiki/List_of_Original_Series_products_(Takara)"
+  ]
+}

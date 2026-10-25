@@ -1,0 +1,97 @@
+{
+  "id": "blade-base/customize-metal-change-base",
+  "categoria": "blade-base",
+  "nome": "Customize Metal Change Base",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "ray-kon/driger-v2"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Metal (ponta)"
+    ],
+    "obs": "Ponta metálica do tipo Metal Change, um pouco mais aguda."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 40,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 7,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 4,
+    "defesa": 1,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「カスタマイズメタルチェンジベース」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "metal-sharp",
+    "raio_ponta_mm": 2.5,
+    "atrito": 0.08,
+    "padrao_movimento": "centro",
+    "gimmick": "troca de modo por inclinação; aceita Support Parts",
+    "modos": [
+      {
+        "nome": "Survival (reta)",
+        "tipo_ponta": "metal-sharp",
+        "atrito": 0.08,
+        "gatilho": "inclinação: bey de pé apoia no centro agudo"
+      },
+      {
+        "nome": "Attack (inclinada)",
+        "tipo_ponta": "metal-flat",
+        "atrito": 0.4,
+        "gatilho": "inclinação: lançamento inclinado ou golpe apoia na parte plana"
+      }
+    ]
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 18.5,
+    "altura_mm": 10,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 30,
+        "pico": 45,
+        "fim": 60,
+        "raio_mm": 19.5,
+        "borda": "reta",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "metal-sharp",
+      "raio_mm": 2.5,
+      "altura_mm": 4
+    }
+  },
+  "cores": {
+    "primaria": "#e8e8e8",
+    "secundaria": "#2e8b3a",
+    "detalhe": "#c0c0c0",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Versão atualizada da Metal Change Base: mais alta, 2 g mais pesada e compatível com Support Parts (vem com os SP Upper Attack).",
+  "funcao": "Mesmo conceito de dois modos por inclinação, com movimento menos agressivo por ter a ponta mais aguda.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Custom_Metal_Change_(w/_Upper_Attack_Support_Parts)",
+    "pesquisa-bakuten/personagens/ray-kon/beyblades/driger-v2/dados.json"
+  ],
+  "aliases": [
+    "Customize Change Base",
+    "Custom Metal Change"
+  ]
+}

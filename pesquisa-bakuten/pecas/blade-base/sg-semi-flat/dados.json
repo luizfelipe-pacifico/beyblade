@@ -1,0 +1,79 @@
+{
+  "id": "blade-base/sg-semi-flat",
+  "categoria": "blade-base",
+  "nome": "SG Semi-Flat",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "lee/galeon"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Ponta plástica."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 40,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 13,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 2,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「SGセミフラットベース」"
+  },
+  "stats_oficiais_obs": "Mesma peça Takara (SGセミフラットベース) da Galeon e da Galeon 2; soma da Galeon = 5/7,5/4,5.",
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "semi-flat",
+    "raio_ponta_mm": 1.5,
+    "atrito": 0.3,
+    "padrao_movimento": "centro",
+    "gimmick": "nenhum",
+    "modos": []
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 19,
+    "altura_mm": 9,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 30,
+        "pico": 45,
+        "fim": 60,
+        "raio_mm": 20,
+        "borda": "reta",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "semi-flat",
+      "raio_mm": 1.5,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#1f1f1f",
+    "secundaria": "#3a5fa8",
+    "detalhe": "#c0c0c0",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base SG comum com ponta aguda achatada na extremidade (semi-flat).",
+  "funcao": "Equilíbrio entre sobrevivência e defesa; muito usada em combinações \"compact\".",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_SG_Semi-Flat",
+    "pesquisa-bakuten/personagens/lee/beyblades/galeon/dados.json"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "attack-ring/cross-fang",
+  "categoria": "attack-ring",
+  "nome": "Cross Fang",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "ray-kon/driger-f"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 41,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2.5,
+    "defesa": 2.5,
+    "stamina": 1.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「クロスファング」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 4,
+    "tipo_contato": "smash",
+    "recoil": 0.45,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 20.5
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 20,
+        "pico": 60,
+        "fim": 75,
+        "raio_mm": 20.5,
+        "borda": "reta",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#d9d9d9",
+    "secundaria": "#2aa84a",
+    "detalhe": "#f2c230"
+  },
+  "acabamento": "opaco",
+  "descricao": "4 tigres simétricos; os corpos formam projeções curtas e pouco afiadas.",
+  "funcao": "Smash leve em rotação direita; não competitivo.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Cross_Fang",
+    "https://beyblade.fandom.com/wiki/Driger_F"
+  ]
+}

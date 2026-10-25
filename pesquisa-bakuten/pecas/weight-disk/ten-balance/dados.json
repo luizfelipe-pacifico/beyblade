@@ -1,0 +1,70 @@
+{
+  "id": "weight-disk/ten-balance",
+  "categoria": "weight-disk",
+  "nome": "Ten Balance",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "kai-hiwatari/dranzer-g",
+    "kai-hiwatari/dranzer-gt",
+    "kai-hiwatari/dranzer-v",
+    "kai-hiwatari/dranzer-v2",
+    "max-tate/draciel-v",
+    "ray-kon/driger-g",
+    "ray-kon/driger-v",
+    "ray-kon/driger-v2"
+  ],
+  "material": {
+    "principal": "Metal",
+    "outros": [],
+    "obs": "metal fundido; a liga não é especificada nas fontes"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 37,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 3.6,
+      "fonte": "estimado",
+      "obs": "calculada do peso com densidade 7.1 g/cm³"
+    },
+    "peso_g": {
+      "valor": 15,
+      "fonte": "wiki",
+      "obs": "WBO mediu 14,9 g (Dranzer V e Driger G)"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 2,
+    "stamina": 3,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2021/06/26/post-16926/), Weight Disk 「テンバランス」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "distribuicao": "equilibrado",
+    "magnetico": false
+  },
+  "forma": {
+    "lados": 10,
+    "raio_externo_mm": 18.5,
+    "raio_interno_mm": 11.5,
+    "espessura_mm": 3.6,
+    "estilo": "balance"
+  },
+  "cores": {
+    "primaria": "#9ea3a8",
+    "secundaria": "#6e7378",
+    "detalhe": "#c9cdd1"
+  },
+  "acabamento": "metalico",
+  "descricao": "Disco decagonal, o mais pesado da série Balance, com os dois Attack Points comuns à série \"Ten\".",
+  "funcao": "Distribuição de massa equilibrada, stamina razoável; é o Balance preferido, mas perde para o Ten Heavy em customização.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Ten_Balance",
+    "http://wiki.worldbeyblade.org/index.php?title=Balance_Weight_Disks",
+    "http://wiki.worldbeyblade.org/index.php?title=Dranzer_V",
+    "http://wiki.worldbeyblade.org/index.php?title=Driger_G"
+  ]
+}

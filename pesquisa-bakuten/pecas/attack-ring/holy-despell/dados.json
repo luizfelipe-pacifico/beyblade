@@ -1,0 +1,85 @@
+{
+  "id": "attack-ring/holy-despell",
+  "categoria": "attack-ring",
+  "nome": "Holy Despell",
+  "nome_jp": "ホーリーデスペル",
+  "sistema": "engine-gear",
+  "usado_em": [
+    "brooklyn-masefield/zeus"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Anel interno fixo (Attack Ring Supporter) que prende o Screw Zeus livre à bey."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 36,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 5,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 3,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 0,
+    "defesa": 1,
+    "stamina": 0,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「ホーリーデスペル」"
+  },
+  "stats_oficiais_obs": "Anel livre da Zeus, com estrelas próprias que entram na soma (Zeus = 6/9/10,5 com Screw Zeus + Holy Despell + Ten Wide + Customize Gear + First Clutch Base). A wiki deixa ataque e stamina em branco (= 0).",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "smash",
+    "recoil": 0.4,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 18
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 14,
+    "raio_interno_mm": 8,
+    "espessura_mm": 5,
+    "lobos": [
+      {
+        "inicio": 40,
+        "pico": 70,
+        "fim": 80,
+        "raio_mm": 18,
+        "borda": "ponta",
+        "altura_mm": 5
+      },
+      {
+        "inicio": 115,
+        "pico": 135,
+        "fim": 155,
+        "raio_mm": 15.5,
+        "borda": "curva",
+        "altura_mm": 4
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#16161a",
+    "secundaria": "#2457c5",
+    "detalhe": "#2e9e44"
+  },
+  "acabamento": "opaco",
+  "descricao": "Anel compacto (Attack Ring Supporter) com 2 protuberâncias triangulares opostas; fica por dentro do Screw Zeus e o mantém preso à bey deixando-o girar livre.",
+  "funcao": "Suporte do anel livre; os dois triângulos só tocam o adversário quando o Screw Zeus é empurrado.",
+  "pecas_relacionadas": [
+    "attack-ring/screw-zeus"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Holy_Despell",
+    "https://beyblade.fandom.com/wiki/Zeus",
+    "Caixa Takara A-129 (foto local)"
+  ]
+}

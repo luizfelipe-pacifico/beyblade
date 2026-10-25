@@ -1,0 +1,65 @@
+{
+  "id": "spin-gear/grip-flat-core",
+  "categoria": "spin-gear",
+  "nome": "Grip Flat Core",
+  "nome_jp": "グリップフラットコア",
+  "sistema": "hms",
+  "usado_em": [
+    "tyson-granger/dragoon-ms"
+  ],
+  "material": {
+    "principal": "Borracha",
+    "outros": [],
+    "obs": "borracha bem mole; cor não confirmada"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 11,
+      "fonte": "estimado",
+      "obs": "o RC mais baixo junto com o Ultimate Mode"
+    },
+    "peso_g": {
+      "valor": 1,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 1,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「グリップフラットコア」"
+  },
+  "stats_oficiais_obs": "Running Core: entra na soma no lugar da base. Soma da Dragoon MS = 8/4/5.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "dupla",
+    "gimmick": "running-core",
+    "ativacao": {
+      "modo": "nenhum",
+      "obs": ""
+    }
+  },
+  "forma": {
+    "tipo": "running-core",
+    "raio_mm": 7,
+    "altura_mm": 11,
+    "dentes": 4,
+    "nucleo": "normal"
+  },
+  "cores": {
+    "primaria": "#1f4fbf",
+    "secundaria": "#1a1a1a",
+    "detalhe": "#1f4fbf"
+  },
+  "acabamento": "opaco",
+  "descricao": "Running Core de borracha mole com ponta plana de ~4 mm de diâmetro e, ~2 mm acima, uma base de borracha que pode ser inclinada para pegar no Tornado Ridge do estádio. É o RC mais leve (1 g) e um dos mais baixos.",
+  "funcao": "Atrito altíssimo: movimento muito rápido, ótimo para smash e para upper attack (por ser baixo). Um dos melhores RCs de ataque.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Running_Core_-_Grip_Flat_Core",
+    "http://wiki.worldbeyblade.org/index.php?title=Dragoon_MS"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": "blade-base/defense-grip-base-2",
+  "categoria": "blade-base",
+  "nome": "Defense Grip Base 2",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "tala/wolborg-2"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Borracha (ponta do eixo do SG)",
+      "Rolamento de aço (no SG)"
+    ],
+    "obs": "A ponta grip de borracha fica no eixo do Right SG (Bearing Version 2), que gira num rolamento."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 42,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 13,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5.7,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 2,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「ディフェンスグリップベース2」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "grip",
+    "raio_ponta_mm": 2.5,
+    "atrito": 0.85,
+    "padrao_movimento": "centro",
+    "gimmick": "eixo com rolamento (SG) + borracha: life after death",
+    "modos": [],
+    "ponta_origem": "spin-gear (Right SG Bearing Version 2)"
+  },
+  "forma": {
+    "simetria": 1,
+    "raio_corpo_mm": 20,
+    "altura_mm": 9,
+    "perfil": "saia",
+    "lobos": [],
+    "ponta": {
+      "tipo": "grip",
+      "raio_mm": 2.5,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#9a9ea3",
+    "secundaria": "#7a7f86",
+    "detalhe": "#3a3fa0",
+    "ponta": "#3a3fa0",
+    "fonte": "foto local blade-base.jpg"
+  },
+  "acabamento": "metalico",
+  "descricao": "Base cinza-prateada, redonda, com o peso distribuído na periferia e seção de eixo curta; ponta de borracha azul do SG no centro.",
+  "funcao": "Excelente life after death (só perde para a Spiral Change Base): ótima para zombies e defesa.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Defense_Grip_2",
+    "pesquisa-bakuten/personagens/tala/beyblades/wolborg-2/dados.json"
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "id": "lancadores/ripcords/neo-dragon-winder",
+  "nome": "Neo-Dragon Winder",
+  "nome_jp": "ネオドラゴンワインダー",
+  "codigo_produto": [
+    "Incluso nas Dragoon posteriores e nas RC Beyblades (Takara)"
+  ],
+  "tipo": "winder",
+  "sentido": "esquerda",
+  "compativel_com": [
+    "lancadores/ez-shooter",
+    "lancadores/left-ez-shooter",
+    "lancadores/neo-reverse-shooter",
+    "lancadores/ez-shooter-grip",
+    "lancadores/catapult-grip",
+    "lancadores/marksmen-grip",
+    "lancadores/spring-shooter",
+    "lancadores/dragoon-shooter-dx",
+    "lancadores/driger-shooter-dx",
+    "lancadores/dranzer-shooter-dx",
+    "lancadores/bey-ultimate-shooter",
+    "lancadores/customize-grip-tyson",
+    "lancadores/customize-grip-kai",
+    "lancadores/customize-grip-ray",
+    "lancadores/customize-grip-max",
+    "lancadores/ez-shooter-power-custom",
+    "lancadores/ez-shooter-spring-custom",
+    "lancadores/duotron-launcher",
+    "lancadores/griffolyon-flail",
+    "lancadores/rc-shooter"
+  ],
+  "usado_por": [
+    {
+      "personagem": "tyson-granger",
+      "beys": [
+        "dragoon-gt",
+        "dragoon-v2-high-power-custom"
+      ],
+      "episodios": [],
+      "obs": "Inferido do brinquedo (Dragoons posteriores e RC Beyblades, wiki). Não citado no anime."
+    }
+  ],
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 270,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 11,
+      "fonte": "estimado"
+    },
+    "espessura_mm": {
+      "valor": 2.2,
+      "fonte": "estimado"
+    },
+    "numero_dentes": {
+      "valor": 68,
+      "fonte": "estimado",
+      "obs": "wiki: \"muito parecido em uso\" com o Dragon Winder"
+    },
+    "passo_dente_mm": {
+      "valor": 3.2,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 6,
+      "fonte": "estimado"
+    }
+  },
+  "material": {
+    "principal": "Plástico flexível (PE/PP, estimado)",
+    "outros": [],
+    "obs": ""
+  },
+  "atributos": {
+    "spin_entregue": 7,
+    "facilidade": 9,
+    "durabilidade": 6,
+    "justificativa": "Mesmo comprimento do Dragon Winder; o pegador vertical dá mais firmeza (muitos jogadores o consideram o melhor winder, wiki): +1% de rpm estimado.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "curso_puxada_mm": 218,
+    "multiplicador_rpm": 1.06,
+    "desgaste_por_batalha": 2,
+    "obs": ""
+  },
+  "forma": {
+    "comprimento_mm": 270,
+    "dentes": 68,
+    "cor": "#f2c230",
+    "pegador": "T",
+    "cor_pegador": "#1f4fa8",
+    "obs": "Pegador de dragão na vertical (em T). Cores estimadas."
+  },
+  "descricao": "Sucessor do Dragon Winder, com o pegador de dragão na vertical. Veio com as Dragoon posteriores e com as RC Beyblades (wiki).",
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Ripcord"
+  ]
+}

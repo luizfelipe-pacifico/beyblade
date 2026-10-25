@@ -1,0 +1,95 @@
+{
+  "id": "lancadores/duotron-launcher",
+  "nome": "Duotron Launcher (Hasbro)",
+  "nome_jp": "",
+  "codigo_produto": [
+    "Duotron Launcher (Hasbro, linha V-Force/Magnacore)"
+  ],
+  "tipo": "ripcord",
+  "rotacao": "direita",
+  "sistema": "magnacore",
+  "anime": false,
+  "usado_por": [],
+  "acessorios": [
+    "Winder Hasbro"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/winder-hasbro",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/winder-padrao",
+    "lancadores/ripcords/winder-hasbro",
+    "lancadores/ripcords/dragon-winder",
+    "lancadores/ripcords/neo-dragon-winder",
+    "lancadores/ripcords/ultimate-winder"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Molde reaproveitado depois na linha Metal Fusion (wiki)."
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 85,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 115,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 30,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 40,
+      "fonte": "estimado"
+    },
+    "curso_corda_mm": {
+      "valor": 145,
+      "fonte": "estimado"
+    }
+  },
+  "atributos": {
+    "forca": 4,
+    "rpm_max": 5000,
+    "precisao": 3,
+    "controle_angulo": 4,
+    "facilidade": 6,
+    "justificativa": "Lança duas beys com um winder; \"muito inconsistente\" (wiki). Sentido direito estimado.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 100,
+    "forca_maxima": 0.78,
+    "desvio_angular_graus": 9,
+    "tempo_puxada_ideal_ms": 270,
+    "inclinacao_max_graus": 20,
+    "bonus_rpm_pct": -24,
+    "assistencia_mira": 0,
+    "rotacao_selecionavel": false,
+    "lanca_duas": true,
+    "obs": ""
+  },
+  "forma": {
+    "corpo": "duplo",
+    "grip": false,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 85,
+    "largura_mm": 115,
+    "cores": {
+      "primaria": "#6b2fa0",
+      "secundaria": "#f2c230",
+      "detalhe": "#1a1a1a",
+      "corda": "#e8e8e8"
+    },
+    "obs_cores": "Estimado."
+  },
+  "descricao": "Lançador duplo da Hasbro (V-Force): lança duas beys com um só winder, de forma pouco consistente (wiki).",
+  "referencias": [],
+  "duvidas": [
+    "Sentido de rotação não informado na wiki."
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Duotron_Launcher_(Original_Series)",
+    "https://beyblade.fandom.com/wiki/Launcher"
+  ]
+}

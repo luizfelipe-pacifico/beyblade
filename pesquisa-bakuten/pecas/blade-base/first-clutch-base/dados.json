@@ -1,0 +1,97 @@
+{
+  "id": "blade-base/first-clutch-base",
+  "categoria": "blade-base",
+  "nome": "First Clutch Base",
+  "nome_jp": "ファーストクラッチベース",
+  "sistema": "engine-gear",
+  "usado_em": [
+    "lee/galeon-2-eg"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Ponta do Engine Gear (Right EG Metal Semi-Flat): metal."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 43,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 7,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 1,
+    "stamina": 1,
+    "fonte": "Beyblade Wiki, Part Infobox (só a wiki tem o valor; sem estrela Takara)"
+  },
+  "stats_oficiais_obs": "Versão genérica do anime (Galeon 2 Engine Gear): não existe produto Takara com esse nome sozinho. Valor só da wiki (página genérica), igual ao da First Clutch Base da Dragoon GT.",
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "metal-semi-flat",
+    "raio_ponta_mm": 2,
+    "atrito": 0.25,
+    "padrao_movimento": "agressivo",
+    "gimmick": "first-clutch",
+    "modos": [
+      {
+        "nome": "Engine Gear travado",
+        "tipo_ponta": "metal-semi-flat",
+        "atrito": 0.25,
+        "gatilho": "só no lançador"
+      },
+      {
+        "nome": "Engine Gear liberado",
+        "tipo_ponta": "metal-semi-flat",
+        "atrito": 0.25,
+        "gatilho": "pouso no estádio, logo após o lançamento"
+      }
+    ],
+    "ponta_origem": "engine-gear (Right EG Metal Semi-Flat)"
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 20,
+    "altura_mm": 10,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 25,
+        "pico": 45,
+        "fim": 65,
+        "raio_mm": 21.5,
+        "borda": "curva",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "metal-semi-flat",
+      "raio_mm": 2,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#1f1f1f",
+    "secundaria": "#c9a227",
+    "detalhe": "#c0c0c0",
+    "fonte": "estimado (bey exclusiva do anime)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base genérica de liberação imediata (Instant Release) do sistema Engine Gear, como aparece na Galeon 2 de Engine Gear do anime.",
+  "funcao": "Solta o motor do Engine Gear logo que a bey toca o estádio, para arrancar agressiva desde o início.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_First_Clutch_Base",
+    "https://beyblade.fandom.com/wiki/Galeon_2_(Engine_Gear)",
+    "pesquisa-bakuten/personagens/lee/beyblades/galeon-2-eg/dados.json"
+  ],
+  "aliases": [
+    "Instant Release Base (Hasbro)"
+  ]
+}

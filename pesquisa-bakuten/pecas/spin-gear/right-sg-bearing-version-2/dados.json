@@ -1,0 +1,64 @@
+{
+  "id": "spin-gear/right-sg-bearing-version-2",
+  "categoria": "spin-gear",
+  "nome": "Right SG (Bearing Version 2)",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "tala/wolborg-2"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "eixo de metal",
+      "rolamento",
+      "ponta de borracha"
+    ],
+    "obs": "ponta de borracha clara e mole (boosters Takara) ou escura e dura (recolor azul Ito Yokado)"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 16,
+      "fonte": "estimado",
+      "obs": "eixo alto, citado como ponto fraco"
+    },
+    "peso_g": {
+      "valor": 5.5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "A Takara não dá A/D/S a este Spin Gear (só a NEO Right SG Double Bearing, que não está no catálogo, tem estrela).",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "direita",
+    "gimmick": "bearing",
+    "ativacao": {
+      "modo": "nenhum",
+      "obs": "o eixo gira livre sobre o rolamento o tempo todo"
+    }
+  },
+  "forma": {
+    "tipo": "spin-gear",
+    "raio_mm": 9,
+    "altura_mm": 16,
+    "dentes": 8,
+    "nucleo": "bearing"
+  },
+  "cores": {
+    "primaria": "#8a8d91",
+    "secundaria": "#2b3a8c",
+    "detalhe": "#d0d3d6"
+  },
+  "acabamento": "opaco",
+  "descricao": "Sucessor do SG (Bearing Version) do Wolborg: eixo apoiado em rolamento, agora com ponta de borracha. A foto aberta mostra a casca cinza, o eixo metálico e a ponta de borracha azul.",
+  "funcao": "A bey gira em volta do eixo enquanto a ponta de borracha fica quase parada, ancorando a bey: defesa enorme com stamina boa, coisa rara para ponta de borracha. Peça-chave dos \"Defensive Zombies\". Ponto fraco: altura, que expõe a bey a upper attack.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_Right_SG_(Bearing_Version_2)",
+    "http://wiki.worldbeyblade.org/index.php?title=Wolborg_2"
+  ]
+}

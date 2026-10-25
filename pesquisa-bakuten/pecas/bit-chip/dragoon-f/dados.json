@@ -1,0 +1,55 @@
+{
+  "id": "bit-chip/dragoon-f",
+  "categoria": "bit-chip",
+  "nome": "Dragoon (F Version)",
+  "nome_jp": "ドラグーン",
+  "sistema": "spin-gear",
+  "usado_em": [
+    "tyson-granger/dragoon-f"
+  ],
+  "material": {
+    "principal": "plástico (ABS presumido)",
+    "outros": [
+      "adesivo impresso com a fera"
+    ],
+    "obs": "Peça única com haste longa que encaixa direto no furo central do Attack Ring. Cor do plástico do chip não confirmada; ABS presumido (estimado)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 8,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 0.8,
+      "fonte": "comunidade"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_gba": null,
+  "fisica": {
+    "fera_bit": "dragoon"
+  },
+  "forma": {
+    "raio_mm": 7,
+    "cor_fundo": "#1b3a8a",
+    "emblema": "dragoon"
+  },
+  "cores": {
+    "primaria": "#1b3a8a",
+    "secundaria": "#f2c200",
+    "detalhe": "#ffffff",
+    "fonte": "estimado"
+  },
+  "acabamento": "opaco",
+  "descricao": "Chip longo de uma peça (encaixa direto no Attack Ring). Dragoon, arte da série F (\"Dragoon F bit chip.jpg\" na galeria da wiki).",
+  "funcao": "Identifica a bey e a fera bit; no jogo, define o emblema e o especial. Sem efeito físico relevante (menos de 1,5 g, no centro, raio pequeno). Nas regras antigas, perder ou quebrar o chip na batalha dava derrota.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Dragoon",
+    "https://beyblade.fandom.com/wiki/Dragoon_F",
+    "http://obakeblader.com/2018/10/26/post-3546/"
+  ]
+}

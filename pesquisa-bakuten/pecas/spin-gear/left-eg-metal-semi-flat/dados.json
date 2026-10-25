@@ -1,0 +1,70 @@
+{
+  "id": "spin-gear/left-eg-metal-semi-flat",
+  "categoria": "spin-gear",
+  "nome": "Left EG (Metal Semi-Flat)",
+  "nome_jp": "レフトエンジンギア",
+  "sistema": "engine-gear",
+  "usado_em": [
+    "tyson-granger/dragoon-g"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "mola espiral",
+      "ponta de metal"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 24,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 11,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 0,
+    "stamina": 2,
+    "potencia_engine": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2026/02/22/%E7%88%86%E8%BB%A2%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%88%E3%83%99%E3%82%A4%E3%83%96%E3%83%AC%E3%83%BC%E3%83%89%E3%82%B9%E3%83%94%E3%83%B3%E3%82%AE%E3%82%A2%E3%83%BB%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3/), Spin Gear/Engine Gear 「レフトエンジンギア（メタルセミフラット）」"
+  },
+  "stats_oficiais_obs": "Defesa 0 estrelas (a wiki deixa em branco). Nas beys Engine Gear o obakeblader soma AR + WD + EG + base.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "esquerda",
+    "gimmick": "engine-gear",
+    "ativacao": {
+      "modo": "instantaneo",
+      "obs": "na First Clutch Base do Dragoon G: o EG dispara logo depois do lançamento (surto de velocidade imediato)"
+    }
+  },
+  "forma": {
+    "tipo": "engine-gear",
+    "raio_mm": 12,
+    "altura_mm": 18,
+    "dentes": 12,
+    "nucleo": "engine"
+  },
+  "cores": {
+    "primaria": "#1f4fbf",
+    "secundaria": "#a7abb0",
+    "detalhe": "#f2f2f2"
+  },
+  "acabamento": "opaco",
+  "descricao": "Engine Gear esquerdo do Dragoon G, a primeira bey do Engine Gear System. Ponta de metal chamada semi-flat, mas na prática plana com bordas levemente arredondadas.",
+  "funcao": "Movimento agressivo, stamina razoável e surto de velocidade na ativação; o efeito mais visível costuma ser o auto-KO. Alto e preso a bases EG volumosas.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Engine_Gear_-_Left_Engine_Gear",
+    "https://beyblade.fandom.com/wiki/Engine_Gear",
+    "https://beyblade.fandom.com/wiki/Dragoon_G",
+    "http://wiki.worldbeyblade.org/index.php?title=Dragoon_G"
+  ]
+}

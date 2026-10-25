@@ -1,0 +1,65 @@
+{
+  "id": "weight-disk/magne-weight-disk",
+  "categoria": "weight-disk",
+  "nome": "Magne Weight Disk",
+  "nome_jp": "マグネウエイトディスク",
+  "sistema": "magnacore",
+  "usado_em": [
+    "tyson-granger/dragoon-v2"
+  ],
+  "material": {
+    "principal": "Metal",
+    "outros": [
+      "Ímã"
+    ],
+    "obs": "disco magnético com face Norte e face Sul"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 37,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 3.2,
+      "fonte": "estimado",
+      "obs": "calculada do peso com densidade 7.1 g/cm³"
+    },
+    "peso_g": {
+      "valor": 15.1,
+      "fonte": "wiki",
+      "obs": "WBO mediu 14,6 g na unidade do Dragoon V2"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 3,
+    "stamina": 3,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2021/06/26/post-16926/), Weight Disk 「マグネウェイトディスク」"
+  },
+  "stats_oficiais_obs": "Conferido: 3/3/3 (+ Magne Power 2) na lista de WDs e na página da Dragoon V2 do obakeblader; a soma da Dragoon V2 (10/5,5/5) fecha com esse valor. É alto, mas é o oficial.",
+  "stats_gba": null,
+  "fisica": {
+    "distribuicao": "equilibrado",
+    "magnetico": true
+  },
+  "forma": {
+    "lados": 0,
+    "raio_externo_mm": 18.5,
+    "raio_interno_mm": 11.5,
+    "espessura_mm": 3.2,
+    "estilo": "magne"
+  },
+  "cores": {
+    "primaria": "#8f949a",
+    "secundaria": "#c8102e",
+    "detalhe": "#1f4fbf"
+  },
+  "acabamento": "metalico",
+  "descricao": "Weight Disk magnético com dois lados distintos, polo Norte e polo Sul: virando o disco, troca-se a polaridade que fica para cima. Também chamado \"Magnetic Weight Disk\". Saiu com Dragoon V2 e Voltaic Ape e em pacotes avulsos. Formato exato não confirmado nas fontes de texto (a forma aqui é aproximada).",
+  "funcao": "Reforça o efeito de um Magnecore e permite movimentos mais irregulares em estádio magnético. Entre duas beys com Magne WD, polos iguais para cima se repelem (a luta vira de resistência) e polos diferentes se atraem (contato constante). Permite que beys de Spin Gear comum usem o sistema Magnacore.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Magnetic_Weight_Disk",
+    "http://wiki.worldbeyblade.org/index.php?title=Magnecore",
+    "http://wiki.worldbeyblade.org/index.php?title=Dragoon_V2"
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "id": "lancadores/turbo-winder",
+  "nome": "Turbo Winder (corda de Engine Gear)",
+  "nome_jp": "ターボワインダー",
+  "codigo_produto": [
+    "Incluso em toda beyblade Engine Gear (Takara/Hasbro)",
+    "Turbo Winder maior nas beys Turbo/Reverse EG",
+    "Zeus Starter Key (ゼウススターターキー, A-129) - acessório da Zeus citado na caixa"
+  ],
+  "tipo": "engine-gear",
+  "rotacao": "dupla",
+  "sistema": "engine-gear",
+  "anime": true,
+  "usado_por": [
+    {
+      "personagem": "tyson-granger",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "dragoon-g",
+        "dragoon-gt"
+      ],
+      "obs": "Starter Dragoon G: Turbo Winder branco (wiki). Dragoon GT usa o Turbo EG (até 4x a saída normal)."
+    },
+    {
+      "personagem": "kai-hiwatari",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "dranzer-g",
+        "dranzer-gt"
+      ],
+      "obs": ""
+    },
+    {
+      "personagem": "ray-kon",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "driger-g"
+      ],
+      "obs": ""
+    },
+    {
+      "personagem": "max-tate",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "draciel-g"
+      ],
+      "obs": ""
+    },
+    {
+      "personagem": "daichi-sumeragi",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "gaia-dragoon-g"
+      ],
+      "obs": ""
+    },
+    {
+      "personagem": "tala",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "wolborg-4"
+      ],
+      "obs": ""
+    },
+    {
+      "personagem": "bryan-kuznetsov",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "falborg-2"
+      ],
+      "obs": ""
+    },
+    {
+      "personagem": "brooklyn-masefield",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "zeus"
+      ],
+      "obs": "A caixa da Zeus (A-129) lista a \"Zeus Starter Key\" em ABS; foto em referencia/."
+    },
+    {
+      "personagem": "lee",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "galeon-2-eg"
+      ],
+      "obs": ""
+    }
+  ],
+  "acessorios": [
+    "Usado junto com o lançador normal do personagem"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/turbo-winder",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/turbo-winder"
+  ],
+  "material": {
+    "principal": "PE/PP flexível (estimado)",
+    "outros": [
+      "Zeus Starter Key: ABS (caixa A-129)"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 150,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 12,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 3,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 4,
+      "fonte": "estimado"
+    },
+    "curso_corda_mm": {
+      "valor": 110,
+      "fonte": "estimado",
+      "obs": "curso curto: só dá corda na mola do Engine Gear"
+    }
+  },
+  "atributos": {
+    "forca": 1,
+    "rpm_max": null,
+    "precisao": 1,
+    "controle_angulo": 1,
+    "facilidade": 7,
+    "justificativa": "Não lança a bey: só dá corda na mola do Engine Gear antes do lançamento (wiki, Turbo Winders). O efeito é um \"segundo fôlego\" quando a embreagem (clutch) da base solta. Por isso força/precisão/controle ficam no mínimo da escala (1) e rpm_max = null; o ganho fica em mecanica_jogo.bonus_rpm_eg.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 0,
+    "forca_maxima": 0,
+    "desvio_angular_graus": 0,
+    "tempo_puxada_ideal_ms": 0,
+    "inclinacao_max_graus": 0,
+    "bonus_rpm_pct": 0,
+    "assistencia_mira": 0,
+    "rotacao_selecionavel": false,
+    "carga_eg": {
+      "entrada": "L2 (analógico): segurar e soltar antes do lançamento; cada ciclo completo enche 1/3 da mola",
+      "ciclos_max": 3,
+      "bonus_rpm_eg": 1500,
+      "bonus_rpm_eg_turbo": 3000,
+      "duracao_ms": 1800,
+      "duracao_ms_turbo": 700
+    },
+    "obs": "Fase opcional antes do lançamento nas beys Engine Gear. Turbo EG (Dragoon GT): saída até 4x maior, porém mais curta (wiki); valores do jogo estimados."
+  },
+  "forma": {
+    "corpo": "corda",
+    "grip": false,
+    "tipo_corda": "turbo-winder",
+    "comprimento_mm": 150,
+    "largura_mm": 12,
+    "cores": {
+      "primaria": "#f2f4f7",
+      "secundaria": "#9aa3ad",
+      "detalhe": "#1a1a1a",
+      "corda": "#f2f4f7"
+    },
+    "obs_cores": "Branco, como o Turbo Winder da Starter Dragoon G (wiki)."
+  },
+  "descricao": "Winder curto que dá corda na mola interna do Engine Gear antes de lançar. Acompanha toda bey Engine Gear; Turbo e Reverse EG vêm com Turbo Winders maiores (wiki).",
+  "referencias": [
+    {
+      "arquivo": "referencia/zeus-com-starter-key.jpg",
+      "origem": "personagens/brooklyn-masefield/beyblades/zeus/referencia/pecas-montada-com-launcher.jpg",
+      "obs": "Zeus montada ao lado do acessório preto que a caixa chama de Zeus Starter Key."
+    },
+    {
+      "arquivo": "referencia/zeus-caixa-verso.jpg",
+      "origem": "personagens/brooklyn-masefield/beyblades/zeus/referencia/pecas-caixa-verso-pecas.jpg",
+      "obs": "Verso da caixa A-129: \"使用樹脂: ベイブレード本体及びゼウススターターキー (ABS樹脂)\"."
+    }
+  ],
+  "duvidas": [
+    "Função exata da Zeus Starter Key não confirmada (provável chave de corda do Engine Gear/First Clutch Base)."
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Turbo_Winders",
+    "https://beyblade.fandom.com/wiki/Engine_Gear",
+    "https://beyblade.fandom.com/wiki/Dragoon_G",
+    "https://beyblade.fandom.com/wiki/Zeus"
+  ]
+}

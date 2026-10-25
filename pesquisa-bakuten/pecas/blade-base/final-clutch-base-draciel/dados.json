@@ -1,0 +1,98 @@
+{
+  "id": "blade-base/final-clutch-base-draciel",
+  "categoria": "blade-base",
+  "nome": "Final Clutch Base (Draciel Version)",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "max-tate/draciel-g"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Aço (2 esferas internas)"
+    ],
+    "obs": "Ponta do Engine Gear (Right EG Metal Ball): bola metálica."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 42,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 7,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 2,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「ファイナルクラッチベース（ドラシエルG）」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "metal-ball",
+    "raio_ponta_mm": 3,
+    "atrito": 0.18,
+    "padrao_movimento": "centro",
+    "gimmick": "final-clutch + esferas internas",
+    "modos": [
+      {
+        "nome": "Engine Gear travado",
+        "tipo_ponta": "metal-ball",
+        "atrito": 0.18,
+        "gatilho": "do lançamento até a trava abrir"
+      },
+      {
+        "nome": "Engine Gear liberado",
+        "tipo_ponta": "metal-ball",
+        "atrito": 0.18,
+        "gatilho": "perto do fim da batalha, com RPM baixa (limiar não documentado)"
+      }
+    ],
+    "ponta_origem": "engine-gear (Right EG Metal Ball)"
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 19,
+    "altura_mm": 10,
+    "perfil": "reto",
+    "lobos": [
+      {
+        "inicio": 35,
+        "pico": 45,
+        "fim": 55,
+        "raio_mm": 21,
+        "borda": "reta",
+        "altura_mm": 5
+      }
+    ],
+    "ponta": {
+      "tipo": "metal-ball",
+      "raio_mm": 3,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#2e9e3a",
+    "secundaria": "#f2c919",
+    "detalhe": "#1a1a1a",
+    "fonte": "foto local blade-base.jpg"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base verde, redonda, com quatro blocos de trava nas laterais, duas esferas de metal visíveis em cima/embaixo, faixas amarelas e pretas na borda e adesivo \"FC METAL BALL Ver.\".",
+  "funcao": "A mais leve das bases Final Clutch: guarda o motor para o fim da batalha. As esferas internas quase não mudam o desempenho e a distribuição de peso é ruim.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Hit_Release_(Draciel_Version)",
+    "pesquisa-bakuten/personagens/max-tate/beyblades/draciel-g/dados.json"
+  ],
+  "aliases": [
+    "Hit Release (Draciel Version) (Hasbro)",
+    "FC Metal Ball Ver."
+  ]
+}

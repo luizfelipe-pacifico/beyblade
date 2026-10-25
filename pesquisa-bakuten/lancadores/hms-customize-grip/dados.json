@@ -1,0 +1,112 @@
+{
+  "id": "lancadores/hms-customize-grip",
+  "nome": "HMS Customize Grip (Ray: Dual Shooter preto + G-Winder azul)",
+  "nome_jp": "HMSカスタマイズグリップ",
+  "codigo_produto": [
+    "A-132 HMS Customize Grip (Takara)",
+    "A-133 HMS Rubber Grip (Blue)",
+    "MA-05 HMS Spring Trigger (Silver)",
+    "Versão Sonokong (Coreia) com cabo ranhurado"
+  ],
+  "tipo": "ripcord",
+  "rotacao": "dupla",
+  "sistema": "hms",
+  "anime": true,
+  "usado_por": [
+    {
+      "personagem": "ray-kon",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "driger-ms"
+      ],
+      "obs": "Wiki (Ray Kon, \"HMS Custom Shooter\"): Dual Shooter preto com G-Winder azul num Customize Grip azul com HMS Rubber Grip cinza, no torneio contra a BEGA."
+    }
+  ],
+  "acessorios": [
+    "Dual Shooter",
+    "HMS Rubber Grip",
+    "HMS Spring Trigger",
+    "G-Winder"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/g-winder",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/g-winder"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Borracha (Rubber Grip)",
+      "Mola de aço (Spring Trigger)"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 100,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 55,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 120,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 70,
+      "fonte": "estimado"
+    },
+    "curso_corda_mm": {
+      "valor": 218,
+      "fonte": "estimado"
+    }
+  },
+  "atributos": {
+    "forca": 8,
+    "rpm_max": 7600,
+    "precisao": 8,
+    "controle_angulo": 8,
+    "facilidade": 8,
+    "justificativa": "Dual Shooter (~7400) + grip com mola (+3%). Ambidestro: o compartimento do shooter muda de lado (wiki).",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 130,
+    "forca_maxima": 1.16,
+    "desvio_angular_graus": 3,
+    "tempo_puxada_ideal_ms": 290,
+    "inclinacao_max_graus": 35,
+    "bonus_rpm_pct": 16,
+    "assistencia_mira": 0.35,
+    "rotacao_selecionavel": true,
+    "recuo": 0.45,
+    "obs": "Melhor lançador de linha da G-Rev no jogo."
+  },
+  "forma": {
+    "corpo": "pistola",
+    "grip": true,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 100,
+    "largura_mm": 55,
+    "duas_entradas": true,
+    "cores": {
+      "primaria": "#1e5bbf",
+      "secundaria": "#1a1a1a",
+      "detalhe": "#8a9099",
+      "corda": "#1e6fd9"
+    },
+    "obs_cores": "Grip azul, shooter preto, borracha cinza, G-Winder azul (wiki, Ray Kon)."
+  },
+  "descricao": "Versão HMS do Customize Grip, usável por destros e canhotos: o compartimento do Dual Shooter sai e o cabo desliza para o outro lado (wiki). Aceita Spring Trigger e Rubber Grip.",
+  "referencias": [],
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Grip",
+    "https://beyblade.fandom.com/wiki/Ray_Kon",
+    "https://beyblade.fandom.com/wiki/List_of_Original_Series_products_(Takara)",
+    "https://beyblade.fandom.com/wiki/Hard_Metal_System"
+  ]
+}

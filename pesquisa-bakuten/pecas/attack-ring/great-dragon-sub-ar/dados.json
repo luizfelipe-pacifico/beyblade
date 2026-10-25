@@ -1,0 +1,71 @@
+{
+  "id": "attack-ring/great-dragon-sub-ar",
+  "categoria": "attack-ring",
+  "nome": "Great Dragon Sub-AR (Wing)",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon"
+  ],
+  "material": {
+    "principal": "PC translúcido",
+    "outros": [],
+    "obs": "Sub-Attack Ring livre (\"wing\"), laranja translúcido."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 50,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 1.5,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 1.5,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "A Takara não dá estrelas ao Sub-AR separado: as estrelas do Great Dragon (3,5/2/1,5) já incluem o Sub-AR. Não somar.",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "survival",
+    "recoil": 0.2,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 25
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 18.5,
+    "raio_interno_mm": 17,
+    "espessura_mm": 1.5,
+    "lobos": [
+      {
+        "inicio": 110,
+        "pico": 130,
+        "fim": 150,
+        "raio_mm": 25,
+        "borda": "curva",
+        "altura_mm": 1.5
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#f39a1e",
+    "secundaria": "#f7c35a",
+    "detalhe": "#b35f00"
+  },
+  "acabamento": "translucido",
+  "descricao": "Anel fino livre, laranja translúcido, com 2 lâminas (\"wings\") que passam da borda do AR.",
+  "funcao": "Recebe golpes e gira solto, amortecendo parte do impacto.",
+  "pecas_relacionadas": [
+    "attack-ring/great-dragon"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Great_Dragon",
+    "https://beyblade.fandom.com/wiki/Sub-Attack_Rings"
+  ]
+}

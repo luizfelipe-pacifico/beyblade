@@ -1,0 +1,94 @@
+{
+  "id": "blade-base/spiral-change-base",
+  "categoria": "blade-base",
+  "nome": "Spiral Change Base",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "kai-hiwatari/dranzer-s"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Metal (ponta sharp do eixo livre)"
+    ],
+    "obs": "Modo flat: ponta plástica da base. Modo sharp: ponta metálica do Right SG (Free Shaft Version), com rolamento."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 41,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 7,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 2,
+    "stamina": 3.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「スパイラルチェンジベース」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "flat",
+    "raio_ponta_mm": 3,
+    "atrito": 0.5,
+    "padrao_movimento": "flower",
+    "gimmick": "troca manual de ponta (empurrar e girar)",
+    "modos": [
+      {
+        "nome": "Attack (flat plástico)",
+        "tipo_ponta": "flat",
+        "atrito": 0.5,
+        "gatilho": "manual: empurrar o fundo e girar antes da batalha"
+      },
+      {
+        "nome": "Survival (metal sharp, eixo livre)",
+        "tipo_ponta": "metal-sharp",
+        "atrito": 0.08,
+        "gatilho": "manual: empurrar o fundo e girar antes da batalha"
+      }
+    ],
+    "ponta_origem": "base (flat) ou Right SG Free Shaft (metal sharp)"
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 19,
+    "altura_mm": 10,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 10,
+        "pico": 40,
+        "fim": 70,
+        "raio_mm": 20.5,
+        "borda": "curva",
+        "altura_mm": 3
+      }
+    ],
+    "ponta": {
+      "tipo": "flat",
+      "raio_mm": 3,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#2a4fa0",
+    "secundaria": "#c8102e",
+    "detalhe": "#c0c0c0",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base da Dranzer S cujo fundo é um anel giratório: empurrando e girando, expõe-se a ponta flat de plástico ou a ponta sharp metálica do eixo livre.",
+  "funcao": "Com o eixo livre, o modo flat tem o melhor \"life after death\" da era plástica; o modo sharp é instável e tem defesa fraca.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Spiral_Change_Base",
+    "pesquisa-bakuten/personagens/kai-hiwatari/beyblades/dranzer-s/dados.json"
+  ]
+}

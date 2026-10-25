@@ -1,0 +1,55 @@
+{
+  "id": "bit-chip/dranzer-g",
+  "categoria": "bit-chip",
+  "nome": "Dranzer (G Version)",
+  "nome_jp": "ドランザー",
+  "sistema": "engine-gear",
+  "usado_em": [
+    "kai-hiwatari/dranzer-g"
+  ],
+  "material": {
+    "principal": "plástico (ABS presumido)",
+    "outros": [
+      "adesivo impresso com a fera"
+    ],
+    "obs": "Peça única com haste longa que encaixa direto no furo central do Attack Ring. Cor do plástico do chip não confirmada; ABS presumido (estimado)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 8,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 0.8,
+      "fonte": "comunidade"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_gba": null,
+  "fisica": {
+    "fera_bit": "dranzer"
+  },
+  "forma": {
+    "raio_mm": 7,
+    "cor_fundo": "#c8102e",
+    "emblema": "dranzer"
+  },
+  "cores": {
+    "primaria": "#c8102e",
+    "secundaria": "#f2b705",
+    "detalhe": "#ffffff",
+    "fonte": "estimado"
+  },
+  "acabamento": "opaco",
+  "descricao": "Chip longo de uma peça (encaixa direto no Attack Ring). Dranzer, arte da série G.",
+  "funcao": "Identifica a bey e a fera bit; no jogo, define o emblema e o especial. Sem efeito físico relevante (menos de 1,5 g, no centro, raio pequeno). Nas regras antigas, perder ou quebrar o chip na batalha dava derrota.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Dranzer",
+    "https://beyblade.fandom.com/wiki/Dranzer_G",
+    "http://obakeblader.com/2018/06/17/post-139/"
+  ]
+}

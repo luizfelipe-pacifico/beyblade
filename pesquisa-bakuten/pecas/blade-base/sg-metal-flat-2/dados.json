@@ -1,0 +1,85 @@
+{
+  "id": "blade-base/sg-metal-flat-2",
+  "categoria": "blade-base",
+  "nome": "SG Metal Flat 2",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon-v"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Metal (ponta flat)"
+    ],
+    "obs": "Ponta flat metálica."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 40,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 13,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 4,
+    "defesa": 1,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「SGメタルフラットベース（ガイアドラグーンV）」"
+  },
+  "stats_oficiais_obs": "Na Takara se chama só SGメタルフラットベース (versão da Gaia Dragoon V).",
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "metal-flat",
+    "raio_ponta_mm": 2.5,
+    "atrito": 0.4,
+    "padrao_movimento": "agressivo",
+    "gimmick": "nenhum",
+    "modos": []
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 19,
+    "altura_mm": 9,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 35,
+        "pico": 45,
+        "fim": 55,
+        "raio_mm": 20,
+        "borda": "reta",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "metal-flat",
+      "raio_mm": 2.5,
+      "altura_mm": 4
+    }
+  },
+  "cores": {
+    "primaria": "#2b2a8c",
+    "secundaria": "#3b3aa6",
+    "detalhe": "#c9ccd1",
+    "ponta": "#c9ccd1",
+    "fonte": "foto local blade-base.jpg"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base azul-marinho, redonda e cônica, com saliências ovais em relevo no topo, dois clipes de SG e ponta flat de metal. Altura média para base de ataque.",
+  "funcao": "Uma das melhores bases de ataque da era Magnacore: a ponta metálica tem menos atrito que borracha, então a bey anda rápido e ainda dura mais. Serve para smash e upper attack.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_SG_Metal_Flat_2",
+    "pesquisa-bakuten/personagens/daichi-sumeragi/beyblades/gaia-dragoon-v/dados.json"
+  ],
+  "aliases": [
+    "SG Metal Flat Base (Gaia Dragoon V Version)"
+  ]
+}

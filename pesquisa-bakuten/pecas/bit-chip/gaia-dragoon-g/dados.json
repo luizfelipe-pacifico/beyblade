@@ -1,0 +1,55 @@
+{
+  "id": "bit-chip/gaia-dragoon-g",
+  "categoria": "bit-chip",
+  "nome": "Strata Dragoon (G Version)",
+  "nome_jp": "ガイアドラグーン",
+  "sistema": "engine-gear",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon-g"
+  ],
+  "material": {
+    "principal": "plástico (ABS presumido)",
+    "outros": [
+      "adesivo impresso com a fera"
+    ],
+    "obs": "Peça única com haste longa que encaixa direto no furo central do Attack Ring. Cor do plástico do chip não confirmada; ABS presumido (estimado)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 8,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 0.8,
+      "fonte": "comunidade"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_gba": null,
+  "fisica": {
+    "fera_bit": "gaia-dragoon"
+  },
+  "forma": {
+    "raio_mm": 7,
+    "cor_fundo": "#d4a017",
+    "emblema": "gaia-dragoon"
+  },
+  "cores": {
+    "primaria": "#d4a017",
+    "secundaria": "#7a4a12",
+    "detalhe": "#ffffff",
+    "fonte": "estimado"
+  },
+  "acabamento": "opaco",
+  "descricao": "Chip longo de uma peça (encaixa direto no Attack Ring). Strata/Gaia Dragoon, arte da série G.",
+  "funcao": "Identifica a bey e a fera bit; no jogo, define o emblema e o especial. Sem efeito físico relevante (menos de 1,5 g, no centro, raio pequeno). Nas regras antigas, perder ou quebrar o chip na batalha dava derrota.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Strata_Dragoon",
+    "https://beyblade.fandom.com/wiki/Gaia_Dragoon_G",
+    "http://obakeblader.com/2018/06/19/post-591/"
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "id": "lancadores/ripcords/g-winder",
+  "nome": "G-Winder (HMS)",
+  "nome_jp": "Gワインダー",
+  "codigo_produto": [
+    "MA-07 HMS G-Winder (Takara)",
+    "Incluso nas Starters HMS e no Bey Double Shooter (A-130 azul c/ winder vermelho, prata c/ preto; MA-02 c/ amarelo)"
+  ],
+  "tipo": "winder",
+  "sentido": "dupla",
+  "compativel_com": [
+    "lancadores/dual-shooter",
+    "lancadores/hms-customize-grip",
+    "lancadores/bey-double-shooter"
+  ],
+  "usado_por": [
+    {
+      "personagem": "ray-kon",
+      "beys": [
+        "driger-ms"
+      ],
+      "episodios": [
+        "G-Rev, torneio contra a BEGA"
+      ],
+      "obs": "Wiki (Ray Kon): Dual Shooter preto com G-Winder azul."
+    },
+    {
+      "personagem": "tyson-granger",
+      "beys": [
+        "dragoon-ms",
+        "dragoon-ms-ultimate-version"
+      ],
+      "episodios": [
+        "G-Rev ep. 39"
+      ],
+      "obs": "Inferido: o G-Winder é o único winder HMS. No ep. 39 a puxada joga o Tyson para trás."
+    },
+    {
+      "personagem": "kai-hiwatari",
+      "beys": [
+        "dranzer-ms"
+      ],
+      "episodios": [],
+      "obs": "Inferido (único winder HMS)."
+    },
+    {
+      "personagem": "max-tate",
+      "beys": [
+        "draciel-ms"
+      ],
+      "episodios": [],
+      "obs": "Inferido."
+    },
+    {
+      "personagem": "daichi-sumeragi",
+      "beys": [
+        "gaia-dragoon-ms"
+      ],
+      "episodios": [],
+      "obs": "Inferido."
+    }
+  ],
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 270,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 12,
+      "fonte": "estimado"
+    },
+    "espessura_mm": {
+      "valor": 3,
+      "fonte": "estimado",
+      "obs": "wiki: mais grosso e firme que os winders plásticos"
+    },
+    "numero_dentes": {
+      "valor": 68,
+      "fonte": "estimado",
+      "obs": "derivado do Dragon Winder (wiki); todos do mesmo comprimento"
+    },
+    "passo_dente_mm": {
+      "valor": 3.2,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 8,
+      "fonte": "estimado"
+    }
+  },
+  "material": {
+    "principal": "Plástico rígido (mais grosso que o dos winders plásticos)",
+    "outros": [],
+    "obs": "Mais durável e fácil de endireitar (wiki)."
+  },
+  "atributos": {
+    "spin_entregue": 7,
+    "facilidade": 8,
+    "durabilidade": 9,
+    "justificativa": "Mesmo curso do Dragon Winder, mas rígido: não empena e transmite a puxada sem perda. Vira para escolher o sentido no Dual Shooter (wiki).",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "curso_puxada_mm": 218,
+    "multiplicador_rpm": 1.05,
+    "desgaste_por_batalha": 1,
+    "obs": "O sentido vem da fenda do Dual Shooter (L1/R1)."
+  },
+  "forma": {
+    "comprimento_mm": 270,
+    "dentes": 68,
+    "cor": "#1e6fd9",
+    "pegador": "retangular",
+    "cor_pegador": "#1e6fd9",
+    "obs": "Azul como o do Ray (wiki). Pegador derivado do Dragon Winder."
+  },
+  "descricao": "Único winder do Hard Metal System. O desenho deriva do Dragon Winder, todos têm o mesmo comprimento e o plástico é bem mais grosso e firme (wiki).",
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/G-Winder",
+    "https://beyblade.fandom.com/wiki/Ripcord",
+    "https://beyblade.fandom.com/wiki/Hard_Metal_System",
+    "https://beyblade.fandom.com/wiki/Ray_Kon",
+    "https://beyblade.fandom.com/wiki/Bey_Double_Shooter"
+  ]
+}

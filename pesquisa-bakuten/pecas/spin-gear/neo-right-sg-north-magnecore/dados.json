@@ -1,0 +1,63 @@
+{
+  "id": "spin-gear/neo-right-sg-north-magnecore",
+  "categoria": "spin-gear",
+  "nome": "Neo Right SG (North Magnecore)",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "max-tate/draciel-v"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "ímã (polo Norte) no núcleo"
+    ],
+    "obs": "GIF local mostra casca escura; WBO diz que o Magnecore Norte é vermelho"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 10,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 6,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "Spin Gear: a Takara não dá A/D/S, só Magne Power 2. Os 2/2/1 da wiki foram copiados por engano e foram removidos.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "direita",
+    "gimmick": "magnecore",
+    "ativacao": {
+      "modo": "nenhum",
+      "obs": "o efeito magnético é passivo"
+    }
+  },
+  "forma": {
+    "tipo": "spin-gear",
+    "raio_mm": 9,
+    "altura_mm": 10,
+    "dentes": 8,
+    "nucleo": "magne-n"
+  },
+  "cores": {
+    "primaria": "#1a1a1a",
+    "secundaria": "#c8102e",
+    "detalhe": "#1f4fbf"
+  },
+  "acabamento": "opaco",
+  "descricao": "Neo Spin Gear direito com Magnecore polo Norte. A WBO chama de \"Neo Right SG (North Core Version)\".",
+  "funcao": "Peso no centro e efeito magnético. Pela Beyblade Wiki, o Norte atrai os ímãs do estádio: a bey fica mais difícil de empurrar (defesa), mas perde força de rotação. Combina com a defesa do Draciel V.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_Neo_Right_SG_(North_Magnecore_Version)",
+    "https://beyblade.fandom.com/wiki/Core_-_Magnecore_(North_Pole)",
+    "http://wiki.worldbeyblade.org/index.php?title=Draciel_V",
+    "http://wiki.worldbeyblade.org/index.php?title=Magnecore"
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "id": "lancadores/ripcords/winder-hasbro",
+  "nome": "Ripcord Hasbro (era plástica)",
+  "nome_jp": "",
+  "codigo_produto": [
+    "Incluso nas Starters e lançadores Hasbro 2002–2003 (Bakuten/V-Force/G-Rev)"
+  ],
+  "tipo": "ripcord",
+  "sentido": "direita",
+  "compativel_com": [
+    "lancadores/ez-shooter",
+    "lancadores/left-ez-shooter",
+    "lancadores/neo-reverse-shooter",
+    "lancadores/ez-shooter-grip",
+    "lancadores/catapult-grip",
+    "lancadores/marksmen-grip",
+    "lancadores/spring-shooter",
+    "lancadores/dragoon-shooter-dx",
+    "lancadores/driger-shooter-dx",
+    "lancadores/dranzer-shooter-dx",
+    "lancadores/bey-ultimate-shooter",
+    "lancadores/customize-grip-tyson",
+    "lancadores/customize-grip-kai",
+    "lancadores/customize-grip-ray",
+    "lancadores/customize-grip-max",
+    "lancadores/ez-shooter-power-custom",
+    "lancadores/ez-shooter-spring-custom",
+    "lancadores/duotron-launcher",
+    "lancadores/griffolyon-flail",
+    "lancadores/rc-shooter"
+  ],
+  "usado_por": [],
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 200,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 11,
+      "fonte": "estimado"
+    },
+    "espessura_mm": {
+      "valor": 2.2,
+      "fonte": "estimado"
+    },
+    "numero_dentes": {
+      "valor": 45,
+      "fonte": "wiki",
+      "obs": "wiki (Ripcord): os winders Hasbro têm 45 dentes e o primeiro é \"igual ao winder da série original\""
+    },
+    "passo_dente_mm": {
+      "valor": 3.2,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 4,
+      "fonte": "estimado"
+    }
+  },
+  "material": {
+    "principal": "Plástico flexível (PE/PP, estimado)",
+    "outros": [],
+    "obs": ""
+  },
+  "atributos": {
+    "spin_entregue": 5,
+    "facilidade": 8,
+    "durabilidade": 5,
+    "justificativa": "Equivalente ao winder padrão Takara (mesmo formato, 45 dentes).",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "curso_puxada_mm": 144,
+    "multiplicador_rpm": 1,
+    "desgaste_por_batalha": 2,
+    "obs": ""
+  },
+  "forma": {
+    "comprimento_mm": 200,
+    "dentes": 45,
+    "cor": "#e8e8e8",
+    "pegador": "anel",
+    "cor_pegador": "#e8e8e8",
+    "obs": "Cor estimada."
+  },
+  "descricao": "Ripcord que a Hasbro vendia no Ocidente. A wiki registra 45 dentes nos winders Hasbro e diz que o primeiro deles é igual ao da série original.",
+  "duvidas": [
+    "Os 45 dentes são citados para a linha Hasbro da era Metal; a identidade com o ripcord de 2002–2003 vem da frase \"same as the original series winder\"."
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Ripcord"
+  ]
+}

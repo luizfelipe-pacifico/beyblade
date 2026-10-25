@@ -1,0 +1,164 @@
+{
+  "id": "attack-ring/metal-saucer",
+  "categoria": "attack-ring",
+  "nome": "Metal Saucer",
+  "nome_jp": null,
+  "sistema": "hms",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon-ms"
+  ],
+  "material": {
+    "principal": "Metal (zinco)",
+    "outros": [
+      "ABS"
+    ],
+    "obs": "Metal Frame com 16 entalhes (o mesmo do Advance Balancer) + ABS Caul azul. Defeito de projeto: a moldura chacoalha."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 43,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 7,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 14,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 3,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「メタルソーサー」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 16,
+    "tipo_contato": "survival",
+    "recoil": 0.3,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 21.5
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 17,
+    "raio_interno_mm": 9,
+    "espessura_mm": 7,
+    "lobos": [
+      {
+        "inicio": 20,
+        "pico": 45,
+        "fim": 70,
+        "raio_mm": 20.5,
+        "borda": "curva",
+        "altura_mm": 7
+      },
+      {
+        "inicio": 4,
+        "pico": 11,
+        "fim": 18,
+        "raio_mm": 21.5,
+        "borda": "reta",
+        "altura_mm": 3,
+        "metal": true
+      },
+      {
+        "inicio": 26.5,
+        "pico": 33.5,
+        "fim": 40.5,
+        "raio_mm": 21.5,
+        "borda": "reta",
+        "altura_mm": 3,
+        "metal": true
+      },
+      {
+        "inicio": 49,
+        "pico": 56,
+        "fim": 63,
+        "raio_mm": 21.5,
+        "borda": "reta",
+        "altura_mm": 3,
+        "metal": true
+      },
+      {
+        "inicio": 71.5,
+        "pico": 78.5,
+        "fim": 85.5,
+        "raio_mm": 21.5,
+        "borda": "reta",
+        "altura_mm": 3,
+        "metal": true
+      },
+      {
+        "inicio": 94,
+        "pico": 101,
+        "fim": 108,
+        "raio_mm": 21.5,
+        "borda": "reta",
+        "altura_mm": 3,
+        "metal": true
+      },
+      {
+        "inicio": 116.5,
+        "pico": 123.5,
+        "fim": 130.5,
+        "raio_mm": 21.5,
+        "borda": "reta",
+        "altura_mm": 3,
+        "metal": true
+      },
+      {
+        "inicio": 139,
+        "pico": 146,
+        "fim": 153,
+        "raio_mm": 21.5,
+        "borda": "reta",
+        "altura_mm": 3,
+        "metal": true
+      },
+      {
+        "inicio": 161.5,
+        "pico": 168.5,
+        "fim": 175.5,
+        "raio_mm": 21.5,
+        "borda": "reta",
+        "altura_mm": 3,
+        "metal": true
+      }
+    ],
+    "moldura": {
+      "simetria": 16,
+      "raio_base_mm": 19.5,
+      "raio_interno_mm": 13,
+      "espessura_mm": 3,
+      "raios_ligacao": 3,
+      "lobos": [
+        {
+          "inicio": 4,
+          "pico": 11,
+          "fim": 18,
+          "raio_mm": 21.5,
+          "borda": "reta",
+          "altura_mm": 3,
+          "metal": true
+        }
+      ]
+    },
+    "metal": true
+  },
+  "cores": {
+    "primaria": "#26248a",
+    "secundaria": "#9ea3a8",
+    "detalhe": "#d8262c"
+  },
+  "acabamento": "metalico",
+  "descricao": "AR circular de HMS: moldura metálica com 16 entalhes de engrenagem em todo o perímetro + capa ABS azul com 2 abas vermelhas.",
+  "funcao": "Contato serrilhado contínuo e peso na periferia: serve para spin steal e sobrevivência (wiki), mais que para ataque.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Metal_Saucer",
+    "https://beyblade.fandom.com/wiki/Strata_Dragoon_MS"
+  ]
+}

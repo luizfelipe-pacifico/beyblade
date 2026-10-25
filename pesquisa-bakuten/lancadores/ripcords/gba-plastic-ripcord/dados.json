@@ -1,0 +1,80 @@
+{
+  "id": "lancadores/ripcords/gba-plastic-ripcord",
+  "nome": "Plastic ripcord (GBA, id 4)",
+  "nome_jp": "",
+  "codigo_produto": [
+    "Item de loja do Beyblade G-Revolution (GBA), id 4"
+  ],
+  "tipo": "ripcord",
+  "sentido": "dupla",
+  "compativel_com": [],
+  "compativel_obs": "No GBA, qualquer ripcord vai com qualquer um dos 4 lançadores do jogo (Competition/Professional/Metal/Plastic), que não estão neste catálogo.",
+  "usado_por": [],
+  "gba": {
+    "id": 4,
+    "durabilidade_max": 100,
+    "desgaste": "id + strength do jogador por batalha",
+    "lancamentos_com_strength_0": 25,
+    "soma_stats": false
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": null,
+      "fonte": "estimado",
+      "obs": "o jogo não define medidas"
+    },
+    "largura_mm": {
+      "valor": null,
+      "fonte": "estimado"
+    },
+    "espessura_mm": {
+      "valor": null,
+      "fonte": "estimado"
+    },
+    "numero_dentes": {
+      "valor": null,
+      "fonte": "estimado"
+    },
+    "passo_dente_mm": {
+      "valor": null,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": null,
+      "fonte": "estimado"
+    }
+  },
+  "material": {
+    "principal": "não definido no jogo",
+    "outros": [],
+    "obs": ""
+  },
+  "atributos": {
+    "spin_entregue": 5,
+    "facilidade": 7,
+    "durabilidade": 3,
+    "justificativa": "Na ROM, o ripcord não soma stats à bey; o efeito encontrado é o desgaste: a durabilidade (máx. 100) cai id + strength a cada batalha, então o id 4 dura 25 batalhas com strength 0. spin_entregue/multiplicador são interpretação deste projeto, na ordem de preço/qualidade do jogo.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "curso_puxada_mm": null,
+    "multiplicador_rpm": 1,
+    "desgaste_por_batalha": 4,
+    "desgaste_soma_strength": true,
+    "durabilidade_max": 100,
+    "obs": "Desgaste fiel à ROM; multiplicador_rpm é extrapolação (no GBA = 1)."
+  },
+  "forma": {
+    "comprimento_mm": 200,
+    "dentes": 45,
+    "cor": "#e8e8e8",
+    "pegador": "anel",
+    "cor_pegador": "#1a1a1a",
+    "obs": "Arte de menu: comprimento cresce com a qualidade (interpretação)."
+  },
+  "descricao": "Ripcord id 4 do Beyblade G-Revolution de GBA (Atari/Hasbro, 2003). Item separado do lançador, comprado na loja e com durabilidade.",
+  "duvidas": [],
+  "fontes": [
+    "docs/REVERSE_ENGINEERING.md, seção \"Lançadores e cordas\" (ROM BB2E)"
+  ]
+}

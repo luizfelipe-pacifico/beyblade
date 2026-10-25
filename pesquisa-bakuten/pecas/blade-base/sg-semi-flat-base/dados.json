@@ -1,0 +1,81 @@
+{
+  "id": "blade-base/sg-semi-flat-base",
+  "categoria": "blade-base",
+  "nome": "SG Semi-Flat Base",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "lee/galeon-2"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Ponta plástica."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 40,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 13,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 2,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「SGセミフラットベース」"
+  },
+  "stats_oficiais_obs": "Mesma peça Takara (SGセミフラットベース) da Galeon, Galeon 2 e Flash Leopard.",
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "semi-flat",
+    "raio_ponta_mm": 1.5,
+    "atrito": 0.3,
+    "padrao_movimento": "centro",
+    "gimmick": "nenhum",
+    "modos": []
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 19,
+    "altura_mm": 9,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 30,
+        "pico": 45,
+        "fim": 60,
+        "raio_mm": 20,
+        "borda": "reta",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "semi-flat",
+      "raio_mm": 1.5,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#1f1f1f",
+    "secundaria": "#c9a227",
+    "detalhe": "#c0c0c0",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base semi-flat da era Magnacore (estreou na Flash Leopard), mesma proposta da SG Semi-Flat: ponta aguda com extremidade achatada.",
+  "funcao": "Equilíbrio: stamina no centro quando lançada reta, ataque circular quando inclinada.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_SG_Semi-Flat_Base",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_SG_Semi_Flat_Base",
+    "https://beyblade.fandom.com/wiki/Galeon_2",
+    "pesquisa-bakuten/personagens/lee/beyblades/galeon-2/dados.json"
+  ]
+}

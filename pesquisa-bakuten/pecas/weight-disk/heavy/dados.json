@@ -1,0 +1,61 @@
+{
+  "id": "weight-disk/heavy",
+  "categoria": "weight-disk",
+  "nome": "Heavy (Six Heavy)",
+  "nome_jp": null,
+  "sistema": "4-layer",
+  "usado_em": [
+    "max-tate/draciel-metal-ball-defenser"
+  ],
+  "material": {
+    "principal": "Metal",
+    "outros": [],
+    "obs": "metal fundido; a liga não é especificada nas fontes"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 36,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 4.5,
+      "fonte": "estimado",
+      "obs": "calculada do peso com densidade 7.1 g/cm³"
+    },
+    "peso_g": {
+      "valor": 16,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 3,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2021/06/26/post-16926/), Weight Disk 「ヘビィ」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "distribuicao": "centro",
+    "magnetico": false
+  },
+  "forma": {
+    "lados": 6,
+    "raio_externo_mm": 18,
+    "raio_interno_mm": 10.5,
+    "espessura_mm": 4.5,
+    "estilo": "heavy"
+  },
+  "cores": {
+    "primaria": "#9ea3a8",
+    "secundaria": "#6e7378",
+    "detalhe": "#c9cdd1"
+  },
+  "acabamento": "metalico",
+  "descricao": "Primeiro disco da série Heavy: hexagonal, compacto e grosso. O nome oficial é só \"Heavy\"; \"Six Heavy\" é o apelido dos fãs.",
+  "funcao": "Massa alta e compacta: mais RPM e mais resistência a empurrões (defesa e combos compactos).",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Heavy",
+    "http://wiki.worldbeyblade.org/index.php?title=Heavy_Weight_Disks",
+    "http://wiki.worldbeyblade.org/index.php?title=Draciel_Metal_Ball_Defenser"
+  ]
+}

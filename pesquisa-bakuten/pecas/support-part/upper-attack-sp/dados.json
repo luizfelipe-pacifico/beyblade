@@ -1,0 +1,76 @@
+{
+  "id": "support-part/upper-attack-sp",
+  "categoria": "support-part",
+  "nome": "Upper Attack SP",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "ray-kon/driger-v2"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Par de peças; podem ser invertidas (exige 6 Heavy)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 44,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 5,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 4,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 0,
+    "stamina": 0,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2022/02/22/post-20460/), Support Part 「アッパーアタック」"
+  },
+  "stats_oficiais_obs": "Support Part: não somar por padrão.",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "upper",
+    "recoil": 0.3,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 22
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 19,
+    "raio_interno_mm": 16,
+    "espessura_mm": 4,
+    "lobos": [
+      {
+        "inicio": 20,
+        "pico": 120,
+        "fim": 140,
+        "raio_mm": 22,
+        "borda": "rampa",
+        "altura_mm": 5
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#2aa84a",
+    "secundaria": "#e8e8e8",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "opaco",
+  "descricao": "SP baixas com rampa que se alinha à rampa do Upper Claw, dobrando o comprimento da rampa.",
+  "funcao": "Começa a rampa mais baixa que qualquer AR: entra embaixo até de beys baixas; pode raspar no chão.",
+  "pecas_relacionadas": [
+    "attack-ring/upper-claw"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Support_Part_-_Upper_Attack_SP",
+    "https://beyblade.fandom.com/wiki/Driger_V2"
+  ]
+}

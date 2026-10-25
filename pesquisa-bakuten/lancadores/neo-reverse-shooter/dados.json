@@ -1,0 +1,123 @@
+{
+  "id": "lancadores/neo-reverse-shooter",
+  "nome": "Neo Reverse Shooter (Neo Left EZ Shooter)",
+  "nome_jp": "ネオリバースシューター",
+  "codigo_produto": [
+    "Incluso na Starter Dragoon V (Takara, dez/2001, vermelho)",
+    "Incluso na Starter Dragoon G (Takara, dez/2002, azul)",
+    "Incluso nas Starters Dragoon V/G da Hasbro (2003)"
+  ],
+  "tipo": "ripcord",
+  "rotacao": "esquerda",
+  "sistema": "magnacore",
+  "anime": true,
+  "usado_por": [
+    {
+      "personagem": "tyson-granger",
+      "temporadas": [
+        "v-force"
+      ],
+      "beys": [
+        "dragoon-v",
+        "dragoon-v2",
+        "dragoon-v2-high-power-custom"
+      ],
+      "obs": "Inferido do brinquedo: a Dragoon V veio com Neo Reverse Shooter vermelho (wiki). As fontes não dizem qual lançador o Tyson usa na V-Force."
+    },
+    {
+      "personagem": "tyson-granger",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "dragoon-g",
+        "dragoon-gt"
+      ],
+      "obs": "Dentro do Customize Grip branco (ver customize-grip-tyson). A Starter Dragoon G trouxe o Neo Reverse Shooter azul."
+    }
+  ],
+  "acessorios": [
+    "Dragon Winder (Starter Dragoon V: azul; Dragoon G: amarelo)",
+    "Turbo Winder branco (Dragoon G)"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/dragon-winder",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/winder-padrao",
+    "lancadores/ripcords/winder-hasbro",
+    "lancadores/ripcords/dragon-winder",
+    "lancadores/ripcords/neo-dragon-winder",
+    "lancadores/ripcords/ultimate-winder"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 72,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 52,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 26,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 16,
+      "fonte": "estimado"
+    },
+    "curso_corda_mm": {
+      "valor": 218,
+      "fonte": "estimado",
+      "obs": "Dragon/Neo-Dragon Winder (68 dentes)"
+    }
+  },
+  "atributos": {
+    "forca": 7,
+    "rpm_max": 6850,
+    "precisao": 5,
+    "controle_angulo": 5,
+    "facilidade": 7,
+    "justificativa": "Sem a camada de inversão: o winder entra de cabeça para baixo e aciona os prongs mais diretamente (wiki). Menos atrito que o Left EZ original + Dragon Winder longo => ~+5% sobre a referência (6550 x 1,05 ≈ 6850).",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 115,
+    "forca_maxima": 1.05,
+    "desvio_angular_graus": 6,
+    "tempo_puxada_ideal_ms": 300,
+    "inclinacao_max_graus": 35,
+    "bonus_rpm_pct": 5,
+    "assistencia_mira": 0,
+    "rotacao_selecionavel": false,
+    "obs": ""
+  },
+  "forma": {
+    "corpo": "compacto",
+    "grip": false,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 72,
+    "largura_mm": 52,
+    "cores": {
+      "primaria": "#c8202c",
+      "secundaria": "#2a2a2a",
+      "detalhe": "#ffffff",
+      "corda": "#1f4fa8"
+    },
+    "obs_cores": "Vermelho com winder azul, como na Starter Dragoon V (wiki). Variante azul com winder amarelo na Dragoon G."
+  },
+  "descricao": "Segunda versão do lançador esquerdo. Não tem a engrenagem inversora; o winder é inserido de cabeça para baixo, o que inverte o sentido de rotação (wiki).",
+  "referencias": [],
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Left-Spin_Shooters",
+    "https://beyblade.fandom.com/wiki/Launcher",
+    "https://beyblade.fandom.com/wiki/Dragoon_V",
+    "https://beyblade.fandom.com/wiki/Dragoon_G",
+    "https://beyblade.fandom.com/wiki/Ripcord"
+  ]
+}

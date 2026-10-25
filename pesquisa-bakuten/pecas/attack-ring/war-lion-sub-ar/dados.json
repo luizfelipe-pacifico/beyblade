@@ -1,0 +1,72 @@
+{
+  "id": "attack-ring/war-lion-sub-ar",
+  "categoria": "attack-ring",
+  "nome": "War Lion Sub-AR",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "lee/galeon"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Sub-Attack Ring livre; frágil."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 43,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 3,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 1.5,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "A Takara não dá estrelas ao Sub-AR separado: as estrelas do War Lion (2,5/2,5/1) já incluem o anel livre. Não somar.",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 6,
+    "tipo_contato": "survival",
+    "recoil": 0.1,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 21.5
+  },
+  "forma": {
+    "simetria": 6,
+    "raio_base_mm": 20.5,
+    "raio_interno_mm": 18.5,
+    "espessura_mm": 3,
+    "lobos": [
+      {
+        "inicio": 10,
+        "pico": 30,
+        "fim": 50,
+        "raio_mm": 21.5,
+        "borda": "curva",
+        "altura_mm": 3
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#2f6fd0",
+    "secundaria": "#1d1d24",
+    "detalhe": "#f2c230"
+  },
+  "acabamento": "opaco",
+  "descricao": "Anel fino livre em volta do War Lion, com 6 ondulações suaves.",
+  "funcao": "Recebe o golpe e gira solto, dissipando o impacto.",
+  "pecas_relacionadas": [
+    "attack-ring/war-lion"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_War_Lion",
+    "https://beyblade.fandom.com/wiki/Galeon",
+    "https://beyblade.fandom.com/wiki/Sub-Attack_Rings"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "blade-base/final-clutch-base-strata-dragoon-g",
+  "categoria": "blade-base",
+  "nome": "Final Clutch Base (Strata Dragoon G Version)",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon-g"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Ponta é do Engine Gear (Right EG Metal Flat): eixo metálico."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 46,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 16,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 8,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 2,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「ファイナルクラッチベース（ガイアドラグーンG）」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "metal-flat",
+    "raio_ponta_mm": 2.5,
+    "atrito": 0.4,
+    "padrao_movimento": "erratico",
+    "gimmick": "final-clutch",
+    "modos": [
+      {
+        "nome": "Engine Gear travado",
+        "tipo_ponta": "metal-flat",
+        "atrito": 0.4,
+        "gatilho": "do lançamento até a trava abrir"
+      },
+      {
+        "nome": "Engine Gear liberado",
+        "tipo_ponta": "metal-flat",
+        "atrito": 0.4,
+        "gatilho": "RPM baixa no fim da batalha (trava Final Clutch; limiar não documentado) ou impacto forte nas abas triangulares (Hit Release)"
+      }
+    ],
+    "ponta_origem": "engine-gear (Right EG Metal Flat)"
+  },
+  "forma": {
+    "simetria": 3,
+    "raio_corpo_mm": 21,
+    "altura_mm": 12,
+    "perfil": "reto",
+    "lobos": [
+      {
+        "inicio": 30,
+        "pico": 60,
+        "fim": 90,
+        "raio_mm": 24,
+        "borda": "ponta",
+        "altura_mm": 3
+      }
+    ],
+    "ponta": {
+      "tipo": "metal-flat",
+      "raio_mm": 2.5,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#4b2a8a",
+    "secundaria": "#e0322b",
+    "detalhe": "#ffffff",
+    "fonte": "foto local blade-base.jpg"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base alta, roxa, com adesivo vermelho \"GAIA DRAGOON\" no topo e abas triangulares salientes na borda marcadas \"FC BASE\" (lembram os Support Parts da Burning Kerberous). Furo central grande para o Engine Gear.",
+  "funcao": "Segura o Engine Gear travado e o libera tarde na batalha, dando um surto de velocidade quando a rival já perdeu rotação. A altura a deixa exposta a upper attack e o movimento depois da liberação é pouco controlável.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Hit_Release_(Strata_Dragoon_G_Version)",
+    "pesquisa-bakuten/personagens/daichi-sumeragi/beyblades/gaia-dragoon-g/dados.json"
+  ],
+  "aliases": [
+    "Hit Release (Strata Dragoon G Version) (Hasbro)"
+  ]
+}

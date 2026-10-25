@@ -1,0 +1,70 @@
+{
+  "id": "spin-gear/right-eg-circle-survivor",
+  "categoria": "spin-gear",
+  "nome": "Right EG (Circle Survivor)",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "tala/wolborg-4"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "mola espiral",
+      "CEW em tigela de plástico"
+    ],
+    "obs": "foto local: EG azul com adesivo, CEW e clipe cinza-claro"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 40,
+      "fonte": "estimado",
+      "obs": "a tigela cobre quase toda a base"
+    },
+    "altura_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 12,
+      "fonte": "wiki",
+      "obs": "EG 7 g + CEW de plástico 5 g"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 2,
+    "stamina": 3,
+    "potencia_engine": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2026/02/22/%E7%88%86%E8%BB%A2%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%88%E3%83%99%E3%82%A4%E3%83%96%E3%83%AC%E3%83%BC%E3%83%89%E3%82%B9%E3%83%94%E3%83%B3%E3%82%AE%E3%82%A2%E3%83%BB%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3/), Spin Gear/Engine Gear 「ライトエンジンギア（サークルサバイバー）」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "direita",
+    "gimmick": "engine-gear",
+    "ativacao": {
+      "modo": "instantaneo",
+      "obs": "na Normal Base do Wolborg 4 (sem clutch / \"Steady Release\"): a mola se solta desde o início e libera aos poucos durante a luta; golpes de beys de rotação direita na tigela livre recarregam o EG"
+    }
+  },
+  "forma": {
+    "tipo": "engine-gear",
+    "raio_mm": 20,
+    "altura_mm": 18,
+    "dentes": 12,
+    "nucleo": "engine"
+  },
+  "cores": {
+    "primaria": "#1f4fbf",
+    "secundaria": "#9a9b95",
+    "detalhe": "#f2f2f2"
+  },
+  "acabamento": "opaco",
+  "descricao": "Engine Gear direito com CEW de plástico destacável em forma de tigela, que gira livre e cobre quase toda a base; a ponta lembra as pontas \"D\" do Metal Fight. A foto mostra o EG azul, a tigela cinza com quatro raios e o clipe de fixação.",
+  "funcao": "Como a bey fica alta, os adversários batem na tigela livre: contra rotação esquerda ela absorve o golpe como um sub-AR livre; contra rotação direita, recarrega o Engine Gear. Ótima defesa e sobrevivência, excelente Life After Death e forte contra Zombies. Só gira para a direita.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Engine_Gear_-_Right_EG_(Circle_Survivor)",
+    "https://beyblade.fandom.com/wiki/Engine_Gear_System",
+    "https://beyblade.fandom.com/wiki/Wolborg_4"
+  ]
+}

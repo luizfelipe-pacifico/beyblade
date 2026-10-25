@@ -1,0 +1,88 @@
+{
+  "id": "attack-ring/ten-spike",
+  "categoria": "attack-ring",
+  "nome": "Ten Spike",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "max-tate/draciel-v"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 43,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5.5,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 2,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「テンスパイク」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 15,
+    "tipo_contato": "defesa",
+    "recoil": 0.7,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 21.5
+  },
+  "forma": {
+    "simetria": 5,
+    "raio_base_mm": 17.5,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 6,
+        "pico": 10,
+        "fim": 16,
+        "raio_mm": 19.5,
+        "borda": "reta",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 24,
+        "pico": 36,
+        "fim": 48,
+        "raio_mm": 21.5,
+        "borda": "curva",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 56,
+        "pico": 62,
+        "fim": 66,
+        "raio_mm": 19.5,
+        "borda": "reta",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#1f5a32",
+    "secundaria": "#3f8f55",
+    "detalhe": "#c9c9c9"
+  },
+  "acabamento": "metalico",
+  "descricao": "Verde-escuro metálico; 5 projeções grandes (cabeça) ladeadas por pares de projeções menores (patas), formando uma estrela.",
+  "funcao": "Muito recoil (projeções planas e desiguais); considerado o pior AR de Draciel.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Ten_Spike",
+    "https://beyblade.fandom.com/wiki/Draciel_V"
+  ]
+}

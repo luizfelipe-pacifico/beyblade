@@ -1,0 +1,73 @@
+{
+  "id": "weight-disk/ten-wide",
+  "categoria": "weight-disk",
+  "nome": "Ten Wide",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "brooklyn-masefield/zeus",
+    "daichi-sumeragi/gaia-dragoon-v",
+    "lee/galeon-2",
+    "max-tate/draciel-g",
+    "tala/wolborg-4",
+    "tyson-granger/dragoon-g",
+    "tyson-granger/dragoon-gt",
+    "tyson-granger/dragoon-v"
+  ],
+  "material": {
+    "principal": "Metal",
+    "outros": [],
+    "obs": "metal fundido; a liga não é especificada nas fontes"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 42,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 3.1,
+      "fonte": "estimado",
+      "obs": "calculada do peso com densidade 7.1 g/cm³"
+    },
+    "peso_g": {
+      "valor": 14,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 1.5,
+    "stamina": 4,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2021/06/26/post-16926/), Weight Disk 「テンワイド」",
+    "wiki": {
+      "ataque": 1,
+      "defesa": 2,
+      "stamina": 4
+    }
+  },
+  "stats_oficiais_obs": "Igual em todas as páginas de bey do obakeblader (1/1,5/4). Algumas somas do blog com Ten Wide (Dragoon GT, Wolborg 4) não fecham por conta de erro de soma do próprio blog.",
+  "stats_gba": null,
+  "fisica": {
+    "distribuicao": "periferia",
+    "magnetico": false
+  },
+  "forma": {
+    "lados": 10,
+    "raio_externo_mm": 21,
+    "raio_interno_mm": 14.5,
+    "espessura_mm": 3.1,
+    "estilo": "wide"
+  },
+  "cores": {
+    "primaria": "#9ea3a8",
+    "secundaria": "#6e7378",
+    "detalhe": "#c9cdd1"
+  },
+  "acabamento": "metalico",
+  "descricao": "Disco decagonal (10 lados), o mais largo e o mais pesado da série Wide. A foto de referência mostra um aro metálico fino com janelas grandes e quatro braços internos com furos de encaixe; como todo disco da série \"Ten\", tem dois ressaltos (\"Attack Points\", segundo a Takara), um em cima e outro embaixo.",
+  "funcao": "Coloca a massa na borda: muita inércia, bom para smash attack (mais alcance e impacto) e para stamina (resiste mais à perda de rotação). É o Wide preferido nas customizações, no lugar do Six e do Eight Wide.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Ten_Wide",
+    "http://wiki.worldbeyblade.org/index.php?title=Wide_Weight_Disks"
+  ]
+}

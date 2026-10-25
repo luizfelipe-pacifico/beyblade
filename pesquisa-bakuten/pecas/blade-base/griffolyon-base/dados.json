@@ -1,0 +1,83 @@
+{
+  "id": "blade-base/griffolyon-base",
+  "categoria": "blade-base",
+  "nome": "Griffolyon Base",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "robert-jurgen/griffolyon"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "SG integrado; ponta plástica presa a um cilindro com giro livre limitado (plástico com plástico)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 42,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 7,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 2.5,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「グリフォリオンベース」",
+    "wiki": {
+      "ataque": 3,
+      "defesa": 3,
+      "stamina": 1
+    }
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "ball",
+    "raio_ponta_mm": 1.5,
+    "atrito": 0.25,
+    "padrao_movimento": "erratico",
+    "gimmick": "SG integrado + ponta em cilindro semi-livre; hastes da figura (Hidden Spirit)",
+    "modos": []
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 18,
+    "altura_mm": 10,
+    "perfil": "reto",
+    "lobos": [
+      {
+        "inicio": 35,
+        "pico": 45,
+        "fim": 55,
+        "raio_mm": 21,
+        "borda": "ponta",
+        "altura_mm": 6
+      }
+    ],
+    "ponta": {
+      "tipo": "ball",
+      "raio_mm": 1.5,
+      "altura_mm": 7
+    }
+  },
+  "cores": {
+    "primaria": "#6fa8dc",
+    "secundaria": "#4f86c0",
+    "detalhe": "#8a8f96",
+    "fonte": "foto local blade-base.jpg"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base azul-clara com Spin Gear integrado (como as 4-layer), quatro hastes cônicas verticais para a figura Hidden Spirit e ponta alta, estreita e arredondada num cilindro que gira um pouco solto.",
+  "funcao": "Candidata a \"pior base da geração plástica\": pouca movimentação, sem defesa, equilíbrio ruim e as hastes raspam e geram recoil.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Griffolyon_Base",
+    "pesquisa-bakuten/personagens/robert-jurgen/beyblades/griffolyon/dados.json"
+  ]
+}

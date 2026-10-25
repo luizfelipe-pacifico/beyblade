@@ -1,0 +1,71 @@
+{
+  "id": "attack-ring/dragon-breaker-sub-ar",
+  "categoria": "attack-ring",
+  "nome": "Dragon Breaker Sub-AR (4 pontas)",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon-v"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Anel livre sob o anel central."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 48,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 2,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 2.5,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "A Takara não dá estrelas ao Sub-AR separado: as estrelas do Dragon Breaker (3/2,5/2,5) já incluem o Sub-AR. Não somar.",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 4,
+    "tipo_contato": "smash",
+    "recoil": 0.5,
+    "sentido_otimo": "esquerda",
+    "raio_contato_mm": 24
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 20,
+    "raio_interno_mm": 17.5,
+    "espessura_mm": 2,
+    "lobos": [
+      {
+        "inicio": 50,
+        "pico": 80,
+        "fim": 88,
+        "raio_mm": 24,
+        "borda": "gancho",
+        "altura_mm": 2
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#1f2266",
+    "secundaria": "#f2a12e",
+    "detalhe": "#f7d23a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Aro azul-marinho livre com 4 pontas curvas em gancho, decoradas com adesivo laranja/amarelo.",
+  "funcao": "Algum smash em rotação esquerda; por ser grande, trava no contato e atrapalha a bey em vez de girar livre (wiki).",
+  "pecas_relacionadas": [
+    "attack-ring/dragon-breaker"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Dragon_Breaker",
+    "https://beyblade.fandom.com/wiki/Strata_Dragoon_V"
+  ]
+}

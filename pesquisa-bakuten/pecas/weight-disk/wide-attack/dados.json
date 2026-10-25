@@ -1,0 +1,59 @@
+{
+  "id": "weight-disk/wide-attack",
+  "categoria": "weight-disk",
+  "nome": "Wide Attack",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "lee/galeon-2-eg"
+  ],
+  "material": {
+    "principal": "Metal",
+    "outros": [],
+    "obs": "metal fundido; a liga não é especificada nas fontes"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 40,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 3.5,
+      "fonte": "estimado",
+      "obs": "calculada do peso com densidade 7.1 g/cm³"
+    },
+    "peso_g": {
+      "valor": 13.7,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 1,
+    "stamina": 3,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2021/06/26/post-16926/), Weight Disk 「ワイドアタック」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "distribuicao": "equilibrado",
+    "magnetico": false
+  },
+  "forma": {
+    "lados": 6,
+    "raio_externo_mm": 20,
+    "raio_interno_mm": 12.5,
+    "espessura_mm": 3.5,
+    "estilo": "attack"
+  },
+  "cores": {
+    "primaria": "#9ea3a8",
+    "secundaria": "#6e7378",
+    "detalhe": "#c9cdd1"
+  },
+  "acabamento": "metalico",
+  "descricao": "Disco hexagonal especial, versão \"de ataque\" do Wide: tem pontos de ataque nos vértices, a parte central mais grossa e é um pouco menos largo que o Wide fora dos pontos de ataque. Também chamado \"Wide Attacker\" na infobox; saiu em Random Booster.",
+  "funcao": "Os pontos de ataque nos cantos deveriam reforçar o golpe; o centro mais grosso traz parte da massa para dentro, o que ajuda a stamina.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Wide_Attack"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "id": "blade-base/switch-metal-ball-base",
+  "categoria": "blade-base",
+  "nome": "Switch Metal Ball Base",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "max-tate/draciel-v2"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Aço (2 esferas fixas)"
+    ],
+    "obs": "Ponta redonda alta de plástico."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 40,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 17,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 6,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 4,
+    "stamina": 3.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「スウィッチメタルボールベース」",
+    "wiki": {
+      "ataque": 1,
+      "defesa": 4,
+      "stamina": 3
+    }
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "ball",
+    "raio_ponta_mm": 2.5,
+    "atrito": 0.25,
+    "padrao_movimento": "centro",
+    "gimmick": "esferas com posição interna/externa (manual); aceita Support Parts",
+    "modos": [
+      {
+        "nome": "Esferas para dentro",
+        "tipo_ponta": "ball",
+        "atrito": 0.25,
+        "gatilho": "manual: deslizar as esferas antes da batalha"
+      },
+      {
+        "nome": "Esferas para fora",
+        "tipo_ponta": "ball",
+        "atrito": 0.25,
+        "gatilho": "manual: deslizar as esferas antes da batalha"
+      }
+    ]
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_corpo_mm": 18,
+    "altura_mm": 10,
+    "perfil": "reto",
+    "lobos": [
+      {
+        "inicio": 70,
+        "pico": 90,
+        "fim": 110,
+        "raio_mm": 19.5,
+        "borda": "reta",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "ball",
+      "raio_mm": 2.5,
+      "altura_mm": 8
+    }
+  },
+  "cores": {
+    "primaria": "#1c2433",
+    "secundaria": "#2d3a52",
+    "detalhe": "#3a6fd0",
+    "fonte": "foto local blade-base.jpg"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base azul-escura quase preta (série V2), com trilho em cruz no topo, duas esferas metálicas presas que deslizam em dois cursores laterais, e ponta redonda alta.",
+  "funcao": "Troca a distribuição de peso (dentro = gira mais rápido; fora = mais inércia). A ponta alta e redonda limita muito o desempenho; a principal virtude é aceitar Support Parts.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Switch_Metal_Ball_Base",
+    "pesquisa-bakuten/personagens/max-tate/beyblades/draciel-v2/dados.json"
+  ]
+}

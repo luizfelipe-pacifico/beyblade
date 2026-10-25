@@ -1,0 +1,106 @@
+{
+  "id": "lancadores/ripcords/ultimate-winder",
+  "nome": "Ultimate Winder",
+  "nome_jp": "アルティメットワインダー",
+  "codigo_produto": [
+    "Acompanha o Bey Ultimate Shooter (A-55/A-62/A-76), presumido"
+  ],
+  "tipo": "winder",
+  "sentido": "direita",
+  "compativel_com": [
+    "lancadores/ez-shooter",
+    "lancadores/left-ez-shooter",
+    "lancadores/neo-reverse-shooter",
+    "lancadores/ez-shooter-grip",
+    "lancadores/catapult-grip",
+    "lancadores/marksmen-grip",
+    "lancadores/spring-shooter",
+    "lancadores/dragoon-shooter-dx",
+    "lancadores/driger-shooter-dx",
+    "lancadores/dranzer-shooter-dx",
+    "lancadores/bey-ultimate-shooter",
+    "lancadores/customize-grip-tyson",
+    "lancadores/customize-grip-kai",
+    "lancadores/customize-grip-ray",
+    "lancadores/customize-grip-max",
+    "lancadores/ez-shooter-power-custom",
+    "lancadores/ez-shooter-spring-custom",
+    "lancadores/duotron-launcher",
+    "lancadores/griffolyon-flail",
+    "lancadores/rc-shooter"
+  ],
+  "usado_por": [
+    {
+      "personagem": "ray-kon",
+      "beys": [
+        "driger-v",
+        "driger-v2"
+      ],
+      "episodios": [
+        "V-Force ep. 12 em diante"
+      ],
+      "obs": "Wiki (Ray Kon): com o BeyUltimate Shooter azul, o Ray usa um Ultimate Winder verde."
+    }
+  ],
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 280,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 12,
+      "fonte": "estimado"
+    },
+    "espessura_mm": {
+      "valor": 2.4,
+      "fonte": "estimado"
+    },
+    "numero_dentes": {
+      "valor": 72,
+      "fonte": "estimado",
+      "obs": "presumido um pouco mais longo que o Dragon Winder"
+    },
+    "passo_dente_mm": {
+      "valor": 3.2,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 7,
+      "fonte": "estimado"
+    }
+  },
+  "material": {
+    "principal": "Plástico flexível (estimado)",
+    "outros": [],
+    "obs": ""
+  },
+  "atributos": {
+    "spin_entregue": 8,
+    "facilidade": 7,
+    "durabilidade": 6,
+    "justificativa": "Winder \"de alto desempenho\" da linha Ultimate: comprimento presumido acima do Dragon Winder.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "curso_puxada_mm": 230,
+    "multiplicador_rpm": 1.07,
+    "desgaste_por_batalha": 2,
+    "obs": ""
+  },
+  "forma": {
+    "comprimento_mm": 280,
+    "dentes": 72,
+    "cor": "#3cb44b",
+    "pegador": "T",
+    "cor_pegador": "#3cb44b",
+    "obs": "Verde como no anime (wiki); pegador estimado."
+  },
+  "descricao": "Winder verde que o Ray usa com o BeyUltimate Shooter na V-Force (wiki). Não há descrição do produto em texto.",
+  "duvidas": [
+    "Comprimento, dentes e pegador não documentados."
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Ray_Kon",
+    "https://beyblade.fandom.com/wiki/List_of_Original_Series_products_(Takara)"
+  ]
+}

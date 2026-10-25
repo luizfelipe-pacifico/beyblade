@@ -1,0 +1,96 @@
+{
+  "id": "blade-base/first-clutch-base-dragoon-gt",
+  "categoria": "blade-base",
+  "nome": "First Clutch Base (Dragoon GT Version)",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "tyson-granger/dragoon-gt"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Ponta do Engine Gear Turbo (CEW Metal Grip): borracha."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 48,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 7,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 1,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「ファーストクラッチベース（ドラグーンGT）」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "grip",
+    "raio_ponta_mm": 3,
+    "atrito": 0.85,
+    "padrao_movimento": "agressivo",
+    "gimmick": "first-clutch",
+    "modos": [
+      {
+        "nome": "Engine Gear travado",
+        "tipo_ponta": "grip",
+        "atrito": 0.85,
+        "gatilho": "só no lançador"
+      },
+      {
+        "nome": "Engine Gear liberado",
+        "tipo_ponta": "grip",
+        "atrito": 0.85,
+        "gatilho": "pouso no estádio, logo após o lançamento"
+      }
+    ],
+    "ponta_origem": "engine-gear (Left EG Turbo, CEW Metal Grip)"
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 20,
+    "altura_mm": 10,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 5,
+        "pico": 30,
+        "fim": 55,
+        "raio_mm": 24,
+        "borda": "reta",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "grip",
+      "raio_mm": 3,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#1d4fa8",
+    "secundaria": "#f2f2f2",
+    "detalhe": "#f2b705",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base Instant Release com quatro lâminas grandes e planas (forma parecida com o Spike Dragon da Dragoon V2).",
+  "funcao": "Solta o motor no lançamento; as lâminas dão smash attack mas geram muito recoil e podem quebrar.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_First_Clutch_Base_(Dragoon_GT_Version)",
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Instant_Release_(Dragoon_GT_Version)",
+    "pesquisa-bakuten/personagens/tyson-granger/beyblades/dragoon-gt/dados.json"
+  ],
+  "aliases": [
+    "Instant Release (Dragoon GT Version) (Hasbro)"
+  ]
+}

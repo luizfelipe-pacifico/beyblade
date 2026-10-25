@@ -1,0 +1,74 @@
+{
+  "id": "blade-base/drag-saucer",
+  "categoria": "blade-base",
+  "nome": "Drag Saucer",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "bryan-kuznetsov/falborg"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Bey exclusiva do anime: não existe brinquedo. Material presumido (padrão das bases SG)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 42,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 13,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 6,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "Sem fonte: base da Falborg, sem página na wiki e fora das listas Takara do obakeblader.",
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "semi-flat",
+    "raio_ponta_mm": 2.5,
+    "atrito": 0.3,
+    "padrao_movimento": "agressivo",
+    "gimmick": "nenhum",
+    "modos": []
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 19,
+    "altura_mm": 10,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 5,
+        "pico": 30,
+        "fim": 60,
+        "raio_mm": 21,
+        "borda": "curva",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "semi-flat",
+      "raio_mm": 2.5,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#8a66c9",
+    "secundaria": "#4b2e86",
+    "detalhe": "#d8c8f0",
+    "fonte": "estimado a partir da ficha do jogo GBA (gba-pecas-e-stats.png)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base da Falborg citada só na infobox da wiki (\"Drag Saucer\"); não tem página própria nem foto real. Na ficha do jogo de GBA aparece como base lilás/roxa de contorno arredondado.",
+  "funcao": "Base de ataque presumida: pelo comportamento no anime (investidas rápidas e ricochetes na parede) supõe-se ponta semi-flat/flat.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Falborg",
+    "pesquisa-bakuten/personagens/bryan-kuznetsov/beyblades/falborg/dados.json"
+  ]
+}

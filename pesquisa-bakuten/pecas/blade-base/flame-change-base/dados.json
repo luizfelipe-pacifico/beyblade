@@ -1,0 +1,110 @@
+{
+  "id": "blade-base/flame-change-base",
+  "categoria": "blade-base",
+  "nome": "Flame Change Base",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "kai-hiwatari/black-dranzer",
+    "kai-hiwatari/dranzer-f",
+    "tyson-granger/dranzer-f"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Pontas de plástico (seletor do Right SG Triple Change Version)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 42,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 9,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 2,
+    "stamina": 3,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「フレイムチェンジベース」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "semi-flat",
+    "raio_ponta_mm": 2.5,
+    "atrito": 0.3,
+    "padrao_movimento": "flower",
+    "gimmick": "triple-change (3 modos manuais)",
+    "modos": [
+      {
+        "nome": "Attack",
+        "tipo_ponta": "flat",
+        "atrito": 0.5,
+        "gatilho": "manual: girar o seletor antes do lançamento"
+      },
+      {
+        "nome": "Balance",
+        "tipo_ponta": "semi-flat",
+        "atrito": 0.3,
+        "gatilho": "manual: girar o seletor antes do lançamento"
+      },
+      {
+        "nome": "Survival",
+        "tipo_ponta": "sharp",
+        "atrito": 0.1,
+        "gatilho": "manual: girar o seletor antes do lançamento"
+      }
+    ],
+    "ponta_origem": "conjunto base + Right SG (Triple Change Version)"
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 19,
+    "altura_mm": 10,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 10,
+        "pico": 35,
+        "fim": 60,
+        "raio_mm": 21,
+        "borda": "rampa",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "semi-flat",
+      "raio_mm": 2.5,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#c8102e",
+    "secundaria": "#f2f2f2",
+    "detalhe": "#1a1a1a",
+    "fonte": "estimado (sem foto local)",
+    "variantes": {
+      "kai-hiwatari/black-dranzer": {
+        "primaria": "#1a1a1a",
+        "secundaria": "#5a5a5a",
+        "detalhe": "#c8102e",
+        "obs": "mesmo molde, plástico preto (Black Dranzer)"
+      }
+    }
+  },
+  "acabamento": "opaco",
+  "descricao": "Base da Dranzer F feita só para o Right SG (Triple Change Version). Na parte de baixo fica o seletor de três pontas.",
+  "funcao": "Permite escolher antes da batalha entre três pontas: ataque (flat), equilíbrio (semi-flat) e sobrevivência (sharp). Fora isso não tem recursos notáveis.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Flame_Change_Base",
+    "pesquisa-bakuten/personagens/kai-hiwatari/beyblades/black-dranzer/dados.json",
+    "pesquisa-bakuten/personagens/kai-hiwatari/beyblades/dranzer-f/dados.json",
+    "pesquisa-bakuten/personagens/tyson-granger/beyblades/dranzer-f/dados.json"
+  ]
+}

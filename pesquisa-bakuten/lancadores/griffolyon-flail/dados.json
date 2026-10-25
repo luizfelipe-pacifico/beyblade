@@ -1,0 +1,111 @@
+{
+  "id": "lancadores/griffolyon-flail",
+  "nome": "Mangual-lançador do Robert (anime)",
+  "nome_jp": "",
+  "codigo_produto": [
+    "Exclusivo do anime (sem brinquedo)"
+  ],
+  "tipo": "ripcord",
+  "rotacao": "direita",
+  "sistema": "spin-gear",
+  "anime": true,
+  "usado_por": [
+    {
+      "personagem": "robert-jurgen",
+      "temporadas": [
+        "s1"
+      ],
+      "beys": [
+        "griffolyon"
+      ],
+      "obs": "Wiki (Robert Jürgens): \"His launcher, and weapon, is a flail.\" Estreia na S1 ep. 30 (no navio para a Inglaterra) e flashback no ep. 33."
+    }
+  ],
+  "acessorios": [
+    "Corrente e cabo de mangual (anime)"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/winder-padrao",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/winder-padrao",
+    "lancadores/ripcords/winder-hasbro",
+    "lancadores/ripcords/dragon-winder",
+    "lancadores/ripcords/neo-dragon-winder",
+    "lancadores/ripcords/ultimate-winder"
+  ],
+  "material": {
+    "principal": "Metal (anime, presumido)",
+    "outros": [
+      "ABS no mecanismo de encaixe (presumido, se fosse brinquedo)"
+    ],
+    "obs": "Objeto de ficção: material e medidas são interpretação para o jogo."
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 300,
+      "fonte": "estimado",
+      "obs": "cabo de mangual curto; interpretação"
+    },
+    "largura_mm": {
+      "valor": 60,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 60,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 400,
+      "fonte": "estimado",
+      "obs": "interpretação; pesado de propósito"
+    },
+    "curso_corda_mm": {
+      "valor": 250,
+      "fonte": "estimado"
+    }
+  },
+  "atributos": {
+    "forca": 9,
+    "rpm_max": 7200,
+    "precisao": 5,
+    "controle_angulo": 7,
+    "facilidade": 4,
+    "justificativa": "Interpretação de jogo: a massa do mangual dá impulso para o lançamento \"de cima\" do Robert (a bey desce em investida) => força alta e bom controle do ângulo vertical, mas precisão lateral baixa e difícil de usar. rpm ~+10% (alavanca maior).",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 95,
+    "forca_maxima": 1.12,
+    "desvio_angular_graus": 7,
+    "tempo_puxada_ideal_ms": 340,
+    "inclinacao_max_graus": 50,
+    "bonus_rpm_pct": 10,
+    "assistencia_mira": 0,
+    "rotacao_selecionavel": false,
+    "lancamento_aereo": true,
+    "obs": "Permite lançamento em arco alto (queda em investida): bonus de impacto na aterrissagem."
+  },
+  "forma": {
+    "corpo": "mangual",
+    "grip": true,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 300,
+    "largura_mm": 60,
+    "cores": {
+      "primaria": "#6b5a8e",
+      "secundaria": "#c9a227",
+      "detalhe": "#3a3f46",
+      "corda": "#c9a227"
+    },
+    "obs_cores": "Estimado (roxo/dourado da nobreza dos Majestics)."
+  },
+  "descricao": "O Robert usa um mangual como lançador e arma (wiki). Não existe como brinquedo; a ficha é a interpretação de jogo dessa cena.",
+  "referencias": [],
+  "duvidas": [
+    "O formato exato do mangual e como a bey é presa nele não estão descritos em texto."
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Robert_J%C3%BCrgens",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_30",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_33"
+  ]
+}

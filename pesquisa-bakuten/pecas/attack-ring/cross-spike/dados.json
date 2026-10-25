@@ -1,0 +1,88 @@
+{
+  "id": "attack-ring/cross-spike",
+  "categoria": "attack-ring",
+  "nome": "Cross Spike",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "max-tate/draciel-s"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 43,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 2,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「クロススパイク」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 12,
+    "tipo_contato": "spike",
+    "recoil": 0.65,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 21.5
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 5,
+        "pico": 10,
+        "fim": 15,
+        "raio_mm": 20,
+        "borda": "reta",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 30,
+        "pico": 45,
+        "fim": 60,
+        "raio_mm": 21.5,
+        "borda": "curva",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 75,
+        "pico": 80,
+        "fim": 85,
+        "raio_mm": 20,
+        "borda": "reta",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#1f7a3a",
+    "secundaria": "#0f4a22",
+    "detalhe": "#f2c230"
+  },
+  "acabamento": "opaco",
+  "descricao": "Formato quadrado com 4 cabeças de tartaruga projetadas e várias pontas planas.",
+  "funcao": "Pouco útil: as pontas planas tiram o equilíbrio e geram recoil.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Cross_Spike",
+    "https://beyblade.fandom.com/wiki/Draciel_S"
+  ]
+}

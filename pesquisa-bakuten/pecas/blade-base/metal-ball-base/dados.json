@@ -1,0 +1,94 @@
+{
+  "id": "blade-base/metal-ball-base",
+  "categoria": "blade-base",
+  "nome": "Metal Ball Base",
+  "nome_jp": null,
+  "sistema": "4-layer",
+  "usado_em": [
+    "max-tate/draciel-metal-ball-defenser"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Aço (2 esferas de estoque)",
+      "Parafuso metálico"
+    ],
+    "obs": "Base de rosca (4-layer); ponta de bola plástica."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 38,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 11,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 3,
+    "stamina": 3,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「メタルボールベース」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "ball",
+    "raio_ponta_mm": 3.5,
+    "atrito": 0.25,
+    "padrao_movimento": "centro",
+    "gimmick": "esferas de metal em rampas internas (centrífugo)",
+    "modos": [
+      {
+        "nome": "Alta rotação: esferas na periferia",
+        "tipo_ponta": "ball",
+        "atrito": 0.25,
+        "gatilho": "automático: força centrífuga faz as esferas subirem as rampas"
+      },
+      {
+        "nome": "Baixa rotação: esferas no centro",
+        "tipo_ponta": "ball",
+        "atrito": 0.25,
+        "gatilho": "automático: com a RPM baixa a gravidade traz as esferas de volta"
+      }
+    ]
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 17,
+    "altura_mm": 10,
+    "perfil": "saia",
+    "lobos": [
+      {
+        "inicio": 20,
+        "pico": 45,
+        "fim": 70,
+        "raio_mm": 18.5,
+        "borda": "curva",
+        "altura_mm": 3
+      }
+    ],
+    "ponta": {
+      "tipo": "ball",
+      "raio_mm": 3.5,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#8cc63f",
+    "secundaria": "#4f8a1e",
+    "detalhe": "#c0c0c0",
+    "fonte": "diagrama local blade-base.gif"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base verde-clara de rosca, herança do sistema 4-layer, compacta, com compartimento interno de esferas sobre rampas e ponta de bola.",
+  "funcao": "Base de defesa sólida e pequena; o peso das esferas (até 2 jogos) ajuda contra KO e serve em combinações compactas.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Metal_Ball_Base",
+    "pesquisa-bakuten/personagens/max-tate/beyblades/draciel-metal-ball-defenser/dados.json"
+  ]
+}

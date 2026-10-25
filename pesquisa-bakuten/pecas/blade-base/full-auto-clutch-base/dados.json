@@ -1,0 +1,96 @@
+{
+  "id": "blade-base/full-auto-clutch-base",
+  "categoria": "blade-base",
+  "nome": "Full Auto Clutch Base",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "ray-kon/driger-f"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Molas de aço (2)",
+      "Clipes metálicos (2)",
+      "Metal (eixo/ponta flat do SG)"
+    ],
+    "obs": "A ponta é o eixo metálico do Right SG (Full Auto Clutch Version)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 42,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 15,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 15,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3.5,
+    "defesa": 1,
+    "stamina": 3,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「フルオートクラッチベース」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "metal-flat",
+    "raio_ponta_mm": 2.5,
+    "atrito": 0.4,
+    "padrao_movimento": "agressivo",
+    "gimmick": "clutch centrífugo automático (eixo livre / travado)",
+    "modos": [
+      {
+        "nome": "Eixo livre (alta RPM)",
+        "tipo_ponta": "metal-flat",
+        "atrito": 0.4,
+        "gatilho": "automático: em alta rotação os clipes metálicos abrem por força centrífuga e o eixo gira solto"
+      },
+      {
+        "nome": "Eixo travado (baixa RPM)",
+        "tipo_ponta": "metal-flat",
+        "atrito": 0.4,
+        "gatilho": "automático: com RPM baixa as molas fecham os clipes e o eixo trava, a ponta passa a \"puxar\" a bey"
+      }
+    ],
+    "ponta_origem": "spin-gear (Right SG Full Auto Clutch Version)"
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_corpo_mm": 19.5,
+    "altura_mm": 11,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 60,
+        "pico": 90,
+        "fim": 120,
+        "raio_mm": 21,
+        "borda": "reta",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "metal-flat",
+      "raio_mm": 2.5,
+      "altura_mm": 5
+    }
+  },
+  "cores": {
+    "primaria": "#e8e8e8",
+    "secundaria": "#2e8b3a",
+    "detalhe": "#9a9ea3",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base pesada (15 g) que só aceita o Right SG (Full Auto Clutch Version); tem duas molas travadas por dois clipes metálicos.",
+  "funcao": "Embreagem automática que muda o comportamento da ponta durante a batalha. Muito desbalanceada no brinquedo, sem uso competitivo.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Full_Auto_Clutch_Base",
+    "pesquisa-bakuten/personagens/ray-kon/beyblades/driger-f/dados.json"
+  ]
+}

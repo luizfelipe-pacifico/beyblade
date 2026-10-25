@@ -1,0 +1,125 @@
+{
+  "id": "lancadores/ripcords/winder-padrao",
+  "nome": "Winder padrão (Beyblade Winder)",
+  "nome_jp": "ワインダー",
+  "codigo_produto": [
+    "A-23 Beyblade Winder (Takara, avulso)",
+    "Incluso nos EZ Shooters direitos"
+  ],
+  "tipo": "winder",
+  "sentido": "direita",
+  "compativel_com": [
+    "lancadores/ez-shooter",
+    "lancadores/left-ez-shooter",
+    "lancadores/neo-reverse-shooter",
+    "lancadores/ez-shooter-grip",
+    "lancadores/catapult-grip",
+    "lancadores/marksmen-grip",
+    "lancadores/spring-shooter",
+    "lancadores/dragoon-shooter-dx",
+    "lancadores/driger-shooter-dx",
+    "lancadores/dranzer-shooter-dx",
+    "lancadores/bey-ultimate-shooter",
+    "lancadores/customize-grip-tyson",
+    "lancadores/customize-grip-kai",
+    "lancadores/customize-grip-ray",
+    "lancadores/customize-grip-max",
+    "lancadores/ez-shooter-power-custom",
+    "lancadores/ez-shooter-spring-custom",
+    "lancadores/duotron-launcher",
+    "lancadores/griffolyon-flail",
+    "lancadores/rc-shooter"
+  ],
+  "usado_por": [
+    {
+      "personagem": "ray-kon",
+      "beys": [
+        "driger-s",
+        "driger-f",
+        "driger-v",
+        "driger-g"
+      ],
+      "episodios": [
+        "S1 eps. 1–20 (EZ Shooter)",
+        "S1 ep. 21 → V-Force ep. 12 (Driger Shooter)",
+        "G-Rev (Customize Grip \"Ray Special\")"
+      ],
+      "obs": "Wiki (Ray Kon): winder preto \"padrão\" com o EZ Shooter, com o Driger Shooter e no Customize Grip."
+    },
+    {
+      "personagem": "kai-hiwatari",
+      "beys": [
+        "dranzer-s",
+        "dranzer-f",
+        "black-dranzer",
+        "dranzer-v",
+        "dranzer-v2",
+        "dranzer-g",
+        "dranzer-gt"
+      ],
+      "episodios": [],
+      "obs": "Inferido: lançadores direitos vêm com o winder padrão; a fonte não detalha o ripcord do Kai."
+    }
+  ],
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 200,
+      "fonte": "estimado",
+      "obs": "cremalheira + pegador de anel"
+    },
+    "largura_mm": {
+      "valor": 11,
+      "fonte": "estimado"
+    },
+    "espessura_mm": {
+      "valor": 2.2,
+      "fonte": "estimado"
+    },
+    "numero_dentes": {
+      "valor": 45,
+      "fonte": "estimado",
+      "obs": "inferido: a wiki diz que o primeiro winder Hasbro da era Metal tem 45 dentes e é \"igual ao winder da série original\"; o padrão Takara é o mais curto de todos"
+    },
+    "passo_dente_mm": {
+      "valor": 3.2,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 4,
+      "fonte": "estimado"
+    }
+  },
+  "material": {
+    "principal": "Plástico flexível (PE/PP, estimado)",
+    "outros": [],
+    "obs": "Empena com o uso; a wiki ensina a endireitar em água quente."
+  },
+  "atributos": {
+    "spin_entregue": 5,
+    "facilidade": 8,
+    "durabilidade": 5,
+    "justificativa": "Referência (multiplicador 1,00). É o mais curto de todos (wiki): menos curso para a mão acelerar. Anel para um dedo: fácil, mas a puxada sai menos firme que com pegador de dois dedos.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "curso_puxada_mm": 144,
+    "multiplicador_rpm": 1,
+    "desgaste_por_batalha": 2,
+    "obs": "Durabilidade 100; perde 2 por batalha (+1 se a puxada for torta)."
+  },
+  "forma": {
+    "comprimento_mm": 200,
+    "dentes": 45,
+    "cor": "#1a1a1a",
+    "pegador": "anel",
+    "cor_pegador": "#1a1a1a",
+    "obs": "Preto como o do Ray (wiki); a Takara vendia várias cores."
+  },
+  "descricao": "O winder que vem com os EZ Shooters direitos. É o mais curto de todos e tem um anel na ponta para o dedo indicador (wiki, Ripcord).",
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Ripcord",
+    "https://beyblade.fandom.com/wiki/Ray_Kon",
+    "https://beyblade.fandom.com/wiki/List_of_Original_Series_products_(Takara)"
+  ]
+}

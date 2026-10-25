@@ -1,0 +1,111 @@
+{
+  "id": "lancadores/left-ez-shooter",
+  "nome": "Left EZ Shooter (lançador esquerdo original, \"Dragoon\")",
+  "nome_jp": "イージーシューター（左回転）",
+  "codigo_produto": [
+    "Incluso nas Dragoon da era Spin Gear (Takara)",
+    "Lançador esquerdo das Starters Dragoon (Hasbro)"
+  ],
+  "tipo": "ripcord",
+  "rotacao": "esquerda",
+  "sistema": "spin-gear",
+  "anime": true,
+  "usado_por": [
+    {
+      "personagem": "tyson-granger",
+      "temporadas": [
+        "s1"
+      ],
+      "beys": [
+        "dragoon-s"
+      ],
+      "obs": "Equipamento listado na wiki do Tyson: \"Left EZShooter\". Usado da estreia da Dragoon S (ep. 2) até ganhar o Catapult Grip (ep. 8) e o Dragoon Shooter DX (ep. 17). Ep. 4: lança com o lançador virado para cima."
+    }
+  ],
+  "acessorios": [
+    "Dragon Winder (68 dentes, cabo em forma de dragão para dois dedos)"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/dragon-winder",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/winder-padrao",
+    "lancadores/ripcords/winder-hasbro",
+    "lancadores/ripcords/dragon-winder",
+    "lancadores/ripcords/neo-dragon-winder",
+    "lancadores/ripcords/ultimate-winder"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Engrenagem extra de inversão (ABS/POM, estimado)"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 76,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 52,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 28,
+      "fonte": "estimado",
+      "obs": "um pouco mais alto por causa da camada extra de engrenagens (wiki)"
+    },
+    "peso_g": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "curso_corda_mm": {
+      "valor": 218,
+      "fonte": "estimado",
+      "obs": "Dragon Winder: 68 dentes (wiki) x ~3,2 mm de passo"
+    }
+  },
+  "atributos": {
+    "forca": 6,
+    "rpm_max": 6550,
+    "precisao": 5,
+    "controle_angulo": 5,
+    "facilidade": 7,
+    "justificativa": "A camada extra de engrenagens que inverte o sentido (wiki) adiciona atrito (~-5%), mas o Dragon Winder mais longo dá mais tempo de aceleração (~+5%): na prática empata com o EZ Shooter (~6550 rpm).",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 115,
+    "forca_maxima": 1,
+    "desvio_angular_graus": 6,
+    "tempo_puxada_ideal_ms": 300,
+    "inclinacao_max_graus": 35,
+    "bonus_rpm_pct": 0,
+    "assistencia_mira": 0,
+    "rotacao_selecionavel": false,
+    "obs": "Puxada mais longa (Dragon Winder): o tempo ideal de R2 é maior. Permite o truque \"lançador virado para cima\" (ep. 4)."
+  },
+  "forma": {
+    "corpo": "compacto",
+    "grip": false,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 76,
+    "largura_mm": 52,
+    "cores": {
+      "primaria": "#1f4fa8",
+      "secundaria": "#e8edf5",
+      "detalhe": "#f2c230",
+      "corda": "#f2c230"
+    },
+    "obs_cores": "Estimado: azul (cor do Tyson/Dragoon) e Dragon Winder amarelo, como o da Starter Dragoon G (wiki)."
+  },
+  "descricao": "Versão de rotação esquerda do EZ Shooter. A primeira versão tem uma camada extra de engrenagens que inverte o sentido, para que o winder entre na mesma orientação do lançador direito (wiki, Left-Spin Shooters).",
+  "referencias": [],
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Left-Spin_Shooters",
+    "https://beyblade.fandom.com/wiki/Launcher",
+    "https://beyblade.fandom.com/wiki/Ripcord",
+    "https://beyblade.fandom.com/wiki/Tyson_Granger",
+    "https://beyblade.fandom.com/wiki/Beyblade_-_Episode_04"
+  ]
+}

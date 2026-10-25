@@ -1,0 +1,21 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70 48.18' width='560' height='385.44'><title>Bit Protector - Driger Emblem (topo)</title><rect width='70' height='48.18' rx='2' fill='#f4f1ea'/><g font-family='Segoe UI, Roboto, Arial, sans-serif' fill='#0d1226'><text x='3' y='6' font-size='3.6' font-weight='700'>Bit Protector - Driger Emblem</text><text x='3' y='10' font-size='2.4' opacity='0.75'>bit-chip · hms · ABS · 0,6 g</text><text x='67' y='6' font-size='2.2' text-anchor='end' opacity='0.6'>vista de cima · escala 1:1 mm</text></g><defs><radialGradient id='g-p' cx='0.35' cy='0.3' r='0.85'>
+    <stop offset='0' stop-color='#d9586d'/><stop offset='0.55' stop-color='#c8102e'/>
+    <stop offset='1' stop-color='#820a1e'/></radialGradient><filter id='sh' x='-20%' y='-20%' width='140%' height='140%'><feGaussianBlur stdDeviation='0.9'/></filter></defs><g transform='translate(35.8 24.29)' opacity='0.25' filter='url(#sh)'><circle r='9.09' fill='#0d1226'/></g><g transform='translate(35 23.09)'><circle r='9.09' fill='#c8102e' stroke='#0d1226' stroke-width='0.5'/><svg x='-7.27' y='-7.27' width='14.54' height='14.54' viewBox='0 0 64 64'>
+<title>Driger: emblema</title>
+<g stroke="#0d1226" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+<path d="M11 21 C9 11 14 6 21 9 C21 14 17 18 11 21 Z" fill="#f3f6f1"/><path d="M53 21 C55 11 50 6 43 9 C43 14 47 18 53 21 Z" fill="#f3f6f1"/>
+<path id="face" d="M32 13C36.3 13 41.5 13.3 45 15C48.5 16.7 50.7 20 53 23C55.3 26 59 33 59 33C59 33 54.3 34.8 54 37C53.7 39.2 57 46 57 46C57 46 50.5 45.5 48 47C45.5 48.5 44.7 53.2 42 55C39.3 56.8 35.3 58 32 58C28.7 58 24.7 56.8 22 55C19.3 53.2 18.5 48.5 16 47C13.5 45.5 7 46 7 46C7 46 10.3 39.2 10 37C9.7 34.8 5 33 5 33C5 33 8.7 26 11 23C13.3 20 15.5 16.7 19 15C22.5 13.3 27.7 13 32 13Z" fill="#f3f6f1"/>
+</g>
+<g fill="#1f8a4c">
+<path d="M32 14 L28.5 25 L32 23 L35.5 25 Z"/><path d="M23 17 L24 26 L26.5 18 Z"/><path d="M41 17 L40 26 L37.5 18 Z"/>
+<path d="M7 34 L17 37 L9 39 Z"/><path d="M10 44 L18 42 L14 46 Z"/><path d="M57 34 L47 37 L55 39 Z"/><path d="M54 44 L46 42 L50 46 Z"/>
+</g>
+<g stroke="#0d1226" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<path d="M15 28.5 L28 33 C26 36 20 36.5 16.5 33 Z" fill="#1f8a4c"/><path d="M49 28.5 L36 33 C38 36 44 36.5 47.5 33 Z" fill="#1f8a4c"/>
+<path d="M13 25 L28 30.5 M51 25 L36 30.5" fill="none" stroke-width="3"/>
+<path d="M28 41 L36 41 L32 45.5 Z" fill="#0d1226"/>
+<path d="M32 45.5 L32 47.5 M26 48 C29 53 35 53 38 48 Z" fill="#0d1226"/>
+<path d="M27.5 48.6 L29 52 L30.3 49.2 Z M36.5 48.6 L35 52 L33.7 49.2 Z" fill="#fff" stroke-width="0.8"/>
+</g>
+<g fill="#0d1226"><path d="M22 31 l1.2 4.6 l-1.6 0 Z"/><path d="M42 31 l-1.2 4.6 l1.6 0 Z"/></g>
+</svg><path d='M-6.36 -2.27A9.09 9.09 0 0 1 2.27 -6.36' stroke='#fff' stroke-width='0.5' fill='none' opacity='0.6'/></g><g stroke='#0d1226' stroke-width='0.25' font-family='Segoe UI, Roboto, Arial, sans-serif' font-size='2.6' fill='#0d1226'><line x1='25.92' y1='37.18' x2='44.09' y2='37.18'/><line x1='25.92' y1='35.98' x2='25.92' y2='38.38'/><line x1='44.09' y1='35.98' x2='44.09' y2='38.38'/><text x='35' y='36.18' text-anchor='middle' stroke='none'>Ø 18,17 mm</text></g><g font-family='Segoe UI, Roboto, Arial, sans-serif' font-size='2.4' fill='#0d1226'><rect x='3' y='41.18' width='10' height='1.2' fill='#0d1226'/><rect x='8' y='41.18' width='5' height='1.2' fill='#f4f1ea' stroke='#0d1226' stroke-width='0.2'/><text x='8' y='45.58' text-anchor='middle'>10 mm</text></g></svg>

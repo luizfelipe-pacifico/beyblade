@@ -1,0 +1,94 @@
+{
+  "id": "lancadores/bey-double-shooter",
+  "nome": "Bey Double Shooter",
+  "nome_jp": "ベイダブルシューター",
+  "codigo_produto": [
+    "A-130 Twin Battle Bey Double Shooter Set (out/2003; Blue c/ winder vermelho, Silver c/ winder preto)",
+    "MA-02 HMS Double Shooter Black (winder amarelo, 780 ienes)"
+  ],
+  "tipo": "ripcord",
+  "rotacao": "direita",
+  "sistema": "hms",
+  "anime": false,
+  "usado_por": [],
+  "acessorios": [
+    "Adaptadores de prong para beys plásticas",
+    "G-Winder"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/g-winder",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/g-winder"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 80,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 110,
+      "fonte": "estimado",
+      "obs": "dois conjuntos de prongs lado a lado"
+    },
+    "altura_mm": {
+      "valor": 28,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 35,
+      "fonte": "estimado"
+    },
+    "curso_corda_mm": {
+      "valor": 218,
+      "fonte": "estimado"
+    }
+  },
+  "atributos": {
+    "forca": 4,
+    "rpm_max": 4800,
+    "precisao": 4,
+    "controle_angulo": 4,
+    "facilidade": 6,
+    "justificativa": "Lança duas beys com um winder: a energia da puxada se divide entre dois pinhões; a wiki diz \"força de lançamento muito fraca\" e só rotação direita.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 110,
+    "forca_maxima": 0.75,
+    "desvio_angular_graus": 8,
+    "tempo_puxada_ideal_ms": 290,
+    "inclinacao_max_graus": 20,
+    "bonus_rpm_pct": -27,
+    "assistencia_mira": 0,
+    "rotacao_selecionavel": false,
+    "lanca_duas": true,
+    "obs": "Modo festa/dupla: lança duas beys do mesmo jogador."
+  },
+  "forma": {
+    "corpo": "duplo",
+    "grip": false,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 80,
+    "largura_mm": 110,
+    "cores": {
+      "primaria": "#1e5bbf",
+      "secundaria": "#b8bec6",
+      "detalhe": "#1a1a1a",
+      "corda": "#c8202c"
+    },
+    "obs_cores": "Versão Blue com winder vermelho do A-130 (wiki)."
+  },
+  "descricao": "Lançador de rotação direita que lança duas beys ao mesmo tempo; inclui prongs adaptadores para beys plásticas (wiki). Veio no set com Dragoon MS e Gaia Dragoon MS (versões do set).",
+  "referencias": [],
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Bey_Double_Shooter",
+    "https://beyblade.fandom.com/wiki/Launcher",
+    "https://beyblade.fandom.com/wiki/List_of_Original_Series_products_(Takara)",
+    "https://beyblade.fandom.com/wiki/Hard_Metal_System"
+  ]
+}

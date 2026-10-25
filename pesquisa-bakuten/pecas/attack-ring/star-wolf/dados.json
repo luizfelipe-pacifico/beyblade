@@ -1,0 +1,80 @@
+{
+  "id": "attack-ring/star-wolf",
+  "categoria": "attack-ring",
+  "nome": "Star Wolf",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "tala/wolborg-4"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Plástico com acabamento prateado."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 46,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 1,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「スターウルフ」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 6,
+    "tipo_contato": "smash",
+    "recoil": 0.65,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 23
+  },
+  "forma": {
+    "simetria": 3,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 10,
+        "pico": 30,
+        "fim": 50,
+        "raio_mm": 23,
+        "borda": "ponta",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 70,
+        "pico": 90,
+        "fim": 110,
+        "raio_mm": 21,
+        "borda": "ponta",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#c3c6cc",
+    "secundaria": "#2457c5",
+    "detalhe": "#d8262c"
+  },
+  "acabamento": "metalico",
+  "descricao": "Estrela de 6 pontas: 3 cabeças de lobo (com focinho entalhado) + 3 triângulos menores com parafusos decorativos.",
+  "funcao": "Smash moderado nas duas rotações, com recoil sério.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Star_Wolf",
+    "https://beyblade.fandom.com/wiki/Wolborg_4"
+  ]
+}

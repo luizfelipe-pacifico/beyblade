@@ -1,0 +1,55 @@
+{
+  "id": "bit-chip/draciel-f",
+  "categoria": "bit-chip",
+  "nome": "Draciel (F Version)",
+  "nome_jp": "ドラシエル",
+  "sistema": "spin-gear",
+  "usado_em": [
+    "max-tate/draciel-f"
+  ],
+  "material": {
+    "principal": "plástico (ABS presumido)",
+    "outros": [
+      "adesivo impresso com a fera"
+    ],
+    "obs": "Peça única com haste longa que encaixa direto no furo central do Attack Ring. Cor do plástico do chip não confirmada; ABS presumido (estimado)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 8,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 0.8,
+      "fonte": "comunidade"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_gba": null,
+  "fisica": {
+    "fera_bit": "draciel"
+  },
+  "forma": {
+    "raio_mm": 7,
+    "cor_fundo": "#1f6fb2",
+    "emblema": "draciel"
+  },
+  "cores": {
+    "primaria": "#1f6fb2",
+    "secundaria": "#f2c200",
+    "detalhe": "#ffffff",
+    "fonte": "estimado"
+  },
+  "acabamento": "opaco",
+  "descricao": "Chip longo de uma peça (encaixa direto no Attack Ring). Draciel, arte da série F. No filme \"Fierce Battle\" a Draciel V aparece com este adesivo por erro de animação (wiki).",
+  "funcao": "Identifica a bey e a fera bit; no jogo, define o emblema e o especial. Sem efeito físico relevante (menos de 1,5 g, no centro, raio pequeno). Nas regras antigas, perder ou quebrar o chip na batalha dava derrota.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Draciel",
+    "https://beyblade.fandom.com/wiki/Draciel_F",
+    "http://obakeblader.com/2018/06/25/post-928/"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "support-part/cross-survivor",
+  "categoria": "support-part",
+  "nome": "Cross Survivor",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "kai-hiwatari/dranzer-v2"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Anel único sob o Weight Disk."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 43,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 3,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 2.6,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 0,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2022/02/22/post-20460/), Support Part 「クロスサバイバー」"
+  },
+  "stats_oficiais_obs": "Support Part: a Takara dá estrelas, mas o obakeblader soma só a base. Não somar por padrão.",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 0,
+    "tipo_contato": "survival",
+    "recoil": 0.1,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 21.5
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 21,
+    "raio_interno_mm": 17,
+    "espessura_mm": 3,
+    "lobos": [
+      {
+        "inicio": 0,
+        "pico": 45,
+        "fim": 90,
+        "raio_mm": 21.5,
+        "borda": "curva",
+        "altura_mm": 3
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#1d1d24",
+    "secundaria": "#2457c5",
+    "detalhe": "#d8262c"
+  },
+  "acabamento": "opaco",
+  "descricao": "Support Part circular que leva o peso para a periferia.",
+  "funcao": "Aumenta a stamina (inércia) e o life after death; usada também em ataque.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Support_Parts_-_Cross_Survivor",
+    "https://beyblade.fandom.com/wiki/Dranzer_V2"
+  ]
+}

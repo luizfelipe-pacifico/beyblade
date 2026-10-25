@@ -1,0 +1,97 @@
+{
+  "id": "lancadores/ez-shooter-spring-custom",
+  "nome": "EZ Shooter Spring Custom",
+  "nome_jp": "イージーシュータースプリングカスタム",
+  "codigo_produto": [
+    "A-83 EZ Shooter Spring Custom (Takara)",
+    "A-118 Spring Winder & EZ Shooter"
+  ],
+  "tipo": "ripcord",
+  "rotacao": "direita",
+  "sistema": "magnacore",
+  "anime": false,
+  "usado_por": [],
+  "acessorios": [
+    "Prongs com mola"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/winder-padrao",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/winder-padrao",
+    "lancadores/ripcords/winder-hasbro",
+    "lancadores/ripcords/dragon-winder",
+    "lancadores/ripcords/neo-dragon-winder",
+    "lancadores/ripcords/ultimate-winder"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Molas de aço nos prongs"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 74,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 52,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 30,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "curso_corda_mm": {
+      "valor": 145,
+      "fonte": "estimado"
+    }
+  },
+  "atributos": {
+    "forca": 6,
+    "rpm_max": 6550,
+    "precisao": 7,
+    "controle_angulo": 6,
+    "facilidade": 9,
+    "justificativa": "Os prongs com mola soltam a bey empurrando-a para baixo, reduzindo o risco de lançamento falho (wiki). Mesmo rpm da referência; mais consistência.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 150,
+    "forca_maxima": 1,
+    "desvio_angular_graus": 4.5,
+    "tempo_puxada_ideal_ms": 260,
+    "inclinacao_max_graus": 30,
+    "bonus_rpm_pct": 0,
+    "assistencia_mira": 0.1,
+    "rotacao_selecionavel": false,
+    "chance_falha_reduzida": 0.5,
+    "obs": "Corta pela metade a chance de \"misfire\" (bey cai torta)."
+  },
+  "forma": {
+    "corpo": "compacto",
+    "grip": false,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 74,
+    "largura_mm": 52,
+    "mola": true,
+    "cores": {
+      "primaria": "#2a2a2a",
+      "secundaria": "#c0c6cc",
+      "detalhe": "#f2c230",
+      "corda": "#e8e8e8"
+    },
+    "obs_cores": "Estimado."
+  },
+  "descricao": "EZ Shooter com prongs de mola, que ao soltar empurram a beyblade para baixo e evitam o misfire (wiki).",
+  "referencias": [],
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Launcher",
+    "https://beyblade.fandom.com/wiki/List_of_Original_Series_products_(Takara)"
+  ]
+}

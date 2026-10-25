@@ -1,0 +1,81 @@
+{
+  "id": "blade-base/sg-flat-base",
+  "categoria": "blade-base",
+  "nome": "SG Flat Base",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "tyson-granger/master-dragoon"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Ponta flat de plástico."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 38,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 11,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 2,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「SGフラットベース」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "flat",
+    "raio_ponta_mm": 3,
+    "atrito": 0.5,
+    "padrao_movimento": "agressivo",
+    "gimmick": "nenhum",
+    "modos": []
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 18,
+    "altura_mm": 7,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 10,
+        "pico": 45,
+        "fim": 80,
+        "raio_mm": 19,
+        "borda": "rampa",
+        "altura_mm": 3
+      }
+    ],
+    "ponta": {
+      "tipo": "flat",
+      "raio_mm": 3,
+      "altura_mm": 4
+    }
+  },
+  "cores": {
+    "primaria": "#1f3f9a",
+    "secundaria": "#f2f2f2",
+    "detalhe": "#c0c0c0",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base baixa com ponta flat de plástico; sucessora da Flat Base das 4-layer.",
+  "funcao": "Velocidade e altura baixa, boa para upper attack. Considerada ultrapassada pela Storm Grip e pela SG Metal Flat 2.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_SG_Flat_Base",
+    "pesquisa-bakuten/personagens/tyson-granger/beyblades/master-dragoon/dados.json"
+  ],
+  "aliases": [
+    "SG Flat"
+  ]
+}

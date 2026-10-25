@@ -1,0 +1,100 @@
+{
+  "id": "attack-ring/great-dragon",
+  "categoria": "attack-ring",
+  "nome": "Great Dragon",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Fino, propenso a quebrar (wiki). Exige o Sub-AR para ser usado."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 47,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 5,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 4.5,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3.5,
+    "defesa": 2,
+    "stamina": 1.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「グレートドラゴン」"
+  },
+  "stats_oficiais_obs": "As estrelas valem para o AR com o Sub-AR (vendidos juntos).",
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "smash",
+    "recoil": 0.75,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 23.5
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 17.5,
+    "raio_interno_mm": 11,
+    "espessura_mm": 5,
+    "lobos": [
+      {
+        "inicio": 5,
+        "pico": 15,
+        "fim": 25,
+        "raio_mm": 20,
+        "borda": "reta",
+        "altura_mm": 5
+      },
+      {
+        "inicio": 30,
+        "pico": 40,
+        "fim": 50,
+        "raio_mm": 20,
+        "borda": "reta",
+        "altura_mm": 5
+      },
+      {
+        "inicio": 60,
+        "pico": 105,
+        "fim": 125,
+        "raio_mm": 23.5,
+        "borda": "gancho",
+        "altura_mm": 5
+      },
+      {
+        "inicio": 140,
+        "pico": 150,
+        "fim": 160,
+        "raio_mm": 20,
+        "borda": "reta",
+        "altura_mm": 5
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#2d2470",
+    "secundaria": "#3aa7e0",
+    "detalhe": "#e9e23a"
+  },
+  "acabamento": "opaco",
+  "descricao": "AR roxo-escuro com 2 grandes cabeças/asas de dragão em lados opostos (silhueta oval) e blocos octogonais ao redor; segura o Sub-AR \"wing\" laranja translúcido.",
+  "funcao": "Smash com muito recoil: as cabeças saem demais do anel. Fino e frágil.",
+  "pecas_relacionadas": [
+    "attack-ring/great-dragon-sub-ar"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Great_Dragon",
+    "https://beyblade.fandom.com/wiki/Gaia_Dragoon"
+  ]
+}

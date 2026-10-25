@@ -1,0 +1,67 @@
+{
+  "id": "spin-gear/neo-right-sg-mw-core",
+  "categoria": "spin-gear",
+  "nome": "Neo Right SG (MW Core)",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "kai-hiwatari/dranzer-v2",
+    "lee/galeon-2",
+    "ray-kon/driger-v2"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "cilindro de metal (Metal Weight Core)"
+    ],
+    "obs": "casca Neo + núcleo com blocos de metal, sem ímã"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 10,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 4.8,
+      "fonte": "wiki",
+      "obs": "Core - Metal Weight Core diz 5 g; a WBO lista Neo SG + MW Core = 4 g"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "Spin Gear: a Takara não dá A/D/S (Magne Power 0).",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "direita",
+    "gimmick": "metal-weight",
+    "ativacao": {
+      "modo": "nenhum",
+      "obs": ""
+    }
+  },
+  "forma": {
+    "tipo": "spin-gear",
+    "raio_mm": 9,
+    "altura_mm": 10,
+    "dentes": 8,
+    "nucleo": "metal"
+  },
+  "cores": {
+    "primaria": "#d9d9d9",
+    "secundaria": "#b8bcc2",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Neo Spin Gear direito com Metal Weight Core: núcleo não magnético, só com blocos de metal. Na wiki aparece como \"Neo Right SG (MW Core)\" (Dranzer V2) e \"Neo Right SG (Metal Weight Version)\" (Galeon 2, Driger V2); é a mesma combinação.",
+  "funcao": "Mais pesado que um SG comum e mais leve que um Magnecore; o peso a mais fica no centro, o que ajuda RPM. Sem efeito magnético. Útil em ataque para controlar o recuo.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_Neo_Right_SG_(MW_Core)",
+    "https://beyblade.fandom.com/wiki/Core_-_Metal_Weight_Core",
+    "https://beyblade.fandom.com/wiki/Galeon_2",
+    "http://wiki.worldbeyblade.org/index.php?title=Spin_Gear",
+    "http://wiki.worldbeyblade.org/index.php?title=Driger_V2"
+  ]
+}

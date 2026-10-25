@@ -1,0 +1,70 @@
+{
+  "id": "spin-gear/right-eg-metal-flat",
+  "categoria": "spin-gear",
+  "nome": "Right EG (Metal Flat)",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "daichi-sumeragi/gaia-dragoon-g"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "mola espiral",
+      "ponta de metal",
+      "2 parafusos"
+    ],
+    "obs": "foto local: casca azul, ponta metálica cinza, dois parafusos nas abas"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 24,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 11,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 1,
+    "stamina": 3,
+    "potencia_engine": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2026/02/22/%E7%88%86%E8%BB%A2%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%88%E3%83%99%E3%82%A4%E3%83%96%E3%83%AC%E3%83%BC%E3%83%89%E3%82%B9%E3%83%94%E3%83%B3%E3%82%AE%E3%82%A2%E3%83%BB%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3/), Spin Gear/Engine Gear 「ライトエンジンギア（メタルフラット）」"
+  },
+  "stats_oficiais_obs": "A wiki não tem estrelas. Soma da Gaia Dragoon G = 6/9/8.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "direita",
+    "gimmick": "engine-gear",
+    "ativacao": {
+      "modo": "clutch",
+      "obs": "na Final Clutch Base do Gaia Dragoon G: libera no impacto ou quando a rotação cai"
+    }
+  },
+  "forma": {
+    "tipo": "engine-gear",
+    "raio_mm": 12,
+    "altura_mm": 18,
+    "dentes": 12,
+    "nucleo": "engine"
+  },
+  "cores": {
+    "primaria": "#1f4fbf",
+    "secundaria": "#a7abb0",
+    "detalhe": "#f2f2f2"
+  },
+  "acabamento": "opaco",
+  "descricao": "Engine Gear direito com ponta metal flat. A foto mostra a casca azul com duas abas parafusadas e a ponta de metal cilíndrica. A única diferença de desenho para a versão Semi-Flat é que o pequeno degrau da ponta é preenchido.",
+  "funcao": "Funciona quase igual ao Semi-Flat, com um pouco mais de agressividade e um pouco menos de stamina. Alto demais para combos competitivos.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Engine_Gear_-_Right_EG_(Metal_Flat)",
+    "https://beyblade.fandom.com/wiki/Strata_Dragoon_G",
+    "https://beyblade.fandom.com/wiki/Engine_Gear_System"
+  ]
+}

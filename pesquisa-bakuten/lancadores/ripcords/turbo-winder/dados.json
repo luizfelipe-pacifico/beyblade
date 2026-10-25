@@ -1,0 +1,94 @@
+{
+  "id": "lancadores/ripcords/turbo-winder",
+  "nome": "Turbo Winder (corda de Engine Gear)",
+  "nome_jp": "ターボワインダー",
+  "codigo_produto": [
+    "Incluso em toda bey Engine Gear",
+    "Versão maior nas beys com Turbo/Reverse EG"
+  ],
+  "tipo": "winder",
+  "sentido": "dupla",
+  "compativel_com": [
+    "lancadores/turbo-winder"
+  ],
+  "compativel_obs": "Não entra em lançador: passa pelo Engine Gear para dar corda na mola. Ver a ficha de lançador lancadores/turbo-winder.",
+  "usado_por": [
+    {
+      "personagem": "tyson-granger",
+      "beys": [
+        "dragoon-g",
+        "dragoon-gt"
+      ],
+      "episodios": [],
+      "obs": "Starter Dragoon G: Turbo Winder branco (wiki)."
+    },
+    {
+      "personagem": "kai-hiwatari",
+      "beys": [
+        "dranzer-g",
+        "dranzer-gt"
+      ],
+      "episodios": [],
+      "obs": "Inferido (toda bey EG)."
+    }
+  ],
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 150,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 12,
+      "fonte": "estimado"
+    },
+    "espessura_mm": {
+      "valor": 2.2,
+      "fonte": "estimado"
+    },
+    "numero_dentes": {
+      "valor": 34,
+      "fonte": "estimado",
+      "obs": "curso curto, só para a mola"
+    },
+    "passo_dente_mm": {
+      "valor": 3.2,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 4,
+      "fonte": "estimado"
+    }
+  },
+  "material": {
+    "principal": "Plástico flexível (estimado)",
+    "outros": [],
+    "obs": ""
+  },
+  "atributos": {
+    "spin_entregue": 1,
+    "facilidade": 7,
+    "durabilidade": 7,
+    "justificativa": "Não gira a bey no lançamento; só carrega a mola do Engine Gear (wiki). Bônus de rpm na ficha do lançador turbo-winder (carga_eg).",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "curso_puxada_mm": 110,
+    "multiplicador_rpm": 0,
+    "desgaste_por_batalha": 1,
+    "obs": "Usado na fase L2 de carga do Engine Gear."
+  },
+  "forma": {
+    "comprimento_mm": 150,
+    "dentes": 34,
+    "cor": "#f2f4f7",
+    "pegador": "retangular",
+    "cor_pegador": "#f2f4f7",
+    "obs": "Branco (Starter Dragoon G, wiki)."
+  },
+  "descricao": "Winder que dá corda no Engine Gear antes do lançamento; acompanha toda bey Engine Gear, e as Turbo/Reverse EG trazem um maior (wiki, Turbo Winders).",
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Turbo_Winders",
+    "https://beyblade.fandom.com/wiki/Dragoon_G"
+  ]
+}

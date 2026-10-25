@@ -1,0 +1,83 @@
+{
+  "id": "attack-ring/upper-claw",
+  "categoria": "attack-ring",
+  "nome": "Upper Claw",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "ray-kon/driger-v2"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "Feito para trabalhar com o Upper Attack SP."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 44,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 9,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 7,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 1,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「アッパークロウ」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "upper",
+    "recoil": 0.35,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 22
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 0,
+        "pico": 20,
+        "fim": 40,
+        "raio_mm": 21,
+        "borda": "curva",
+        "altura_mm": 7
+      },
+      {
+        "inicio": 40,
+        "pico": 140,
+        "fim": 165,
+        "raio_mm": 22,
+        "borda": "rampa",
+        "altura_mm": 9
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#e8e8e8",
+    "secundaria": "#2aa84a",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "opaco",
+  "descricao": "2 cabeças de tigre seguidas de rampas longas que descem até o nível do WD; as rampas mudam de ângulo em 2 pontos.",
+  "funcao": "Upper attack + \"upward smash\" em rotação direita; quase sempre usado com o Upper Attack SP.",
+  "pecas_relacionadas": [
+    "support-part/upper-attack-sp"
+  ],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Upper_Claw",
+    "https://beyblade.fandom.com/wiki/Driger_V2"
+  ]
+}

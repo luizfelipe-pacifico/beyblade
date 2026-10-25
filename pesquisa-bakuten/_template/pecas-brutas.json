@@ -1,0 +1,579 @@
+{
+ "bit_chip": {
+  "Zeus": [
+   "brooklyn-masefield/zeus"
+  ],
+  "Falborg": [
+   "bryan-kuznetsov/falborg",
+   "bryan-kuznetsov/falborg-2"
+  ],
+  "Gaia Dragoon (Strata Dragoon)": [
+   "daichi-sumeragi/gaia-dragoon"
+  ],
+  "Strata Dragoon": [
+   "daichi-sumeragi/gaia-dragoon-g"
+  ],
+  "Bit Protector - Strata Dragoon": [
+   "daichi-sumeragi/gaia-dragoon-ms"
+  ],
+  "Strata Dragoon (V Version)": [
+   "daichi-sumeragi/gaia-dragoon-v"
+  ],
+  "Black Dranzer": [
+   "kai-hiwatari/black-dranzer"
+  ],
+  "Dranzer (F Version)": [
+   "kai-hiwatari/dranzer-f"
+  ],
+  "Dranzer (G Version)": [
+   "kai-hiwatari/dranzer-g"
+  ],
+  "Dranzer (GT Version)": [
+   "kai-hiwatari/dranzer-gt"
+  ],
+  "Bit Protector - Dranzer Emblem": [
+   "kai-hiwatari/dranzer-ms"
+  ],
+  "Dranzer": [
+   "kai-hiwatari/dranzer-s",
+   "kai-hiwatari/dranzer-v2"
+  ],
+  "Dranzer (V Version)": [
+   "kai-hiwatari/dranzer-v"
+  ],
+  "Galeon": [
+   "lee/galeon",
+   "lee/galeon-2",
+   "lee/galeon-2-eg"
+  ],
+  "Draciel (F)": [
+   "max-tate/draciel-f"
+  ],
+  "Draciel (G)": [
+   "max-tate/draciel-g"
+  ],
+  "Draciel": [
+   "max-tate/draciel-metal-ball-defenser",
+   "max-tate/draciel-s"
+  ],
+  "Bit Protector - Draciel Emblem": [
+   "max-tate/draciel-ms"
+  ],
+  "Draciel (V)": [
+   "max-tate/draciel-v",
+   "max-tate/draciel-v2"
+  ],
+  "Driger (F Version)": [
+   "ray-kon/driger-f"
+  ],
+  "Driger (G Version)": [
+   "ray-kon/driger-g"
+  ],
+  "Driger Emblem (Bit Protector)": [
+   "ray-kon/driger-ms"
+  ],
+  "Driger": [
+   "ray-kon/driger-s",
+   "ray-kon/driger-v"
+  ],
+  "Driger (V2 Version)": [
+   "ray-kon/driger-v2"
+  ],
+  "Griffolyon": [
+   "robert-jurgen/griffolyon"
+  ],
+  "Wolborg": [
+   "tala/wolborg-2",
+   "tala/wolborg-4"
+  ],
+  "Dragoon (F)": [
+   "tyson-granger/dragoon-f"
+  ],
+  "Dragoon": [
+   "tyson-granger/dragoon-g",
+   "tyson-granger/dragoon-grip-attacker",
+   "tyson-granger/dragoon-gt",
+   "tyson-granger/dragoon-s",
+   "tyson-granger/dragoon-v"
+  ],
+  "Bit Protector - Dragoon Emblem": [
+   "tyson-granger/dragoon-ms",
+   "tyson-granger/dragoon-ms-ultimate-version"
+  ],
+  "Dragoon (V)": [
+   "tyson-granger/dragoon-v2",
+   "tyson-granger/dragoon-v2-high-power-custom"
+  ],
+  "Dranzer (F)": [
+   "tyson-granger/dranzer-f"
+  ],
+  "Master Dragoon": [
+   "tyson-granger/master-dragoon"
+  ]
+ },
+ "attack_ring": {
+  "Screw Zeus (AR livre) + Holy Despell (Attack Ring Supporter)": [
+   "brooklyn-masefield/zeus"
+  ],
+  "Fal Wing": [
+   "bryan-kuznetsov/falborg"
+  ],
+  "não confirmado": [
+   "bryan-kuznetsov/falborg-2"
+  ],
+  "Great Dragon (+ Sub-AR wing laranja translúcido)": [
+   "daichi-sumeragi/gaia-dragoon"
+  ],
+  "Dragon Saucer (+ Sub-AR em engrenagem)": [
+   "daichi-sumeragi/gaia-dragoon-g"
+  ],
+  "Metal Saucer (Metal Frame + ABS Caul)": [
+   "daichi-sumeragi/gaia-dragoon-ms"
+  ],
+  "Dragon Breaker (+ Sub-AR livre de 4 pontas)": [
+   "daichi-sumeragi/gaia-dragoon-v"
+  ],
+  "Flame Wing": [
+   "kai-hiwatari/black-dranzer",
+   "kai-hiwatari/dranzer-f",
+   "tyson-granger/dranzer-f"
+  ],
+  "Wing Survivor": [
+   "kai-hiwatari/dranzer-g"
+  ],
+  "Triangle Wing": [
+   "kai-hiwatari/dranzer-gt"
+  ],
+  "Spiral Upper (Metal Frame Left Upper + ABS Spiral Upper)": [
+   "kai-hiwatari/dranzer-ms"
+  ],
+  "Double Wing": [
+   "kai-hiwatari/dranzer-s"
+  ],
+  "Cross Attacker": [
+   "kai-hiwatari/dranzer-v"
+  ],
+  "Cross Dranzer": [
+   "kai-hiwatari/dranzer-v2"
+  ],
+  "War Lion (com Sub-Attack Ring livre)": [
+   "lee/galeon"
+  ],
+  "Howling Leo": [
+   "lee/galeon-2",
+   "lee/galeon-2-eg"
+  ],
+  "Eight Spike": [
+   "max-tate/draciel-f"
+  ],
+  "Shield Hammer": [
+   "max-tate/draciel-g"
+  ],
+  "Max Shield": [
+   "max-tate/draciel-metal-ball-defenser"
+  ],
+  "Metal Defense (Metal Frame Cross Shield + ABS Caul Draciel)": [
+   "max-tate/draciel-ms"
+  ],
+  "Cross Spike": [
+   "max-tate/draciel-s"
+  ],
+  "Ten Spike": [
+   "max-tate/draciel-v"
+  ],
+  "Strike Turtle": [
+   "max-tate/draciel-v2"
+  ],
+  "Cross Fang": [
+   "ray-kon/driger-f"
+  ],
+  "Triple Tiger": [
+   "ray-kon/driger-g"
+  ],
+  "Metal Upper": [
+   "ray-kon/driger-ms"
+  ],
+  "Tiger Defenser": [
+   "ray-kon/driger-s"
+  ],
+  "Sonic Tiger": [
+   "ray-kon/driger-v"
+  ],
+  "Upper Claw": [
+   "ray-kon/driger-v2"
+  ],
+  "Cross Griffon": [
+   "robert-jurgen/griffolyon"
+  ],
+  "Upper Wolf": [
+   "tala/wolborg-2"
+  ],
+  "Star Wolf": [
+   "tala/wolborg-4"
+  ],
+  "Dual Dragon": [
+   "tyson-granger/dragoon-f"
+  ],
+  "Eight Spiker": [
+   "tyson-granger/dragoon-g"
+  ],
+  "Dragon Head": [
+   "tyson-granger/dragoon-grip-attacker"
+  ],
+  "G-Upper": [
+   "tyson-granger/dragoon-gt"
+  ],
+  "Metal Attacker": [
+   "tyson-granger/dragoon-ms"
+  ],
+  "Ultimate Attacker": [
+   "tyson-granger/dragoon-ms-ultimate-version"
+  ],
+  "Reverse Dragon": [
+   "tyson-granger/dragoon-s"
+  ],
+  "Eight Attacker": [
+   "tyson-granger/dragoon-v"
+  ],
+  "Spike Dragon": [
+   "tyson-granger/dragoon-v2",
+   "tyson-granger/dragoon-v2-high-power-custom"
+  ],
+  "Upper Dragoon": [
+   "tyson-granger/master-dragoon"
+  ]
+ },
+ "weight_disk": {
+  "Ten Wide": [
+   "brooklyn-masefield/zeus",
+   "daichi-sumeragi/gaia-dragoon-v",
+   "lee/galeon-2",
+   "max-tate/draciel-g",
+   "tala/wolborg-4",
+   "tyson-granger/dragoon-g",
+   "tyson-granger/dragoon-gt",
+   "tyson-granger/dragoon-v"
+  ],
+  "Eight Heavy": [
+   "bryan-kuznetsov/falborg",
+   "kai-hiwatari/black-dranzer",
+   "kai-hiwatari/dranzer-f",
+   "lee/galeon",
+   "ray-kon/driger-s",
+   "tyson-granger/dranzer-f",
+   "tyson-granger/master-dragoon"
+  ],
+  "não confirmado": [
+   "bryan-kuznetsov/falborg-2",
+   "tyson-granger/dragoon-v2-high-power-custom"
+  ],
+  "Heavy Attack": [
+   "daichi-sumeragi/gaia-dragoon"
+  ],
+  "Ten Heavy": [
+   "daichi-sumeragi/gaia-dragoon-g",
+   "max-tate/draciel-v2"
+  ],
+  "Circle Heavy": [
+   "daichi-sumeragi/gaia-dragoon-ms"
+  ],
+  "Ten Balance": [
+   "kai-hiwatari/dranzer-g",
+   "kai-hiwatari/dranzer-gt",
+   "kai-hiwatari/dranzer-v",
+   "kai-hiwatari/dranzer-v2",
+   "max-tate/draciel-v",
+   "ray-kon/driger-g",
+   "ray-kon/driger-v",
+   "ray-kon/driger-v2"
+  ],
+  "Circle Balance": [
+   "kai-hiwatari/dranzer-ms",
+   "ray-kon/driger-ms"
+  ],
+  "Eight Balance": [
+   "kai-hiwatari/dranzer-s",
+   "max-tate/draciel-f",
+   "max-tate/draciel-s",
+   "ray-kon/driger-f",
+   "robert-jurgen/griffolyon",
+   "tala/wolborg-2"
+  ],
+  "Wide Attack": [
+   "lee/galeon-2-eg"
+  ],
+  "Heavy (Six Heavy)": [
+   "max-tate/draciel-metal-ball-defenser"
+  ],
+  "Circle Wide": [
+   "max-tate/draciel-ms",
+   "tyson-granger/dragoon-ms",
+   "tyson-granger/dragoon-ms-ultimate-version"
+  ],
+  "Eight Wide": [
+   "tyson-granger/dragoon-f",
+   "tyson-granger/dragoon-s"
+  ],
+  "Wide": [
+   "tyson-granger/dragoon-grip-attacker"
+  ],
+  "Magne Weight Disk": [
+   "tyson-granger/dragoon-v2"
+  ]
+ },
+ "spin_gear": {
+  "Right Customize Gear (Free Shaft Version, double bearing) + Light Sharp (Customize Engine Weight); Hasbro: Right EG (Metal Ball)": [
+   "brooklyn-masefield/zeus"
+  ],
+  "Right SG": [
+   "bryan-kuznetsov/falborg",
+   "lee/galeon",
+   "max-tate/draciel-s",
+   "ray-kon/driger-s",
+   "tyson-granger/master-dragoon"
+  ],
+  "Right SG (infobox) / Engine Gear no anime (trivia) - não confirmado": [
+   "bryan-kuznetsov/falborg-2"
+  ],
+  "Right Spin Gear (G Ball)": [
+   "daichi-sumeragi/gaia-dragoon"
+  ],
+  "Right Engine Gear (Metal Flat)": [
+   "daichi-sumeragi/gaia-dragoon-g"
+  ],
+  "Neo Right SG (S-MG Core)": [
+   "daichi-sumeragi/gaia-dragoon-v"
+  ],
+  "Right SG (Triple Change Version)": [
+   "kai-hiwatari/black-dranzer",
+   "kai-hiwatari/dranzer-f",
+   "tyson-granger/dranzer-f"
+  ],
+  "Right EG (Metal Semi-Flat)": [
+   "kai-hiwatari/dranzer-g",
+   "lee/galeon-2-eg"
+  ],
+  "Right EG Reverse (CEW Metal Semi-Flat)": [
+   "kai-hiwatari/dranzer-gt"
+  ],
+  "Manual Change Core (Running Core)": [
+   "kai-hiwatari/dranzer-ms"
+  ],
+  "Right SG (Free Shaft Version)": [
+   "kai-hiwatari/dranzer-s"
+  ],
+  "Neo Right SG (South Magnecore, Dranzer V Version)": [
+   "kai-hiwatari/dranzer-v"
+  ],
+  "Neo Right SG (MW Core)": [
+   "kai-hiwatari/dranzer-v2"
+  ],
+  "Neo Right SG (Metal Weight Core)": [
+   "lee/galeon-2",
+   "ray-kon/driger-v2"
+  ],
+  "Right SG (Oil Ball / Ball Bearing ver.)": [
+   "max-tate/draciel-f"
+  ],
+  "Right Engine Gear (Metal Ball)": [
+   "max-tate/draciel-g"
+  ],
+  "Right SG (segundo o infobox)": [
+   "max-tate/draciel-metal-ball-defenser"
+  ],
+  "Running Core: Sharp Core": [
+   "max-tate/draciel-ms"
+  ],
+  "Neo Right SG (North Magnecore)": [
+   "max-tate/draciel-v"
+  ],
+  "Neo Right SG (MG Core)": [
+   "max-tate/draciel-v2"
+  ],
+  "Right SG (Full Auto Clutch Version)": [
+   "ray-kon/driger-f"
+  ],
+  "Right Engine Gear (Metal Semi-Flat)": [
+   "ray-kon/driger-g"
+  ],
+  "Semi-Flat Core (Running Core)": [
+   "ray-kon/driger-ms"
+  ],
+  "Neo Right SG (South Core)": [
+   "ray-kon/driger-v"
+  ],
+  "Integrado à base (direita)": [
+   "robert-jurgen/griffolyon"
+  ],
+  "Right SG (Bearing Version 2)": [
+   "tala/wolborg-2"
+  ],
+  "Right EG (Circle Survivor) com CEW de plástico em tigela": [
+   "tala/wolborg-4"
+  ],
+  "Left SG": [
+   "tyson-granger/dragoon-f",
+   "tyson-granger/dragoon-s"
+  ],
+  "Left Engine Gear (CEW Metal Semi-Flat)": [
+   "tyson-granger/dragoon-g"
+  ],
+  "Left Engine Gear Turbo (CEW Metal Grip)": [
+   "tyson-granger/dragoon-gt"
+  ],
+  "Running Core - Grip Flat Core": [
+   "tyson-granger/dragoon-ms"
+  ],
+  "Running Core - Grip Flat Core (Ultimate Mode)": [
+   "tyson-granger/dragoon-ms-ultimate-version"
+  ],
+  "Neo Left SG (Metal Weight Core)": [
+   "tyson-granger/dragoon-v"
+  ],
+  "Neo Left SG (Normal Core)": [
+   "tyson-granger/dragoon-v2"
+  ],
+  "não confirmado": [
+   "tyson-granger/dragoon-v2-high-power-custom"
+  ]
+ },
+ "blade_base": {
+  "First Clutch Base (Zeus Version)": [
+   "brooklyn-masefield/zeus"
+  ],
+  "Drag Saucer": [
+   "bryan-kuznetsov/falborg"
+  ],
+  "não confirmado": [
+   "bryan-kuznetsov/falborg-2"
+  ],
+  "Gaia Dragoon G Special Base": [
+   "daichi-sumeragi/gaia-dragoon"
+  ],
+  "Final Clutch Base (Strata Dragoon G Version)": [
+   "daichi-sumeragi/gaia-dragoon-g"
+  ],
+  "Running Core - Flat Core": [
+   "daichi-sumeragi/gaia-dragoon-ms"
+  ],
+  "SG Metal Flat 2": [
+   "daichi-sumeragi/gaia-dragoon-v"
+  ],
+  "Flame Change Base": [
+   "kai-hiwatari/black-dranzer",
+   "kai-hiwatari/dranzer-f",
+   "tyson-granger/dranzer-f"
+  ],
+  "Hit Release (Dranzer Version)": [
+   "kai-hiwatari/dranzer-g"
+  ],
+  "Hit Release (Dranzer GT Version)": [
+   "kai-hiwatari/dranzer-gt"
+  ],
+  "Manual Change Core (Running Core integrado)": [
+   "kai-hiwatari/dranzer-ms"
+  ],
+  "Spiral Change Base": [
+   "kai-hiwatari/dranzer-s"
+  ],
+  "Volcano Change Base": [
+   "kai-hiwatari/dranzer-v"
+  ],
+  "Customize Clutch Base": [
+   "kai-hiwatari/dranzer-v2"
+  ],
+  "SG Semi-Flat": [
+   "lee/galeon"
+  ],
+  "SG Semi-Flat Base": [
+   "lee/galeon-2"
+  ],
+  "First Clutch Base": [
+   "lee/galeon-2-eg"
+  ],
+  "Fortress Base": [
+   "max-tate/draciel-f"
+  ],
+  "Hit Release (Final Clutch, versão Draciel)": [
+   "max-tate/draciel-g"
+  ],
+  "Metal Ball Base": [
+   "max-tate/draciel-metal-ball-defenser"
+  ],
+  "SG Metal Ball Base": [
+   "max-tate/draciel-s"
+  ],
+  "Viper Metal Ball Base": [
+   "max-tate/draciel-v"
+  ],
+  "Switch Metal Ball Base": [
+   "max-tate/draciel-v2"
+  ],
+  "Full Auto Clutch Base": [
+   "ray-kon/driger-f"
+  ],
+  "First Clutch Base (Driger G Version)": [
+   "ray-kon/driger-g"
+  ],
+  "Metal Change Base": [
+   "ray-kon/driger-s"
+  ],
+  "SG Metal Flat Base": [
+   "ray-kon/driger-v"
+  ],
+  "Customize Change Base (Custom Metal Change)": [
+   "ray-kon/driger-v2"
+  ],
+  "Griffolyon Base": [
+   "robert-jurgen/griffolyon"
+  ],
+  "Defense Grip Base 2": [
+   "tala/wolborg-2"
+  ],
+  "Normal Base (Wolborg 4 Version)": [
+   "tala/wolborg-4"
+  ],
+  "Fantom Grip Base": [
+   "tyson-granger/dragoon-f"
+  ],
+  "First Clutch Base (Instant Release - Dragoon G Version)": [
+   "tyson-granger/dragoon-g"
+  ],
+  "Grip Base": [
+   "tyson-granger/dragoon-grip-attacker"
+  ],
+  "Instant Release Base (Dragoon GT Version)": [
+   "tyson-granger/dragoon-gt"
+  ],
+  "Storm Grip Base": [
+   "tyson-granger/dragoon-s"
+  ],
+  "Magne Flat Base": [
+   "tyson-granger/dragoon-v"
+  ],
+  "Customize Grip Base": [
+   "tyson-granger/dragoon-v2"
+  ],
+  "RC Flat Base": [
+   "tyson-granger/dragoon-v2-high-power-custom"
+  ],
+  "SG Flat Base": [
+   "tyson-granger/master-dragoon"
+  ]
+ },
+ "support_part": {
+  "Cross Survivor": [
+   "kai-hiwatari/dranzer-v2"
+  ],
+  "Fin Tector": [
+   "max-tate/draciel-v2"
+  ],
+  "Upper Attack SP": [
+   "ray-kon/driger-v2"
+  ],
+  "Reverse Attack": [
+   "tyson-granger/dragoon-v2",
+   "tyson-granger/dragoon-v2-high-power-custom"
+  ]
+ }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "blade-base/grip-base",
+  "categoria": "blade-base",
+  "nome": "Grip Base",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "tyson-granger/dragoon-grip-attacker"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Borracha (ponta flat larga)"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 38,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 10,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 7,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 4,
+    "defesa": 1,
+    "stamina": 0.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「グリップベース」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "grip",
+    "raio_ponta_mm": 5,
+    "atrito": 0.85,
+    "padrao_movimento": "agressivo",
+    "gimmick": "nenhum",
+    "modos": []
+  },
+  "forma": {
+    "simetria": 1,
+    "raio_corpo_mm": 18,
+    "altura_mm": 6,
+    "perfil": "conico",
+    "lobos": [],
+    "ponta": {
+      "tipo": "grip",
+      "raio_mm": 5,
+      "altura_mm": 4
+    }
+  },
+  "cores": {
+    "primaria": "#1f3f9a",
+    "secundaria": "#1a1a1a",
+    "detalhe": "#c0c0c0",
+    "ponta": "#1a1a1a",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base muito baixa com ponta de borracha flat extremamente larga.",
+  "funcao": "Uma das bases mais rápidas de todos os tempos, ótima para smash e upper; stamina muito curta e só funciona em rotação direita.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Grip",
+    "pesquisa-bakuten/personagens/tyson-granger/beyblades/dragoon-grip-attacker/dados.json"
+  ]
+}

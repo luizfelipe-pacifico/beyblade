@@ -1,0 +1,64 @@
+{
+  "id": "weight-disk/circle-wide",
+  "categoria": "weight-disk",
+  "nome": "Circle Wide",
+  "nome_jp": null,
+  "sistema": "hms",
+  "usado_em": [
+    "max-tate/draciel-ms",
+    "tyson-granger/dragoon-ms",
+    "tyson-granger/dragoon-ms-ultimate-version"
+  ],
+  "material": {
+    "principal": "Metal",
+    "outros": [],
+    "obs": "metal fundido; a liga não é especificada nas fontes"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 40,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 3.1,
+      "fonte": "estimado",
+      "obs": "calculada do peso com densidade 7.1 g/cm³"
+    },
+    "peso_g": {
+      "valor": 14,
+      "fonte": "wiki",
+      "obs": "o molde Takara do Draciel MS pesa 0,5–0,7 g a mais (WBO: 15 g)"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 1,
+    "defesa": 1,
+    "stamina": 3,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2021/06/26/post-16926/), Weight Disk 「サークルワイド」"
+  },
+  "stats_oficiais_obs": "A wiki não tem estrelas. Soma da Draciel MS = 4/5/8.",
+  "stats_gba": null,
+  "fisica": {
+    "distribuicao": "periferia",
+    "magnetico": false
+  },
+  "forma": {
+    "lados": 0,
+    "raio_externo_mm": 20,
+    "raio_interno_mm": 14,
+    "espessura_mm": 3.1,
+    "estilo": "circle"
+  },
+  "cores": {
+    "primaria": "#9ea3a8",
+    "secundaria": "#6e7378",
+    "detalhe": "#c9cdd1"
+  },
+  "acabamento": "metalico",
+  "descricao": "O maior e mais leve dos três Weight Disks originais do Hard Metal System: um círculo perfeito com a massa afastada do eixo. Há variação de molde: o do Draciel MS Takara é mais pesado; os da Sonokong têm os rasgos de encaixe no Running Core um pouco menores.",
+  "funcao": "Massa na periferia: bom para stamina (o eixo de massa afastado sustenta a rotação) e para ataque (leve, rápido e com o peso nas projeções do AR).",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Weight_Disk_-_Circle_Wide",
+    "http://wiki.worldbeyblade.org/index.php?title=Draciel_MS"
+  ]
+}

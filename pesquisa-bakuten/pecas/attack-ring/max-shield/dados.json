@@ -1,0 +1,72 @@
+{
+  "id": "attack-ring/max-shield",
+  "categoria": "attack-ring",
+  "nome": "Max Shield",
+  "nome_jp": null,
+  "sistema": "4-layer",
+  "usado_em": [
+    "max-tate/draciel-metal-ball-defenser"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "A wiki lista como Spin Gear System, mas a bey é de 4 camadas."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 41,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 2,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「マックスシールド」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 4,
+    "tipo_contato": "defesa",
+    "recoil": 0.45,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 20.5
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 19,
+    "raio_interno_mm": 12,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 10,
+        "pico": 45,
+        "fim": 80,
+        "raio_mm": 20.5,
+        "borda": "reta",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#7cc63a",
+    "secundaria": "#3f7d1e",
+    "detalhe": "#f2c230"
+  },
+  "acabamento": "opaco",
+  "descricao": "Pequeno, com 4 painéis quase retos ao redor (contorno octogonal).",
+  "funcao": "Pouco eficiente em defesa (os painéis retos geram atrito/recoil); pequeno o bastante para weight disk attack.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Max_Shield",
+    "https://beyblade.fandom.com/wiki/Draciel_Metal_Ball_Defenser"
+  ]
+}

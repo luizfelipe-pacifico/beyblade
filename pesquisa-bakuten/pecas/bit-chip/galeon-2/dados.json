@@ -1,0 +1,56 @@
+{
+  "id": "bit-chip/galeon-2",
+  "categoria": "bit-chip",
+  "nome": "Galeon (2nd Version)",
+  "nome_jp": "ガルオン",
+  "sistema": "engine-gear",
+  "usado_em": [
+    "lee/galeon-2",
+    "lee/galeon-2-eg"
+  ],
+  "material": {
+    "principal": "plástico (ABS presumido)",
+    "outros": [
+      "adesivo impresso com a fera"
+    ],
+    "obs": "Peça única com haste longa que encaixa direto no furo central do Attack Ring. Cor do plástico do chip não confirmada; ABS presumido (estimado)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 8,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 0.8,
+      "fonte": "comunidade"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_gba": null,
+  "fisica": {
+    "fera_bit": "galeon"
+  },
+  "forma": {
+    "raio_mm": 7,
+    "cor_fundo": "#2b2b2b",
+    "emblema": "galeon"
+  },
+  "cores": {
+    "primaria": "#2b2b2b",
+    "secundaria": "#f2c200",
+    "detalhe": "#7a3fa0",
+    "fonte": "estimado"
+  },
+  "acabamento": "opaco",
+  "descricao": "Chip longo de uma peça (encaixa direto no Attack Ring). Galeon, segunda versão do chip (\"Galeon2BitChip(Second_Version).jpeg\" na galeria da wiki).",
+  "funcao": "Identifica a bey e a fera bit; no jogo, define o emblema e o especial. Sem efeito físico relevante (menos de 1,5 g, no centro, raio pequeno). Nas regras antigas, perder ou quebrar o chip na batalha dava derrota.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Bit_Chip_-_Galeon",
+    "https://beyblade.fandom.com/wiki/Galeon_2",
+    "http://obakeblader.com/2018/06/19/post-755/"
+  ]
+}

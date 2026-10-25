@@ -1,0 +1,65 @@
+{
+  "id": "spin-gear/manual-change-core",
+  "categoria": "spin-gear",
+  "nome": "Manual Change Core",
+  "nome_jp": null,
+  "sistema": "hms",
+  "usado_em": [
+    "kai-hiwatari/dranzer-ms"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "cor não confirmada"
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 2.14,
+      "fonte": "comunidade",
+      "obs": "WBO; a infobox da Beyblade Wiki arredonda para 3 g"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 1,
+    "stamina": 3,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「マニュアルチェンジコア」"
+  },
+  "stats_oficiais_obs": "Running Core: entra na soma no lugar da base.",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "dupla",
+    "gimmick": "running-core",
+    "ativacao": {
+      "modo": "manual",
+      "obs": "antes da luta, o jogador escolhe o modo ataque (ponta larga) ou o modo stamina"
+    }
+  },
+  "forma": {
+    "tipo": "running-core",
+    "raio_mm": 7,
+    "altura_mm": 14,
+    "dentes": 4,
+    "nucleo": "normal"
+  },
+  "cores": {
+    "primaria": "#c8102e",
+    "secundaria": "#1a1a1a",
+    "detalhe": "#5a5a5a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Running Core do Dranzer MS com troca manual entre modo ataque e modo stamina. Takara e Hasbro diferem: a Hasbro usa ponta semi-flat para corrigir o desequilíbrio da Takara em baixa rotação, ao custo de stamina.",
+  "funcao": "No modo ataque, velocidade exagerada (sai do estádio com frequência); no modo stamina, fica no centro.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Running_Core_-_Manual_Change_Core",
+    "http://wiki.worldbeyblade.org/index.php?title=Dranzer_MS"
+  ]
+}

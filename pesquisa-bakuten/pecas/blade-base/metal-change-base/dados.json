@@ -1,0 +1,84 @@
+{
+  "id": "blade-base/metal-change-base",
+  "categoria": "blade-base",
+  "nome": "Metal Change Base",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "ray-kon/driger-s"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Metal (ponta)"
+    ],
+    "obs": "Ponta metálica larga, aguda no centro e plana em volta."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 38,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 12,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 1,
+    "stamina": 3,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「メタルチェンジベース」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "metal-sharp",
+    "raio_ponta_mm": 3,
+    "atrito": 0.08,
+    "padrao_movimento": "centro",
+    "gimmick": "troca de modo por inclinação",
+    "modos": [
+      {
+        "nome": "Survival (reta)",
+        "tipo_ponta": "metal-sharp",
+        "atrito": 0.08,
+        "gatilho": "inclinação: bey de pé apoia no centro agudo da ponta"
+      },
+      {
+        "nome": "Attack (inclinada)",
+        "tipo_ponta": "metal-flat",
+        "atrito": 0.4,
+        "gatilho": "inclinação: lançamento inclinado ou golpe que tomba a bey apoia na parte plana"
+      }
+    ]
+  },
+  "forma": {
+    "simetria": 1,
+    "raio_corpo_mm": 18,
+    "altura_mm": 8,
+    "perfil": "conico",
+    "lobos": [],
+    "ponta": {
+      "tipo": "metal-sharp",
+      "raio_mm": 3,
+      "altura_mm": 4
+    }
+  },
+  "cores": {
+    "primaria": "#f0f0f0",
+    "secundaria": "#2e8b3a",
+    "detalhe": "#c0c0c0",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base pequena, redonda e baixa, com ponta de metal larga: aguda exatamente no centro e plana na maior parte.",
+  "funcao": "Mistura ataque e sobrevivência na mesma ponta. Excelente em combos compactos.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Metal_Change",
+    "pesquisa-bakuten/personagens/ray-kon/beyblades/driger-s/dados.json"
+  ]
+}

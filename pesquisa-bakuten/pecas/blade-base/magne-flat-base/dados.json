@@ -1,0 +1,81 @@
+{
+  "id": "blade-base/magne-flat-base",
+  "categoria": "blade-base",
+  "nome": "Magne Flat Base",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "tyson-granger/dragoon-v"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Ímã (na ponta)"
+    ],
+    "obs": "Ponta flat de plástico duro com ímã embutido."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 44,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 14,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 6,
+      "fonte": "estimado"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 1,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/05/12/post-11931/), Blade Base/Running Core 「マグネフラットベース」"
+  },
+  "stats_oficiais_obs": "Magne Power 1.",
+  "stats_gba": null,
+  "fisica": {
+    "tipo_ponta": "flat",
+    "raio_ponta_mm": 3.5,
+    "atrito": 0.5,
+    "padrao_movimento": "agressivo",
+    "gimmick": "ponta magnética (interage com estádio/WD magnéticos)",
+    "modos": []
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_corpo_mm": 19,
+    "altura_mm": 9,
+    "perfil": "conico",
+    "lobos": [
+      {
+        "inicio": 5,
+        "pico": 30,
+        "fim": 55,
+        "raio_mm": 22.5,
+        "borda": "rampa",
+        "altura_mm": 4
+      }
+    ],
+    "ponta": {
+      "tipo": "flat",
+      "raio_mm": 3.5,
+      "altura_mm": 6
+    }
+  },
+  "cores": {
+    "primaria": "#1f3f9a",
+    "secundaria": "#f2f2f2",
+    "detalhe": "#c8102e",
+    "fonte": "estimado (sem foto local)"
+  },
+  "acabamento": "opaco",
+  "descricao": "Base com quatro asas saindo do topo (para smash em rotação esquerda) e ponta flat de plástico com ímã.",
+  "funcao": "Flat rápido que dura mais que borracha, mas é menos veloz e controlável. O ímã foi o \"gimmick\" de marketing no lugar da borracha.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Blade_Base_-_Magne_Flat_Base",
+    "pesquisa-bakuten/personagens/tyson-granger/beyblades/dragoon-v/dados.json"
+  ]
+}

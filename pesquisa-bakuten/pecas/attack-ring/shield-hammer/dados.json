@@ -1,0 +1,96 @@
+{
+  "id": "attack-ring/shield-hammer",
+  "categoria": "attack-ring",
+  "nome": "Shield Hammer",
+  "nome_jp": null,
+  "sistema": "engine-gear",
+  "usado_em": [
+    "max-tate/draciel-g"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 46,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 6,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 4,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「シールドハンマー」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 6,
+    "tipo_contato": "defesa",
+    "recoil": 0.5,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 23
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 33,
+        "pico": 45,
+        "fim": 57,
+        "raio_mm": 21,
+        "borda": "curva",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 100,
+        "pico": 110,
+        "fim": 120,
+        "raio_mm": 22.5,
+        "borda": "reta",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 125,
+        "pico": 135,
+        "fim": 145,
+        "raio_mm": 23,
+        "borda": "reta",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 150,
+        "pico": 160,
+        "fim": 170,
+        "raio_mm": 22.5,
+        "borda": "reta",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#2f9e3a",
+    "secundaria": "#2457c5",
+    "detalhe": "#d8262c"
+  },
+  "acabamento": "opaco",
+  "descricao": "2 pequenas cabeças de tartaruga opostas + 2 \"garras\" opostas, cada uma com 3 hexágonos em losango ligeiramente salientes.",
+  "funcao": "Feito para defesa, contorno razoavelmente redondo, mas com algum recoil e sem ataque.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Shield_Hammer",
+    "https://beyblade.fandom.com/wiki/Draciel_G"
+  ]
+}

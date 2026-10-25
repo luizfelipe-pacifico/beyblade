@@ -1,0 +1,100 @@
+{
+  "id": "attack-ring/spiral-upper",
+  "categoria": "attack-ring",
+  "nome": "Spiral Upper",
+  "nome_jp": "スパイラルアッパー",
+  "sistema": "hms",
+  "usado_em": [
+    "kai-hiwatari/dranzer-ms"
+  ],
+  "material": {
+    "principal": "Metal (zinco)",
+    "outros": [
+      "ABS"
+    ],
+    "obs": "Metal Frame \"Left Upper\" + ABS Caul \"Spiral Upper\"."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 41,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 8,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 20,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 2,
+    "stamina": 2.5,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「スパイラルアッパー」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 2,
+    "tipo_contato": "upper",
+    "recoil": 0.35,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 20.5
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 17,
+    "raio_interno_mm": 9,
+    "espessura_mm": 8,
+    "lobos": [
+      {
+        "inicio": 10,
+        "pico": 80,
+        "fim": 110,
+        "raio_mm": 20.5,
+        "borda": "rampa",
+        "altura_mm": 7,
+        "metal": true
+      },
+      {
+        "inicio": 120,
+        "pico": 140,
+        "fim": 160,
+        "raio_mm": 19.5,
+        "borda": "curva",
+        "altura_mm": 8
+      }
+    ],
+    "moldura": {
+      "simetria": 2,
+      "raio_base_mm": 16,
+      "raio_interno_mm": 10,
+      "espessura_mm": 4,
+      "lobos": [
+        {
+          "inicio": 10,
+          "pico": 80,
+          "fim": 110,
+          "raio_mm": 20.5,
+          "borda": "rampa",
+          "altura_mm": 4,
+          "metal": true
+        }
+      ]
+    },
+    "metal": true
+  },
+  "cores": {
+    "primaria": "#1d4fb8",
+    "secundaria": "#9ea3a8",
+    "detalhe": "#d8262c"
+  },
+  "acabamento": "metalico",
+  "descricao": "AR de HMS em duas peças: moldura metálica Left Upper com 2 rampas leves + capa ABS Spiral Upper.",
+  "funcao": "Upper moderado na rotação esquerda e smash confiável na direita.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Spiral_Upper",
+    "https://beyblade.fandom.com/wiki/Dranzer_MS"
+  ]
+}

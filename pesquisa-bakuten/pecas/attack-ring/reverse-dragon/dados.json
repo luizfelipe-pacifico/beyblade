@@ -1,0 +1,72 @@
+{
+  "id": "attack-ring/reverse-dragon",
+  "categoria": "attack-ring",
+  "nome": "Reverse Dragon",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "tyson-granger/dragoon-s"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 43,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 2,
+    "stamina": 2,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「リバースドラゴン」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 4,
+    "tipo_contato": "smash",
+    "recoil": 0.5,
+    "sentido_otimo": "esquerda",
+    "raio_contato_mm": 21.5
+  },
+  "forma": {
+    "simetria": 4,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 10,
+        "pico": 18,
+        "fim": 60,
+        "raio_mm": 21.5,
+        "borda": "reta",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#f0f0f0",
+    "secundaria": "#d8262c",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Primeiro AR feito para atacar em rotação esquerda: 4 bordas de ataque; branco com detalhes vermelhos e pretos.",
+  "funcao": "Smash em contra-rotação contra beys de rotação direita.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Reverse_Dragon",
+    "https://beyblade.fandom.com/wiki/Dragoon_S"
+  ]
+}

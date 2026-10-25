@@ -1,0 +1,80 @@
+{
+  "id": "attack-ring/cross-dranzer",
+  "categoria": "attack-ring",
+  "nome": "Cross Dranzer",
+  "nome_jp": "クロスドランザー",
+  "sistema": "magnacore",
+  "usado_em": [
+    "kai-hiwatari/dranzer-v2"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 44,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 2,
+    "defesa": 2,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「クロスドランザー」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 4,
+    "tipo_contato": "upper",
+    "recoil": 0.35,
+    "sentido_otimo": "ambos",
+    "raio_contato_mm": 22
+  },
+  "forma": {
+    "simetria": 2,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 10,
+        "pico": 45,
+        "fim": 70,
+        "raio_mm": 22,
+        "borda": "rampa",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 110,
+        "pico": 135,
+        "fim": 170,
+        "raio_mm": 22,
+        "borda": "rampa",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#2a3f9e",
+    "secundaria": "#d8262c",
+    "detalhe": "#f2c230"
+  },
+  "acabamento": "opaco",
+  "descricao": "Totalmente simétrico, oval, com 2 asas em triângulo retângulo curto e a letra \"V\" entre elas dos dois lados.",
+  "funcao": "Upper leve nas duas rotações (rampas curtas).",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Cross_Dranzer",
+    "https://beyblade.fandom.com/wiki/Dranzer_V2"
+  ]
+}

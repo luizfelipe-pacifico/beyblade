@@ -1,0 +1,117 @@
+{
+  "id": "lancadores/customize-grip-ray",
+  "nome": "Customize Grip (Sky Blue) - versão Ray",
+  "nome_jp": "カスタマイズグリップ",
+  "codigo_produto": [
+    "A-97 Customize Grip (Sky Blue, \"Ray Version\")",
+    "A-43 Customize Grip (Dark Blue, modelo original)",
+    "Peças: A-57/A-58/A-92 Rubber Grip, A-59 Spring Support, A-65/A-96 Metal Trigger, A-79 Metal Grip"
+  ],
+  "tipo": "ripcord",
+  "rotacao": "direita",
+  "sistema": "engine-gear",
+  "anime": true,
+  "usado_por": [
+    {
+      "personagem": "ray-kon",
+      "temporadas": [
+        "g-revolution"
+      ],
+      "beys": [
+        "driger-g"
+      ],
+      "obs": "Wiki (Customize Grip): os quatro protagonistas usam versões coloridas do Customize Grip em G-Revolution; a Takara vendeu as cores de cada um. Wiki (Ray Kon, \"Customized Grip (Ray Special)\"): EZ Shooter branco de rotação direita, winder preto, Customize Grip A-97 Sky Blue e peças A-65 Metal Trigger."
+    }
+  ],
+  "acessorios": [
+    "EZ Shooter direito branco + A-65 Metal Trigger",
+    "Rubber Grip (borracha do cabo)",
+    "Spring Support (mola de alinhamento)",
+    "Metal Trigger (gatilho/anel de metal para o dedo)",
+    "Turbo Winder (nas beys Engine Gear)"
+  ],
+  "ripcord_de_fabrica": "lancadores/ripcords/winder-padrao",
+  "ripcords_compativeis": [
+    "lancadores/ripcords/winder-padrao",
+    "lancadores/ripcords/winder-hasbro",
+    "lancadores/ripcords/dragon-winder",
+    "lancadores/ripcords/neo-dragon-winder",
+    "lancadores/ripcords/ultimate-winder"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "Borracha (Rubber Grip)",
+      "Metal (Metal Trigger, Metal Grip)",
+      "Mola de aço (Spring Support)"
+    ],
+    "obs": "Ponto fraco conhecido: a entrada do winder desgasta com o uso, pior nos lançadores esquerdos (wiki)."
+  },
+  "medidas": {
+    "comprimento_mm": {
+      "valor": 105,
+      "fonte": "estimado"
+    },
+    "largura_mm": {
+      "valor": 55,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 125,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 65,
+      "fonte": "estimado",
+      "obs": "sem Metal Trigger; +15 g com ele"
+    },
+    "curso_corda_mm": {
+      "valor": 145,
+      "fonte": "estimado"
+    }
+  },
+  "atributos": {
+    "forca": 7,
+    "rpm_max": 6750,
+    "precisao": 8,
+    "controle_angulo": 8,
+    "facilidade": 8,
+    "justificativa": "Grip modular: o cabo em pistola + Spring Support deixam a puxada reta (+3%); o Metal Trigger dá peso e ponto de apoio. Com EZ Shooter direito: ~6750 rpm.",
+    "fonte": "estimado"
+  },
+  "mecanica_jogo": {
+    "janela_perfeita_ms": 135,
+    "forca_maxima": 1.03,
+    "desvio_angular_graus": 3,
+    "tempo_puxada_ideal_ms": 260,
+    "inclinacao_max_graus": 35,
+    "bonus_rpm_pct": 3,
+    "assistencia_mira": 0.35,
+    "rotacao_selecionavel": false,
+    "obs": "Grip \"de competição\": melhor equilíbrio entre força e precisão da era plástica."
+  },
+  "forma": {
+    "corpo": "pistola",
+    "grip": true,
+    "tipo_corda": "ripcord",
+    "comprimento_mm": 105,
+    "largura_mm": 55,
+    "gatilho_metal": true,
+    "cores": {
+      "primaria": "#7cc4f0",
+      "secundaria": "#f2f4f7",
+      "detalhe": "#c9a227",
+      "corda": "#1a1a1a"
+    },
+    "obs_cores": "Cor do produto Takara (Sky Blue); detalhes estimados."
+  },
+  "descricao": "Customize Grip na cor Sky Blue, a versão do personagem. Cabo em pistola onde se encaixa o EZ Shooter; aceita Rubber Grip, Spring Support e Metal Trigger (wiki).",
+  "referencias": [],
+  "duvidas": [],
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Customize_Grip",
+    "https://beyblade.fandom.com/wiki/Grip",
+    "https://beyblade.fandom.com/wiki/List_of_Original_Series_products_(Takara)",
+    "https://beyblade.fandom.com/wiki/Ray_Kon"
+  ]
+}

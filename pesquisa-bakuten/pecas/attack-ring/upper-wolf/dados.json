@@ -1,0 +1,80 @@
+{
+  "id": "attack-ring/upper-wolf",
+  "categoria": "attack-ring",
+  "nome": "Upper Wolf",
+  "nome_jp": null,
+  "sistema": "spin-gear",
+  "usado_em": [
+    "tala/wolborg-2"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [],
+    "obs": "4,9 g (molde 1, Takara) / 5,2 g (molde 2, Hasbro reforçado)."
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 45,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 6,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 4.9,
+      "fonte": "wiki"
+    }
+  },
+  "stats_oficiais": {
+    "ataque": 3,
+    "defesa": 1,
+    "stamina": 1,
+    "fonte": "Takara via obakeblader.com (http://obakeblader.com/2020/02/11/post-10640/), Attack Ring 「アッパーウルフ」"
+  },
+  "stats_gba": null,
+  "fisica": {
+    "contatos": 3,
+    "tipo_contato": "smash",
+    "recoil": 0.6,
+    "sentido_otimo": "direita",
+    "raio_contato_mm": 22.5
+  },
+  "forma": {
+    "simetria": 3,
+    "raio_base_mm": 18,
+    "raio_interno_mm": 11,
+    "espessura_mm": 6,
+    "lobos": [
+      {
+        "inicio": 0,
+        "pico": 15,
+        "fim": 30,
+        "raio_mm": 20.5,
+        "borda": "curva",
+        "altura_mm": 6
+      },
+      {
+        "inicio": 40,
+        "pico": 95,
+        "fim": 105,
+        "raio_mm": 22.5,
+        "borda": "rampa",
+        "altura_mm": 6
+      }
+    ],
+    "metal": false
+  },
+  "cores": {
+    "primaria": "#b8bcc4",
+    "secundaria": "#d8262c",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "metalico",
+  "descricao": "3 cabeças de lobo com projeções inclinadas, espaçadas como as do Triple Wing.",
+  "funcao": "Smash fraco e muito recoil (contatos apontados para fora); rampas curtas demais para upper.",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Attack_Ring_-_Upper_Wolf",
+    "https://beyblade.fandom.com/wiki/Wolborg_2"
+  ]
+}

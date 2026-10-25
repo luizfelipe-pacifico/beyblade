@@ -1,0 +1,64 @@
+{
+  "id": "spin-gear/neo-left-sg-mw-core",
+  "categoria": "spin-gear",
+  "nome": "Neo Left SG (MW Core)",
+  "nome_jp": null,
+  "sistema": "magnacore",
+  "usado_em": [
+    "tyson-granger/dragoon-v"
+  ],
+  "material": {
+    "principal": "ABS",
+    "outros": [
+      "cilindro de metal (Metal Weight Core)"
+    ],
+    "obs": ""
+  },
+  "medidas": {
+    "diametro_mm": {
+      "valor": 18,
+      "fonte": "estimado"
+    },
+    "altura_mm": {
+      "valor": 10,
+      "fonte": "estimado"
+    },
+    "peso_g": {
+      "valor": 5,
+      "fonte": "wiki",
+      "obs": "valor da página Core - Metal Weight Core (\"5 g com NEO SG\")"
+    }
+  },
+  "stats_oficiais": null,
+  "stats_oficiais_obs": "Spin Gear: a Takara não dá A/D/S (Magne Power 0).",
+  "stats_gba": null,
+  "fisica": {
+    "rotacao": "esquerda",
+    "gimmick": "metal-weight",
+    "ativacao": {
+      "modo": "nenhum",
+      "obs": ""
+    }
+  },
+  "forma": {
+    "tipo": "spin-gear",
+    "raio_mm": 9,
+    "altura_mm": 10,
+    "dentes": 8,
+    "nucleo": "metal"
+  },
+  "cores": {
+    "primaria": "#1f4fbf",
+    "secundaria": "#b8bcc2",
+    "detalhe": "#1a1a1a"
+  },
+  "acabamento": "opaco",
+  "descricao": "Neo Spin Gear esquerdo com Metal Weight Core. Segundo a wiki, foi o primeiro Metal Weight Core da linha: a ponta da Magne Flat Base do Dragoon V já tem um ímã embutido, então o núcleo não precisava ser magnético.",
+  "funcao": "Peso extra no centro, sem efeito magnético (o ímã do Dragoon V fica na base).",
+  "fontes": [
+    "https://beyblade.fandom.com/wiki/Dragoon_V",
+    "https://beyblade.fandom.com/wiki/Spin_Gear_-_NEO_Left_SG",
+    "https://beyblade.fandom.com/wiki/Core_-_Metal_Weight_Core",
+    "http://wiki.worldbeyblade.org/index.php?title=Dragoon_V"
+  ]
+}
