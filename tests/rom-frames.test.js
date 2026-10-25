@@ -54,3 +54,18 @@ test('decodeFrame expands dictionary rows and literal bytes of a compressed tile
 test('decodeFrame rejects a frame outside the set', () => {
   assert.throws(() => decodeFrame(frameSet({ compressed: true, mask: 0, tiles: [] }), 0, 1), RangeError);
 });
+
+test('bladerPalettes maps map sprites of known bladers to their palette and skips extras', async () => {
+  const { bladerPalettes } = await import('../scripts/lib/rom-sprites.js');
+  const rom = Buffer.alloc(0x200);
+  const record = (at, sprite, blader) => {
+    rom.writeUInt32LE(0x0807db20, at);
+    rom.writeUInt32LE(0x08000000 + sprite, at + 4);
+    rom.writeUInt32LE(blader >>> 0, at + 8);
+  };
+  record(0x00, 0x150, 1);
+  record(0x1c, 0x160, -1);
+  rom.writeUInt32LE(0x08000000 + 0x180, 0x100 + 1 * 4);
+  const palettes = bladerPalettes(rom, { npcTable: 0, paletteList: 0x100, bladers: 2 });
+  assert.deepEqual([...palettes], [[0x150, 0x180]]);
+});

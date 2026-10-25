@@ -66,6 +66,18 @@ export function guessPalettes(rom, sets) {
   return result;
 }
 
+// Bonecos do mapa (ROM 0x0807BE2C, registros de 28 bytes marcados por 0x0807DB20): +4 sprite, +8 índice do blader
+// (-1 = figurante). A paleta do blader vem da lista em 0x080910E8 (55 ponteiros, um por blader).
+export function bladerPalettes(rom, { npcTable = 0x7be2c, npcSize = 0x1c, marker = 0x0807db20, paletteList = 0x910e8, bladers = 55 } = {}) {
+  const result = new Map();
+  for (let at = npcTable; rom.readUInt32LE(at) === marker; at += npcSize) {
+    const blader = rom.readUInt32LE(at + 8);
+    if (blader >= bladers) continue;
+    result.set(rom.readUInt32LE(at + 4) - ROM_BASE, rom.readUInt32LE(paletteList + blader * 4) - ROM_BASE);
+  }
+  return result;
+}
+
 // Folha com todos os quadros lado a lado. Sem paleta, usa tons de cinza pelo índice da cor.
 export function renderSheet(rom, offset, header, paletteOffset) {
   const { width: fw, height: fh, frameCount, bpp } = header;

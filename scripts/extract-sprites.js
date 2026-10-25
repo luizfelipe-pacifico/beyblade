@@ -1,11 +1,11 @@
 // Extrai todos os sprites (conjuntos de quadros) da ROM para PNG: node scripts/extract-sprites.js <rom.gba> [pasta-saida]
-// Beys usam a paleta do próprio registro; os outros conjuntos usam a paleta que aparece logo depois do
-// ponteiro do sprite nos scripts do jogo (heurística, ver docs/REVERSE_ENGINEERING.md) ou tons de cinza.
+// Paleta, em ordem: a do registro da bey; a do blader (bonecos do mapa); a que aparece logo depois do ponteiro
+// do sprite nos scripts do jogo (heurística, ver docs/REVERSE_ENGINEERING.md); senão, tons de cinza.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { BB2E, extractCatalog, gameCode } from './lib/rom.js';
-import { findFrameSets, guessPalettes, renderSheet } from './lib/rom-sprites.js';
+import { bladerPalettes, findFrameSets, guessPalettes, renderSheet } from './lib/rom-sprites.js';
 import { encodePng } from './lib/gba-gfx.js';
 
 const [romPath, outDir = 'assets-rom/sprites'] = process.argv.slice(2);
@@ -25,6 +25,7 @@ const slug = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^
 const catalog = extractCatalog(rom);
 const sets = findFrameSets(rom);
 const palettes = guessPalettes(rom, sets);
+const bladers = bladerPalettes(rom);
 const beyBySet = new Map(catalog.beyblades.map((b) => [b.graphics - 0x08000000, b]));
 
 mkdirSync(join(outDir, 'beys'), { recursive: true });
@@ -32,7 +33,8 @@ mkdirSync(join(outDir, 'other'), { recursive: true });
 const index = [];
 for (const { offset, header } of sets) {
   const bey = beyBySet.get(offset);
-  const palette = bey ? bey.palette - 0x08000000 : palettes.get(offset) ?? null;
+  const source = bey ? 'bey' : bladers.has(offset) ? 'blader' : palettes.has(offset) ? 'guessed' : 'none';
+  const palette = { bey: bey && bey.palette - 0x08000000, blader: bladers.get(offset), guessed: palettes.get(offset), none: null }[source];
   const file = bey
     ? join('beys', `${String(bey.index).padStart(2, '0')}-${slug(bey.names.en)}.png`)
     : join('other', `${offset.toString(16)}-${header.width}x${header.height}.png`);
@@ -47,9 +49,9 @@ for (const { offset, header } of sets) {
     bpp: header.bpp,
     compressed: header.compressed,
     palette: palette === null ? null : `0x${(palette + 0x08000000).toString(16)}`,
-    paletteSource: bey ? 'bey' : palette === null ? 'none' : 'guessed',
+    paletteSource: source,
   });
 }
 writeFileSync(join(outDir, 'sprites.json'), `${JSON.stringify(index, null, 2)}\n`);
-const guessed = index.filter((s) => s.paletteSource === 'guessed').length;
-console.log(`${index.length} conjuntos em ${outDir} (${beyBySet.size} beys, ${guessed} com paleta deduzida, ${index.length - beyBySet.size - guessed} em cinza)`);
+const count = (src) => index.filter((s) => s.paletteSource === src).length;
+console.log(`${index.length} conjuntos em ${outDir}: ${count('bey')} beys, ${count('blader')} bladers, ${count('guessed')} com paleta deduzida, ${count('none')} em cinza`);
