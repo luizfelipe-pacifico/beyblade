@@ -12,11 +12,12 @@ export const BB2E = {
   bitBeasts: { offset: 0x796dc, count: 0x47, size: 0x28 },
   beyblades: { offset: 0x7a1f4, count: 83, size: 0x28 },
   // Tabelas de idioma: 5 ponteiros (um por idioma) para arrays de ponteiros de nome.
+  // statsOffset: attack/defense/endurance (u8 cada) + 1 byte zero por peça, logo após a tabela de idiomas.
   parts: {
     spinGears: { offset: 0x7b0c4, count: 22 },
-    attackRings: { offset: 0x7b6dc, count: 77 },
-    bladeBases: { offset: 0x7bb6c, count: 42 },
-    weightDisks: { offset: 0x7bda4, count: 19 },
+    attackRings: { offset: 0x7b6dc, count: 77, statsOffset: 0x7b6f0 },
+    bladeBases: { offset: 0x7bb6c, count: 42, statsOffset: 0x7bb80 },
+    weightDisks: { offset: 0x7bda4, count: 19, statsOffset: 0x7bdb8 },
   },
 };
 
@@ -45,7 +46,7 @@ function readNames(rom, offset) {
   return names;
 }
 
-export function readPartNames(rom, { offset, count }) {
+export function readPartNames(rom, { offset, count, statsOffset }) {
   const arrays = LANGS.map((_, i) => toOffset(rom, rom.readUInt32LE(offset + i * 4)));
   const parts = [];
   for (let index = 0; index < count; index++) {
@@ -53,7 +54,12 @@ export function readPartNames(rom, { offset, count }) {
     LANGS.forEach((lang, i) => {
       names[lang] = readCString(rom, rom.readUInt32LE(arrays[i] + index * 4));
     });
-    parts.push({ index, names });
+    const part = { index, names };
+    if (statsOffset !== undefined) {
+      const at = statsOffset + index * 4;
+      part.stats = { attack: rom[at], defense: rom[at + 1], endurance: rom[at + 2] };
+    }
+    parts.push(part);
   }
   return parts;
 }
@@ -81,7 +87,8 @@ export function readBeyblades(rom, { offset, count, size }) {
       attackRing: rom[base + 0x1d],
       weightDisk: rom[base + 0x1e],
       spinGear: core & 0x1f,
-      // Bits altos do byte do núcleo: significado ainda desconhecido (não é o sentido de rotação).
+      // O jogo só testa o bit 0x40 para mostrar "Left spin"; o resto cai em "Right spin".
+      spin: core & 0x40 ? 'left' : 'right',
       spinGearFlags: core & 0xe0,
       bladeBase: rom[base + 0x20],
       bitBeast: rom[base + 0x21],
