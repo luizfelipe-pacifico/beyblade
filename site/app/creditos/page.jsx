@@ -8,7 +8,7 @@ export default function Creditos() {
   return (
     <DocPage
       title="Créditos"
-      intro="Os frames do anime usados nesta página, com o episódio e a origem de cada um. Fontes: Dela Gothic One e Barlow (SIL Open Font License). Ícones: Lucide (ISC)."
+      intro="Origens das imagens e ilustrações desta página. Fontes: Dela Gothic One e Barlow (SIL Open Font License). Ícones: Lucide (ISC)."
     >
       <p>
         Os frames do anime <em>Beyblade</em> (<em>Bakuten Shoot Beyblade</em>, Nelvana / d-rights /
@@ -16,7 +16,7 @@ export default function Creditos() {
         fins lucrativos. As imagens foram redimensionadas e convertidas para WebP.
       </p>
       <p>
-        A Dragoon S da abertura e a animação Dragoon × Dranzer são ilustrações vetoriais próprias, geradas a partir
+        Dragoon S, Dranzer S, Driger S e Draciel S são ilustrações vetoriais próprias, geradas a partir
         do catálogo de peças do projeto. O movimento na arena é ilustrativo, não uma captura do jogo. Os vetores
         preservam a nitidez em qualquer tamanho; a demonstração usa WebP animado de 768 × 432 pixels, com 48 quadros.
       </p>

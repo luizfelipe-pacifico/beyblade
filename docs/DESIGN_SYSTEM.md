@@ -53,6 +53,10 @@ As demonstrações de batalha usam WebP animado gerado dos mesmos SVGs: mais cor
 
 ## Qualidade e manutenção
 
+A landing usa um limite de leitura e composição de 1440px, preservando fundos de ponta a ponta. No celular, a beyblade aparece entre o título e a descrição; a disponibilidade fica junto do botão de download. O menu móvel usa `details` nativo, fecha com Escape e devolve o foco ao acionador.
+
+Seleção de personagens combina retrato e vetor da bey, com atributos de referência e especiais identificados como planejados. Etapas da partida e dispositivos do guia de comandos usam abas com setas, Home/End e um único ponto de entrada pelo Tab; trocar de opção não dispara animações. Os comandos refletem `CONTROLLERS.md`. O roadmap mantém a etapa atual visível e agrupa o restante em um expansível nativo. O download mantém o endereço definido em D-016 e explica a dependência da primeira release.
+
 Texto normal ≥4,5:1; texto grande ≥3:1. Foco amarelo visível, alvos de toque ≥44px, imagens com dimensões e descrição. Cores não são a única forma de indicar estado. Os tokens do jogo e da landing têm testes de sincronização, fontes e contraste.
 
 A galeria do jogo está em `app/design-system/page.js`; seus componentes vivem em `src/components/game/` e `src/components/ui/`. A landing é um app estático independente em `site/`; seu build não depende de Docker, Prisma ou do banco.

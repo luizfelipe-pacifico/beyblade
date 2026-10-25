@@ -41,6 +41,10 @@ Entradas na rolagem usam IntersectionObserver e keyframes CSS, uma vez por bloco
 
 ### Hero e ilustrações animadas
 
+No celular, a ilustração aparece logo após o título, antes da descrição. O menu nativo permite saltar às seções e fecha com Escape ou ao sair com Tab. Personagens exibem retrato e vetor da beyblade; as quatro artes estão em `public/beyblades/`.
+
+O fluxo da partida usa abas operáveis por setas e Home/End. O guia de comandos alterna entre DualShock 4 e teclado, seguindo `../docs/CONTROLLERS.md`. São prévias de funcionalidades planejadas. O roadmap mostra a etapa atual e expande as seguintes; a área de download explica que o instalador depende da primeira release. Créditos, termos e privacidade compartilham navegação e link para pular ao conteúdo.
+
 A hero mostra a Dragoon S em SVG, preservando resolução em telas grandes. `HeroBey.jsx` liga três voltas da bey ao progresso da rolagem da hero, com eventos passivos e no máximo uma atualização por frame. A rolagem não é presa; sem rolar, não há um loop de animação. Fora da tela, com a aba oculta ou com movimento reduzido, o efeito não processa frames.
 
 `BattleLoop.jsx` mostra uma ilustração de Dragoon S × Dranzer S em WebP animado (768 × 432, 48 quadros, cerca de 568 KB), com botão de pausa e poster estático. A animação só carrega quando entra na tela e o visitante permite movimento. Ela aparece na seção de controles e na etapa Batalha. É uma ilustração do conceito, não uma captura de gameplay.
