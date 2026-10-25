@@ -11,6 +11,8 @@ export const BB2E = {
   // Feras bit (0x00..0x26) e pares fera + especial (0x27..0x46): 5 nomes + 5 nomes de especial.
   bitBeasts: { offset: 0x796dc, count: 0x47, size: 0x28 },
   beyblades: { offset: 0x7a1f4, count: 83, size: 0x28 },
+  // Estádios: trios de ponteiros (chão, sombreado da tigela, paleta). Ver scripts/lib/rom-bg.js.
+  stadiums: { offset: 0x7800c, count: 6 },
   // Tabelas de idioma: 5 ponteiros (um por idioma) para arrays de ponteiros de nome.
   // statsOffset: attack/defense/endurance (u8 cada) + 1 byte zero por peça, logo após a tabela de idiomas.
   parts: {

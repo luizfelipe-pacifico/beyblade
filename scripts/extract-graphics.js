@@ -1,4 +1,5 @@
-// Extrai todos os sprites (conjuntos de quadros) da ROM para PNG: node scripts/extract-sprites.js <rom.gba> [pasta-saida]
+// Extrai os gráficos da ROM para PNG: node scripts/extract-graphics.js <rom.gba> [pasta-saida]
+// Sprites (conjuntos de quadros) vão para sprites/ e os estádios para stadiums/.
 // Paleta, em ordem: a do registro da bey; a do blader (bonecos do mapa); a que aparece logo depois do ponteiro
 // do sprite nos scripts do jogo (heurística, ver docs/REVERSE_ENGINEERING.md); senão, tons de cinza.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
@@ -7,10 +8,12 @@ import { join } from 'node:path';
 import { BB2E, extractCatalog, gameCode } from './lib/rom.js';
 import { bladerPalettes, findFrameSets, guessPalettes, renderSheet } from './lib/rom-sprites.js';
 import { encodePng } from './lib/gba-gfx.js';
+import { lz77Decompress, readStadiums, renderAffineBg } from './lib/rom-bg.js';
 
-const [romPath, outDir = 'assets-rom/sprites'] = process.argv.slice(2);
+const [romPath, baseDir = 'assets-rom'] = process.argv.slice(2);
+const outDir = join(baseDir, 'sprites');
 if (!romPath) {
-  console.error('uso: node scripts/extract-sprites.js <rom.gba> [pasta-saida]');
+  console.error('uso: node scripts/extract-graphics.js <rom.gba> [pasta-saida]');
   process.exit(1);
 }
 
@@ -55,3 +58,13 @@ for (const { offset, header } of sets) {
 writeFileSync(join(outDir, 'sprites.json'), `${JSON.stringify(index, null, 2)}\n`);
 const count = (src) => index.filter((s) => s.paletteSource === src).length;
 console.log(`${index.length} conjuntos em ${outDir}: ${count('bey')} beys, ${count('blader')} bladers, ${count('guessed')} com paleta deduzida, ${count('none')} em cinza`);
+
+const stadiumDir = join(baseDir, 'stadiums');
+mkdirSync(stadiumDir, { recursive: true });
+for (const stadium of readStadiums(rom, BB2E.stadiums)) {
+  for (const layer of ['floor', 'bowl']) {
+    const { width, height, rgba } = renderAffineBg(lz77Decompress(rom, stadium[layer]), rom, stadium.palette);
+    writeFileSync(join(stadiumDir, `${stadium.index}-${layer}.png`), encodePng(width, height, rgba));
+  }
+}
+console.log(`${BB2E.stadiums.count} estádios em ${stadiumDir}`);

@@ -26,10 +26,10 @@ O script confere o código e o SHA-1 da ROM, lê as tabelas abaixo (`scripts/lib
 ### Sprites
 
 ```
-node scripts/extract-sprites.js "<caminho>/Beyblade G-Revolution (USA).gba"
+node scripts/extract-graphics.js "<caminho>/Beyblade G-Revolution (USA).gba"
 ```
 
-Extrai direto da ROM os **328 conjuntos de quadros** (beys, bladers, interface, fontes, efeitos) para `assets-rom/sprites/` (fora do git): uma folha PNG por conjunto, com os quadros lado a lado, e `sprites.json` com endereço, tamanho, nº de quadros e paleta. As 83 beys vão para `beys/` com a paleta do próprio registro (3 quadros de 32×32: dois girando, com borrão de movimento, e um parado).
+Extrai direto da ROM os **328 conjuntos de quadros** e os **6 estádios** (ver [Estádios e fundos](#estádios-e-fundos)) (beys, bladers, interface, fontes, efeitos) para `assets-rom/sprites/` (fora do git): uma folha PNG por conjunto, com os quadros lado a lado, e `sprites.json` com endereço, tamanho, nº de quadros e paleta. As 83 beys vão para `beys/` com a paleta do próprio registro (3 quadros de 32×32: dois girando, com borrão de movimento, e um parado).
 
 **Formato** (reimplementação de `copyFrameToVramARM`, ROM `0x083D36F4`, rotina ARM copiada para a IWRAM no boot pelo ponteiro em `0x08000258`; código em `scripts/lib/rom-frames.js`):
 
@@ -49,6 +49,23 @@ Cada quadro começa com uma **máscara de 32 bits** lida a partir do bit 0: sequ
 **Paletas:** beys pelo ponteiro `0x18` do registro (os 16 primeiros valores BGR555). Para os outros conjuntos, a paleta é **deduzida**: nos scripts de cena (`0x090000`–`0x0BFFFF`) o ponteiro do sprite costuma vir seguido do ponteiro da paleta; o extrator escolhe o mais frequente e confere se são 16 cores BGR555 válidas. Assim saíram 90 conjuntos.
 
 **Bladers no mapa:** a tabela de bonecos em `0x0807BE2C` (registros de 28 bytes marcados pela palavra `0x0807DB20`: `+4` sprite 16×32 de 15 quadros, `+8` índice do blader, `-1` = figurante) e a lista de paletas por blader em `0x080910E8` (55 ponteiros, blocos de `0x200` a partir de `0x0826E520`) coloriram 14 bladers (Louis, Chris, Ray, Max…). Os 141 conjuntos restantes (figurantes, Tyson e parte da interface) saem em tons de cinza.
+
+### Estádios e fundos
+
+Os fundos são blocos **LZ77 da BIOS** (cabeçalho `0x10` + tamanho; 214 blocos válidos na ROM) com um contêiner dentro (`scripts/lib/rom-bg.js`):
+
+| Offset | Tipo | Campo |
+| --- | --- | --- |
+| `0x04` | u32 | Offset dos tiles (sempre `0x20`) |
+| `0x08` | u32 | Tamanho dos tiles |
+| `0x0c` | u32 | Offset do mapa |
+| `0x10` | u32 | Tamanho do mapa |
+| `0x18` | u32 | Flags (`1` nos fundos affine; outros valores ainda sem significado) |
+| `0x1c` | u16 + u16 | Largura e altura em tiles |
+
+**Estádios** (`0x0807800C`, 6 trios de ponteiros): chão, sombreado da tigela e paleta de 256 cores (512 bytes). Os dois fundos são **affine** (o hardware gira e aproxima): 64×64 tiles de 8bpp, mapa de 1 byte por tile, 512×512 px. O chão tem as marcações do estádio; a camada "tigela" é um gradiente concêntrico, provavelmente o sombreado da inclinação (as cores dela saem estranhas com a paleta do chão, então a paleta certa ou o uso dela ainda não foi confirmado). Saída em `assets-rom/stadiums/<n>-floor.png` e `<n>-bowl.png`.
+
+**Outros fundos** (cidades de 150×80 e 222×80 tiles, menus, retratos): mesmo contêiner, mas o mapa é menor que `largura × altura × 2`, ou seja, também é comprimido de algum jeito próprio. Ainda não decodificado; para o jogo de luta só os estádios e, talvez, os menus importam.
 
 ### Sprites pelo emulador (alternativa)
 
@@ -158,7 +175,7 @@ O lançador e a corda **não somam stats** à bey. O efeito encontrado é o desg
 - Significado de `+2` do blader, do byte `0x1c` da bey e da faixa de `0x0803EBD8`.
 - Efeito do Spin Gear / Engine Gear na batalha (`"do an ENGINE GEAR of %d"` em `0x0833C5C8`) e do especial da fera bit (`"start bit beast from select : power %d"`).
 - Os números das tabelas de IA (abaixo). O cálculo local de dano foi identificado em `0x0802FFAC` / `0x080300D4` (seção abaixo); ainda falta mapear todos os estados que permitem ou impedem chamar essa rotina, os efeitos posteriores e os caminhos próprios de especiais/Engine Gear.
-- Gráficos: paleta dos 141 conjuntos de sprites ainda em cinza (figurantes, Tyson e parte da interface) e os backgrounds (arenas, telas).
+- Gráficos: paleta dos 141 conjuntos de sprites ainda em cinza (figurantes, Tyson e parte da interface), a paleta da camada "tigela" dos estádios e a compressão do mapa dos outros fundos (cidades, menus).
 - Áudio.
 
 ### Dano e defesa: avanço de 2026-10-25
