@@ -67,6 +67,16 @@ Os fundos são blocos **LZ77 da BIOS** (cabeçalho `0x10` + tamanho; 214 blocos 
 
 **Outros fundos** (cidades de 150×80 e 222×80 tiles, menus, retratos): mesmo contêiner, mas o mapa é menor que `largura × altura × 2`, ou seja, também é comprimido de algum jeito próprio. Ainda não decodificado; para o jogo de luta só os estádios e, talvez, os menus importam.
 
+### Controles e regras pelos textos do jogo
+
+As dicas do próprio jogo (`TIP: ...`, `0x08382924`–`0x08383676`, nos 5 idiomas) definem os comandos da batalha: **A** ataca (segurar carrega), **B** defende (segurar carrega), **L** pula, **R** esquiva, **L+R** segurados soltam a fera bit, **A+B** segurados ativam o Engine Gear e, depois de um "HIT!", ↑↓A / ←→A / →←A fazem combo forte, médio e fraco. Finais: "Ring out" e "Spin down" (`0x083836BC`, `0x083836EC`). Lançamento: "Premature launch" (`0x083A49D4`). Lançadores e ripcords quebram ("Your launcher has broken!", `0x083A3E18`). A tabela completa, com a proposta para o DualShock 4, está em [`GAME_FLOW.md`](GAME_FLOW.md#controles-da-batalha-rom-e-proposta-para-o-dualshock-4).
+
+### Quadros dos personagens principais
+
+Os sprites 16×32 dos personagens principais têm **29 quadros** (os figurantes têm 15): andando de lado (≈0–7), de costas (8), de frente parado e andando (≈9–16), poses de lançamento (≈17–21), de costas andando (≈22–25) e de frente andando (≈26–28). A divisão exata ainda precisa ser confirmada pelas tabelas de animação; serve para a entrada na arena e o lançamento (D-023).
+
+Inconsistência a investigar: o boneco com índice de blader `12` (sprite `0x08306910`) é visualmente o Kai, mas o nome 12 da lista de bladers é "Ray"; e o conjunto `0x083147C8` (29 quadros, provável Tyson) sai com a paleta deduzida errada.
+
 ### Sprites pelo emulador (alternativa)
 
 Para backgrounds, sprites affine ou para conferir algo na tela: no mGBA, **Tools > Scripting > File > Load script** com `scripts/mgba/dump-vram.lua` e jogue. A cada 30 frames, se os sprites mudaram, ele grava VRAM, paletas, OAM, registradores de vídeo e screenshot em `assets-rom/mgba/`. Depois, `node scripts/render-vram.js` grava um PNG por sprite distinto em `assets-rom/sprites-vram/` (decodificação em `scripts/lib/gba-gfx.js`).

@@ -1,12 +1,12 @@
 # Beyblade Arena
 
-Jogo de Beyblade local para dois jogadores com controles (Gamepad API) e teclado. O servidor Express serve o frontend e uma API JSON que grava configurações e partidas em SQLite.
+Jogo de Beyblade local para dois jogadores com controles (Gamepad API) e teclado, empacotado como `.exe` (Electron + Next.js). Uma API JSON local grava configurações e partidas via Prisma: PostgreSQL no Docker durante o desenvolvimento e SQLite no `.exe` (D-014).
 
 ## Contexto: sempre reler os docs
 
 - **No início de toda tarefa**, releia `docs/DECISIONS.md` e os docs relacionados ao que vai mexer (ex.: input → `docs/CONTROLLERS.md`). Em tarefas longas, releia de novo antes de decisões importantes. Os docs são a memória do projeto entre sessões.
 - **Decisões já registradas valem.** Não contradiga uma decisão de `docs/DECISIONS.md` sem perguntar; se ela mudar, registre uma nova entrada que substitua a anterior.
-- Decisões atuais que mais afetam o código: o jogo é feito para **dois controles DualShock 4 (PS4)**, com teclado como fallback (D-001); testes rodam automaticamente antes de todo push (D-003).
+- Decisões atuais que mais afetam o código: o jogo é feito para **dois controles DualShock 4 (PS4)**, com teclado como fallback (D-001); testes rodam automaticamente antes de todo push (D-003); Electron + Next.js (D-004); simulação separada do render para virar 3D depois (D-006); Prisma (D-011) com PostgreSQL no Docker só no desenvolvimento (D-012) e SQLite no `.exe` (D-014).
 
 ## Documentação contínua
 
@@ -16,27 +16,33 @@ Jogo de Beyblade local para dois jogadores com controles (Gamepad API) e teclado
 
 ## Stack
 
-- Node.js **>= 22.13**, ES Modules (`"type": "module"`)
-- Express **5**
-- SQLite nativo via `node:sqlite` (`DatabaseSync`), sem ORM
-- Frontend estático em `public/`, servido por `express.static`
+- Node.js **>= 24.11**, ES Modules (`"type": "module"`)
+- Electron **45** + Next.js **16** / React **19** (D-004); a arquitetura alvo está em `docs/ARCHITECTURE.md`
+- PostgreSQL **18** em Docker (`docker-compose.yml`, `127.0.0.1:5434`), **só para desenvolvimento e testes em localhost** (D-012)
+- SQLite no `.exe` empacotado, em `app.getPath('userData')` (D-014); `src/db.js` usa só recursos comuns aos dois bancos
+- Prisma ORM **7** com `@prisma/adapter-pg`; client gerado em `src/generated/prisma/` (D-011)
+- Express **5** em `server.js`: transitório, sai quando a API for para route handlers do Next (D-013, proposta)
 
 ## Comandos
 
 - `npm run dev`: servidor com `node --watch` (recarrega ao salvar)
 - `npm start`: servidor normal
 - `npm test`: roda todos os testes (`node --test`, arquivos `tests/*.test.js`)
+- `npm run db:up` / `db:down`: sobe/para o PostgreSQL no Docker (precisa do Docker Desktop e do `.env`, copiado de `.env.example`)
+- `npm run db:migrate -- --name <nome>`: nova migração (dev); `npm run db:deploy`: aplica migrações pendentes; `npm run db:studio`: Prisma Studio
 - Acesse em `http://localhost:5000`
 
 ## Estrutura
 
 - `server.js`: rotas da API, handler de erro e inicialização na porta 5000
-- `src/db.js`: conexão SQLite, schema e queries
+- `src/db.js`: Prisma Client e as queries
+- `prisma/schema.prisma` + `prisma/migrations/`: schema e migrações versionadas; `prisma7.config.ts`: configuração do Prisma
+- `docker-compose.yml`: PostgreSQL; `.env` (fora do git) com credenciais e `DATABASE_URL`
 - `src/validate.js`: validação de tudo que chega pela API (`parse*` retorna `{ value }` ou `{ error }`)
 - `public/`: frontend do jogo
 - `tests/`: testes (`*.test.js`), incluindo os de regressão
 - `.githooks/pre-push`: roda `npm test` antes de todo push (ativado por `core.hooksPath`)
-- `data/`: banco `beyblade.db` (gerado em runtime, **nunca versionar**)
+- `src/generated/prisma/`: client gerado pelo `prisma generate` (**nunca versionar**)
 - `pesquisa-bakuten/`: material de referência (imagens de terceiros); não usar no jogo sem verificar a licença
 - `docs/`: documentação; veja a seção Documentação
 
@@ -58,10 +64,10 @@ Jogo de Beyblade local para dois jogadores com controles (Gamepad API) e teclado
 ## Regras de código
 
 - ES Modules e prefixo `node:` nos módulos nativos (`node:fs`, `node:path`).
-- Prefira recursos nativos do Node (`node:sqlite`, `node:test`, `--watch`, `--env-file`) a dependências novas; justifique qualquer dependência adicionada.
+- Prefira recursos nativos do Node (`node:test`, `--watch`, `process.loadEnvFile`) a dependências novas; justifique qualquer dependência adicionada em `docs/SECURITY.md`.
 - Valide toda entrada da API em `src/validate.js` (allowlist) antes de usar ou gravar. Erros no formato `{ "error": "mensagem" }`, com o status HTTP correto.
-- SQL **somente** com prepared statements e parâmetros; nunca concatene valores. Várias escritas relacionadas vão em uma transação.
-- Mudanças de schema via migração versionada (`PRAGMA user_version`); nunca edite uma migração já aplicada.
+- Banco **só pelo Prisma Client**; SQL manual só com `prisma.$queryRaw` em template literal (parametrizado), **nunca** `$queryRawUnsafe` nem concatenação. Várias escritas relacionadas vão em uma transação (`create` aninhado ou `$transaction`).
+- Mudanças de schema via `prisma migrate dev` (migração versionada em `prisma/migrations/`); nunca edite uma migração já aplicada.
 - Texto vindo do usuário (nomes de jogadores etc.) entra no DOM via `textContent`, nunca `innerHTML`.
 - Game loop com `requestAnimationFrame` + timestep fixo; lógica de simulação separada da renderização.
 - Gamepad: controle de referência é o DualShock 4 (mapeamento em `docs/CONTROLLERS.md`); chame `navigator.getGamepads()` a cada tick (não guarde o objeto), trate slots `null`, aplique deadzone e mantenha o teclado como fallback.
@@ -78,11 +84,11 @@ Jogo de Beyblade local para dois jogadores com controles (Gamepad API) e teclado
 - Toda funcionalidade nova com lógica (validação, pontuação, física, input) vem com testes.
 - **Antes de todo push, os testes rodam automaticamente** pelo hook `.githooks/pre-push`. Se falhar, corrija antes de subir. **Nunca use `git push --no-verify`.**
 - Se o hook não estiver ativo (`git config core.hooksPath` vazio), rode `npm install` ou `git config core.hooksPath .githooks`.
-- Testes com `node:test` + `node:assert/strict`; banco em memória (`:memory:`), nunca `data/`; lógica do jogo testável sem DOM.
+- Testes com `node:test` + `node:assert/strict`; a suíte padrão não depende do banco (nem do Docker); teste de integração usa um banco próprio (`beyblade_test`), nunca o de desenvolvimento; lógica do jogo testável sem DOM.
 
 ## Verificação
 
-- Antes de dar uma tarefa por concluída: `npm test` verde e o app testado de verdade em `http://localhost:5000` (com DualShock 4 e/ou teclado).
+- Antes de dar uma tarefa por concluída: `npm test` verde e o app testado de verdade em `http://localhost:5000` (com DualShock 4 e/ou teclado), com o banco no ar (`npm run db:up`).
 
 ## Documentação
 
@@ -91,7 +97,9 @@ Atualize no mesmo commit da mudança (e crie novos arquivos quando surgir um ass
 - `docs/DECISIONS.md`: registro de decisões (ler sempre primeiro)
 - `docs/CONTROLLERS.md`: DualShock 4, mapeamentos, Gamepad API
 - `docs/ARCHITECTURE.md`: estrutura, módulos, fluxo de dados
-- `docs/DATABASE.md`: schema, migrações, PRAGMAs
+- `docs/DATABASE.md`: schema, migrações, operação do PostgreSQL no Docker
 - `docs/SECURITY.md`: validação, exposição de rede, dependências
 - `docs/ROADMAP.md`: funcionalidades concluídas ou planejadas
 - `docs/BEST_PRACTICES.md`: guia completo de boas práticas (leia antes de tarefas maiores)
+- `docs/REVERSE_ENGINEERING.md`: ROM de GBA de referência, descobertas e extração de dados/assets
+- `docs/GAME_FLOW.md`: telas da partida (personagem, bey, P2/CPU, arena, entrada, lançamento, batalha) e controles da batalha

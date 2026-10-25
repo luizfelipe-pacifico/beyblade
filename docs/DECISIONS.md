@@ -15,6 +15,20 @@ Formato:
 
 ---
 
+## D-023: fluxo de partida estilo Street Fighter, entrada do 2º jogador e entrada na arena
+
+- Data: 2026-10-25
+- Status: Aceita (detalha a D-005; os modos dela continuam valendo)
+- Contexto: o usuário detalhou como a partida começa: tela com todos os personagens, escolha da bey do personagem, entrada do 2º jogador pelo Start, escolha da arena e a animação dos personagens andando até a arena, como no jogo de GBA. A jogabilidade (beys, lançadores, ripcords) vem do jogo de GBA.
+- Decisão:
+  - **Seleção de personagem** com todos os personagens disponíveis e uma opção **Aleatório** junto com eles;
+  - depois do personagem, **seleção da beyblade daquele personagem**;
+  - **2º jogador:** se alguém apertar **Options (Start)** num segundo controle durante a seleção (ou a tecla de Start do P2 no teclado, D-015), abre o cursor do **Player 2**. Se ninguém apertar, a mesma pessoa escolhe em seguida o personagem (e a bey) da **CPU**;
+  - depois dos personagens, **seleção da arena** (estádio);
+  - antes da batalha, **animação de entrada**: os personagens escolhidos andam até a arena; em seguida vêm o lançamento e a batalha;
+  - **jogabilidade com dados do jogo de GBA** (D-007): beys e peças com seus stats, lançadores e ripcords, controles e regras de batalha confirmados na ROM. Detalhes em [`GAME_FLOW.md`](GAME_FLOW.md).
+- Consequências: a máquina de estados das telas ([`ARCHITECTURE.md`](ARCHITECTURE.md#5-modelo-de-entidades-ecs-leve)) ganha `stageSelect` e `walkIn` entre `beySelect` e `launch`, e a seleção precisa tratar a entrada do P2 a qualquer momento antes de confirmar. Pontos ainda em aberto estão listados no `GAME_FLOW.md`.
+
 ## D-022: direção visual "Abertura do Anime" e shadcn/ui no jogo
 
 - Data: 2026-10-25
