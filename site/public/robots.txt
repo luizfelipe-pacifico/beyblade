@@ -1,0 +1,6 @@
+# A página não deve aparecer em buscadores (D-016).
+# O bloqueio é feito pelo meta robots e pelo cabeçalho X-Robots-Tag "noindex".
+# Não usamos "Disallow" aqui de propósito: um robô bloqueado não lê a página e,
+# portanto, não vê o noindex, e a URL ainda pode ser listada se alguém linkar para ela.
+User-agent: *
+Allow: /

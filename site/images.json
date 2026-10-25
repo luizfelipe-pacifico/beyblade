@@ -1,0 +1,91 @@
+{
+  "_comment": "Imagens da landing (D-016). Fonte: Beyblade Wiki (fandom). Frames do anime Beyblade (Nelvana / d-rights / Takara Tomy), usados em projeto de fã sem fins lucrativos. Gere os WebP com `npm run images`.",
+  "widths": [
+    640,
+    1280,
+    1920
+  ],
+  "og": "ray-lancamento",
+  "images": [
+    {
+      "id": "ray-lancamento",
+      "alt": "Ray Kon lança a Driger V2 na chuva, com um rastro verde de energia",
+      "title": "S03E03 - Invitation to Battle - Ray launched Driger V2",
+      "episode": "G-Revolution, episódio 3",
+      "url": "https://static.wikia.nocookie.net/beyblade/images/2/28/S03E03_-_Invitation_to_Battle_-_Ray_launched_Driger_V2.jpeg/revision/latest",
+      "page": "https://beyblade.fandom.com/wiki/File:S03E03_-_Invitation_to_Battle_-_Ray_launched_Driger_V2.jpeg"
+    },
+    {
+      "id": "tyson-lancador",
+      "alt": "Mãos de Tyson puxando a cordinha do lançador da Dragoon G",
+      "title": "S03E17 - Same Old Dirty Tricks - Tyson Granger 01 and Dragoon G",
+      "episode": "G-Revolution, episódio 17",
+      "url": "https://static.wikia.nocookie.net/beyblade/images/c/c8/S03E17_-_Same_Old_Dirty_Tricks_-_Tyson_Granger_01_and_Dragoon_G.jpeg/revision/latest",
+      "page": "https://beyblade.fandom.com/wiki/File:S03E17_-_Same_Old_Dirty_Tricks_-_Tyson_Granger_01_and_Dragoon_G.jpeg"
+    },
+    {
+      "id": "dragoon-bit-chip",
+      "alt": "Bit chip do Dragoon: o dragão enrolado no centro da beyblade",
+      "title": "S03E01 - New Kid in Town- Strata Dragoon Anime Cover",
+      "episode": "G-Revolution, episódio 1",
+      "url": "https://static.wikia.nocookie.net/beyblade/images/8/8e/S03E01_-_New_Kid_in_Town-_Strata_Dragoon_Anime_Cover.jpeg/revision/latest",
+      "page": "https://beyblade.fandom.com/wiki/File:S03E01_-_New_Kid_in_Town-_Strata_Dragoon_Anime_Cover.jpeg"
+    },
+    {
+      "id": "max-lancamento",
+      "alt": "Max Tate salta e lança a Draciel no estádio",
+      "title": "S01E05 - Draciel of Approval - Max throwing",
+      "episode": "Temporada 1, episódio 5",
+      "url": "https://static.wikia.nocookie.net/beyblade/images/1/1b/S01E05_-_Draciel_of_Approval_-_Max_throwing.png/revision/latest",
+      "page": "https://beyblade.fandom.com/wiki/File:S01E05_-_Draciel_of_Approval_-_Max_throwing.png"
+    },
+    {
+      "id": "tyson",
+      "alt": "Tyson Granger grita no estádio, de boné e jaqueta vermelha",
+      "title": "S03E05 - A League of His Own-142303 - Tyson Granger",
+      "episode": "G-Revolution, episódio 5",
+      "url": "https://static.wikia.nocookie.net/beyblade/images/c/c8/S03E05_-_A_League_of_His_Own-142303_-_Tyson_Granger.jpg/revision/latest",
+      "page": "https://beyblade.fandom.com/wiki/File:S03E05_-_A_League_of_His_Own-142303_-_Tyson_Granger.jpg"
+    },
+    {
+      "id": "kai",
+      "alt": "Kai Hiwatari de cachecol branco ao vento, no campo",
+      "title": "S03E01 - New Kid in Town- Kai Hiwatari 05",
+      "episode": "G-Revolution, episódio 1",
+      "url": "https://static.wikia.nocookie.net/beyblade/images/d/d6/S03E01_-_New_Kid_in_Town-_Kai_Hiwatari_05.jpeg/revision/latest",
+      "page": "https://beyblade.fandom.com/wiki/File:S03E01_-_New_Kid_in_Town-_Kai_Hiwatari_05.jpeg"
+    },
+    {
+      "id": "ray",
+      "alt": "Ray Kon sorri, com a faixa vermelha do yin-yang na testa",
+      "title": "S03E01 - New Kid in Town - Ray Kon 03",
+      "episode": "G-Revolution, episódio 1",
+      "url": "https://static.wikia.nocookie.net/beyblade/images/d/d9/S03E01_-_New_Kid_in_Town_-_Ray_Kon_03.jpeg/revision/latest",
+      "page": "https://beyblade.fandom.com/wiki/File:S03E01_-_New_Kid_in_Town_-_Ray_Kon_03.jpeg"
+    },
+    {
+      "id": "max",
+      "alt": "Max Tate grita de punhos fechados, com o brilho da Draciel atrás",
+      "title": "S03E45 - Max to the Max - Go Draciel!",
+      "episode": "G-Revolution, episódio 45",
+      "url": "https://static.wikia.nocookie.net/beyblade/images/9/95/S03E45_-_Max_to_the_Max_-_Go_Draciel%21.png/revision/latest",
+      "page": "https://beyblade.fandom.com/wiki/File:S03E45_-_Max_to_the_Max_-_Go_Draciel!.png"
+    },
+    {
+      "id": "bladebreakers",
+      "alt": "Os Bladebreakers lado a lado: Ray, Kenny, Max e Tyson",
+      "title": "S01E15 Going for the Gold- Bladebreakers",
+      "episode": "Temporada 1, episódio 15",
+      "url": "https://static.wikia.nocookie.net/beyblade/images/f/fb/S01E15_Going_for_the_Gold-_Bladebreakers.png/revision/latest",
+      "page": "https://beyblade.fandom.com/wiki/File:S01E15_Going_for_the_Gold-_Bladebreakers.png"
+    },
+    {
+      "id": "comemoracao",
+      "alt": "Tyson pula de alegria com Max, Kenny e a turma comemorando",
+      "title": "S01E14 The Race is On!- Let it Rip!",
+      "episode": "Temporada 1, episódio 14",
+      "url": "https://static.wikia.nocookie.net/beyblade/images/b/b0/S01E14_The_Race_is_On%21-_Let_it_Rip%21.png/revision/latest",
+      "page": "https://beyblade.fandom.com/wiki/File:S01E14_The_Race_is_On!-_Let_it_Rip!.png"
+    }
+  ]
+}

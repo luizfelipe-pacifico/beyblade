@@ -1,0 +1,7 @@
+node_modules/
+.next/
+out/
+.image-cache/
+.taste-skill/
+.env*
+!.env.example
