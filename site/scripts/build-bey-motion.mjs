@@ -10,11 +10,12 @@ const color = (name) => {
   if (!match) throw new Error(`Token não encontrado: ${name}`);
   return match[1];
 };
-const uri = (name) => `data:image/svg+xml;base64,${fs.readFileSync(path.join(output, name)).toString('base64')}`;
-const dragoon = uri('dragoon-s.svg');
-const dranzer = uri('dranzer-s.svg');
-const width = 768;
-const height = 432;
+// Rasterize detailed masters once; each animation frame only composites two sprites.
+const uri = async (name) => `data:image/png;base64,${(await sharp(fs.readFileSync(path.join(output, name))).resize(768, 768).png().toBuffer()).toString('base64')}`;
+const dragoon = await uri('dragoon-s.svg');
+const dranzer = await uri('dranzer-s.svg');
+const width = 1152;
+const height = 648;
 const count = 48;
 const frames = [];
 for (let index = 0; index < count; index++) {
@@ -23,7 +24,7 @@ for (let index = 0; index < count; index++) {
   const x = 100 * Math.cos(phase);
   const y = 66 * Math.sin(phase);
   const image = (source, cx, cy, rotation) => `<g transform="translate(${cx} ${cy}) rotate(${rotation})"><image href="${source}" x="-88" y="-88" width="176" height="176"/></g>`;
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 768 432">
     <rect width="768" height="432" fill="${color('tinta')}"/>
     <ellipse cx="384" cy="216" rx="310" ry="185" fill="${color('tinta-2')}"/>
     <ellipse cx="384" cy="216" rx="264" ry="153" fill="none" stroke="${color('tinta-3')}" stroke-width="6"/>

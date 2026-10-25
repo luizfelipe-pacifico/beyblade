@@ -1,0 +1,38 @@
+[
+  {
+    "id": "dragoon-s",
+    "name": "Dragoon S (Anime Version)",
+    "file": "dragoon-s.png",
+    "page": "https://beyblade.fandom.com/wiki/Dragoon_Storm",
+    "credit": "https://beyblade.fandom.com/wiki/File:Dragoon_S_(Anime).png",
+    "url": "https://static.wikia.nocookie.net/beyblade/images/7/74/Dragoon_S_%28Anime%29.png?format=original",
+    "sha256": "621d81de74abe9e0508b82177dbde99b4c4a8969cb8e6c315f40601698a6b2f1"
+  },
+  {
+    "id": "dranzer-s",
+    "name": "Dranzer S",
+    "file": "dranzer-s.png",
+    "page": "https://beyblade.fandom.com/wiki/Dranzer_S",
+    "credit": "https://beyblade.fandom.com/wiki/File:DranzerS.png",
+    "url": "https://static.wikia.nocookie.net/beyblade/images/b/b8/DranzerS.png?format=original",
+    "sha256": "5fff036e1ae8c3840f17e62ea355441221146a80daa72e7fc3aa7d468da36d7f"
+  },
+  {
+    "id": "driger-s",
+    "name": "Driger S",
+    "file": "driger-s.png",
+    "page": "https://beyblade.fandom.com/wiki/Driger_S",
+    "credit": "https://beyblade.fandom.com/wiki/File:Driger_slash.png",
+    "url": "https://static.wikia.nocookie.net/beyblade/images/6/67/Driger_slash.png?format=original",
+    "sha256": "7183eb19b7e95d8f1a8e6201ec791b851b6920460df0fd67c809a8ff415e4141"
+  },
+  {
+    "id": "draciel-s",
+    "name": "Draciel S",
+    "file": "draciel-s.png",
+    "page": "https://beyblade.fandom.com/wiki/Draciel_S",
+    "credit": "https://beyblade.fandom.com/wiki/File:Draciel_Shield.png",
+    "url": "https://static.wikia.nocookie.net/beyblade/images/5/50/Draciel_Shield.png?format=original",
+    "sha256": "0649a6b51fd0d8227b24de6f51a387da5f59da7b5b5ea1f18328eeb0a13e1689"
+  }
+]
