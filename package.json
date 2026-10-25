@@ -1,0 +1,25 @@
+{
+  "name": "beyblade-arena",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jogo de Beyblade local para dois jogadores com manetes, usando SQLite.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test",
+    "prepare": "git config core.hooksPath .githooks"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "electron": "^45.0.0"
+  }
+}

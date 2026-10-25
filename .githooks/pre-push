@@ -1,0 +1,8 @@
+#!/bin/sh
+# Roda a suíte de testes antes de todo push. Se algo falhar, o push é bloqueado:
+# corrija (e escreva o teste de regressão) antes de subir.
+echo "pre-push: rodando testes..."
+if ! npm test --silent; then
+  echo "pre-push: testes falharam. Push bloqueado." >&2
+  exit 1
+fi
