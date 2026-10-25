@@ -10,3 +10,6 @@ out/
 *.gba
 *.sav
 assets-rom/
+
+.taste-skill/
+.impeccable/

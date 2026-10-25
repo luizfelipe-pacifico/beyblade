@@ -10,8 +10,8 @@ export function PsButton({ name, size = 32 }) {
   const s = shapes[name];
   return (
     <svg width={size} height={size} viewBox="0 0 32 32" role="img" aria-label={s.label}>
-      <circle cx="16" cy="16" r="15" fill="#111111" />
-      <g fill="none" stroke="#f2f2f2" strokeWidth="2.6" strokeLinejoin="round" strokeLinecap="round">
+      <circle cx="16" cy="16" r="15" fill="var(--tinta)" />
+      <g fill="none" stroke="var(--papel)" strokeWidth="2.6" strokeLinejoin="round" strokeLinecap="round">
         {s.d}
       </g>
     </svg>

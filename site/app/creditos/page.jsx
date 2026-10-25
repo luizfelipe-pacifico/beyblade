@@ -8,7 +8,7 @@ export default function Creditos() {
   return (
     <DocPage
       title="Créditos"
-      intro="Os frames do anime usados nesta página, com o episódio e a origem de cada um. Fonte de texto: Albert Sans (SIL Open Font License). Ícones: Lucide (ISC)."
+      intro="Os frames do anime usados nesta página, com o episódio e a origem de cada um. Fontes: Dela Gothic One e Barlow (SIL Open Font License). Ícones: Lucide (ISC)."
     >
       <p>
         Todas as imagens são frames do anime <em>Beyblade</em> (<em>Bakuten Shoot Beyblade</em>, Nelvana / d-rights /

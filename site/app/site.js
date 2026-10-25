@@ -22,10 +22,10 @@ export { images };
 
 // Cores das feras bit: cada capítulo da página usa a cor de uma delas.
 export const BEASTS = {
-  dragoon: { name: 'Dragoon', color: 'var(--dragoon)' },
-  dranzer: { name: 'Dranzer', color: 'var(--dranzer)' },
-  driger: { name: 'Driger', color: 'var(--driger)' },
-  draciel: { name: 'Draciel', color: 'var(--draciel)' },
+  dragoon: { name: 'Dragoon', color: 'var(--fera-dragoon)', text: 'var(--fera-dragoon-texto)' },
+  dranzer: { name: 'Dranzer', color: 'var(--fera-dranzer)', text: 'var(--fera-dranzer-texto)' },
+  driger: { name: 'Driger', color: 'var(--fera-driger)', text: 'var(--fera-driger-texto)' },
+  draciel: { name: 'Draciel', color: 'var(--fera-draciel)', text: 'var(--fera-draciel-texto)' },
 };
 
 // Atributos da beyblade da 1ª temporada de cada um, de pesquisa-bakuten/personagens/*/beyblades/*/dados.json.

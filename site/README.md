@@ -30,3 +30,11 @@ As rotas são `/`, `/creditos/`, `/privacidade/` e `/termos/`. A página usa `no
 Textos e links compartilhados ficam em `app/site.js`. O download aponta para `BeybladeArena-Setup.exe` na última GitHub Release; depende de o instalador ter sido publicado.
 
 As imagens otimizadas em `public/images/` são versionadas e o build não depende do download dos originais. `images.json` registra as fontes e `npm run images` regenera os WebP usando o cache local. Os créditos aparecem em `/creditos/`. As imagens do anime pertencem aos respectivos titulares; o projeto é de fã, sem fins lucrativos.
+
+## Design system
+
+Jogo e landing compartilham a identidade documentada em `../docs/DESIGN_SYSTEM.md`: Dela Gothic One + Barlow, tinta azul profunda, superfícies azuis e amarelo de ação na proporção de referência 60/30/10. As cores das feras ficam no conteúdo dos personagens.
+
+A fonte única dos tokens é `../design-system/tokens.json`. Na raiz do repositório, `node scripts/sync-design-tokens.js` atualiza `app/tokens.css`, que é versionado para permitir o build independente desta pasta. Não edite esse CSS gerado à mão.
+
+Entradas na rolagem usam IntersectionObserver e keyframes CSS, uma vez por bloco. O conteúdo aparece mesmo sem JavaScript, e o modo de movimento reduzido desativa as animações. Perguntas usam `details`/`summary` nativos.

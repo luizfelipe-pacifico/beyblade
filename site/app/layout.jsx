@@ -1,13 +1,14 @@
-import { Albert_Sans } from 'next/font/google';
+import { Barlow, Dela_Gothic_One } from 'next/font/google';
 import './globals.css';
 
 // next/font baixa a fonte no build e serve do próprio site: o visitante não faz nenhum pedido ao Google.
-const albert = Albert_Sans({
-  subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500', '600'],
+const ui = Barlow({
+  subsets: ['latin'],
+  weight: ['400', '600', '800'],
   display: 'swap',
-  variable: '--font-albert',
+  variable: '--font-ui',
 });
+const display = Dela_Gothic_One({ subsets: ['latin'], weight: '400', display: 'swap', variable: '--font-display' });
 
 // Na Vercel, VERCEL_PROJECT_PRODUCTION_URL dá o domínio público, usado nas prévias de link (WhatsApp, Discord).
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
@@ -38,16 +39,12 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: '#5ab4ff',
+  themeColor: '#0d1226',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-BR" className={albert.variable}>
-      <head>
-        {/* Os estados escondidos das animações só valem com JavaScript ligado. */}
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
-      </head>
+    <html lang="pt-BR" className={`${display.variable} ${ui.variable}`}>
       <body>{children}</body>
     </html>
   );

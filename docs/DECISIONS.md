@@ -15,6 +15,14 @@ Formato:
 
 ---
 
+## D-018: design unificado, duas fontes e proporção 60/30/10
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu a refatoração da landing com Taste, Impeccable e Emil Kowalski, unificando o design system durante o processo e seguindo o princípio de menos é mais.
+- Decisão: usar Dela Gothic One e Barlow; tinta azul profunda como base (60%), superfícies azuis de apoio (30%) e amarelo de ação (10%). As cores das feras ficam no conteúdo de identidade. Tokens comuns em `design-system/tokens.json`, com CSS gerado para jogo e landing. Animações da landing disparam na rolagem, uma vez por bloco, respeitando movimento reduzido.
+- Consequências: `docs/DESIGN_SYSTEM.md` documenta o contrato; testes detectam divergências entre as saídas. `site/` continua independente para o build na Vercel. Pesquisa e backend em andamento não entram nesta refatoração.
+
 ## D-003: testes automáticos antes de todo push
 
 - Data: 2026-10-25

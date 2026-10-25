@@ -1,0 +1,273 @@
+@import "../src/design/tokens.css";
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/*
+  Design system do jogo: "Abertura do Anime". Documentação em docs/DESIGN_SYSTEM.md
+  e rota viva em /design-system. A fonte única é design-system/tokens.json; tokens.css é gerado para o jogo e a landing.
+  src/design/tokens.js expõe os mesmos valores para o canvas e os testes de contraste.
+*/
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-ui);
+  --font-heading: var(--font-display);
+  --font-display: var(--font-display);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-tinta: var(--tinta);
+  --color-tinta-2: var(--tinta-2);
+  --color-tinta-3: var(--tinta-3);
+  --color-papel: var(--papel);
+  --color-chamada: var(--chamada);
+  --color-texto-2: var(--texto-2);
+  --color-texto-3: var(--texto-3);
+  --color-p1: var(--p1);
+  --color-p2: var(--p2);
+  --color-dragoon: var(--fera-dragoon);
+  --color-dranzer: var(--fera-dranzer);
+  --color-driger: var(--fera-driger);
+  --color-draciel: var(--fera-draciel);
+  --color-gaia: var(--fera-gaia);
+
+  /* Cantos retos em tudo: o mundo é cartela de TV e adesivo cortado, não app. */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-4xl: 0px;
+}
+
+:root {
+  color-scheme: dark;
+
+  /* Chão e superfícies: a tinta de contorno da arte própria (docs/ART.md), em passos de claridade. */
+
+  /* Amarelo de chamada: VS, contagem, foco do controle e a ação principal. Nada mais. */
+
+  /* Identidade do jogador nos cursores e etiquetas (sempre com o rótulo P1/P2 junto). */
+
+  /* Campos das feras bit: cores tiradas dos SVGs em pesquisa-bakuten/feras-bit. */
+
+  /* Mapeamento para os nomes do shadcn/ui. */
+  --background: var(--tinta);
+  --foreground: var(--papel);
+  --card: var(--tinta-2);
+  --card-foreground: var(--papel);
+  --popover: var(--tinta-3);
+  --popover-foreground: var(--papel);
+  --primary: var(--chamada);
+  --primary-foreground: var(--tinta);
+  --secondary: var(--tinta-3);
+  --secondary-foreground: var(--papel);
+  --muted: var(--tinta-2);
+  --muted-foreground: var(--texto-2);
+  --accent: var(--tinta-3);
+  --accent-foreground: var(--papel);
+  --ring: var(--chamada);
+
+  /* Movimento (docs/DESIGN_SYSTEM.md#movimento). */
+
+  /* Linhas de velocidade: listras de borda dura, nunca esmaecidas. */
+  --linhas-cor: rgb(255 255 255 / 0.16);
+  --linhas-passo: 42px;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply font-sans;
+    background: var(--tinta);
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "tnum" 1;
+  }
+
+  /* Superfícies do navegador também levam o mundo. */
+  ::selection {
+    background: var(--chamada);
+    color: var(--tinta);
+  }
+  :focus {
+    outline: none;
+  }
+  /* O foco é o cursor de quem joga no controle: grosso, amarelo, reto. */
+  :focus-visible {
+    outline: 4px solid var(--chamada);
+    outline-offset: 3px;
+  }
+  html {
+    scrollbar-color: var(--tinta-3) var(--tinta);
+    scrollbar-width: thin;
+  }
+  a {
+    text-underline-offset: 0.2em;
+  }
+}
+
+@layer components {
+  /* Campo de fera: a cor da fera toma o espaço inteiro. */
+  .campo {
+    position: relative;
+    overflow: hidden;
+    background: var(--campo, var(--tinta-2));
+    color: var(--campo-texto, var(--papel));
+    isolation: isolate;
+  }
+
+  /* Linhas de velocidade numa camada própria; anda só por transform (barato na GPU integrada). */
+  .linhas {
+    position: absolute;
+    inset: -10% -50%;
+    z-index: -1;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      100deg,
+      transparent 0 calc(var(--linhas-passo) - 4px),
+      var(--linhas-cor) calc(var(--linhas-passo) - 4px) var(--linhas-passo)
+    );
+  }
+  .linhas[data-movendo="true"] {
+    animation: linhas-correm 900ms linear infinite;
+  }
+
+  /* Cartela de título: o nome em gótica pesada, como na abertura. */
+  .cartela {
+    font-family: var(--font-display);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  .vs {
+    font-family: var(--font-display);
+    background: var(--chamada);
+    color: var(--tinta);
+    line-height: 1;
+    transform: rotate(-8deg);
+  }
+
+  /* Varredura de corte: a assinatura de movimento. Entra pela diagonal, sai rápido. */
+  .varredura {
+    animation: varredura-entra var(--dur-corte) var(--ease-out) both;
+  }
+
+  .pressionavel {
+    transition: transform var(--dur-press) var(--ease-out);
+  }
+  .pressionavel:active {
+    transform: scale(0.97);
+  }
+}
+
+@keyframes linhas-correm {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(var(--linhas-passo) * 2));
+  }
+}
+
+@keyframes varredura-entra {
+  from {
+    transform: translateX(-12%) skewX(-8deg);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* Movimento reduzido: menos e mais suave, não zero. Fica a troca de opacidade. */
+@media (prefers-reduced-motion: reduce) {
+  .linhas[data-movendo="true"] {
+    animation: none;
+  }
+  .varredura {
+    animation: varredura-fade var(--dur-ui) ease both;
+  }
+  .pressionavel:active {
+    transform: none;
+  }
+}
+
+@keyframes varredura-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Qualidade Baixa (configuração do jogo): sem nada correndo no fundo. */
+[data-qualidade="baixa"] .linhas[data-movendo="true"] {
+  animation: none;
+}
+
+/* Anel de giro: rotação contínua, só transform. A duração vem do componente (mais giro, mais rápido). */
+.anel-giro {
+  animation: girar 1s linear infinite;
+  transform-origin: 50% 50%;
+}
+.anel-giro[data-parado="true"] {
+  animation: none;
+}
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Luz que corre na rodada atual (fileira de rodadas). */
+.luz-corre {
+  transform-origin: left;
+  animation: luz-corre 1.2s var(--ease-in-out) infinite;
+}
+@keyframes luz-corre {
+  from {
+    transform: scaleX(0);
+  }
+  60% {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anel-giro,
+  .luz-corre {
+    animation: none;
+  }
+}
+[data-qualidade="baixa"] .anel-giro {
+  animation: none;
+}

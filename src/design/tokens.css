@@ -1,0 +1,48 @@
+/* Gerado por scripts/sync-design-tokens.js. Edite design-system/tokens.json. */
+:root {
+  --tinta: #0d1226;
+  --tinta-2: #161d38;
+  --tinta-3: #232b4d;
+  --papel: #ffffff;
+  --texto-2: #c3c9de;
+  --texto-3: #9aa2bf;
+  --chamada: #ffd400;
+  --p1: #ff5a4f;
+  --p2: #4fa8ff;
+  --destructive: #ff6b5e;
+  --border: #2b3459;
+  --input: #3a4470;
+  --fera-dragoon: #2a6fd1;
+  --fera-dragoon-texto: #ffffff;
+  --fera-dranzer: #d7262e;
+  --fera-dranzer-texto: #ffffff;
+  --fera-driger: #1f8a4c;
+  --fera-driger-texto: #ffffff;
+  --fera-draciel: #9a80d8;
+  --fera-draciel-texto: #0d1226;
+  --fera-gaia: #d99a1e;
+  --fera-gaia-texto: #0d1226;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --gutter: clamp(1rem, 3vw, 3rem);
+  --section: clamp(5rem, 10vw, 9rem);
+  --radius: 0px;
+  --measure: 65ch;
+  --type-small: 0.875rem;
+  --type-body: 1.125rem;
+  --type-lead: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  --type-heading: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+  --type-display: clamp(2.5rem, 7vw, 6rem);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --dur-press: 120ms;
+  --dur-ui: 180ms;
+  --dur-corte: 260ms;
+}

@@ -2,23 +2,28 @@
 
 import { useEffect } from 'react';
 
-// Marca com .is-in cada [data-reveal] quando entra na tela (uma vez). O CSS faz a entrada dos filhos em sequência.
-// Sem JavaScript, a classe .js não existe e tudo já aparece visível.
+// O conteúdo permanece visível sem JS. O observer dispara uma entrada curta por seção.
 export default function Reveal() {
   useEffect(() => {
-    const els = document.querySelectorAll('[data-reveal]');
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          entry.target.classList.add('is-in');
-          io.unobserve(entry.target);
-        }
-      },
-      { rootMargin: '0px 0px -12% 0px' },
-    );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reduced.matches || !('IntersectionObserver' in window)) return;
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        observer.unobserve(entry.target);
+        entry.target.classList.add('is-in');
+      }
+    }, { threshold: 0.12, rootMargin: '0px 0px -4% 0px' });
+    document.querySelectorAll('[data-reveal]').forEach((element) => observer.observe(element));
+    const stop = () => {
+      if (!reduced.matches) return;
+      observer.disconnect();
+    };
+    reduced.addEventListener('change', stop);
+    return () => {
+      observer.disconnect();
+      reduced.removeEventListener('change', stop);
+    };
   }, []);
   return null;
 }

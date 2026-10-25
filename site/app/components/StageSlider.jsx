@@ -8,9 +8,9 @@ import { PsButton } from './PsButtons';
 function Bey({ color, x, y }) {
   return (
     <svg className="ui-bey-svg" width="40" height="40" viewBox="0 0 40 40" style={{ position: 'absolute', left: x, top: y }} aria-hidden="true">
-      <circle cx="20" cy="20" r="18" fill="#141414" />
+      <circle cx="20" cy="20" r="18" fill="var(--tinta)" />
       <path d="M20 4l5 11h-10zM36 20l-11 5v-10zM20 36l-5-11h10zM4 20l11-5v10z" fill={color} />
-      <circle cx="20" cy="20" r="6" fill="#f2f2f2" stroke="#141414" strokeWidth="2" />
+      <circle cx="20" cy="20" r="6" fill="var(--papel)" stroke="var(--tinta)" strokeWidth="2" />
     </svg>
   );
 }
@@ -58,14 +58,14 @@ const STAGES = [
           ['Dragoon F', 7, 'Ataque', false],
           ['Dragoon V', 7, 'Ataque', false],
         ].map(([name, atk, type, on]) => (
-          <div key={name} style={{ display: 'grid', gap: 6, padding: '10px 12px', background: on ? '#2a2a2a' : 'transparent', borderLeft: on ? '4px solid var(--draciel)' : '4px solid transparent' }}>
+          <div key={name} className={`ui-pick${on ? ' is-on' : ''}`}>
             <div className="ui-row">
               <strong>{name}</strong>
               <span>
                 {type} · {atk}/10
               </span>
             </div>
-            <div className="ui-bar" style={{ '--v': `${atk * 10}%` }}>
+            <div className="ui-bar" style={{ '--value': atk / 10 }}>
               <span />
             </div>
           </div>
@@ -90,7 +90,7 @@ const STAGES = [
         </div>
         <div className="ui-row">
           <span>Força 78%</span>
-          <span style={{ color: 'var(--driger)', fontWeight: 600 }}>Ponto ideal</span>
+          <span style={{ color: 'var(--chamada)', fontWeight: 600 }}>Ponto ideal</span>
         </div>
       </div>
     ),
@@ -112,13 +112,13 @@ const STAGES = [
         {[
           ['Dragoon S', 72, 'var(--dragoon)'],
           ['Dranzer S', 51, 'var(--dranzer)'],
-        ].map(([name, v, c]) => (
+        ].map(([name, v]) => (
           <div key={name} style={{ display: 'grid', gap: 6 }}>
             <div className="ui-row">
               <span>{name}</span>
               <span>Giro {v}%</span>
             </div>
-            <div className="ui-bar" style={{ '--v': `${v}%`, '--c': c }}>
+            <div className="ui-bar" style={{ '--value': v / 100 }}>
               <span />
             </div>
           </div>
@@ -131,24 +131,24 @@ const STAGES = [
 export default function StageSlider() {
   const [step, setStep] = useState(0);
   const stage = STAGES[step];
-  const progress = `${(step / (STAGES.length - 1)) * 100}%`;
+  const progress = step / (STAGES.length - 1);
 
   return (
     <section id="como-jogar" className="stages" aria-labelledby="como-jogar-titulo">
-      <div className="stages-copy">
-        <div key={step} className="fade-swap" aria-live="polite">
+      <div className="stages-copy" data-reveal="">
+        <div aria-live="polite">
           <h2 id="como-jogar-titulo">{stage.clause}</h2>
           <p className="lead">{stage.text}</p>
         </div>
       </div>
-      <div className="stages-ui">
-        <div key={step} className="fade-swap" data-ui="">
+      <div className="stages-ui" data-reveal="">
+        <div data-ui="">
           {stage.ui()}
         </div>
       </div>
 
       <div className="stage-track">
-        <div className="range-wrap" style={{ '--p': progress }}>
+        <div className="range-wrap" style={{ '--progress': progress }}>
           <span className="range-base" aria-hidden="true" />
           <span className="range-fill" aria-hidden="true" />
           <input

@@ -41,8 +41,8 @@ export default function CharacterSelect() {
     function poll() {
       raf = requestAnimationFrame(poll);
       if (!visible || document.hidden) return;
-      const pad = [...navigator.getGamepads()].find(Boolean);
-      if (!pad) return;
+      const pad = [...(navigator.getGamepads?.() ?? [])].find(Boolean);
+      if (!pad) { last = { up: false, down: false }; return; }
       const up = pad.buttons[12]?.pressed || pad.axes[1] < -0.6;
       const down = pad.buttons[13]?.pressed || pad.axes[1] > 0.6;
       if (up && !last.up) setIndex((i) => (i - 1 + BLADERS.length) % BLADERS.length);
@@ -93,8 +93,8 @@ export default function CharacterSelect() {
         </p>
       </div>
 
-      <div className="stage" style={{ '--c': color }}>
-        <article id="ficha" key={blader.id} className="card is-swapping" data-ui="" aria-live="polite" style={{ '--c': color }}>
+      <div className="stage" style={{ '--c': color, '--field-text': BEASTS[blader.beast].text }}>
+        <article id="ficha" className="card" data-ui="" aria-live="polite" aria-atomic="true" style={{ '--c': color }}>
           <div className="card-photo">
             <Picture id={blader.image} sizes="(max-width: 680px) 92vw, 560px" style={{ objectPosition: blader.focus }} />
             <span className="card-tag">{BEASTS[blader.beast].name}</span>
@@ -121,7 +121,7 @@ export default function CharacterSelect() {
                 <dd>{blader.type}</dd>
               </div>
             </dl>
-            <dl className="stats" aria-label="Atributos, de 0 a 10">
+            <dl className="stats" aria-label="Atributos, de 1 a 10">
               {Object.entries(blader.stats).map(([name, value]) => (
                 <div className="stat" key={name}>
                   <dt>{name}</dt>

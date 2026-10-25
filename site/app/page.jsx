@@ -1,4 +1,4 @@
-import { ArrowUpRight, Check, Download, Gamepad2, Keyboard, WifiOff } from 'lucide-react';
+import { ArrowUpRight, Check, Download, Gamepad2, Keyboard } from 'lucide-react';
 import CharacterSelect from './components/CharacterSelect';
 import Footer from './components/Footer';
 import ModesDeck from './components/ModesDeck';
@@ -11,7 +11,6 @@ import { DOWNLOAD_URL, INSTALLER, ISSUES_URL, MILESTONES, RELEASES_URL, ROADMAP_
 function Hero() {
   return (
     <header className="hero" id="topo">
-      <div className="band">
         <nav className="header" aria-label="Principal">
           <a className="wordmark" href="#topo">
             Beyblade Arena
@@ -19,6 +18,7 @@ function Hero() {
           <div className="tab">
             <a href="#personagens">Personagens</a>
             <a href="#como-jogar">Como jogar</a>
+            <a href="#controles">Controles</a>
             <a href="#perguntas">Perguntas</a>
           </div>
           <a className="button" href={DOWNLOAD_URL}>
@@ -26,29 +26,8 @@ function Hero() {
             Baixar
           </a>
         </nav>
-        <div className="mosaic">
-          <div className="tile tile--a">
-            <Picture id="ray-lancamento" priority sizes="(max-width: 680px) 67vw, 34vw" />
-          </div>
-          <div className="tile tile--b"><span className="tile-label">Dragoon</span></div>
-          <div className="tile tile--c">
-            <Picture id="tyson-lancador" priority sizes="17vw" />
-          </div>
-          <div className="tile tile--d"><span className="tile-label">Dranzer</span></div>
-          <div className="tile tile--e"><span className="tile-label">Draciel</span></div>
-          <div className="tile tile--f" />
-          <div className="tile tile--g">
-            <Picture id="dragoon-bit-chip" priority sizes="(max-width: 680px) 34vw, 17vw" />
-          </div>
-          <div className="tile tile--h" />
-          <div className="tile tile--i">
-            <Picture id="max-lancamento" priority sizes="17vw" />
-          </div>
-          <div className="tile tile--j" />
-        </div>
-      </div>
-
       <div className="hero-body">
+        <div className="hero-intro">
         <h1 className="hero-title">
           <span className="line">
             <span data-line="" style={{ '--i': 0 }}>
@@ -78,6 +57,11 @@ function Hero() {
             <span>Em desenvolvimento: ainda sem versão jogável</span>
           </p>
         </div>
+        </div>
+        <figure className="hero-art">
+          <Picture id="ray-lancamento" priority sizes="(max-width: 800px) 100vw, 52vw" />
+          <figcaption>Bakuten Shoot. A geração que começou tudo.</figcaption>
+        </figure>
       </div>
     </header>
   );
@@ -100,18 +84,6 @@ function Controls() {
           <p className="lead" style={{ '--i': 1 }}>
             Sentem lado a lado e joguem. Sem conta, sem internet e sem configurar nada para começar.
           </p>
-        </div>
-        <div className="piece piece--figure" data-reveal="">
-          <p className="figure-num" style={{ '--i': 0 }}>2</p>
-          <p style={{ '--i': 1 }}>jogadores no mesmo computador</p>
-        </div>
-        <div className="piece piece--s1" data-reveal="">
-          <p className="piece-sentence" style={{ '--i': 0 }}>
-            Os botões aparecem como no controle de PS4.
-          </p>
-          <div style={{ '--i': 1 }}>
-            <PsButtons size={34} />
-          </div>
         </div>
         <div className="piece piece--list" data-reveal="">
           <h3 style={{ '--i': 0 }}>Jogue do seu jeito</h3>
@@ -137,16 +109,10 @@ function Controls() {
             </li>
           </ul>
         </div>
-        <div className="piece piece--s2" data-reveal="">
-          <p className="piece-sentence" style={{ '--i': 0 }}>
-            Sem controle? O teclado já funciona, menus incluídos.
-          </p>
-        </div>
-        <div className="piece piece--s3" data-reveal="">
-          <WifiOff size={30} aria-hidden="true" style={{ '--i': 0 }} />
-          <p className="piece-sentence" style={{ '--i': 1, marginTop: 14 }}>
-            Tudo offline. O progresso fica salvo no seu PC.
-          </p>
+        <div className="controls-note" data-reveal="">
+          <p>Os comandos aparecem como no controle de PS4.</p>
+          <PsButtons size={32} />
+          <p>Sem controle? O teclado funciona nos menus também. O progresso fica salvo no seu PC, sem internet.</p>
         </div>
       </div>
     </section>
@@ -158,7 +124,7 @@ function Status() {
     <section id="estagio" className="status" aria-labelledby="estagio-titulo">
       <div className="status-board" data-reveal="">
         <div className="status-tile status-tile--head" style={{ '--i': 0 }}>
-          <h2 id="estagio-titulo">Em desenvolvimento</h2>
+          <h2 id="estagio-titulo">O próximo lançamento</h2>
           <p>
             O jogo ainda não tem uma versão jogável. Estas são as etapas até o Beta, as mesmas do{' '}
             <a href={ROADMAP_URL}>roadmap no GitHub</a>.
@@ -285,12 +251,12 @@ function Faq() {
         <h2 id="perguntas-titulo">Perguntas</h2>
       </div>
       {FAQ.map(({ q, a }) => (
-        <article className="qa" key={q} data-reveal="">
-          <h3 style={{ '--i': 0 }}>{q}</h3>
-          <div className="qa-answer" style={{ '--i': 1 }}>
+        <details className="qa" key={q}>
+          <summary>{q}</summary>
+          <div className="qa-answer">
             {a}
           </div>
-        </article>
+        </details>
       ))}
     </section>
   );
