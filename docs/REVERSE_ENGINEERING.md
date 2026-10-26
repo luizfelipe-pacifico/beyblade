@@ -2,6 +2,8 @@
 
 Referência do jogo ([D-007](DECISIONS.md#d-007-rom-de-gba-como-referência-e-fonte-inicial-de-assets)). Aqui ficam as descobertas sobre a ROM: formato, onde estão os dados e o que já foi extraído. A ROM e os arquivos extraídos **nunca vão para o git**.
 
+Outras referências, com doc próprio: o disco de PS1 *Bey Battle Tournament 2* em [`PS1.md`](PS1.md) e a ROM de DS *Beyblade: Metal Fusion* (só design de combate, extraída com `scripts/extract-nds.js`) em [`NDS_METAL_FUSION.md`](NDS_METAL_FUSION.md).
+
 ## A ROM
 
 | Campo | Valor |
