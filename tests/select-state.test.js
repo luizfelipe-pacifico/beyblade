@@ -109,3 +109,18 @@ test('beysByCharacter groups by owner, keeps the roster default first and falls 
   assert.equal(beyImage('dranzer-f@kai', generated, rom).src, '/rom/beys/dranzer-f.png');
   assert.deepEqual(beyImage('dranzer-f@kai', generated, null), { kind: 'svg', src: '/art/beys/dranzer-f.svg' });
 });
+
+test('selectFeedback maps state changes to the fighting game menu sounds', async () => {
+  const { selectFeedback } = await import('../src/game/select-feedback.js');
+  const s0 = start();
+  const moved = reduceSelect(s0, 0, 'right');
+  assert.deepEqual(selectFeedback(s0, moved, 'right'), [{ som: 'move', vaga: 0 }]);
+  const locked = reduceSelect(moved, 0, 'confirm');
+  assert.deepEqual(selectFeedback(moved, locked, 'confirm'), [{ som: 'lockIn', vaga: 0, voz: 'kai', flash: true }]);
+  const joined = reduceSelect(locked, 1, 'start');
+  assert.deepEqual(selectFeedback(locked, joined, 'start'), [{ som: 'join', banner: 'p2' }]);
+  assert.deepEqual(selectFeedback(s0, s0, 'up'), []);
+  const tyson = reduceSelect(s0, 0, 'confirm');
+  const turned = reduceSelect(tyson, 0, 'right');
+  assert.deepEqual(selectFeedback(tyson, turned, 'right'), [{ som: 'carousel', vaga: 0 }]);
+});

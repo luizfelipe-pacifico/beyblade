@@ -19,6 +19,29 @@ modo → personagem (P1, e P2 se entrar) → beyblade → [CPU: personagem → b
 | `battle` | Batalha até um dos finais abaixo. |
 | `results` | Placar, revanche, voltar à seleção. |
 
+## Implementação da seleção (2026-10-25)
+
+- Lógica pura em `src/game/select-state.js` (máquina de estados com testes) e `src/game/select-feedback.js` (qual som/animação tocar em cada mudança).
+- Tela em `src/components/game/character-select.jsx`: cards do elenco no centro (6 colunas, Aleatório no fim), personagem de cada lado com luz de recorte na cor do jogador, carrossel das beys **em cima do personagem** (`bey-carousel.jsx`, vista de topo da ROM girando, nome embaixo, "n de N · tipo"), escolha de arena (`stage-select.jsx`, 6 estádios da ROM + Aleatória) e entrada (`walk-in.jsx`, sprites de caminhada do GBA subindo até o estádio em perspectiva, com o VS).
+- Input em `src/hooks/use-select-input.js`: teclado por evento (um toque rápido nunca se perde entre dois quadros) e controle por polling; segurar a direção repete o passo.
+- Link da batalha: `/batalha?p1&p2&b1&b2&arena[&cpu=2]` (`battleQuery`), com os ids de `beys.generated.json`.
+- **Pendente de arte:** não existe imagem de corpo inteiro dos personagens (o GBA só tem bonecos de 16×32 e a pesquisa tem retratos de busto, 512×640). A seleção usa o retrato até a arte de corpo inteiro existir (D-008).
+
+### Retorno de interface (game feel)
+
+Padrão dos menus de jogo de luta, aplicado na seleção. Sons sintetizados na hora (`src/audio/ui-sounds.js`, Web Audio, D-008) e animações em `select.css`, todas desligadas com `prefers-reduced-motion`:
+
+| Momento | Som | Animação |
+| --- | --- | --- |
+| Mover o cursor | tique curto e agudo | cursor pulsando com brilho na cor do jogador |
+| Travar o personagem | impacto grave + fala do personagem (`/audio/tts/<slug>/selecao.wav`) | flash na cor do jogador e tranco na figura |
+| Girar o carrossel | catraca (três estalos, como o ripcord) | bey e nome entram com "pop" |
+| Travar a bey | acorde subindo + rugido da fera (`/audio/feras/<fera>/rugido.wav`) | flash; a bey para de girar |
+| Entrar o P2 (Options) | fanfarra subindo | faixa "Novo desafiante!" atravessando a tela |
+| Voltar | acorde descendo | — |
+| Ir para a arena | "whoosh" | — |
+| Confirmar a arena | golpe grave | "VS" entrando com escala e personagens andando até o estádio |
+
 ## Controles da batalha (ROM) e proposta para o DualShock 4
 
 Os textos de dica do próprio jogo (`TIP: ...`, ROM `0x08382924`–`0x08383676`) definem os comandos. A coluna DualShock 4 é o padrão ([D-024](DECISIONS.md#d-024-controles-da-batalha-iguais-aos-do-jogo-de-gba), [`CONTROLLERS.md`](CONTROLLERS.md)):

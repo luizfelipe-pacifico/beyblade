@@ -1,0 +1,179 @@
+/* Seleção estilo Street Fighter (D-023): palco escuro com luz de cima, personagens com volume e luz de recorte. */
+
+.sel-palco {
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 0%, rgb(255 255 255 / 0.10), transparent 70%),
+    radial-gradient(ellipse 90% 60% at 50% 110%, rgb(79 168 255 / 0.18), transparent 60%),
+    linear-gradient(180deg, #070a18 0%, var(--tinta) 45%, #050712 100%);
+}
+
+/* Piso com reflexo, onde os personagens "pisam". */
+.sel-piso {
+  background:
+    radial-gradient(ellipse 50% 100% at 50% 0%, rgb(255 255 255 / 0.08), transparent 70%),
+    repeating-linear-gradient(90deg, rgb(255 255 255 / 0.03) 0 2px, transparent 2px 64px);
+}
+
+/* Personagem de corpo inteiro: luz de recorte na cor do jogador e sombra no chão. */
+.sel-figura {
+  filter: drop-shadow(0 0 18px var(--luz, rgb(255 255 255 / 0.25))) drop-shadow(0 24px 24px rgb(0 0 0 / 0.6));
+  transition: transform var(--dur-corte) var(--ease-out), opacity var(--dur-corte) var(--ease-out);
+}
+.sel-figura[data-entrando='true'] {
+  animation: sel-entra var(--dur-corte) var(--ease-out);
+}
+@keyframes sel-entra {
+  from {
+    opacity: 0;
+    transform: translateX(var(--entra-de, -40px));
+  }
+}
+
+/* Card do elenco: moldura metálica com brilho que passa no foco. */
+.sel-card {
+  background: linear-gradient(160deg, #3a4470 0%, #161d38 45%, #0d1226 100%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.18), inset 0 -2px 0 rgb(0 0 0 / 0.5);
+  transition: transform var(--dur-ui) var(--ease-out);
+}
+.sel-card[data-foco='true'] {
+  transform: translateY(-4px);
+}
+.sel-card img {
+  filter: saturate(1.05) contrast(1.05);
+}
+
+/* Bey girando: folha de sprite da ROM (quadros 0 e 1 giram; o 2 é a bey parada). */
+.sel-bey-sprite {
+  image-rendering: pixelated;
+  background-repeat: no-repeat;
+  background-size: calc(var(--quadros) * 100%) 100%;
+  animation: sel-bey-gira 120ms steps(1) infinite;
+}
+@keyframes sel-bey-gira {
+  0% {
+    background-position: 0% 0;
+  }
+  50% {
+    background-position: calc(100% / (var(--quadros) - 1)) 0;
+  }
+}
+.sel-bey-sprite[data-parado='true'] {
+  animation: none;
+  background-position: 100% 0;
+}
+.sel-bey-svg[data-girando='true'] {
+  animation: sel-svg-gira 0.35s linear infinite;
+}
+@keyframes sel-svg-gira {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Sprite do personagem andando (folha de 29 quadros de 16x32), em pixel art ampliada. */
+.sel-andando {
+  image-rendering: pixelated;
+  background-repeat: no-repeat;
+}
+
+.sel-estadio {
+  transform: perspective(900px) rotateX(52deg);
+  transform-origin: 50% 60%;
+  filter: drop-shadow(0 30px 40px rgb(0 0 0 / 0.7));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sel-bey-sprite,
+  .sel-bey-svg[data-girando='true'] {
+    animation: none;
+  }
+  .sel-figura[data-entrando='true'] {
+    animation: none;
+  }
+}
+
+/* Retorno de jogo de luta: flash e tremida ao travar, cursor pulsando, faixa de desafiante. */
+.sel-flash {
+  mix-blend-mode: screen;
+  animation: sel-flash 320ms var(--ease-out) forwards;
+}
+@keyframes sel-flash {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 0;
+  }
+}
+[data-trava='true'] .sel-figura {
+  animation: sel-tranco 260ms var(--ease-out);
+}
+@keyframes sel-tranco {
+  0% {
+    transform: translateX(0) scale(1.04);
+  }
+  25% {
+    transform: translateX(-6px) scale(1.03);
+  }
+  50% {
+    transform: translateX(5px) scale(1.02);
+  }
+  75% {
+    transform: translateX(-3px) scale(1.01);
+  }
+}
+.sel-cursor {
+  animation: sel-pulsa 900ms ease-in-out infinite;
+}
+@keyframes sel-pulsa {
+  50% {
+    box-shadow: 0 0 22px currentColor, inset 0 0 12px currentColor;
+  }
+}
+.sel-pop {
+  animation: sel-pop 220ms var(--ease-out);
+}
+@keyframes sel-pop {
+  from {
+    transform: scale(0.82);
+    opacity: 0.4;
+  }
+}
+.sel-banner {
+  animation: sel-banner 1400ms var(--ease-in-out) forwards;
+}
+@keyframes sel-banner {
+  0% {
+    transform: translateX(-110%) skewX(-12deg);
+  }
+  20%,
+  75% {
+    transform: translateX(0) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(110%) skewX(-12deg);
+    opacity: 0;
+  }
+}
+.sel-vs {
+  animation: sel-vs 500ms var(--ease-out);
+}
+@keyframes sel-vs {
+  from {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sel-flash,
+  [data-trava='true'] .sel-figura,
+  .sel-cursor,
+  .sel-pop,
+  .sel-banner,
+  .sel-vs {
+    animation: none;
+  }
+  .sel-banner {
+    opacity: 0;
+  }
+}
