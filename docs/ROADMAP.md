@@ -9,6 +9,8 @@ Plano para chegar ao **Beta do Beyblade Arena**: batalha 2D de Beyblade para doi
 | **Alpha** | Tudo existe (*feature complete*) | Todos os modos e personagens do MVP jogáveis, mesmo com bugs e sem balanceamento |
 | **Beta** | Conteúdo travado, só polimento | Sem features novas: correção de bugs, balanceamento, performance e empacotamento |
 
+**Último avanço (2026-10-25):** os 10 personagens com a aparência do G-Revolution, entrada na arena ao lado do estádio de verdade, miniaturas das arenas, bey e arena aleatórias já sorteadas na seleção, e o lançamento no ritmo do Beyblade Burst app (D-046, D-049, D-052). Na batalha (outra sessão): contato que gasta giro e escudo, CPU que raciocina e física do giro como vida (D-048, D-051).
+
 Escopo do MVP vem de D-001, D-004, D-005, D-006 e D-007 em [`DECISIONS.md`](DECISIONS.md). Legenda: ✅ feito · 🔄 em andamento · ⬜ a fazer.
 
 ---
@@ -43,7 +45,7 @@ Responder: **é divertido?** Gráficos simples (círculos) e números de teste.
 - ✅ Input: 2× DualShock 4 e teclado (dois jogadores no mesmo teclado ou misto, D-015), `InputFrame` por tick, deadzone radial
 - ✅ Comandos da D-024: ataque e defesa com carga, pulo, esquiva, fera bit (L1+R1), Engine Gear (✕+○), lançamento com timing
 - ⬜ Combos depois de um "HIT!" (D-024)
-- ⬜ Fluxo da D-023: Aleatório, seleção de bey, entrada do P2 pelo Options e CPU, seleção de arena, animação de entrada
+- ✅ Fluxo da D-023: Aleatório, seleção de bey (com bey aleatória), entrada do P2 pelo Options e CPU, seleção de arena com a "foto do lugar" e animação de entrada ao lado do estádio de verdade (D-023, D-050, D-052)
 - ✅ Testes: colisão, finalizações, desempate, determinismo, comandos e input
 
 **Pronto quando:** duas pessoas jogam várias rodadas seguidas a 60 FPS e querem continuar, tanto com dois DualShock 4 quanto as duas no mesmo teclado.
@@ -52,13 +54,13 @@ Responder: **é divertido?** Gráficos simples (círculos) e números de teste.
 
 Uma partida **com cara de produto final**, de ponta a ponta, com 2 personagens.
 
-- ⬜ Fluxo D-005: seleção de personagem → seleção de bey → lançamento → batalha → resultado
-- ⬜ Tyson (Dragoon) e Kai (Dranzer) completos: dados, atributos calculados das peças, arte (D-008)
-- ⬜ Fase de lançamento com timing e força do lançador (D-010)
-- ⬜ Uma arena finalizada (arte em cache, efeitos)
-- ⬜ HUD: giro, especial, placar, cronômetro
-- ⬜ Sons sintetizados (D-008) e vibração do DualShock 4
-- ⬜ Menus navegáveis só com o controle **ou** só com o teclado (D-015), mostrando os símbolos do dispositivo em uso
+- ✅ Fluxo D-005: modo → seleção de personagem → seleção de bey → arena → entrada → lançamento → batalha → resultado
+- ✅ Tyson (Dragoon) e Kai (Dranzer) completos: dados e atributos das peças extraídos da ROM, retratos do PS1, sprites de caminhada do GBA (D-007, D-040)
+- ✅ Fase de lançamento no ritmo, estilo Beyblade Burst app: mira, 10 batidas, energia e Lançamento Perfeito (D-049, [`LAUNCH.md`](LAUNCH.md)); ⬜ efeito do lançador e do ripcord de cada personagem (D-010)
+- ✅ Arenas finalizadas: 10 cenários do anime e 6 estádios do GBA, em tigela funda (D-028, D-039, D-050)
+- ✅ HUD: giro, especial, escudo, placar, cronômetro
+- ✅ Sons sintetizados (D-008), sons de interface e vibração do DualShock 4
+- 🔄 Menus navegáveis só com o controle **ou** só com o teclado (D-015), mostrando os símbolos do dispositivo em uso (seleção, modos e Arcade já navegam pelos dois)
 - ⬜ Tela de Controles: escolher a porta, detectar o controle, remapear, deadzone e vibração, salvos no banco
 - ⬜ Partida salva no histórico
 
@@ -68,10 +70,10 @@ Uma partida **com cara de produto final**, de ponta a ponta, com 2 personagens.
 
 Tudo que o MVP terá, mesmo sem polimento.
 
-- ⬜ Os 10 personagens de `pesquisa-bakuten/` com suas beys (D-005)
-- ⬜ Especiais por bey (feras bit, Engine Gear etc.)
-- ⬜ Modos: **1 vs 1 local**, **1 vs CPU**, **Arcade** (sequência de CPUs até um chefe), **Treino**
-- ⬜ IA da CPU usando o perfil de cada personagem
+- ✅ Os 10 personagens com suas beys, com a aparência do G-Revolution: retratos do PS1 e da Beyblade Wiki (D-005, D-040, D-046)
+- ✅ Especiais por bey (fera bit com animação, Engine Gear, crítico, escudo com vida) (D-036, D-041, D-042)
+- ✅ Modos: **1 vs 1 local**, **1 vs CPU**, **Arcade** (7 lutas até o Brooklyn, com continues), **Treino**
+- 🔄 IA da CPU que raciocina, com nível e CPU × CPU por comando (D-051); falta o perfil de cada personagem
 - ⬜ Histórico e ranking (jogadores, beys, tipos de finalização)
 - ⬜ Configurações: volume, presets de qualidade gráfica (Alta/Média/Baixa/Automático), tela cheia
 - ⬜ Pausa, desconexão de controle no meio da partida e reconexão (com opção de continuar pelo teclado)
@@ -83,12 +85,13 @@ Tudo que o MVP terá, mesmo sem polimento.
 
 **Conteúdo travado.** Nada novo entra; só qualidade.
 
+- ✅ CI no GitHub Actions: testes em Linux e Windows, builds do jogo e da landing, auditoria ([`CI.md`](CI.md))
 - ⬜ Balanceamento: matriz de vitórias entre beys (simulações automáticas usando o determinismo), ajustes só nos dados
 - ⬜ Performance: 60 FPS estáveis em 1080p numa **GPU integrada**, medidos e documentados ([`ARCHITECTURE.md`](ARCHITECTURE.md#8-renderização-e-performance-em-notebook-sem-placa-de-vídeo))
 - ⬜ Empacotamento `.exe` (Electron + Next standalone) com banco SQLite em `userData` (D-014) e migrações aplicadas na primeira execução
 - ⬜ Checklist de segurança do Electron completo
 - ⬜ Sessões de teste com jogadores; bugs registrados e corrigidos com teste de regressão
-- ⬜ Acessibilidade: `prefers-reduced-motion`, contraste, P1/P2 distinguíveis sem depender só da cor
+- 🔄 Acessibilidade: `prefers-reduced-motion` já respeitado na seleção, entrada e lançamento; faltam contraste e P1/P2 sem depender só da cor
 
 **Pronto quando:** dá para jogar uma noite inteira sem crash, sem travadas e sem bug bloqueante.
 
