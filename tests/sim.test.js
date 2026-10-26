@@ -1,7 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { aimAt, createMatch, stepMatch, launchPower, NEUTRAL_INPUT } from '../src/sim/match.js';
-import { ARENA_RADIUS, DT, LAUNCH_SECONDS, PHYSICS } from '../src/sim/constants.js';
+import { ARENA_RADIUS, DT, PHYSICS } from '../src/sim/constants.js';
+import { beatTick, LAUNCH } from '../src/sim/launch.js';
 
 const bey = (over = {}) => ({
   slug: 'teste',
@@ -43,7 +44,7 @@ test('same seed and same inputs produce the same match', () => {
 test('countdown announces 3, 2, 1 and then go', () => {
   const s = createMatch({ beys: [bey(), bey()] });
   const seen = [];
-  for (let t = 0; t < ticks(LAUNCH_SECONDS) + 1; t++) {
+  while (s.phase === 'launch') {
     stepMatch(s);
     for (const e of s.events) if (e.type === 'countdown' || e.type === 'go') seen.push(e.n ?? 'go');
   }
@@ -51,14 +52,26 @@ test('countdown announces 3, 2, 1 and then go', () => {
   assert.equal(s.phase, 'battle');
 });
 
-test('pressing attack at the top of the launch bar beats not launching', () => {
+test('pressing on every beat of the launch gives the perfect launch, above the max spin (D-049)', () => {
   const s = createMatch({ beys: [bey(), bey()] });
-  // A barra sobe sozinha e chega ao topo em 0,9 s; P1 aperta ✕ ali, P2 não aperta.
-  for (let t = 0; t < ticks(LAUNCH_SECONDS) + 1; t++) {
-    stepMatch(s, [input({ pressed: { attack: t === ticks(0.9) - 1 } }), NEUTRAL_INPUT]);
+  const batidas = new Set(Array.from({ length: LAUNCH.beats }, (_, n) => beatTick(n)));
+  const perfeito = [];
+  // P1 aperta no encontro do anel em todas as batidas; P2 não aperta.
+  while (s.phase === 'launch') {
+    stepMatch(s, [input({ pressed: { attack: batidas.has(s.phaseTicks + 1) } }), NEUTRAL_INPUT]);
+    for (const e of s.events) if (e.type === 'perfect') perfeito.push(e.slot);
   }
-  assert.ok(launchPower(s, 0) > 0.9, `força ${launchPower(s, 0)}`);
-  assert.ok(s.beys[0].spin > s.beys[1].spin, 'quem lança na hora certa entra com mais giro');
+  assert.equal(launchPower(s, 0), 1);
+  assert.deepEqual(perfeito, [0]);
+  assert.ok(s.beys[0].spin > 1, 'o Lançamento Perfeito passa do máximo');
+  assert.equal(s.beys[1].spin, 0.55, 'sem apertar, giro mínimo');
+});
+
+test('the aim moves the launch point around the bowl (D-049)', () => {
+  const s = createMatch({ beys: [bey(), bey()] });
+  while (s.phase === 'launch') stepMatch(s, [input({ move: { x: 1, y: 0 } }), NEUTRAL_INPUT]);
+  assert.ok(Math.abs(s.beys[0].y) > 0.5 * Math.abs(s.beys[0].x), 'a mira no fim gira o ponto de entrada ~45°');
+  assert.equal(s.beys[1].y, 0);
 });
 
 test('colliding beys separate and both lose spin', () => {

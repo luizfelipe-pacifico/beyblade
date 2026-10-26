@@ -5,6 +5,10 @@
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { createMatch, stepMatch, NEUTRAL_INPUT } from '../src/sim/match.js';
+import { beatTick } from '../src/sim/launch.js';
+
+// Lançamento médio no ritmo (D-049): 3 Perfeitos e 1 Bom = 36% de energia, perto da força padrão antiga (35%).
+const LANCAMENTO_MEDIO = new Set([beatTick(0), beatTick(1), beatTick(2), beatTick(3) + 3]);
 import * as K from '../src/sim/constants.js';
 import { CENARIOS, regrasDe } from '../src/content/cenarios.js';
 
@@ -62,7 +66,7 @@ function partida({ p1, p2, j1, j2, seed, regras, defasado = 1 }) {
   while (s.phase !== 'matchOver' && s.tick < 60 * 600) {
     let comandos = [NEUTRAL_INPUT, NEUTRAL_INPUT];
     if (s.phase === 'launch') {
-      const trava = input({ held: { attack: s.phaseTicks === 40 } });
+      const trava = input({ pressed: { attack: LANCAMENTO_MEDIO.has(s.phaseTicks + 1) } });
       comandos = [trava, trava];
     } else if (s.phase === 'battle') {
       ciclo++;

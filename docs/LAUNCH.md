@@ -77,6 +77,16 @@ Os testes (`tests/`) devem cobrir:
 - o lançamento antecipado;
 - a CPU determinística por semente.
 
+## Implementação (2026-10-25)
+
+- Lógica pura em `src/sim/launch.js` (`LAUNCH` com todos os números, `stepLaunchSlot`, `launchSpin`, `cpuLaunchPress`, `launchHud`); testes em `tests/launch.test.js`.
+- `src/sim/match.js`: o lançamento termina quando os dois acabam as 10 batidas (ou soltam antes da hora), nunca antes da contagem. A bey acompanha a mira na beira da arena durante a contagem, e a direção de entrada gira junto. Cada batida errada soma 0,05 rad de desvio e abre a variação da força ("lançamento torto").
+- A 60 Hz, o Perfeito é o terço central da janela, mas nunca menor que o próprio tick (±16 ms).
+- Sem apertar nada, a bey entra com 0% de energia (giro 0,55) e, devagar demais, espirala até o centro. Os testes de órbita e o playtest usam um lançamento médio (3 Perfeitos e 1 Bom = 36%), perto da força padrão antiga (35%) em que a física foi calibrada.
+- CPU (`src/sim/ai.js`): `cpuLaunchPress`, de ~40% (nível 1) a ~90% de acertos (nível 5).
+- HUD (`battle-screen.jsx`): alvo com o anel que fecha, barra da mira na contagem, 10 casas (Perfeito em destaque, Bom claro, Errou apagado) e o medidor "Energia do lançamento"; estalo de interface e vibração em cada acerto.
+- **Falta:** o efeito do lançador e do ripcord de cada personagem (o `bonus` de `stepLaunchSlot` já existe, sem dados ligados); a versão de barra para `prefers-reduced-motion`.
+
 ## Fontes
 
 - Beyblade Wiki, *Beyblade Burst App*: https://beyblade.fandom.com/wiki/Beyblade_Burst_App

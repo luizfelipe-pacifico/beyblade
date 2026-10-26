@@ -1,8 +1,9 @@
 // Simulação da partida (D-006): funções puras sobre um estado serializável, em mm e segundos.
 // Não importa nada de DOM, canvas, áudio ou relógio; a UI só lê o estado e os eventos de cada tick.
 // Comandos do jogo de GBA (D-024): ✕ ataca e ○ defende (segurar carrega), L1 pula, R1 esquiva,
-// L1+R1 soltam a fera bit, ✕+○ ativam o Engine Gear e o lançamento é ✕ no tempo certo.
+// L1+R1 soltam a fera bit, ✕+○ ativam o Engine Gear e o lançamento é ✕ no ritmo (D-049, src/sim/launch.js).
 import { nextRandom } from './rng.js';
+import { LAUNCH, createLaunch, launchHud, launchMisses, launchSpin, perfectLaunch, stepLaunchSlot } from './launch.js';
 import {
   ARENA_RADIUS,
   BOWL,
@@ -13,7 +14,6 @@ import {
   bowlSlope,
   tipClass,
   FINISH_SECONDS,
-  LAUNCH_SECONDS,
   PHYSICS as P,
   POCKETS,
   POCKET_HALF_WIDTH,
@@ -37,10 +37,6 @@ export const NEUTRAL_INPUT = Object.freeze({ move: Object.freeze({ x: 0, y: 0 })
 const ticksOf = (seconds) => Math.round(seconds / DT);
 // Atributos do catálogo vão de 1 a 10 (BEYBLADES.md); a física usa 0 a 1.
 const unit = (v) => Math.min(1, Math.max(0, ((v ?? 5.5) - 1) / 9));
-// Onda triangular 0→1→0: a barra de força do lançamento sobe e desce sozinha; ✕ trava o valor.
-const triangle = (x) => 1 - Math.abs((x % 2) - 1);
-const LAUNCH_CYCLE = 0.9;
-const LAUNCH_DEFAULT = 0.35;
 
 function makeBey(def, slot) {
   const a = def.atributos ?? {};
@@ -127,22 +123,20 @@ export function createMatch({ beys, seed = 1, treino = false, regras = {} }) {
 
 function startRound(state) {
   state.beys = state.source.map((def, slot) => makeBey(def, slot));
-  state.launch = [0, 1].map(() => ({ power: null }));
+  state.launch = [0, 1].map(() => createLaunch());
   state.phase = 'launch';
   state.phaseTicks = 0;
   state.pending = null;
   state.events.push({ type: 'roundStart', round: state.round });
 }
 
-const launchWave = (state) => triangle((state.phaseTicks * DT) / LAUNCH_CYCLE);
-
-// Força travada pelo jogador, ou a posição atual da barra enquanto ele ainda não apertou.
+// Energia acumulada no lançamento (0–1): o que o HUD mostra no medidor.
 export function launchPower(state, slot) {
-  const l = state.launch[slot];
-  if (!l) return 0;
-  if (l.power !== null) return l.power;
-  return state.phase === 'launch' ? launchWave(state) : LAUNCH_DEFAULT;
+  return state.launch[slot]?.energy ?? 0;
 }
+
+// Ritmo do lançamento para o HUD: fase, mira, notas e o anel da batida atual.
+export const launchRhythm = (state, slot) => (state.phase === 'launch' ? launchHud(state.launch[slot], state.phaseTicks) : null);
 
 // Avança um tick (1/60 s). Os eventos ficam em state.events só até o próximo tick.
 export function stepMatch(state, inputs = [NEUTRAL_INPUT, NEUTRAL_INPUT]) {
@@ -187,30 +181,40 @@ function stepLaunch(state, inputs) {
   // Um número por segundo, no primeiro tick de cada segundo: 3, 2, 1.
   if ((t - 1) % second === 0 && t <= 2 * second + 1) state.events.push({ type: 'countdown', n: 3 - (t - 1) / second });
   state.launch.forEach((l, slot) => {
-    if (l.power === null && inputs[slot]?.pressed.attack) {
-      l.power = launchWave(state);
-      state.events.push({ type: 'launchLock', slot, power: l.power });
-    }
+    for (const e of stepLaunchSlot(l, t, inputs[slot] ?? NEUTRAL_INPUT)) state.events.push({ ...e, slot });
+    // A bey acompanha a mira na beira da arena, para o jogador ver onde vai entrar.
+    const [c, sn] = aimRotation(l);
+    const b = state.beys[slot];
+    const x0 = slot === 0 ? -START_X : START_X;
+    [b.x, b.y] = [x0 * c, x0 * sn];
   });
-  if (t >= ticksOf(LAUNCH_SECONDS)) launchBeys(state);
+  // Cada um terminou as 10 batidas (ou soltou antes da hora); a contagem sempre vai até o fim.
+  if (t >= LAUNCH.aimTicks && state.launch.every((l) => l.done)) launchBeys(state);
 }
+
+// Mira em volta do centro, até 45° para cada lado (D-049): cosseno e seno do giro.
+const aimRotation = (l) => [Math.cos(l.aim * (Math.PI / 4)), Math.sin(l.aim * (Math.PI / 4))];
 
 function launchBeys(state) {
   state.beys.forEach((b, slot) => {
     const l = state.launch[slot];
-    const power = l.power ?? LAUNCH_DEFAULT;
-    l.power = power;
-    b.spin = 0.55 + 0.45 * power;
+    const power = l.energy;
+    b.spin = launchSpin(l);
+    // Lançamento torto: cada batida errada abre o desvio de direção e de força.
+    const torto = launchMisses(l) * 0.05;
     // Os dois entram girando no mesmo sentido em volta do centro, como no lançamento do anime.
     // Um desvio sorteado (com semente) de ângulo e força: lançamentos idênticos fariam órbitas
     // espelhadas que nunca se cruzam, e a rodada acabaria sempre empatada.
-    const speed = (P.launchSpeed + P.launchSpeedPerPower * power) * (0.85 + 0.3 * nextRandom(state));
-    const aim = (nextRandom(state) - 0.5) * 0.9;
+    const speed = (P.launchSpeed + P.launchSpeedPerPower * power) * (0.85 - torto / 2 + (0.3 + torto) * nextRandom(state));
+    const aim = (nextRandom(state) - 0.5) * (0.9 + torto);
     const along = slot === 0 ? -1 : 1;
     b.vx = Math.sin(aim) * speed * along + (slot === 0 ? P.launchDrift : -P.launchDrift);
     b.vy = Math.cos(aim) * speed * along;
+    // Mira (D-049): o ponto de entrada já girou na contagem; a direção gira junto.
+    const [c, sn] = aimRotation(l);
+    [b.vx, b.vy] = [b.vx * c - b.vy * sn, b.vx * sn + b.vy * c];
     b.state = 'active';
-    if (power >= 0.92) state.events.push({ type: 'perfect', slot });
+    if (perfectLaunch(l)) state.events.push({ type: 'perfect', slot });
   });
   state.phase = 'battle';
   state.phaseTicks = 0;

@@ -6,7 +6,9 @@ import { cn } from 'cn';
 import beys from '@/content/beys.generated.json';
 import { roster, beySprite } from '@/content/roster';
 import { regrasDe, resolverArena } from '@/content/cenarios';
-import { createMatch, launchPower, NEUTRAL_INPUT, stepMatch } from '@/sim/match';
+import { createMatch, launchPower, launchRhythm, NEUTRAL_INPUT, stepMatch } from '@/sim/match';
+import { LAUNCH } from '@/sim/launch';
+import { uiSounds } from '@/audio/ui-sounds';
 import { createCpu } from '@/sim/ai';
 import { DT, FERA, FINISHES, PHYSICS, ROUND_SECONDS, ROUNDS_TO_WIN } from '@/sim/constants';
 import { colors, feras } from '@/design/tokens';
@@ -52,6 +54,7 @@ function hudSnapshot(state) {
       escudoQuebrado: b.shieldBroken,
     })),
     launch: [launchPower(state, 0), launchPower(state, 1)],
+    ritmo: [launchRhythm(state, 0), launchRhythm(state, 1)],
     restante: state.phase === 'battle' ? Math.max(0, Math.ceil(ROUND_SECONDS - state.phaseTicks * DT)) : ROUND_SECONDS,
   };
 }
@@ -146,7 +149,17 @@ export function BattleScreen({ p1, p2, b1, b2, arena, cpu = false, modo = 'versu
           break;
         case 'countdown':
           if (e.n === 3) sons.play('contagem', 0.8);
-          mostrar(String(e.n), 'Aperte o botão X (F / K) com a barra no topo', 900);
+          mostrar(String(e.n), 'Mire com ← → e aperte ✕ (F / K) quando o anel fechar', 900);
+          break;
+        case 'launchHit':
+          // Uma batida do lançamento no ritmo (D-049): estalo da catraca, mais forte no Perfeito.
+          if (e.nota === 'perfeito') uiSounds.confirm();
+          else if (e.nota === 'bom') uiSounds.move();
+          else uiSounds.back();
+          if (e.nota !== 'errou') input.rumble(e.slot, e.nota === 'perfeito' ? 0.5 : 0.25, 0.2, 50);
+          break;
+        case 'launchEarly':
+          mostrar('Lançamento antecipado!', `${personagens[e.slot].nome} solta antes da hora, sem energia`, 1000);
           break;
         case 'go':
           sons.play('lancamento');
@@ -187,7 +200,7 @@ export function BattleScreen({ p1, p2, b1, b2, arena, cpu = false, modo = 'versu
           mostrar('Engine Gear!', `${personagens[e.slot].bey} recupera giro`, 1100);
           break;
         case 'perfect':
-          mostrar('Lançamento perfeito!', `${personagens[e.slot].nome} entra com giro máximo`, 1100);
+          mostrar('Lançamento perfeito!', `${personagens[e.slot].nome} entra acima do giro máximo`, 1100);
           break;
         case 'hit': {
           const forca = Math.min(1, e.impact / PHYSICS.maxImpact);
@@ -417,7 +430,7 @@ function Painel({ i, personagens, hud }) {
       <span className="text-base font-semibold text-texto-2">{p.bey}</span>
       {/* Mesmas linhas em todas as fases: se o painel mudasse de altura, o conteúdo pularia. */}
       {lancando ? (
-        <GaugeBar label="Força do lançamento" value={hud?.launch[i] ?? 0} tipo="especial" />
+        <Ritmo r={hud?.ritmo?.[i]} energia={hud?.launch[i] ?? 0} i={i} />
       ) : (
         <GaugeBar label="Giro" value={b?.spin ?? 1} fera={p.fera ?? undefined} />
       )}
@@ -453,7 +466,7 @@ function Placar({ personagens, hud, modo, etapa }) {
       <p className="font-extrabold">{modo === 'arcade' ? `Arcade · luta ${etapa + 1} · melhor de 3` : 'Melhor de 3'}</p>
       <RoundRow rounds={hud?.rounds ?? []} total={3} feraP1={personagens[0].fera ?? undefined} feraP2={personagens[1].fera ?? undefined} className="w-full" />
       <p className="text-sm font-semibold tabular-nums text-texto-2">
-        {lancando ? 'Aperte o botão X (F / K) quando a barra estiver no topo' : `Rodada ${hud?.round ?? 1} · ${hud?.restante ?? ROUND_SECONDS}s`}
+        {lancando ? 'Mire com ← → na contagem; depois aperte ✕ (F / K) quando o anel fechar, 10 vezes' : `Rodada ${hud?.round ?? 1} · ${hud?.restante ?? ROUND_SECONDS}s`}
       </p>
     </div>
   );
@@ -538,6 +551,42 @@ function Resultado({ personagens, fim, salvo, arcade, onArcade, onRevanche, onTr
           {salvo ? <p className="text-sm text-texto-2">{salvo}</p> : null}
         </div>
       </FeraField>
+    </div>
+  );
+}
+
+// Lançamento no ritmo (D-049, docs/LAUNCH.md): na contagem, a mira; depois o anel que fecha sobre o alvo,
+// as 10 batidas (Perfeito, Bom, Errou) e a energia acumulada.
+const NOTA = { perfeito: 'bg-chamada', bom: 'bg-papel', errou: 'bg-texto-2/30' };
+function Ritmo({ r, energia, i }) {
+  const cor = i === 0 ? 'var(--p1)' : 'var(--p2)';
+  return (
+    <div className="grid gap-2">
+      <div className="flex items-center gap-3">
+        <div className="relative grid size-14 shrink-0 place-items-center" aria-hidden="true">
+          <span className="size-6 rounded-full border-4" style={{ borderColor: cor }} />
+          {r?.fase === 'ritmo' ? (
+            <span className="absolute inset-0 m-auto size-6 rounded-full border-2 border-papel" style={{ transform: `scale(${1 + 1.8 * r.anel})`, opacity: 0.4 + 0.6 * (1 - r.anel) }} />
+          ) : null}
+        </div>
+        <div className="grid min-w-0 flex-1 gap-1">
+          <span className="text-sm font-extrabold uppercase">
+            {r?.fase === 'mira' ? `Mira · ${r.contagem}` : r?.early ? 'Antecipado' : r?.fase === 'solta' ? 'Pronto' : `Batida ${Math.min(LAUNCH.beats, (r?.beat ?? 0) + 1)} de ${LAUNCH.beats}`}
+          </span>
+          {r?.fase === 'mira' ? (
+            <div className="relative h-2 rounded-full bg-texto-2/30">
+              <span className="absolute top-1/2 size-3 -translate-x-1/2 -translate-y-1/2 rounded-full" style={{ left: `${50 + 50 * r.aim}%`, background: cor }} />
+            </div>
+          ) : (
+            <div className="flex gap-1">
+              {Array.from({ length: LAUNCH.beats }, (_, n) => (
+                <span key={n} className={cn('h-2 flex-1 rounded-sm', r?.hits?.[n] ? NOTA[r.hits[n]] : 'bg-texto-2/15')} />
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+      <GaugeBar label="Energia do lançamento" value={energia} tipo="especial" />
     </div>
   );
 }

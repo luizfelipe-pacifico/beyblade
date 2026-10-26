@@ -3,19 +3,19 @@
 // Raciocínio: a cada "olhada" (o tempo de reação do nível) avalia a situação e escolhe uma intenção;
 // entre olhadas, segue o plano. Cada decisão fica em `log` com o motivo, para o relatório CPU × CPU.
 import { ARENA_RADIUS, DT, PHYSICS, POCKETS } from './constants.js';
-import { launchPower } from './match.js';
+import { cpuLaunchPress } from './launch.js';
 
 const R = ARENA_RADIUS;
 
 // Nível 1 (fácil) a 5 (difícil). reacao: segundos entre olhadas; precisao: chance de soltar ✕ no estalo
 // (e não depois); mira: erro do direcional em radianos; ousadia: vontade de arriscar investidas;
-// lancamento: força mínima que ela espera na barra antes de travar.
+// O acerto no ritmo do lançamento sai do nível (cpuLaunchPress, src/sim/launch.js).
 export const NIVEIS = {
-  1: { reacao: 0.45, precisao: 0.15, mira: 0.6, ousadia: 0.35, defesa: 0.3, lancamento: 0.45 },
-  2: { reacao: 0.35, precisao: 0.3, mira: 0.45, ousadia: 0.5, defesa: 0.45, lancamento: 0.6 },
-  3: { reacao: 0.25, precisao: 0.5, mira: 0.3, ousadia: 0.6, defesa: 0.6, lancamento: 0.72 },
-  4: { reacao: 0.18, precisao: 0.7, mira: 0.18, ousadia: 0.7, defesa: 0.75, lancamento: 0.82 },
-  5: { reacao: 0.12, precisao: 0.88, mira: 0.08, ousadia: 0.8, defesa: 0.9, lancamento: 0.9 },
+  1: { reacao: 0.45, precisao: 0.15, mira: 0.6, ousadia: 0.35, defesa: 0.3 },
+  2: { reacao: 0.35, precisao: 0.3, mira: 0.45, ousadia: 0.5, defesa: 0.45 },
+  3: { reacao: 0.25, precisao: 0.5, mira: 0.3, ousadia: 0.6, defesa: 0.6 },
+  4: { reacao: 0.18, precisao: 0.7, mira: 0.18, ousadia: 0.7, defesa: 0.75 },
+  5: { reacao: 0.12, precisao: 0.88, mira: 0.08, ousadia: 0.8, defesa: 0.9 },
 };
 
 function sorteio(seed) {
@@ -37,16 +37,15 @@ const norm = (x, y) => {
 };
 
 export function createCpu({ slot, nivel = 3, seed = 1 }) {
-  const n = NIVEIS[Math.min(5, Math.max(1, Math.round(nivel)))];
+  const nivelNum = Math.min(5, Math.max(1, Math.round(nivel)));
+  const n = NIVEIS[nivelNum];
   const rnd = sorteio(seed * 7919 + slot);
   const log = [];
   let proximaOlhada = 0;
   let intencao = 'orbitar';
   let plano = [];
-  let alvoLancamento = n.lancamento + rnd() * (1 - n.lancamento) * 0.5;
   let soltarNoEstalo = false;
   let cargaSemEstalo = 0.8;
-  let lancou = false;
 
   const decidir = (t, nova, motivo) => {
     if (nova !== intencao) log.push({ t: Math.round(t * 100) / 100, intencao: nova, motivo });
@@ -58,18 +57,11 @@ export function createCpu({ slot, nivel = 3, seed = 1 }) {
     const ele = state.beys[1 - slot];
     const t = state.tick * DT;
 
-    // Lançamento: trava a barra quando ela passar da força que esta CPU espera (nível + sorte).
+    // Lançamento no ritmo (D-049): aperta perto de cada batida, com o acerto do nível. O tick do lançamento
+    // que este aperto vai valer é o próximo (a partida avança antes de ler o comando).
     if (state.phase === 'launch') {
-      if (state.phaseTicks <= 1) {
-        lancou = false;
-        alvoLancamento = n.lancamento + rnd() * (1 - n.lancamento) * 0.5;
-      }
-      if (!lancou && launchPower(state, slot) >= alvoLancamento) {
-        lancou = true;
-        log.push({ t: Math.round(t * 100) / 100, intencao: 'lancar', motivo: `barra em ${Math.round(alvoLancamento * 100)}%` });
-        return frame({ attack: true }, undefined, { attack: true });
-      }
-      return frame();
+      const aperta = cpuLaunchPress(state.launch[slot], state.phaseTicks + 1, nivelNum, rnd);
+      return aperta ? frame({ attack: true }, undefined, { attack: true }) : frame();
     }
     if (state.phase !== 'battle' || eu.state !== 'active') return frame();
 

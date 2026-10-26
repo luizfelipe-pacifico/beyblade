@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createMatch, stepMatch, NEUTRAL_INPUT } from '../src/sim/match.js';
+import { beatTick } from '../src/sim/launch.js';
 import { ARENA_RADIUS as R, BOWL, DT, GRAVITY, PHYSICS, POCKETS, TYPES, bowlHeight } from '../src/sim/constants.js';
 
 // Física da tigela e comportamento por ponta (docs/BEY_BEHAVIOR.md).
@@ -8,10 +9,19 @@ const ticks = (s) => Math.round(s / DT);
 const attrs = { ataque: 6, defesa: 6, stamina: 6, velocidade: 6, peso: 6, equilibrio: 6, resistencia_knockout: 6 };
 const bey = (over = {}) => ({ slug: 't', nome: 'T', tipo: 'balance', rotacao: 'direita', atributos: attrs, medidas: { diametro_mm: 46, peso_g: 38 }, ...over });
 
+// Lançamento médio (D-049): 3 Perfeitos e 1 Bom = 36% de energia, a força padrão (35%) em que as órbitas foram calibradas.
+const MEDIO = new Set([beatTick(0), beatTick(1), beatTick(2), beatTick(3) + 3]);
+function launchMedium(s) {
+  while (s.phase === 'launch') {
+    const aperta = { ...NEUTRAL_INPUT, pressed: { attack: MEDIO.has(s.phaseTicks + 1) } };
+    stepMatch(s, [aperta, aperta]);
+  }
+}
+
 // Uma bey sozinha na arena: a outra sai do palco para não haver choque.
 function solo(def, place) {
   const s = createMatch({ beys: [def, bey({ ponta: 'sharp' })], seed: 5 });
-  while (s.phase === 'launch') stepMatch(s);
+  launchMedium(s);
   s.beys[1].state = 'out';
   if (place) Object.assign(s.beys[0], place);
   return s;
@@ -102,7 +112,8 @@ test('stamina (sharp tip) stays at the center', () => {
 
 test('defense (ball tip) circles close to the center without sitting on it', () => {
   const r = radii(bey({ ponta: 'metal-ball', tipo: 'defense' }));
-  assert.ok(r.median > 0.1 && r.median < 0.3, `mediana ${r.median.toFixed(2)}`);
+  // 0,32: o lançamento médio do ritmo (D-049) tem 6 batidas erradas, que entortam a entrada um pouco.
+  assert.ok(r.median > 0.1 && r.median < 0.32, `mediana ${r.median.toFixed(2)}`);
   assert.ok(r.p90 < 0.45, `p90 ${r.p90.toFixed(2)}`);
 });
 

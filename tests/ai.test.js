@@ -28,9 +28,12 @@ test('the same seed gives the same CPU inputs (deterministic, own random)', () =
   assert.deepEqual(a.entradas, b.entradas);
 });
 
-test('the CPU locks its own launch instead of taking the default power', () => {
-  const { eventos } = cpuXcpu({ ticks: 60 * 4 });
-  for (const slot of [0, 1]) assert.ok(eventos.some((e) => e.type === 'launchLock' && e.slot === slot), `CPU ${slot + 1} não lançou`);
+test('the CPU hits the launch rhythm itself instead of taking the minimum power', () => {
+  const { eventos } = cpuXcpu({ ticks: 60 * 8 });
+  for (const slot of [0, 1]) {
+    const acertos = eventos.filter((e) => e.type === 'launchHit' && e.slot === slot && e.nota !== 'errou');
+    assert.ok(acertos.length >= 3, `CPU ${slot + 1} acertou ${acertos.length} batidas`);
+  }
 });
 
 test('the CPU attacks, defends and uses the bit-beast and the Engine Gear during a match', () => {

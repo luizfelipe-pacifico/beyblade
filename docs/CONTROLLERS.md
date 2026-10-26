@@ -41,7 +41,7 @@ Segue os comandos do jogo de GBA, confirmados nos textos de dica da ROM ([D-024]
 | Fera bit | L1 + R1 segurados | L + R |
 | Engine Gear | ✕ + ○ segurados | A + B |
 | Combos depois de um "HIT!" | ↑↓✕ forte, ←→✕ médio, →←✕ fraco | ↑↓A, ←→A, →←A |
-| `launch` | ✕ (com timing) | A |
+| `launch` | ✕ no ritmo (10 batidas) e analógico/direcional para a mira, D-049 | A |
 | `pause` / entrar como P2 | Options | Start |
 
 Fera bit, Engine Gear e combos são **combinações** de `attack`, `defend`, `jump`, `dodge` e direções, então não têm binding próprio: remapear os botões base remapeia as combinações. As ações aceitas nas configurações salvas (`src/validate.js`, `ACTIONS`) e as lidas pelo input (`src/input/frame.js`) já são estas.

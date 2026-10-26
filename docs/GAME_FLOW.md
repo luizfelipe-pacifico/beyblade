@@ -15,7 +15,7 @@ modo → personagem (P1, e P2 se entrar) → beyblade → [CPU: personagem → b
 | CPU | Se o P2 não entrou, o **P1 escolhe o personagem e a bey da CPU** logo depois dos seus. |
 | `stageSelect` | Escolha do estádio. A ROM tem **6 estádios** (chão + sombreado da tigela) **(ROM)**. |
 | `walkIn` | Os dois personagens **andam até a arena** usando os quadros de caminhada do jogo (29 quadros por personagem principal, com caminhada de lado, de frente e de costas e as poses de lançamento) **(ROM)**: entram de lado pelas laterais, freiam e param ao lado do prato, e os retratos cruzam a tela com o VS (D-052). |
-| `launch` | Mini-game de lançamento. O jogo de GBA tem **lançamento antecipado** ("Premature launch") e o lançador e o ripcord influenciam o resultado **(ROM)**. |
+| `launch` | Mini-game de lançamento no ritmo, estilo Beyblade Burst app: mira na contagem, 10 batidas de ✕ com janela que estreita, energia e Lançamento Perfeito (D-049, [`LAUNCH.md`](LAUNCH.md)). O jogo de GBA tem **lançamento antecipado** ("Premature launch"), que virou ✕ antes da hora; o lançador e o ripcord influenciam o resultado **(ROM)**. |
 | `battle` | Batalha até um dos finais abaixo. |
 | `results` | Placar, revanche, voltar à seleção. |
 
@@ -71,7 +71,7 @@ Os textos de dica do próprio jogo (`TIP: ...`, ROM `0x08382924`–`0x08383676`)
 | Combo forte, depois de um "HIT!" | ↑, ↓, A | ↑, ↓, ✕ |
 | Combo médio | ←, →, A | ←, →, ✕ |
 | Combo fraco | →, ←, A | →, ←, ✕ |
-| Lançar | A (com timing) | ✕ (com timing) |
+| Lançar | A (com timing) | ← → mira na contagem; ✕ no ritmo, 10 batidas (D-049) |
 
 Efeitos sonoros do jogo batem com essas ações: `impact1`–`3`, `jump`, `land`, `evade`, `defend`, `eg_active`, `beast1`–`2`, `ripper`, `ripperboost`, `ripperpulled` **(ROM)**.
 
