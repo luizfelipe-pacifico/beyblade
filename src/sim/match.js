@@ -78,11 +78,13 @@ function makeBey(def, slot) {
   };
 }
 
-export function createMatch({ beys, seed = 1 }) {
+// treino: sem relógio, rodadas sem placar e o P2 (boneco) não perde giro (D-035).
+export function createMatch({ beys, seed = 1, treino = false }) {
   if (!Array.isArray(beys) || beys.length !== 2) throw new Error('createMatch precisa de duas beys');
   const state = {
     tick: 0,
     rng: seed >>> 0,
+    treino,
     defs: beys.map((b) => ({ slug: b.slug, nome: b.nome, especial: b.especial ?? 'Especial' })),
     source: beys,
     round: 1,
@@ -132,7 +134,8 @@ export function stepMatch(state, inputs = [NEUTRAL_INPUT, NEUTRAL_INPUT]) {
     case 'battle':
       handleCommands(state, inputs);
       simulate(state, inputs, true);
-      if (state.phase === 'battle' && state.phaseTicks >= ticksOf(ROUND_SECONDS)) decide(state);
+      if (state.treino) state.beys[1].spin = Math.max(state.beys[1].spin, 1);
+      else if (state.phase === 'battle' && state.phaseTicks >= ticksOf(ROUND_SECONDS)) decide(state);
       break;
     case 'finishing':
       simulate(state, inputs, false);
@@ -603,7 +606,7 @@ function setPending(state, winner, finish) {
 
 function endRound(state) {
   const { winner, finish } = state.pending;
-  if (winner) state.wins[winner - 1]++;
+  if (winner && !state.treino) state.wins[winner - 1]++;
   state.rounds.push({ winner, finish });
   if (state.wins[0] >= ROUNDS_TO_WIN) state.winner = 1;
   else if (state.wins[1] >= ROUNDS_TO_WIN) state.winner = 2;

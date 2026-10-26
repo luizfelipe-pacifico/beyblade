@@ -207,3 +207,19 @@ test('an idle match between different beys still finishes', () => {
   while (s.phase !== 'matchOver' && s.tick < ticks(60 * 10)) stepMatch(s);
   assert.equal(s.phase, 'matchOver');
 });
+
+test('training mode has no clock, no score and the dummy keeps its spin', () => {
+  const s = toBattle(createMatch({ beys: [bey(), bey()], seed: 3, treino: true }));
+  for (let t = 0; t < ticks(70) && s.phase === 'battle'; t++) {
+    s.beys[0].spin = 1;
+    stepMatch(s);
+  }
+  // O relógio de 60 s não decide a rodada e o boneco não perde giro.
+  assert.equal(s.phase, 'battle');
+  assert.ok(s.beys[1].spin >= 1);
+  // Uma rodada que termina (aqui forçada pelo P1 parar) não entra no placar.
+  s.beys[0].spin = 0;
+  for (let t = 0; t < ticks(10) && s.phase !== 'launch'; t++) stepMatch(s);
+  assert.deepEqual(s.wins, [0, 0]);
+  assert.equal(s.winner, 0);
+});

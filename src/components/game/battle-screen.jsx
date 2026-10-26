@@ -43,8 +43,15 @@ function comBey(personagem, beyId) {
   return { ...personagem, beySlug: def.id ?? personagem.beySlug, bey: def.nome, sprite: def.sprite ?? beySprite(personagem.beySlug) };
 }
 
-export function BattleScreen({ p1, p2, b1, b2, cpu = false }) {
+// modo (D-035): versus | cpu | arcade | treino. Fora do versus o P2 é da máquina (a IA ainda não
+// existe: fica neutro); cpuNivel fica guardado no estado para ela.
+export function BattleScreen({ p1, p2, b1, b2, cpu = false, modo = 'versus', etapa = 1, cpuNivel = 1 }) {
   const router = useRouter();
+  const treino = modo === 'treino';
+  const arcade = modo === 'arcade';
+  const p2Maquina = cpu || modo !== 'versus';
+  const sair = () => router.push(arcade ? `/arcade?etapa=${etapa}` : '/personagens');
+  const paraArcade = (winner) => router.push(`/arcade?etapa=${etapa}&resultado=${winner === 1 ? 'vitoria' : 'derrota'}`);
   const personagens = [
     comBey(roster.find((r) => r.slug === p1) ?? roster[0], b1),
     comBey(roster.find((r) => r.slug === p2) ?? roster[1], b2),
@@ -65,7 +72,8 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false }) {
 
   useEffect(() => {
     const defs = personagens.map((p) => beys[p.beySlug]);
-    const state = createMatch({ beys: defs, seed: Date.now() >>> 0 });
+    const state = createMatch({ beys: defs, seed: Date.now() >>> 0, treino });
+    state.cpuNivel = cpuNivel;
     const renderer = new ArenaRenderer(canvasRef.current, personagens.map((p) => p.sprite));
     const input = new InputManager();
     const sons = createSounds({
@@ -188,12 +196,16 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false }) {
 
       if (state.phase === 'matchOver') {
         if (now - fimEm > RESULT_LOCK_MS) {
-          if (any('confirm')) setPartida((n) => n + 1);
+          // Arcade: o resultado volta para a escada, que decide a próxima luta.
+          if (arcade) {
+            if (any('confirm')) paraArcade(state.winner);
+          } else if (any('confirm')) setPartida((n) => n + 1);
           else if (any('back')) router.push('/personagens');
         }
       } else if (pausaRef.current) {
         if (any('pause') || any('confirm')) definirPausa(false);
-        else if (any('back')) router.push('/personagens');
+        else if (treino && any('jump')) setPartida((n) => n + 1);
+        else if (any('back')) sair();
       } else if (any('pause')) {
         definirPausa(true);
       }
@@ -204,7 +216,7 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false }) {
         while (acc >= DT) {
           prev = state.beys.map((b) => ({ x: b.x, y: b.y, angle: b.angle }));
           // CPU (cpu=2): a IA ainda não existe (ROADMAP M3); até lá o P2 só lança e gira.
-          const comandos = cpu ? [frames[0], NEUTRAL_INPUT] : frames;
+          const comandos = p2Maquina ? [frames[0], NEUTRAL_INPUT] : frames;
           stepMatch(state, primeiro ? comandos : comandos.map((f) => ({ ...f, pressed: {} })));
           primeiro = false;
           acc -= DT;
@@ -239,7 +251,7 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false }) {
       sons.stopAll();
     };
     // Uma partida nova a cada revanche ou troca de dupla.
-  }, [partida, p1, p2, b1, b2, cpu]);
+  }, [partida, p1, p2, b1, b2, cpu, modo, etapa, cpuNivel]);
 
   return (
     // Painéis nas laterais: a arena (redonda) usa a altura inteira da janela, que é a dimensão menor.
@@ -253,12 +265,21 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false }) {
         <div className="pointer-events-none absolute inset-0 grid place-items-center">
           {anuncio ? <Announcement key={anuncio.id} titulo={anuncio.titulo} sub={anuncio.sub} /> : null}
         </div>
-        {pausado && !fim ? <Pausa onContinuar={() => definirPausa(false)} onSair={() => router.push('/personagens')} /> : null}
+        {pausado && !fim ? (
+          <Pausa
+            onContinuar={() => definirPausa(false)}
+            onReiniciar={treino ? () => setPartida((n) => n + 1) : null}
+            onSair={sair}
+            sairRotulo={arcade ? 'Voltar para o arcade' : 'Voltar para personagens'}
+          />
+        ) : null}
         {fim ? (
           <Resultado
             personagens={personagens}
             fim={fim}
             salvo={salvo}
+            arcade={arcade}
+            onArcade={() => paraArcade(fim.winner)}
             onRevanche={() => setPartida((n) => n + 1)}
             onTrocar={() => router.push('/personagens')}
           />
@@ -266,7 +287,7 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false }) {
       </div>
       <aside className="flex min-h-0 flex-col justify-between gap-6 overflow-y-auto bg-tinta p-5" aria-label="Jogador 2">
         <Painel i={1} personagens={personagens} hud={hud} />
-        <Placar personagens={personagens} hud={hud} />
+        <Placar personagens={personagens} hud={hud} modo={modo} etapa={etapa} />
       </aside>
     </div>
   );
@@ -313,11 +334,22 @@ function Painel({ i, personagens, hud }) {
   );
 }
 
-function Placar({ personagens, hud }) {
+function Placar({ personagens, hud, modo, etapa }) {
   const lancando = hud?.phase === 'launch';
+  if (modo === 'treino') {
+    return (
+      <div className="grid gap-3">
+        <p className="font-extrabold">Treino</p>
+        <p className="text-sm font-semibold text-texto-2">Sem relógio e sem placar. O boneco não perde giro.</p>
+        <ControlHint pad="options" tecla="Esc / P">
+          Pausa, reiniciar ou sair
+        </ControlHint>
+      </div>
+    );
+  }
   return (
     <div className="grid gap-3">
-      <p className="font-extrabold">Melhor de 3</p>
+      <p className="font-extrabold">{modo === 'arcade' ? `Arcade · luta ${etapa} · melhor de 3` : 'Melhor de 3'}</p>
       <RoundRow rounds={hud?.rounds ?? []} total={3} feraP1={personagens[0].fera ?? undefined} feraP2={personagens[1].fera ?? undefined} className="w-full" />
       <p className="text-sm font-semibold tabular-nums text-texto-2">
         {lancando ? 'Aperte o botão X (F / K) quando a barra estiver no topo' : `Rodada ${hud?.round ?? 1} · ${hud?.restante ?? ROUND_SECONDS}s`}
@@ -326,7 +358,7 @@ function Placar({ personagens, hud }) {
   );
 }
 
-function Pausa({ onContinuar, onSair }) {
+function Pausa({ onContinuar, onReiniciar, onSair, sairRotulo }) {
   return (
     <div className="absolute inset-0 z-10 grid place-items-center bg-tinta/85" role="dialog" aria-modal="true" aria-labelledby="pausa-titulo">
       <div className="grid gap-6 bg-tinta-2 p-10">
@@ -337,14 +369,24 @@ function Pausa({ onContinuar, onSair }) {
           <Button size="lg" onClick={onContinuar} autoFocus>
             Continuar
           </Button>
+          {onReiniciar ? (
+            <Button size="lg" variant="secondary" onClick={onReiniciar}>
+              Reiniciar
+            </Button>
+          ) : null}
           <Button size="lg" variant="secondary" onClick={onSair}>
-            Voltar para personagens
+            {sairRotulo}
           </Button>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-2">
           <ControlHint pad="options" tecla="Esc / P">
             Continuar
           </ControlHint>
+          {onReiniciar ? (
+            <ControlHint pad="l1" tecla="R / I">
+              Reiniciar
+            </ControlHint>
+          ) : null}
           <ControlHint pad="circle" tecla="G / L">
             Sair
           </ControlHint>
@@ -354,7 +396,7 @@ function Pausa({ onContinuar, onSair }) {
   );
 }
 
-function Resultado({ personagens, fim, salvo, onRevanche, onTrocar }) {
+function Resultado({ personagens, fim, salvo, arcade, onArcade, onRevanche, onTrocar }) {
   const vencedor = personagens[fim.winner - 1];
   return (
     <div className="absolute inset-0 z-10 grid place-items-center bg-tinta/85">
@@ -363,22 +405,35 @@ function Resultado({ personagens, fim, salvo, onRevanche, onTrocar }) {
         <TitleCard nome={`${vencedor.nome} vence!`} sub={`${vencedor.bey} · ${fim.wins[0]} × ${fim.wins[1]}`} size="lg" as="h2" />
         <div className="grid gap-4 bg-tinta p-5 text-papel">
           <RoundRow rounds={fim.rounds} encerrada feraP1={personagens[0].fera ?? undefined} feraP2={personagens[1].fera ?? undefined} />
-          <div className="flex flex-wrap gap-4">
-            <Button size="lg" onClick={onRevanche} autoFocus>
-              Revanche
-            </Button>
-            <Button size="lg" variant="secondary" onClick={onTrocar}>
-              Trocar personagens
-            </Button>
-          </div>
-          <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <ControlHint pad="cross" tecla="F / K">
-              Revanche
-            </ControlHint>
-            <ControlHint pad="circle" tecla="G / L">
-              Trocar personagens
-            </ControlHint>
-          </div>
+          {arcade ? (
+            <>
+              <Button size="lg" onClick={onArcade} autoFocus className="w-fit">
+                Continuar
+              </Button>
+              <ControlHint pad="cross" tecla="F / K">
+                Continuar
+              </ControlHint>
+            </>
+          ) : (
+            <>
+              <div className="flex flex-wrap gap-4">
+                <Button size="lg" onClick={onRevanche} autoFocus>
+                  Revanche
+                </Button>
+                <Button size="lg" variant="secondary" onClick={onTrocar}>
+                  Trocar personagens
+                </Button>
+              </div>
+              <div className="flex flex-wrap gap-x-6 gap-y-2">
+                <ControlHint pad="cross" tecla="F / K">
+                  Revanche
+                </ControlHint>
+                <ControlHint pad="circle" tecla="G / L">
+                  Trocar personagens
+                </ControlHint>
+              </div>
+            </>
+          )}
           {salvo ? <p className="text-sm text-texto-2">{salvo}</p> : null}
         </div>
       </FeraField>
