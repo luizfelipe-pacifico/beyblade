@@ -105,8 +105,11 @@ export function reduceSelect(s, player, action, rng = Math.random) {
     if (action === 'left') return { ...s, stageCursor: (s.stageCursor - 1 + total) % total };
     if (action === 'right') return { ...s, stageCursor: (s.stageCursor + 1) % total };
     if (action === 'confirm') {
-      // Aleatória fica para a batalha sortear (entre os cenários).
-      const stage = s.stages[s.stageCursor];
+      // Aleatória: sorteia aqui, entre os cenários do anime, para a entrada mostrar o mesmo lugar da batalha.
+      // Sem cenário na lista (só estádios do GBA), fica para a batalha sortear.
+      const escolhida = s.stages[s.stageCursor];
+      const cenarios = s.stages.filter((x) => x !== RANDOM_STAGE && !x.startsWith('rom-'));
+      const stage = escolhida === RANDOM_STAGE && cenarios.length ? cenarios[Math.floor(rng() * cenarios.length)] : escolhida;
       return { ...s, stage, phase: 'done' };
     }
     if (action === 'back') return { ...setSlot(s, 1, { step: 'bey', bey: null }), phase: 'select' };

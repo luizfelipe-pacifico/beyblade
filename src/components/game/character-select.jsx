@@ -85,7 +85,7 @@ export function CharacterSelect({ onBattle, onExit, mode = 'versus' }) {
   if (s.phase === 'done' && s.mode === 'arcade') return <Transicao onDone={irParaBatalha} />;
   if (s.phase === 'done') {
     const personagens = s.slots.map((slot) => roster.find((c) => c.slug === slot.character));
-    return <WalkIn personagens={personagens} romData={romData} arena={s.stage} onDone={irParaBatalha} />;
+    return <WalkIn personagens={personagens} romData={romData} ps1={ps1} arena={s.stage} onDone={irParaBatalha} />;
   }
 
   return (
@@ -93,7 +93,7 @@ export function CharacterSelect({ onBattle, onExit, mode = 'versus' }) {
       <Lado jogador={0} s={s} romData={romData} ps1={ps1} flash={flash[0]} />
       <div className="relative z-10 grid content-center gap-6 px-4">
         {s.phase === 'stage' ? (
-          <StageSelect stages={s.stages} cursor={s.stageCursor} romData={romData} />
+          <StageSelect stages={s.stages} cursor={s.stageCursor} />
         ) : (
           <Grade s={s} ps1={ps1} onPick={(jogador, i) => {
             // Clique/toque no card: move o cursor de quem está escolhendo e confirma.

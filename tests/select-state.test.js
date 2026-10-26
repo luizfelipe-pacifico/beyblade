@@ -95,6 +95,14 @@ test('the random stage is left for the battle to draw', () => {
   assert.match(battleQuery(s), /arena=aleatoria/);
 });
 
+test('the random stage is drawn among the anime places, so the walk-in shows the battle place', () => {
+  const s0 = createSelect({ characters, beysOf, cols: 2, stages: ['piscina', 'parque', 'rom-0'] });
+  let s = play(s0, [[0, 'confirm'], [0, 'confirm'], [0, 'confirm'], [0, 'confirm'], [0, 'left']]);
+  s = reduceSelect(s, 0, 'confirm', () => 0.99);
+  assert.equal(s.stage, 'parque');
+  assert.match(battleQuery(s), /arena=parque/);
+});
+
 test('player 1 can cancel a ready pick while waiting for player 2', () => {
   let s = reduceSelect(start(), 1, 'start');
   s = play(s, [[0, 'confirm'], [0, 'confirm']]);

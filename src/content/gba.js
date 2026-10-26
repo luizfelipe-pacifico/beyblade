@@ -133,10 +133,3 @@ export function gbaOverlay(slug, data) {
     especial: entry.special,
   };
 }
-
-// Sequência da animação de entrada (D-023): anda de costas até a arena e para. `tick` em quadros de 60 Hz.
-export function walkInFrame(tick, { frameTicks = 8, walkTicks = 96 } = {}) {
-  if (tick >= walkTicks) return WALK_FRAMES.idleBack[0];
-  const cycle = WALK_FRAMES.walkBack;
-  return cycle[Math.floor(tick / frameTicks) % cycle.length];
-}

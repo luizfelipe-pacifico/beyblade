@@ -10,7 +10,6 @@ import {
   gbaOverlay,
   gbaPartTotals,
   toTenScale,
-  walkInFrame,
 } from '../src/content/gba.js';
 import { roster } from '../src/content/roster.js';
 
@@ -42,11 +41,6 @@ test('walk frames cover all 29 frames exactly once', () => {
   assert.deepEqual(all, Array.from({ length: WALK_FRAME_COUNT }, (_, i) => i));
 });
 
-test('walkInFrame cycles the back walk and stops facing the arena', () => {
-  assert.equal(walkInFrame(0), WALK_FRAMES.walkBack[0]);
-  assert.equal(walkInFrame(8), WALK_FRAMES.walkBack[1]);
-  assert.equal(walkInFrame(500), WALK_FRAMES.idleBack[0]);
-});
 
 test('every mapped bey and walk sprite belongs to a roster character', () => {
   const slugs = new Set(roster.map((c) => c.slug));

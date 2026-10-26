@@ -15,6 +15,22 @@ Formato:
 
 ---
 
+## D-052: entrada na arena mais realista e seleção com bey e arena aleatórias
+
+- Data: 2026-10-25
+- Status: Aceita (usa a D-047 e a D-050)
+- Contexto: o usuário pediu a animação dos personagens indo para o estádio mais realista e reclamou que aparecia só um círculo, com os personagens parando em cima da arena e não ao lado. Também pediu a "foto do lugar" na escolha do estádio e a bey aleatória na seleção.
+- Decisão:
+  - **entrada** (`src/game/walk-in.js`, pura, e `walk-in.jsx`):
+    - o estádio de verdade (`desenharEstadio`, D-050) deitado em perspectiva;
+    - os dois entram pelas laterais andando de lado com os quadros do GBA (P1 espelhado, porque os quadros olham para a esquerda) e **freiam** até parar ao lado do prato, virados para ele;
+    - o quadro da caminhada segue a **distância andada**, não o relógio, então o pé não escorrega; um pulinho no meio do passo e uma sombra no chão; a câmera recua devagar;
+    - no fim, os retratos (PS1 "bravo" ou o retrato do jogo) cruzam a tela com o VS. São ~4,8 s no total;
+  - **arena aleatória** sorteada na própria seleção, entre os cenários do anime, para a entrada mostrar o mesmo lugar da batalha; só fica `aleatoria` se não houver cenário na lista;
+  - **miniaturas da escolha de arena** com o mesmo desenho do estádio (chão do lugar + prato), um canvas por card;
+  - **bey aleatória**: última opção do carrossel de quem tem mais de uma bey ("?", "Sorteia uma das N"); vai como `b=aleatoria` e a batalha sorteia (D-047).
+- Consequências: `walkInFrame` (caminhada de costas) sai de `src/content/gba.js`; testes em `tests/walk-in.test.js` e `tests/select-state.test.js`.
+
 ## D-051: CPU que raciocina e CPU × CPU por comando
 
 - Data: 2026-10-25

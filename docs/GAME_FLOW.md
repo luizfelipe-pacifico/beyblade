@@ -14,7 +14,7 @@ modo → personagem (P1, e P2 se entrar) → beyblade → [CPU: personagem → b
 | `beySelect` | Cada jogador escolhe uma das beys **do personagem que escolheu** (no jogo de GBA cada blader tem a sua, ver tabela de bladers na ROM). |
 | CPU | Se o P2 não entrou, o **P1 escolhe o personagem e a bey da CPU** logo depois dos seus. |
 | `stageSelect` | Escolha do estádio. A ROM tem **6 estádios** (chão + sombreado da tigela) **(ROM)**. |
-| `walkIn` | Os dois personagens **andam até a arena** usando os quadros de caminhada do jogo (29 quadros por personagem principal, com caminhada de lado, de frente e de costas e as poses de lançamento) **(ROM)**. |
+| `walkIn` | Os dois personagens **andam até a arena** usando os quadros de caminhada do jogo (29 quadros por personagem principal, com caminhada de lado, de frente e de costas e as poses de lançamento) **(ROM)**: entram de lado pelas laterais, freiam e param ao lado do prato, e os retratos cruzam a tela com o VS (D-052). |
 | `launch` | Mini-game de lançamento. O jogo de GBA tem **lançamento antecipado** ("Premature launch") e o lançador e o ripcord influenciam o resultado **(ROM)**. |
 | `battle` | Batalha até um dos finais abaixo. |
 | `results` | Placar, revanche, voltar à seleção. |
@@ -22,7 +22,7 @@ modo → personagem (P1, e P2 se entrar) → beyblade → [CPU: personagem → b
 ## Implementação da seleção (2026-10-25)
 
 - Lógica pura em `src/game/select-state.js` (máquina de estados com testes) e `src/game/select-feedback.js` (qual som/animação tocar em cada mudança).
-- Tela em `src/components/game/character-select.jsx`: cards do elenco no centro (6 colunas, Aleatório no fim), personagem de cada lado com luz de recorte na cor do jogador, carrossel das beys **em cima do personagem** (`bey-carousel.jsx`, vista de topo da ROM girando, nome embaixo, "n de N · tipo"), escolha de arena (`stage-select.jsx`, 6 estádios da ROM + Aleatória) e entrada (`walk-in.jsx`, sprites de caminhada do GBA subindo até o estádio em perspectiva, com o VS).
+- Tela em `src/components/game/character-select.jsx`: cards do elenco no centro (6 colunas, Aleatório no fim), personagem de cada lado com luz de recorte na cor do jogador, carrossel das beys **em cima do personagem** (`bey-carousel.jsx`, vista de topo da ROM girando, nome embaixo, "n de N · tipo"), escolha de arena (`stage-select.jsx`, cenários do anime e 6 estádios da ROM com a "foto do lugar" desenhada pelo render da batalha, + Aleatória, sorteada já na seleção) e entrada (`walk-in.jsx`, sprites de caminhada do GBA entrando de lado até a beira do estádio de verdade, com os retratos e o VS; D-052). O carrossel termina na bey Aleatória quando o personagem tem mais de uma.
 - Input em `src/hooks/use-select-input.js`: teclado por evento (um toque rápido nunca se perde entre dois quadros) e controle por polling; segurar a direção repete o passo.
 - Link da batalha: `/batalha?p1&p2&b1&b2&arena[&cpu=2]` (`battleQuery`), com os ids de `beys.generated.json`. `arena` = slug de um dos 10 cenários do anime (`src/content/cenarios.js`, D-039), `rom-0`…`rom-5` (estádios do GBA) ou `aleatoria`, que a batalha sorteia entre os cenários. A grade de arena mostra cenários, estádios e Aleatória, com nome, episódio de origem e a regra do cenário.
 - **Pendente de arte:** não existe imagem de corpo inteiro dos personagens (o GBA só tem bonecos de 16×32 e a pesquisa tem retratos de busto, 512×640). A seleção usa o retrato até a arte de corpo inteiro existir (D-008).
