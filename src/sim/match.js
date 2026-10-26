@@ -23,6 +23,7 @@ import {
   START_X,
   CRITICAL,
   FERA,
+  SHIELD,
   MOTION,
   SUBSTEPS,
 } from './constants.js';
@@ -69,6 +70,8 @@ function makeBey(def, slot) {
     perfectWindow: 0,
     critReady: 0,
     guardCharge: 0,
+    shield: 1,
+    shieldBroken: false,
     dashCd: 0,
     jumpCd: 0,
     dodgeCd: 0,
@@ -246,8 +249,11 @@ function handleCommands(state, inputs) {
     if (!h.attack && !h.defend) prev.comboAD = false;
 
     // ○: segurar defende; quanto mais tempo, mais firme.
-    b.guard = Boolean(h.defend && !ad);
+    // Escudo quebrado não levanta até recarregar um pouco; parado, recarrega devagar.
+    if (b.shieldBroken && b.shield >= SHIELD.minToRaise) b.shieldBroken = false;
+    b.guard = Boolean(h.defend && !ad && !b.shieldBroken);
     b.guardCharge = b.guard ? Math.min(1, b.guardCharge + DT) : 0;
+    if (!b.guard) b.shield = Math.min(1, b.shield + SHIELD.regen * DT);
 
     prev.attack = Boolean(h.attack);
     prev.defend = Boolean(h.defend);
@@ -359,7 +365,8 @@ function mods(b) {
   if (b.guard) {
     m.mass *= 1.8;
     m.knockIn *= 0.6 - 0.25 * b.guardCharge;
-    m.dmgIn *= 0.7 - 0.2 * b.guardCharge;
+    // O escudo segura todo o desgaste do choque; quem bateu perde giro normalmente.
+    m.dmgIn = 0;
   }
   if (b.invuln > 0) m.dmgIn = 0;
   for (const e of b.effects) {
@@ -580,6 +587,9 @@ function collide(state, a, b, finishes) {
   let dmgB = (base * (0.6 + 0.8 * a.atk)) / (0.6 + 0.8 * b.def) * ma_.dmgOut * mb_.dmgIn * sameMul;
   if (critB) dmgA *= CRITICAL.damage;
   if (critA) dmgB *= CRITICAL.damage;
+  // O escudo absorve o choque e perde vida pela força dele (crítico tira em dobro).
+  if (a.guard) baterNoEscudo(state, a, impact, critB);
+  if (b.guard) baterNoEscudo(state, b, impact, critA);
   for (const [quem, crit] of [[a, critA], [b, critB]]) {
     if (crit) state.events.push({ type: 'critical', slot: quem.slot, impact, x: a.x + nx * a.r, y: a.y + ny * a.r });
   }
@@ -602,6 +612,18 @@ function collide(state, a, b, finishes) {
   }
   checkBurst(state, a, impact, ma_, finishes);
   checkBurst(state, b, impact, mb_, finishes);
+}
+
+function baterNoEscudo(state, b, impact, critico) {
+  if (impact < P.hitEventImpact) return;
+  // Até perHit por pancada (duas fortes quebram); choque fraco só arranha.
+  b.shield -= SHIELD.perHit * Math.min(1, impact / P.strongImpact) * (critico ? 2 : 1);
+  if (b.shield > 0) return;
+  b.shield = 0;
+  b.shieldBroken = true;
+  b.guard = false;
+  b.guardCharge = 0;
+  state.events.push({ type: 'shieldBreak', slot: b.slot, x: b.x, y: b.y });
 }
 
 function checkBurst(state, b, impact, m, finishes) {

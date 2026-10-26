@@ -14,6 +14,7 @@ import { InputManager } from '@/input/manager';
 import { ArenaRenderer } from '@/render/arena-renderer';
 import { BATALHA, createSounds } from '@/audio/sounds';
 import { tocarMusica } from '@/audio/music';
+import { vidroQuebrando } from '@/audio/sfx';
 import { Button } from '@/components/ui/button';
 import { Announcement } from './announcement';
 import { FeraField } from './fera-field';
@@ -45,6 +46,8 @@ function hudSnapshot(state) {
       engineGear: b.engineGear,
       egUsed: b.egUsed,
       fera: b.effects.find((e) => e.fx === 'fera')?.t ?? 0,
+      escudo: b.shield,
+      escudoQuebrado: b.shieldBroken,
     })),
     launch: [launchPower(state, 0), launchPower(state, 1)],
     restante: state.phase === 'battle' ? Math.max(0, Math.ceil(ROUND_SECONDS - state.phaseTicks * DT)) : ROUND_SECONDS,
@@ -154,6 +157,13 @@ export function BattleScreen({ p1, p2, b1, b2, arena, cpu = false, modo = 'versu
           input.rumble(e.slot, 0.2 + 0.4 * e.charge, 0.5, 80);
           // Soltou no estalo: a investida perfeita está armada (o crítico ainda depende do choque).
           if (e.perfeita) sons.play('lancamento', 0.5);
+          break;
+        case 'shieldBreak':
+          renderer.quebrarEscudo(e.slot);
+          vidroQuebrando();
+          input.rumble(e.slot, 0.9, 0.5, 220);
+          // O aviso entra depois dos cacos, para não cobrir o vidro quebrando.
+          setTimeout(() => mostrar('Escudo quebrou!', `${personagens[e.slot].nome} fica sem defesa até recarregar`, 1100), 450);
           break;
         case 'critical':
           renderer.spawnSparks(e.x, e.y, 1, 0, 1400);
@@ -406,6 +416,7 @@ function Painel({ i, personagens, hud }) {
         <GaugeBar label="Giro" value={b?.spin ?? 1} fera={p.fera ?? undefined} />
       )}
       <GaugeBar label="Especial" value={b?.special ?? 0} tipo="especial" />
+      <GaugeBar label={b?.escudoQuebrado ? "Escudo (quebrado, recarregando)" : "Escudo"} value={b?.escudo ?? 1} />
       {b?.fera > 0 ? (
         <span className="text-sm font-extrabold text-chamada tabular-nums">
           Fera bit fora · {Math.ceil(b.fera)}s · atributos +{Math.round((FERA.boost - 1) * 100)}%

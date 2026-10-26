@@ -80,6 +80,7 @@ Jogo de Beyblade local para dois jogadores com controles (Gamepad API) e teclado
 
 ## Testes e regressão
 
+- **Nunca esqueça (pedido do usuário):** todo problema ou bug resolvido, e toda funcionalidade que estava ruim e foi corrigida (ex.: "a ataque nunca vence a defesa", "a investida sai para qualquer lugar"), ganha um **teste de regressão** no mesmo commit da correção, para o mesmo problema nunca voltar. Comportamento de jogo e física também se testa: meça o comportamento (velocidade, distância, chance de vitória) e trave o resultado no teste.
 - **Algo quebrou? Siga esta ordem:**
   1. Escreva um teste em `tests/` que **reproduz o erro** e confirme que ele **falha**.
   2. Corrija o código.

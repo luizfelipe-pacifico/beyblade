@@ -15,6 +15,18 @@ Formato:
 
 ---
 
+## D-042: escudo com vida, que segura o desgaste e quebra como vidro
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu que, ao bater numa bey de escudo levantado, só quem atacou sofra o desgaste; que o escudo tenha vida, aguente duas pancadas e quebre com animação de vidro e som; e que recarregue quando não usado, bem devagar. Também pediu que toda correção ganhe teste de regressão (registrado no `CLAUDE.md`).
+- Decisão:
+  - com ○ segurado e o escudo inteiro, a bey que defende **não perde giro no choque**; quem bateu perde normalmente;
+  - o escudo tem vida 0–1 (`SHIELD`): cada pancada tira até 0,5 pela força (forte = `strongImpact` ou mais), então **duas pancadas fortes quebram**; um crítico tira em dobro e quebra sozinho; choque fraco só arranha;
+  - quebrado, ele cai na hora e não levanta até recarregar 25%; fora de uso, recarrega 3% por segundo (~33 s do zero ao cheio);
+  - visual: o hexágono fica mais transparente e racha conforme perde vida; ao quebrar, 18 cacos de vidro saem girando com um clarão e o aviso entra depois deles; som de vidro sintetizado (`src/audio/sfx.js`, ruído agudo + tilintar); painel com a barra "Escudo".
+- Consequências: testes em `tests/critico.test.js` (sem desgaste com escudo, quebra na segunda pancada, não levanta quebrado, recarrega).
+
 ## D-041: ritmo mais lento, giro gasto nos choques e golpe crítico difícil
 
 - Data: 2026-10-25

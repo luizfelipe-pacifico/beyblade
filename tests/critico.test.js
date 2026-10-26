@@ -56,3 +56,63 @@ test('a hit that pushes the target toward the center is never critical', () => {
   const r = investida({ a: { x: 260, y: 0 }, d: { x: 140, y: 0 } });
   assert.ok(r.bateu && !r.critico);
 });
+
+// Escudo (D-042): investida do ataque contra a defesa segurando ○.
+function contraEscudo(s, { segura = true } = {}) {
+  const [A, D] = s.beys;
+  Object.assign(A, { x: -80, y: 0, vx: 900, vy: 0 });
+  Object.assign(D, { x: 0, y: 0, vx: 0, vy: 0 });
+  const antes = { a: A.spin, d: D.spin };
+  const eventos = [];
+  for (let t = 0; t < 20; t++) {
+    stepMatch(s, [NEUTRAL_INPUT, input({ held: { defend: segura } })]);
+    eventos.push(...s.events);
+  }
+  return { perdaA: antes.a - A.spin, perdaD: antes.d - D.spin, eventos };
+}
+
+function emBatalha() {
+  const s = createMatch({ beys: [ataque, defesa], seed: 9 });
+  while (s.phase === 'launch') stepMatch(s);
+  // Escudo já levantado antes do choque.
+  for (let t = 0; t < 10; t++) stepMatch(s, [NEUTRAL_INPUT, input({ held: { defend: true } })]);
+  return s;
+}
+
+test('a raised shield takes no spin loss from the hit; only the attacker loses spin', () => {
+  const s = emBatalha();
+  const r = contraEscudo(s);
+  assert.ok(r.eventos.some((e) => e.type === 'hit'), 'não houve choque');
+  assert.ok(r.perdaA > 0, 'quem bateu não perdeu giro');
+  // Só a perda passiva da defesa segurada (guardDrain) e do giro parado, nada do choque.
+  const s2 = emBatalha();
+  const [, D2] = s2.beys;
+  const giro = D2.spin;
+  for (let t = 0; t < 20; t++) stepMatch(s2, [NEUTRAL_INPUT, input({ held: { defend: true } })]);
+  assert.ok(Math.abs(r.perdaD - (giro - D2.spin)) < 0.003, `a defesa perdeu ${r.perdaD.toFixed(4)} no choque`);
+});
+
+test('the shield breaks after two strong hits and then cannot be raised until it recharges', async () => {
+  const { SHIELD, PHYSICS } = await import('../src/sim/constants.js');
+  const s = emBatalha();
+  const D = s.beys[1];
+  let quebrou = false;
+  for (let golpe = 0; golpe < 2; golpe++) {
+    const r = contraEscudo(s);
+    quebrou ||= r.eventos.some((e) => e.type === 'shieldBreak' && e.slot === 1);
+    if (golpe === 0) assert.ok(!quebrou && D.shield > 0, 'quebrou na primeira pancada');
+  }
+  assert.ok(quebrou, 'não quebrou na segunda pancada');
+  assert.equal(D.guard, false);
+  // Segurando ○ com o escudo quebrado, ele não sobe; sem segurar, recarrega devagar.
+  stepMatch(s, [NEUTRAL_INPUT, input({ held: { defend: true } })]);
+  assert.equal(D.guard, false);
+  const t = Math.ceil(SHIELD.minToRaise / SHIELD.regen / DT) + 2;
+  for (let i = 0; i < t; i++) {
+    D.spin = 1;
+    stepMatch(s, [NEUTRAL_INPUT, NEUTRAL_INPUT]);
+  }
+  stepMatch(s, [NEUTRAL_INPUT, input({ held: { defend: true } })]);
+  assert.equal(D.guard, true);
+  assert.ok(PHYSICS.strongImpact > 0);
+});

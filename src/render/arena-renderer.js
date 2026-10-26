@@ -21,6 +21,8 @@ const SUMMON_SECONDS = 0.8;
 const IMPACT_SECONDS = 0.14;
 const MAX_IMPACTS = 8;
 const FLAMES = 11;
+const SHARDS = 18;
+const SHARD_SECONDS = 0.7;
 const MAX_HEIGHT = bowlHeight(ARENA_RADIUS);
 
 // Plástico azul translúcido do estádio da Burst (BEY_BEHAVIOR.md, aparência da arena).
@@ -104,6 +106,8 @@ export class ArenaRenderer {
     this.impactos = Array.from({ length: MAX_IMPACTS }, () => ({ life: 0 }));
     // Posição de cada bey em px de CSS do canvas, para a camada da fera (DOM) acompanhar.
     this.posicoes = [null, null];
+    // Cacos do escudo quebrando (D-042), num pool fixo.
+    this.cacos = Array.from({ length: SHARDS * 2 }, () => ({ life: 0 }));
     this.cores = [0, 1].map((i) => cores[i] ?? colors.ataque);
     this.reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
     // Halos e sombra pré-renderizados (nada de shadowBlur por frame na GPU integrada).
@@ -434,8 +438,37 @@ export class ArenaRenderer {
     }
   }
 
+  // Escudo quebrou: cacos de vidro do hexágono saem girando e caem, com um clarão ciano.
+  quebrarEscudo(slot) {
+    const p = this.posicoes[slot];
+    if (!p) return;
+    const x = p.x * this.dpr - this.canvas.width / 2;
+    const y = p.y * this.dpr - this.canvas.height / 2;
+    const raio = p.r * this.dpr + 9 * this.dpr;
+    for (let k = 0, n = 0; k < this.cacos.length && n < SHARDS; k++) {
+      const c = this.cacos[k];
+      if (c.life > 0) continue;
+      const a = (n / SHARDS) * Math.PI * 2 + Math.random() * 0.3;
+      const v = (180 + Math.random() * 260) * this.dpr;
+      Object.assign(c, {
+        x: x + Math.cos(a) * raio,
+        y: y + Math.sin(a) * raio,
+        vx: Math.cos(a) * v,
+        vy: Math.sin(a) * v,
+        rot: Math.random() * 6,
+        vr: (Math.random() - 0.5) * 18,
+        tam: (5 + Math.random() * 9) * this.dpr,
+        life: SHARD_SECONDS,
+      });
+      n++;
+    }
+    const imp = this.impactos.find((q) => q.life <= 0) ?? this.impactos[0];
+    Object.assign(imp, { x: x / this.scale, y: y / this.scale, life: IMPACT_SECONDS * 1.6, size: 1 });
+  }
+
   // Defesa (○ segurado): escudo hexagonal ciano, sólido e parado; fica mais grosso conforme firma.
-  drawGuard(x, y, r, g) {
+  // A vida do escudo aparece como transparência e rachaduras (D-042).
+  drawGuard(x, y, r, g, vida = 1) {
     const { ctx, dpr } = this;
     const raio = r + 9 * dpr;
     ctx.beginPath();
@@ -447,13 +480,57 @@ export class ArenaRenderer {
       else ctx.lineTo(px, py);
     }
     ctx.closePath();
-    ctx.globalAlpha = 0.12 + 0.22 * g;
+    ctx.globalAlpha = (0.12 + 0.22 * g) * (0.5 + 0.5 * vida);
     ctx.fillStyle = colors.defesa;
     ctx.fill();
-    ctx.globalAlpha = 1;
+    ctx.globalAlpha = 0.45 + 0.55 * vida;
     ctx.strokeStyle = colors.defesa;
     ctx.lineWidth = (2 + 4 * g) * dpr;
     ctx.stroke();
+    if (vida < 0.75) {
+      // Rachaduras em zigue-zague saindo de um ponto de impacto; mais rachado quanto menos vida.
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
+      ctx.lineWidth = Math.max(1, 1.5 * dpr);
+      const n = vida < 0.4 ? 5 : 3;
+      for (let k = 0; k < n; k++) {
+        const a = k * 2.1 + 0.4;
+        ctx.beginPath();
+        ctx.moveTo(x + Math.cos(a) * raio * 0.2, y + Math.sin(a) * raio * 0.2);
+        ctx.lineTo(x + Math.cos(a + 0.25) * raio * 0.55, y + Math.sin(a + 0.25) * raio * 0.55);
+        ctx.lineTo(x + Math.cos(a - 0.1) * raio * 0.95, y + Math.sin(a - 0.1) * raio * 0.95);
+        ctx.stroke();
+      }
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  drawCacos(dt) {
+    const { ctx } = this;
+    for (const c of this.cacos) {
+      if (c.life <= 0) continue;
+      c.life -= dt;
+      c.x += c.vx * dt;
+      c.y += c.vy * dt;
+      c.vx *= 0.94;
+      c.vy *= 0.94;
+      c.rot += c.vr * dt;
+      ctx.globalAlpha = Math.max(0, c.life / SHARD_SECONDS);
+      ctx.save();
+      ctx.translate(c.x, c.y);
+      ctx.rotate(c.rot);
+      ctx.fillStyle = 'rgba(180, 245, 250, 0.85)';
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, -c.tam);
+      ctx.lineTo(c.tam * 0.7, c.tam * 0.6);
+      ctx.lineTo(-c.tam * 0.5, c.tam * 0.4);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+    }
+    ctx.globalAlpha = 1;
   }
 
   draw(prev, curr, alpha, dt) {
@@ -535,7 +612,7 @@ export class ArenaRenderer {
       ctx.lineWidth = Math.max(2, 3 * dpr);
       ctx.stroke();
       if (b.state === 'active') {
-        if (b.guard) this.drawGuard(x, y, r, b.guardCharge);
+        if (b.guard) this.drawGuard(x, y, r, b.guardCharge, b.shield ?? 1);
         else if (b.attackCharge > 0) this.drawCharge(x, y, r, b.attackCharge);
       }
       const f = this.flashes[i];
@@ -594,6 +671,7 @@ export class ArenaRenderer {
       this.posicoes[i] = { x: (x + w / 2) / dpr, y: (y + h / 2) / dpr, r: r / dpr };
     });
 
+    this.drawCacos(dt);
     // Faíscas com luz: mistura aditiva (barata) e um ponto de brilho pré-renderizado na ponta.
     ctx.globalCompositeOperation = 'lighter';
     // Clarão no ponto do choque, maior e mais forte quanto mais forte a pancada.

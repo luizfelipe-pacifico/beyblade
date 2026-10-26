@@ -129,6 +129,15 @@ export const CRITICAL = {
   minOutward: 0.5,
 };
 
+// Escudo da defesa (○, D-042): enquanto aguenta, quem defende não perde giro no choque (só quem bateu
+// perde). Tem vida: uma pancada forte (strongImpact) tira perHit, então duas quebram; o crítico tira em
+// dobro. Quebrado, só volta a subir quando passar de minToRaise; recarrega devagar sem estar em uso.
+export const SHIELD = {
+  perHit: 0.5,
+  regen: 0.03,
+  minToRaise: 0.25,
+};
+
 export const MOTION = {
   excessHalfLife: 0.25,
   steerRate: 2.6,
