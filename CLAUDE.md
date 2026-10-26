@@ -107,3 +107,4 @@ Atualize no mesmo commit da mudança (e crie novos arquivos quando surgir um ass
 - `docs/BEST_PRACTICES.md`: guia completo de boas práticas (leia antes de tarefas maiores)
 - `docs/REVERSE_ENGINEERING.md`: ROM de GBA de referência, descobertas e extração de dados/assets
 - `docs/GAME_FLOW.md`: telas da partida (personagem, bey, P2/CPU, arena, entrada, lançamento, batalha) e controles da batalha
+- `docs/BEY_BEHAVIOR.md`: comportamento na arena por tipo (ataque, equilíbrio, defesa, resistência) e aparência da arena estilo Burst
