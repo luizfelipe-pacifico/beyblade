@@ -21,6 +21,7 @@ import {
   ROUND_SECONDS,
   ROUNDS_TO_WIN,
   START_X,
+  CRITICAL,
   FERA,
   MOTION,
   SUBSTEPS,
@@ -64,6 +65,9 @@ function makeBey(def, slot) {
     spin: 0,
     special: 0,
     attackCharge: 0,
+    // Janela da investida perfeita depois do estalo e golpe crítico armado (D-040).
+    perfectWindow: 0,
+    critReady: 0,
     guardCharge: 0,
     dashCd: 0,
     jumpCd: 0,
@@ -232,8 +236,12 @@ function handleCommands(state, inputs) {
     if (h.attack && !prev.comboAD) {
       const antes = b.attackCharge;
       b.attackCharge = Math.min(1, b.attackCharge + DT);
-      if (antes < 1 && b.attackCharge === 1) state.events.push({ type: 'chargeFull', slot: b.slot });
+      if (antes < 1 && b.attackCharge === 1) {
+        b.perfectWindow = CRITICAL.perfectWindow;
+        state.events.push({ type: 'chargeFull', slot: b.slot });
+      } else b.perfectWindow = Math.max(0, b.perfectWindow - DT);
     }
+    b.critReady = Math.max(0, b.critReady - DT);
     if (prev.attack && !h.attack && !prev.comboAD) attack(state, b, inp.move);
     if (!h.attack && !h.defend) prev.comboAD = false;
 
@@ -271,8 +279,11 @@ export function aimAt(state, b, move, speed) {
 
 function attack(state, b, move) {
   const charge = b.attackCharge;
+  const perfeita = charge >= 1 && b.perfectWindow > 0;
   b.attackCharge = 0;
+  b.perfectWindow = 0;
   if (b.dashCd > 0) return;
+  if (perfeita) b.critReady = CRITICAL.hitWindow;
   const power = P.dashSpeed * (0.8 + 0.4 * b.atk) * (0.7 + 0.8 * charge);
   const d = aimAt(state, b, move, power);
   // A investida troca a direção em vez de somar: somada à velocidade de órbita, ela errava o alvo.
@@ -281,7 +292,7 @@ function attack(state, b, move) {
   b.vy = d.y * (power + 0.5 * keep);
   b.spin = Math.max(0, b.spin - P.dashSpinCost * (1 + charge));
   b.dashCd = P.dashCooldown;
-  state.events.push({ type: 'attack', slot: b.slot, charge });
+  state.events.push({ type: 'attack', slot: b.slot, charge, perfeita });
 }
 
 function jump(state, b) {
@@ -528,6 +539,20 @@ function collide(state, a, b, finishes) {
   const vn = (b.vx - a.vx) * nx + (b.vy - a.vy) * ny;
   if (vn >= 0) return;
   const impact = -vn;
+  // Crítico: quem tem a investida perfeita armada e bate de frente no outro (D-040).
+  const deFrente = (x, ux, uy) => {
+    const v = Math.hypot(x.vx, x.vy);
+    return v > 1 && (x.vx * ux + x.vy * uy) / v >= CRITICAL.minAlign;
+  };
+  // ...e no ponto certo: empurrando o alvo para fora, rumo à parede e aos bolsos.
+  const paraFora = (alvo, ux, uy) => {
+    const r = Math.hypot(alvo.x, alvo.y);
+    return r > 1 && (alvo.x * ux + alvo.y * uy) / r >= CRITICAL.minOutward;
+  };
+  const critA = a.critReady > 0 && deFrente(a, nx, ny) && paraFora(b, nx, ny);
+  const critB = b.critReady > 0 && deFrente(b, -nx, -ny) && paraFora(a, -nx, -ny);
+  if (critA) a.critReady = 0;
+  if (critB) b.critReady = 0;
   const sr = (Math.max(0, a.spin) + Math.max(0, b.spin)) / 2;
   // Mesmo sentido: as superfícies se chocam de frente, mais recuo. Oposto: menos recuo e o giro se equaliza.
   const same = a.dir === b.dir;
@@ -536,8 +561,12 @@ function collide(state, a, b, finishes) {
   const forca = Math.min(2.5, Math.max(0.3, impact / P.strongImpact));
   const repel = P.repel * sr * (same ? 1.3 : 0.8) * forca;
   // Recuo próprio pelo tipo (ataque se joga mais, defesa absorve), BEY_BEHAVIOR.md.
-  const knockA = (1.3 - 0.6 * a.rko) * a.kind.recoil * ma_.knockIn * mb_.knockOut;
-  const knockB = (1.3 - 0.6 * b.rko) * b.kind.recoil * mb_.knockIn * ma_.knockOut;
+  // No crítico, o recuo do tipo e a defesa segurada do alvo quase não protegem.
+  const recuo = (x, m, crit) => (crit ? Math.max(1, x.kind.recoil) * Math.max(0.8, m.knockIn) * CRITICAL.knock : x.kind.recoil * m.knockIn);
+  let knockA = (1.3 - 0.6 * a.rko) * recuo(a, ma_, critB) * mb_.knockOut;
+  let knockB = (1.3 - 0.6 * b.rko) * recuo(b, mb_, critA) * ma_.knockOut;
+  if (critA) knockA *= CRITICAL.selfKnock;
+  if (critB) knockB *= CRITICAL.selfKnock;
   const pushA = (j / ma + repel * (mb / tot) * 2) * knockA;
   const pushB = (j / mb + repel * (ma / tot) * 2) * knockB;
   a.vx -= nx * pushA;
@@ -545,10 +574,15 @@ function collide(state, a, b, finishes) {
   b.vx += nx * pushB;
   b.vy += ny * pushB;
 
-  const base = impact * P.hitDamage + 0.0005 * sr;
+  const base = impact * P.hitDamage + P.contactDamage * sr;
   const sameMul = same ? 1 : 0.85;
-  const dmgA = (base * (0.6 + 0.8 * b.atk)) / (0.6 + 0.8 * a.def) * mb_.dmgOut * ma_.dmgIn * sameMul;
-  const dmgB = (base * (0.6 + 0.8 * a.atk)) / (0.6 + 0.8 * b.def) * ma_.dmgOut * mb_.dmgIn * sameMul;
+  let dmgA = (base * (0.6 + 0.8 * b.atk)) / (0.6 + 0.8 * a.def) * mb_.dmgOut * ma_.dmgIn * sameMul;
+  let dmgB = (base * (0.6 + 0.8 * a.atk)) / (0.6 + 0.8 * b.def) * ma_.dmgOut * mb_.dmgIn * sameMul;
+  if (critB) dmgA *= CRITICAL.damage;
+  if (critA) dmgB *= CRITICAL.damage;
+  for (const [quem, crit] of [[a, critA], [b, critB]]) {
+    if (crit) state.events.push({ type: 'critical', slot: quem.slot, impact, x: a.x + nx * a.r, y: a.y + ny * a.r });
+  }
   if (a.state === 'active') a.spin -= dmgA;
   if (b.state === 'active') b.spin -= dmgB;
   if (ma_.steal && a.state === 'active') a.spin = Math.min(1, a.spin + dmgB * ma_.steal);

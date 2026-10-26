@@ -152,6 +152,16 @@ export function BattleScreen({ p1, p2, b1, b2, arena, cpu = false, modo = 'versu
           break;
         case 'attack':
           input.rumble(e.slot, 0.2 + 0.4 * e.charge, 0.5, 80);
+          // Soltou no estalo: a investida perfeita está armada (o crítico ainda depende do choque).
+          if (e.perfeita) sons.play('lancamento', 0.5);
+          break;
+        case 'critical':
+          renderer.spawnSparks(e.x, e.y, 1, 0, 1400);
+          renderer.flash(e.slot);
+          sons.play('choqueForte', 1);
+          vibrar(1, 320);
+          if (!reduzMovimento) lentoAte = performance.now() + 450;
+          mostrar('Crítico!', `${personagens[e.slot].nome} acertou em cheio`, 1200);
           break;
         case 'jump':
         case 'dodge':
@@ -373,6 +383,7 @@ function Comandos() {
       <ControlHint tecla="R+T / I+O">Fera bit (L1 + R1)</ControlHint>
       <ControlHint tecla="F+G / K+L">Engine Gear</ControlHint>
       <ControlHint pad="options" tecla="Esc / P">Pausa</ControlHint>
+      <p className="text-sm text-texto-2">Crítico: solte ✕ no estalo do brilho e acerte de frente, empurrando o outro para a borda.</p>
     </div>
   );
 }

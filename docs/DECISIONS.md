@@ -15,6 +15,17 @@ Formato:
 
 ---
 
+## D-041: ritmo mais lento, giro gasto nos choques e golpe crítico difícil
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário achou a batalha rápida demais e notou que a ataque tinha 0% de chance contra a defesa. Pediu golpes críticos, feitos de maneira exata (ponto e momento do choque), para a ataque poder vencer a defesa só com jogo muito bom; e que, depois de atacar, a bey que volta a correr em volta gaste pouco giro, com os choques sendo o maior desgaste.
+- Decisão:
+  - **ritmo:** `maxSpeed` 650 → 500 e investida 430 → 360 (×S); perda de giro parada 0,018 → 0,011 por segundo, investida 0,03 → 0,01; o choque vira o maior gasto (força do impacto + atrito de contato `contactDamage`); burst só acima de 450 (×S) de impacto;
+  - **crítico (`CRITICAL`):** soltar ✕ até 0,08 s depois do estalo da carga cheia arma a investida perfeita por 0,35 s. Ela só vira crítico se o choque for **de frente** (a no máximo ~12° da linha entre os centros) e no **ponto certo**, empurrando o alvo para a borda (de dentro para fora). No crítico, o recuo do tipo e a defesa segurada do alvo quase não protegem (recuo ×2,4 com piso em 1) e o dano de giro é ×2,4; quem acerta recua pela metade. Aparece "Crítico!", com faíscas, vibração e câmera lenta curta;
+  - medido com duelos automáticos (Dragoon G × Draciel G, 30 partidas): investindo sem soltar no estalo, a ataque vence 0 a 3%; soltando sempre no estalo e só de perto, cerca de 50%. Rodada com investidas ~20 s (antes ~12 s); sem investir, ~60 s.
+- Consequências: testes em `tests/critico.test.js` (crítico só no estalo, de frente e para fora) e o de mira reescrito em `tests/sim.test.js` (`aimAt` exportado). O painel de comandos explica o crítico.
+
 ## D-039: cenários clássicos do anime como estádios, sorteados no início
 
 - Data: 2026-10-25

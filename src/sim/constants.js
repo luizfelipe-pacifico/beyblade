@@ -25,14 +25,15 @@ export const PHYSICS = {
   bowlPull: 4,
   orbit: 260 * S,
   control: 900 * S,
-  maxSpeed: 650 * S,
+  // Ritmo (D-040): mais lento que no protótipo, para dar tempo de ler a luta e mirar.
+  maxSpeed: 500 * S,
   damping: 0.8,
   stoppedDamping: 2.6,
   restitution: 0.8,
   repel: 120 * S,
-  dashSpeed: 430 * S,
+  dashSpeed: 360 * S,
   dashCooldown: 0.8,
-  dashSpinCost: 0.03,
+  dashSpinCost: 0.01,
   jumpTime: 0.45,
   jumpCooldown: 0.9,
   dodgeSpeed: 380 * S,
@@ -41,12 +42,15 @@ export const PHYSICS = {
   wallRestitution: 0.6,
   pocketOutSpeed: 260 * S,
   rimOutSpeed: 650 * S,
-  hitDamage: 0.00012 / S,
+  hitDamage: 0.00008 / S,
+  // Atrito de contato entre as beys (por choque, além da força do impacto).
+  contactDamage: 0.0002,
   wallDamage: 0.00005 / S,
   equalization: 0.05,
-  burstImpact: 350 * S,
+  burstImpact: 450 * S,
   burstSpin: 0.3,
-  spinDecay: 0.018,
+  // Girar à toa gasta pouco; o que mais gasta giro são os choques (hitDamage).
+  spinDecay: 0.011,
   guardDrain: 0.01,
   specialPassive: 0.03,
   specialPerImpact: 0.0004 / S,
@@ -108,6 +112,21 @@ export const TYPES = {
 export const FERA = {
   seconds: 8,
   boost: 1.25,
+};
+
+// Golpe crítico (D-040): só sai com a investida perfeita. Soltar ✕ dentro de perfectWindow depois de a
+// carga encher (o "estalo" do brilho) arma o golpe por hitWindow; ele só vale se o choque for de frente
+// (direção da investida a no máximo ~12° da linha entre os centros). Aí o tipo do alvo quase não
+// protege: é como o ataque consegue vencer a defesa, mas precisa de jogo muito preciso.
+export const CRITICAL = {
+  perfectWindow: 0.08,
+  hitWindow: 0.35,
+  minAlign: 0.978,
+  knock: 2.4,
+  damage: 2.4,
+  selfKnock: 0.5,
+  // Ponto do choque: o empurrão tem que mandar o alvo para a borda (de dentro para fora).
+  minOutward: 0.5,
 };
 
 export const MOTION = {

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createMatch, stepMatch, launchPower, NEUTRAL_INPUT } from '../src/sim/match.js';
+import { aimAt, createMatch, stepMatch, launchPower, NEUTRAL_INPUT } from '../src/sim/match.js';
 import { ARENA_RADIUS, DT, LAUNCH_SECONDS, PHYSICS } from '../src/sim/constants.js';
 
 const bey = (over = {}) => ({
@@ -229,15 +229,18 @@ test('a released charged attack heads at the other bey even with the stick point
   const [a, b] = s.beys;
   Object.assign(a, { x: -150, y: 0, vx: 0, vy: 300 });
   Object.assign(b, { x: 150, y: 0, vx: 0, vy: 0 });
-  // Segura ✕ apontando para trás (para longe do oponente) e solta.
-  const away = { x: -1, y: 0 };
-  for (let t = 0; t < ticks(0.8); t++) stepMatch(s, [input({ move: away, held: { attack: true } }), NEUTRAL_INPUT]);
-  const alvo = Math.atan2(b.y - a.y, b.x - a.x);
-  stepMatch(s, [input({ move: away }), NEUTRAL_INPUT]);
-  let ang = Math.atan2(a.vy, a.vx) - alvo;
-  ang = Math.atan2(Math.sin(ang), Math.cos(ang));
-  // O direcional corrige no máximo 25°; o resto é a rampa agindo no mesmo tick.
-  assert.ok(Math.abs(ang) < (35 * Math.PI) / 180, `investida saiu a ${((ang * 180) / Math.PI).toFixed(0)}° do oponente`);
+  const angulo = (d) => {
+    const alvo = Math.atan2(b.y - a.y, b.x - a.x);
+    const x = Math.atan2(d.y, d.x) - alvo;
+    return Math.abs(Math.atan2(Math.sin(x), Math.cos(x))) * (180 / Math.PI);
+  };
+  // A mira com o direcional para trás (para longe do oponente) corrige no máximo 25°.
+  assert.ok(angulo(aimAt(s, a, { x: -1, y: 0 }, PHYSICS.dashSpeed)) <= 25.01);
+  // Sem direcional, a investida de verdade sai na direção do oponente.
+  for (let t = 0; t < ticks(0.8); t++) stepMatch(s, [input({ held: { attack: true } }), NEUTRAL_INPUT]);
+  stepMatch(s, [input(), NEUTRAL_INPUT]);
+  const ang = angulo({ x: a.vx, y: a.vy });
+  assert.ok(ang < 15, `investida saiu a ${ang.toFixed(0)}° do oponente`);
 });
 
 test('beys bounce apart farther after a harder hit', () => {
