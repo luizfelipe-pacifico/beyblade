@@ -60,3 +60,9 @@ test('mapped bey slugs exist in the research catalog', () => {
   const research = new Set(readdirSync(base).flatMap((c) => (existsSync(join(base, c, 'beyblades')) ? readdirSync(join(base, c, 'beyblades')) : [])));
   for (const slug of Object.keys(GBA_BEYS)) assert.ok(research.has(slug), `${slug} não está em pesquisa-bakuten`);
 });
+
+test('battle effects point to distinct frame sets', async () => {
+  const { GBA_FX } = await import('../src/content/gba.js');
+  const offsets = Object.values(GBA_FX);
+  assert.equal(new Set(offsets).size, offsets.length);
+});

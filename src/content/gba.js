@@ -70,6 +70,30 @@ export const WALK_FRAME_COUNT = 29;
 
 export const STADIUM_COUNT = 6;
 
+// Efeitos visuais da batalha (conjuntos 64x64 na ROM). A paleta deles não foi achada: saem em tons de cinza
+// (índice de cor → cinza) para o renderizador colorir com os tokens do design system. Nomes pelo que mostram.
+export const GBA_FX = {
+  hit: 0x31854c,
+  tie: 0x3197a8,
+  reversal: 0x31b490,
+  combo: 0x31ca38,
+  impactRing: 0x320f20,
+  embers: 0x32587c,
+  sparkStar: 0x328be8,
+  groundSpikes: 0x329968,
+  speedLines: 0x32aa98,
+  debris: 0x32ad84,
+  scatter: 0x32b918,
+  shatter: 0x32c1cc,
+  darkOrb: 0x3306e0,
+  flame: 0x33283c,
+  wind: 0x333a10,
+  targetRing: 0x3341f4,
+  bladeRing: 0x334dd8,
+  starFlash: 0x3359e4,
+  darkSwirl: 0x3365fc,
+};
+
 // Stats de cada peça na ROM vão de 0 a 4; a bey soma Attack Ring + Weight Disk + Blade Base (0 a 12).
 const PART_STAT_MAX = 4;
 const PARTS_PER_BEY = 3;

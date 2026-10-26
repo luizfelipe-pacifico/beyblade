@@ -93,6 +93,7 @@ Gera `public/rom/` (fora do git, D-007), que o jogo consome em `/rom/...`:
 - `beys/<slug>.png`: 3 quadros de 32×32 (dois girando e um parado).
 - `walk/<personagem>.png`: 29 quadros de 16×32, na ordem de `WALK_FRAMES` (0–7 parado de lado, 8 de costas, 9–16 de frente, 17–20 andando de lado, 21–24 de costas, 25–28 de frente; para a direita, espelhar).
 - `stadiums/<n>-floor.png` e `<n>-bowl.png`: 512×512.
+- `fx/<efeito>.png`: 19 efeitos de batalha de 64×64 (mapa em `GBA_FX`): letreiros animados HIT!, TIE!, REVERSAL e COMBO, anel de impacto, faíscas, estilhaços (burst), chamas, vento, esfera e espiral escuras, entre outros. A paleta deles não foi achada estaticamente (os bancos em `0x083002E0`–`0x083006E0` não batem), então saem em tons de cinza para o renderizador colorir com os tokens do design system; a cor original exige o dump pelo mGBA.
 
 Funções puras para as telas e a simulação em `src/content/gba.js` (`gbaOverlay`, `toTenScale`, `walkInFrame`), com testes em `tests/gba-content.test.js`.
 
