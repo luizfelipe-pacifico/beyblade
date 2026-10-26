@@ -15,6 +15,17 @@ Formato:
 
 ---
 
+## D-031: jogo de PS1 como segunda referência, extraído fora do repositório
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário trouxe *Bakuten Shoot Beyblade 2002: Bey Battle Tournament 2* (PS1, Japão, SLPM-87130), cujas funcionalidades estão mais próximas da proposta final, e pediu para começar a engenharia reversa "separado, sem afetar os jogos", convertendo e guardando primeiro e extraindo aos poucos depois.
+- Decisão:
+  - o disco (BIN/CUE) é convertido e extraído por `scripts/extract-ps1.js` para **`../ps1-bbt2/`, fora do repositório** (ISO, arquivos e `manifest.json`); o script recusa uma saída dentro do repositório;
+  - nada do PS1 entra no jogo por enquanto; cada coisa aproveitada vem depois, em atualizações próprias, com decisão registrada;
+  - as mesmas regras da D-007 valem: o disco e tudo o que sair dele nunca vão para o git.
+- Consequências: código do extrator e testes (ISO sintética) no repositório; mapa do disco e próximos passos em [`PS1.md`](PS1.md). O jogo de PS1 é 3D, então é a referência natural para a refatoração 3D (D-006).
+
 ## D-030: músicas de fundo baixadas pelo usuário, fora do git
 
 - Data: 2026-10-25
