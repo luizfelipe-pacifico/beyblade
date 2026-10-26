@@ -1,0 +1,27 @@
+# Atualizações semanais de dependências (docs/CI.md). Patches e minors vêm agrupados num PR só para não
+# encher a fila; majors vêm separados para revisar com calma. A CI roda em cada PR antes do merge.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      jogo-menores:
+        update-types: [minor, patch]
+  - package-ecosystem: npm
+    directory: /site
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      landing-menores:
+        update-types: [minor, patch]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
