@@ -11,7 +11,9 @@ import { desenharCenario } from './cenario-fundo';
 
 const MARGIN_MM = 34;
 // Com cenário do anime, sobra mais chão em volta do prato para o lugar aparecer (D-039).
-const MARGIN_CENARIO_MM = 80;
+const MARGIN_CENARIO_MM = 130;
+// Nome do lugar no começo da partida, para saber onde se está (D-056).
+const TITULO_SECONDS = 3.5;
 const MAX_DPR = 1.5;
 const MAX_SPARKS = 160;
 const TRAIL = 14;
@@ -516,6 +518,36 @@ export class ArenaRenderer {
     ctx.globalAlpha = 1;
   }
 
+  drawTitulo() {
+    const c = this.cenario;
+    if (!c?.nome || this.parado || this.t > TITULO_SECONDS) return;
+    const { ctx, dpr } = this;
+    const f = Math.min(1, (TITULO_SECONDS - this.t) / 0.6, this.t / 0.25);
+    const fonte = getComputedStyle(this.canvas).getPropertyValue('--font-display').trim() || 'sans-serif';
+    ctx.save();
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.globalAlpha = f;
+    const x = 18 * dpr;
+    const y = 18 * dpr;
+    ctx.font = `${30 * dpr}px ${fonte}`;
+    const largura = ctx.measureText(c.nome.toUpperCase()).width;
+    ctx.fillStyle = colors.chamada;
+    ctx.fillRect(x, y, largura + 28 * dpr, 50 * dpr);
+    ctx.fillStyle = colors.tinta;
+    ctx.textBaseline = 'middle';
+    ctx.fillText(c.nome.toUpperCase(), x + 14 * dpr, y + 27 * dpr);
+    if (c.origem) {
+      ctx.font = `600 ${15 * dpr}px sans-serif`;
+      const sub = c.regra ? `${c.origem} · ${c.regra}` : c.origem;
+      const ls = ctx.measureText(sub).width;
+      ctx.fillStyle = 'rgba(13, 18, 38, 0.85)';
+      ctx.fillRect(x, y + 50 * dpr, ls + 24 * dpr, 28 * dpr);
+      ctx.fillStyle = colors.papel;
+      ctx.fillText(sub, x + 12 * dpr, y + 64 * dpr);
+    }
+    ctx.restore();
+  }
+
   drawCacos(dt) {
     const { ctx } = this;
     for (const c of this.cacos) {
@@ -679,6 +711,7 @@ export class ArenaRenderer {
     });
 
     this.drawCacos(dt);
+    this.drawTitulo();
     // Faíscas com luz: mistura aditiva (barata) e um ponto de brilho pré-renderizado na ponta.
     ctx.globalCompositeOperation = 'lighter';
     // Clarão no ponto do choque, maior e mais forte quanto mais forte a pancada.

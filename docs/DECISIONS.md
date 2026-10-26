@@ -15,6 +15,14 @@ Formato:
 
 ---
 
+## D-056: cenários com marcos de cada lugar e o nome na tela
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário achou os cenários simples demais: "nunca sei em que cenário realmente estou".
+- Decisão: cada cenário ganhou marcos que o identificam de relance, desenhados em código e grandes o bastante para aparecer nas bordas: piscina (deck com espreguiçadeiras, escada de inox, trampolim, raias, boias), parque (lago com cachoeira e patos, caminho em volta, bancos, postes, árvores), terraço (caixa d'água, saídas de ar, antena, a cidade lá embaixo, vento), BB Shop (prateleiras com caixas de beys, balcão com caixa registradora, tapete), becos de Hong Kong (paredes de tijolo com letreiros de neon, lanternas, caixotes, poças), torres da China (telhado de telhas com cumeeiras e beirais dourados, lanternas, o vazio nos cantos), lago Baikal (rachaduras, margem com neve e pinheiros), prato de gelo da final (rinque, arquibancada com plateia), praia (mar com espuma, guarda-sol, toalha, coqueiro, pegadas) e BEGA (telões, anel de LED, refletores, plateia). Sobra mais chão em volta do prato (margem 80 → 130 mm) e, nos primeiros 3,5 s da partida, o canvas mostra o nome do lugar, o episódio e a regra.
+- Consequências: `src/render/cenario-fundo.js` e `drawTitulo` em `src/render/arena-renderer.js`; a miniatura da escolha do estádio e a entrada na arena (D-050) passam a mostrar os mesmos marcos.
+
 ## D-055: playlists de música por tela, sem repetir a mesma faixa
 
 - Data: 2026-10-25
