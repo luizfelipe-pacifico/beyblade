@@ -1,6 +1,7 @@
 // Processo principal do Electron (D-004): abre a janela do jogo servido em 127.0.0.1:5000.
 // Em desenvolvimento o servidor é subido por scripts/dev-all.js; aqui só a janela e a segurança
 // (checklist em docs/SECURITY.md#electron).
+import path from 'node:path';
 import { app, BrowserWindow, powerSaveBlocker, session, shell } from 'electron';
 
 const GAME_URL = process.env.GAME_URL ?? 'http://127.0.0.1:5000';
@@ -16,6 +17,10 @@ const isGameUrl = (raw) => {
 };
 
 if (!app.requestSingleInstanceLock()) app.quit();
+// Ícone na janela e na barra de tarefas (arte em docs/ART.md, "Ícone do jogo"). O AppUserModelId faz o
+// Windows agrupar a janela com o ícone do jogo, e não com o do Electron.
+const ICON = path.join(import.meta.dirname, '..', process.platform === 'win32' ? 'build/icon.ico' : 'public/icon-512.png');
+if (process.platform === 'win32') app.setAppUserModelId('com.beyblade.arena');
 
 let win = null;
 
@@ -26,6 +31,7 @@ function createWindow() {
     minWidth: 1024,
     minHeight: 640,
     title: 'Beyblade Arena',
+    icon: ICON,
     backgroundColor: '#0d1226',
     autoHideMenuBar: true,
     show: false,
