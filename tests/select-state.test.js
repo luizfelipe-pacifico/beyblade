@@ -125,3 +125,24 @@ test('selectFeedback maps state changes to the fighting game menu sounds', async
   const turned = reduceSelect(tyson, 0, 'right');
   assert.deepEqual(selectFeedback(tyson, turned, 'right'), [{ som: 'carousel', vaga: 0 }]);
 });
+
+test('cpu and training modes ignore the second controller start', () => {
+  for (const mode of ['cpu', 'treino']) {
+    const s = reduceSelect(createSelect({ characters, beysOf, cols: 2, mode }), 1, 'start');
+    assert.equal(s.p2, 'none');
+  }
+});
+
+test('training mode marks the battle link', () => {
+  let s = createSelect({ characters, beysOf, cols: 2, mode: 'treino' });
+  s = play(s, [[0, 'confirm'], [0, 'confirm'], [0, 'confirm'], [0, 'confirm'], [0, 'confirm']]);
+  assert.equal(s.phase, 'done');
+  assert.match(battleQuery(s), /cpu=2&modo=treino$/);
+});
+
+test('arcade mode ends after player 1 picks character and bey', () => {
+  let s = createSelect({ characters, beysOf, cols: 2, mode: 'arcade' });
+  s = play(s, [[0, 'right'], [0, 'confirm'], [0, 'confirm']]);
+  assert.equal(s.phase, 'done');
+  assert.equal(battleQuery(s), 'p1=kai&b1=dranzer-g');
+});

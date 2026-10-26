@@ -13,7 +13,7 @@ import { ControlHint } from './pad-glyph';
 export function StartScreen() {
   const router = useRouter();
   useMenuNav((_, acao) => {
-    if (acao === 'confirmar') router.push('/personagens');
+    if (acao === 'confirmar') router.push('/modos');
   });
 
   return (
@@ -26,8 +26,8 @@ export function StartScreen() {
       <div className="relative grid max-w-3xl gap-8 px-8 md:px-16">
         <TitleCard nome="Beyblade Arena" sub="A batalha de Bakuten Shoot, para dois jogadores lado a lado" size="xl" as="h1" />
         <div className="flex flex-wrap items-center gap-6">
-          <Link href="/personagens" className={buttonVariants({ size: 'lg' })} autoFocus>
-            Jogar 1 contra 1
+          <Link href="/modos" className={buttonVariants({ size: 'lg' })} autoFocus>
+            Jogar
           </Link>
           <ControlHint pad="cross" tecla="F / Enter">
             Começar

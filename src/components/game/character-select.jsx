@@ -18,7 +18,7 @@ import './select.css';
 const COLUNAS = 6;
 
 // Dados da ROM (public/rom/gba.json, D-007) são opcionais: sem a ROM o jogo segue com a arte da pesquisa.
-function useRomData() {
+export function useRomData() {
   const [data, setData] = useState(null);
   useEffect(() => {
     let vivo = true;
@@ -35,10 +35,10 @@ function useRomData() {
 
 // Seleção estilo Street Fighter (D-023): cards do elenco no centro, o personagem de corpo inteiro de cada lado
 // e, ao escolher, o carrossel das beys dele em cima da figura. Depois, arena e entrada; onBattle(query) navega.
-export function CharacterSelect({ onBattle, onExit }) {
+export function CharacterSelect({ onBattle, onExit, mode = 'versus' }) {
   const romData = useRomData();
   const beysOf = useMemo(() => beysByCharacter(generated, roster), []);
-  const [s, setS] = useState(() => createSelect({ characters: roster, beysOf: (slug) => beysOf[slug], cols: COLUNAS }));
+  const [s, setS] = useState(() => createSelect({ characters: roster, beysOf: (slug) => beysOf[slug], cols: COLUNAS, mode }));
 
   // Estado em ref para calcular o próximo na hora e tocar o retorno (som, flash) uma vez por ação.
   const sRef = useRef(s);
@@ -69,6 +69,7 @@ export function CharacterSelect({ onBattle, onExit }) {
 
   const irParaBatalha = useCallback(() => onBattle(battleQuery(s)), [onBattle, s]);
 
+  if (s.phase === 'done' && s.mode === 'arcade') return <Transicao onDone={irParaBatalha} />;
   if (s.phase === 'done') {
     const personagens = s.slots.map((slot) => roster.find((c) => c.slug === slot.character));
     return <WalkIn personagens={personagens} romData={romData} arena={s.stage} onDone={irParaBatalha} />;
@@ -152,6 +153,7 @@ function Lado({ jogador, s, romData, beysOf, flash }) {
   const direita = jogador === 1;
   const cpu = direita && s.p2 === 'cpu';
   const esperandoP2 = direita && s.p2 === 'none';
+  const aviso = s.mode === 'versus' ? 'Aperte Options para entrar' : s.mode === 'arcade' ? 'Sete desafiantes te esperam' : 'Depois, escolha o adversário';
   const emFoco = esperandoP2
     ? null
     : slot.step === 'character' ? (isRandomCard(s, slot.cursor) ? null : roster[slot.cursor]) : roster.find((c) => c.slug === slot.character);
@@ -168,7 +170,7 @@ function Lado({ jogador, s, romData, beysOf, flash }) {
       <div className="relative min-h-0">
         {esperandoP2 ? (
           <div className="grid h-full place-items-center text-center">
-            <p className="cartela animate-pulse text-3xl uppercase text-texto-2">Aperte Options para entrar</p>
+            <p className="cartela animate-pulse text-3xl uppercase text-texto-2">{aviso}</p>
           </div>
         ) : emFoco ? (
           <img
@@ -214,6 +216,15 @@ function BannerDesafiante() {
   );
 }
 
+// Arcade: sem arena nem entrada aqui (cada luta tem a sua); só um respiro antes da escada.
+function Transicao({ onDone }) {
+  useEffect(() => {
+    const t = setTimeout(onDone, 400);
+    return () => clearTimeout(t);
+  }, [onDone]);
+  return <section aria-label="Preparando o Arcade" className="sel-palco h-[calc(100dvh-3.5rem)]" />;
+}
+
 function Dicas({ s }) {
   const etapa = s.phase === 'stage' ? 'arena' : 'personagem';
   return (
@@ -224,7 +235,7 @@ function Dicas({ s }) {
       <ControlHint pad="circle" tecla="G / Backspace">
         Voltar
       </ControlHint>
-      {etapa === 'personagem' && s.p2 !== 'human' ? (
+      {etapa === 'personagem' && s.p2 !== 'human' && s.mode === 'versus' ? (
         <ControlHint pad="options" tecla="P">
           Entrar como P2
         </ControlHint>

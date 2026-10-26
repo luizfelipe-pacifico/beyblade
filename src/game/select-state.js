@@ -8,12 +8,15 @@ export const RANDOM_STAGE = 'aleatoria';
 const emptySlot = (cursor = 0) => ({ step: 'character', cursor, character: null, randomPick: false, beyCursor: 0, bey: null });
 
 // characters: lista de { slug }; beysOf(slug) → lista de slugs de bey (a primeira é a padrão).
-export function createSelect({ characters, beysOf, stages = 6, cols = 6 }) {
+// mode (D-005): 'versus' (P2 pode entrar), 'cpu' e 'treino' (P1 escolhe o adversário, P2 não entra) e
+// 'arcade' (P1 escolhe só o próprio personagem e bey; os oponentes vêm da escada de src/game/arcade.js).
+export function createSelect({ characters, beysOf, stages = 6, cols = 6, mode = 'versus' }) {
   return {
     characters: characters.map((c) => c.slug),
     beys: Object.fromEntries(characters.map((c) => [c.slug, beysOf(c.slug)])),
     stages,
     cols,
+    mode,
     slots: [emptySlot(0), emptySlot(Math.min(1, characters.length - 1))],
     p2: 'none',
     phase: 'select',
@@ -57,6 +60,7 @@ function moveCursor(s, cursor, dir) {
 // Depois de cada confirmação: libera a CPU para o P1 ou passa para a escolha de arena.
 function advance(s) {
   const [a, b] = s.slots;
+  if (a.step === 'ready' && s.mode === 'arcade') return { ...s, phase: 'done' };
   if (a.step === 'ready' && s.p2 === 'none') return { ...s, p2: 'cpu' };
   if (a.step === 'ready' && b.step === 'ready') return { ...s, phase: 'stage' };
   return s;
@@ -103,7 +107,7 @@ export function reduceSelect(s, player, action, rng = Math.random) {
   }
 
   // Start do 2º controle: entra o P2 humano, mesmo que o P1 já esteja escolhendo a CPU.
-  if (action === 'start' && player === 1 && s.p2 !== 'human') {
+  if (action === 'start' && player === 1 && s.p2 !== 'human' && s.mode === 'versus') {
     return { ...setSlot(s, 1, emptySlot(s.slots[1].cursor)), p2: 'human' };
   }
 
@@ -140,10 +144,12 @@ export function reduceSelect(s, player, action, rng = Math.random) {
 // arena: `rom-<n>` para os estádios do GBA ou `aleatoria` (a batalha sorteia).
 export function battleQuery(s) {
   const [a, b] = s.slots;
+  if (s.mode === 'arcade') return new URLSearchParams({ p1: a.character, b1: a.bey }).toString();
   const params = new URLSearchParams({ p1: a.character, p2: b.character });
   if (a.bey) params.set('b1', a.bey);
   if (b.bey) params.set('b2', b.bey);
   if (s.stage !== null) params.set('arena', s.stage === RANDOM_STAGE ? RANDOM_STAGE : `rom-${s.stage}`);
   if (s.p2 !== 'human') params.set('cpu', '2');
+  if (s.mode === 'treino') params.set('modo', 'treino');
   return params.toString();
 }

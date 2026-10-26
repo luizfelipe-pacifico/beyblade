@@ -27,6 +27,19 @@ modo → personagem (P1, e P2 se entrar) → beyblade → [CPU: personagem → b
 - Link da batalha: `/batalha?p1&p2&b1&b2&arena[&cpu=2]` (`battleQuery`), com os ids de `beys.generated.json`. `arena` = `rom-0`…`rom-5` (estádios do GBA), slug de cenário (`src/content/cenarios.js`, da outra frente) ou `aleatoria`, que a batalha sorteia entre os cenários.
 - **Pendente de arte:** não existe imagem de corpo inteiro dos personagens (o GBA só tem bonecos de 16×32 e a pesquisa tem retratos de busto, 512×640). A seleção usa o retrato até a arte de corpo inteiro existir (D-008).
 
+### Modos de jogo (D-005)
+
+Início → **Jogar** → `/modos` (`mode-select.jsx`) → `/personagens?modo=versus|cpu|arcade|treino`:
+
+| Modo | Seleção | Batalha |
+| --- | --- | --- |
+| **1 vs 1** (`versus`) | P2 entra com Options; sem ele, o P1 escolhe a CPU | `/batalha?p1&p2&b1&b2&arena[&cpu=2]` |
+| **1 vs CPU** (`cpu`) | P2 não entra; o P1 escolhe personagem e bey da CPU | `…&cpu=2` |
+| **Treino** (`treino`) | Igual ao 1 vs CPU | `…&cpu=2&modo=treino`: sem relógio, P2 parado, Options com Reiniciar/Sair |
+| **Arcade** (`arcade`) | O P1 escolhe só o próprio personagem e bey | Escada em `/arcade` (`arcade-screen.jsx`) |
+
+**Arcade** (`src/game/arcade.js`, com testes): 7 lutas contra a CPU com oponentes sorteados e o **Brooklyn (Zeus) como chefe final**; nível da CPU de 1 a 5 subindo com a etapa; 3 continues que repetem a luta perdida; fim de jogo e "Campeão!". A escada fica na `sessionStorage` (`arcade-storage.js`). Cada luta vai para `/batalha?…&cpu=2&modo=arcade&etapa=<n>&cpuNivel=<1..5>&arena=aleatoria`, e a batalha devolve `/arcade?etapa=<n>&resultado=vitoria|derrota` (o resultado é aplicado uma vez só, mesmo recarregando).
+
 ### Retorno de interface (game feel)
 
 Padrão dos menus de jogo de luta, aplicado na seleção. Sons sintetizados na hora (`src/audio/ui-sounds.js`, Web Audio, D-008) e animações em `select.css`, todas desligadas com `prefers-reduced-motion`:

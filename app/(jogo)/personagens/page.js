@@ -1,25 +1,13 @@
-'use client';
+import { PersonagensScreen } from '@/components/game/personagens-screen';
 
-import { useCallback } from 'react';
-import { useRouter } from 'next/navigation';
-import { CharacterSelect } from '@/components/game/character-select';
-import { lembrarSelecao } from '@/components/game/game-shell';
+const MODOS = new Set(['versus', 'cpu', 'arcade', 'treino']);
 
-export default function PersonagensPage() {
-  const router = useRouter();
-  const batalhar = useCallback(
-    (query) => {
-      lembrarSelecao(query);
-      router.push(`/batalha?${query}`);
-    },
-    [router],
-  );
-  const sair = useCallback(() => router.push('/'), [router]);
-
+export default async function PersonagensPage({ searchParams }) {
+  const { modo } = await searchParams;
   return (
     <>
       <h1 className="sr-only">Escolha os personagens</h1>
-      <CharacterSelect onBattle={batalhar} onExit={sair} />
+      <PersonagensScreen modo={MODOS.has(modo) ? modo : 'versus'} />
     </>
   );
 }
