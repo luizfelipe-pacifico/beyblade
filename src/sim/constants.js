@@ -123,8 +123,11 @@ export const CRITICAL = {
   hitWindow: 0.35,
   minAlign: 0.978,
   knock: 2.4,
-  damage: 2.4,
+  damage: 3,
   selfKnock: 0.5,
+  selfDamage: 0.5,
+  // Teto do empurrão no crítico, em múltiplos da parte do impulso que cabe ao alvo (D-043).
+  pushShare: 1.6,
   // Ponto do choque: o empurrão tem que mandar o alvo para a borda (de dentro para fora).
   minOutward: 0.5,
 };

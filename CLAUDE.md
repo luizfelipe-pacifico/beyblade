@@ -28,6 +28,7 @@ Jogo de Beyblade local para dois jogadores com controles (Gamepad API) e teclado
 - `pnpm run dev:all` (ou `npm run dev:all`): banco no Docker, jogo na 5000, landing na 3000 e a janela do Electron com o jogo; fechar a janela encerra tudo
 - `npm run dev`: servidor que reinicia só quando `server.js`, `src/db.js` ou `src/validate.js` mudam (o resto do app já tem recarga do Next; vigiar tudo entrava em laço com o `.next/`)
 - `npm start`: servidor normal
+- `npm run playtest`: joga partidas automáticas e confere física e equilíbrio (`docs/PLAYTEST.md`); rode depois de mexer em física ou regras
 - `npm test`: roda todos os testes (`node --test`, arquivos `tests/*.test.js`)
 - `npm run db:up` / `db:down`: sobe/para o PostgreSQL no Docker (precisa do Docker Desktop e do `.env`, copiado de `.env.example`)
 - `npm run db:migrate -- --name <nome>`: nova migração (dev); `npm run db:deploy`: aplica migrações pendentes; `npm run db:studio`: Prisma Studio
@@ -113,4 +114,5 @@ Atualize no mesmo commit da mudança (e crie novos arquivos quando surgir um ass
 - `docs/PS1.md`: jogo de PS1 (Bey Battle Tournament 2) como segunda referência, extraído fora do repositório
 - `docs/NDS_METAL_FUSION.md`: jogo de DS (Beyblade: Metal Fusion) como referência de design de combate (controles, fluxo, vitória, medidores); extraído fora do repositório, sem usar beys/personagens
 - `docs/CENARIOS.md`: lugares clássicos do anime (episódio, visual, regra) e os que já viraram estádio no jogo
+- `docs/PLAYTEST.md`: como testar jogando (playtest automático e na tela), princípios de física e o que já foi achado
 - `docs/SKILLS.md`: skills e plugins do Claude Code disponíveis e recomendados, com o uso de cada um no projeto

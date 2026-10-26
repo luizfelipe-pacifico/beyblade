@@ -15,6 +15,17 @@ Formato:
 
 ---
 
+## D-043: playtest automático e empurrão do choque limitado pela física
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu um md para eu testar o jogo jogando e achar falhas básicas, sempre pensando em física e em como as coisas deveriam se comportar.
+- Decisão:
+  - [`PLAYTEST.md`](PLAYTEST.md) com os princípios de física (momento, energia, gravidade na tigela, atrito, giro, tipos, colisão) e o roteiro do playtest na tela; `npm run playtest` (`scripts/playtest.js`) joga partidas com jogadores roteirizados (`nada`, `afobado`, `preciso`), confere invariantes a cada tick (NaN, fora da arena, giro fora de 0–1, velocidade absurda, beys atravessadas) e expectativas de equilíbrio por tipo e por cenário;
+  - o primeiro playtest achou um erro de física: o crítico multiplicava o empurrão inteiro e jogava a defesa a ~3,5 m/s, mais rápido do que o ataque chegou. O empurrão de cada bey agora é limitado pela parte do impulso que cabe a ela (conservação do momento) mais um empurrão normal do giro; no crítico, o giro no ponto certo rende até 1,6× essa parte (`CRITICAL.pushShare`). Para o crítico continuar valendo sem inventar energia, ele tira mais giro do alvo (×3) e quem acerta sente metade do choque (`CRITICAL.selfDamage`);
+  - medido depois (20 partidas): ataque afobada vence a defesa em 5%, a precisa (quadro a quadro) em 40%; parada, 0%.
+- Consequências: o evento `hit` leva o empurrão de cada bey (`empurrao`); regressão em `tests/critico.test.js`, confirmada falhando sem a correção. Rodar o playtest depois de mexer em física ou regras.
+
 ## D-042: escudo com vida, que segura o desgaste e quebra como vidro
 
 - Data: 2026-10-25

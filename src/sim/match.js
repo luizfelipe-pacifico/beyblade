@@ -574,8 +574,15 @@ function collide(state, a, b, finishes) {
   let knockB = (1.3 - 0.6 * b.rko) * recuo(b, mb_, critA) * ma_.knockOut;
   if (critA) knockA *= CRITICAL.selfKnock;
   if (critB) knockB *= CRITICAL.selfKnock;
-  const pushA = (j / ma + repel * (mb / tot) * 2) * knockA;
-  const pushB = (j / mb + repel * (ma / tot) * 2) * knockB;
+  // Teto físico do empurrão: a parte do impulso que cabe a cada um (j/m, conservação do momento) mais
+  // um empurrão normal do giro. No crítico, o giro no ponto certo rende até CRITICAL.pushShare vezes essa
+  // parte. Antes o crítico multiplicava tudo e jogava a defesa a ~3,5 m/s, mais rápido do que o ataque
+  // chegou: energia do nada (achado do playtest, D-043).
+  const giroMax = P.repel * sr * 1.3;
+  const tetoA = (j / ma) * (critB ? CRITICAL.pushShare : 1) + giroMax;
+  const tetoB = (j / mb) * (critA ? CRITICAL.pushShare : 1) + giroMax;
+  const pushA = Math.min(tetoA, (j / ma + repel * (mb / tot) * 2) * knockA);
+  const pushB = Math.min(tetoB, (j / mb + repel * (ma / tot) * 2) * knockB);
   a.vx -= nx * pushA;
   a.vy -= ny * pushA;
   b.vx += nx * pushB;
@@ -587,6 +594,9 @@ function collide(state, a, b, finishes) {
   let dmgB = (base * (0.6 + 0.8 * a.atk)) / (0.6 + 0.8 * b.def) * ma_.dmgOut * mb_.dmgIn * sameMul;
   if (critB) dmgA *= CRITICAL.damage;
   if (critA) dmgB *= CRITICAL.damage;
+  // Contato limpo no crítico: quem acertou sente menos o choque.
+  if (critA) dmgA *= CRITICAL.selfDamage;
+  if (critB) dmgB *= CRITICAL.selfDamage;
   // O escudo absorve o choque e perde vida pela força dele (crítico tira em dobro).
   if (a.guard) baterNoEscudo(state, a, impact, critB);
   if (b.guard) baterNoEscudo(state, b, impact, critA);
@@ -608,7 +618,7 @@ function collide(state, a, b, finishes) {
 
   if (impact > P.hitEventImpact && state.hitCd <= 0) {
     state.hitCd = 0.06;
-    state.events.push({ type: 'hit', impact, x: a.x + nx * a.r, y: a.y + ny * a.r, nx, ny });
+    state.events.push({ type: 'hit', impact, x: a.x + nx * a.r, y: a.y + ny * a.r, nx, ny, empurrao: [pushA, pushB] });
   }
   checkBurst(state, a, impact, ma_, finishes);
   checkBurst(state, b, impact, mb_, finishes);

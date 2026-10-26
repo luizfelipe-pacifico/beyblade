@@ -116,3 +116,26 @@ test('the shield breaks after two strong hits and then cannot be raised until it
   assert.equal(D.guard, true);
   assert.ok(PHYSICS.strongImpact > 0);
 });
+
+// Regressão (D-043): o crítico multiplicava o empurrão inteiro e jogava a defesa a ~2,8 m/s, mais
+// rápido do que o ataque chegou. O empurrão agora respeita o impulso do choque (momento) e só a parte
+// do giro cresce no crítico.
+test('a critical hit never pushes the target faster than momentum and spin allow', async () => {
+  const { PHYSICS } = await import('../src/sim/constants.js');
+  const s = createMatch({ beys: [ataque, defesa], seed: 9 });
+  while (s.phase === 'launch') stepMatch(s);
+  const [A, D] = s.beys;
+  const v = 2 * PHYSICS.maxSpeed;
+  Object.assign(A, { x: 20, y: 0, vx: v, vy: 0, critReady: CRITICAL.hitWindow });
+  Object.assign(D, { x: 80, y: 0, vx: 0, vy: 0 });
+  let critico = false;
+  let maior = 0;
+  for (let t = 0; t < 10; t++) {
+    stepMatch(s, [NEUTRAL_INPUT, NEUTRAL_INPUT]);
+    critico ||= s.events.some((e) => e.type === 'critical');
+    // O empurrão que o alvo recebeu no choque, antes de qualquer teto de velocidade do passo seguinte.
+    for (const e of s.events) if (e.type === 'hit') maior = Math.max(maior, e.empurrao[1]);
+  }
+  assert.ok(critico, 'o crítico não saiu');
+  assert.ok(maior < 2.5 * PHYSICS.maxSpeed, `alvo empurrado a ${maior.toFixed(0)} mm/s`);
+});

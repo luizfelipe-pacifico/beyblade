@@ -23,7 +23,8 @@
     "postinstall": "prisma generate",
     "prepare": "git config core.hooksPath .githooks",
     "audio:tts": "node scripts/tts-falas.js",
-    "art:vetorizar": "node scripts/vetorizar-retratos.js"
+    "art:vetorizar": "node scripts/vetorizar-retratos.js",
+    "playtest": "node scripts/playtest.js"
   },
   "engines": {
     "node": ">=24.11"
