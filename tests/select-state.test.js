@@ -57,9 +57,17 @@ test('the random card draws a character and still opens the bey carousel', () =>
 
 test('the bey carousel wraps around in both directions', () => {
   let s = play(start(), [[0, 'confirm'], [0, 'left']]);
-  assert.equal(s.slots[0].beyCursor, 1);
+  assert.equal(s.slots[0].beyCursor, 2, 'a Aleatória é a última');
   s = reduceSelect(s, 0, 'right');
   assert.equal(s.slots[0].beyCursor, 0);
+});
+
+test('the random bey is offered only with more than one bey and goes to the battle as aleatoria', () => {
+  const s = start();
+  assert.deepEqual(s.beys.tyson, ['dragoon-s', 'dragoon-g', 'aleatoria']);
+  assert.deepEqual(s.beys.kai, ['dranzer-g']);
+  const done = play(s, [[0, 'confirm'], [0, 'left'], [0, 'confirm'], [0, 'confirm'], [0, 'confirm'], [0, 'confirm']]);
+  assert.match(battleQuery(done), /b1=aleatoria/);
 });
 
 test('back steps out of the carousel, out of the CPU pick and finally exits', () => {

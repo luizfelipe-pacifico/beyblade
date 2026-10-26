@@ -4,10 +4,13 @@
 
 export const RANDOM_CARD = 'aleatorio';
 export const RANDOM_STAGE = 'aleatoria';
+// Última opção do carrossel de quem tem mais de uma bey: a batalha sorteia uma do personagem (D-047).
+export const RANDOM_BEY = 'aleatoria';
 
 const emptySlot = (cursor = 0) => ({ step: 'character', cursor, character: null, randomPick: false, beyCursor: 0, bey: null });
 
-// characters: lista de { slug }; beysOf(slug) → lista de slugs de bey (a primeira é a padrão).
+// characters: lista de { slug }; beysOf(slug) → lista de slugs de bey (a primeira é a padrão); a Aleatória
+// entra no fim de quem tem mais de uma.
 // mode (D-005): 'versus' (P2 pode entrar), 'cpu' e 'treino' (P1 escolhe o adversário, P2 não entra) e
 // 'arcade' (P1 escolhe só o próprio personagem e bey; os oponentes vêm da escada de src/game/arcade.js).
 // stages: lista de slugs de arena na ordem da grade (cenários do anime e rom-0…rom-5); a Aleatória entra no fim.
@@ -15,7 +18,7 @@ export const defaultStages = (romCount = 6) => Array.from({ length: romCount }, 
 export function createSelect({ characters, beysOf, stages = defaultStages(), cols = 6, mode = 'versus' }) {
   return {
     characters: characters.map((c) => c.slug),
-    beys: Object.fromEntries(characters.map((c) => [c.slug, beysOf(c.slug)])),
+    beys: Object.fromEntries(characters.map((c) => [c.slug, withRandomBey(beysOf(c.slug) ?? [])])),
     stages: [...stages, RANDOM_STAGE],
     cols,
     mode,
@@ -27,6 +30,8 @@ export function createSelect({ characters, beysOf, stages = defaultStages(), col
     exit: false,
   };
 }
+
+const withRandomBey = (ids) => (ids.length > 1 ? [...ids, RANDOM_BEY] : ids);
 
 // Quantidade de cards na grade: todos os personagens + Aleatório (o último).
 export const cardCount = (s) => s.characters.length + 1;

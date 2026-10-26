@@ -2,10 +2,23 @@
 
 import { cn } from 'cn';
 import { beyImage, beyName } from '@/game/bey-options';
+import { RANDOM_BEY } from '@/game/select-state';
 
 // Vista de topo da bey: sprite da ROM ampliado em pixel art ou a arte vetorial da pesquisa.
 export function BeyTop({ id, generated, romData, size = 112, girando = true, className }) {
   const img = beyImage(id, generated, romData);
+  if (img.kind === 'random') {
+    return (
+      <span
+        role="img"
+        aria-label="Aleatória"
+        className={cn('cartela grid place-items-center rounded-full bg-tinta text-chamada', className)}
+        style={{ width: size, height: size, fontSize: size * 0.5 }}
+      >
+        ?
+      </span>
+    );
+  }
   if (img.kind === 'sprite') {
     return (
       <div
@@ -37,6 +50,7 @@ export function BeyCarousel({ ids, cursor, generated, romData, jogador, pronto, 
   const vizinhas = n > 1 ? [-1, 1] : [];
   const atual = ids[cursor];
   const tipo = generated?.[atual]?.tipo;
+  const reais = ids.filter((id) => id !== RANDOM_BEY).length;
   return (
     <div className={cn('grid justify-items-center gap-3', className)} aria-live="polite">
       <div className="relative flex items-center justify-center gap-4">
@@ -61,7 +75,7 @@ export function BeyCarousel({ ids, cursor, generated, romData, jogador, pronto, 
       </div>
       <p key={atual} className="sel-pop cartela text-center text-2xl uppercase">{beyName(atual, generated, romData)}</p>
       <p className="text-sm font-semibold text-texto-2">
-        {n > 1 ? `${cursor + 1} de ${n}` : 'Única bey'}
+        {atual === RANDOM_BEY ? `Sorteia uma das ${reais}` : n > 1 ? `${cursor + 1} de ${reais}` : 'Única bey'}
         {tipo ? ` · ${ROTULO_TIPO[tipo] ?? tipo}` : ''}
       </p>
     </div>

@@ -90,7 +90,7 @@ export function CharacterSelect({ onBattle, onExit, mode = 'versus' }) {
 
   return (
     <section aria-label="Seleção de personagens" className="sel-palco relative grid h-dvh grid-cols-[minmax(0,1fr)_minmax(0,2fr)_minmax(0,1fr)] overflow-hidden">
-      <Lado jogador={0} s={s} romData={romData} ps1={ps1} beysOf={beysOf} flash={flash[0]} />
+      <Lado jogador={0} s={s} romData={romData} ps1={ps1} flash={flash[0]} />
       <div className="relative z-10 grid content-center gap-6 px-4">
         {s.phase === 'stage' ? (
           <StageSelect stages={s.stages} cursor={s.stageCursor} romData={romData} />
@@ -106,7 +106,7 @@ export function CharacterSelect({ onBattle, onExit, mode = 'versus' }) {
         )}
         <Dicas s={s} />
       </div>
-      <Lado jogador={1} s={s} romData={romData} ps1={ps1} beysOf={beysOf} flash={flash[1]} />
+      <Lado jogador={1} s={s} romData={romData} ps1={ps1} flash={flash[1]} />
       {banner ? <BannerDesafiante key={banner} /> : null}
       <div className="sel-piso pointer-events-none absolute inset-x-0 bottom-0 h-40" aria-hidden="true" />
     </section>
@@ -161,7 +161,7 @@ function Grade({ s, ps1, onPick }) {
 }
 
 // Um lado da tela: personagem de corpo inteiro com luz de recorte; em cima dele, o carrossel quando escolhe a bey.
-function Lado({ jogador, s, romData, ps1, beysOf, flash }) {
+function Lado({ jogador, s, romData, ps1, flash }) {
   const slot = s.slots[jogador];
   const direita = jogador === 1;
   const cpu = direita && s.p2 === 'cpu';
@@ -226,8 +226,8 @@ function Lado({ jogador, s, romData, ps1, beysOf, flash }) {
         {slot.step === 'bey' || slot.step === 'ready' ? (
           <div className="absolute inset-x-0 top-4 z-10 grid justify-items-center rounded-sm bg-tinta/55 p-3">
             <BeyCarousel
-              ids={beysOf[slot.character] ?? []}
-              cursor={slot.step === 'ready' ? Math.max(0, (beysOf[slot.character] ?? []).indexOf(slot.bey)) : slot.beyCursor}
+              ids={s.beys[slot.character] ?? []}
+              cursor={slot.step === 'ready' ? Math.max(0, (s.beys[slot.character] ?? []).indexOf(slot.bey)) : slot.beyCursor}
               generated={generated}
               romData={romData}
               jogador={jogador}

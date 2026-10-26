@@ -1,3 +1,5 @@
+import { RANDOM_BEY } from './select-state.js';
+
 // Beys que cada personagem pode escolher no carrossel (D-023) e como desenhá-las.
 // Fonte: src/content/beys.generated.json (scripts/sync-art.js): objeto id → bey com `slug`, `dono` (personagem)
 // e `ordem` (0 = primeira no anime). O id é o que vai em b1/b2; o slug liga à pesquisa e à ROM.
@@ -20,6 +22,7 @@ export function beysByCharacter(generated, roster) {
 // Vista de topo da bey: o sprite da ROM (folha de 3 quadros de 32x32: dois girando, um parado) quando
 // public/rom existe; senão, a arte vetorial da pesquisa.
 export function beyImage(id, generated, romData) {
+  if (id === RANDOM_BEY) return { kind: 'random' };
   const slug = generated?.[id]?.slug ?? id;
   const rom = romData?.beys?.[slug];
   if (rom) return { kind: 'sprite', src: rom.sprite, frames: rom.frames, size: rom.frameSize.width };
@@ -27,6 +30,7 @@ export function beyImage(id, generated, romData) {
 }
 
 export function beyName(id, generated, romData) {
+  if (id === RANDOM_BEY) return 'Aleatória';
   const slug = generated?.[id]?.slug ?? id;
   return generated?.[id]?.nome ?? romData?.beys?.[slug]?.nome ?? slug;
 }
