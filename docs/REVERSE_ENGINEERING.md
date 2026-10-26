@@ -65,7 +65,16 @@ Os fundos são blocos **LZ77 da BIOS** (cabeçalho `0x10` + tamanho; 214 blocos 
 
 **Estádios** (`0x0807800C`, 6 trios de ponteiros): chão, sombreado da tigela e paleta de 256 cores (512 bytes). Os dois fundos são **affine** (o hardware gira e aproxima): 64×64 tiles de 8bpp, mapa de 1 byte por tile, 512×512 px. O chão tem as marcações do estádio; a camada "tigela" é um gradiente concêntrico, provavelmente o sombreado da inclinação (as cores dela saem estranhas com a paleta do chão, então a paleta certa ou o uso dela ainda não foi confirmado). Saída em `assets-rom/stadiums/<n>-floor.png` e `<n>-bowl.png`.
 
-**Outros fundos** (cidades de 150×80 e 222×80 tiles, menus, retratos): mesmo contêiner, mas o mapa é menor que `largura × altura × 2`, ou seja, também é comprimido de algum jeito próprio. Ainda não decodificado; para o jogo de luta só os estádios e, talvez, os menus importam.
+**Outros fundos** (salas e cidades do modo história, avião, títulos): mesmo contêiner, com o **mapa comprimido por linha**:
+
+- o mapa começa com uma tabela de `u32`, um offset por linha (nº de linhas = altura em tiles);
+- cada linha: `u16` com o tamanho da linha em bytes e, em seguida, comandos `s16`: **negativo** = pular N tiles (transparentes); **positivo** = N entradas de mapa de texto do GBA em seguida (`u16`: tile em bits 0–9, espelho horizontal 10, vertical 11, banco de paleta 12–15).
+- Ex.: `0022 fff8 000e <14 entradas> fff8` = pula 8, 14 tiles, pula 8 (30 de largura).
+- Contêineres com `tilesLength = 0` usam os tiles de outro bloco (a 2ª camada do salão `0x08210F20` usa os tiles do `0x0820FFC0`).
+- Registros de sala em ~`0x080929B4` (ponteiros para as camadas `0x0820FFC0`/`0x08210F20`). A paleta das salas **ainda não foi achada** (os candidatos `0x082188AC` e `0x08118DBC` não batem); por isso não estão no extrator.
+- O salão do torneio (`0x0820FFC0`, 80×56 tiles: arquibancada, escada e estádio no centro) seria o cenário ideal da entrada na arena quando a paleta for achada.
+
+**Não há retratos de personagem no GBA:** nem nos 328 conjuntos de sprites (o maior personagem é o boneco de 16×32) nem nos 37 fundos de tela (todos são salas, avião e títulos). A aparência G-Revolution dos personagens existe só nos bonecos de 29 quadros (`public/rom/walk/`).
 
 ### Controles e regras pelos textos do jogo
 
