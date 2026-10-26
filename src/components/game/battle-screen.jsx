@@ -46,6 +46,7 @@ function hudSnapshot(state) {
       state: b.state,
       engineGear: b.engineGear,
       egUsed: b.egUsed,
+      egCd: b.egCd,
       fera: b.effects.find((e) => e.fx === 'fera')?.t ?? 0,
       escudo: b.shield,
       escudoQuebrado: b.shieldBroken,
@@ -183,7 +184,7 @@ export function BattleScreen({ p1, p2, b1, b2, arena, cpu = false, modo = 'versu
         case 'engineGear':
           sons.play('lancamento', 0.7);
           input.rumble(e.slot, 0.7, 0.7, 250);
-          mostrar('Engine Gear!', `${personagens[e.slot].bey} acelera`, 1100);
+          mostrar('Engine Gear!', `${personagens[e.slot].bey} recupera giro`, 1100);
           break;
         case 'perfect':
           mostrar('Lançamento perfeito!', `${personagens[e.slot].nome} entra com giro máximo`, 1100);
@@ -428,7 +429,7 @@ function Painel({ i, personagens, hud }) {
         </span>
       ) : null}
       {b?.engineGear ? (
-        <span className="text-sm font-semibold text-texto-2">Engine Gear: {b.egUsed ? 'usado nesta rodada' : 'pronto'}</span>
+        <span className="text-sm font-semibold text-texto-2 tabular-nums">Engine Gear: {b.egCd > 0 ? `recarregando, ${Math.ceil(b.egCd)}s` : 'pronto'}</span>
       ) : null}
     </div>
   );

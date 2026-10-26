@@ -175,7 +175,7 @@ test('with the same spin the stop order is attack, balance, defense, stamina', (
     const s = solo(def, { spin: 0.9 });
     const b = s.beys[0];
     let t = 0;
-    while (b.state === 'active' && t < ticks(150)) {
+    while (b.state === 'active' && t < ticks(600)) {
       stepMatch(s);
       // A rodada tem limite de tempo; aqui só interessa quanto o giro dura.
       if (s.phase !== 'battle') s.phase = 'battle';

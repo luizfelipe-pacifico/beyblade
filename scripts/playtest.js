@@ -5,21 +5,24 @@
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { createMatch, stepMatch, NEUTRAL_INPUT } from '../src/sim/match.js';
-import { ARENA_RADIUS, DT, PHYSICS } from '../src/sim/constants.js';
+import * as K from '../src/sim/constants.js';
 import { CENARIOS, regrasDe } from '../src/content/cenarios.js';
 
 const root = path.join(import.meta.dirname, '..');
 const beys = JSON.parse(readFileSync(path.join(root, 'src/content/beys.generated.json'), 'utf8'));
+const { ARENA_RADIUS, DT, PHYSICS } = K;
 const N = Number(process.argv[2] ?? 20);
+// TUNE='{"PHYSICS":{"hitDamage":0.00005}}' testa valores sem mexer no código (as tabelas são objetos).
+for (const [tabela, valores] of Object.entries(JSON.parse(process.env.TUNE || '{}'))) Object.assign(K[tabela], valores);
 const input = (o = {}) => ({ move: { x: 0, y: 0 }, held: {}, pressed: {}, ...o });
 
 // Jogadores roteirizados. "nada": só lança. "afobado": investe a cada 1,5 s sem esperar a carga.
 // "preciso": solta ✕ no estalo da carga cheia e só com o alvo perto (o melhor que dá para jogar).
 const JOGADORES = {
   nada: () => NEUTRAL_INPUT,
-  // O P2 fica meio ciclo defasado: dois roteiros idênticos no mesmo tick deixam a luta simétrica e
-  // empatam para sempre, o que nenhum par de pessoas faz.
-  afobado: (s, eu, ciclo) => input({ held: { attack: (ciclo + eu * 45) % 90 < 36 } }),
+  // Um dos dois fica meio ciclo defasado (dois roteiros idênticos no mesmo tick empatam para sempre).
+  // Quem fica defasado alterna a cada partida: senão o resultado mede só quem investe por último.
+  afobado: (s, eu, ciclo, defasado) => input({ held: { attack: (ciclo + (eu === defasado ? 45 : 0)) % 90 < 36 } }),
   preciso: (s, eu) => {
     const [a, d] = eu === 0 ? s.beys : [s.beys[1], s.beys[0]];
     const perto = Math.hypot(d.x - a.x, d.y - a.y) < 230;
@@ -49,7 +52,7 @@ function conferir(s, falhas) {
   }
 }
 
-function partida({ p1, p2, j1, j2, seed, regras }) {
+function partida({ p1, p2, j1, j2, seed, regras, defasado = 1 }) {
   const s = createMatch({ beys: [beys[p1], beys[p2]], seed, regras });
   const falhas = { nan: [], fora: [], giro: [], velocidade: [], atravessou: [] };
   const rodadas = [];
@@ -63,7 +66,7 @@ function partida({ p1, p2, j1, j2, seed, regras }) {
       comandos = [trava, trava];
     } else if (s.phase === 'battle') {
       ciclo++;
-      comandos = [JOGADORES[j1](s, 0, ciclo), JOGADORES[j2](s, 1, ciclo)];
+      comandos = [JOGADORES[j1](s, 0, ciclo, defasado), JOGADORES[j2](s, 1, ciclo, defasado)];
     }
     stepMatch(s, comandos);
     conferir(s, falhas);
@@ -79,7 +82,7 @@ function partida({ p1, p2, j1, j2, seed, regras }) {
 function confronto(rotulo, opcoes) {
   const r = { vitorias: [0, 0], rodadas: 0, segundos: 0, criticos: 0, fins: {}, falhas: {} };
   for (let i = 0; i < N; i++) {
-    const p = partida({ ...opcoes, seed: 1000 + i * 7919 });
+    const p = partida({ ...opcoes, seed: 1000 + i * 7919, defasado: i % 2 });
     if (p.vencedor) r.vitorias[p.vencedor - 1]++;
     r.criticos += p.criticos;
     for (const x of p.rodadas) {

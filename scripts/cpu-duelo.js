@@ -6,7 +6,7 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { parseArgs } from 'node:util';
 import { createMatch, stepMatch } from '../src/sim/match.js';
-import { DT } from '../src/sim/constants.js';
+import * as K from '../src/sim/constants.js';
 import { createCpu } from '../src/sim/ai.js';
 import { cenario, regrasDe } from '../src/content/cenarios.js';
 
@@ -24,6 +24,9 @@ const { values: op } = parseArgs({
 
 const beys = JSON.parse(readFileSync(path.join(import.meta.dirname, '..', 'src/content/beys.generated.json'), 'utf8'));
 for (const id of [op.p1, op.p2]) if (!beys[id]) throw new Error(`bey desconhecida: ${id} (veja src/content/beys.generated.json)`);
+const { DT } = K;
+// TUNE='{"PHYSICS":{...}}' testa valores sem mexer no código.
+for (const [tabela, valores] of Object.entries(JSON.parse(process.env.TUNE || '{}'))) Object.assign(K[tabela], valores);
 const N = Number(op.partidas);
 const niveis = [Number(op.n1), Number(op.n2)];
 const regras = op.arena ? regrasDe(cenario(op.arena)) : undefined;

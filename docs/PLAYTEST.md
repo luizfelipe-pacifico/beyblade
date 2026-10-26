@@ -25,7 +25,7 @@ Antes de mexer em qualquer número, pergunte como um pião de verdade se comport
 - **Expectativas de jogo:** a ataque afobada quase nunca vence a defesa (≤ 15%); a ataque precisa consegue (25–80%); parada, a defesa dura mais; o espelho fica perto de 50%; rodada com investidas entre 12 e 45 s; sem investidas, 35 s ou mais.
 - **Cenários:** o mesmo confronto em cada cenário do anime (`src/content/cenarios.js`).
 
-Uso: `npm run playtest` (20 partidas por confronto) ou `node scripts/playtest.js 40` para mais precisão. Sai com código 1 se algo ficar fora do esperado. As faixas são largas de propósito: o objetivo é achar o que fugiu muito.
+Para testar valores sem editar o código: `TUNE='{"CRITICAL":{"damage":7}}' npm run playtest` (vale para qualquer tabela de `src/sim/constants.js`; o `cpu:duelo` aceita o mesmo). Uso: `npm run playtest` (20 partidas por confronto) ou `node scripts/playtest.js 40` para mais precisão. Sai com código 1 se algo ficar fora do esperado. As faixas são largas de propósito: o objetivo é achar o que fugiu muito.
 
 Cuidado ao ler: o roteiro do P2 fica meio ciclo defasado no espelho. Dois roteiros idênticos no mesmo tick deixam a luta perfeitamente simétrica e empatam para sempre, coisa que duas pessoas nunca fazem.
 
@@ -46,4 +46,7 @@ Para o que só se vê jogando (animação, HUD, som, sensação), a batalha roda
 | 2026-10-25 | Ataque com 0% contra a defesa | Sem forma de o ataque vencer a massa e o pouco recuo da defesa | Golpe crítico difícil (D-041); `tests/critico.test.js` |
 | 2026-10-25 | Defesa jogada a ~3,5 m/s por um crítico | O crítico multiplicava o empurrão inteiro, criando energia | Empurrão limitado pelo momento (D-043); regressão em `tests/critico.test.js` |
 | 2026-10-25 | Nenhum ring out em 48 rodadas | Ao baixar o ritmo, a velocidade de saída da arena ficou acima do teto de velocidade | Saída escalada com o ritmo (D-045) |
+| 2026-10-25 | Espelho com um lado vencendo sempre | O roteiro deixava sempre o mesmo lado investir por último (contra-ataque pelas costas) | Quem fica defasado alterna a cada partida |
+| 2026-10-25 | Bola de neve: quem perde giro primeiro perde sempre | Dano dependia demais do giro de quem bate | Peso do giro na força do golpe reduzido a 25% (D-052) |
+| 2026-10-25 | Golpe de frente doendo como pelas costas | O lado do golpe era medido com a velocidade depois do empurrão | Medido antes do empurrão; regressão em `tests/fisica-giro.test.js` |
 | 2026-10-25 | Espelho empatando para sempre | Roteiro do teste perfeitamente simétrico (não é do jogo) | P2 defasado no roteiro |

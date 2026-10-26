@@ -15,6 +15,21 @@ Formato:
 
 ---
 
+## D-052: giro como vida, lado do golpe, pisão, inclinação e Engine Gear
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu (pela outra sessão), pensando em física: a batalha durar mais, com o giro como barra de vida (o tempo gasta pouco e os choques gastam mais); a força do impacto depender do giro, do peso e da aceleração; golpe pelas costas tirar mais e de frente menos, dividido entre os dois; golpe pulando em cima empurrar para longe e desequilibrar; a bey ter uma inclinação que define o movimento; e o Engine Gear recuperar 40% do giro (60% na ataque), demorar a recarregar e, depois de usado, o giro gastar um pouco mais rápido.
+- Decisão:
+  - **giro como vida:** perda à toa 0,011 → 0,006 por segundo (parada, a bey dura 2 a 3 minutos); o choque é o que mais gasta;
+  - **força do golpe:** o dano que uma bey causa escala com a parte da massa dela no choque e, em 25%, com o giro dela; a velocidade (aceleração da investida) já entra no impacto. Com peso maior no giro, o playtest mostrou bola de neve: quem perdia giro primeiro batia cada vez mais fraco e perdia sempre;
+  - **lado do golpe (`HIT_ANGLE`):** pelas costas (o alvo já andava para longe de quem bate) até +60%; de frente até −30%, e o dano das duas se aproxima da média. Medido com as velocidades de antes do empurrão (o teste achou que medir depois invertia o lado);
+  - **pisão (`STOMP`):** cair do pulo em cima da outra empurra pela massa de quem cai, tira giro e inclina muito o eixo dela; contra o escudo, conta como uma pancada forte;
+  - **inclinação (`TILT`):** cada bey tem um desvio do eixo, somado à inclinação da rampa. A ponta rola de lado em relação a essa inclinação, no sentido do giro (sem desvio, é a órbita de sempre; com desvio, a bey vai para onde foi empurrada). Choques e pisões inclinam na direção do empurrão; o giro endireita o eixo (efeito giroscópico, mais rápido com mais giro); inclinada, a bey perde tração e a borda raspa e gasta giro;
+  - **Engine Gear (`ENGINE_GEAR`):** +40% de giro (+60% na ataque), recarga de 30 s e, até o fim da rodada, perda de giro ×1,3;
+  - recalibrado pelo playtest: dano por impacto `0,00007/S`; crítico ×6,2. Medido (20 partidas): ataque afobada 0% contra a defesa, precisa 35%; espelho 45%; rodada com investidas ~24 s (antes ~19 s); CPU × CPU ~35 a 45 s.
+- Consequências: testes em `tests/fisica-giro.test.js` (Engine Gear e recarga, gasto maior depois, giro dura parado, costas × frente na mesma aproximação, pisão, inclinação que move e endireita). O playtest passou a alternar quem fica defasado no espelho, e `playtest` e `cpu:duelo` aceitam `TUNE` para testar valores sem mexer no código.
+
 ## D-052: entrada na arena mais realista e seleção com bey e arena aleatórias
 
 - Data: 2026-10-25

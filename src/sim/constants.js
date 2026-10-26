@@ -43,7 +43,7 @@ export const PHYSICS = {
   // Saída da arena escalada junto com o ritmo (D-041): mesma proporção do teto de velocidade.
   pocketOutSpeed: 200 * S,
   rimOutSpeed: 500 * S,
-  hitDamage: 0.00008 / S,
+  hitDamage: 0.00007 / S,
   // Atrito de contato entre as beys (por choque, além da força do impacto).
   contactDamage: 0.0002,
   // Raspão (D-048): encostar sem bater também tira giro, empurra pelo giro e solta faísca.
@@ -52,8 +52,8 @@ export const PHYSICS = {
   rubSparkCooldown: 0.08,
   wallDamage: 0.00005 / S,
   equalization: 0.05,
-  // Girar à toa gasta pouco; o que mais gasta giro são os choques (hitDamage).
-  spinDecay: 0.011,
+  // Giro é a barra de vida (D-052): girar à toa gasta bem pouco; o que mais gasta são os choques.
+  spinDecay: 0.006,
   guardDrain: 0.01,
   specialPassive: 0.03,
   specialPerImpact: 0.0004 / S,
@@ -125,7 +125,7 @@ export const CRITICAL = {
   hitWindow: 0.35,
   minAlign: 0.978,
   knock: 2.4,
-  damage: 4,
+  damage: 6.2,
   selfKnock: 0.5,
   selfDamage: 0.4,
   // Teto do empurrão no crítico, em múltiplos da parte do impulso que cabe ao alvo (D-043).
@@ -143,6 +143,41 @@ export const SHIELD = {
   minToRaise: 0.25,
   // Encostado (raspando, sem choque), o escudo gasta por tempo de contato (D-048).
   contactWear: 0.18,
+};
+
+// Engine Gear (D-052): devolve giro (mais na ataque), recarrega devagar e, depois de usado, a bey
+// passa a gastar giro um pouco mais rápido até o fim da rodada.
+export const ENGINE_GEAR = {
+  recover: 0.4,
+  recoverAttack: 0.6,
+  cooldown: 30,
+  decayAfter: 1.3,
+};
+
+// Inclinação do eixo (D-052). A bey gira quase em pé; a inclinação é a soma da rampa (o piso inclinado
+// sob ela) com um desvio próprio, que choques e pisões aumentam e o giro (efeito giroscópico) endireita.
+// É ela que define o movimento: a ponta inclinada rola para o lado da inclinação, no sentido do giro.
+// Muito inclinada, a bey raspa, perde tração e gasta giro.
+export const TILT = {
+  recover: 4,
+  perHit: 0.18,
+  stomp: 0.5,
+  max: 0.7,
+  scrape: 0.06,
+  loseGrip: 0.6,
+};
+
+// Golpe pelas costas tira mais giro; de frente tira menos e o dano se divide entre os dois (D-052).
+export const HIT_ANGLE = {
+  back: 0.6,
+  front: 0.3,
+  share: 0.5,
+};
+
+// Pisão: cair do pulo em cima da outra empurra para longe e a desequilibra (D-052).
+export const STOMP = {
+  push: 420 * S,
+  damage: 0.06,
 };
 
 export const MOTION = {

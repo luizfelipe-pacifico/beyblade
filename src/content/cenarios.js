@@ -43,7 +43,7 @@ export const CENARIOS = [
     nome: 'Prato da BB Shop',
     origem: 'Temporada 1, ep. 3',
     regras: { ringOut: false },
-    regra: 'Parede alta: sem ring out, só vence por giro ou burst.',
+    regra: 'Parede alta: sem ring out, só vence por giro.',
     tema: { cenario: 'loja', paredeAlta: true },
   },
   {
@@ -91,7 +91,7 @@ export const CENARIOS = [
     nome: 'Estádio da BEGA',
     origem: 'G-Revolution, ep. 36',
     regras: { ringOut: false },
-    regra: 'Grades: sem ring out, só vence por giro ou burst.',
+    regra: 'Grades: sem ring out, só vence por giro.',
     tema: { cenario: 'bega', paredeAlta: true, grade: true, tigela: ['#c9b8ff', '#6a4fd1', '#2a1a6e'] },
   },
 ];

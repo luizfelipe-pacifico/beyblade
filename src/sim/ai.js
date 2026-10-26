@@ -97,7 +97,7 @@ export function createCpu({ slot, nivel = 3, seed = 1 }) {
         }
       }
       // Engine Gear: uma vez por rodada, quando o giro começa a cair ou para fechar uma luta.
-      if (eu.engineGear && !eu.egUsed && (eu.spin < 0.6 || (ele.spin < 0.35 && rnd() < n.ousadia))) {
+      if (eu.engineGear && eu.egCd <= 0 && (eu.spin < 0.6 || (ele.spin < 0.35 && rnd() < n.ousadia))) {
         decidir(t, 'engine-gear', eu.spin < 0.6 ? 'giro abaixo de 60%' : 'oponente fraco, acelerar para fechar');
         plano = [frame({ attack: true, defend: true }), frame({ attack: true, defend: true }), frame()];
         return plano.shift();

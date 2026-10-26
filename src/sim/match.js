@@ -22,7 +22,11 @@ import {
   ROUNDS_TO_WIN,
   START_X,
   CRITICAL,
+  ENGINE_GEAR,
   FERA,
+  HIT_ANGLE,
+  STOMP,
+  TILT,
   SHIELD,
   MOTION,
   SUBSTEPS,
@@ -63,6 +67,11 @@ function makeBey(def, slot) {
     rko: unit(a.resistencia_knockout),
     engineGear: Boolean(def.engineGear),
     egUsed: false,
+    egCd: 0,
+    egDecay: 1,
+    // Desvio próprio da inclinação do eixo (radianos), além da que vem da rampa (D-052).
+    tx: 0,
+    ty: 0,
     spin: 0,
     special: 0,
     attackCharge: 0,
@@ -234,7 +243,7 @@ function handleCommands(state, inputs) {
     if (ad && !prev.comboAD) {
       prev.comboAD = true;
       b.attackCharge = 0;
-      if (b.engineGear && !b.egUsed) engineGear(state, b);
+      if (b.engineGear && b.egCd <= 0) engineGear(state, b);
     }
     // ✕: segurar carrega, soltar investe. Avisa uma vez quando a carga enche (o render dá o "estalo").
     if (h.attack && !prev.comboAD) {
@@ -326,9 +335,44 @@ function dodge(state, b, move) {
   state.events.push({ type: 'dodge', slot: b.slot });
 }
 
+// Inclina o eixo na direção do empurrão (limitado ao máximo de inclinação).
+function inclinar(b, nx, ny, quanto) {
+  b.tx += nx * quanto;
+  b.ty += ny * quanto;
+  const m = Math.hypot(b.tx, b.ty);
+  if (m > TILT.max) {
+    b.tx *= TILT.max / m;
+    b.ty *= TILT.max / m;
+  }
+}
+
+// Caiu do pulo em cima da outra: o peso de quem cai empurra a de baixo para longe e a desequilibra.
+function pisar(state, b) {
+  const o = other(state, b);
+  if (o.state !== 'active' || o.air > 0) return;
+  const dx = o.x - b.x;
+  const dy = o.y - b.y;
+  const dist = Math.hypot(dx, dy);
+  if (dist >= (b.r + o.r) * 1.05) return;
+  const nx = dist > 1e-6 ? dx / dist : 1;
+  const ny = dist > 1e-6 ? dy / dist : 0;
+  const share = b.mass * b.kind.mass / (b.mass * b.kind.mass + o.mass * o.kind.mass);
+  const empurrao = STOMP.push * 2 * share * (0.5 + 0.5 * Math.max(0, b.spin));
+  o.vx += nx * empurrao;
+  o.vy += ny * empurrao;
+  b.vx -= nx * empurrao * 0.3;
+  b.vy -= ny * empurrao * 0.3;
+  inclinar(o, nx, ny, TILT.stomp * 2 * share);
+  if (o.guard) baterNoEscudo(state, o, P.strongImpact, false);
+  else o.spin -= STOMP.damage * 2 * share;
+  state.events.push({ type: 'stomp', slot: b.slot, x: o.x, y: o.y, nx, ny });
+}
+
 function engineGear(state, b) {
   b.egUsed = true;
-  b.spin = Math.min(1, b.spin + 0.1);
+  b.egCd = ENGINE_GEAR.cooldown;
+  b.egDecay = ENGINE_GEAR.decayAfter;
+  b.spin = Math.min(1, b.spin + (b.tipo === 'attack' ? ENGINE_GEAR.recoverAttack : ENGINE_GEAR.recover));
   b.effects.push({ t: 4, speed: 1.3, dmgOut: 1.3 });
   state.events.push({ type: 'engineGear', slot: b.slot });
 }
@@ -428,11 +472,21 @@ function moveBey(state, b, h, inp) {
     const tip = b.tip;
     // 2) Ponta: inclinada na rampa, empurra a bey de lado no sentido da rotação. Giro baixo inclina mais.
     const wobble = spin < BOWL.wobbleSpin ? ((BOWL.wobbleSpin - spin) / BOWL.wobbleSpin) * BOWL.wobbleTilt : 0;
-    const tilt = Math.min(BOWL.maxTilt, slope + wobble);
-    const tracao = tip.mu * GRAVITY * state.regras.atrito;
+    // Inclinação total: a da rampa (para fora) mais o desvio próprio da bey (D-052).
+    const lx = ux * (slope + wobble) + b.tx;
+    const ly = uy * (slope + wobble) + b.ty;
+    const lm = Math.hypot(lx, ly);
+    const tilt = Math.min(TILT.max, lm);
+    const desvio = Math.hypot(b.tx, b.ty);
+    // Desequilibrada, a ponta perde tração (raspa a borda no chão).
+    const tracao = tip.mu * GRAVITY * state.regras.atrito * (1 - TILT.loseGrip * Math.min(1, desvio / TILT.max));
     const lado = Math.min(tracao, tip.drive * spin * tilt * GRAVITY * (b.air > 0 ? 0 : 1));
-    ax += -uy * lado * b.dir;
-    ay += ux * lado * b.dir;
+    // A ponta inclinada rola de lado em relação à inclinação, no sentido do giro: sem desvio é a órbita
+    // de sempre; com desvio, a bey sai para onde foi empurrada.
+    const px = lm > 1e-6 ? lx / lm : -uy;
+    const py = lm > 1e-6 ? ly / lm : ux;
+    ax += -py * lado * b.dir;
+    ay += px * lado * b.dir;
     // A borda da ponta, girando no chão, empurra a bey para frente (também limitada pela tração).
     if (speed0 > 1 && b.air <= 0) {
       const frente = Math.min(tracao, tip.fwd * spin * GRAVITY);
@@ -505,7 +559,14 @@ function moveBey(state, b, h, inp) {
   b.y += b.vy * h;
   if (b.state === 'active') {
     // Peso gasta giro e ponta de mais tração também (defesa perde para resistência na Parada).
-    const desgaste = (0.6 + b.tip.mu) * (0.85 + 0.05 * (1 + 9 * b.peso));
+    const desgaste = (0.6 + b.tip.mu) * (0.85 + 0.05 * (1 + 9 * b.peso)) * b.egDecay;
+    // O giro endireita o eixo (efeito giroscópico): quanto mais giro, mais rápido o desvio some.
+    const endireita = Math.exp(-TILT.recover * (0.2 + spin) * h);
+    b.tx *= endireita;
+    b.ty *= endireita;
+    // Inclinada, a borda raspa o chão e gasta giro.
+    b.spin -= TILT.scrape * Math.hypot(b.tx, b.ty) * h;
+    b.egCd = Math.max(0, b.egCd - h);
     b.spin -= ((P.spinDecay * (1.6 - b.sta) * desgaste * state.regras.giro) / m.sta + (b.guard ? P.guardDrain : 0)) * h;
     b.special = Math.min(1, b.special + P.specialPassive * h);
     b.dashCd = Math.max(0, b.dashCd - h);
@@ -514,7 +575,10 @@ function moveBey(state, b, h, inp) {
     b.invuln = Math.max(0, b.invuln - h);
     if (b.air > 0) {
       b.air = Math.max(0, b.air - h);
-      if (b.air === 0) state.events.push({ type: 'land', slot: b.slot });
+      if (b.air === 0) {
+        state.events.push({ type: 'land', slot: b.slot });
+        pisar(state, b);
+      }
     }
     const antes = feraAtiva(b);
     b.effects = b.effects.filter((e) => (e.t -= h) > 0);
@@ -549,6 +613,14 @@ function collide(state, a, b, finishes) {
   // para longe da outra pelo giro e solta faísca. Escudo levantado gasta por tempo de contato (D-048).
   if (vn >= 0) return raspar(state, a, b, nx, ny, ma, mb, tot, ma_, mb_);
   const impact = -vn;
+  // Lado do golpe (D-052), com as velocidades de ANTES do empurrão (medir depois invertia o lado).
+  // n aponta de A para B: para B, o golpe vem pelas costas se B já andava na direção de n.
+  const lado_ = (x, ux, uy) => {
+    const v = Math.hypot(x.vx, x.vy);
+    return v > 60 ? (x.vx * ux + x.vy * uy) / v : 0;
+  };
+  const cA = lado_(a, -nx, -ny);
+  const cB = lado_(b, nx, ny);
   // Crítico: quem tem a investida perfeita armada e bate de frente no outro (D-040).
   const deFrente = (x, ux, uy) => {
     const v = Math.hypot(x.vx, x.vy);
@@ -586,6 +658,9 @@ function collide(state, a, b, finishes) {
   const tetoB = (j / mb) * (critA ? CRITICAL.pushShare : 1) + giroMax;
   const pushA = Math.min(tetoA, (j / ma + repel * (mb / tot) * 2) * knockA);
   const pushB = Math.min(tetoB, (j / mb + repel * (ma / tot) * 2) * knockB);
+  // O choque inclina o eixo de quem foi empurrado, na direção do empurrão.
+  inclinar(a, -nx, -ny, TILT.perHit * Math.min(1, pushA / P.maxSpeed));
+  inclinar(b, nx, ny, TILT.perHit * Math.min(1, pushB / P.maxSpeed));
   a.vx -= nx * pushA;
   a.vy -= ny * pushA;
   b.vx += nx * pushB;
@@ -595,6 +670,21 @@ function collide(state, a, b, finishes) {
   const sameMul = same ? 1 : 0.85;
   let dmgA = (base * (0.6 + 0.8 * b.atk)) / (0.6 + 0.8 * a.def) * mb_.dmgOut * ma_.dmgIn * sameMul;
   let dmgB = (base * (0.6 + 0.8 * a.atk)) / (0.6 + 0.8 * b.def) * ma_.dmgOut * mb_.dmgIn * sameMul;
+  // Força do golpe (D-052): a parte da massa de quem bate e o giro dele (a velocidade já está no impacto).
+  // O peso do giro é moderado: maior, ele virava bola de neve (quem perde giro primeiro bate cada vez
+  // mais fraco e perde sempre), como o playtest mostrou.
+  const forca_ = (x, mx) => (2 * mx / tot) * (0.75 + 0.25 * Math.max(0, x.spin));
+  dmgB *= forca_(a, ma);
+  dmgA *= forca_(b, mb);
+  dmgA *= cA > 0 ? 1 + HIT_ANGLE.back * cA : 1 - HIT_ANGLE.front * -cA;
+  dmgB *= cB > 0 ? 1 + HIT_ANGLE.back * cB : 1 - HIT_ANGLE.front * -cB;
+  if (cA < 0 && cB < 0) {
+    // De frente: as duas sentem parecido.
+    const k = HIT_ANGLE.share * Math.min(-cA, -cB);
+    const media = (dmgA + dmgB) / 2;
+    dmgA += (media - dmgA) * k;
+    dmgB += (media - dmgB) * k;
+  }
   if (critB) dmgA *= CRITICAL.damage;
   if (critA) dmgB *= CRITICAL.damage;
   // Contato limpo no crítico: quem acertou sente menos o choque.
