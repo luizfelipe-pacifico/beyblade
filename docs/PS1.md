@@ -52,6 +52,17 @@ Quase tudo fica em `OUTBIN/`. Os arquivos `*D.BIN` começam com uma **tabela de 
 | `WAV/XBGM??.XA` | 5 (Form 2) | **Trilha sonora** em áudio XA (ADPCM), ~100 MB |
 | `ZZZZMIN3.PAD` | 3 | Enchimento do disco (38 MB cada), sem conteúdo |
 
+## Compressão ECD (em andamento)
+
+Os arquivos de personagem (`BCHR??D`) e outros guardam entradas com um cabeçalho **`ECD`** de 16 bytes, campos **big-endian**: `+4` bytes iniciais sem compressão (8 = o cabeçalho TIM), `+8` tamanho comprimido, `+12` tamanho descomprimido. Cada `BCHR` tem 13 entradas; as 8 primeiras descomprimem para **TIM de 8bpp de 128×128** (16.928 bytes: paleta de 256 cores + imagem), provavelmente retratos/expressões do personagem.
+
+O que já está confirmado no fluxo comprimido (tipo LZSS):
+
+- byte de flags lido do bit 0 para o 7; **bit 1 = literal** (1 byte), **bit 0 = cópia** (2 bytes `a`, `c`);
+- comprimento da cópia = `(c & 0x3f) + 3` (6 bits; com isso a soma bate o tamanho descomprimido exato em todas as entradas testadas);
+- a posição tem 10 bits (janela de 1 KB, coerente com as máscaras `0x3ff` do executável), e as posições antes do início valem zero;
+- com `v = (a << 2) | (c >> 6)` como posição num anel de 1 KB, o cabeçalho TIM inteiro sai certo e a imagem sai com a forma geral do personagem, mas ainda com ruído: falta acertar a regra exata da posição (ponto inicial do anel ou relativo ao cursor). O decodificador do jogo não está no executável principal (buscas por `andi 0x3f` + `srl 6` acharam só entrada/áudio); deve estar num overlay (`OUTBIN/OVL*.BIN`), que precisa do endereço de carga para o Ghidra.
+
 ## Próximos passos (em atualizações separadas)
 
 1. **Texturas:** identificar o formato dos `TD` (provável TIM do PS1 ou variação) e exportar PNG.

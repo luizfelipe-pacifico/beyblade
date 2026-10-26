@@ -24,7 +24,7 @@ test('player 1 alone picks own character and bey, then the CPU, then the stage',
     [0, 'right'], [0, 'right'], [0, 'confirm'], // arena 2
   ]);
   assert.equal(done.phase, 'done');
-  assert.equal(battleQuery(done), 'p1=kai&p2=ray&b1=dranzer-g&b2=driger-v&arena=2&cpu=2');
+  assert.equal(battleQuery(done), 'p1=kai&p2=ray&b1=dranzer-g&b2=driger-v&arena=rom-2&cpu=2');
 });
 
 test('start on the second controller brings in player 2, even while player 1 picks the CPU', () => {
@@ -38,7 +38,7 @@ test('start on the second controller brings in player 2, even while player 1 pic
   assert.equal(s.phase, 'stage');
   s = play(s, [[1, 'right'], [0, 'confirm']]);
   assert.equal(s.stage, 0, 'só o P1 escolhe a arena');
-  assert.equal(battleQuery(s), 'p1=tyson&p2=kai&b1=dragoon-s&b2=dranzer-g&arena=0');
+  assert.equal(battleQuery(s), 'p1=tyson&p2=kai&b1=dragoon-s&b2=dranzer-g&arena=rom-0');
 });
 
 test('both humans choose at the same time', () => {
@@ -80,10 +80,11 @@ test('back on the stage screen returns to the second bey', () => {
   assert.equal(s.slots[1].step, 'bey');
 });
 
-test('the random stage resolves to one of the stadiums', () => {
+test('the random stage is left for the battle to draw', () => {
   let s = play(start(), [[0, 'confirm'], [0, 'confirm'], [0, 'confirm'], [0, 'confirm'], [0, 'left']]);
-  s = reduceSelect(s, 0, 'confirm', () => 0.5);
-  assert.equal(s.stage, 3);
+  s = reduceSelect(s, 0, 'confirm');
+  assert.equal(s.stage, 'aleatoria');
+  assert.match(battleQuery(s), /arena=aleatoria/);
 });
 
 test('player 1 can cancel a ready pick while waiting for player 2', () => {

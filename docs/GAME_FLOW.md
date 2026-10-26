@@ -24,7 +24,7 @@ modo → personagem (P1, e P2 se entrar) → beyblade → [CPU: personagem → b
 - Lógica pura em `src/game/select-state.js` (máquina de estados com testes) e `src/game/select-feedback.js` (qual som/animação tocar em cada mudança).
 - Tela em `src/components/game/character-select.jsx`: cards do elenco no centro (6 colunas, Aleatório no fim), personagem de cada lado com luz de recorte na cor do jogador, carrossel das beys **em cima do personagem** (`bey-carousel.jsx`, vista de topo da ROM girando, nome embaixo, "n de N · tipo"), escolha de arena (`stage-select.jsx`, 6 estádios da ROM + Aleatória) e entrada (`walk-in.jsx`, sprites de caminhada do GBA subindo até o estádio em perspectiva, com o VS).
 - Input em `src/hooks/use-select-input.js`: teclado por evento (um toque rápido nunca se perde entre dois quadros) e controle por polling; segurar a direção repete o passo.
-- Link da batalha: `/batalha?p1&p2&b1&b2&arena[&cpu=2]` (`battleQuery`), com os ids de `beys.generated.json`.
+- Link da batalha: `/batalha?p1&p2&b1&b2&arena[&cpu=2]` (`battleQuery`), com os ids de `beys.generated.json`. `arena` = `rom-0`…`rom-5` (estádios do GBA), slug de cenário (`src/content/cenarios.js`, da outra frente) ou `aleatoria`, que a batalha sorteia entre os cenários.
 - **Pendente de arte:** não existe imagem de corpo inteiro dos personagens (o GBA só tem bonecos de 16×32 e a pesquisa tem retratos de busto, 512×640). A seleção usa o retrato até a arte de corpo inteiro existir (D-008).
 
 ### Retorno de interface (game feel)

@@ -3,6 +3,7 @@
 // qualquer momento da seleção; se não entrar, o P1 escolhe personagem e bey da CPU. Depois o P1 escolhe a arena.
 
 export const RANDOM_CARD = 'aleatorio';
+export const RANDOM_STAGE = 'aleatoria';
 
 const emptySlot = (cursor = 0) => ({ step: 'character', cursor, character: null, randomPick: false, beyCursor: 0, bey: null });
 
@@ -93,7 +94,8 @@ export function reduceSelect(s, player, action, rng = Math.random) {
     if (action === 'left') return { ...s, stageCursor: (s.stageCursor - 1 + total) % total };
     if (action === 'right') return { ...s, stageCursor: (s.stageCursor + 1) % total };
     if (action === 'confirm') {
-      const stage = s.stageCursor === s.stages ? Math.floor(rng() * s.stages) : s.stageCursor;
+      // Aleatória fica para a batalha sortear (entre os cenários); o resto é um estádio da ROM.
+      const stage = s.stageCursor === s.stages ? RANDOM_STAGE : s.stageCursor;
       return { ...s, stage, phase: 'done' };
     }
     if (action === 'back') return { ...setSlot(s, 1, { step: 'bey', bey: null }), phase: 'select' };
@@ -135,12 +137,13 @@ export function reduceSelect(s, player, action, rng = Math.random) {
 }
 
 // Link da batalha (contrato de app/(jogo)/batalha/page.js): p1, p2, b1, b2, arena e cpu=2 sem P2 humano.
+// arena: `rom-<n>` para os estádios do GBA ou `aleatoria` (a batalha sorteia).
 export function battleQuery(s) {
   const [a, b] = s.slots;
   const params = new URLSearchParams({ p1: a.character, p2: b.character });
   if (a.bey) params.set('b1', a.bey);
   if (b.bey) params.set('b2', b.bey);
-  if (s.stage !== null) params.set('arena', String(s.stage));
+  if (s.stage !== null) params.set('arena', s.stage === RANDOM_STAGE ? RANDOM_STAGE : `rom-${s.stage}`);
   if (s.p2 !== 'human') params.set('cpu', '2');
   return params.toString();
 }

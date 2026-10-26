@@ -34,7 +34,8 @@ export function WalkIn({ personagens, romData, arena, onDone }) {
   }, [onDone]);
 
   const avanco = Math.min(1, tick / PASSOS);
-  const piso = romData?.stadiums?.[arena]?.floor;
+  // Arena sorteada pela batalha ainda não é conhecida aqui: mostra o estádio desenhado.
+  const piso = typeof arena === 'number' ? romData?.stadiums?.[arena]?.floor : null;
 
   return (
     <section aria-label="Entrada na arena" className="sel-palco relative grid h-[calc(100dvh-3.5rem)] place-items-center overflow-hidden">
