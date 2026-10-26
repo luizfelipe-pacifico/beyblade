@@ -51,3 +51,15 @@ Gerados por `scripts/build-research.js` (`npm run build:research`), nunca à mã
 - `topo.svg` (vista de cima) e `lateral.svg` (perfil) de cada peça, **na escala real em mm**, com régua de 10 mm e cotas de diâmetro e altura.
 - `montada.svg` (bey completa em 3/4 + topo) e `explodida.svg` (peças empilhadas e separadas, com nome, material e peso de cada uma).
 - Mesma câmera, luz e fundo em todos, para comparar peças lado a lado.
+
+## Ícone do jogo
+
+Fonte: `assets/icon/fonte.jpg` (arte enviada pelo usuário: emblema circular com a Dragoon e a bey, sobre um quadriculado "transparente" falso). `node scripts/build-icon.mjs` refaz tudo:
+
+- acha o círculo do emblema lançando 360 raios do centro e ajustando um círculo nos pontos de borda (`scripts/lib/icon.js`, testes em `tests/icon.test.js`), e troca o quadriculado por transparência real;
+- `assets/icon/icone.png`: raster mestre 1024×1024;
+- `app/icon.svg`: vetor (VTracer em 512 px, recortado por um círculo vetorial; ~250 KB, sem raster embutido) — aba do navegador;
+- `app/favicon.ico` e `build/icon.ico`: PNGs de 16, 24, 32, 48, 64, 128 e 256 px reduzidos do raster (mais nítidos que o vetor rasterizado em 16 px) — aba e barra de tarefas do Windows/Electron;
+- `public/icon-512.png`: ícone da janela do Electron.
+
+O Next usa `app/icon.svg` e `app/favicon.ico` sozinho (convenção do App Router). O script reaproveita o `sharp` e o VTracer de `site/node_modules`.
