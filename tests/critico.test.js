@@ -139,3 +139,34 @@ test('a critical hit never pushes the target faster than momentum and spin allow
   assert.ok(critico, 'o crítico não saiu');
   assert.ok(maior < 2.5 * PHYSICS.maxSpeed, `alvo empurrado a ${maior.toFixed(0)} mm/s`);
 });
+
+// Raspão (D-048): só encostar já tira giro, empurra, solta faísca e gasta o escudo.
+function encostadas(segura) {
+  const s = createMatch({ beys: [ataque, defesa], seed: 9 });
+  while (s.phase === 'launch') stepMatch(s);
+  const [A, D] = s.beys;
+  const eventos = [];
+  const antes = { a: A.spin, d: D.spin, escudo: D.shield };
+  let dist = 0;
+  for (let t = 0; t < 30; t++) {
+    // Mantém as duas encostadas e paradas, sem velocidade de aproximação: só o atrito do contato age.
+    Object.assign(A, { x: -A.r + 1, y: 0, vx: 0, vy: 0, spin: Math.max(A.spin, 0.5) });
+    Object.assign(D, { x: D.r - 1, y: 0, vx: 0, vy: 0 });
+    stepMatch(s, [NEUTRAL_INPUT, input({ held: { defend: segura } })]);
+    eventos.push(...s.events);
+    dist = Math.max(dist, Math.hypot(D.x - A.x, D.y - A.y) - A.r - D.r);
+  }
+  return { perdaD: antes.d - D.spin, escudo: antes.escudo - D.shield, eventos, dist };
+}
+
+test('just touching takes spin, pushes the beys apart and throws sparks', () => {
+  const r = encostadas(false);
+  assert.ok(r.perdaD > 0.005, `a defesa perdeu só ${r.perdaD.toFixed(4)} de giro`);
+  assert.ok(r.dist > 0, 'as beys não se afastaram');
+  assert.ok(r.eventos.some((e) => e.type === 'contato'), 'sem faísca no raspão');
+});
+
+test('a raised shield wears down from just touching', () => {
+  const r = encostadas(true);
+  assert.ok(r.escudo > 0.05, `o escudo gastou só ${r.escudo.toFixed(3)}`);
+});

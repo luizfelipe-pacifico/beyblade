@@ -15,6 +15,14 @@ Formato:
 
 ---
 
+## D-048: encostar já dá dano, faísca e empurra; escudo gasta no contato
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu (pela outra sessão) que as beys, só de relar, já tirem giro, soltem faísca e empurrem a outra, e que com o escudo levantado o contato também o gaste.
+- Decisão: quando as beys se sobrepõem sem velocidade de aproximação (raspão), o atrito das bordas girando tira giro de cada uma (`rubDamage` × giro médio, por tempo de contato), empurra uma para longe da outra pelo giro (`rubPush`, dividido pela massa) e solta o evento `contato` (faísca pequena, sem som nem vibração, no máximo a cada 0,08 s). Choque abaixo do limiar de "hit" também solta `contato`. Com o escudo levantado, o raspão gasta a vida dele por tempo (`SHIELD.contactWear`, 18% por segundo encostado) e qualquer pancada tira no mínimo 6% de `perHit`; a regra de duas pancadas fortes da D-042 continua.
+- Consequências: testes em `tests/critico.test.js` (raspão tira giro, afasta e solta faísca; escudo gasta encostado). Playtest dentro do esperado.
+
 ## D-049: lançamento no ritmo, estilo Beyblade Burst app
 
 - Data: 2026-10-25

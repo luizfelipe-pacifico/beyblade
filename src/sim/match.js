@@ -107,6 +107,7 @@ export function createMatch({ beys, seed = 1, treino = false, regras = {} }) {
     phaseTicks: 0,
     pending: null,
     hitCd: 0,
+    rubCd: 0,
     beys: [],
     launch: [],
     events: [],
@@ -399,6 +400,7 @@ function simulate(state, inputs, control) {
       }
     }
     state.hitCd = Math.max(0, state.hitCd - h);
+    state.rubCd = Math.max(0, (state.rubCd ?? 0) - h);
     if (finishes.length && state.phase === 'battle') resolveFinish(state, finishes);
   }
 }
@@ -543,7 +545,9 @@ function collide(state, a, b, finishes) {
   b.y += ny * overlap * (ma / tot);
 
   const vn = (b.vx - a.vx) * nx + (b.vy - a.vy) * ny;
-  if (vn >= 0) return;
+  // Só encostando (sem velocidade de aproximação): o atrito das bordas girando tira giro, empurra uma
+  // para longe da outra pelo giro e solta faísca. Escudo levantado gasta por tempo de contato (D-048).
+  if (vn >= 0) return raspar(state, a, b, nx, ny, ma, mb, tot, ma_, mb_);
   const impact = -vn;
   // Crítico: quem tem a investida perfeita armada e bate de frente no outro (D-040).
   const deFrente = (x, ux, uy) => {
@@ -618,13 +622,48 @@ function collide(state, a, b, finishes) {
   if (impact > P.hitEventImpact && state.hitCd <= 0) {
     state.hitCd = 0.06;
     state.events.push({ type: 'hit', impact, x: a.x + nx * a.r, y: a.y + ny * a.r, nx, ny, empurrao: [pushA, pushB] });
+  } else if (impact <= P.hitEventImpact && state.rubCd <= 0) {
+    // Toque leve: sem estrondo, mas solta faísca (D-048).
+    state.rubCd = P.rubSparkCooldown;
+    state.events.push({ type: 'contato', x: a.x + nx * a.r, y: a.y + ny * a.r, nx, ny, forca: sr });
   }
 }
 
+function raspar(state, a, b, nx, ny, ma, mb, tot, ma_, mb_) {
+  const h = DT / SUBSTEPS;
+  const sr = (Math.max(0, a.spin) + Math.max(0, b.spin)) / 2;
+  const same = a.dir === b.dir;
+  // Empurrão do giro, dividido pela massa como no choque (a mais leve se afasta mais).
+  const push = P.repel * sr * (same ? 1.3 : 0.8) * P.rubPush;
+  a.vx -= nx * push * (mb / tot);
+  a.vy -= ny * push * (mb / tot);
+  b.vx += nx * push * (ma / tot);
+  b.vy += ny * push * (ma / tot);
+  const perda = P.rubDamage * sr * h;
+  for (const [x, m] of [[a, ma_], [b, mb_]]) {
+    if (x.state !== 'active') continue;
+    if (x.guard) gastarEscudo(state, x, SHIELD.contactWear * h);
+    else x.spin -= perda * m.dmgIn;
+  }
+  if (state.rubCd <= 0) {
+    state.rubCd = P.rubSparkCooldown;
+    state.events.push({ type: 'contato', x: a.x + nx * a.r, y: a.y + ny * a.r, nx, ny, forca: sr });
+  }
+}
+
+function gastarEscudo(state, b, quanto) {
+  b.shield -= quanto;
+  if (b.shield > 0) return;
+  b.shield = 0;
+  b.shieldBroken = true;
+  b.guard = false;
+  b.guardCharge = 0;
+  state.events.push({ type: 'shieldBreak', slot: b.slot, x: b.x, y: b.y });
+}
+
 function baterNoEscudo(state, b, impact, critico) {
-  if (impact < P.hitEventImpact) return;
-  // Até perHit por pancada (duas fortes quebram); choque fraco só arranha.
-  b.shield -= SHIELD.perHit * Math.min(1, impact / P.strongImpact) * (critico ? 2 : 1);
+  // Até perHit por pancada (duas fortes quebram); qualquer toque gasta um pouco (D-048).
+  b.shield -= SHIELD.perHit * Math.max(0.06, Math.min(1, impact / P.strongImpact)) * (critico ? 2 : 1);
   if (b.shield > 0) return;
   b.shield = 0;
   b.shieldBroken = true;

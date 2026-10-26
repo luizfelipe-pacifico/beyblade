@@ -46,6 +46,10 @@ export const PHYSICS = {
   hitDamage: 0.00008 / S,
   // Atrito de contato entre as beys (por choque, além da força do impacto).
   contactDamage: 0.0002,
+  // Raspão (D-048): encostar sem bater também tira giro, empurra pelo giro e solta faísca.
+  rubDamage: 0.012,
+  rubPush: 0.35,
+  rubSparkCooldown: 0.08,
   wallDamage: 0.00005 / S,
   equalization: 0.05,
   // Girar à toa gasta pouco; o que mais gasta giro são os choques (hitDamage).
@@ -137,6 +141,8 @@ export const SHIELD = {
   perHit: 0.5,
   regen: 0.03,
   minToRaise: 0.25,
+  // Encostado (raspando, sem choque), o escudo gasta por tempo de contato (D-048).
+  contactWear: 0.18,
 };
 
 export const MOTION = {

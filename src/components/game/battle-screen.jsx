@@ -192,6 +192,10 @@ export function BattleScreen({ p1, p2, b1, b2, arena, cpu = false, modo = 'versu
           vibrar(forca, 60 + 120 * forca);
           break;
         }
+        case 'contato':
+          // Raspão: faísca pequena, sem som nem vibração (aconteceria várias vezes por segundo).
+          renderer.spawnSparks(e.x, e.y, e.nx, e.ny, 120 + 260 * e.forca);
+          break;
         case 'wall':
           renderer.spawnSparks(e.x, e.y, -e.x, -e.y, e.impact * 0.5);
           break;
