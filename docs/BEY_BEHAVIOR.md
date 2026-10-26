@@ -83,6 +83,68 @@ Os multiplicadores se combinam com os atributos da bey (1–10, do catálogo e d
 
 **Fim de rodada:** com menos de ~20% de giro todas as beys perdem tração e "bambeiam" (*wobble*); a de resistência é a que mais demora a chegar lá. Isso já cria o "para mais cedo" do ataque sem regra especial.
 
+## Física da tigela (arena funda)
+
+O usuário notou que a bey "corre muito, como se a arena fosse plana". Causa no protótipo (`src/sim/match.js`): um empurrão tangencial **constante** (`PHYSICS.orbit`) injeta energia o tempo todo e a tigela puxa pouco (`bowlPull = 4 s⁻²`) perto das velocidades usadas. Numa tigela de verdade não existe motor: quem move a bey é a **gravidade na rampa** e o **atrito da ponta que gira**.
+
+### O que a física diz
+
+1. **A tigela é um poço de energia.** Subir a rampa troca velocidade por altura e descer devolve. Uma bey solta perto da borda desce acelerando, passa rápido pelo centro, sobe do outro lado freando e volta, como um pêndulo. Para um perfil parabólico `h(r) = d · (r/R)²` (profundidade `d` na borda de raio `R`), a aceleração horizontal é `a = −g · h′(r) = −(2 g d / R²) · r`: um oscilador com `ω₀ = √(2 g d) / R`. Os estádios reais têm a borda mais íngreme (parede/*tornado ridge*), por isso o termo cresce perto de `R`.
+2. **A ponta é o "motor".** Em rampa, o eixo da bey inclina na direção da descida e ela passa a encostar a borda da ponta no chão. A borda gira com a bey e, com atrito, empurra a bey **de lado** (perpendicular à rampa), no sentido definido pela rotação. Isso gera a órbita em volta do centro. A força tem teto no atrito: `|F| ≤ μ · m · g`.
+   - **Ponta fina (sharp):** quase sem borda e atrito baixo → quase não há empurrão lateral; a gravidade vence e ela escorrega para o centro e fica (resistência).
+   - **Bola:** rola em vez de escorregar → pouco empurrão; desce para o centro e roda num círculo pequeno (defesa).
+   - **Flat:** borda larga → empurrão forte → órbita larga e rápida; combinada com a oscilação da tigela vira o **padrão flor**.
+   - **Grip/borracha:** atrito muito alto → empurrão máximo, mas gasta giro mais rápido (ataque).
+   Explicações de fãs batem com isso: a bey tenta manter o centro de massa acima da ponta e "segue as curvas do piso"; uma ponta redonda escorrega para o centro e fica estável, uma flat não consegue ficar parada na rampa ([WorldBeyblade: The Physics of Beyblades](https://worldbeyblade.org/Thread-The-Physics-of-Beyblades), [Mall of Toys: How Beyblades Work](https://malloftoys.com/blogs/news/how-beyblades-work), [Toys Japan: The Science of Beyblade](https://toys-japan.com/the-science-of-beyblade-physics-in-action/)).
+3. **Giro baixo = inclinação maior.** A precessão de um pião é mais rápida quanto menor o giro (`Ω = m g l / (I ω)`); com pouco giro o eixo inclina mais, a borda da ponta encosta mais e o movimento fica largo e errático (o "bambear" do fim da batalha) até cair. Piões de ponta arredondada precessionam em volta de um eixo fora deles e espiralam para dentro ([Cross, *The rise and fall of spinning tops*](https://www.researchgate.net/publication/258757498_The_rise_and_fall_of_spinning_tops); [Hantz e Lázár, Frontiers in Physics 2019](https://www.frontiersin.org/journals/physics/articles/10.3389/fphy.2019.00005/full)). Em plano inclinado, um pião girando segue uma trajetória **em ângulo com a rampa**, não reto morro abaixo ([Barthmann e Fischer, J. Phys. Commun. 2021](https://epub.uni-bayreuth.de/6528/1/Barthmann_2021_J._Phys._Commun._5_085003.pdf)).
+4. **Atrito de deslizamento** sempre freia a velocidade em relação ao piso (`μ_k · g`). Sem o empurrão da ponta, toda bey acaba parada no ponto mais baixo, o centro.
+
+Não há medida publicada da profundidade dos estádios; os números abaixo são de calibração.
+
+### Modelo proposto para `src/sim/`
+
+Por subpasso, em unidades do mundo (mm, s), com `g = 9810 mm/s²`:
+
+```
+// 1) gravidade na tigela (substitui bowlPull): perfil parabólico com borda mais íngreme
+k      = 2 · g · depth / R²                         // depth ≈ 0,07·R → ω₀ ≈ 3,7 rad/s (período ≈ 1,7 s)
+a_bowl = −k · r · (1 + rim · (r/R)⁴)                // rim ≈ 2: a rampa fica bem mais íngreme perto da parede
+
+// 2) empurrão da ponta (substitui o orbit constante): lateral à rampa, sentido pela rotação
+tilt   = clamp(slope(r) + wobble(spin), 0, maxTilt) // slope = |h′(r)|; wobble cresce quando spin < ~0,3
+a_tip  = tipDrive · spin · tilt · g · tangente(dir) // tangente perpendicular a r; dir = +1 direita, −1 esquerda
+a_tip  limitado por μ_tip · g                       // teto do atrito
+
+// 3) atrito de deslizamento
+a_fric = −μ_slide · g · v̂                          // freia sempre; zera só quando v → 0
+
+// 4) jogador: inclina a bey (soma ao movimento, não é um carro)
+a_ctrl = input · control · μ_tip · g                // também limitado pela tração da ponta
+```
+
+| Ponta | `tipDrive` | `μ_tip` (tração) | `μ_slide` | Resultado esperado |
+| --- | --- | --- | --- | --- |
+| sharp | 0,05 | 0,08 | 0,04 | escorrega e fica no centro |
+| bola | 0,20 | 0,15 | 0,03 (rola) | círculo pequeno em volta do centro |
+| semi-flat | 0,45 | 0,30 | 0,08 | órbita média |
+| flat | 0,70 | 0,45 | 0,10 | órbita larga, padrão flor |
+| grip | 0,90 | 0,80 | 0,12 | mais agressiva; perde giro mais rápido (multiplicar `spinDecay` pela tração) |
+
+Esses parâmetros substituem boa parte dos multiplicadores por tipo da tabela acima: o comportamento de cada tipo **sai da ponta e da tigela**. Os multiplicadores ficam só para o que a ponta não explica (massa, recuo).
+
+### Como mostrar a profundidade no 2D (e no 3D depois)
+
+- **Sombreamento radial da tigela** (mais escuro no fundo ou na borda) e linhas concêntricas, para o jogador ler a rampa.
+- **Altura da bey** `h(r)` usada no desenho: quanto mais alta na rampa, sombra mais deslocada e sprite levemente maior (câmera de cima); ao descer, ela "afunda". No 3D (D-006) a mesma `h(r)` vira a coordenada vertical.
+- **Rastro** curto: no topo da rampa fica curto (bey lenta) e no fundo fica longo (bey rápida), deixando visível a troca entre altura e velocidade.
+
+### Testes do modelo
+
+- **Energia:** sem ponta, sem atrito e sem input, a soma `½v² + g·h(r)` fica constante (erro < 1% em 10 s).
+- **Pêndulo:** solta parada em `0,8R` sem ponta, cruza o centro e volta perto de `0,8R` do outro lado em ~meio período.
+- **Fundo:** com atrito e sem ponta, para no centro.
+- **Por ponta:** sharp termina em `r < 0,1R`; bola oscila entre `0,1R` e `0,3R`; flat passa a maior parte do tempo acima de `0,5R` e cruza o centro (flor).
+
 ## Testes sugeridos (simulação determinística, sem DOM)
 
 - Sem input, uma bey de resistência sozinha fica a menos de 0,1 do raio da arena do centro durante toda a rodada.
