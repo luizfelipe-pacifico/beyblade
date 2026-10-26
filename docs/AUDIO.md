@@ -84,12 +84,13 @@ As gravações do anime (temas de abertura e encerramento, trilha de fundo e dub
 
 | Arquivo | Origem (nome do download) | Onde toca |
 | --- | --- | --- |
-| `menu-inicio.mp3` | BEYBLADE (DUB) unreleased Background music #2 | Aba Início |
+| `abertura.mp3` | Abertura do G-Revolution (só a música, D-038) | Aba Início |
+| `menu-inicio.mp3` | BEYBLADE (DUB) unreleased Background music #2 | Outras telas de menu (modos, arcade) |
 | `menu-selecao.mp3` | BEYBLADE (DUB) unreleased Background music #3 | Aba Personagens (seleção) |
 | `batalha.mp3` | BEYBLADE unreleased music: BATTLE THEME #1 Original | Batalha, rodadas 1 e 2 |
 | `batalha-decisiva.mp3` | BEYBLADE unreleased music: BATTLE THEME #1 [WIP] | Rodada decisiva (1 a 1 no placar) |
 
-A aba escolhe a faixa (`game-shell.jsx`), e a batalha troca para a decisiva no `roundStart` com 1 a 1. Para trocar uma música, substitua o arquivo com o mesmo nome.
+O vídeo da abertura (`public/video/abertura.mp4`, fora do git) toca uma vez por sessão antes da tela inicial, com o som dele; a música volta quando ele acaba ou é pulado. A aba escolhe a faixa (`game-shell.jsx`), e a batalha troca para a decisiva no `roundStart` com 1 a 1. Para trocar uma música, substitua o arquivo com o mesmo nome.
 
 ### Vozes provisórias (TTS)
 

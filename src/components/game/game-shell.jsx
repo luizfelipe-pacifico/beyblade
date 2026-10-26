@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { cn } from 'cn';
 import { useMenuNav } from '@/hooks/use-menu-nav';
-import { tocarMusica } from '@/audio/music';
+import { pararMusica, tocarMusica } from '@/audio/music';
+import { IntroVideo } from './intro-video';
 import { ControlHint } from './pad-glyph';
 
 export const ABAS = [
@@ -32,6 +33,16 @@ function ultimaBatalha() {
   }
 }
 
+// A abertura do anime toca uma vez por sessão, ao abrir o jogo pela tela inicial (D-038).
+const INTRO_KEY = 'beyblade:intro-vista';
+function introJaVista() {
+  try {
+    return sessionStorage.getItem(INTRO_KEY) === '1';
+  } catch {
+    return true;
+  }
+}
+
 // Casca do jogo: barra com as abas e o conteúdo da tela. L1/R1 (Q/E para P1, U/O para P2) trocam de aba.
 export function GameShell({ children }) {
   const path = usePathname();
@@ -40,8 +51,22 @@ export function GameShell({ children }) {
   // Lido só depois de montar: no servidor não existe sessionStorage e a hidratação quebraria.
   const [batalhaHref, setBatalhaHref] = useState('/batalha');
   useEffect(() => setBatalhaHref(ultimaBatalha()), [path]);
-  // Trilha de cada aba; na batalha a própria tela troca para a faixa da rodada decisiva.
-  useEffect(() => tocarMusica(path === '/batalha' ? 'batalha' : path === '/personagens' ? 'selecao' : 'inicio'), [path]);
+  // undefined até montar (sessionStorage só existe no cliente); true enquanto a abertura toca.
+  const [intro, setIntro] = useState(undefined);
+  useEffect(() => setIntro(path === '/' && !introJaVista()), []);
+  const fimDaIntro = () => {
+    try {
+      sessionStorage.setItem(INTRO_KEY, '1');
+    } catch {}
+    setIntro(false);
+  };
+  // Trilha de cada tela; na batalha a própria tela troca para a faixa da rodada decisiva. Durante a
+  // abertura em vídeo, o som é o do vídeo.
+  useEffect(() => {
+    if (intro !== false) return pararMusica();
+    const faixa = { '/': 'abertura', '/personagens': 'selecao', '/batalha': 'batalha' }[path] ?? 'inicio';
+    tocarMusica(faixa);
+  }, [path, intro]);
   const hrefDaAba = (href) => (href === '/batalha' ? batalhaHref : href);
 
   useMenuNav((_, acao) => {
@@ -81,7 +106,9 @@ export function GameShell({ children }) {
           </ControlHint>
         </span>
       </header>
-      <main className="relative min-h-0">{children}</main>
+      {/* A tela inicial só monta depois da abertura, para o botão que pula não confirmar a tela também. */}
+      <main className="relative min-h-0">{path === '/' && intro !== false ? null : children}</main>
+      {intro ? <IntroVideo onFim={fimDaIntro} /> : null}
     </div>
   );
 }

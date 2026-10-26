@@ -15,6 +15,14 @@ Formato:
 
 ---
 
+## D-038: abertura do G-Revolution em vídeo e a música dela na tela inicial
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário mandou a abertura do anime em vídeo (MP4) para ser a abertura do jogo e o MP3 só com a música, como opção.
+- Decisão: o vídeo fica em `public/video/abertura.mp4` e a música em `public/audio/musica/abertura.mp3`, **fora do git** como as outras faixas (D-030). Ao abrir o jogo pela tela inicial, o vídeo toca em tela cheia **uma vez por sessão** (`sessionStorage`); ✕ / F / Enter, ○ ou Esc pulam. A tela inicial só monta depois, para o mesmo botão não confirmar as duas coisas. Sem o arquivo, ou se o navegador recusar tocar, a abertura some sem erro. A tela inicial passa a tocar a música da abertura; a faixa de fundo #2 (`inicio`) fica para as outras telas de menu (modos, arcade).
+- Consequências: `src/components/game/intro-video.jsx`; mapa das faixas em [`AUDIO.md`](AUDIO.md#músicas-de-fundo-d-030).
+
 ## D-037: ROM de DS (Metal Fusion) como referência de design de combate
 
 - Data: 2026-10-25

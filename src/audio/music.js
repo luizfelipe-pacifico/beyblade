@@ -4,6 +4,7 @@
 // como a ROM na D-007); se um faltar, o jogo só fica em silêncio. Um único <audio> por vez, em laço,
 // com troca suave de volume entre as faixas.
 export const MUSICAS = {
+  abertura: '/audio/musica/abertura.mp3',
   inicio: '/audio/musica/menu-inicio.mp3',
   selecao: '/audio/musica/menu-selecao.mp3',
   batalha: '/audio/musica/batalha.mp3',
