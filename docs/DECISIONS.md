@@ -15,6 +15,14 @@ Formato:
 
 ---
 
+## D-049: lançamento no ritmo, estilo Beyblade Burst app
+
+- Data: 2026-10-25
+- Status: Aceita (especificação; implementação no sim pela sessão da batalha)
+- Contexto: o usuário pediu para trazer o lançamento do Beyblade Burst app ("acertar o local exato no clique e ir aumentando a energia final"), pesquisado na web e documentado.
+- Decisão: mira do ponto de entrada na contagem; 10 batidas com um anel que se fecha sobre a bey e janela que estreita (±110 → ±45 ms); Perfeito +10%, Bom +6%; **8 Perfeitos = Lançamento Perfeito** com giro 1,1 (acima do máximo, como no app); erros entortam o lançamento; o lançamento antecipado do GBA solta na hora sem energia; ripcord e lançador dão efeitos pequenos para o lançamento não decidir a partida. Detalhes, contrato com o sim e fontes em [`LAUNCH.md`](LAUNCH.md).
+- Consequências: substitui a barra em triângulo de um aperto (`src/sim/match.js`); testes listados em LAUNCH.md.
+
 ## D-047: bey aleatória na seleção
 
 - Data: 2026-10-25

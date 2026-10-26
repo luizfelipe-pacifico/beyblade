@@ -109,6 +109,7 @@ Atualize no mesmo commit da mudança (e crie novos arquivos quando surgir um ass
 - `docs/BEST_PRACTICES.md`: guia completo de boas práticas (leia antes de tarefas maiores)
 - `docs/REVERSE_ENGINEERING.md`: ROM de GBA de referência, descobertas e extração de dados/assets
 - `docs/GAME_FLOW.md`: telas da partida (personagem, bey, P2/CPU, arena, entrada, lançamento, batalha) e controles da batalha
+- `docs/LAUNCH.md`: lançamento no ritmo estilo Beyblade Burst app (mira, 10 batidas, energia, Lançamento Perfeito), pesquisa e contrato com o sim
 - `docs/BEY_BEHAVIOR.md`: comportamento na arena por tipo (ataque, equilíbrio, defesa, resistência) e aparência da arena estilo Burst
 - `docs/CI.md`: GitHub Actions (testes em Linux e Windows, builds, auditoria), Dependabot e próximos processos
 - `docs/PS1.md`: jogo de PS1 (Bey Battle Tournament 2) como segunda referência, extraído fora do repositório
