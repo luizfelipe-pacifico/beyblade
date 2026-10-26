@@ -69,7 +69,7 @@ function makeBey(def, slot) {
     egUsed: false,
     egCd: 0,
     egDecay: 1,
-    // Desvio próprio da inclinação do eixo (radianos), além da que vem da rampa (D-052).
+    // Desvio próprio da inclinação do eixo (radianos), além da que vem da rampa (D-053).
     tx: 0,
     ty: 0,
     spin: 0,
@@ -472,7 +472,7 @@ function moveBey(state, b, h, inp) {
     const tip = b.tip;
     // 2) Ponta: inclinada na rampa, empurra a bey de lado no sentido da rotação. Giro baixo inclina mais.
     const wobble = spin < BOWL.wobbleSpin ? ((BOWL.wobbleSpin - spin) / BOWL.wobbleSpin) * BOWL.wobbleTilt : 0;
-    // Inclinação total: a da rampa (para fora) mais o desvio próprio da bey (D-052).
+    // Inclinação total: a da rampa (para fora) mais o desvio próprio da bey (D-053).
     const lx = ux * (slope + wobble) + b.tx;
     const ly = uy * (slope + wobble) + b.ty;
     const lm = Math.hypot(lx, ly);
@@ -613,7 +613,7 @@ function collide(state, a, b, finishes) {
   // para longe da outra pelo giro e solta faísca. Escudo levantado gasta por tempo de contato (D-048).
   if (vn >= 0) return raspar(state, a, b, nx, ny, ma, mb, tot, ma_, mb_);
   const impact = -vn;
-  // Lado do golpe (D-052), com as velocidades de ANTES do empurrão (medir depois invertia o lado).
+  // Lado do golpe (D-053), com as velocidades de ANTES do empurrão (medir depois invertia o lado).
   // n aponta de A para B: para B, o golpe vem pelas costas se B já andava na direção de n.
   const lado_ = (x, ux, uy) => {
     const v = Math.hypot(x.vx, x.vy);
@@ -670,7 +670,7 @@ function collide(state, a, b, finishes) {
   const sameMul = same ? 1 : 0.85;
   let dmgA = (base * (0.6 + 0.8 * b.atk)) / (0.6 + 0.8 * a.def) * mb_.dmgOut * ma_.dmgIn * sameMul;
   let dmgB = (base * (0.6 + 0.8 * a.atk)) / (0.6 + 0.8 * b.def) * ma_.dmgOut * mb_.dmgIn * sameMul;
-  // Força do golpe (D-052): a parte da massa de quem bate e o giro dele (a velocidade já está no impacto).
+  // Força do golpe (D-053): a parte da massa de quem bate e o giro dele (a velocidade já está no impacto).
   // O peso do giro é moderado: maior, ele virava bola de neve (quem perde giro primeiro bate cada vez
   // mais fraco e perde sempre), como o playtest mostrou.
   const forca_ = (x, mx) => (2 * mx / tot) * (0.75 + 0.25 * Math.max(0, x.spin));

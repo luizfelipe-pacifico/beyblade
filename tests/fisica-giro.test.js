@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { createMatch, stepMatch, NEUTRAL_INPUT } from '../src/sim/match.js';
 import { DT, ENGINE_GEAR, PHYSICS } from '../src/sim/constants.js';
 
-// Giro como vida, direção do golpe, pisão, inclinação e Engine Gear (D-052).
+// Giro como vida, direção do golpe, pisão, inclinação e Engine Gear (D-053).
 const attrs = { ataque: 6, defesa: 6, stamina: 6, velocidade: 6, peso: 6, equilibrio: 6, resistencia_knockout: 6 };
 const bey = (over = {}) => ({ slug: 't', nome: 'T', tipo: 'balance', ponta: 'semi-flat', rotacao: 'direita', atributos: attrs, medidas: { diametro_mm: 46, peso_g: 38 }, ...over });
 const input = (over = {}) => ({ move: { x: 0, y: 0 }, held: {}, pressed: {}, ...over });

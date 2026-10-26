@@ -52,7 +52,7 @@ export const PHYSICS = {
   rubSparkCooldown: 0.08,
   wallDamage: 0.00005 / S,
   equalization: 0.05,
-  // Giro é a barra de vida (D-052): girar à toa gasta bem pouco; o que mais gasta são os choques.
+  // Giro é a barra de vida (D-053): girar à toa gasta bem pouco; o que mais gasta são os choques.
   spinDecay: 0.006,
   guardDrain: 0.01,
   specialPassive: 0.03,
@@ -145,7 +145,7 @@ export const SHIELD = {
   contactWear: 0.18,
 };
 
-// Engine Gear (D-052): devolve giro (mais na ataque), recarrega devagar e, depois de usado, a bey
+// Engine Gear (D-053): devolve giro (mais na ataque), recarrega devagar e, depois de usado, a bey
 // passa a gastar giro um pouco mais rápido até o fim da rodada.
 export const ENGINE_GEAR = {
   recover: 0.4,
@@ -154,7 +154,7 @@ export const ENGINE_GEAR = {
   decayAfter: 1.3,
 };
 
-// Inclinação do eixo (D-052). A bey gira quase em pé; a inclinação é a soma da rampa (o piso inclinado
+// Inclinação do eixo (D-053). A bey gira quase em pé; a inclinação é a soma da rampa (o piso inclinado
 // sob ela) com um desvio próprio, que choques e pisões aumentam e o giro (efeito giroscópico) endireita.
 // É ela que define o movimento: a ponta inclinada rola para o lado da inclinação, no sentido do giro.
 // Muito inclinada, a bey raspa, perde tração e gasta giro.
@@ -167,14 +167,14 @@ export const TILT = {
   loseGrip: 0.6,
 };
 
-// Golpe pelas costas tira mais giro; de frente tira menos e o dano se divide entre os dois (D-052).
+// Golpe pelas costas tira mais giro; de frente tira menos e o dano se divide entre os dois (D-053).
 export const HIT_ANGLE = {
   back: 0.6,
   front: 0.3,
   share: 0.5,
 };
 
-// Pisão: cair do pulo em cima da outra empurra para longe e a desequilibra (D-052).
+// Pisão: cair do pulo em cima da outra empurra para longe e a desequilibra (D-053).
 export const STOMP = {
   push: 420 * S,
   damage: 0.06,

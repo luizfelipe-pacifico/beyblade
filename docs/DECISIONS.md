@@ -15,7 +15,7 @@ Formato:
 
 ---
 
-## D-052: giro como vida, lado do golpe, pisão, inclinação e Engine Gear
+## D-053: giro como vida, lado do golpe, pisão, inclinação e Engine Gear
 
 - Data: 2026-10-25
 - Status: Aceita
