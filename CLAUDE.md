@@ -26,7 +26,7 @@ Jogo de Beyblade local para dois jogadores com controles (Gamepad API) e teclado
 ## Comandos
 
 - `pnpm run dev:all` (ou `npm run dev:all`): banco no Docker, jogo na 5000, landing na 3000 e a janela do Electron com o jogo; fechar a janela encerra tudo
-- `npm run dev`: servidor com `node --watch` (recarrega ao salvar)
+- `npm run dev`: servidor que reinicia só quando `server.js`, `src/db.js` ou `src/validate.js` mudam (o resto do app já tem recarga do Next; vigiar tudo entrava em laço com o `.next/`)
 - `npm start`: servidor normal
 - `npm test`: roda todos os testes (`node --test`, arquivos `tests/*.test.js`)
 - `npm run db:up` / `db:down`: sobe/para o PostgreSQL no Docker (precisa do Docker Desktop e do `.env`, copiado de `.env.example`)

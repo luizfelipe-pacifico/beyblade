@@ -9,7 +9,7 @@
     "prestart": "node scripts/sync-art.js",
     "start": "node server.js",
     "predev": "node scripts/sync-art.js",
-    "dev": "node --watch server.js",
+    "dev": "node --watch-path=server.js --watch-path=src/db.js --watch-path=src/validate.js server.js",
     "dev:all": "node scripts/dev-all.js",
     "art:sync": "node scripts/sync-art.js",
     "build:research": "node scripts/build-research.js",
