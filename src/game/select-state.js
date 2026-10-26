@@ -10,11 +10,13 @@ const emptySlot = (cursor = 0) => ({ step: 'character', cursor, character: null,
 // characters: lista de { slug }; beysOf(slug) → lista de slugs de bey (a primeira é a padrão).
 // mode (D-005): 'versus' (P2 pode entrar), 'cpu' e 'treino' (P1 escolhe o adversário, P2 não entra) e
 // 'arcade' (P1 escolhe só o próprio personagem e bey; os oponentes vêm da escada de src/game/arcade.js).
-export function createSelect({ characters, beysOf, stages = 6, cols = 6, mode = 'versus' }) {
+// stages: lista de slugs de arena na ordem da grade (cenários do anime e rom-0…rom-5); a Aleatória entra no fim.
+export const defaultStages = (romCount = 6) => Array.from({ length: romCount }, (_, i) => `rom-${i}`);
+export function createSelect({ characters, beysOf, stages = defaultStages(), cols = 6, mode = 'versus' }) {
   return {
     characters: characters.map((c) => c.slug),
     beys: Object.fromEntries(characters.map((c) => [c.slug, beysOf(c.slug)])),
-    stages,
+    stages: [...stages, RANDOM_STAGE],
     cols,
     mode,
     slots: [emptySlot(0), emptySlot(Math.min(1, characters.length - 1))],
@@ -94,12 +96,12 @@ export function reduceSelect(s, player, action, rng = Math.random) {
 
   if (s.phase === 'stage') {
     if (player !== 0) return s;
-    const total = s.stages + 1;
+    const total = s.stages.length;
     if (action === 'left') return { ...s, stageCursor: (s.stageCursor - 1 + total) % total };
     if (action === 'right') return { ...s, stageCursor: (s.stageCursor + 1) % total };
     if (action === 'confirm') {
-      // Aleatória fica para a batalha sortear (entre os cenários); o resto é um estádio da ROM.
-      const stage = s.stageCursor === s.stages ? RANDOM_STAGE : s.stageCursor;
+      // Aleatória fica para a batalha sortear (entre os cenários).
+      const stage = s.stages[s.stageCursor];
       return { ...s, stage, phase: 'done' };
     }
     if (action === 'back') return { ...setSlot(s, 1, { step: 'bey', bey: null }), phase: 'select' };
@@ -141,14 +143,14 @@ export function reduceSelect(s, player, action, rng = Math.random) {
 }
 
 // Link da batalha (contrato de app/(jogo)/batalha/page.js): p1, p2, b1, b2, arena e cpu=2 sem P2 humano.
-// arena: `rom-<n>` para os estádios do GBA ou `aleatoria` (a batalha sorteia).
+// arena: slug do cenário (src/content/cenarios.js), `rom-<n>` para os estádios do GBA ou `aleatoria` (a batalha sorteia).
 export function battleQuery(s) {
   const [a, b] = s.slots;
   if (s.mode === 'arcade') return new URLSearchParams({ p1: a.character, b1: a.bey }).toString();
   const params = new URLSearchParams({ p1: a.character, p2: b.character });
   if (a.bey) params.set('b1', a.bey);
   if (b.bey) params.set('b2', b.bey);
-  if (s.stage !== null) params.set('arena', s.stage === RANDOM_STAGE ? RANDOM_STAGE : `rom-${s.stage}`);
+  if (s.stage !== null) params.set('arena', s.stage);
   if (s.p2 !== 'human') params.set('cpu', '2');
   if (s.mode === 'treino') params.set('modo', 'treino');
   return params.toString();

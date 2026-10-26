@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { cn } from 'cn';
 import { retrato } from '@/content/roster';
 import { WALK_FRAME_SIZE, walkInFrame } from '@/content/gba';
+import { ArenaSwatch } from './stage-select';
 
 const PASSOS = 96; // ticks de 60 Hz andando (walkInFrame)
 const DURACAO = 150; // ticks até ir para a batalha
@@ -34,17 +35,12 @@ export function WalkIn({ personagens, romData, arena, onDone }) {
   }, [onDone]);
 
   const avanco = Math.min(1, tick / PASSOS);
-  // Arena sorteada pela batalha ainda não é conhecida aqui: mostra o estádio desenhado.
-  const piso = typeof arena === 'number' ? romData?.stadiums?.[arena]?.floor : null;
 
   return (
     <section aria-label="Entrada na arena" className="sel-palco relative grid h-[calc(100dvh-3.5rem)] place-items-center overflow-hidden">
       <div className="sel-estadio relative grid aspect-square w-[min(70vh,60vw)] place-items-center rounded-full">
-        {piso ? (
-          <img src={piso} alt="" className="h-full w-full rounded-full" style={{ imageRendering: 'pixelated' }} />
-        ) : (
-          <div className="h-full w-full rounded-full" style={{ background: 'radial-gradient(circle, #8fd3ff 0%, #2a7fd6 55%, #0c3f8f 100%)' }} />
-        )}
+        {/* Arena sorteada pela batalha ainda não é conhecida aqui: mostra a tigela padrão. */}
+        <ArenaSwatch slug={arena && arena !== 'aleatoria' ? arena : ''} romData={romData} className="h-full w-full" />
       </div>
       <p className="vs sel-vs pointer-events-none absolute top-[12%] z-10 text-[clamp(4rem,10vw,8rem)]" aria-label="contra">VS</p>
       {personagens.map((p, i) => {

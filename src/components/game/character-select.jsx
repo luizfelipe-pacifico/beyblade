@@ -5,7 +5,8 @@ import { cn } from 'cn';
 import { roster, retrato } from '@/content/roster';
 import generated from '@/content/beys.generated.json';
 import { beysByCharacter } from '@/game/bey-options';
-import { activeSlot, battleQuery, cardCount, createSelect, isRandomCard, reduceSelect } from '@/game/select-state';
+import { activeSlot, battleQuery, cardCount, createSelect, defaultStages, isRandomCard, reduceSelect } from '@/game/select-state';
+import { CENARIOS, ROM_STADIUMS } from '@/content/cenarios';
 import { useSelectInput } from '@/hooks/use-select-input';
 import { selectFeedback } from '@/game/select-feedback';
 import { playVoice, uiSounds } from '@/audio/ui-sounds';
@@ -16,6 +17,8 @@ import { ControlHint } from './pad-glyph';
 import './select.css';
 
 const COLUNAS = 6;
+// Cenários do anime primeiro (D-039), depois os estádios do GBA; a Aleatória entra no fim.
+const ARENAS = [...CENARIOS.map((c) => c.slug), ...defaultStages(ROM_STADIUMS)];
 
 // Dados da ROM (public/rom/gba.json, D-007) são opcionais: sem a ROM o jogo segue com a arte da pesquisa.
 export function useRomData() {
@@ -38,7 +41,7 @@ export function useRomData() {
 export function CharacterSelect({ onBattle, onExit, mode = 'versus' }) {
   const romData = useRomData();
   const beysOf = useMemo(() => beysByCharacter(generated, roster), []);
-  const [s, setS] = useState(() => createSelect({ characters: roster, beysOf: (slug) => beysOf[slug], cols: COLUNAS, mode }));
+  const [s, setS] = useState(() => createSelect({ characters: roster, beysOf: (slug) => beysOf[slug], cols: COLUNAS, mode, stages: ARENAS }));
 
   // Estado em ref para calcular o próximo na hora e tocar o retorno (som, flash) uma vez por ação.
   const sRef = useRef(s);

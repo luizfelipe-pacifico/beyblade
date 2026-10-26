@@ -4,7 +4,7 @@ import { activeSlot, battleQuery, cardCount, createSelect, reduceSelect } from '
 
 const characters = [{ slug: 'tyson' }, { slug: 'kai' }, { slug: 'ray' }];
 const beysOf = (slug) => ({ tyson: ['dragoon-s', 'dragoon-g'], kai: ['dranzer-g'], ray: ['driger-g', 'driger-v'] })[slug];
-const start = () => createSelect({ characters, beysOf, stages: 6, cols: 2 });
+const start = () => createSelect({ characters, beysOf, cols: 2 });
 const play = (s, steps, rng = () => 0) => steps.reduce((acc, [player, action]) => reduceSelect(acc, player, action, rng), s);
 
 test('the grid has every character plus the random card', () => {
@@ -37,7 +37,7 @@ test('start on the second controller brings in player 2, even while player 1 pic
   s = play(s, [[1, 'confirm'], [1, 'confirm']]);
   assert.equal(s.phase, 'stage');
   s = play(s, [[1, 'right'], [0, 'confirm']]);
-  assert.equal(s.stage, 0, 'só o P1 escolhe a arena');
+  assert.equal(s.stage, 'rom-0', 'só o P1 escolhe a arena');
   assert.equal(battleQuery(s), 'p1=tyson&p2=kai&b1=dragoon-s&b2=dranzer-g&arena=rom-0');
 });
 
@@ -145,4 +145,11 @@ test('arcade mode ends after player 1 picks character and bey', () => {
   s = play(s, [[0, 'right'], [0, 'confirm'], [0, 'confirm']]);
   assert.equal(s.phase, 'done');
   assert.equal(battleQuery(s), 'p1=kai&b1=dranzer-g');
+});
+
+test('stage options list scenarios first and keep the random option last', () => {
+  let s = createSelect({ characters, beysOf, cols: 2, stages: ['piscina-publica', 'rom-0'] });
+  assert.deepEqual(s.stages, ['piscina-publica', 'rom-0', 'aleatoria']);
+  s = play(s, [[0, 'confirm'], [0, 'confirm'], [0, 'confirm'], [0, 'confirm'], [0, 'confirm']]);
+  assert.match(battleQuery(s), /arena=piscina-publica/);
 });
