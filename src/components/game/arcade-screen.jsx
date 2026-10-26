@@ -90,7 +90,7 @@ export function ArcadeScreen({ etapa, resultado }) {
 
   const lutar = useCallback(() => router.push(`/batalha?${arcadeBattleQuery(ladder, beysOf)}`), [ladder, beysOf, router]);
 
-  if (!ladder) return <section className="sel-palco h-[calc(100dvh-3.5rem)]" aria-busy="true" />;
+  if (!ladder) return <section className="sel-palco h-dvh" aria-busy="true" />;
   const fight = currentFight(ladder);
   if (entrando && fight) {
     return <WalkIn personagens={[personagem(ladder.player), personagem(fight.character)]} romData={romData} arena={null} onDone={lutar} />;
@@ -98,7 +98,7 @@ export function ArcadeScreen({ etapa, resultado }) {
 
   const jogador = personagem(ladder.player);
   return (
-    <section aria-label="Arcade" className="sel-palco relative grid h-[calc(100dvh-3.5rem)] grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] gap-8 overflow-hidden px-[var(--gutter)] py-8">
+    <section aria-label="Arcade" className="sel-palco relative grid h-dvh grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] gap-8 overflow-hidden px-[var(--gutter)] py-8">
       <div className="relative grid content-end">
         <img src={retrato(jogador.slug)} alt={jogador.nome} className="sel-figura max-h-[70vh] w-auto" style={{ '--luz': 'var(--p1)' }} />
         <p className="cartela text-5xl uppercase">{jogador.nome}</p>

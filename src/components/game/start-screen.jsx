@@ -17,7 +17,7 @@ export function StartScreen() {
   });
 
   return (
-    <FeraField fera="dragoon" movendo className="varredura grid h-[calc(100dvh-3.5rem)] content-center">
+    <FeraField fera="dragoon" movendo className="varredura grid h-dvh content-center">
       <img
         src={feraArte('dragoon')}
         alt=""

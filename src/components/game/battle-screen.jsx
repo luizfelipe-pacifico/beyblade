@@ -325,7 +325,7 @@ export function BattleScreen({ p1, p2, b1, b2, arena, cpu = false, modo = 'versu
 
   return (
     // Painéis nas laterais: a arena (redonda) usa a altura inteira da janela, que é a dimensão menor.
-    <div className="grid h-[calc(100dvh-3.5rem)] grid-cols-[17rem_1fr_17rem]">
+    <div className="grid h-dvh grid-cols-[17rem_1fr_17rem]">
       <aside className="flex min-h-0 flex-col justify-between gap-6 overflow-y-auto bg-tinta p-5" aria-label="Jogador 1">
         <Painel i={0} personagens={personagens} hud={hud} />
         <Comandos />

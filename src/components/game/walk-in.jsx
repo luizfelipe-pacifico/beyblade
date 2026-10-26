@@ -37,7 +37,7 @@ export function WalkIn({ personagens, romData, arena, onDone }) {
   const avanco = Math.min(1, tick / PASSOS);
 
   return (
-    <section aria-label="Entrada na arena" className="sel-palco relative grid h-[calc(100dvh-3.5rem)] place-items-center overflow-hidden">
+    <section aria-label="Entrada na arena" className="sel-palco relative grid h-dvh place-items-center overflow-hidden">
       <div className="sel-estadio relative grid aspect-square w-[min(70vh,60vw)] place-items-center rounded-full">
         {/* Arena sorteada pela batalha ainda não é conhecida aqui: mostra a tigela padrão. */}
         <ArenaSwatch slug={arena && arena !== 'aleatoria' ? arena : ''} romData={romData} className="h-full w-full" />

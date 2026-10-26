@@ -15,6 +15,14 @@ Formato:
 
 ---
 
+## D-044: sem barra de abas; o jogo ocupa a tela inteira
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu para tirar o cabeçalho com Início, Personagens e Batalha no topo, que fazia o jogo parecer um site.
+- Decisão: a casca (`game-shell.jsx`) não tem mais cabeçalho nem a troca de aba por L1/R1 (Q/E); o jogo ocupa a janela inteira (`h-dvh`) e cada tela tem a própria navegação de jogo: ✕ avança, ○ volta, Options pausa (a pausa da batalha sai para a seleção). A casca guarda só a abertura e a música de cada tela. As telas que descontavam a altura da barra (`calc(100dvh - 3.5rem)`) passaram a `h-dvh`, inclusive as da outra sessão (só essa classe). As skills instaladas não têm nada específico de jogo para isto; a regra veio do D-022 (nada de "cara de app").
+- Consequências: substitui a parte de abas da D-025 (`dev:all` continua abrindo o jogo no Electron).
+
 ## D-043: playtest automático e empurrão do choque limitado pela física
 
 - Data: 2026-10-25

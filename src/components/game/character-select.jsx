@@ -89,7 +89,7 @@ export function CharacterSelect({ onBattle, onExit, mode = 'versus' }) {
   }
 
   return (
-    <section aria-label="Seleção de personagens" className="sel-palco relative grid h-[calc(100dvh-3.5rem)] grid-cols-[minmax(0,1fr)_minmax(0,2fr)_minmax(0,1fr)] overflow-hidden">
+    <section aria-label="Seleção de personagens" className="sel-palco relative grid h-dvh grid-cols-[minmax(0,1fr)_minmax(0,2fr)_minmax(0,1fr)] overflow-hidden">
       <Lado jogador={0} s={s} romData={romData} ps1={ps1} beysOf={beysOf} flash={flash[0]} />
       <div className="relative z-10 grid content-center gap-6 px-4">
         {s.phase === 'stage' ? (
@@ -258,7 +258,7 @@ function Transicao({ onDone }) {
     const t = setTimeout(onDone, 400);
     return () => clearTimeout(t);
   }, [onDone]);
-  return <section aria-label="Preparando o Arcade" className="sel-palco h-[calc(100dvh-3.5rem)]" />;
+  return <section aria-label="Preparando o Arcade" className="sel-palco h-dvh" />;
 }
 
 function Dicas({ s }) {

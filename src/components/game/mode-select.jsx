@@ -39,7 +39,7 @@ export function ModeSelect({ onPick, onBack }) {
   useSelectInput(agir);
 
   return (
-    <section aria-label="Modos de jogo" className="sel-palco grid h-[calc(100dvh-3.5rem)] content-center gap-10 px-[var(--gutter)]">
+    <section aria-label="Modos de jogo" className="sel-palco grid h-dvh content-center gap-10 px-[var(--gutter)]">
       <h2 className="cartela text-center text-5xl uppercase">Escolha o modo</h2>
       <ul className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-6 md:grid-cols-4" role="listbox" aria-label="Modos">
         {MODOS.map((m, i) => {
