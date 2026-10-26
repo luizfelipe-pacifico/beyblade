@@ -21,21 +21,21 @@ modo → personagem (P1, e P2 se entrar) → beyblade → [CPU: personagem → b
 
 ## Controles da batalha (ROM) e proposta para o DualShock 4
 
-Os textos de dica do próprio jogo (`TIP: ...`, ROM `0x08382924`–`0x08383676`) definem os comandos. A coluna DualShock 4 é **proposta**, para confirmar na D-001/[`CONTROLLERS.md`](CONTROLLERS.md):
+Os textos de dica do próprio jogo (`TIP: ...`, ROM `0x08382924`–`0x08383676`) definem os comandos. A coluna DualShock 4 é o padrão ([D-024](DECISIONS.md#d-024-controles-da-batalha-iguais-aos-do-jogo-de-gba), [`CONTROLLERS.md`](CONTROLLERS.md)):
 
-| Ação | GBA (ROM) | DualShock 4 (proposta) |
+| Ação | GBA (ROM) | DualShock 4 |
 | --- | --- | --- |
 | Mover a bey | Direcional | Analógico esquerdo / direcional |
 | Atacar (segurar carrega) | A | ✕ |
 | Defender (segurar carrega) | B | ○ |
 | Pular | L (toque) | L1 |
 | Esquivar | R (toque) | R1 |
-| Fera bit (especial) | L + R segurados | L1 + R1 segurados (ou △) |
-| Engine Gear | A + B segurados | ✕ + ○ segurados (ou □) |
+| Fera bit (especial) | L + R segurados | L1 + R1 segurados |
+| Engine Gear | A + B segurados | ✕ + ○ segurados |
 | Combo forte, depois de um "HIT!" | ↑, ↓, A | ↑, ↓, ✕ |
 | Combo médio | ←, →, A | ←, →, ✕ |
 | Combo fraco | →, ←, A | →, ←, ✕ |
-| Lançar | A (com timing) | ✕ ou R2 (gatilho analógico) |
+| Lançar | A (com timing) | ✕ (com timing) |
 
 Efeitos sonoros do jogo batem com essas ações: `impact1`–`3`, `jump`, `land`, `evade`, `defend`, `eg_active`, `beast1`–`2`, `ripper`, `ripperboost`, `ripperpulled` **(ROM)**.
 
@@ -57,10 +57,10 @@ Efeitos sonoros do jogo batem com essas ações: `impact1`–`3`, `jump`, `land`
 - As FAQs na web se contradizem sobre os botões L/R ([almarsguides](https://almarsguides.com/retro/walkthroughs/gba/games/beybladeg-revolution/misc/controls/), [Cyberly](https://www.cyberly.org/game-cheats/game-boy-advance-gba/beyblade-g-revolution.html)); a tabela acima segue os textos da própria ROM.
 - Pontuação das regras atuais: [Mall of Toys](https://malloftoys.com/en-gb/blogs/news/how-beyblade-scoring-works).
 
-## Em aberto (perguntar ao usuário)
+## Respostas do usuário (2026-10-25)
 
-1. **Aleatório** sorteia só o personagem (a escolha da bey continua) ou personagem e bey?
-2. Quando o P2 não entra, o P1 escolhe também a **bey da CPU**, ou a CPU usa a bey padrão do personagem?
-3. O P2 pode entrar **a qualquer momento** da seleção (como no Street Fighter) ou só antes de o P1 confirmar o personagem?
-4. Elenco: os **10 personagens** de `src/content/roster.js` ou também os outros bladers do jogo de GBA (são 55 na ROM, cada um com a sua bey)?
-5. Controles: a proposta de mapeamento acima vira o padrão do DualShock 4?
+- **Aleatório** sorteia só o personagem; a escolha da bey continua.
+- Sem o P2, o **P1 escolhe o personagem e a bey da CPU**, nas mesmas telas.
+- Elenco: os **10 personagens** de `src/content/roster.js`, cada um com as suas beys. Os outros bladers da ROM ficam de fora.
+- Controles da batalha **iguais aos do GBA**, adaptados ao DualShock 4 como na tabela acima ([D-024](DECISIONS.md#d-024-controles-da-batalha-iguais-aos-do-jogo-de-gba)).
+- Padrão adotado sem pergunta: o P2 pode entrar **a qualquer momento da seleção de personagem**, como no Street Fighter.

@@ -15,6 +15,14 @@ Formato:
 
 ---
 
+## D-024: controles da batalha iguais aos do jogo de GBA
+
+- Data: 2026-10-25
+- Status: Aceita (substitui o "mapeamento padrão das ações, proposta inicial" do `CONTROLLERS.md`)
+- Contexto: as FAQs na web se contradizem sobre os botões do jogo de GBA; os textos de dica da própria ROM definem os comandos. O usuário escolheu manter os comandos do GBA adaptados ao DualShock 4.
+- Decisão: ✕ ataca e ○ defende (segurar carrega), L1 pula, R1 esquiva, L1+R1 segurados soltam a fera bit, ✕+○ segurados ativam o Engine Gear, combos com direcional + ✕ depois de um "HIT!", ✕ com timing no lançamento e Options para pausar e para o P2 entrar.
+- Consequências: as ações por jogador passam a ser `attack`, `defend`, `jump`, `dodge`, `launch`, `pause` e as direções; as combinações saem delas. `src/validate.js` (`ACTIONS`) e os testes mudam quando o input for implementado. Tabela em [`CONTROLLERS.md`](CONTROLLERS.md#mapeamento-padrão-das-ações).
+
 ## D-023: fluxo de partida estilo Street Fighter, entrada do 2º jogador e entrada na arena
 
 - Data: 2026-10-25
@@ -27,7 +35,7 @@ Formato:
   - depois dos personagens, **seleção da arena** (estádio);
   - antes da batalha, **animação de entrada**: os personagens escolhidos andam até a arena; em seguida vêm o lançamento e a batalha;
   - **jogabilidade com dados do jogo de GBA** (D-007): beys e peças com seus stats, lançadores e ripcords, controles e regras de batalha confirmados na ROM. Detalhes em [`GAME_FLOW.md`](GAME_FLOW.md).
-- Consequências: a máquina de estados das telas ([`ARCHITECTURE.md`](ARCHITECTURE.md#5-modelo-de-entidades-ecs-leve)) ganha `stageSelect` e `walkIn` entre `beySelect` e `launch`, e a seleção precisa tratar a entrada do P2 a qualquer momento antes de confirmar. Pontos ainda em aberto estão listados no `GAME_FLOW.md`.
+- Consequências: a máquina de estados das telas ([`ARCHITECTURE.md`](ARCHITECTURE.md#5-modelo-de-entidades-ecs-leve)) ganha `stageSelect` e `walkIn` entre `beySelect` e `launch`, e a seleção precisa tratar a entrada do P2 a qualquer momento antes de confirmar. Respostas do usuário: Aleatório sorteia só o personagem; sem P2, o P1 escolhe personagem e bey da CPU; elenco com os 10 personagens do roster; o P2 entra a qualquer momento da seleção.
 
 ## D-022: direção visual "Abertura do Anime" e shadcn/ui no jogo
 

@@ -27,18 +27,57 @@ Quando o navegador reconhece o controle, `gamepad.mapping === 'standard'` e os �
 
 > Se `mapping` não for `'standard'` (acontece em alguns navegadores/sistemas), os índices podem ser diferentes. Por isso existe a tela de configuração de bindings por jogador.
 
-## Mapeamento padrão das ações (proposta inicial)
+## Mapeamento padrão das ações
 
-| Ação      | DualShock 4                     |
-| --------- | ------------------------------- |
-| Mover     | Analógico esquerdo e D-pad      |
-| `dash`    | ✕                               |
-| `guard`   | ○                               |
-| `special` | △                               |
-| `launch`  | R2                              |
-| `pause`   | Options                         |
+Segue os comandos do jogo de GBA, confirmados nos textos de dica da ROM ([D-024](DECISIONS.md#d-024-controles-da-batalha-iguais-aos-do-jogo-de-gba), [`GAME_FLOW.md`](GAME_FLOW.md#controles-da-batalha-rom-e-proposta-para-o-dualshock-4)).
+
+| Ação | DualShock 4 | Equivalente no GBA |
+| --- | --- | --- |
+| Mover | Analógico esquerdo e D-pad | Direcional |
+| `attack` (segurar carrega) | ✕ | A |
+| `defend` (segurar carrega) | ○ | B |
+| `jump` | L1 (toque) | L |
+| `dodge` | R1 (toque) | R |
+| Fera bit | L1 + R1 segurados | L + R |
+| Engine Gear | ✕ + ○ segurados | A + B |
+| Combos depois de um "HIT!" | ↑↓✕ forte, ←→✕ médio, →←✕ fraco | ↑↓A, ←→A, →←A |
+| `launch` | ✕ (com timing) | A |
+| `pause` / entrar como P2 | Options | Start |
+
+Fera bit, Engine Gear e combos são **combinações** de `attack`, `defend`, `jump`, `dodge` e direções, então não têm binding próprio: remapear os botões base remapeia as combinações. As ações salvas por jogador em `src/validate.js` (`ACTIONS`) ainda são as da proposta antiga (`dash`, `guard`, `special`) e precisam ser trocadas por estas quando o input for implementado.
 
 Atualize esta tabela e registre em `DECISIONS.md` se o mapeamento padrão mudar.
+
+## Teclado
+
+Quem não tiver controle joga pelo teclado ([D-015](DECISIONS.md#d-015-jogo-completo-pelo-teclado-quando-não-há-controle)): batalha, menus e configurações. Os dois jogadores podem dividir o mesmo teclado, ou um usa o DualShock 4 e o outro o teclado.
+
+### Mapeamento padrão
+
+| Ação | Jogador 1 (lado esquerdo) | Jogador 2 (lado direito) |
+| --- | --- | --- |
+| Mover | `W` `A` `S` `D` | Setas `↑` `←` `↓` `→` |
+| `dash` (investida / confirmar) | `F` | `K` |
+| `guard` (defesa / voltar) | `G` | `L` |
+| `special` | `H` | `J` |
+| `launch` (segurar) | `R` | `I` |
+| `pause` | `Esc` | `P` |
+
+Atalhos de menu para qualquer jogador: `Enter` confirma e `Backspace` volta.
+
+### Regras
+
+- **Teclas por posição física** (`event.code`, ex.: `KeyW`), não pelo caractere (`event.key`). Assim o layout funciona igual em teclado ABNT2, US ou com acentos.
+- **Ativação automática:** sem controle conectado na porta do jogador, o teclado dele já está ativo e a interface mostra as teclas (`F`, `R`...) no lugar de ✕, R2 etc. Com controle conectado, os dois continuam funcionando.
+- **Movimento digital:** tecla vale 1 (sem analógico). Diagonal (`W`+`D`) é normalizada para o vetor ter tamanho 1, para não andar mais rápido na diagonal.
+- **Teclas presas:** ao perder o foco da janela (`blur`), todas as teclas são soltas. Senão uma tecla segurada durante o Alt+Tab continuaria "apertada".
+- **Campos de texto** (nome do jogador) não disparam ações: digitar "W" no nome não move a beyblade.
+- **Teclas que rolam a página** (setas, espaço) têm o padrão do navegador bloqueado durante o jogo.
+- **Remapeável** na tela de Controles (clique em "Adicionar" e aperte a tecla), salvo no banco junto com os bindings do controle. `Esc` cancela a captura, por isso não pode ser capturado como tecla.
+
+### Limite do teclado (ghosting)
+
+Teclados comuns, principalmente de notebook, não registram certas combinações de 3 ou mais teclas ao mesmo tempo (*key rollover* limitado). Com dois jogadores no mesmo teclado isso aparece como "a tecla não respondeu". O layout padrão separa os jogadores nos dois lados do teclado para reduzir o problema. Se acontecer, remapeie para outras teclas e anote aqui a combinação que falhou.
 
 ## Cuidados conhecidos
 
