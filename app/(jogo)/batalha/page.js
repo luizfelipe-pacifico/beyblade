@@ -1,4 +1,6 @@
 import { BattleScreen } from '@/components/game/battle-screen';
+import beys from '@/content/beys.generated.json';
+import { sortearBey } from '@/content/sorteio';
 
 const texto = (v) => (typeof v === 'string' && v ? v : undefined);
 const MODOS = new Set(['versus', 'cpu', 'arcade', 'treino']);
@@ -7,6 +9,7 @@ const inteiro = (v, min, max, padrao) => {
   return Number.isInteger(n) && n >= min && n <= max ? n : padrao;
 };
 
+// b1/b2 = "aleatoria": sorteada no servidor, para a bey não mudar entre o HTML e a hidratação (D-046).
 // Contrato com a seleção (D-023, D-035): /batalha?p1&p2[&b1&b2][&arena][&cpu=2][&modo&etapa&cpuNivel].
 export default async function BatalhaPage({ searchParams }) {
   const { p1, p2, b1, b2, arena, cpu, modo, etapa, cpuNivel } = await searchParams;
@@ -16,8 +19,8 @@ export default async function BatalhaPage({ searchParams }) {
       <BattleScreen
         p1={texto(p1)}
         p2={texto(p2)}
-        b1={texto(b1)}
-        b2={texto(b2)}
+        b1={sortearBey(beys, texto(p1), texto(b1))}
+        b2={sortearBey(beys, texto(p2), texto(b2))}
         arena={texto(arena)}
         cpu={cpu === '2'}
         modo={MODOS.has(modo) ? modo : cpu === '2' ? 'cpu' : 'versus'}

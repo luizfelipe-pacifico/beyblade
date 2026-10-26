@@ -15,6 +15,26 @@ Formato:
 
 ---
 
+## D-046: bey aleatória na seleção
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu a opção "aleatório" também na escolha das beys.
+- Decisão: `b1`/`b2` aceitam `aleatoria`; a página da batalha sorteia uma das beys **do próprio personagem** (`src/content/sorteio.js`, `sortearBey`), no servidor, para a bey não mudar entre o HTML e a hidratação. A opção "Aleatória" no carrossel de beys é da tela de seleção (outra sessão), que só precisa mandar `b1=aleatoria`.
+- Consequências: testes em `tests/sorteio.test.js`.
+
+## D-046: retratos do G-Revolution da wiki para quem não está no PS1
+
+- Data: 2026-10-25
+- Status: Aceita (completa a D-033 e a D-040)
+- Contexto: depois dos retratos do PS1 (D-040), Tala, Bryan, Brooklyn, Lee e Robert continuavam com o retrato próprio. O usuário pediu para buscar na web a aparência deles e trazê-la para todos ficarem com a aparência real.
+- Decisão:
+  - `scripts/retratos-wiki.js` (`npm run art:wiki`) baixa pela API da Beyblade Wiki a arte do G-Revolution de cada um: arte oficial do Lee, do Tala e do Bryan; wallpaper oficial do Brooklyn; um quadro do anime do Robert (a wiki não tem arte oficial dele no G-Rev). Recorta o busto em 4:5, tira o fundo e amplia para 512×640;
+  - fundo: preenchimento a partir das bordas, por cor parecida (fundo branco) ou por teste de cor (fundo estampado azul do Brooklyn, parede verde do Robert), parado pelo contorno escuro do anime;
+  - **raster embutido em vez de vetor:** traçar imagens tão pequenas (160–340 px) deu 2–4 MB de ruído por retrato. O PNG ampliado com Lanczos vai dentro de um `retrato.svg` (~0,4–0,6 MB), então o caminho `retrato(slug)` não muda;
+  - como na D-033, tudo fica em `assets-usuario/` (fora do git) e o `sync-art` põe o retrato no lugar do próprio; apagar `assets-usuario/personagens/vetor/<slug>.svg` volta ao retrato próprio.
+- Consequências: o recorte e o fundo de cada um estão em `RETRATOS_WIKI` (versionado, só nomes de arquivo e números). Robert sai de um quadro do anime, com resto de parede no canto; trocar por arte oficial quando aparecer. Passo a passo em [`ART.md`](ART.md#retratos-do-g-revolution-da-wiki-d-046).
+
 ## D-045: sem burst; só vitória por giro e por ring out
 
 - Data: 2026-10-25
