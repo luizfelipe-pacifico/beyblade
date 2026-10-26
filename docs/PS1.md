@@ -52,20 +52,34 @@ Quase tudo fica em `OUTBIN/`. Os arquivos `*D.BIN` começam com uma **tabela de 
 | `WAV/XBGM??.XA` | 5 (Form 2) | **Trilha sonora** em áudio XA (ADPCM), ~100 MB |
 | `ZZZZMIN3.PAD` | 3 | Enchimento do disco (38 MB cada), sem conteúdo |
 
-## Compressão ECD (em andamento)
+## Compressão ECD (resolvida) e imagens
 
-Os arquivos de personagem (`BCHR??D`) e outros guardam entradas com um cabeçalho **`ECD`** de 16 bytes, campos **big-endian**: `+4` bytes iniciais sem compressão (8 = o cabeçalho TIM), `+8` tamanho comprimido, `+12` tamanho descomprimido. Cada `BCHR` tem 13 entradas; as 8 primeiras descomprimem para **TIM de 8bpp de 128×128** (16.928 bytes: paleta de 256 cores + imagem), provavelmente retratos/expressões do personagem.
+A descompressão é a função `0x800211B0` do executável `SLPM_871.30` (achada pelo uso de `andi 0x3ff`; decompilada no Ghidra). Reimplementada em `scripts/lib/ps1-ecd.js`, com testes em `tests/ps1-ecd.test.js`:
 
-O que já está confirmado no fluxo comprimido (tipo LZSS):
+- cabeçalho de 16 bytes **big-endian**: `"ECD"`, nº de bytes iniciais sem compressão, tamanho total dos dados (inclui os iniciais) e tamanho descomprimido;
+- os bytes iniciais vão **direto para a saída e não entram no anel** (era isso que faltava);
+- LZSS com anel de **1 KB** zerado e cursor inicial em **`0x3BE`** (1024 − 66); flags do bit 0 ao 7, bit 1 = literal; cópia de 2 bytes `(a, c)`: posição `a | (c & 0xC0) << 2`, comprimento `(c & 0x3F) + 3`.
 
-- byte de flags lido do bit 0 para o 7; **bit 1 = literal** (1 byte), **bit 0 = cópia** (2 bytes `a`, `c`);
-- comprimento da cópia = `(c & 0x3f) + 3` (6 bits; com isso a soma bate o tamanho descomprimido exato em todas as entradas testadas);
-- a posição tem 10 bits (janela de 1 KB, coerente com as máscaras `0x3ff` do executável), e as posições antes do início valem zero;
-- com `v = (a << 2) | (c >> 6)` como posição num anel de 1 KB, o cabeçalho TIM inteiro sai certo e a imagem sai com a forma geral do personagem, mas ainda com ruído: falta acertar a regra exata da posição (ponto inicial do anel ou relativo ao cursor). O decodificador do jogo não está no executável principal (buscas por `andi 0x3f` + `srl 6` acharam só entrada/áudio); deve estar num overlay (`OUTBIN/OVL*.BIN`), que precisa do endereço de carga para o Ghidra.
+As entradas descomprimidas são texturas **TIM** do PS1 (4bpp/8bpp com paleta ou 16bpp), convertidas por `timToRgba`.
+
+```
+node scripts/extract-ps1-images.js
+```
+
+Extrai **1.587 imagens** para `../ps1-bbt2/png/<ARQUIVO>/<entrada>.png` (fora do repositório, D-031), com `index.json`. Principais grupos:
+
+| Arquivos | Imagens | Conteúdo |
+| --- | --- | --- |
+| `BCHR00D`–`BCHR16D` | 221 | **Retratos dos personagens**: meio-corpo em 128×128, várias expressões (normal, falando, comemorando, bravo), em pares espelhados; mais ícones pequenos (48×48) |
+| `BBAR`, `BBBB`, `BBWD`, `BBSG`, `BBBC`, `BBSD` | ~1.060 | Texturas das peças (Attack Ring, base, Weight Disk, Spin Gear, bit chip) para os modelos 3D |
+| `BEFCT`, `BSEF`, `BSJEF` | 163 | Efeitos de batalha e de especiais |
+| `TTL`, `MODE`, `LOAD`, `FREE`, `END`, `DEF`, `CUST`, `TONA` | ~130 | Telas: título, modos, carregamento, batalha livre, final, customização, torneio |
+
+**Personagens dos `BCHR`** (identificação visual; era V-Force/2002, não G-Revolution): 00 Tyson, 01 Kai, 02 Max, 03 Ray, 04 Daichi, 05 Ozuma, 06 Dunga, 07 Mariam, 08 Joseph (os quatro são os Saint Shields), 09 *a confirmar* (cabelo branco, pele escura), 10 Zeo, 11–15 *a confirmar* (garota de cabelo rosa e roupa amarela, cinco arquivos), 16 DJ Jazzman (o locutor).
 
 ## Próximos passos (em atualizações separadas)
 
-1. **Texturas:** identificar o formato dos `TD` (provável TIM do PS1 ou variação) e exportar PNG.
+1. ~~**Texturas**~~: feito (ECD + TIM, acima). Falta ligar cada textura ao seu modelo.
 2. **Modelos 3D:** decodificar o formato `ECD` dos `MD` (vértices, faces, UV) e exportar glTF das peças, para montar beys 3D na refatoração (D-006).
 3. **Personagens** (`BCHR`): modelos/sprites e animações.
 4. **Estádios** (`BSC`): geometria da tigela (perfil real de profundidade para a física da `BEY_BEHAVIOR.md`).
