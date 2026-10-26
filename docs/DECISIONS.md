@@ -26,6 +26,18 @@ Formato:
   - medido com duelos automáticos (Dragoon G × Draciel G, 30 partidas): investindo sem soltar no estalo, a ataque vence 0 a 3%; soltando sempre no estalo e só de perto, cerca de 50%. Rodada com investidas ~20 s (antes ~12 s); sem investir, ~60 s.
 - Consequências: testes em `tests/critico.test.js` (crítico só no estalo, de frente e para fora) e o de mira reescrito em `tests/sim.test.js` (`aimAt` exportado). O painel de comandos explica o crítico.
 
+## D-040: retratos e feras bit do jogo de PS1 no jogo, ampliados com Scale4x
+
+- Data: 2026-10-25
+- Status: Aceita (é a primeira peça do PS1 que entra no jogo, como previa a D-031)
+- Contexto: o usuário pediu para usar os retratos do PS1 (Bey Battle Tournament 2) na seleção, com qualidade melhor (vetorizados ou aprimorados), e fazer o mesmo com as feras bit. A descompressão ECD foi resolvida e o disco tem retratos de meio-corpo com expressões (`BCHR`, 128×128) e feras bit em arte do anime (`BSJEF`, 256×128).
+- Decisão:
+  - os retratos do PS1 substituem o retrato vetorial na seleção dos personagens que existem nele (Tyson, Kai, Ray, Max, Daichi), com expressões: normal parado, comemorando ao travar a escolha; os demais continuam com o retrato próprio;
+  - as feras bit do PS1 aparecem atrás do personagem ao travar a escolha (Dragoon, Dranzer, Draciel, Driger);
+  - qualidade: **Scale2x aplicado duas vezes (4×)**, algoritmo próprio para pixel art (bordas lisas sem borrar). A vetorização foi testada e ficou mais serrilhada e pesada (~340 KB por retrato), então fica de fora;
+  - como na D-007, o material do PS1 **não entra no git**: é gerado em `public/ps1/` por `scripts/build-ps1-assets.js` a partir do disco extraído; sem ele, o jogo cai na arte própria.
+- Consequências: mapeamento em `src/content/ps1.js` (índices, versionado). Substitui em parte a D-008 só para esses retratos e feras, no uso pessoal; antes de qualquer distribuição, voltam a ser arte própria.
+
 ## D-039: cenários clássicos do anime como estádios, sorteados no início
 
 - Data: 2026-10-25

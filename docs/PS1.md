@@ -77,6 +77,18 @@ Extrai **1.587 imagens** para `../ps1-bbt2/png/<ARQUIVO>/<entrada>.png` (fora do
 
 **Personagens dos `BCHR`** (identificação visual; era V-Force/2002, não G-Revolution): 00 Tyson, 01 Kai, 02 Max, 03 Ray, 04 Daichi, 05 Ozuma, 06 Dunga, 07 Mariam, 08 Joseph (os quatro são os Saint Shields), 09 *a confirmar* (cabelo branco, pele escura), 10 Zeo, 11–15 *a confirmar* (garota de cabelo rosa e roupa amarela, cinco arquivos), 16 DJ Jazzman (o locutor).
 
+## No jogo: retratos e feras bit (D-040)
+
+```
+node scripts/build-ps1-assets.js
+```
+
+Gera `public/ps1/` (fora do git) direto do disco extraído: os retratos de Tyson, Kai, Ray, Max e Daichi em 4 expressões (`normal`, `fala`, `comemora`, `bravo`, cada uma em `a` olhando para a direita e `b` para a esquerda) e as feras Dragoon, Dranzer, Draciel e Driger (`BSJEF00D` entradas 20–23, arte do anime em 256×128), com `ps1.json`. Ampliação **4×** com Scale2x aplicado duas vezes (`scripts/lib/pixel-scale.js`, testes em `tests/pixel-scale.test.js`): bordas lisas sem borrar. A vetorização (VTracer) foi comparada e ficou mais serrilhada e pesada.
+
+Na seleção: cards e figura de cada lado usam o retrato do PS1 quando existe (P1 com `a`, P2 com `b`); a expressão acompanha a etapa (`normal` escolhendo, `fala` no carrossel, `comemora` ao travar) e a fera surge atrás do personagem ao escolher. Mapa em `src/content/ps1.js`.
+
+Outras imagens úteis no disco: `BSEF??D` 9–10 (pose de concentração antes do especial, mesma ordem dos `BCHR`) e `BSJEF00D` 11–19 (feras em versão de energia de uma cor, 100×100) e 0–9 (fundos de aura).
+
 ## Próximos passos (em atualizações separadas)
 
 1. ~~**Texturas**~~: feito (ECD + TIM, acima). Falta ligar cada textura ao seu modelo.

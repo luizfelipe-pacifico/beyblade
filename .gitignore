@@ -11,6 +11,7 @@ out/
 *.sav
 assets-rom/
 /public/rom
+/public/ps1
 
 # Landing (D-016): originais baixados e artefatos das skills de design
 site/.image-cache/

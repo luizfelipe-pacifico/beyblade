@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { cn } from 'cn';
 import { roster, retrato } from '@/content/roster';
+import { ps1Beast, ps1Portrait } from '@/content/ps1';
 import generated from '@/content/beys.generated.json';
 import { beysByCharacter } from '@/game/bey-options';
 import { activeSlot, battleQuery, cardCount, createSelect, defaultStages, isRandomCard, reduceSelect } from '@/game/select-state';
@@ -20,26 +21,35 @@ const COLUNAS = 6;
 // Cenários do anime primeiro (D-039), depois os estádios do GBA; a Aleatória entra no fim.
 const ARENAS = [...CENARIOS.map((c) => c.slug), ...defaultStages(ROM_STADIUMS)];
 
-// Dados da ROM (public/rom/gba.json, D-007) são opcionais: sem a ROM o jogo segue com a arte da pesquisa.
-export function useRomData() {
+// JSON gerado fora do git (public/rom, public/ps1): opcional; sem ele o jogo segue com a arte própria.
+function useJson(url) {
   const [data, setData] = useState(null);
   useEffect(() => {
     let vivo = true;
-    fetch('/rom/gba.json')
+    fetch(url)
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => vivo && setData(d))
       .catch(() => {});
     return () => {
       vivo = false;
     };
-  }, []);
+  }, [url]);
   return data;
 }
+
+// Dados da ROM do GBA (public/rom/gba.json, D-007).
+export const useRomData = () => useJson('/rom/gba.json');
+// Retratos e feras bit do PS1 (public/ps1/ps1.json, D-040).
+export const usePs1Data = () => useJson('/ps1/ps1.json');
+
+// Expressão do retrato do PS1 em cada etapa: parado escolhendo, falando no carrossel, comemorando ao travar.
+const POSE = { character: 'normal', bey: 'fala', ready: 'comemora' };
 
 // Seleção estilo Street Fighter (D-023): cards do elenco no centro, o personagem de corpo inteiro de cada lado
 // e, ao escolher, o carrossel das beys dele em cima da figura. Depois, arena e entrada; onBattle(query) navega.
 export function CharacterSelect({ onBattle, onExit, mode = 'versus' }) {
   const romData = useRomData();
+  const ps1 = usePs1Data();
   const beysOf = useMemo(() => beysByCharacter(generated, roster), []);
   const [s, setS] = useState(() => createSelect({ characters: roster, beysOf: (slug) => beysOf[slug], cols: COLUNAS, mode, stages: ARENAS }));
 
@@ -80,12 +90,12 @@ export function CharacterSelect({ onBattle, onExit, mode = 'versus' }) {
 
   return (
     <section aria-label="Seleção de personagens" className="sel-palco relative grid h-[calc(100dvh-3.5rem)] grid-cols-[minmax(0,1fr)_minmax(0,2fr)_minmax(0,1fr)] overflow-hidden">
-      <Lado jogador={0} s={s} romData={romData} beysOf={beysOf} flash={flash[0]} />
+      <Lado jogador={0} s={s} romData={romData} ps1={ps1} beysOf={beysOf} flash={flash[0]} />
       <div className="relative z-10 grid content-center gap-6 px-4">
         {s.phase === 'stage' ? (
           <StageSelect stages={s.stages} cursor={s.stageCursor} romData={romData} />
         ) : (
-          <Grade s={s} onPick={(jogador, i) => {
+          <Grade s={s} ps1={ps1} onPick={(jogador, i) => {
             // Clique/toque no card: move o cursor de quem está escolhendo e confirma.
             const slot = activeSlot(s, jogador);
             if (slot === null || s.slots[slot].step !== 'character') return;
@@ -96,14 +106,14 @@ export function CharacterSelect({ onBattle, onExit, mode = 'versus' }) {
         )}
         <Dicas s={s} />
       </div>
-      <Lado jogador={1} s={s} romData={romData} beysOf={beysOf} flash={flash[1]} />
+      <Lado jogador={1} s={s} romData={romData} ps1={ps1} beysOf={beysOf} flash={flash[1]} />
       {banner ? <BannerDesafiante key={banner} /> : null}
       <div className="sel-piso pointer-events-none absolute inset-x-0 bottom-0 h-40" aria-hidden="true" />
     </section>
   );
 }
 
-function Grade({ s, onPick }) {
+function Grade({ s, ps1, onPick }) {
   const cursores = [0, 1].map((jogador) => {
     const slot = activeSlot(s, jogador);
     return slot !== null && s.slots[slot].step === 'character' ? { slot, cursor: s.slots[slot].cursor } : null;
@@ -126,7 +136,7 @@ function Grade({ s, onPick }) {
               {aleatorio ? (
                 <span className="cartela grid h-full place-items-center text-6xl text-chamada">?</span>
               ) : (
-                <img src={retrato(c.slug)} alt="" className="h-full w-full object-cover object-top" />
+                <img src={ps1?.personagens?.[c.slug] ? ps1Portrait(c.slug, 'normal', 'a') : retrato(c.slug)} alt="" className="h-full w-full object-cover object-top" />
               )}
               <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-tinta to-transparent px-2 pb-1 pt-6 text-sm font-extrabold uppercase">
                 {aleatorio ? 'Aleatório' : c.nome}
@@ -151,7 +161,7 @@ function Grade({ s, onPick }) {
 }
 
 // Um lado da tela: personagem de corpo inteiro com luz de recorte; em cima dele, o carrossel quando escolhe a bey.
-function Lado({ jogador, s, romData, beysOf, flash }) {
+function Lado({ jogador, s, romData, ps1, beysOf, flash }) {
   const slot = s.slots[jogador];
   const direita = jogador === 1;
   const cpu = direita && s.p2 === 'cpu';
@@ -176,14 +186,37 @@ function Lado({ jogador, s, romData, beysOf, flash }) {
             <p className="cartela animate-pulse text-3xl uppercase text-texto-2">{aviso}</p>
           </div>
         ) : emFoco ? (
-          <img
-            key={emFoco.slug}
-            src={retrato(emFoco.slug)}
-            alt={emFoco.nome}
-            className={cn('sel-figura absolute bottom-0 h-full max-h-[78vh] w-auto object-contain', direita ? 'right-0 -scale-x-100' : 'left-0')}
-            data-entrando="true"
-            style={{ '--luz': cor, '--entra-de': direita ? '40px' : '-40px' }}
-          />
+          <>
+            {slot.step !== 'character' && ps1?.feras?.[emFoco.fera] ? (
+              // Fera bit surgindo atrás do personagem ao escolher (D-040); a arte do PS1 olha para a esquerda.
+              <img
+                key={`fera-${emFoco.slug}`}
+                src={ps1Beast(emFoco.fera)}
+                alt=""
+                className={cn('sel-fera pointer-events-none absolute top-[34%] w-[135%] max-w-none', direita ? '-right-[20%]' : '-left-[20%] -scale-x-100')}
+                aria-hidden="true"
+              />
+            ) : null}
+            {ps1?.personagens?.[emFoco.slug] ? (
+              <img
+                key={`${emFoco.slug}-${slot.step}`}
+                src={ps1Portrait(emFoco.slug, POSE[slot.step], direita ? 'b' : 'a')}
+                alt={emFoco.nome}
+                className={cn('sel-figura absolute bottom-0 h-auto max-h-[78vh] w-full max-w-[34rem] object-contain object-bottom', direita ? 'right-0' : 'left-0')}
+                data-entrando="true"
+                style={{ '--luz': cor, '--entra-de': direita ? '40px' : '-40px' }}
+              />
+            ) : (
+              <img
+                key={emFoco.slug}
+                src={retrato(emFoco.slug)}
+                alt={emFoco.nome}
+                className={cn('sel-figura absolute bottom-0 h-full max-h-[78vh] w-auto object-contain', direita ? 'right-0 -scale-x-100' : 'left-0')}
+                data-entrando="true"
+                style={{ '--luz': cor, '--entra-de': direita ? '40px' : '-40px' }}
+              />
+            )}
+          </>
         ) : (
           <div className="grid h-full place-items-center">
             <span className="cartela text-[10rem] leading-none text-chamada/70">?</span>
@@ -191,7 +224,7 @@ function Lado({ jogador, s, romData, beysOf, flash }) {
         )}
 
         {slot.step === 'bey' || slot.step === 'ready' ? (
-          <div className="absolute inset-x-0 top-4 z-10 grid justify-items-center rounded-sm bg-tinta/80 p-4 backdrop-blur-[2px]">
+          <div className="absolute inset-x-0 top-4 z-10 grid justify-items-center rounded-sm bg-tinta/55 p-3">
             <BeyCarousel
               ids={beysOf[slot.character] ?? []}
               cursor={slot.step === 'ready' ? Math.max(0, (beysOf[slot.character] ?? []).indexOf(slot.bey)) : slot.beyCursor}
