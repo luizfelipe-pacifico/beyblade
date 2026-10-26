@@ -91,12 +91,22 @@ export const TIPS = {
   grip: { drive: 0.9, fwd: 0.3, mu: 0.8, slide: 0.12 },
 };
 
-// O que a ponta não explica (massa efetiva, recuo próprio e "life after death" na equalização de giro).
+// O que a ponta não explica (massa efetiva, recuo próprio e "life after death" na equalização de giro)
+// e o teto da velocidade própria (fração de PHYSICS.maxSpeed, D-032): ataque mais rápida, resistência mais lenta.
 export const TYPES = {
-  attack: { mass: 0.9, recoil: 1.4, lad: 0.7 },
-  balance: { mass: 1, recoil: 1, lad: 1 },
-  defense: { mass: 1.5, recoil: 0.5, lad: 1 },
-  stamina: { mass: 1, recoil: 0.8, lad: 1.3 },
+  attack: { mass: 0.9, recoil: 1.4, lad: 0.7, cap: 1 },
+  balance: { mass: 1, recoil: 1, lad: 1, cap: 0.8 },
+  defense: { mass: 1.5, recoil: 0.5, lad: 1, cap: 0.65 },
+  stamina: { mass: 1, recoil: 0.8, lad: 1.3, cap: 0.5 },
+};
+
+// Movimento no estilo do app da Burst (D-032): a força própria (rampa, ponta, comando) não passa do
+// teto do tipo; o que um choque, a investida ou o especial dão acima do teto decai com meia-vida curta,
+// então uma pancada forte ainda joga para fora. O comando curva a trajetória em vez de dirigir.
+export const MOTION = {
+  excessHalfLife: 0.25,
+  steerRate: 2.6,
+  steerPush: 0.45,
 };
 
 // Ponta do catálogo (calculo.ponta) → classe de comportamento; sem ponta confirmada, o tipo decide.

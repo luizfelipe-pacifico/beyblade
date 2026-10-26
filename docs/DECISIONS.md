@@ -15,6 +15,17 @@ Formato:
 
 ---
 
+## D-032: movimento no estilo do app da Burst, com teto de velocidade por tipo
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário (via a outra sessão) pediu o movimento mais parecido com o do app da Beyblade Burst, a bey "ainda acelera muito" e cada tipo deve ter teto de velocidade (ataque a mais rápida), mas uma pancada forte ainda tem que jogar para fora.
+- Decisão:
+  - a força **própria** (rampa, ponta, comando) não leva a bey acima do teto do tipo, em fração de `PHYSICS.maxSpeed`: ataque 1,00, equilíbrio 0,80, defesa 0,65, resistência 0,50 (`TYPES.*.cap`). Acima do teto ela pode mudar de direção, não ganhar velocidade;
+  - o que um **choque**, a investida ou o especial dão acima do teto não é cortado: o excesso decai com meia-vida de 0,25 s (`MOTION.excessHalfLife`), então a pancada ainda chega à borda e aos bolsos;
+  - o **comando guia** em vez de dirigir: 45% vira empurrão (com teto na tração da ponta) e o resto curva a trajetória sem ganhar velocidade, em arco.
+- Consequências: medido em `tests/sim-bowl.test.js` (ordem das velocidades máximas por tipo, excesso que decai sem corte imediato, ring out por pancada). A ataque agora corre em órbita larga pela borda em vez de cruzar o centro. Ainda falta a investida "sobe na borda e mergulha no oponente" do app.
+
 ## D-033: retratos do G-Revolution vetorizados de imagens do usuário
 
 - Data: 2026-10-25

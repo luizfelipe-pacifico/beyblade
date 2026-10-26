@@ -21,6 +21,7 @@ import {
   ROUND_SECONDS,
   ROUNDS_TO_WIN,
   START_X,
+  MOTION,
   SUBSTEPS,
 } from './constants.js';
 
@@ -388,11 +389,20 @@ function moveBey(state, b, h, inp) {
       ax += (b.vx / speed0) * frente;
       ay += (b.vy / speed0) * frente;
     }
-    // 4) Jogador inclina a bey: soma ao movimento e também tem teto na tração da ponta (não é um carro).
+    // 4) Jogador guia a bey: uma parte empurra (com teto na tração da ponta) e o resto curva a
+    // trajetória para o lado do comando, sem ganhar velocidade: arco, não zigue-zague (D-032).
     if (inp && b.air <= 0) {
       const f = tracao * (0.6 + 0.6 * b.vel) * (0.4 + 0.6 * spin) * (b.guard ? 0.4 : 1) * m.speed;
-      ax += inp.move.x * f;
-      ay += inp.move.y * f;
+      ax += inp.move.x * f * MOTION.steerPush;
+      ay += inp.move.y * f * MOTION.steerPush;
+      const forca = Math.min(1, Math.hypot(inp.move.x, inp.move.y));
+      if (forca > 0.1 && speed0 > 1) {
+        const lado = (b.vx * inp.move.y - b.vy * inp.move.x) / (speed0 * forca);
+        const giro = Math.max(-1, Math.min(1, lado)) * MOTION.steerRate * forca * (0.4 + 0.6 * spin) * h;
+        const cos = Math.cos(giro);
+        const sin = Math.sin(giro);
+        [b.vx, b.vy] = [b.vx * cos - b.vy * sin, b.vx * sin + b.vy * cos];
+      }
     }
   }
   // 3) Atrito contra o piso. Parada e com a rampa puxando menos que o atrito, a bey não se mexe
@@ -408,12 +418,26 @@ function moveBey(state, b, h, inp) {
     ax -= (b.vx / speed0) * freio;
     ay -= (b.vy / speed0) * freio;
   }
+  // Teto do tipo: a força própria não leva a bey acima dele (pode mudar a direção, não ganhar
+  // velocidade); o excesso que veio de choque ou investida decai com meia-vida curta.
+  const teto = P.maxSpeed * b.kind.cap * m.speed;
+  const antes = Math.hypot(b.vx, b.vy);
   b.vx += ax * h;
   b.vy += ay * h;
   if (b.air <= 0) {
     const k = Math.exp(-BOWL.drag * h);
     b.vx *= k;
     b.vy *= k;
+  }
+  if (b.state === 'active') {
+    const depois = Math.hypot(b.vx, b.vy);
+    const limite = Math.max(teto, antes);
+    let alvo = depois > limite ? limite : depois;
+    if (alvo > teto) alvo = teto + (alvo - teto) * Math.exp((-Math.LN2 / MOTION.excessHalfLife) * h);
+    if (depois > 1e-6 && alvo < depois) {
+      b.vx *= alvo / depois;
+      b.vy *= alvo / depois;
+    }
   }
   const speed = Math.hypot(b.vx, b.vy);
   const cap = P.maxSpeed * 1.5;

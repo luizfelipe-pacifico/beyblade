@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createMatch, stepMatch, NEUTRAL_INPUT } from '../src/sim/match.js';
-import { ARENA_RADIUS as R, BOWL, DT, GRAVITY, bowlHeight } from '../src/sim/constants.js';
+import { ARENA_RADIUS as R, BOWL, DT, GRAVITY, PHYSICS, POCKETS, TYPES, bowlHeight } from '../src/sim/constants.js';
 
 // Física da tigela e comportamento por ponta (docs/BEY_BEHAVIOR.md).
 const ticks = (s) => Math.round(s / DT);
@@ -20,9 +20,11 @@ function solo(def, place) {
 const energy = (b) => 0.5 * (b.vx ** 2 + b.vy ** 2) + GRAVITY * bowlHeight(Math.hypot(b.x, b.y));
 const NO_TIP = { drive: 0, fwd: 0, mu: 0, slide: 0 };
 
-test('without tip, friction or drag the bowl conserves energy', () => {
+test('without tip, friction, drag or speed cap the bowl conserves energy', () => {
   const drag = BOWL.drag;
+  const caps = Object.fromEntries(Object.entries(TYPES).map(([k, t]) => [k, t.cap]));
   BOWL.drag = 0;
+  for (const t of Object.values(TYPES)) t.cap = Infinity;
   try {
     const s = solo(bey({ tip: NO_TIP }), { x: 0.8 * R, y: 0, vx: 0, vy: 0, spin: 1 });
     const b = s.beys[0];
@@ -41,6 +43,7 @@ test('without tip, friction or drag the bowl conserves energy', () => {
     assert.ok(deriva < 0.01, `deriva de energia ${(deriva * 100).toFixed(2)}%`);
   } finally {
     BOWL.drag = drag;
+    for (const [k, c] of Object.entries(caps)) TYPES[k].cap = c;
   }
 });
 
@@ -108,10 +111,63 @@ test('balance (semi-flat) orbits the middle of the bowl', () => {
   assert.ok(r.median > 0.4 && r.median < 0.7, `mediana ${r.median.toFixed(2)}`);
 });
 
-test('attack (flat) runs wide and keeps cutting through the center', () => {
+test('attack (flat) runs a wide orbit along the rim, like the Burst app', () => {
   const r = radii(bey({ ponta: 'flat', tipo: 'attack' }));
   assert.ok(r.median > 0.6, `mediana ${r.median.toFixed(2)}`);
-  assert.ok(r.centro > 0.5, `passou ${r.centro.toFixed(1)}s perto do centro`);
+});
+
+// Maior velocidade atingida sem choque nem comando (D-032).
+function topSpeed(def) {
+  const s = solo(def);
+  const b = s.beys[0];
+  let v = 0;
+  for (let t = 0; t < ticks(15); t++) {
+    stepMatch(s);
+    if (t > ticks(2)) v = Math.max(v, Math.hypot(b.vx, b.vy));
+  }
+  return v;
+}
+
+test('each type has its own top speed: attack > balance > defense > stamina, none above its cap', () => {
+  const tipos = [
+    ['attack', 'flat'],
+    ['balance', 'semi-flat'],
+    ['defense', 'metal-ball'],
+    ['stamina', 'sharp'],
+  ];
+  // A mesma ponta para todos isola o teto do tipo; a ponta de cada tipo mostra o jogo real.
+  const mesma = tipos.map(([tipo]) => topSpeed(bey({ ponta: 'flat', tipo })));
+  const real = tipos.map(([tipo, ponta]) => topSpeed(bey({ ponta, tipo })));
+  const fmt = (vs) => vs.map((v) => (v / PHYSICS.maxSpeed).toFixed(2)).join(' > ');
+  for (let i = 1; i < 4; i++) {
+    assert.ok(mesma[i] < mesma[i - 1], `mesma ponta: ${fmt(mesma)}`);
+    assert.ok(real[i] < real[i - 1], `ponta própria: ${fmt(real)}`);
+  }
+  tipos.forEach(([tipo], i) => assert.ok(mesma[i] <= PHYSICS.maxSpeed * TYPES[tipo].cap * 1.01, `${tipo} passou do teto`));
+});
+
+test('a hit above the cap decays fast but is not clipped at once', () => {
+  const s = solo(bey({ ponta: 'sharp', tipo: 'stamina' }), { x: 0, y: 0, vx: 3 * PHYSICS.maxSpeed, vy: 0 });
+  const b = s.beys[0];
+  const cap = PHYSICS.maxSpeed * TYPES.stamina.cap;
+  stepMatch(s);
+  assert.ok(Math.hypot(b.vx, b.vy) > 2 * cap, 'o impulso foi cortado no teto');
+  for (let t = 0; t < ticks(1.5); t++) stepMatch(s);
+  assert.ok(Math.hypot(b.vx, b.vy) < 1.1 * cap, 'o excesso não decaiu');
+});
+
+test('a strong hit still knocks a capped bey out through a pocket', () => {
+  // Uma equilíbrio parada na frente do bolso; o ataque vem do centro com uma investida forte.
+  // (A defesa, com massa e pouco recuo, é feita para aguentar essa pancada.)
+  const s = createMatch({ beys: [bey({ ponta: 'flat', tipo: 'attack' }), bey({ ponta: 'semi-flat', tipo: 'balance' })], seed: 5 });
+  while (s.phase === 'launch') stepMatch(s);
+  const a = POCKETS[0];
+  const [atk, def] = s.beys;
+  Object.assign(def, { x: Math.cos(a) * 0.7 * R, y: Math.sin(a) * 0.7 * R, vx: 0, vy: 0 });
+  const v = 2.5 * PHYSICS.maxSpeed;
+  Object.assign(atk, { x: Math.cos(a) * 0.45 * R, y: Math.sin(a) * 0.45 * R, vx: Math.cos(a) * v, vy: Math.sin(a) * v });
+  for (let t = 0; t < ticks(1.5) && def.state === 'active'; t++) stepMatch(s);
+  assert.equal(def.state, 'out');
 });
 
 test('with the same spin the stop order is attack, balance, defense, stamina', () => {
