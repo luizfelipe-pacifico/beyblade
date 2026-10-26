@@ -35,6 +35,16 @@ copyFiles(path.join(source, 'sons-batalha', 'sons'), path.join(audioTarget, 'bat
 for (const p of readdirSync(path.join(source, 'personagens'), { withFileTypes: true })) {
   if (p.isDirectory()) copyFiles(path.join(source, 'personagens', p.name), path.join(target, 'personagens', p.name));
 }
+// Retratos vetorizados das imagens do usuário (D-033, fora do git) têm prioridade sobre o próprio.
+const vetores = path.join(root, 'assets-usuario', 'personagens', 'vetor');
+if (existsSync(vetores)) {
+  for (const f of readdirSync(vetores)) {
+    if (!f.endsWith('.svg')) continue;
+    const dir = path.join(target, 'personagens', f.slice(0, -4));
+    mkdirSync(dir, { recursive: true });
+    cpSync(path.join(vetores, f), path.join(dir, 'retrato.svg'));
+  }
+}
 
 // Bey de cada personagem do elenco: sprite de topo (gerado pelo build-research, em mm) e os dados
 // que a batalha usa. O JSON é gerado e fica fora do git; a fonte é o dados.json da pesquisa.

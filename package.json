@@ -22,7 +22,8 @@
     "db:studio": "prisma studio",
     "postinstall": "prisma generate",
     "prepare": "git config core.hooksPath .githooks",
-    "audio:tts": "node scripts/tts-falas.js"
+    "audio:tts": "node scripts/tts-falas.js",
+    "art:vetorizar": "node scripts/vetorizar-retratos.js"
   },
   "engines": {
     "node": ">=24.11"
@@ -46,6 +47,8 @@
   },
   "devDependencies": {
     "electron": "^45.0.0",
-    "prisma": "^7.10.1"
+    "imagetracerjs": "^1.2.6",
+    "prisma": "^7.10.1",
+    "sharp": "^0.35.5"
   }
 }

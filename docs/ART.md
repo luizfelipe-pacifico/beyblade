@@ -34,6 +34,16 @@ Assets originais em SVG ([D-008](DECISIONS.md#d-008-arte-e-som-próprios-gerados
 - Elementos marcantes obrigatórios (boné, faixa, pinturas no rosto, cachecol etc.) descritos no README do personagem.
 - Mesmo traço e cel shading das feras, para o conjunto parecer de um jogo só.
 
+### Retratos do anime vetorizados (D-033)
+
+Para ter a aparência real do G-Revolution (a ROM do GBA não tem retratos, só bonecos 16×32), o retrato próprio pode ser trocado por um vetor feito de uma imagem que **o próprio usuário** escolheu:
+
+1. Salve a imagem em `assets-usuario/personagens/<slug>.png` (ou .jpg/.webp), com o slug do elenco (`tyson-granger`, `kai-hiwatari`, `ray-kon`, `max-tate`, `daichi-sumeragi`, `tala`, `bryan-kuznetsov`, `lee`, `robert-jurgen`, `brooklyn-masefield`). Busto, de frente ou 3/4; fundo transparente fica melhor.
+2. `npm run art:vetorizar` quantiza a imagem (28 cores; `CORES=36 npm run art:vetorizar` para mais detalhe) e traça cada região em `assets-usuario/personagens/vetor/<slug>.svg`, enquadrado em 512×640 pelo topo.
+3. `npm run art:sync` (ou o `predev`) põe o vetor no lugar do `retrato.svg` próprio. Apagar o arquivo volta ao retrato próprio.
+
+`assets-usuario/` fica fora do git: imagem do anime tem direitos autorais e é só para uso pessoal, como a ROM.
+
 ## Peças, beys e lançadores (gerados)
 
 Gerados por `scripts/build-research.js` (`npm run build:research`), nunca à mão:

@@ -25,3 +25,5 @@ site/.image-cache/
 /public/audio/feras
 # Músicas baixadas pelo usuário (direitos autorais, uso pessoal): nunca no git
 /public/audio/musica
+# Imagens do anime escolhidas pelo usuário e os retratos vetorizados delas (D-033): nunca no git
+/assets-usuario

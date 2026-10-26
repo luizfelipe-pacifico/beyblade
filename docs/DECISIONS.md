@@ -15,6 +15,14 @@ Formato:
 
 ---
 
+## D-033: retratos do G-Revolution vetorizados de imagens do usuário
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu os personagens com a aparência real do G-Revolution, a partir de imagens do anime vetorizadas. A ROM do GBA não tem retratos (só bonecos 16×32; levantado pela outra sessão).
+- Decisão: o usuário escolhe e salva as imagens em `assets-usuario/personagens/<slug>.*`; `scripts/vetorizar-retratos.js` (sharp para quantizar com paleta exata e alfa binário, imagetracerjs para traçar em 2×) gera o SVG 512×640, e o `sync-art` usa esse vetor no lugar do retrato próprio. O projeto não baixa frames do anime. Tudo em `assets-usuario/` fica fora do git, como a ROM (D-007).
+- Consequências: `imagetracerjs` e `sharp` como dependências de desenvolvimento; passo a passo em [`ART.md`](ART.md#retratos-do-anime-vetorizados-d-033). D-032 fica reservada para a física do movimento (em andamento).
+
 ## D-031: jogo de PS1 como segunda referência, extraído fora do repositório
 
 - Data: 2026-10-25
