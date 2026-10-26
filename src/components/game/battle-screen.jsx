@@ -5,11 +5,12 @@ import { useRouter } from 'next/navigation';
 import { cn } from 'cn';
 import beys from '@/content/beys.generated.json';
 import { roster, beySprite } from '@/content/roster';
-import { createMatch, launchPower, stepMatch } from '@/sim/match';
+import { createMatch, launchPower, NEUTRAL_INPUT, stepMatch } from '@/sim/match';
 import { DT, FINISHES, PHYSICS, ROUND_SECONDS, ROUNDS_TO_WIN } from '@/sim/constants';
 import { InputManager } from '@/input/manager';
 import { ArenaRenderer } from '@/render/arena-renderer';
 import { BATALHA, createSounds } from '@/audio/sounds';
+import { tocarMusica } from '@/audio/music';
 import { Button } from '@/components/ui/button';
 import { Announcement } from './announcement';
 import { FeraField } from './fera-field';
@@ -34,9 +35,20 @@ function hudSnapshot(state) {
   };
 }
 
-export function BattleScreen({ p1, p2 }) {
+// Personagem do roster com a bey escolhida (b1/b2 = id em beys.generated.json). Só vale bey do próprio
+// personagem; qualquer outra coisa cai na bey padrão dele.
+function comBey(personagem, beyId) {
+  const escolhida = beyId && beys[beyId]?.dono === personagem.slug ? beys[beyId] : null;
+  const def = escolhida ?? beys[personagem.beySlug];
+  return { ...personagem, beySlug: def.id ?? personagem.beySlug, bey: def.nome, sprite: def.sprite ?? beySprite(personagem.beySlug) };
+}
+
+export function BattleScreen({ p1, p2, b1, b2, cpu = false }) {
   const router = useRouter();
-  const personagens = [roster.find((r) => r.slug === p1) ?? roster[0], roster.find((r) => r.slug === p2) ?? roster[1]];
+  const personagens = [
+    comBey(roster.find((r) => r.slug === p1) ?? roster[0], b1),
+    comBey(roster.find((r) => r.slug === p2) ?? roster[1], b2),
+  ];
   const canvasRef = useRef(null);
   const [partida, setPartida] = useState(0);
   const [hud, setHud] = useState(null);
@@ -54,12 +66,13 @@ export function BattleScreen({ p1, p2 }) {
   useEffect(() => {
     const defs = personagens.map((p) => beys[p.beySlug]);
     const state = createMatch({ beys: defs, seed: Date.now() >>> 0 });
-    const renderer = new ArenaRenderer(canvasRef.current, personagens.map((p) => beySprite(p.beySlug)));
+    const renderer = new ArenaRenderer(canvasRef.current, personagens.map((p) => p.sprite));
     const input = new InputManager();
     const sons = createSounds({
       ...BATALHA,
       ...Object.fromEntries(personagens.map((p, i) => [`especial${i}`, p.arteFera ? `/audio/feras/${p.arteFera}/ataque.wav` : BATALHA.choqueForte])),
     });
+    tocarMusica('batalha');
     const inicio = performance.now();
     let prev = state.beys.map((b) => ({ x: b.x, y: b.y, angle: b.angle }));
     let acc = 0;
@@ -80,6 +93,10 @@ export function BattleScreen({ p1, p2 }) {
     function onEvent(e) {
       const nome = (w) => personagens[w - 1].nome;
       switch (e.type) {
+        case 'roundStart':
+          // 1 a 1 no placar: entra a versão mais tensa do tema de batalha.
+          tocarMusica(state.wins[0] === 1 && state.wins[1] === 1 ? 'decisiva' : 'batalha');
+          break;
         case 'countdown':
           if (e.n === 3) sons.play('contagem', 0.8);
           mostrar(String(e.n), 'Aperte o botão X (F / K) com a barra no topo', 900);
@@ -147,8 +164,8 @@ export function BattleScreen({ p1, p2 }) {
 
     async function salvar(s, durationMs) {
       const body = {
-        p1: { name: personagens[0].nome, bey: personagens[0].beySlug, score: s.wins[0] },
-        p2: { name: personagens[1].nome, bey: personagens[1].beySlug, score: s.wins[1] },
+        p1: { name: personagens[0].nome, bey: personagens[0].beySlug.split('@')[0], score: s.wins[0] },
+        p2: { name: personagens[1].nome, bey: personagens[1].beySlug.split('@')[0], score: s.wins[1] },
         winner: s.winner,
         targetPoints: ROUNDS_TO_WIN,
         durationMs: Math.round(durationMs),
@@ -186,7 +203,9 @@ export function BattleScreen({ p1, p2 }) {
         let primeiro = true;
         while (acc >= DT) {
           prev = state.beys.map((b) => ({ x: b.x, y: b.y, angle: b.angle }));
-          stepMatch(state, primeiro ? frames : frames.map((f) => ({ ...f, pressed: {} })));
+          // CPU (cpu=2): a IA ainda não existe (ROADMAP M3); até lá o P2 só lança e gira.
+          const comandos = cpu ? [frames[0], NEUTRAL_INPUT] : frames;
+          stepMatch(state, primeiro ? comandos : comandos.map((f) => ({ ...f, pressed: {} })));
           primeiro = false;
           acc -= DT;
           for (const e of state.events) onEvent(e);
@@ -220,7 +239,7 @@ export function BattleScreen({ p1, p2 }) {
       sons.stopAll();
     };
     // Uma partida nova a cada revanche ou troca de dupla.
-  }, [partida, p1, p2]);
+  }, [partida, p1, p2, b1, b2, cpu]);
 
   return (
     // Painéis nas laterais: a arena (redonda) usa a altura inteira da janela, que é a dimensão menor.

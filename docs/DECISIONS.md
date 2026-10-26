@@ -15,6 +15,22 @@ Formato:
 
 ---
 
+## D-030: músicas de fundo baixadas pelo usuário, fora do git
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário baixou quatro faixas "unreleased" do Beyblade (duas de fundo e duas versões do tema de batalha) e pediu que fossem renomeadas e usadas por contexto.
+- Decisão: as faixas ficam em `public/audio/musica/` com nomes por contexto (`menu-inicio`, `menu-selecao`, `batalha`, `batalha-decisiva`), **nunca no git**, como a ROM (D-007): são gravações com direitos autorais, só para uso pessoal. `src/audio/music.js` toca uma por vez, em laço, e a falta de um arquivo deixa a tela em silêncio, sem erro. As cópias repetidas do download foram ignoradas (mesmo hash).
+- Consequências: mapa das faixas em [`AUDIO.md`](AUDIO.md#músicas-de-fundo-d-030). Um build para distribuir não pode levar essas faixas.
+
+## D-029: arena e beys com volume, no estilo do estádio da Burst
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário achou o estilo "mais criança, mais flat" e pediu algo mais realista e fiel ao anime; a [`BEY_BEHAVIOR.md`](BEY_BEHAVIOR.md) pede a arena com as cores do estádio da Burst.
+- Decisão: na **batalha**, a regra "flat, sem brilho nem degradê" da D-022 deixa de valer para o canvas. A arena ganha tigela de plástico azul translúcido (clara no fundo, saturada na borda), curvas de nível calculadas de `bowlHeight`, linhas radiais, círculo central, tornado ridge claro, parede com luz de cima à esquerda, oclusão e bolsos escuros. As beys ganham sombra que se afasta com a altura na rampa e no pulo, escala leve pela altura, borrão de giro, rastro da velocidade e faíscas aditivas. Para continuar leve na GPU integrada, todo degradê e desfoque é desenhado **uma vez** em canvas de cache; por frame só há `drawImage`, arcos e linhas. Com movimento reduzido, não há rastro nem borrão. Menus e HUD continuam na D-022.
+- Consequências: tudo isso fica em `src/render/arena-renderer.js`; a simulação não muda. Substitui em parte a D-022 (só o canvas da batalha).
+
 ## D-028: física da tigela funda e comportamento pela ponta
 
 - Data: 2026-10-25

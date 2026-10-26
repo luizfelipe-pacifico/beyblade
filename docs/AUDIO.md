@@ -70,12 +70,26 @@ As gravações do anime (temas de abertura e encerramento, trilha de fundo e dub
 | --- | --- | --- | --- |
 | ROM do GBA (D-007) | Músicas e efeitos do *Beyblade G-Revolution* do próprio usuário, só para uso pessoal | `assets-rom/audio/` | Nunca |
 | Trilhas originais (D-008) | Músicas novas no clima da abertura, feitas por script | `pesquisa-bakuten/audio/` (receitas) | Sim |
+| Músicas do usuário (D-030) | Faixas que o próprio usuário baixou, só para uso pessoal | `public/audio/musica/` | Nunca |
 | TTS provisório | As falas clássicas lidas por voz sintética até haver gravação própria | `public/audio/tts/` (gerado) | Nunca |
 
 ### Catálogo
 
 - [`pesquisa-bakuten/audio/trilhas.json`](../pesquisa-bakuten/audio/trilhas.json): temas das três temporadas como **metadado** (título, artista, episódios, compositor da trilha de fundo), com fonte na Wikipédia japonesa, e os espaços de música do jogo (`menu`, `selecao`, `lancamento`, `batalha`, `vitoria`, `resultado`), cada um com a fonte planejada e o status.
 - [`pesquisa-bakuten/audio/falas.json`](../pesquisa-bakuten/audio/falas.json): por personagem, as frases do anime já registradas nos READMEs (dublagem em inglês, com tradução nossa) e o grito de especial da bey do jogo. `origem: "jogo"` marca falas escritas para o jogo, que nunca são atribuídas ao anime. `tests/audio-catalog.test.js` garante isso.
+
+### Músicas de fundo (D-030)
+
+`src/audio/music.js` toca uma faixa por vez, em laço, com troca suave de volume. Os arquivos ficam em `public/audio/musica/`, fora do git; se um faltar, a tela só fica em silêncio. O nome do arquivo diz onde a faixa toca:
+
+| Arquivo | Origem (nome do download) | Onde toca |
+| --- | --- | --- |
+| `menu-inicio.mp3` | BEYBLADE (DUB) unreleased Background music #2 | Aba Início |
+| `menu-selecao.mp3` | BEYBLADE (DUB) unreleased Background music #3 | Aba Personagens (seleção) |
+| `batalha.mp3` | BEYBLADE unreleased music: BATTLE THEME #1 Original | Batalha, rodadas 1 e 2 |
+| `batalha-decisiva.mp3` | BEYBLADE unreleased music: BATTLE THEME #1 [WIP] | Rodada decisiva (1 a 1 no placar) |
+
+A aba escolhe a faixa (`game-shell.jsx`), e a batalha troca para a decisiva no `roundStart` com 1 a 1. Para trocar uma música, substitua o arquivo com o mesmo nome.
 
 ### Vozes provisórias (TTS)
 

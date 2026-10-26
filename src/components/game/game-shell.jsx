@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { cn } from 'cn';
 import { useMenuNav } from '@/hooks/use-menu-nav';
+import { tocarMusica } from '@/audio/music';
 import { ControlHint } from './pad-glyph';
 
 export const ABAS = [
@@ -39,6 +40,8 @@ export function GameShell({ children }) {
   // Lido só depois de montar: no servidor não existe sessionStorage e a hidratação quebraria.
   const [batalhaHref, setBatalhaHref] = useState('/batalha');
   useEffect(() => setBatalhaHref(ultimaBatalha()), [path]);
+  // Trilha de cada aba; na batalha a própria tela troca para a faixa da rodada decisiva.
+  useEffect(() => tocarMusica(path === '/batalha' ? 'batalha' : path === '/personagens' ? 'selecao' : 'inicio'), [path]);
   const hrefDaAba = (href) => (href === '/batalha' ? batalhaHref : href);
 
   useMenuNav((_, acao) => {

@@ -1,29 +1,68 @@
 'use client';
 
-import { ARENA_RADIUS, PHYSICS, POCKETS, POCKET_HALF_WIDTH } from '@/sim/constants';
+import { ARENA_RADIUS, BOWL, PHYSICS, POCKETS, POCKET_HALF_WIDTH, bowlHeight } from '@/sim/constants';
 import { colors } from '@/design/tokens';
 
 // Render 2D da arena vista de cima (D-006). Só lê o estado da simulação; nunca o altera.
-// Feito para GPU integrada (ARCHITECTURE.md §8): arena num canvas em cache, sprites rasterizados
-// uma vez por tamanho, sem shadowBlur/filter, devicePixelRatio limitado e faíscas num pool fixo.
+// Visual realista no estilo do estádio da Burst (D-029), feito para GPU integrada (ARCHITECTURE.md §8):
+// tudo o que tem degradê, brilho ou desfoque é desenhado UMA vez em canvas de cache (arena, sombra,
+// halo); por frame só há drawImage, arcos e linhas. devicePixelRatio limitado e faíscas num pool fixo.
 
-const MARGIN_MM = 24;
+const MARGIN_MM = 34;
 const MAX_DPR = 1.5;
 const MAX_SPARKS = 160;
+const TRAIL = 14;
 const PLAYER_COLORS = [colors.p1, colors.p2];
 const FLASH_SECONDS = 0.3;
+const MAX_HEIGHT = bowlHeight(ARENA_RADIUS);
 
-function makeGlow(color) {
-  const size = 128;
+// Plástico azul translúcido do estádio da Burst (BEY_BEHAVIOR.md, aparência da arena).
+const ESTADIO = {
+  fundo: '#9fd6ff',
+  meio: '#3d8fe6',
+  borda: '#0f4fae',
+  parede: '#0a2f6e',
+  paredeLuz: '#5aa9ff',
+  paredeSombra: '#061a3d',
+  ridge: 'rgba(225, 245, 255, 0.85)',
+  linhas: 'rgba(255, 255, 255, 0.16)',
+  bolso: '#030a18',
+};
+
+function makeGlow(color, size = 128, core = 0) {
   const c = document.createElement('canvas');
   c.width = size;
   c.height = size;
   const g = c.getContext('2d');
   const grad = g.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
   grad.addColorStop(0, color);
+  if (core) grad.addColorStop(core, color);
   grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
   g.fillStyle = grad;
   g.fillRect(0, 0, size, size);
+  return c;
+}
+
+// Volume do metal por cima do sprite (que é chapado): luz em cima à esquerda, sombra embaixo à
+// direita e borda escura de contato. Não gira com a bey, porque a luz é da cena.
+function makeVolume(size = 128) {
+  const c = document.createElement('canvas');
+  c.width = size;
+  c.height = size;
+  const g = c.getContext('2d');
+  const m = size / 2;
+  const grad = g.createRadialGradient(m * 0.62, m * 0.55, 0, m, m, m);
+  grad.addColorStop(0, 'rgba(255, 255, 255, 0.45)');
+  grad.addColorStop(0.35, 'rgba(255, 255, 255, 0.06)');
+  grad.addColorStop(0.75, 'rgba(0, 0, 0, 0.12)');
+  grad.addColorStop(1, 'rgba(0, 0, 0, 0.5)');
+  g.fillStyle = grad;
+  g.beginPath();
+  g.arc(m, m, m - 1, 0, Math.PI * 2);
+  g.fill();
+  g.strokeStyle = 'rgba(4, 10, 24, 0.85)';
+  g.lineWidth = size * 0.035;
+  g.stroke();
   return c;
 }
 
@@ -40,11 +79,15 @@ export class ArenaRenderer {
       return img;
     });
     this.sparks = Array.from({ length: MAX_SPARKS }, () => ({ life: 0 }));
+    this.trails = [[], []];
     this.t = 0;
     this.flashes = [0, 0];
     this.reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
-    // Halo do rush, desenhado uma vez e só reaproveitado (nada de shadowBlur por frame na GPU integrada).
+    // Halos e sombra pré-renderizados (nada de shadowBlur por frame na GPU integrada).
     this.glowAtaque = makeGlow(colors.ataque);
+    this.glowFaisca = makeGlow('rgba(255, 220, 140, 0.9)', 32);
+    this.sombra = makeGlow('rgba(0, 8, 30, 0.6)', 128, 0.45);
+    this.volume = makeVolume();
     this.resize();
   }
 
@@ -61,7 +104,7 @@ export class ArenaRenderer {
     this.images.forEach((img, i) => img.complete && img.naturalWidth && this.rasterize(i));
   }
 
-  // A arena não muda durante a partida: desenhada uma vez e reaproveitada a cada frame.
+  // A arena não muda durante a partida: desenhada uma vez, com todo o volume, e reaproveitada.
   buildArena() {
     const size = Math.ceil(2 * (ARENA_RADIUS + MARGIN_MM) * this.scale);
     const c = document.createElement('canvas');
@@ -69,48 +112,120 @@ export class ArenaRenderer {
     c.height = size;
     const g = c.getContext('2d');
     const s = this.scale;
-    const mid = size / 2;
-    g.translate(mid, mid);
-    g.fillStyle = colors.tinta3;
+    const R = ARENA_RADIUS * s;
+    const parede = 26 * s;
+    g.translate(size / 2, size / 2);
+
+    // Parede: anel grosso com luz vindo de cima à esquerda (mesma luz da arte própria, ART.md).
+    const luz = g.createLinearGradient(-R, -R, R, R);
+    luz.addColorStop(0, ESTADIO.paredeLuz);
+    luz.addColorStop(0.45, ESTADIO.parede);
+    luz.addColorStop(1, ESTADIO.paredeSombra);
+    g.fillStyle = luz;
     g.beginPath();
-    g.arc(0, 0, (ARENA_RADIUS + 14) * s, 0, Math.PI * 2);
+    g.arc(0, 0, R + parede, 0, Math.PI * 2);
     g.fill();
-    g.fillStyle = colors.tinta2;
+
+    // Tigela: claro e translúcido no fundo, saturado e escuro na borda, como o plástico do brinquedo.
+    const tigela = g.createRadialGradient(-0.18 * R, -0.22 * R, 0.05 * R, 0, 0, R);
+    tigela.addColorStop(0, ESTADIO.fundo);
+    tigela.addColorStop(0.45, ESTADIO.meio);
+    tigela.addColorStop(1, ESTADIO.borda);
+    g.fillStyle = tigela;
     g.beginPath();
-    g.arc(0, 0, ARENA_RADIUS * s, 0, Math.PI * 2);
+    g.arc(0, 0, R, 0, Math.PI * 2);
     g.fill();
-    g.strokeStyle = colors.tinta3;
-    g.lineWidth = Math.max(1, 2 * s);
-    for (const f of [0.3, 0.6]) {
+
+    // Curvas de nível: anéis em alturas iguais ficam mais juntos onde a rampa é mais íngreme.
+    g.strokeStyle = 'rgba(255, 255, 255, 0.07)';
+    g.lineWidth = Math.max(1, 1.2 * s);
+    for (let k = 1; k <= 7; k++) {
+      const alvo = (MAX_HEIGHT * k) / 8;
+      let lo = 0;
+      let hi = ARENA_RADIUS;
+      for (let it = 0; it < 30; it++) {
+        const mid = (lo + hi) / 2;
+        if (bowlHeight(mid) < alvo) lo = mid;
+        else hi = mid;
+      }
       g.beginPath();
-      g.arc(0, 0, ARENA_RADIUS * f * s, 0, Math.PI * 2);
+      g.arc(0, 0, lo * s, 0, Math.PI * 2);
       g.stroke();
     }
-    // Bolsos de saída: recortes na borda, marcados no amarelo de chamada (é onde sai o "Fora").
-    for (const p of POCKETS) {
-      g.fillStyle = colors.tinta;
+
+    // Linhas radiais finas e círculo central, como as marcas moldadas no estádio.
+    g.strokeStyle = ESTADIO.linhas;
+    g.lineWidth = Math.max(1, 1.5 * s);
+    for (let k = 0; k < 12; k++) {
+      const a = (k / 12) * Math.PI * 2;
       g.beginPath();
-      g.arc(0, 0, (ARENA_RADIUS + 14) * s, p - POCKET_HALF_WIDTH, p + POCKET_HALF_WIDTH);
-      g.arc(0, 0, (ARENA_RADIUS - 2) * s, p + POCKET_HALF_WIDTH, p - POCKET_HALF_WIDTH, true);
+      g.moveTo(Math.cos(a) * 0.16 * R, Math.sin(a) * 0.16 * R);
+      g.lineTo(Math.cos(a) * 0.78 * R, Math.sin(a) * 0.78 * R);
+      g.stroke();
+    }
+    g.strokeStyle = 'rgba(255, 255, 255, 0.45)';
+    g.lineWidth = Math.max(1, 2 * s);
+    g.beginPath();
+    g.arc(0, 0, 0.12 * R, 0, Math.PI * 2);
+    g.stroke();
+
+    // Tornado ridge: anel claro perto da borda, com brilho (o desfoque aqui roda uma vez só).
+    g.save();
+    g.shadowColor = 'rgba(160, 230, 255, 0.9)';
+    g.shadowBlur = 10 * s;
+    g.strokeStyle = ESTADIO.ridge;
+    g.lineWidth = Math.max(2, 4 * s);
+    g.beginPath();
+    g.arc(0, 0, 0.86 * R, 0, Math.PI * 2);
+    g.stroke();
+    g.restore();
+
+    // Sombra da parede caindo para dentro da tigela (oclusão), mais forte em baixo à direita.
+    const oclusao = g.createRadialGradient(0.06 * R, 0.08 * R, 0.82 * R, 0, 0, R);
+    oclusao.addColorStop(0, 'rgba(0, 10, 40, 0)');
+    oclusao.addColorStop(1, 'rgba(0, 10, 40, 0.45)');
+    g.fillStyle = oclusao;
+    g.beginPath();
+    g.arc(0, 0, R, 0, Math.PI * 2);
+    g.fill();
+
+    // Bolsos de saída: aberturas escuras na parede, com borda de chamada marcando o "Fora".
+    for (const p of POCKETS) {
+      g.fillStyle = ESTADIO.bolso;
+      g.beginPath();
+      g.arc(0, 0, R + parede, p - POCKET_HALF_WIDTH, p + POCKET_HALF_WIDTH);
+      g.arc(0, 0, R - 2 * s, p + POCKET_HALF_WIDTH, p - POCKET_HALF_WIDTH, true);
       g.closePath();
       g.fill();
       g.strokeStyle = colors.chamada;
-      g.lineWidth = Math.max(1, 1.5 * s);
+      g.lineWidth = Math.max(1, 2 * s);
       g.beginPath();
-      g.arc(0, 0, (ARENA_RADIUS - 2) * s, p - POCKET_HALF_WIDTH, p + POCKET_HALF_WIDTH);
+      g.arc(0, 0, R - 2 * s, p - POCKET_HALF_WIDTH, p + POCKET_HALF_WIDTH);
       g.stroke();
     }
-    g.fillStyle = colors.tinta3;
+
+    // Reflexo especular do plástico: um brilho largo e suave em cima à esquerda.
+    const reflexo = g.createRadialGradient(-0.42 * R, -0.5 * R, 0, -0.42 * R, -0.5 * R, 0.55 * R);
+    reflexo.addColorStop(0, 'rgba(255, 255, 255, 0.22)');
+    reflexo.addColorStop(1, 'rgba(255, 255, 255, 0)');
+    g.fillStyle = reflexo;
     g.beginPath();
-    g.arc(0, 0, 10 * s, 0, Math.PI * 2);
+    g.arc(0, 0, R, 0, Math.PI * 2);
     g.fill();
+
+    // Borda clara no topo da parede.
+    g.strokeStyle = 'rgba(200, 230, 255, 0.55)';
+    g.lineWidth = Math.max(1, 2 * s);
+    g.beginPath();
+    g.arc(0, 0, R + parede - 1 * s, 0, Math.PI * 2);
+    g.stroke();
     this.arena = c;
   }
 
   rasterize(i) {
     const img = this.images[i];
     // O sprite do catálogo tem viewBox de 48 mm; desenhado no tamanho de tela de uma vez.
-    const px = Math.max(8, Math.ceil(48 * this.scale));
+    const px = Math.max(8, Math.ceil(48 * this.scale * 1.2));
     const c = document.createElement('canvas');
     c.width = px;
     c.height = px;
@@ -119,15 +234,15 @@ export class ArenaRenderer {
   }
 
   spawnSparks(x, y, nx, ny, power) {
-    const n = Math.min(18, 4 + Math.floor(power / 40));
+    const n = Math.min(18, 4 + Math.floor(power / 60));
     for (let k = 0, placed = 0; k < this.sparks.length && placed < n; k++) {
       const p = this.sparks[k];
       if (p.life > 0) continue;
       // Faíscas saem tangentes ao choque; aleatoriedade só visual, fora da simulação.
       const side = Math.random() < 0.5 ? 1 : -1;
       const a = Math.atan2(ny, nx) + side * (Math.PI / 2) + (Math.random() - 0.5) * 1.2;
-      const speed = 120 + Math.random() * power * 0.8;
-      Object.assign(p, { x, y, vx: Math.cos(a) * speed, vy: Math.sin(a) * speed, life: 0.18 + Math.random() * 0.22, hot: Math.random() < 0.5 });
+      const speed = 200 + Math.random() * power * 0.8;
+      Object.assign(p, { x, y, vx: Math.cos(a) * speed, vy: Math.sin(a) * speed, life: 0.18 + Math.random() * 0.22, hot: Math.random() < 0.6 });
       placed++;
     }
   }
@@ -183,7 +298,7 @@ export class ArenaRenderer {
   }
 
   draw(prev, curr, alpha, dt) {
-    const { ctx, scale } = this;
+    const { ctx, scale, dpr } = this;
     this.t += dt;
     this.flashes = this.flashes.map((f) => Math.max(0, f - dt));
     const w = this.canvas.width;
@@ -195,26 +310,69 @@ export class ArenaRenderer {
     ctx.translate(w / 2, h / 2);
 
     curr.beys.forEach((b, i) => {
-      if (b.state === 'burst') return;
+      if (b.state === 'burst') {
+        this.trails[i].length = 0;
+        return;
+      }
       const p = prev?.beys[i] ?? b;
-      const x = (p.x + (b.x - p.x) * alpha) * scale;
-      const y = (p.y + (b.y - p.y) * alpha) * scale;
+      const wx = p.x + (b.x - p.x) * alpha;
+      const wy = p.y + (b.y - p.y) * alpha;
+      const x = wx * scale;
+      const y = wy * scale;
       const angle = p.angle + (b.angle - p.angle) * alpha;
       let k = 1;
       if (b.state === 'out') {
         const beyond = Math.hypot(b.x, b.y) - ARENA_RADIUS;
-        k = Math.max(0, 1 - beyond / 120);
+        k = Math.max(0, 1 - beyond / 160);
         if (k <= 0) return;
       }
-      // No pulo a bey cresce e volta, como se subisse em direção à câmera.
-      if (b.air > 0) k *= 1 + 0.35 * Math.sin(Math.PI * (1 - b.air / PHYSICS.jumpTime));
+      // Altura na rampa: mais alta, mais perto da câmera (um pouco maior) e sombra mais afastada.
+      const altura = b.state === 'out' ? 1 : bowlHeight(Math.hypot(wx, wy)) / MAX_HEIGHT;
+      let pulo = 0;
+      if (b.air > 0) pulo = Math.sin(Math.PI * (1 - b.air / PHYSICS.jumpTime));
+      k *= 1 + 0.08 * altura + 0.35 * pulo;
       const r = b.r * scale * k;
+      const spin = Math.max(0, b.spin);
+
+      // Rastro: pontos espaçados pela velocidade, então fica longo no fundo e curto no alto da rampa.
+      const trail = this.trails[i];
+      if (b.state === 'active' && !this.reduceMotion) {
+        trail.push(x, y);
+        if (trail.length > TRAIL * 2) trail.splice(0, 2);
+      } else {
+        trail.length = 0;
+      }
+      if (trail.length >= 4) {
+        ctx.lineCap = 'round';
+        for (let t = 2; t < trail.length; t += 2) {
+          const f = t / trail.length;
+          ctx.globalAlpha = 0.35 * f * k;
+          ctx.strokeStyle = PLAYER_COLORS[i];
+          ctx.lineWidth = r * 0.9 * f;
+          ctx.beginPath();
+          ctx.moveTo(trail[t - 2], trail[t - 1]);
+          ctx.lineTo(trail[t], trail[t + 1]);
+          ctx.stroke();
+        }
+        ctx.globalAlpha = 1;
+      }
+
+      // Sombra no piso: deslocada para baixo à direita (luz de cima à esquerda) e maior no pulo.
+      const desloca = (4 + 10 * altura + 18 * pulo) * dpr;
+      const sombra = r * (2.4 + 0.6 * pulo);
+      ctx.globalAlpha = (0.8 - 0.35 * pulo) * k;
+      ctx.drawImage(this.sombra, x + desloca - sombra / 2, y + desloca - sombra / 2, sombra, sombra);
       ctx.globalAlpha = k;
-      // Anel da cor do jogador sob a bey: identifica P1/P2 junto com a etiqueta do HUD.
-      ctx.strokeStyle = PLAYER_COLORS[i];
-      ctx.lineWidth = Math.max(2, 3 * this.dpr);
+
+      // Anel da cor do jogador sob a bey: identifica P1/P2 junto com a etiqueta do painel.
+      // Contorno escuro por baixo para o anel não sumir no plástico azul.
       ctx.beginPath();
-      ctx.arc(x, y, r + 4 * this.dpr, 0, Math.PI * 2);
+      ctx.arc(x, y, r + 5 * dpr, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(4, 10, 24, 0.8)';
+      ctx.lineWidth = Math.max(4, 6 * dpr);
+      ctx.stroke();
+      ctx.strokeStyle = PLAYER_COLORS[i];
+      ctx.lineWidth = Math.max(2, 3 * dpr);
       ctx.stroke();
       if (b.state === 'active') {
         if (b.guard) this.drawGuard(x, y, r, b.guardCharge);
@@ -222,23 +380,48 @@ export class ArenaRenderer {
       }
       const f = this.flashes[i];
       if (f > 0) {
-        const p = 1 - f / FLASH_SECONDS;
+        const pf = 1 - f / FLASH_SECONDS;
         ctx.globalAlpha = f / FLASH_SECONDS;
         ctx.strokeStyle = colors.ataque;
-        ctx.lineWidth = 4 * this.dpr;
+        ctx.lineWidth = 4 * dpr;
         ctx.beginPath();
-        ctx.arc(x, y, r + (this.reduceMotion ? 16 : 10 + 40 * p) * this.dpr, 0, Math.PI * 2);
+        ctx.arc(x, y, r + (this.reduceMotion ? 16 : 10 + 40 * pf) * dpr, 0, Math.PI * 2);
         ctx.stroke();
-        ctx.globalAlpha = 1;
+        ctx.globalAlpha = k;
       }
+
       const sprite = this.sprites[i];
       if (sprite) {
+        const size = (sprite.width / 1.2) * k;
         ctx.save();
         ctx.translate(x, y);
         ctx.rotate(angle);
-        const size = sprite.width * k;
+        // Borrão de giro: uma cópia atrasada e translúcida, mais forte quanto mais gira.
+        if (spin > 0.2 && !this.reduceMotion) {
+          const atraso = 0.35 * b.dir * spin;
+          ctx.globalAlpha = 0.35 * spin * k;
+          ctx.rotate(-atraso);
+          ctx.drawImage(sprite, -size / 2, -size / 2, size, size);
+          ctx.rotate(atraso);
+        }
+        ctx.globalAlpha = k;
         ctx.drawImage(sprite, -size / 2, -size / 2, size, size);
         ctx.restore();
+        const v = r * 2.02;
+        ctx.drawImage(this.volume, x - v / 2, y - v / 2, v, v);
+        // Faixa de luz girando na borda: o "chiado" do metal em alta rotação.
+        if (spin > 0.15 && b.state === 'active') {
+          ctx.globalAlpha = 0.5 * spin * k;
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
+          ctx.lineWidth = Math.max(1, 2 * dpr);
+          const a0 = angle * 1.7;
+          ctx.beginPath();
+          ctx.arc(x, y, r * 0.96, a0, a0 + 0.9);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(x, y, r * 0.96, a0 + Math.PI, a0 + Math.PI + 0.9);
+          ctx.stroke();
+        }
       } else {
         ctx.fillStyle = colors.papel;
         ctx.beginPath();
@@ -248,17 +431,24 @@ export class ArenaRenderer {
       ctx.globalAlpha = 1;
     });
 
-    ctx.lineWidth = Math.max(1, 1.5 * this.dpr);
+    // Faíscas com luz: mistura aditiva (barata) e um ponto de brilho pré-renderizado na ponta.
+    ctx.globalCompositeOperation = 'lighter';
+    ctx.lineWidth = Math.max(1, 2 * dpr);
     for (const s of this.sparks) {
       if (s.life <= 0) continue;
       s.life -= dt;
       s.x += s.vx * dt;
       s.y += s.vy * dt;
+      const x = s.x * scale;
+      const y = s.y * scale;
       ctx.strokeStyle = s.hot ? colors.chamada : colors.papel;
       ctx.beginPath();
-      ctx.moveTo(s.x * scale, s.y * scale);
+      ctx.moveTo(x, y);
       ctx.lineTo((s.x - s.vx * 0.03) * scale, (s.y - s.vy * 0.03) * scale);
       ctx.stroke();
+      const g = 10 * dpr;
+      ctx.drawImage(this.glowFaisca, x - g / 2, y - g / 2, g, g);
     }
+    ctx.globalCompositeOperation = 'source-over';
   }
 }

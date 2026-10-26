@@ -23,3 +23,5 @@ site/.image-cache/
 /src/content/beys.generated.json
 /public/audio/batalha
 /public/audio/feras
+# Músicas baixadas pelo usuário (direitos autorais, uso pessoal): nunca no git
+/public/audio/musica
