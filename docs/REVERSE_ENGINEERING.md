@@ -75,11 +75,30 @@ As dicas do próprio jogo (`TIP: ...`, `0x08382924`–`0x08383676`, nos 5 idioma
 
 Os sprites 16×32 dos personagens principais têm **29 quadros** (os figurantes têm 15): andando de lado (≈0–7), de costas (8), de frente parado e andando (≈9–16), poses de lançamento (≈17–21), de costas andando (≈22–25) e de frente andando (≈26–28). A divisão exata ainda precisa ser confirmada pelas tabelas de animação; serve para a entrada na arena e o lançamento (D-023).
 
-Inconsistência a investigar: o boneco com índice de blader `12` (sprite `0x08306910`) é visualmente o Kai, mas o nome 12 da lista de bladers é "Ray"; e o conjunto `0x083147C8` (29 quadros, provável Tyson) sai com a paleta deduzida errada.
+Identificação dos personagens e paletas: ver [Dados da ROM para o jogo](#dados-da-rom-para-o-jogo).
 
 ### Sprites pelo emulador (alternativa)
 
 Para backgrounds, sprites affine ou para conferir algo na tela: no mGBA, **Tools > Scripting > File > Load script** com `scripts/mgba/dump-vram.lua` e jogue. A cada 30 frames, se os sprites mudaram, ele grava VRAM, paletas, OAM, registradores de vídeo e screenshot em `assets-rom/mgba/`. Depois, `node scripts/render-vram.js` grava um PNG por sprite distinto em `assets-rom/sprites-vram/` (decodificação em `scripts/lib/gba-gfx.js`).
+
+### Dados da ROM para o jogo
+
+```
+node scripts/build-rom-assets.js "<caminho>/Beyblade G-Revolution (USA).gba"
+```
+
+Gera `public/rom/` (fora do git, D-007), que o jogo consome em `/rom/...`:
+
+- `gba.json`: para cada bey da pesquisa que existe no GBA (35 de 46, mapa em `src/content/gba.js` → `GBA_BEYS`), as peças, a soma de attack/defense/endurance (0–12), rotação, temporada, nome do especial e o sprite; os quadros de caminhada por personagem; os 6 estádios; os 4 lançadores e 4 ripcords.
+- `beys/<slug>.png`: 3 quadros de 32×32 (dois girando e um parado).
+- `walk/<personagem>.png`: 29 quadros de 16×32, na ordem de `WALK_FRAMES` (0–7 parado de lado, 8 de costas, 9–16 de frente, 17–20 andando de lado, 21–24 de costas, 25–28 de frente; para a direita, espelhar).
+- `stadiums/<n>-floor.png` e `<n>-bowl.png`: 512×512.
+
+Funções puras para as telas e a simulação em `src/content/gba.js` (`gbaOverlay`, `toTenScale`, `walkInFrame`), com testes em `tests/gba-content.test.js`.
+
+**Sprites dos personagens:** Tyson `0x083147C8` (paleta `0x083002E0`), Kai `0x083024A4`, Ray `0x08306910`, Max `0x08305DC0`, Daichi `0x0830191C`, Tala `0x08265590` (paletas da lista de bladers); Bryan `0x08303A84` e Lee `0x0830AB18` são identificações **prováveis**. Brooklyn e Robert não têm sprite no jogo de GBA. Corrige a nota anterior: o boneco de índice 12 é mesmo o Ray (bandana vermelha), não o Kai.
+
+**Diferenças com o anime** que o jogo herda do GBA: Zeus gira para a esquerda (no anime, direita); Bryan usa Wyvern DJ na tabela de bladers (no anime, Falborg, que não existe no GBA); Driger S tem o bit de rotação esquerda. Beys do anime sem versão no GBA (Black Dranzer, Dranzer V2, Driger V2, Falborg, Falborg 2, Gaia Dragoon, Gaia Dragoon V, Dragoon MS Ultimate, Dragoon V2 High Power Custom, Draciel Metal Ball Defenser) usam só os dados da pesquisa.
 
 ## Descobertas
 

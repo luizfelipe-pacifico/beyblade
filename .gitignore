@@ -10,10 +10,16 @@ out/
 *.gba
 *.sav
 assets-rom/
+/public/rom
 
+# Landing (D-016): originais baixados e artefatos das skills de design
+site/.image-cache/
 .taste-skill/
 .impeccable/
 
 # Gerados
 /public/art
 /public/audio/tts
+/src/content/beys.generated.json
+/public/audio/batalha
+/public/audio/feras

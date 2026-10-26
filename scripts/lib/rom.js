@@ -13,6 +13,9 @@ export const BB2E = {
   beyblades: { offset: 0x7a1f4, count: 83, size: 0x28 },
   // Estádios: trios de ponteiros (chão, sombreado da tigela, paleta). Ver scripts/lib/rom-bg.js.
   stadiums: { offset: 0x7800c, count: 6 },
+  // Lançadores e ripcords: 4 ponteiros (id 1..4) para tabelas de nome em 5 idiomas. Desgaste por batalha = id + strength.
+  launchers: { offset: 0x7aeec, count: 4 },
+  ripcords: { offset: 0x7aefc, count: 4 },
   // Tabelas de idioma: 5 ponteiros (um por idioma) para arrays de ponteiros de nome.
   // statsOffset: attack/defense/endurance (u8 cada) + 1 byte zero por peça, logo após a tabela de idiomas.
   parts: {
@@ -102,6 +105,14 @@ export function readBeyblades(rom, { offset, count, size }) {
   return beys;
 }
 
+export function readItems(rom, { offset, count }) {
+  const items = [];
+  for (let i = 0; i < count; i++) {
+    items.push({ id: i + 1, names: readNames(rom, toOffset(rom, rom.readUInt32LE(offset + i * 4))) });
+  }
+  return items;
+}
+
 export function extractCatalog(rom, layout = BB2E) {
   const parts = {};
   for (const [kind, table] of Object.entries(layout.parts)) parts[kind] = readPartNames(rom, table);
@@ -110,5 +121,7 @@ export function extractCatalog(rom, layout = BB2E) {
     bitBeasts: readBitBeasts(rom, layout.bitBeasts),
     beyblades: readBeyblades(rom, layout.beyblades),
     parts,
+    launchers: readItems(rom, layout.launchers),
+    ripcords: readItems(rom, layout.ripcords),
   };
 }
