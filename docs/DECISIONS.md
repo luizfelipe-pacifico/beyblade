@@ -15,6 +15,14 @@ Formato:
 
 ---
 
+## D-055: playlists de música por tela, sem repetir a mesma faixa
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu que a mesma música não se repita sempre: playlist de batalha com mais de uma faixa, playlist da escolha de personagens etc., e que a abertura também possa tocar na batalha.
+- Decisão: `src/audio/playlist.js` (puro) define as playlists por contexto — `inicio` (abre com a abertura), `menus`, `selecao`, `batalha` (com a abertura) e `decisiva` (abre com o tema tenso) — e `proximaFaixa` sorteia a próxima sem repetir a anterior. `src/audio/music.js` toca uma faixa por vez, sem laço: quando acaba, toca a próxima da mesma playlist; arquivo faltando pula para a próxima. A casca escolhe o contexto pela tela; a batalha troca para `decisiva` no 1 a 1. Substitui o laço de uma faixa só da D-030/D-038.
+- Consequências: testes em `tests/playlist.test.js`; mapa das faixas em [`AUDIO.md`](AUDIO.md#músicas-de-fundo-d-030).
+
 ## D-053: giro como vida, lado do golpe, pisão, inclinação e Engine Gear
 
 - Data: 2026-10-25

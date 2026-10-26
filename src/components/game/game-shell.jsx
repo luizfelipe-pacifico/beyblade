@@ -41,8 +41,9 @@ export function GameShell({ children }) {
   // abertura em vídeo, o som é o do vídeo.
   useEffect(() => {
     if (intro !== false) return pararMusica();
-    const faixa = { '/': 'abertura', '/personagens': 'selecao', '/batalha': 'batalha' }[path] ?? 'inicio';
-    tocarMusica(faixa);
+    // Playlist de cada tela (D-055); a tela inicial abre com a música da abertura.
+    const contexto = { '/': 'inicio', '/personagens': 'selecao', '/batalha': 'batalha' }[path] ?? 'menus';
+    tocarMusica(contexto);
   }, [path, intro]);
 
   return (

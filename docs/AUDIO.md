@@ -90,7 +90,7 @@ As gravações do anime (temas de abertura e encerramento, trilha de fundo e dub
 | `batalha.mp3` | BEYBLADE unreleased music: BATTLE THEME #1 Original | Batalha, rodadas 1 e 2 |
 | `batalha-decisiva.mp3` | BEYBLADE unreleased music: BATTLE THEME #1 [WIP] | Rodada decisiva (1 a 1 no placar) |
 
-O vídeo da abertura (`public/video/abertura.mp4`, fora do git) toca uma vez por sessão antes da tela inicial, com o som dele; a música volta quando ele acaba ou é pulado. A aba escolhe a faixa (`game-shell.jsx`), e a batalha troca para a decisiva no `roundStart` com 1 a 1. Para trocar uma música, substitua o arquivo com o mesmo nome.
+O vídeo da abertura (`public/video/abertura.mp4`, fora do git) toca uma vez por sessão antes da tela inicial, com o som dele; a música volta quando ele acaba ou é pulado. Cada tela tem uma **playlist** (D-055, `src/audio/playlist.js`): inicio (abertura e fundo #2), menus, seleção (fundo #3, fundo #2 e abertura), batalha (tema, abertura e tema WIP) e decisiva; quando uma faixa acaba, toca outra da mesma lista, nunca a mesma em seguida. A tela escolhe a playlist (`game-shell.jsx`), e a batalha troca para a decisiva no `roundStart` com 1 a 1. Para trocar uma música, substitua o arquivo com o mesmo nome.
 
 ### Vozes provisórias (TTS)
 
