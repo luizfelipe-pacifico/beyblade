@@ -1,7 +1,9 @@
 // Validação dos dados que chegam pela API antes de irem para o SQLite.
 // Cada parse* devolve { value } com uma cópia limpa ou { error } com a mensagem.
 
-const ACTIONS = ['up', 'down', 'left', 'right', 'dash', 'guard', 'special', 'launch', 'pause'];
+// Ações com binding próprio por jogador (D-024). Fera bit (L1+R1), Engine Gear (✕+○) e combos são
+// combinações dessas e não têm binding.
+const ACTIONS = ['up', 'down', 'left', 'right', 'attack', 'defend', 'jump', 'dodge', 'launch', 'pause'];
 const FINISHES = new Set(['spin', 'ringout', 'xtreme', 'burst', 'decision', 'draw']);
 const BEY_ID = /^[a-z0-9-]{1,32}$/;
 

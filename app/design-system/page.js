@@ -61,9 +61,8 @@ const FREQUENCIA = [
 ];
 
 const RODADAS = [
-  { winner: 1, finish: 'xtreme' },
-  { winner: 2, finish: 'ringout' },
-  { winner: 1, finish: 'spin' },
+  { winner: 1, finish: 'ringout' },
+  { winner: 2, finish: 'burst' },
 ];
 
 const HISTORICO = [
@@ -319,10 +318,10 @@ export default function DesignSystemPage() {
             </Sub>
 
             <Sub titulo="Fileira de rodadas">
-              <RoundRow rounds={RODADAS} total={7} feraP1="dragoon" feraP2="dranzer" />
+              <RoundRow rounds={RODADAS} total={3} feraP1="dragoon" feraP2="dranzer" />
               <p className="mt-4 max-w-[68ch] text-texto-2">
-                Uma linha só, que nunca quebra. A rodada ganha leva a cor da fera de quem venceu e os pontos da finalização; a luz amarela
-                corre embaixo da rodada atual.
+                Melhor de três, numa linha que nunca quebra. A rodada ganha leva uma faixa na cor da fera de quem venceu e o tipo de
+                finalização; a luz amarela corre embaixo da rodada atual.
               </p>
             </Sub>
 

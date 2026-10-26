@@ -70,9 +70,9 @@ export function SpinDemo() {
 export function AnnouncementDemo() {
   const [n, setN] = useState(0);
   const finais = [
-    ['Xtreme Finish', 'Tyson +3'],
-    ['Burst Finish', 'Kai +2'],
-    ['Parada', 'Ray +1'],
+    ['Fora!', 'Tyson vence a rodada'],
+    ['Burst!', 'Kai vence a rodada'],
+    ['Parada', 'Ray vence a rodada'],
   ];
   const [titulo, sub] = finais[n % finais.length];
   return (

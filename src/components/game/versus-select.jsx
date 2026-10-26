@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { cn } from 'cn';
 import { roster, retrato, feraArte } from '@/content/roster';
 import { useMenuNav } from '@/hooks/use-menu-nav';
@@ -10,23 +10,37 @@ import { ControlHint } from './pad-glyph';
 
 // Seleção versus: a tela-tese do mundo "Abertura do Anime". Cada metade é o campo da fera
 // do personagem do jogador; a faixa de elenco no topo mostra os dois cursores.
-export function VersusSelect({ inicial = [0, 1], className }) {
+// onBothReady(sel) é chamado quando os dois confirmam; onBack quando alguém volta sem estar pronto.
+export function VersusSelect({ inicial = [0, 1], onBothReady, onBack, label = 'Seleção versus', className }) {
   const [sel, setSel] = useState(inicial);
   const [prontos, setProntos] = useState([false, false]);
 
   function mover(jogador, passo) {
     if (passo === 'confirmar') {
-      setProntos((p) => p.map((v, i) => (i === jogador ? !v : v)));
+      setProntos((p) => p.map((v, i) => (i === jogador ? true : v)));
       return;
     }
-    if (prontos[jogador]) return;
+    if (passo === 'voltar') {
+      if (prontos[jogador]) setProntos((p) => p.map((v, i) => (i === jogador ? false : v)));
+      else onBack?.();
+      return;
+    }
+    if (typeof passo !== 'number' || prontos[jogador]) return;
     setSel((s) => s.map((v, i) => (i === jogador ? (v + passo + roster.length) % roster.length : v)));
   }
 
   useMenuNav(mover);
 
+  const ambos = prontos[0] && prontos[1];
+  useEffect(() => {
+    if (!ambos || !onBothReady) return undefined;
+    // Uma pausa curta para os dois verem o "pronto" antes da tela mudar.
+    const t = setTimeout(() => onBothReady(sel), 600);
+    return () => clearTimeout(t);
+  }, [ambos, sel, onBothReady]);
+
   return (
-    <section aria-label="Espécime: seleção versus" className={cn('relative grid min-h-[640px] grid-rows-[auto_1fr]', className)}>
+    <section aria-label={label} className={cn('relative grid min-h-[640px] grid-rows-[auto_1fr]', className)}>
       <RosterStrip sel={sel} onPick={(jogador, i) => setSel((s) => s.map((v, j) => (j === jogador ? i : v)))} />
       <div className="relative grid grid-cols-1 md:grid-cols-2">
         {[0, 1].map((jogador) => (
@@ -58,10 +72,18 @@ function Lado({ jogador, personagem, pronto }) {
         </span>
         <TitleCard nome={personagem.nome} sub={personagem.bey} size="xl" align={direita ? 'right' : 'left'} />
         <div className={cn('flex flex-wrap gap-x-5 gap-y-2', direita && 'justify-end')}>
-          <ControlHint pad="cross" tecla={direita ? 'K' : 'F'}>
-            {pronto ? 'Trocar' : 'Confirmar'}
-          </ControlHint>
-          <ControlHint tecla={direita ? '← →' : 'A D'}>Escolher</ControlHint>
+          {pronto ? (
+            <ControlHint pad="circle" tecla={direita ? 'L' : 'G'}>
+              Cancelar
+            </ControlHint>
+          ) : (
+            <>
+              <ControlHint pad="cross" tecla={direita ? 'K' : 'F'}>
+                Confirmar
+              </ControlHint>
+              <ControlHint tecla={direita ? '← →' : 'A D'}>Escolher</ControlHint>
+            </>
+          )}
         </div>
       </div>
     </FeraField>

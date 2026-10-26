@@ -2,11 +2,11 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { parseConfig, parseMatch, parseSetup } from '../src/validate.js';
 
-const ACTIONS = ['up', 'down', 'left', 'right', 'dash', 'guard', 'special', 'launch', 'pause'];
+const ACTIONS = ['up', 'down', 'left', 'right', 'attack', 'defend', 'jump', 'dodge', 'launch', 'pause'];
 
 function validConfig() {
   const bindings = Object.fromEntries(ACTIONS.map((a) => [a, []]));
-  bindings.dash = [{ type: 'button', index: 0 }, { type: 'key', code: 'Space' }];
+  bindings.attack = [{ type: 'button', index: 0 }, { type: 'key', code: 'Space' }];
   bindings.left = [{ type: 'axis', index: 0, dir: -1 }];
   return { gamepadIndex: 0, deadzone: 0.15, rumble: true, bindings };
 }
@@ -25,7 +25,7 @@ function validMatch() {
 test('parseConfig accepts a valid config', () => {
   const { value, error } = parseConfig(validConfig());
   assert.equal(error, undefined);
-  assert.deepEqual(value.bindings.dash, [{ type: 'button', index: 0 }, { type: 'key', code: 'Space' }]);
+  assert.deepEqual(value.bindings.attack, [{ type: 'button', index: 0 }, { type: 'key', code: 'Space' }]);
 });
 
 test('parseConfig rejects deadzone above 0.9', () => {
@@ -40,8 +40,8 @@ test('parseConfig rejects a missing action binding', () => {
 
 test('parseConfig drops unknown fields from bindings', () => {
   const config = validConfig();
-  config.bindings.dash = [{ type: 'button', index: 1, extra: '<script>' }];
-  assert.deepEqual(parseConfig(config).value.bindings.dash, [{ type: 'button', index: 1 }]);
+  config.bindings.attack = [{ type: 'button', index: 1, extra: '<script>' }];
+  assert.deepEqual(parseConfig(config).value.bindings.attack, [{ type: 'button', index: 1 }]);
 });
 
 test('parseSetup trims names and strips control characters', () => {
