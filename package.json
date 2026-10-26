@@ -24,6 +24,7 @@
     "prepare": "git config core.hooksPath .githooks",
     "audio:tts": "node scripts/tts-falas.js",
     "art:vetorizar": "node scripts/vetorizar-retratos.js",
+    "art:wiki": "node scripts/retratos-wiki.js",
     "playtest": "node scripts/playtest.js"
   },
   "engines": {

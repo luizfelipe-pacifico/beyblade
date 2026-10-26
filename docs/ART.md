@@ -44,6 +44,17 @@ Para ter a aparência real do G-Revolution (a ROM do GBA não tem retratos, só 
 
 `assets-usuario/` fica fora do git: imagem do anime tem direitos autorais e é só para uso pessoal, como a ROM.
 
+### Retratos do G-Revolution da wiki (D-046)
+
+Para quem não tem retrato no PS1 (Tala, Bryan, Brooklyn, Lee, Robert), `npm run art:wiki` faz tudo sozinho:
+
+1. baixa pela API da Beyblade Wiki o arquivo de cada um (`RETRATOS_WIKI` em `scripts/retratos-wiki.js`) para `assets-usuario/personagens/fonte/`; o CDN só entrega com cabeçalhos de navegador comum;
+2. recorta o busto (`busto: [x, y, largura]`, altura em 4:5) e tira o fundo com as passadas de `fundo` (cor parecida a partir da borda, ou teste de cor para fundo estampado);
+3. amplia para 512×640 (Lanczos + nitidez leve) e grava `assets-usuario/personagens/wiki/<slug>.png` e o `retrato.svg` com o PNG embutido em `assets-usuario/personagens/vetor/`;
+4. `npm run art:sync` põe no jogo.
+
+Não rode `art:vetorizar` nesses: imagem pequena vira ruído no traçado. `node scripts/retratos-wiki.js lee` refaz só um.
+
 ## Peças, beys e lançadores (gerados)
 
 Gerados por `scripts/build-research.js` (`npm run build:research`), nunca à mão:
