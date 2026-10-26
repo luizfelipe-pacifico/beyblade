@@ -15,6 +15,14 @@ Formato:
 
 ---
 
+## D-050: estádio de verdade para a entrada na arena e a escolha do estádio
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário reclamou que na entrada na arena aparece só um círculo, e não a arena de verdade (com o fundo da tigela), e pediu a "foto do lugar" na escolha do estádio em vez da cor.
+- Decisão: `src/render/estadio-preview.js` exporta `desenharEstadio(canvas, cenario)`, que desenha parado, com o mesmo render da batalha, o chão do cenário e o prato (tigela funda, curvas de nível, parede, bolsos). A "foto" de cada lugar é esse desenho próprio (nenhum quadro do anime). A entrada na arena e a grade de estádios são telas da outra sessão, que passam a usar a função e põem os personagens nas laterais do prato.
+- Consequências: `ArenaRenderer.desenharParado()` (sem beys).
+
 ## D-048: encostar já dá dano, faísca e empurra; escudo gasta no contato
 
 - Data: 2026-10-25

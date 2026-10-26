@@ -85,7 +85,10 @@ export class ArenaRenderer {
     // Estádio do GBA: a tigela é a imagem extraída da ROM; redesenha a arena quando ela carregar.
     if (this.tema.tigelaImagem) {
       this.tigelaImg = new Image();
-      this.tigelaImg.onload = () => this.buildArena();
+      this.tigelaImg.onload = () => {
+        this.buildArena();
+        if (this.parado) this.desenharParado();
+      };
       this.tigelaImg.src = this.tema.tigelaImagem;
     }
     this.canvas = canvas;
@@ -309,6 +312,15 @@ export class ArenaRenderer {
     g.arc(0, 0, R + parede - 1 * s, 0, Math.PI * 2);
     g.stroke();
     this.arena = c;
+  }
+
+  // Só o lugar e o prato, sem beys: para a entrada na arena e a miniatura da escolha do estádio.
+  desenharParado() {
+    this.parado = true;
+    const { ctx } = this;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.drawImage(this.fundo, 0, 0);
+    ctx.drawImage(this.arena, (this.canvas.width - this.arena.width) / 2, (this.canvas.height - this.arena.height) / 2);
   }
 
   rasterize(i) {
