@@ -15,6 +15,14 @@ Formato:
 
 ---
 
+## D-051: CPU que raciocina e CPU × CPU por comando
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu que a CPU raciocine (ataque, defenda, ative o Engine Gear e a fera bit, escolha como se mover) e que dê para pôr duas CPUs para batalhar só por comando, para testar e mapear o comportamento e os pontos de melhoria.
+- Decisão: `src/sim/ai.js` (`createCpu({ slot, nivel, seed })`), pura e determinística, com sorteio próprio: a cada olhada escolhe uma intenção (fera, Engine Gear, defender, esquivar, carregar/investir, rondar ou segurar o centro), registrada com o motivo em `log`; níveis 1 a 5 mudam reação, precisão no estalo, mira, ousadia, defesa e lançamento. A batalha usa a CPU no P2 em 1 × CPU e arcade (`cpuNivel`, padrão 3); no treino o P2 é um boneco. `npm run cpu:duelo` joga CPU × CPU sem tela e imprime o relatório com pontos de melhoria. Achado no caminho: o loop da batalha apagava as bordas de todos os comandos nos ticks extras do frame, o que perderia o aperto do lançamento da CPU; agora só as do controle.
+- Consequências: [`IA.md`](IA.md) (raciocínio, níveis, medições, pontos de melhoria); testes em `tests/ai.test.js` (determinismo, lançamento, usa ataque/defesa/fera/Engine Gear, nível alto solta mais no estalo, defende a investida).
+
 ## D-050: estádio de verdade para a entrada na arena e a escolha do estádio
 
 - Data: 2026-10-25

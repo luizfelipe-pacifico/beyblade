@@ -29,6 +29,7 @@ Jogo de Beyblade local para dois jogadores com controles (Gamepad API) e teclado
 - `npm run dev`: servidor que reinicia só quando `server.js`, `src/db.js` ou `src/validate.js` mudam (o resto do app já tem recarga do Next; vigiar tudo entrava em laço com o `.next/`)
 - `npm start`: servidor normal
 - `npm run playtest`: joga partidas automáticas e confere física e equilíbrio (`docs/PLAYTEST.md`); rode depois de mexer em física ou regras
+- `npm run cpu:duelo -- --p1 <bey> --p2 <bey> --n1 <1-5> --n2 <1-5> [--log]`: duas CPUs batalham sem tela, com relatório do comportamento (`docs/IA.md`)
 - `npm test`: roda todos os testes (`node --test`, arquivos `tests/*.test.js`)
 - `npm run db:up` / `db:down`: sobe/para o PostgreSQL no Docker (precisa do Docker Desktop e do `.env`, copiado de `.env.example`)
 - `npm run db:migrate -- --name <nome>`: nova migração (dev); `npm run db:deploy`: aplica migrações pendentes; `npm run db:studio`: Prisma Studio
@@ -116,4 +117,5 @@ Atualize no mesmo commit da mudança (e crie novos arquivos quando surgir um ass
 - `docs/NDS_METAL_FUSION.md`: jogo de DS (Beyblade: Metal Fusion) como referência de design de combate (controles, fluxo, vitória, medidores); extraído fora do repositório, sem usar beys/personagens
 - `docs/CENARIOS.md`: lugares clássicos do anime (episódio, visual, regra) e os que já viraram estádio no jogo
 - `docs/PLAYTEST.md`: como testar jogando (playtest automático e na tela), princípios de física e o que já foi achado
+- `docs/IA.md`: como a CPU raciocina, níveis, CPU × CPU por comando e pontos de melhoria
 - `docs/SKILLS.md`: skills e plugins do Claude Code disponíveis e recomendados, com o uso de cada um no projeto

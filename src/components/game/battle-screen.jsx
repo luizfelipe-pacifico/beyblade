@@ -7,6 +7,7 @@ import beys from '@/content/beys.generated.json';
 import { roster, beySprite } from '@/content/roster';
 import { regrasDe, resolverArena } from '@/content/cenarios';
 import { createMatch, launchPower, NEUTRAL_INPUT, stepMatch } from '@/sim/match';
+import { createCpu } from '@/sim/ai';
 import { DT, FERA, FINISHES, PHYSICS, ROUND_SECONDS, ROUNDS_TO_WIN } from '@/sim/constants';
 import { colors, feras } from '@/design/tokens';
 import './battle.css';
@@ -100,6 +101,8 @@ export function BattleScreen({ p1, p2, b1, b2, arena, cpu = false, modo = 'versu
     setCenarioAtual(cen);
     const state = createMatch({ beys: defs, seed: Date.now() >>> 0, treino, regras: regrasDe(cen) });
     state.cpuNivel = cpuNivel;
+    // CPU no P2 (D-051); no treino o P2 é um boneco parado.
+    const cpuP2 = p2Maquina && !treino ? createCpu({ slot: 1, nivel: cpuNivel, seed: state.rng }) : null;
     // Só no desenvolvimento: deixa os scripts de verificação (Electron) mexerem no estado.
     if (process.env.NODE_ENV === 'development') window.__batalha = state;
     const renderer = new ArenaRenderer(canvasRef.current, personagens.map((p) => p.sprite), personagens.map(corDaFera), cen);
@@ -279,9 +282,11 @@ export function BattleScreen({ p1, p2, b1, b2, arena, cpu = false, modo = 'versu
         let primeiro = true;
         while (acc >= DT) {
           prev = state.beys.map((b) => ({ x: b.x, y: b.y, angle: b.angle }));
-          // CPU (cpu=2): a IA ainda não existe (ROADMAP M3); até lá o P2 só lança e gira.
-          const comandos = p2Maquina ? [frames[0], NEUTRAL_INPUT] : frames;
-          stepMatch(state, primeiro ? comandos : comandos.map((f) => ({ ...f, pressed: {} })));
+          // As bordas (pressed) do controle valem só no primeiro tick do frame; a CPU pensa a cada tick e
+          // as bordas dela são sempre dela (tirá-las perdia o aperto do lançamento da CPU).
+          const humanos = primeiro ? frames : frames.map((f) => ({ ...f, pressed: {} }));
+          const comandos = p2Maquina ? [humanos[0], cpuP2 ? cpuP2.pensar(state) : NEUTRAL_INPUT] : humanos;
+          stepMatch(state, comandos);
           primeiro = false;
           acc -= DT;
           for (const e of state.events) onEvent(e);

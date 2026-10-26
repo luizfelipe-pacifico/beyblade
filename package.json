@@ -25,7 +25,8 @@
     "audio:tts": "node scripts/tts-falas.js",
     "art:vetorizar": "node scripts/vetorizar-retratos.js",
     "art:wiki": "node scripts/retratos-wiki.js",
-    "playtest": "node scripts/playtest.js"
+    "playtest": "node scripts/playtest.js",
+    "cpu:duelo": "node scripts/cpu-duelo.js"
   },
   "engines": {
     "node": ">=24.11"
