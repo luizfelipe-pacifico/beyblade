@@ -111,4 +111,5 @@ Atualize no mesmo commit da mudança (e crie novos arquivos quando surgir um ass
 - `docs/CI.md`: GitHub Actions (testes em Linux e Windows, builds, auditoria), Dependabot e próximos processos
 - `docs/PS1.md`: jogo de PS1 (Bey Battle Tournament 2) como segunda referência, extraído fora do repositório
 - `docs/NDS_METAL_FUSION.md`: jogo de DS (Beyblade: Metal Fusion) como referência de design de combate (controles, fluxo, vitória, medidores); extraído fora do repositório, sem usar beys/personagens
+- `docs/CENARIOS.md`: lugares clássicos do anime (episódio, visual, regra) e os que já viraram estádio no jogo
 - `docs/SKILLS.md`: skills e plugins do Claude Code disponíveis e recomendados, com o uso de cada um no projeto

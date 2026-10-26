@@ -79,13 +79,17 @@ function makeBey(def, slot) {
   };
 }
 
+// Regras do cenário (D-039): atrito do piso, se há ring out, quão fácil é sair, vento e frio.
+const REGRAS = { atrito: 1, ringOut: true, saida: 1, vento: null, giro: 1 };
+
 // treino: sem relógio, rodadas sem placar e o P2 (boneco) não perde giro (D-035).
-export function createMatch({ beys, seed = 1, treino = false }) {
+export function createMatch({ beys, seed = 1, treino = false, regras = {} }) {
   if (!Array.isArray(beys) || beys.length !== 2) throw new Error('createMatch precisa de duas beys');
   const state = {
     tick: 0,
     rng: seed >>> 0,
     treino,
+    regras: { ...REGRAS, ...regras },
     defs: beys.map((b) => ({ slug: b.slug, nome: b.nome, especial: b.especial ?? 'Especial' })),
     source: beys,
     round: 1,
@@ -406,7 +410,7 @@ function moveBey(state, b, h, inp) {
     // 2) Ponta: inclinada na rampa, empurra a bey de lado no sentido da rotação. Giro baixo inclina mais.
     const wobble = spin < BOWL.wobbleSpin ? ((BOWL.wobbleSpin - spin) / BOWL.wobbleSpin) * BOWL.wobbleTilt : 0;
     const tilt = Math.min(BOWL.maxTilt, slope + wobble);
-    const tracao = tip.mu * GRAVITY;
+    const tracao = tip.mu * GRAVITY * state.regras.atrito;
     const lado = Math.min(tracao, tip.drive * spin * tilt * GRAVITY * (b.air > 0 ? 0 : 1));
     ax += -uy * lado * b.dir;
     ay += ux * lado * b.dir;
@@ -415,6 +419,12 @@ function moveBey(state, b, h, inp) {
       const frente = Math.min(tracao, tip.fwd * spin * GRAVITY);
       ax += (b.vx / speed0) * frente;
       ay += (b.vy / speed0) * frente;
+    }
+    // Vento do cenário (terraço): empurra quem está no chão, como uma força própria (tem teto).
+    const vento = state.regras.vento;
+    if (vento && b.air <= 0) {
+      ax += vento.x;
+      ay += vento.y;
     }
     // 4) Jogador guia a bey: uma parte empurra (com teto na tração da ponta) e o resto curva a
     // trajetória para o lado do comando, sem ganhar velocidade: arco, não zigue-zague (D-032).
@@ -434,7 +444,7 @@ function moveBey(state, b, h, inp) {
   }
   // 3) Atrito contra o piso. Parada e com a rampa puxando menos que o atrito, a bey não se mexe
   // (atrito estático); sem isso ela "rastejava" alguns mm/s a cada subpasso.
-  const slide = (b.state === 'active' ? b.tip.slide * (b.guard ? 2 : 1) : BOWL.stoppedSlide) * GRAVITY;
+  const slide = (b.state === 'active' ? b.tip.slide * (b.guard ? 2 : 1) : BOWL.stoppedSlide) * GRAVITY * state.regras.atrito;
   if (b.state !== 'active' && speed0 <= slide * h && GRAVITY * slope <= slide) {
     b.vx = 0;
     b.vy = 0;
@@ -477,7 +487,7 @@ function moveBey(state, b, h, inp) {
   if (b.state === 'active') {
     // Peso gasta giro e ponta de mais tração também (defesa perde para resistência na Parada).
     const desgaste = (0.6 + b.tip.mu) * (0.85 + 0.05 * (1 + 9 * b.peso));
-    b.spin -= ((P.spinDecay * (1.6 - b.sta) * desgaste) / m.sta + (b.guard ? P.guardDrain : 0)) * h;
+    b.spin -= ((P.spinDecay * (1.6 - b.sta) * desgaste * state.regras.giro) / m.sta + (b.guard ? P.guardDrain : 0)) * h;
     b.special = Math.min(1, b.special + P.specialPassive * h);
     b.dashCd = Math.max(0, b.dashCd - h);
     b.jumpCd = Math.max(0, b.jumpCd - h);
@@ -585,8 +595,10 @@ function wall(state, b, finishes) {
   const vOut = b.vx * nx + b.vy * ny;
   if (vOut > 0) {
     const ang = Math.atan2(b.y, b.x);
-    const pocket = POCKETS.some((p) => angleDiff(ang, p) < POCKET_HALF_WIDTH);
-    if ((pocket && vOut > P.pocketOutSpeed) || vOut > P.rimOutSpeed) {
+    const { ringOut, saida } = state.regras;
+    // Parede alta (sem ring out): bolso e borda viram parede.
+    const pocket = ringOut && POCKETS.some((p) => angleDiff(ang, p) < POCKET_HALF_WIDTH);
+    if (ringOut && ((pocket && vOut > P.pocketOutSpeed * saida) || vOut > P.rimOutSpeed * saida)) {
       b.state = 'out';
       finishes.push({ loser: b.slot, finish: 'ringout' });
       state.events.push({ type: 'ringout', slot: b.slot });

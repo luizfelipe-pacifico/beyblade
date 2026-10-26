@@ -9,7 +9,7 @@ const inteiro = (v, min, max, padrao) => {
 
 // Contrato com a seleção (D-023, D-035): /batalha?p1&p2[&b1&b2][&arena][&cpu=2][&modo&etapa&cpuNivel].
 export default async function BatalhaPage({ searchParams }) {
-  const { p1, p2, b1, b2, cpu, modo, etapa, cpuNivel } = await searchParams;
+  const { p1, p2, b1, b2, arena, cpu, modo, etapa, cpuNivel } = await searchParams;
   return (
     <>
       <h1 className="sr-only">Batalha</h1>
@@ -18,6 +18,7 @@ export default async function BatalhaPage({ searchParams }) {
         p2={texto(p2)}
         b1={texto(b1)}
         b2={texto(b2)}
+        arena={texto(arena)}
         cpu={cpu === '2'}
         modo={MODOS.has(modo) ? modo : cpu === '2' ? 'cpu' : 'versus'}
         etapa={inteiro(etapa, 0, 20, 0)}

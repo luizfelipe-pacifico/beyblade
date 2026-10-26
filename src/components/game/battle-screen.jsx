@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { cn } from 'cn';
 import beys from '@/content/beys.generated.json';
 import { roster, beySprite } from '@/content/roster';
+import { regrasDe, resolverArena } from '@/content/cenarios';
 import { createMatch, launchPower, NEUTRAL_INPUT, stepMatch } from '@/sim/match';
 import { DT, FERA, FINISHES, PHYSICS, ROUND_SECONDS, ROUNDS_TO_WIN } from '@/sim/constants';
 import { colors, feras } from '@/design/tokens';
@@ -60,7 +61,7 @@ function comBey(personagem, beyId) {
 
 // modo (D-035): versus | cpu | arcade | treino. Fora do versus o P2 é da máquina (a IA ainda não
 // existe: fica neutro); cpuNivel fica guardado no estado para ela.
-export function BattleScreen({ p1, p2, b1, b2, cpu = false, modo = 'versus', etapa = 0, cpuNivel = 1 }) {
+export function BattleScreen({ p1, p2, b1, b2, arena, cpu = false, modo = 'versus', etapa = 0, cpuNivel = 1 }) {
   const router = useRouter();
   const treino = modo === 'treino';
   const arcade = modo === 'arcade';
@@ -79,6 +80,7 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false, modo = 'versus', eta
   const [fim, setFim] = useState(null);
   const [salvo, setSalvo] = useState(null);
   const [feraFase, setFeraFase] = useState([null, null]);
+  const [cenarioAtual, setCenarioAtual] = useState(null);
   const feraRefs = [useRef(null), useRef(null)];
   const faseDa = (slot, fase) => setFeraFase((f) => f.map((x, i) => (i === slot ? fase : x)));
   // O loop e os botões da pausa leem o mesmo valor: o estado do React sozinho não chega ao loop.
@@ -90,11 +92,14 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false, modo = 'versus', eta
 
   useEffect(() => {
     const defs = personagens.map((p) => beys[p.beySlug]);
-    const state = createMatch({ beys: defs, seed: Date.now() >>> 0, treino });
+    // Cenário sorteado a cada partida quando a seleção manda "aleatoria" (D-039).
+    const cen = resolverArena(arena);
+    setCenarioAtual(cen);
+    const state = createMatch({ beys: defs, seed: Date.now() >>> 0, treino, regras: regrasDe(cen) });
     state.cpuNivel = cpuNivel;
     // Só no desenvolvimento: deixa os scripts de verificação (Electron) mexerem no estado.
     if (process.env.NODE_ENV === 'development') window.__batalha = state;
-    const renderer = new ArenaRenderer(canvasRef.current, personagens.map((p) => p.sprite), personagens.map(corDaFera));
+    const renderer = new ArenaRenderer(canvasRef.current, personagens.map((p) => p.sprite), personagens.map(corDaFera), cen);
     const reduzMovimento = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
     let lentoAte = 0;
     const feraTimers = [0, 0];
@@ -296,7 +301,7 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false, modo = 'versus', eta
       sons.stopAll();
     };
     // Uma partida nova a cada revanche ou troca de dupla.
-  }, [partida, p1, p2, b1, b2, cpu, modo, etapa, cpuNivel]);
+  }, [partida, p1, p2, b1, b2, arena, cpu, modo, etapa, cpuNivel]);
 
   return (
     // Painéis nas laterais: a arena (redonda) usa a altura inteira da janela, que é a dimensão menor.
@@ -341,7 +346,16 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false, modo = 'versus', eta
       </div>
       <aside className="flex min-h-0 flex-col justify-between gap-6 overflow-y-auto bg-tinta p-5" aria-label="Jogador 2">
         <Painel i={1} personagens={personagens} hud={hud} />
-        <Placar personagens={personagens} hud={hud} modo={modo} etapa={etapa} />
+        <div className="grid gap-6">
+          {cenarioAtual ? (
+            <div className="grid gap-1">
+              <p className="font-extrabold">{cenarioAtual.nome}</p>
+              <p className="text-sm text-texto-2">{cenarioAtual.origem}</p>
+              {cenarioAtual.regra ? <p className="text-sm font-semibold text-texto-2">{cenarioAtual.regra}</p> : null}
+            </div>
+          ) : null}
+          <Placar personagens={personagens} hud={hud} modo={modo} etapa={etapa} />
+        </div>
       </aside>
     </div>
   );

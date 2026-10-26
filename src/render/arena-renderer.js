@@ -2,6 +2,7 @@
 
 import { ARENA_RADIUS, BOWL, PHYSICS, POCKETS, POCKET_HALF_WIDTH, bowlHeight } from '@/sim/constants';
 import { colors } from '@/design/tokens';
+import { desenharCenario } from './cenario-fundo';
 
 // Render 2D da arena vista de cima (D-006). Só lê o estado da simulação; nunca o altera.
 // Visual realista no estilo do estádio da Burst (D-029), feito para GPU integrada (ARCHITECTURE.md §8):
@@ -9,6 +10,8 @@ import { colors } from '@/design/tokens';
 // halo); por frame só há drawImage, arcos e linhas. devicePixelRatio limitado e faíscas num pool fixo.
 
 const MARGIN_MM = 34;
+// Com cenário do anime, sobra mais chão em volta do prato para o lugar aparecer (D-039).
+const MARGIN_CENARIO_MM = 80;
 const MAX_DPR = 1.5;
 const MAX_SPARKS = 160;
 const TRAIL = 14;
@@ -72,7 +75,17 @@ function makeVolume(size = 128) {
 
 export class ArenaRenderer {
   // cores: cor da fera de cada jogador (aura de fogo e brilho da invocação, D-036).
-  constructor(canvas, spriteUrls, cores = []) {
+  // cenario: { slug, tema } de src/content/cenarios.js; sem ele, o estádio padrão da Burst.
+  constructor(canvas, spriteUrls, cores = [], cenario = null) {
+    this.cenario = cenario;
+    this.tema = cenario?.tema ?? {};
+    this.margem = cenario && this.tema.cenario !== 'estadio' ? MARGIN_CENARIO_MM : MARGIN_MM;
+    // Estádio do GBA: a tigela é a imagem extraída da ROM; redesenha a arena quando ela carregar.
+    if (this.tema.tigelaImagem) {
+      this.tigelaImg = new Image();
+      this.tigelaImg.onload = () => this.buildArena();
+      this.tigelaImg.src = this.tema.tigelaImagem;
+    }
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d', { alpha: false });
     this.sprites = spriteUrls.map(() => null);
@@ -111,42 +124,101 @@ export class ArenaRenderer {
     this.canvas.width = Math.round(this.cssW * dpr);
     this.canvas.height = Math.round(this.cssH * dpr);
     this.dpr = dpr;
-    this.scale = (Math.min(this.cssW, this.cssH) / (2 * (ARENA_RADIUS + MARGIN_MM))) * dpr;
+    this.scale = (Math.min(this.cssW, this.cssH) / (2 * (ARENA_RADIUS + this.margem))) * dpr;
+    this.buildFundo();
     this.buildArena();
     this.images.forEach((img, i) => img.complete && img.naturalWidth && this.rasterize(i));
   }
 
+  // Chão do lugar em volta do prato, do tamanho do canvas inteiro.
+  buildFundo() {
+    const c = document.createElement('canvas');
+    c.width = this.canvas.width;
+    c.height = this.canvas.height;
+    const g = c.getContext('2d');
+    g.translate(c.width / 2, c.height / 2);
+    desenharCenario(g, this.tema, this.cenario?.slug, { w: c.width, h: c.height, R: ARENA_RADIUS * this.scale, s: this.scale });
+    this.fundo = c;
+  }
+
   // A arena não muda durante a partida: desenhada uma vez, com todo o volume, e reaproveitada.
   buildArena() {
-    const size = Math.ceil(2 * (ARENA_RADIUS + MARGIN_MM) * this.scale);
+    if (!this.scale) return;
+    const tema = this.tema;
+    const size = Math.ceil(2 * (ARENA_RADIUS + this.margem) * this.scale);
     const c = document.createElement('canvas');
     c.width = size;
     c.height = size;
     const g = c.getContext('2d');
     const s = this.scale;
     const R = ARENA_RADIUS * s;
-    const parede = 26 * s;
+    const parede = (tema.paredeAlta ? 40 : 26) * s;
     g.translate(size / 2, size / 2);
+    // Sombra do prato no chão do cenário (luz de cima à esquerda).
+    g.fillStyle = 'rgba(0, 0, 0, 0.35)';
+    g.beginPath();
+    g.arc(12 * s, 16 * s, R + parede + 6 * s, 0, Math.PI * 2);
+    g.fill();
 
     // Parede: anel grosso com luz vindo de cima à esquerda (mesma luz da arte própria, ART.md).
     const luz = g.createLinearGradient(-R, -R, R, R);
-    luz.addColorStop(0, ESTADIO.paredeLuz);
-    luz.addColorStop(0.45, ESTADIO.parede);
-    luz.addColorStop(1, ESTADIO.paredeSombra);
+    // A parede acompanha o material do cenário; sem tema, o plástico azul da Burst.
+    const [pLuz, pMeio, pSombra] = tema.tigela ? [tema.tigela[1], tema.tigela[2], '#05070f'] : [ESTADIO.paredeLuz, ESTADIO.parede, ESTADIO.paredeSombra];
+    luz.addColorStop(0, pLuz);
+    luz.addColorStop(0.45, pMeio);
+    luz.addColorStop(1, pSombra);
     g.fillStyle = luz;
     g.beginPath();
     g.arc(0, 0, R + parede, 0, Math.PI * 2);
     g.fill();
+    if (tema.boia) {
+      // Piscina: a parede é uma boia inflável em gomos vermelhos e brancos.
+      for (let k = 0; k < 16; k++) {
+        g.fillStyle = k % 2 ? '#f5f5f5' : '#e5413b';
+        g.beginPath();
+        g.arc(0, 0, R + parede, (k / 16) * Math.PI * 2, ((k + 1) / 16) * Math.PI * 2);
+        g.arc(0, 0, R, ((k + 1) / 16) * Math.PI * 2, (k / 16) * Math.PI * 2, true);
+        g.closePath();
+        g.fill();
+      }
+      g.strokeStyle = 'rgba(255, 255, 255, 0.6)';
+      g.lineWidth = 4 * s;
+      g.beginPath();
+      g.arc(-3 * s, -3 * s, R + parede * 0.55, Math.PI * 0.95, Math.PI * 1.6);
+      g.stroke();
+    }
+    if (tema.grade) {
+      // Estádio da BEGA: grades que sobem em volta do prato.
+      g.strokeStyle = 'rgba(220, 210, 255, 0.75)';
+      g.lineWidth = Math.max(1.5, 3 * s);
+      for (let k = 0; k < 48; k++) {
+        const a = (k / 48) * Math.PI * 2;
+        g.beginPath();
+        g.moveTo(Math.cos(a) * R, Math.sin(a) * R);
+        g.lineTo(Math.cos(a) * (R + parede), Math.sin(a) * (R + parede));
+        g.stroke();
+      }
+    }
 
     // Tigela: claro e translúcido no fundo, saturado e escuro na borda, como o plástico do brinquedo.
+    const [fundo, meio, borda] = tema.tigela ?? [ESTADIO.fundo, ESTADIO.meio, ESTADIO.borda];
     const tigela = g.createRadialGradient(-0.18 * R, -0.22 * R, 0.05 * R, 0, 0, R);
-    tigela.addColorStop(0, ESTADIO.fundo);
-    tigela.addColorStop(0.45, ESTADIO.meio);
-    tigela.addColorStop(1, ESTADIO.borda);
+    tigela.addColorStop(0, fundo);
+    tigela.addColorStop(0.45, meio);
+    tigela.addColorStop(1, borda);
     g.fillStyle = tigela;
     g.beginPath();
     g.arc(0, 0, R, 0, Math.PI * 2);
     g.fill();
+    if (this.tigelaImg?.complete && this.tigelaImg.naturalWidth) {
+      g.save();
+      g.beginPath();
+      g.arc(0, 0, R, 0, Math.PI * 2);
+      g.clip();
+      g.imageSmoothingEnabled = false;
+      g.drawImage(this.tigelaImg, -R, -R, 2 * R, 2 * R);
+      g.restore();
+    }
 
     // Curvas de nível: anéis em alturas iguais ficam mais juntos onde a rampa é mais íngreme.
     g.strokeStyle = 'rgba(255, 255, 255, 0.07)';
@@ -202,7 +274,8 @@ export class ArenaRenderer {
     g.fill();
 
     // Bolsos de saída: aberturas escuras na parede, com borda de chamada marcando o "Fora".
-    for (const p of POCKETS) {
+    // Parede alta (sem ring out, D-039): não há bolso.
+    for (const p of tema.paredeAlta ? [] : POCKETS) {
       g.fillStyle = ESTADIO.bolso;
       g.beginPath();
       g.arc(0, 0, R + parede, p - POCKET_HALF_WIDTH, p + POCKET_HALF_WIDTH);
@@ -391,8 +464,7 @@ export class ArenaRenderer {
     const w = this.canvas.width;
     const h = this.canvas.height;
     ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.fillStyle = colors.tinta;
-    ctx.fillRect(0, 0, w, h);
+    ctx.drawImage(this.fundo, 0, 0);
     ctx.drawImage(this.arena, (w - this.arena.width) / 2, (h - this.arena.height) / 2);
     ctx.translate(w / 2, h / 2);
 

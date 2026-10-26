@@ -15,6 +15,19 @@ Formato:
 
 ---
 
+## D-039: cenários clássicos do anime como estádios, sorteados no início
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu os cenários clássicos do anime (a piscina pública, o parque etc.) dentro do jogo, mapeados e, no início, sorteados.
+- Decisão:
+  - mapa de 26 lugares, com episódio, quem batalhou, descrição de cima, paleta sugerida e regra, em [`CENARIOS.md`](CENARIOS.md). A lembrança da piscina foi corrigida: é no G-Revolution, ep. 3, com o Daichi; a boia é ideia do jogo, não do anime;
+  - primeira leva de **10 cenários** em `src/content/cenarios.js` (módulo puro, também lido pela seleção): piscina pública, parque do lago, terraço dos Blade Sharks, BB Shop, becos de Hong Kong, torres da China, lago Baikal, prato de gelo da final, praia de treino e estádio da BEGA;
+  - cada um tem **regras** que a simulação aplica (`createMatch({ regras })`): `atrito` (gelo 0,4; areia 1,8), `ringOut: false` (parede alta ou grade), `saida` (sair mais fácil, ex.: torres 0,7), `vento` (terraço) e `giro` (frio drena mais), e um **tema** que o render desenha uma vez em cache: o chão do lugar em volta do prato (`src/render/cenario-fundo.js`), as cores da tigela e da parede, a boia da piscina e as grades da BEGA;
+  - contrato da arena: `arena=<slug>` | `rom-0…rom-5` (tigela com a imagem do estádio do GBA, sem regra) | ausente ou `aleatoria` → sorteio entre os cenários do anime, de novo a cada partida. O painel mostra o lugar, o episódio e a regra;
+  - toda a arte é própria e desenhada em código; nenhum quadro do anime é usado.
+- Consequências: testes em `tests/cenarios.test.js` (catálogo, resolução da arena, gelo × areia, parede alta, vento, frio). Os outros 16 lugares do mapa entram em levas seguintes.
+
 ## D-038: abertura do G-Revolution em vídeo e a música dela na tela inicial
 
 - Data: 2026-10-25
