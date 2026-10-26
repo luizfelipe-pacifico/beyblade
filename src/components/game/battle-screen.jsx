@@ -6,7 +6,7 @@ import { cn } from 'cn';
 import beys from '@/content/beys.generated.json';
 import { roster, beySprite } from '@/content/roster';
 import { createMatch, launchPower, stepMatch } from '@/sim/match';
-import { DT, FINISHES, ROUND_SECONDS, ROUNDS_TO_WIN } from '@/sim/constants';
+import { DT, FINISHES, PHYSICS, ROUND_SECONDS, ROUNDS_TO_WIN } from '@/sim/constants';
 import { InputManager } from '@/input/manager';
 import { ArenaRenderer } from '@/render/arena-renderer';
 import { BATALHA, createSounds } from '@/audio/sounds';
@@ -89,6 +89,10 @@ export function BattleScreen({ p1, p2 }) {
           vibrar(0.6, 250);
           mostrar('Let it rip!', null, 900);
           break;
+        case 'chargeFull':
+          renderer.flash(e.slot);
+          input.rumble(e.slot, 0.6, 0.3, 90);
+          break;
         case 'attack':
           input.rumble(e.slot, 0.2 + 0.4 * e.charge, 0.5, 80);
           break;
@@ -105,9 +109,9 @@ export function BattleScreen({ p1, p2 }) {
           mostrar('Lançamento perfeito!', `${personagens[e.slot].nome} entra com giro máximo`, 1100);
           break;
         case 'hit': {
-          const forca = Math.min(1, e.impact / 1080);
+          const forca = Math.min(1, e.impact / PHYSICS.maxImpact);
           renderer.spawnSparks(e.x, e.y, e.nx, e.ny, e.impact);
-          sons.play(e.impact > 540 ? 'choqueForte' : 'choqueLeve', 0.4 + 0.6 * forca);
+          sons.play(e.impact > PHYSICS.strongImpact ? 'choqueForte' : 'choqueLeve', 0.4 + 0.6 * forca);
           vibrar(forca, 60 + 120 * forca);
           break;
         }
@@ -219,8 +223,12 @@ export function BattleScreen({ p1, p2 }) {
   }, [partida, p1, p2]);
 
   return (
-    <div className="grid h-[calc(100dvh-3.5rem)] grid-rows-[auto_1fr_auto]">
-      <Hud personagens={personagens} hud={hud} />
+    // Painéis nas laterais: a arena (redonda) usa a altura inteira da janela, que é a dimensão menor.
+    <div className="grid h-[calc(100dvh-3.5rem)] grid-cols-[17rem_1fr_17rem]">
+      <aside className="flex min-h-0 flex-col justify-between gap-6 overflow-y-auto bg-tinta p-5" aria-label="Jogador 1">
+        <Painel i={0} personagens={personagens} hud={hud} />
+        <Comandos />
+      </aside>
       <div className="relative min-h-0">
         <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" aria-label="Arena da batalha" role="img" />
         <div className="pointer-events-none absolute inset-0 grid place-items-center">
@@ -237,7 +245,10 @@ export function BattleScreen({ p1, p2 }) {
           />
         ) : null}
       </div>
-      <Comandos />
+      <aside className="flex min-h-0 flex-col justify-between gap-6 overflow-y-auto bg-tinta p-5" aria-label="Jogador 2">
+        <Painel i={1} personagens={personagens} hud={hud} />
+        <Placar personagens={personagens} hud={hud} />
+      </aside>
     </div>
   );
 }
@@ -245,47 +256,53 @@ export function BattleScreen({ p1, p2 }) {
 // Comandos da batalha sempre à vista (D-024, CONTROLLERS.md): controle e teclado do P1 / P2.
 function Comandos() {
   return (
-    <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 bg-tinta px-6 py-3 text-sm">
-      <ControlHint pad="cross" tecla="F / K">Ataque (segure para carregar)</ControlHint>
+    <div className="grid gap-2 text-sm">
+      <p className="font-extrabold">Comandos (P1 / P2)</p>
+      <ControlHint pad="cross" tecla="F / K">Ataque, segure para carregar</ControlHint>
       <ControlHint pad="circle" tecla="G / L">Defesa</ControlHint>
       <ControlHint pad="l1" tecla="R / I">Pulo</ControlHint>
       <ControlHint pad="r1" tecla="T / O">Esquiva</ControlHint>
       <ControlHint tecla="R+T / I+O">Fera bit (L1 + R1)</ControlHint>
-      <ControlHint tecla="F+G / K+L">Engine Gear (ataque + defesa)</ControlHint>
+      <ControlHint tecla="F+G / K+L">Engine Gear</ControlHint>
       <ControlHint pad="options" tecla="Esc / P">Pausa</ControlHint>
     </div>
   );
 }
 
-function Hud({ personagens, hud }) {
+function Painel({ i, personagens, hud }) {
+  const p = personagens[i];
+  const b = hud?.beys[i];
   const lancando = hud?.phase === 'launch';
   return (
-    <div className="grid grid-cols-[1fr_auto_1fr] items-start gap-6 bg-tinta px-6 py-4">
-      {[0, 1].map((i) => (
-        <div key={i} className={cn('grid gap-2', i === 1 && 'order-3 text-right')}>
-          <div className={cn('flex items-center gap-3', i === 1 && 'flex-row-reverse')}>
-            <span className={cn('px-2 py-0.5 text-base font-extrabold text-tinta', i === 0 ? 'bg-p1' : 'bg-p2')}>P{i + 1}</span>
-            <span className="cartela text-2xl uppercase">{personagens[i].nome}</span>
-            <span className="text-base font-semibold text-texto-2">{personagens[i].bey}</span>
-          </div>
-          {/* Mesmas duas linhas em todas as fases: se o HUD mudasse de altura, a arena pularia. */}
-          {lancando ? (
-            <GaugeBar label="Força do lançamento" value={hud?.launch[i] ?? 0} tipo="especial" />
-          ) : (
-            <GaugeBar label="Giro" value={hud?.beys[i].spin ?? 1} fera={personagens[i].fera ?? undefined} />
-          )}
-          <GaugeBar label="Especial" value={hud?.beys[i].special ?? 0} tipo="especial" />
-          {hud?.beys[i].engineGear ? (
-            <span className="text-sm font-semibold text-texto-2">Engine Gear: {hud.beys[i].egUsed ? 'usado nesta rodada' : 'pronto (ataque + defesa juntos)'}</span>
-          ) : null}
-        </div>
-      ))}
-      <div className="order-2 grid w-[min(28rem,34vw)] justify-items-center gap-2">
-        <RoundRow rounds={hud?.rounds ?? []} total={3} feraP1={personagens[0].fera ?? undefined} feraP2={personagens[1].fera ?? undefined} className="w-full" />
-        <p className="text-sm font-semibold tabular-nums text-texto-2">
-          {lancando ? 'Aperte o botão X (F / K) quando a barra estiver no topo' : `Rodada ${hud?.round ?? 1} · ${hud?.restante ?? ROUND_SECONDS}s`}
-        </p>
+    <div className="grid gap-3">
+      <div className="flex items-center gap-3">
+        <span className={cn('px-2 py-0.5 text-base font-extrabold text-tinta', i === 0 ? 'bg-p1' : 'bg-p2')}>P{i + 1}</span>
+        <span className="cartela text-2xl uppercase">{p.nome}</span>
       </div>
+      <span className="text-base font-semibold text-texto-2">{p.bey}</span>
+      {/* Mesmas linhas em todas as fases: se o painel mudasse de altura, o conteúdo pularia. */}
+      {lancando ? (
+        <GaugeBar label="Força do lançamento" value={hud?.launch[i] ?? 0} tipo="especial" />
+      ) : (
+        <GaugeBar label="Giro" value={b?.spin ?? 1} fera={p.fera ?? undefined} />
+      )}
+      <GaugeBar label="Especial" value={b?.special ?? 0} tipo="especial" />
+      {b?.engineGear ? (
+        <span className="text-sm font-semibold text-texto-2">Engine Gear: {b.egUsed ? 'usado nesta rodada' : 'pronto'}</span>
+      ) : null}
+    </div>
+  );
+}
+
+function Placar({ personagens, hud }) {
+  const lancando = hud?.phase === 'launch';
+  return (
+    <div className="grid gap-3">
+      <p className="font-extrabold">Melhor de 3</p>
+      <RoundRow rounds={hud?.rounds ?? []} total={3} feraP1={personagens[0].fera ?? undefined} feraP2={personagens[1].fera ?? undefined} className="w-full" />
+      <p className="text-sm font-semibold tabular-nums text-texto-2">
+        {lancando ? 'Aperte o botão X (F / K) quando a barra estiver no topo' : `Rodada ${hud?.round ?? 1} · ${hud?.restante ?? ROUND_SECONDS}s`}
+      </p>
     </div>
   );
 }

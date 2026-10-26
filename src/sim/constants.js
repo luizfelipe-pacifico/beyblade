@@ -4,10 +4,12 @@
 export const DT = 1 / 60;
 export const SUBSTEPS = 2;
 
-// Arena ~16:1 em relação à bey, como no GBA (chão de 512 px, bey de 32 px). O brinquedo é ~9:1 e
-// ficava pequeno na tela (GAME_FLOW.md, proporção entre arena e bey). As velocidades e os limiares
-// abaixo foram escalados ×1,8 junto com o raio, para o ritmo da luta em segundos não mudar.
-export const ARENA_RADIUS = 360;
+// Arena ~20:1 em relação à bey (raio 450 mm; o GBA é 16:1 e o brinquedo ~9:1, ver GAME_FLOW.md).
+// As beys mantêm o tamanho real. Distâncias, velocidades e limiares de impacto foram desenhados para
+// uma arena de 200 mm e escalam por S, então o ritmo da luta em segundos não muda com o tamanho;
+// o dano por mm/s de impacto escala por 1/S.
+export const ARENA_RADIUS = 450;
+const S = ARENA_RADIUS / 200;
 export const POCKETS = [Math.PI / 2, (7 * Math.PI) / 6, (11 * Math.PI) / 6];
 export const POCKET_HALF_WIDTH = 0.26;
 
@@ -17,46 +19,106 @@ export const FINISH_SECONDS = 1.4;
 export const ROUND_OVER_SECONDS = 1.8;
 export const ROUNDS_TO_WIN = 2;
 
-export const START_X = 200;
+export const START_X = 110 * S;
 
 export const PHYSICS = {
   bowlPull: 4,
-  orbit: 468,
-  control: 1620,
-  maxSpeed: 1170,
+  orbit: 260 * S,
+  control: 900 * S,
+  maxSpeed: 650 * S,
   damping: 0.8,
   stoppedDamping: 2.6,
   restitution: 0.8,
-  repel: 216,
-  dashSpeed: 774,
+  repel: 120 * S,
+  dashSpeed: 430 * S,
   dashCooldown: 0.8,
   dashSpinCost: 0.03,
   jumpTime: 0.45,
   jumpCooldown: 0.9,
-  dodgeSpeed: 684,
+  dodgeSpeed: 380 * S,
   dodgeCooldown: 0.8,
   dodgeInvuln: 0.25,
   wallRestitution: 0.6,
-  pocketOutSpeed: 468,
-  rimOutSpeed: 1170,
-  hitDamage: 0.0000667,
-  wallDamage: 0.0000278,
+  pocketOutSpeed: 260 * S,
+  rimOutSpeed: 650 * S,
+  hitDamage: 0.00012 / S,
+  wallDamage: 0.00005 / S,
   equalization: 0.05,
-  burstImpact: 630,
+  burstImpact: 350 * S,
   burstSpin: 0.3,
   spinDecay: 0.018,
   guardDrain: 0.01,
   specialPassive: 0.03,
-  specialPerImpact: 0.00022,
-  launchSpeed: 216,
-  launchSpeedPerPower: 360,
-  launchDrift: 72,
-  specialRush: 1620,
-  hitEventImpact: 108,
-  equalizeImpact: 90,
-  burstSpan: 1440,
-  wallEventSpeed: 270,
+  specialPerImpact: 0.0004 / S,
+  launchSpeed: 120 * S,
+  launchSpeedPerPower: 200 * S,
+  launchDrift: 40 * S,
+  specialRush: 900 * S,
+  hitEventImpact: 60 * S,
+  equalizeImpact: 50 * S,
+  burstSpan: 800 * S,
+  wallEventSpeed: 150 * S,
+  // Faixas de impacto que a apresentação usa (som forte e vibração máxima).
+  strongImpact: 300 * S,
+  maxImpact: 600 * S,
 };
+
+// Tigela funda (docs/BEY_BEHAVIOR.md, física da tigela): quem move a bey é a gravidade na rampa e o
+// atrito da ponta que gira, não um motor. Perfil h(r) = d·(r/R)² + (rim·d/3)·(r/R)⁶: parabólico no meio e
+// mais íngreme perto da parede. Com d = 0,2·R o período de pêndulo fica em ~2 s.
+export const GRAVITY = 9810;
+export const BOWL = {
+  depth: 0.2 * ARENA_RADIUS,
+  rim: 2,
+  maxTilt: 0.4,
+  // Abaixo deste giro o eixo inclina mais (o "bambear" do fim da rodada).
+  wobbleSpin: 0.3,
+  wobbleTilt: 0.15,
+  // Atrito de quem já parou de girar: escorrega até o fundo e fica.
+  stoppedSlide: 0.3,
+  // Arrasto proporcional à velocidade (s⁻¹): com o impulso da ponta, dá uma velocidade de equilíbrio.
+  drag: 0.9,
+};
+
+// Ponta, em frações de g: empurrão lateral na rampa (drive), impulso para frente que a borda da ponta
+// tira do giro mesmo no plano (fwd), tração máxima (mu) e atrito de deslizamento (slide).
+// Ponta fina quase não anda (fica no centro); ponta larga corre e desenha a flor.
+export const TIPS = {
+  sharp: { drive: 0.05, fwd: 0, mu: 0.08, slide: 0.04 },
+  bola: { drive: 0.2, fwd: 0.075, mu: 0.15, slide: 0.03 },
+  'semi-flat': { drive: 0.45, fwd: 0.14, mu: 0.3, slide: 0.08 },
+  flat: { drive: 0.7, fwd: 0.22, mu: 0.45, slide: 0.1 },
+  grip: { drive: 0.9, fwd: 0.3, mu: 0.8, slide: 0.12 },
+};
+
+// O que a ponta não explica (massa efetiva, recuo próprio e "life after death" na equalização de giro).
+export const TYPES = {
+  attack: { mass: 0.9, recoil: 1.4, lad: 0.7 },
+  balance: { mass: 1, recoil: 1, lad: 1 },
+  defense: { mass: 1.5, recoil: 0.5, lad: 1 },
+  stamina: { mass: 1, recoil: 0.8, lad: 1.3 },
+};
+
+// Ponta do catálogo (calculo.ponta) → classe de comportamento; sem ponta confirmada, o tipo decide.
+export function tipClass(ponta, tipo) {
+  const p = String(ponta ?? '');
+  if (/grip|rubber|borracha/.test(p)) return 'grip';
+  if (/sharp|bearing/.test(p)) return 'sharp';
+  if (/ball|bola/.test(p)) return 'bola';
+  if (/semi/.test(p)) return 'semi-flat';
+  if (/flat/.test(p)) return 'flat';
+  return { attack: 'flat', defense: 'bola', stamina: 'sharp' }[tipo] ?? 'semi-flat';
+}
+
+// Altura na tigela (mm) e inclinação |h'(r)|, usadas pela física e pelo render (e pelo 3D depois).
+export function bowlHeight(r) {
+  const u = Math.min(1, r / ARENA_RADIUS);
+  return BOWL.depth * (u * u + (BOWL.rim / 3) * u ** 6);
+}
+export function bowlSlope(r) {
+  const u = Math.min(1, r / ARENA_RADIUS);
+  return ((2 * BOWL.depth) / ARENA_RADIUS) * u * (1 + BOWL.rim * u ** 4);
+}
 
 export const FINISHES = {
   spin: 'Parada',

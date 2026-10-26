@@ -5,7 +5,13 @@
 import { nextRandom } from './rng.js';
 import {
   ARENA_RADIUS,
+  BOWL,
   DT,
+  GRAVITY,
+  TIPS,
+  TYPES,
+  bowlSlope,
+  tipClass,
   FINISH_SECONDS,
   LAUNCH_SECONDS,
   PHYSICS as P,
@@ -41,6 +47,10 @@ function makeBey(def, slot) {
     mass: def.medidas?.peso_g ?? 38,
     dir: def.rotacao === 'esquerda' ? -1 : 1,
     tipo: def.tipo ?? 'balance',
+    // Comportamento na arena: a ponta manda (docs/BEY_BEHAVIOR.md); o tipo cobre massa e recuo.
+    tip: def.tip ?? TIPS[tipClass(def.ponta, def.tipo)],
+    kind: TYPES[def.tipo] ?? TYPES.balance,
+    peso: unit(a.peso),
     atk: unit(a.ataque),
     def: unit(a.defesa),
     sta: unit(a.stamina),
@@ -209,8 +219,12 @@ function handleCommands(state, inputs) {
       b.attackCharge = 0;
       if (b.engineGear && !b.egUsed) engineGear(state, b);
     }
-    // ✕: segurar carrega, soltar investe.
-    if (h.attack && !prev.comboAD) b.attackCharge = Math.min(1, b.attackCharge + DT);
+    // ✕: segurar carrega, soltar investe. Avisa uma vez quando a carga enche (o render dá o "estalo").
+    if (h.attack && !prev.comboAD) {
+      const antes = b.attackCharge;
+      b.attackCharge = Math.min(1, b.attackCharge + DT);
+      if (antes < 1 && b.attackCharge === 1) state.events.push({ type: 'chargeFull', slot: b.slot });
+    }
     if (prev.attack && !h.attack && !prev.comboAD) attack(state, b, inp.move);
     if (!h.attack && !h.defend) prev.comboAD = false;
 
@@ -349,27 +363,58 @@ function moveBey(state, b, h, inp) {
     return;
   }
   if (b.state === 'burst') return;
-  const spin = b.spin;
+  const spin = Math.max(0, b.spin);
   const m = mods(b);
-  let ax = -P.bowlPull * b.x;
-  let ay = -P.bowlPull * b.y;
+  const r = Math.hypot(b.x, b.y);
+  const ux = r > 1e-6 ? b.x / r : 0;
+  const uy = r > 1e-6 ? b.y / r : 0;
+  const slope = bowlSlope(r);
+  // 1) Gravidade na rampa: puxa para o fundo, mais forte perto da parede.
+  let ax = -GRAVITY * slope * ux;
+  let ay = -GRAVITY * slope * uy;
+  const speed0 = Math.hypot(b.vx, b.vy);
   if (b.state === 'active') {
-    const d = Math.hypot(b.x, b.y) || 1;
-    ax += (-b.y / d) * P.orbit * spin * b.dir;
-    ay += (b.x / d) * P.orbit * spin * b.dir;
-    if (inp) {
-      // No ar a bey quase não muda de rumo; na defesa anda devagar.
-      const f = P.control * (0.6 + 0.6 * b.vel) * (0.4 + 0.6 * spin) * (b.guard ? 0.4 : 1) * (b.air > 0 ? 0.3 : 1) * m.speed;
+    const tip = b.tip;
+    // 2) Ponta: inclinada na rampa, empurra a bey de lado no sentido da rotação. Giro baixo inclina mais.
+    const wobble = spin < BOWL.wobbleSpin ? ((BOWL.wobbleSpin - spin) / BOWL.wobbleSpin) * BOWL.wobbleTilt : 0;
+    const tilt = Math.min(BOWL.maxTilt, slope + wobble);
+    const tracao = tip.mu * GRAVITY;
+    const lado = Math.min(tracao, tip.drive * spin * tilt * GRAVITY * (b.air > 0 ? 0 : 1));
+    ax += -uy * lado * b.dir;
+    ay += ux * lado * b.dir;
+    // A borda da ponta, girando no chão, empurra a bey para frente (também limitada pela tração).
+    if (speed0 > 1 && b.air <= 0) {
+      const frente = Math.min(tracao, tip.fwd * spin * GRAVITY);
+      ax += (b.vx / speed0) * frente;
+      ay += (b.vy / speed0) * frente;
+    }
+    // 4) Jogador inclina a bey: soma ao movimento e também tem teto na tração da ponta (não é um carro).
+    if (inp && b.air <= 0) {
+      const f = tracao * (0.6 + 0.6 * b.vel) * (0.4 + 0.6 * spin) * (b.guard ? 0.4 : 1) * m.speed;
       ax += inp.move.x * f;
       ay += inp.move.y * f;
     }
   }
+  // 3) Atrito contra o piso. Parada e com a rampa puxando menos que o atrito, a bey não se mexe
+  // (atrito estático); sem isso ela "rastejava" alguns mm/s a cada subpasso.
+  const slide = (b.state === 'active' ? b.tip.slide * (b.guard ? 2 : 1) : BOWL.stoppedSlide) * GRAVITY;
+  if (b.state !== 'active' && speed0 <= slide * h && GRAVITY * slope <= slide) {
+    b.vx = 0;
+    b.vy = 0;
+    return;
+  }
+  if (speed0 > 1e-6 && b.air <= 0) {
+    const freio = Math.min(slide, speed0 / h);
+    ax -= (b.vx / speed0) * freio;
+    ay -= (b.vy / speed0) * freio;
+  }
   b.vx += ax * h;
   b.vy += ay * h;
-  const damping = b.state === 'active' ? P.damping * (b.guard ? 2 : 1) : P.stoppedDamping;
-  const k = Math.exp(-damping * h);
-  b.vx *= k;
-  b.vy *= k;
+  if (b.air <= 0) {
+    const k = Math.exp(-BOWL.drag * h);
+    b.vx *= k;
+    b.vy *= k;
+  }
   const speed = Math.hypot(b.vx, b.vy);
   const cap = P.maxSpeed * 1.5;
   if (speed > cap) {
@@ -379,7 +424,9 @@ function moveBey(state, b, h, inp) {
   b.x += b.vx * h;
   b.y += b.vy * h;
   if (b.state === 'active') {
-    b.spin -= (P.spinDecay * (1.6 - b.sta) * (0.8 + 0.4 * b.vel) + (b.guard ? P.guardDrain : 0)) * h;
+    // Peso gasta giro e ponta de mais tração também (defesa perde para resistência na Parada).
+    const desgaste = (0.6 + b.tip.mu) * (0.85 + 0.05 * (1 + 9 * b.peso));
+    b.spin -= (P.spinDecay * (1.6 - b.sta) * desgaste + (b.guard ? P.guardDrain : 0)) * h;
     b.special = Math.min(1, b.special + P.specialPassive * h);
     b.dashCd = Math.max(0, b.dashCd - h);
     b.jumpCd = Math.max(0, b.jumpCd - h);
@@ -391,7 +438,7 @@ function moveBey(state, b, h, inp) {
     }
     b.effects = b.effects.filter((e) => (e.t -= h) > 0);
   }
-  b.angle += b.dir * (6 + 60 * Math.max(0, spin)) * h;
+  b.angle += b.dir * (6 + 60 * spin) * h;
 }
 
 function collide(state, a, b, finishes) {
@@ -406,8 +453,8 @@ function collide(state, a, b, finishes) {
   const ny = dy / dist;
   const ma_ = mods(a);
   const mb_ = mods(b);
-  const ma = a.mass * ma_.mass;
-  const mb = b.mass * mb_.mass;
+  const ma = a.mass * a.kind.mass * ma_.mass;
+  const mb = b.mass * b.kind.mass * mb_.mass;
   const tot = ma + mb;
   const overlap = minD - dist;
   a.x -= nx * overlap * (mb / tot);
@@ -423,8 +470,9 @@ function collide(state, a, b, finishes) {
   const same = a.dir === b.dir;
   const j = ((1 + P.restitution) * impact) / (1 / ma + 1 / mb);
   const repel = P.repel * sr * (same ? 1.3 : 0.8);
-  const knockA = (1.3 - 0.6 * a.rko) * ma_.knockIn * mb_.knockOut;
-  const knockB = (1.3 - 0.6 * b.rko) * mb_.knockIn * ma_.knockOut;
+  // Recuo próprio pelo tipo (ataque se joga mais, defesa absorve), BEY_BEHAVIOR.md.
+  const knockA = (1.3 - 0.6 * a.rko) * a.kind.recoil * ma_.knockIn * mb_.knockOut;
+  const knockB = (1.3 - 0.6 * b.rko) * b.kind.recoil * mb_.knockIn * ma_.knockOut;
   const pushA = (j / ma + repel * (mb / tot) * 2) * knockA;
   const pushB = (j / mb + repel * (ma / tot) * 2) * knockB;
   a.vx -= nx * pushA;
@@ -441,9 +489,10 @@ function collide(state, a, b, finishes) {
   if (ma_.steal && a.state === 'active') a.spin = Math.min(1, a.spin + dmgB * ma_.steal);
   if (mb_.steal && b.state === 'active') b.spin = Math.min(1, b.spin + dmgA * mb_.steal);
   if (!same && impact > P.equalizeImpact && a.state === 'active' && b.state === 'active') {
+    // Só em rotação oposta; quem recebe aproveita conforme o "life after death" do tipo.
     const transfer = (a.spin - b.spin) * P.equalization;
-    a.spin -= transfer;
-    b.spin += transfer;
+    a.spin -= transfer * (transfer < 0 ? a.kind.lad : 1);
+    b.spin += transfer * (transfer > 0 ? b.kind.lad : 1);
   }
   a.special = Math.min(1, a.special + impact * P.specialPerImpact);
   b.special = Math.min(1, b.special + impact * P.specialPerImpact);

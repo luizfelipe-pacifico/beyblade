@@ -44,7 +44,7 @@ export function ControlHint({ pad, tecla, children, className }) {
   return (
     <span className={cn('inline-flex items-center gap-2 text-base font-semibold', className)}>
       {pad ? <PadGlyph name={pad} size={26} /> : null}
-      {tecla ? <Kbd className="h-7 min-w-7 px-2 text-sm">{tecla}</Kbd> : null}
+      {tecla ? <Kbd className="h-7 min-w-7 whitespace-nowrap px-2 text-sm">{tecla}</Kbd> : null}
       <span>{children}</span>
     </span>
   );

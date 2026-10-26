@@ -108,3 +108,4 @@ Atualize no mesmo commit da mudança (e crie novos arquivos quando surgir um ass
 - `docs/REVERSE_ENGINEERING.md`: ROM de GBA de referência, descobertas e extração de dados/assets
 - `docs/GAME_FLOW.md`: telas da partida (personagem, bey, P2/CPU, arena, entrada, lançamento, batalha) e controles da batalha
 - `docs/BEY_BEHAVIOR.md`: comportamento na arena por tipo (ataque, equilíbrio, defesa, resistência) e aparência da arena estilo Burst
+- `docs/SKILLS.md`: skills e plugins do Claude Code disponíveis e recomendados, com o uso de cada um no projeto

@@ -11,6 +11,21 @@ const MARGIN_MM = 24;
 const MAX_DPR = 1.5;
 const MAX_SPARKS = 160;
 const PLAYER_COLORS = [colors.p1, colors.p2];
+const FLASH_SECONDS = 0.3;
+
+function makeGlow(color) {
+  const size = 128;
+  const c = document.createElement('canvas');
+  c.width = size;
+  c.height = size;
+  const g = c.getContext('2d');
+  const grad = g.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
+  grad.addColorStop(0, color);
+  grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+  g.fillStyle = grad;
+  g.fillRect(0, 0, size, size);
+  return c;
+}
 
 export class ArenaRenderer {
   constructor(canvas, spriteUrls) {
@@ -25,6 +40,11 @@ export class ArenaRenderer {
       return img;
     });
     this.sparks = Array.from({ length: MAX_SPARKS }, () => ({ life: 0 }));
+    this.t = 0;
+    this.flashes = [0, 0];
+    this.reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+    // Halo do rush, desenhado uma vez e só reaproveitado (nada de shadowBlur por frame na GPU integrada).
+    this.glowAtaque = makeGlow(colors.ataque);
     this.resize();
   }
 
@@ -112,8 +132,60 @@ export class ArenaRenderer {
     }
   }
 
+  // "Estalo" da carga cheia do ataque: um anel que se expande uma vez em volta da bey.
+  flash(slot) {
+    this.flashes[slot] = FLASH_SECONDS;
+  }
+
+  // Carga do ataque (✕ segurado): halo laranja que cresce e pulsa mais rápido com a força, e um anel
+  // serrilhado girando que fecha quando a carga enche. Forma e movimento diferentes da defesa.
+  drawCharge(x, y, r, c) {
+    const { ctx, dpr } = this;
+    const pulso = this.reduceMotion ? 1 : 0.85 + 0.15 * Math.sin(this.t * (8 + 14 * c));
+    const size = r * 2 * (1.6 + 0.9 * c);
+    ctx.globalAlpha = (0.25 + 0.55 * c) * pulso;
+    ctx.drawImage(this.glowAtaque, x - size / 2, y - size / 2, size, size);
+    ctx.globalAlpha = 1;
+    const raio = r + (6 + 10 * c) * dpr;
+    const giro = this.reduceMotion ? 0 : this.t * (4 + 10 * c);
+    ctx.strokeStyle = colors.ataque;
+    ctx.lineWidth = (2 + 3 * c) * dpr;
+    const dentes = 12;
+    const cheio = c >= 1 ? 1 : 0.55;
+    for (let k = 0; k < dentes; k++) {
+      const a0 = giro + (k / dentes) * Math.PI * 2;
+      ctx.beginPath();
+      ctx.arc(x, y, raio, a0, a0 + ((Math.PI * 2) / dentes) * cheio);
+      ctx.stroke();
+    }
+  }
+
+  // Defesa (○ segurado): escudo hexagonal ciano, sólido e parado; fica mais grosso conforme firma.
+  drawGuard(x, y, r, g) {
+    const { ctx, dpr } = this;
+    const raio = r + 9 * dpr;
+    ctx.beginPath();
+    for (let k = 0; k < 6; k++) {
+      const a = (k / 6) * Math.PI * 2 + Math.PI / 6;
+      const px = x + Math.cos(a) * raio;
+      const py = y + Math.sin(a) * raio;
+      if (k === 0) ctx.moveTo(px, py);
+      else ctx.lineTo(px, py);
+    }
+    ctx.closePath();
+    ctx.globalAlpha = 0.12 + 0.22 * g;
+    ctx.fillStyle = colors.defesa;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+    ctx.strokeStyle = colors.defesa;
+    ctx.lineWidth = (2 + 4 * g) * dpr;
+    ctx.stroke();
+  }
+
   draw(prev, curr, alpha, dt) {
     const { ctx, scale } = this;
+    this.t += dt;
+    this.flashes = this.flashes.map((f) => Math.max(0, f - dt));
     const w = this.canvas.width;
     const h = this.canvas.height;
     ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -144,6 +216,21 @@ export class ArenaRenderer {
       ctx.beginPath();
       ctx.arc(x, y, r + 4 * this.dpr, 0, Math.PI * 2);
       ctx.stroke();
+      if (b.state === 'active') {
+        if (b.guard) this.drawGuard(x, y, r, b.guardCharge);
+        else if (b.attackCharge > 0) this.drawCharge(x, y, r, b.attackCharge);
+      }
+      const f = this.flashes[i];
+      if (f > 0) {
+        const p = 1 - f / FLASH_SECONDS;
+        ctx.globalAlpha = f / FLASH_SECONDS;
+        ctx.strokeStyle = colors.ataque;
+        ctx.lineWidth = 4 * this.dpr;
+        ctx.beginPath();
+        ctx.arc(x, y, r + (this.reduceMotion ? 16 : 10 + 40 * p) * this.dpr, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+      }
       const sprite = this.sprites[i];
       if (sprite) {
         ctx.save();

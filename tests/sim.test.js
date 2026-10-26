@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createMatch, stepMatch, launchPower, NEUTRAL_INPUT } from '../src/sim/match.js';
-import { ARENA_RADIUS, DT, LAUNCH_SECONDS } from '../src/sim/constants.js';
+import { ARENA_RADIUS, DT, LAUNCH_SECONDS, PHYSICS } from '../src/sim/constants.js';
 
 const bey = (over = {}) => ({
   slug: 'teste',
@@ -87,8 +87,8 @@ test('a bey that runs out of spin loses by spin finish', () => {
 test('a fast bey leaving through a pocket loses by ring out', () => {
   const s = toBattle(createMatch({ beys: [bey(), bey()] }));
   const p = s.beys[1];
-  // Bolso em 90° (para baixo na tela), saindo a 500 mm/s.
-  Object.assign(p, { x: 0, y: ARENA_RADIUS - p.r - 1, vx: 0, vy: 500 });
+  // Bolso em 90° (para baixo na tela), saindo acima do limiar de saída.
+  Object.assign(p, { x: 0, y: ARENA_RADIUS - p.r - 1, vx: 0, vy: PHYSICS.pocketOutSpeed * 1.2 });
   stepMatch(s);
   assert.equal(p.state, 'out');
   assert.deepEqual(s.pending, { winner: 1, finish: 'ringout' });
@@ -97,7 +97,7 @@ test('a fast bey leaving through a pocket loses by ring out', () => {
 test('a slow bey bounces off the rim outside a pocket', () => {
   const s = toBattle(createMatch({ beys: [bey(), bey()] }));
   const p = s.beys[1];
-  Object.assign(p, { x: ARENA_RADIUS - p.r - 1, y: 0, vx: 200, vy: 0 });
+  Object.assign(p, { x: ARENA_RADIUS - p.r - 1, y: 0, vx: PHYSICS.pocketOutSpeed * 0.5, vy: 0 });
   stepMatch(s);
   assert.equal(p.state, 'active');
   assert.ok(p.vx < 0, 'volta para dentro');
@@ -150,13 +150,26 @@ test('a charged attack hits harder than a quick tap', () => {
     const s = toBattle(createMatch({ beys: [bey(), bey()] }));
     const a = s.beys[0];
     Object.assign(a, { x: 0, y: 0, vx: 0, vy: 0 });
-    Object.assign(s.beys[1], { x: 150, y: 0 });
+    // Adversário fora do palco: sem choque no meio da carga, só a investida conta.
+    Object.assign(s.beys[1], { x: 150, y: 0, state: 'burst' });
     for (let t = 0; t < frames; t++) stepMatch(s, [hold({ attack: true }), NEUTRAL_INPUT]);
     Object.assign(a, { vx: 0, vy: 0 });
     stepMatch(s, [NEUTRAL_INPUT, NEUTRAL_INPUT]);
     return Math.hypot(a.vx, a.vy);
   };
   assert.ok(dashSpeed(ticks(1)) > dashSpeed(1) * 1.4);
+});
+
+test('holding attack announces a full charge exactly once', () => {
+  const s = toBattle(createMatch({ beys: [bey(), bey()] }));
+  Object.assign(s.beys[1], { x: 300, y: 0 });
+  let cheias = 0;
+  for (let t = 0; t < ticks(2); t++) {
+    stepMatch(s, [hold({ attack: true }), NEUTRAL_INPUT]);
+    cheias += s.events.filter((e) => e.type === 'chargeFull').length;
+  }
+  assert.equal(cheias, 1);
+  assert.equal(s.beys[0].attackCharge, 1);
 });
 
 test('✕ + ○ fires the Engine Gear once per round and only on Engine Gear beys', () => {

@@ -15,6 +15,26 @@ Formato:
 
 ---
 
+## D-028: física da tigela funda e comportamento pela ponta
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu que cada tipo de bey se comporte como no brinquedo (ataque rápido que para antes; resistência sempre puxada para o centro; defesa girando num círculo pequeno em volta do centro) e notou que a bey "corria como se a arena fosse plana". A especificação está em [`BEY_BEHAVIOR.md`](BEY_BEHAVIOR.md).
+- Decisão:
+  - a tigela é **funda** (perfil `h(r)` parabólico com borda íngreme, profundidade 0,2·R, período de pêndulo ~2,1 s): a gravidade na rampa substitui o empurrão constante do protótipo;
+  - a **ponta** (de `calculo.ponta` no catálogo) define o movimento: empurrão lateral na rampa, impulso para frente, tração máxima e atrito; o tipo só cobre massa, recuo e *life after death* na equalização de giro; o comando do jogador inclina a bey e é limitado pela tração da ponta;
+  - atrito estático para bey parada; perda de giro cresce com o peso e a tração da ponta;
+  - arena com **raio de 450 mm (~20:1)**, beys no tamanho real, velocidades escaladas por um fator único.
+- Consequências: o comportamento é medido em `tests/sim-bowl.test.js` (energia, pêndulo, raio por ponta, ordem de parada ataque → equilíbrio → defesa → resistência). Upper attack e Gyro EG da especificação ainda não estão implementados. Substitui o raio de 360 mm da D-026.
+
+## D-027: brilho de carga do ataque e da defesa
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu que, ao segurar ✕, a bey brilhe para medir a força do rush, e que a defesa tenha outro estilo de brilho, na cor de defesa.
+- Decisão: **ataque** com halo laranja (token `ataque`) que cresce e pulsa mais rápido com a carga, anel serrilhado girando que fecha na carga cheia e um "estalo" (anel que se expande uma vez, com vibração) quando enche; **defesa** com escudo hexagonal ciano (token `defesa`), sólido e parado, mais grosso conforme firma. Forma e movimento diferentes, não só a cor; halo pré-renderizado (sem `shadowBlur`); com movimento reduzido nada gira, pulsa nem se expande.
+- Consequências: tokens `ataque` e `defesa` em `design-system/tokens.json`; evento `chargeFull` na simulação.
+
 ## D-026: regras da batalha do protótipo (melhor de 3, arena 16:1)
 
 - Data: 2026-10-25

@@ -5,6 +5,8 @@ export const colors = {
   tinta: tokens.colors.tinta, tinta2: tokens.colors['tinta-2'], tinta3: tokens.colors['tinta-3'],
   papel: tokens.colors.papel, texto2: tokens.colors['texto-2'], texto3: tokens.colors['texto-3'],
   chamada: tokens.colors.chamada, p1: tokens.colors.p1, p2: tokens.colors.p2, destructive: tokens.colors.destructive,
+  // Brilho de carga na batalha: ataque (rush) e defesa têm cor e forma próprias (D-027).
+  ataque: tokens.colors.ataque, defesa: tokens.colors.defesa,
 };
 export const feras = Object.fromEntries(Object.entries(tokens.beasts).map(([key, beast]) =>
   [key, { nome: beast.name, campo: beast.field, campoTexto: beast.text }]));
