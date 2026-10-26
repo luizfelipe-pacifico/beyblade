@@ -9,7 +9,7 @@ const inteiro = (v, min, max, padrao) => {
   return Number.isInteger(n) && n >= min && n <= max ? n : padrao;
 };
 
-// b1/b2 = "aleatoria": sorteada no servidor, para a bey não mudar entre o HTML e a hidratação (D-046).
+// b1/b2 = "aleatoria": sorteada no servidor, para a bey não mudar entre o HTML e a hidratação (D-047).
 // Contrato com a seleção (D-023, D-035): /batalha?p1&p2[&b1&b2][&arena][&cpu=2][&modo&etapa&cpuNivel].
 export default async function BatalhaPage({ searchParams }) {
   const { p1, p2, b1, b2, arena, cpu, modo, etapa, cpuNivel } = await searchParams;

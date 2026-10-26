@@ -1,4 +1,4 @@
-// Sorteios da seleção (D-046). Puro: recebe o catálogo de beys (beys.generated.json) e o sorteio.
+// Sorteios da seleção (D-047). Puro: recebe o catálogo de beys (beys.generated.json) e o sorteio.
 export const ALEATORIO = 'aleatoria';
 
 // "aleatoria" vira uma das beys do próprio personagem; qualquer outro valor passa direto.

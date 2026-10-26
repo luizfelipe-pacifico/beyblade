@@ -15,7 +15,7 @@ Formato:
 
 ---
 
-## D-046: bey aleatória na seleção
+## D-047: bey aleatória na seleção
 
 - Data: 2026-10-25
 - Status: Aceita
