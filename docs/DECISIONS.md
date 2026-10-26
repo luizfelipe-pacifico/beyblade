@@ -5,6 +5,14 @@ Toda decisão de produto ou técnica tomada durante o desenvolvimento entra aqui
 Formato:
 
 ```
+## D-034: `dev:all` fecha quem estiver na porta e abre de novo
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu que todo `pnpm run dev:all` feche o que estiver na porta e a abra de novo, em vez de parar com "porta em uso".
+- Decisão: antes de subir o jogo (5000) e a landing (3000), o `scripts/dev-all.js` acha quem escuta na porta (`netstat -ano` + `tasklist` no Windows, `lsof` fora dele), encerra a árvore do processo e espera a porta liberar. A porta nunca é trocada. **Exceção:** processo do Docker (`com.docker*`, `wslrelay`, `vpnkit`) não é derrubado, porque levaria junto todos os contêineres do usuário; o script avisa qual porta é de contêiner e segue (a landing não sobe; o jogo para).
+- Consequências: rodar `dev:all` de novo fecha a janela e o servidor anteriores. Hoje a 3000 é de um contêiner do usuário (`talentum-local-1`), então a landing continua sem subir até ele ser parado.
+
 ## D-XXX: título curto
 - Data: AAAA-MM-DD
 - Status: Aceita | Substituída por D-YYY
