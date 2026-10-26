@@ -100,9 +100,12 @@ test('beysByCharacter groups by owner, keeps the roster default first and falls 
     'dragoon-s': { slug: 'dragoon-s', dono: 'tyson', ordem: 1 },
     'dragoon-g': { slug: 'dragoon-g', dono: 'tyson', ordem: 5 },
     'dragoon-v': { slug: 'dragoon-v', dono: 'tyson', ordem: 3 },
+    'dranzer-f@kai': { slug: 'dranzer-f', dono: 'kai', ordem: 0, sprite: '/art/beys/dranzer-f.svg' },
   };
-  const roster = [{ slug: 'tyson', beySlug: 'dragoon-g' }, { slug: 'kai', beySlug: 'dranzer-g' }];
-  assert.deepEqual(beysByCharacter(generated, roster), { tyson: ['dragoon-g', 'dragoon-s', 'dragoon-v'], kai: ['dranzer-g'] });
-  assert.deepEqual(beyImage('kai-bey', null), { kind: 'svg', src: '/art/beys/kai-bey.svg' });
-  assert.equal(beyImage('x', { beys: { x: { sprite: '/rom/beys/x.png', frames: 3, frameSize: { width: 32 } } } }).kind, 'sprite');
+  const roster = [{ slug: 'tyson', beySlug: 'dragoon-g' }, { slug: 'kai', beySlug: 'dranzer-g' }, { slug: 'ray', beySlug: 'driger-g' }];
+  assert.deepEqual(beysByCharacter(generated, roster), { tyson: ['dragoon-g', 'dragoon-s', 'dragoon-v'], kai: ['dranzer-f@kai'], ray: ['driger-g'] });
+  // O id com @ resolve para o slug da pesquisa, que é a chave da ROM.
+  const rom = { beys: { 'dranzer-f': { sprite: '/rom/beys/dranzer-f.png', frames: 3, frameSize: { width: 32 } } } };
+  assert.equal(beyImage('dranzer-f@kai', generated, rom).src, '/rom/beys/dranzer-f.png');
+  assert.deepEqual(beyImage('dranzer-f@kai', generated, null), { kind: 'svg', src: '/art/beys/dranzer-f.svg' });
 });

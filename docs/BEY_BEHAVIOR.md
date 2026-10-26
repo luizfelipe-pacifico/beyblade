@@ -89,7 +89,7 @@ O usuário notou que a bey "corre muito, como se a arena fosse plana". Causa no 
 
 ### O que a física diz
 
-1. **A tigela é um poço de energia.** Subir a rampa troca velocidade por altura e descer devolve. Uma bey solta perto da borda desce acelerando, passa rápido pelo centro, sobe do outro lado freando e volta, como um pêndulo. Para um perfil parabólico `h(r) = d · (r/R)²` (profundidade `d` na borda de raio `R`), a aceleração horizontal é `a = −g · h′(r) = −(2 g d / R²) · r`: um oscilador com `ω₀ = √(2 g d) / R`. Os estádios reais têm a borda mais íngreme (parede/*tornado ridge*), por isso o termo cresce perto de `R`.
+1. **A tigela é um poço de energia.** Subir a rampa troca velocidade por altura e descer devolve. Uma bey solta perto da borda desce acelerando, passa rápido pelo centro, sobe do outro lado freando e volta, como um pêndulo (período `2π · R / √(2 g d)`; com `d = 0,2·R` e `R = 450 mm`, ≈ 2,1 s). Para um perfil parabólico `h(r) = d · (r/R)²` (profundidade `d` na borda de raio `R`), a aceleração horizontal é `a = −g · h′(r) = −(2 g d / R²) · r`: um oscilador com `ω₀ = √(2 g d) / R`. Os estádios reais têm a borda mais íngreme (parede/*tornado ridge*), por isso o termo cresce perto de `R`.
 2. **A ponta é o "motor".** Em rampa, o eixo da bey inclina na direção da descida e ela passa a encostar a borda da ponta no chão. A borda gira com a bey e, com atrito, empurra a bey **de lado** (perpendicular à rampa), no sentido definido pela rotação. Isso gera a órbita em volta do centro. A força tem teto no atrito: `|F| ≤ μ · m · g`.
    - **Ponta fina (sharp):** quase sem borda e atrito baixo → quase não há empurrão lateral; a gravidade vence e ela escorrega para o centro e fica (resistência).
    - **Bola:** rola em vez de escorregar → pouco empurrão; desce para o centro e roda num círculo pequeno (defesa).
@@ -107,7 +107,7 @@ Por subpasso, em unidades do mundo (mm, s), com `g = 9810 mm/s²`:
 
 ```
 // 1) gravidade na tigela (substitui bowlPull): perfil parabólico com borda mais íngreme
-k      = 2 · g · depth / R²                         // depth ≈ 0,07·R → ω₀ ≈ 3,7 rad/s (período ≈ 1,7 s)
+k      = 2 · g · depth / R²                         // depth ≈ 0,2·R (≈ 90 mm em R = 450 mm) → período ≈ 2,1 s
 a_bowl = −k · r · (1 + rim · (r/R)⁴)                // rim ≈ 2: a rampa fica bem mais íngreme perto da parede
 
 // 2) empurrão da ponta (substitui o orbit constante): lateral à rampa, sentido pela rotação
