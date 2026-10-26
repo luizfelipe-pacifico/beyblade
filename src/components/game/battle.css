@@ -1,0 +1,101 @@
+/* Fera bit invocada sobre a bey (D-036). Pseudo-3D em CSS por cima do canvas: só transform e
+   opacity animam (sem blur), então roda leve na GPU integrada. A posição vem do loop da batalha. */
+.fera-camada {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.fera-3d {
+  position: absolute;
+  width: 15rem;
+  left: -7.5rem;
+  bottom: 0.75rem;
+  perspective: 800px;
+}
+
+/* Halo atrás da fera na cor dela: degradê parado, não um filtro. */
+.fera-3d::before {
+  content: '';
+  position: absolute;
+  inset: 15% 0 -10%;
+  background: radial-gradient(closest-side, var(--fera-cor), transparent);
+  opacity: 0.55;
+}
+
+.fera-3d img {
+  position: relative;
+  display: block;
+  width: 100%;
+  transform-origin: 50% 100%;
+}
+
+/* Sai da bey deitada e pequena e se ergue de frente para a câmera, como no anime. */
+.fera-3d[data-fase='sai'] img {
+  animation: fera-sai 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.fera-3d[data-fase='ativa'] img {
+  opacity: 0.6;
+  animation: fera-paira 1.6s ease-in-out infinite alternate;
+}
+
+.fera-3d[data-fase='ativa']::before {
+  opacity: 0.35;
+}
+
+.fera-3d[data-fase='volta'] img {
+  animation: fera-volta 0.6s ease-out both;
+}
+
+.fera-3d[data-fase='volta']::before {
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+}
+
+@keyframes fera-sai {
+  from {
+    transform: rotateX(75deg) scale(0.2);
+    opacity: 0;
+    filter: brightness(3);
+  }
+  35% {
+    opacity: 1;
+  }
+  to {
+    transform: rotateX(0deg) scale(1);
+    opacity: 0.95;
+    filter: brightness(1.15);
+  }
+}
+
+@keyframes fera-paira {
+  from {
+    transform: rotateY(-10deg) translateY(0);
+  }
+  to {
+    transform: rotateY(10deg) translateY(-6px);
+  }
+}
+
+@keyframes fera-volta {
+  from {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  to {
+    transform: scale(1.25) translateY(-12px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fera-3d img {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

@@ -21,6 +21,7 @@ import {
   ROUND_SECONDS,
   ROUNDS_TO_WIN,
   START_X,
+  FERA,
   MOTION,
   SUBSTEPS,
 } from './constants.js';
@@ -210,7 +211,7 @@ function handleCommands(state, inputs) {
     const lr = Boolean(h.jump && h.dodge);
     if (lr && !prev.comboLR) {
       prev.comboLR = true;
-      if (b.special >= 1) activateSpecial(state, b);
+      if (b.special >= 1 && !feraAtiva(b)) activateSpecial(state, b);
     }
     if (prev.jump && !h.jump && !prev.comboLR) jump(state, b);
     if (prev.dodge && !h.dodge && !prev.comboLR) dodge(state, b, inp.move);
@@ -243,21 +244,37 @@ function handleCommands(state, inputs) {
   }
 }
 
-function aimAt(state, b, move) {
-  if (Math.hypot(move.x, move.y) >= 0.25) return { x: move.x, y: move.y };
+// A investida sempre vai na outra bey, mirando onde ela vai estar (antecipa até 0,35 s). O direcional
+// só corrige a mira em até ±25° para o lado que o jogador aponta; antes ele trocava o alvo
+// e o ataque saía para qualquer lugar.
+const AIM_BEND = (25 * Math.PI) / 180;
+
+export function aimAt(state, b, move, speed) {
   const opp = other(state, b);
-  return { x: opp.x - b.x, y: opp.y - b.y };
+  let dx = opp.x - b.x;
+  let dy = opp.y - b.y;
+  const t = Math.min(0.35, Math.hypot(dx, dy) / Math.max(1, speed));
+  dx += opp.vx * t;
+  dy += opp.vy * t;
+  const alvo = Math.atan2(dy, dx);
+  const forca = Math.min(1, Math.hypot(move.x, move.y));
+  if (forca < 0.25) return { x: Math.cos(alvo), y: Math.sin(alvo) };
+  let desvio = Math.atan2(move.y, move.x) - alvo;
+  desvio = Math.atan2(Math.sin(desvio), Math.cos(desvio));
+  const a = alvo + Math.max(-AIM_BEND, Math.min(AIM_BEND, desvio)) * forca;
+  return { x: Math.cos(a), y: Math.sin(a) };
 }
 
 function attack(state, b, move) {
   const charge = b.attackCharge;
   b.attackCharge = 0;
   if (b.dashCd > 0) return;
-  const d = aimAt(state, b, move);
-  const m = Math.hypot(d.x, d.y) || 1;
   const power = P.dashSpeed * (0.8 + 0.4 * b.atk) * (0.7 + 0.8 * charge);
-  b.vx += (d.x / m) * power;
-  b.vy += (d.y / m) * power;
+  const d = aimAt(state, b, move, power);
+  // A investida troca a direção em vez de somar: somada à velocidade de órbita, ela errava o alvo.
+  const keep = Math.max(0, b.vx * d.x + b.vy * d.y);
+  b.vx = d.x * (power + 0.5 * keep);
+  b.vy = d.y * (power + 0.5 * keep);
   b.spin = Math.max(0, b.spin - P.dashSpinCost * (1 + charge));
   b.dashCd = P.dashCooldown;
   state.events.push({ type: 'attack', slot: b.slot, charge });
@@ -295,29 +312,35 @@ function engineGear(state, b) {
 }
 
 // Especial genérico por tipo (protótipo): os efeitos únicos de cada fera entram depois (ROADMAP M3).
+export const feraAtiva = (b) => b.effects.some((e) => e.fx === 'fera');
+
 function activateSpecial(state, b) {
   const opp = other(state, b);
   b.special = 0;
+  // A fera sai: ataque, defesa, peso, resistência a KO, velocidade (e o teto do tipo) e stamina
+  // sobem juntos por FERA.seconds; o golpe próprio do tipo vem por cima.
+  const k = FERA.boost;
+  b.effects.push({ t: FERA.seconds, fx: 'fera', mass: k, dmgOut: k, dmgIn: 1 / k, knockIn: 1 / k, speed: k, sta: k });
   if (b.tipo === 'attack') {
     const dx = opp.x - b.x;
     const dy = opp.y - b.y;
     const m = Math.hypot(dx, dy) || 1;
     b.vx = (dx / m) * P.specialRush;
     b.vy = (dy / m) * P.specialRush;
-    b.effects.push({ t: 1.2, dmgOut: 1.8, knockOut: 1.5 });
+    b.effects.push({ t: 1.2, dmgOut: 1.8, knockOut: 1.5, fx: 'especial' });
   } else if (b.tipo === 'defense') {
-    b.effects.push({ t: 3, mass: 4, dmgIn: 0.4, knockIn: 0.3 });
+    b.effects.push({ t: 3, mass: 4, dmgIn: 0.4, knockIn: 0.3, fx: 'especial' });
   } else if (b.tipo === 'stamina') {
     b.spin = Math.min(1, b.spin + 0.25);
-    b.effects.push({ t: 2, dmgIn: 0.8 });
+    b.effects.push({ t: 2, dmgIn: 0.8, fx: 'especial' });
   } else {
-    b.effects.push({ t: 3, dmgOut: 1.4, dmgIn: 0.7, steal: 0.4 });
+    b.effects.push({ t: 3, dmgOut: 1.4, dmgIn: 0.7, steal: 0.4, fx: 'especial' });
   }
-  state.events.push({ type: 'special', slot: b.slot, nome: state.defs[b.slot].especial, tipo: b.tipo });
+  state.events.push({ type: 'special', slot: b.slot, nome: state.defs[b.slot].especial, tipo: b.tipo, segundos: FERA.seconds });
 }
 
 function mods(b) {
-  const m = { mass: 1, dmgIn: 1, dmgOut: 1, knockIn: 1, knockOut: 1, steal: 0, speed: 1 };
+  const m = { mass: 1, dmgIn: 1, dmgOut: 1, knockIn: 1, knockOut: 1, steal: 0, speed: 1, sta: 1 };
   if (b.guard) {
     m.mass *= 1.8;
     m.knockIn *= 0.6 - 0.25 * b.guardCharge;
@@ -332,6 +355,7 @@ function mods(b) {
     m.knockOut *= e.knockOut ?? 1;
     m.steal += e.steal ?? 0;
     m.speed *= e.speed ?? 1;
+    m.sta *= e.sta ?? 1;
   }
   return m;
 }
@@ -453,7 +477,7 @@ function moveBey(state, b, h, inp) {
   if (b.state === 'active') {
     // Peso gasta giro e ponta de mais tração também (defesa perde para resistência na Parada).
     const desgaste = (0.6 + b.tip.mu) * (0.85 + 0.05 * (1 + 9 * b.peso));
-    b.spin -= (P.spinDecay * (1.6 - b.sta) * desgaste + (b.guard ? P.guardDrain : 0)) * h;
+    b.spin -= ((P.spinDecay * (1.6 - b.sta) * desgaste) / m.sta + (b.guard ? P.guardDrain : 0)) * h;
     b.special = Math.min(1, b.special + P.specialPassive * h);
     b.dashCd = Math.max(0, b.dashCd - h);
     b.jumpCd = Math.max(0, b.jumpCd - h);
@@ -463,7 +487,9 @@ function moveBey(state, b, h, inp) {
       b.air = Math.max(0, b.air - h);
       if (b.air === 0) state.events.push({ type: 'land', slot: b.slot });
     }
+    const antes = feraAtiva(b);
     b.effects = b.effects.filter((e) => (e.t -= h) > 0);
+    if (antes && !feraAtiva(b)) state.events.push({ type: 'feraEnd', slot: b.slot });
   }
   b.angle += b.dir * (6 + 60 * spin) * h;
 }
@@ -496,7 +522,9 @@ function collide(state, a, b, finishes) {
   // Mesmo sentido: as superfícies se chocam de frente, mais recuo. Oposto: menos recuo e o giro se equaliza.
   const same = a.dir === b.dir;
   const j = ((1 + P.restitution) * impact) / (1 / ma + 1 / mb);
-  const repel = P.repel * sr * (same ? 1.3 : 0.8);
+  // O recuo do giro cresce com a força do choque: toque leve afasta pouco, pancada afasta muito.
+  const forca = Math.min(2.5, Math.max(0.3, impact / P.strongImpact));
+  const repel = P.repel * sr * (same ? 1.3 : 0.8) * forca;
   // Recuo próprio pelo tipo (ataque se joga mais, defesa absorve), BEY_BEHAVIOR.md.
   const knockA = (1.3 - 0.6 * a.rko) * a.kind.recoil * ma_.knockIn * mb_.knockOut;
   const knockB = (1.3 - 0.6 * b.rko) * b.kind.recoil * mb_.knockIn * ma_.knockOut;

@@ -15,6 +15,26 @@ Formato:
 
 ---
 
+## D-037: ROM de DS (Metal Fusion) como referência de design de combate
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário mandou a ROM de DS *Beyblade: Metal Fusion* para engenharia reversa da gameplay (controles, estilo de combate), avisando que as beys e personagens desse jogo não entram no nosso.
+- Decisão: a ROM é só referência de **design de combate**. `scripts/extract-nds.js` (com `scripts/lib/nitrofs.js`: cabeçalho, FNT/FAT, overlays, NARC, LZ10/LZ11) extrai para `../nds-metal-fusion/`, fora do repositório, e recusa saída dentro dele; nada da ROM vai para o git (mesmas regras da D-007 e da D-031). Não se extrai arte, beys nem personagens.
+- Consequências: achados em [`NDS_METAL_FUSION.md`](NDS_METAL_FUSION.md). O combate de lá é todo na caneta (deslizar = investida com rastro de fogo, tocar = pulo, tocar na própria bey = defesa, segurar = recuperar giro e equilíbrio), com medidor SPIRIT em barras e pontos por tipo de vitória; as ideias para o DualShock 4 estão no fim do doc e cada uma entra por decisão própria.
+
+## D-036: choques que afastam pela força, investida mirada e a fera bit que sai
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário pediu choques mais realistas (as beys se afastam um pouco, mais quanto mais forte o impacto, com faísca), que o ataque carregado vá na direção da outra bey ("está jogando em qualquer lugar") e que o especial faça a fera bit brilhar e aparecer em cima, com a bey "pegando fogo" e um brilho mostrando que a fera saiu. Pela outra sessão, também pediu a fera em 3D, todos os atributos subindo por um tempo limitado e voltando depois.
+- Decisão:
+  - **choque:** o recuo do giro passa a crescer com o impacto (0,3× a 2,5× do valor base); medido, a distância 20 ticks depois vai de ~100 mm num toque a ~330 mm numa pancada; faíscas mais numerosas e um clarão no ponto do choque proporcional à força, com velocidade limitada para não saírem da arena;
+  - **investida:** ao soltar ✕ ela sempre mira na outra bey, antecipando onde ela vai estar (até 0,35 s); o direcional só corrige a mira em até ±25°; a velocidade da investida troca a direção em vez de se somar à da órbita;
+  - **fera bit:** L1 + R1 com a barra cheia solta a fera por `FERA.seconds` (8 s): ataque, defesa, peso, resistência a KO, velocidade (incluindo o teto do tipo da D-032) e stamina ×`FERA.boost` (1,25); o golpe próprio do tipo continua por cima. Não acumula: com a fera fora, L1 + R1 não invoca de novo. Ao acabar, o evento `feraEnd` avisa e os valores voltam;
+  - **visual:** clarão com raios na cor da fera (a coluna de luz vista de cima) e câmera lenta de 0,9 s só no relógio do loop (a simulação segue determinística); a arte `invocacao.svg` sai da bey em pseudo-3D (CSS `perspective` + `rotateX`/`scale`, só transform e opacity) e fica translúcida acompanhando a bey; a bey ganha línguas de fogo na cor da fera e o chip brilha; o painel mostra a contagem e "+25%". Com movimento reduzido não há câmera lenta, raios nem animação 3D.
+- Consequências: testes em `tests/sim.test.js` (mira com o direcional para trás, afastamento maior na pancada, fera com tempo e sem acumular). Em desenvolvimento, `window.__batalha` expõe o estado para os scripts de verificação.
+
 ## D-035: modos na batalha (versus, CPU, arcade e treino)
 
 - Data: 2026-10-25

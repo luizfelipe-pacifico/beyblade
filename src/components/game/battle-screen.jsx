@@ -6,7 +6,9 @@ import { cn } from 'cn';
 import beys from '@/content/beys.generated.json';
 import { roster, beySprite } from '@/content/roster';
 import { createMatch, launchPower, NEUTRAL_INPUT, stepMatch } from '@/sim/match';
-import { DT, FINISHES, PHYSICS, ROUND_SECONDS, ROUNDS_TO_WIN } from '@/sim/constants';
+import { DT, FERA, FINISHES, PHYSICS, ROUND_SECONDS, ROUNDS_TO_WIN } from '@/sim/constants';
+import { colors, feras } from '@/design/tokens';
+import './battle.css';
 import { InputManager } from '@/input/manager';
 import { ArenaRenderer } from '@/render/arena-renderer';
 import { BATALHA, createSounds } from '@/audio/sounds';
@@ -22,6 +24,12 @@ import { ControlHint } from './pad-glyph';
 const MAX_FRAME = 0.25;
 const HUD_INTERVAL = 0.1;
 const RESULT_LOCK_MS = 900;
+// Câmera lenta curta quando a fera sai (só no tempo do loop; a simulação continua determinística).
+const SLOW_MS = 900;
+const SLOW_RATE = 0.35;
+const FERA_SAI_MS = 1000;
+const FERA_VOLTA_MS = 600;
+const corDaFera = (p) => feras[p.fera]?.campo ?? colors.ataque;
 
 function hudSnapshot(state) {
   return {
@@ -29,7 +37,14 @@ function hudSnapshot(state) {
     round: state.round,
     wins: [...state.wins],
     rounds: [...state.rounds],
-    beys: state.beys.map((b) => ({ spin: Math.max(0, b.spin), special: b.special, state: b.state, engineGear: b.engineGear, egUsed: b.egUsed })),
+    beys: state.beys.map((b) => ({
+      spin: Math.max(0, b.spin),
+      special: b.special,
+      state: b.state,
+      engineGear: b.engineGear,
+      egUsed: b.egUsed,
+      fera: b.effects.find((e) => e.fx === 'fera')?.t ?? 0,
+    })),
     launch: [launchPower(state, 0), launchPower(state, 1)],
     restante: state.phase === 'battle' ? Math.max(0, Math.ceil(ROUND_SECONDS - state.phaseTicks * DT)) : ROUND_SECONDS,
   };
@@ -45,7 +60,7 @@ function comBey(personagem, beyId) {
 
 // modo (D-035): versus | cpu | arcade | treino. Fora do versus o P2 é da máquina (a IA ainda não
 // existe: fica neutro); cpuNivel fica guardado no estado para ela.
-export function BattleScreen({ p1, p2, b1, b2, cpu = false, modo = 'versus', etapa = 1, cpuNivel = 1 }) {
+export function BattleScreen({ p1, p2, b1, b2, cpu = false, modo = 'versus', etapa = 0, cpuNivel = 1 }) {
   const router = useRouter();
   const treino = modo === 'treino';
   const arcade = modo === 'arcade';
@@ -63,6 +78,9 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false, modo = 'versus', eta
   const [pausado, setPausado] = useState(false);
   const [fim, setFim] = useState(null);
   const [salvo, setSalvo] = useState(null);
+  const [feraFase, setFeraFase] = useState([null, null]);
+  const feraRefs = [useRef(null), useRef(null)];
+  const faseDa = (slot, fase) => setFeraFase((f) => f.map((x, i) => (i === slot ? fase : x)));
   // O loop e os botões da pausa leem o mesmo valor: o estado do React sozinho não chega ao loop.
   const pausaRef = useRef(false);
   const definirPausa = (v) => {
@@ -74,11 +92,17 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false, modo = 'versus', eta
     const defs = personagens.map((p) => beys[p.beySlug]);
     const state = createMatch({ beys: defs, seed: Date.now() >>> 0, treino });
     state.cpuNivel = cpuNivel;
-    const renderer = new ArenaRenderer(canvasRef.current, personagens.map((p) => p.sprite));
+    // Só no desenvolvimento: deixa os scripts de verificação (Electron) mexerem no estado.
+    if (process.env.NODE_ENV === 'development') window.__batalha = state;
+    const renderer = new ArenaRenderer(canvasRef.current, personagens.map((p) => p.sprite), personagens.map(corDaFera));
+    const reduzMovimento = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+    let lentoAte = 0;
+    const feraTimers = [0, 0];
     const input = new InputManager();
     const sons = createSounds({
       ...BATALHA,
       ...Object.fromEntries(personagens.map((p, i) => [`especial${i}`, p.arteFera ? `/audio/feras/${p.arteFera}/ataque.wav` : BATALHA.choqueForte])),
+      ...Object.fromEntries(personagens.map((p, i) => [`invocacao${i}`, p.arteFera ? `/audio/feras/${p.arteFera}/invocacao.wav` : BATALHA.lancamento])),
     });
     tocarMusica('batalha');
     const inicio = performance.now();
@@ -102,6 +126,9 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false, modo = 'versus', eta
       const nome = (w) => personagens[w - 1].nome;
       switch (e.type) {
         case 'roundStart':
+          // Rodada nova: as beys são recriadas sem a fera.
+          feraTimers.forEach(clearTimeout);
+          setFeraFase([null, null]);
           // 1 a 1 no placar: entra a versão mais tensa do tema de batalha.
           tocarMusica(state.wins[0] === 1 && state.wins[1] === 1 ? 'decisiva' : 'batalha');
           break;
@@ -144,9 +171,21 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false, modo = 'versus', eta
           renderer.spawnSparks(e.x, e.y, -e.x, -e.y, e.impact * 0.5);
           break;
         case 'special':
-          sons.play(`especial${e.slot}`);
+          sons.play(`invocacao${e.slot}`);
+          setTimeout(() => sons.play(`especial${e.slot}`, 0.8), 350);
           input.rumble(e.slot, 0.8, 0.8, 300);
-          mostrar(e.nome, `Especial de ${personagens[e.slot].nome}`, 1400);
+          renderer.invocar(e.slot);
+          if (!reduzMovimento) lentoAte = performance.now() + SLOW_MS;
+          clearTimeout(feraTimers[e.slot]);
+          faseDa(e.slot, 'sai');
+          feraTimers[e.slot] = setTimeout(() => faseDa(e.slot, 'ativa'), FERA_SAI_MS);
+          mostrar(e.nome, `A fera de ${personagens[e.slot].nome} saiu: atributos +${Math.round((FERA.boost - 1) * 100)}% por ${e.segundos}s`, 1600);
+          break;
+        case 'feraEnd':
+          sons.play('contagem', 0.35);
+          clearTimeout(feraTimers[e.slot]);
+          faseDa(e.slot, 'volta');
+          feraTimers[e.slot] = setTimeout(() => faseDa(e.slot, null), FERA_VOLTA_MS);
           break;
         case 'burst':
           sons.play('choqueForte');
@@ -211,7 +250,7 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false, modo = 'versus', eta
       }
 
       if (!pausaRef.current) {
-        acc += dtReal;
+        acc += now < lentoAte ? dtReal * SLOW_RATE : dtReal;
         let primeiro = true;
         while (acc >= DT) {
           prev = state.beys.map((b) => ({ x: b.x, y: b.y, angle: b.angle }));
@@ -224,7 +263,12 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false, modo = 'versus', eta
         }
       }
       const parado = pausaRef.current;
-      renderer.draw({ beys: prev }, state, parado ? 1 : acc / DT, parado ? 0 : dtReal);
+      renderer.draw({ beys: prev }, state, parado ? 1 : acc / DT, parado ? 0 : now < lentoAte ? dtReal * SLOW_RATE : dtReal);
+      // A camada da fera segue a bey: transform direto no elemento, sem passar pelo React.
+      feraRefs.forEach((ref, i) => {
+        const p = renderer.posicao(i);
+        if (ref.current && p) ref.current.style.transform = `translate(${p.x}px, ${p.y - p.r}px)`;
+      });
       hudTimer += dtReal;
       if (hudTimer >= HUD_INTERVAL) {
         hudTimer = 0;
@@ -244,6 +288,7 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false, modo = 'versus', eta
     raf = requestAnimationFrame(frame);
     return () => {
       cancelAnimationFrame(raf);
+      feraTimers.forEach(clearTimeout);
       clearTimeout(anuncioTimer);
       ro.disconnect();
       window.removeEventListener('blur', onBlur);
@@ -262,6 +307,15 @@ export function BattleScreen({ p1, p2, b1, b2, cpu = false, modo = 'versus', eta
       </aside>
       <div className="relative min-h-0">
         <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" aria-label="Arena da batalha" role="img" />
+        {personagens.map((p, i) =>
+          feraFase[i] && p.arteFera ? (
+            <div key={i} ref={feraRefs[i]} className="fera-camada" aria-hidden="true">
+              <div className="fera-3d" data-fase={feraFase[i]} style={{ '--fera-cor': corDaFera(p) }}>
+                <img src={`/art/feras/${p.arteFera}/invocacao.svg`} alt="" />
+              </div>
+            </div>
+          ) : null,
+        )}
         <div className="pointer-events-none absolute inset-0 grid place-items-center">
           {anuncio ? <Announcement key={anuncio.id} titulo={anuncio.titulo} sub={anuncio.sub} /> : null}
         </div>
@@ -327,6 +381,11 @@ function Painel({ i, personagens, hud }) {
         <GaugeBar label="Giro" value={b?.spin ?? 1} fera={p.fera ?? undefined} />
       )}
       <GaugeBar label="Especial" value={b?.special ?? 0} tipo="especial" />
+      {b?.fera > 0 ? (
+        <span className="text-sm font-extrabold text-chamada tabular-nums">
+          Fera bit fora · {Math.ceil(b.fera)}s · atributos +{Math.round((FERA.boost - 1) * 100)}%
+        </span>
+      ) : null}
       {b?.engineGear ? (
         <span className="text-sm font-semibold text-texto-2">Engine Gear: {b.egUsed ? 'usado nesta rodada' : 'pronto'}</span>
       ) : null}
@@ -349,7 +408,7 @@ function Placar({ personagens, hud, modo, etapa }) {
   }
   return (
     <div className="grid gap-3">
-      <p className="font-extrabold">{modo === 'arcade' ? `Arcade · luta ${etapa} · melhor de 3` : 'Melhor de 3'}</p>
+      <p className="font-extrabold">{modo === 'arcade' ? `Arcade · luta ${etapa + 1} · melhor de 3` : 'Melhor de 3'}</p>
       <RoundRow rounds={hud?.rounds ?? []} total={3} feraP1={personagens[0].fera ?? undefined} feraP2={personagens[1].fera ?? undefined} className="w-full" />
       <p className="text-sm font-semibold tabular-nums text-texto-2">
         {lancando ? 'Aperte o botão X (F / K) quando a barra estiver no topo' : `Rodada ${hud?.round ?? 1} · ${hud?.restante ?? ROUND_SECONDS}s`}

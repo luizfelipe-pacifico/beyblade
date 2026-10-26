@@ -14,6 +14,10 @@ const MAX_SPARKS = 160;
 const TRAIL = 14;
 const PLAYER_COLORS = [colors.p1, colors.p2];
 const FLASH_SECONDS = 0.3;
+const SUMMON_SECONDS = 0.8;
+const IMPACT_SECONDS = 0.14;
+const MAX_IMPACTS = 8;
+const FLAMES = 11;
 const MAX_HEIGHT = bowlHeight(ARENA_RADIUS);
 
 // Plástico azul translúcido do estádio da Burst (BEY_BEHAVIOR.md, aparência da arena).
@@ -67,7 +71,8 @@ function makeVolume(size = 128) {
 }
 
 export class ArenaRenderer {
-  constructor(canvas, spriteUrls) {
+  // cores: cor da fera de cada jogador (aura de fogo e brilho da invocação, D-036).
+  constructor(canvas, spriteUrls, cores = []) {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d', { alpha: false });
     this.sprites = spriteUrls.map(() => null);
@@ -82,12 +87,19 @@ export class ArenaRenderer {
     this.trails = [[], []];
     this.t = 0;
     this.flashes = [0, 0];
+    this.invocacoes = [0, 0];
+    this.impactos = Array.from({ length: MAX_IMPACTS }, () => ({ life: 0 }));
+    // Posição de cada bey em px de CSS do canvas, para a camada da fera (DOM) acompanhar.
+    this.posicoes = [null, null];
+    this.cores = [0, 1].map((i) => cores[i] ?? colors.ataque);
     this.reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
     // Halos e sombra pré-renderizados (nada de shadowBlur por frame na GPU integrada).
     this.glowAtaque = makeGlow(colors.ataque);
     this.glowFaisca = makeGlow('rgba(255, 220, 140, 0.9)', 32);
     this.sombra = makeGlow('rgba(0, 8, 30, 0.6)', 128, 0.45);
     this.volume = makeVolume();
+    this.glowFera = this.cores.map((c) => makeGlow(c));
+    this.glowBranco = makeGlow('rgba(255, 255, 255, 0.95)', 64);
     this.resize();
   }
 
@@ -234,15 +246,18 @@ export class ArenaRenderer {
   }
 
   spawnSparks(x, y, nx, ny, power) {
-    const n = Math.min(18, 4 + Math.floor(power / 60));
+    const imp = this.impactos.find((p) => p.life <= 0) ?? this.impactos[0];
+    Object.assign(imp, { x, y, life: IMPACT_SECONDS, size: Math.min(1, power / 900) });
+    const n = Math.min(26, 6 + Math.floor(power / 45));
     for (let k = 0, placed = 0; k < this.sparks.length && placed < n; k++) {
       const p = this.sparks[k];
       if (p.life > 0) continue;
       // Faíscas saem tangentes ao choque; aleatoriedade só visual, fora da simulação.
       const side = Math.random() < 0.5 ? 1 : -1;
       const a = Math.atan2(ny, nx) + side * (Math.PI / 2) + (Math.random() - 0.5) * 1.2;
-      const speed = 200 + Math.random() * power * 0.8;
-      Object.assign(p, { x, y, vx: Math.cos(a) * speed, vy: Math.sin(a) * speed, life: 0.18 + Math.random() * 0.22, hot: Math.random() < 0.6 });
+      // Velocidade limitada: pancada forte solta mais faíscas, não faíscas que saem da arena.
+      const speed = 180 + Math.random() * Math.min(power, 800) * 0.6;
+      Object.assign(p, { x, y, vx: Math.cos(a) * speed, vy: Math.sin(a) * speed, life: 0.15 + Math.random() * 0.2, hot: Math.random() < 0.6 });
       placed++;
     }
   }
@@ -250,6 +265,77 @@ export class ArenaRenderer {
   // "Estalo" da carga cheia do ataque: um anel que se expande uma vez em volta da bey.
   flash(slot) {
     this.flashes[slot] = FLASH_SECONDS;
+  }
+
+  // A fera saiu: clarão com raios (a coluna de luz vista de cima) na cor da fera.
+  invocar(slot) {
+    this.invocacoes[slot] = SUMMON_SECONDS;
+  }
+
+  posicao(slot) {
+    return this.posicoes[slot];
+  }
+
+  // Bey "pegando fogo" com a fera fora: línguas de fogo na cor da fera em volta da borda,
+  // tremulando e girando com ela, mais o chip brilhando no centro. Tudo com mistura aditiva.
+  drawFogo(x, y, r, angle, spin, i) {
+    const { ctx } = this;
+    const t = this.t;
+    const g = r * 4.2;
+    ctx.globalCompositeOperation = 'lighter';
+    ctx.globalAlpha = 0.55 + 0.15 * Math.sin(t * 17);
+    ctx.drawImage(this.glowFera[i], x - g / 2, y - g / 2, g, g);
+    const giro = this.reduceMotion ? 0 : angle * 0.35;
+    for (let k = 0; k < FLAMES; k++) {
+      const a = giro + (k / FLAMES) * Math.PI * 2;
+      const treme = this.reduceMotion ? 0.7 : 0.55 + 0.45 * Math.abs(Math.sin(t * (9 + k) + k * 1.7));
+      const comp = r * (0.55 + 0.75 * treme) * (0.6 + 0.4 * spin);
+      const larg = 0.32;
+      ctx.globalAlpha = 0.45 + 0.35 * treme;
+      ctx.fillStyle = k % 2 ? this.cores[i] : colors.chamada;
+      ctx.beginPath();
+      ctx.moveTo(x + Math.cos(a - larg) * r * 0.9, y + Math.sin(a - larg) * r * 0.9);
+      // A ponta da chama vai para trás do giro, como o fogo puxado pelo vento.
+      const pa = a - 0.35 * spin;
+      ctx.quadraticCurveTo(x + Math.cos(a) * (r + comp * 0.6), y + Math.sin(a) * (r + comp * 0.6), x + Math.cos(pa) * (r + comp), y + Math.sin(pa) * (r + comp));
+      ctx.lineTo(x + Math.cos(a + larg) * r * 0.9, y + Math.sin(a + larg) * r * 0.9);
+      ctx.closePath();
+      ctx.fill();
+    }
+    const chip = r * (0.9 + 0.2 * Math.sin(t * 10));
+    ctx.globalAlpha = 0.9;
+    ctx.drawImage(this.glowBranco, x - chip / 2, y - chip / 2, chip, chip);
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.globalAlpha = 1;
+  }
+
+  drawInvocacao(x, y, r, i) {
+    const { ctx, dpr } = this;
+    const f = this.invocacoes[i] / SUMMON_SECONDS;
+    const p = 1 - f;
+    ctx.globalCompositeOperation = 'lighter';
+    const g = r * (3 + 9 * p);
+    ctx.globalAlpha = f;
+    ctx.drawImage(this.glowBranco, x - g / 2, y - g / 2, g, g);
+    ctx.drawImage(this.glowFera[i], x - g, y - g, g * 2, g * 2);
+    if (!this.reduceMotion) {
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.95)';
+      ctx.lineWidth = 3 * dpr;
+      for (let k = 0; k < 14; k++) {
+        const a = (k / 14) * Math.PI * 2 + p;
+        ctx.beginPath();
+        ctx.moveTo(x + Math.cos(a) * r * (1 + 2 * p), y + Math.sin(a) * r * (1 + 2 * p));
+        ctx.lineTo(x + Math.cos(a) * r * (2 + 7 * p), y + Math.sin(a) * r * (2 + 7 * p));
+        ctx.stroke();
+      }
+    }
+    ctx.strokeStyle = this.cores[i];
+    ctx.lineWidth = 5 * dpr;
+    ctx.beginPath();
+    ctx.arc(x, y, r * (1.2 + 6 * p), 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.globalAlpha = 1;
   }
 
   // Carga do ataque (✕ segurado): halo laranja que cresce e pulsa mais rápido com a força, e um anel
@@ -301,6 +387,7 @@ export class ArenaRenderer {
     const { ctx, scale, dpr } = this;
     this.t += dt;
     this.flashes = this.flashes.map((f) => Math.max(0, f - dt));
+    this.invocacoes = this.invocacoes.map((f) => Math.max(0, f - dt));
     const w = this.canvas.width;
     const h = this.canvas.height;
     ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -312,6 +399,7 @@ export class ArenaRenderer {
     curr.beys.forEach((b, i) => {
       if (b.state === 'burst') {
         this.trails[i].length = 0;
+        this.posicoes[i] = null;
         return;
       }
       const p = prev?.beys[i] ?? b;
@@ -429,11 +517,25 @@ export class ArenaRenderer {
         ctx.fill();
       }
       ctx.globalAlpha = 1;
+      if (b.state === 'active' && b.effects?.some((e) => e.fx === 'fera')) this.drawFogo(x, y, r, angle, spin, i);
+      if (this.invocacoes[i] > 0) this.drawInvocacao(x, y, r, i);
+      this.posicoes[i] = { x: (x + w / 2) / dpr, y: (y + h / 2) / dpr, r: r / dpr };
     });
 
     // Faíscas com luz: mistura aditiva (barata) e um ponto de brilho pré-renderizado na ponta.
     ctx.globalCompositeOperation = 'lighter';
-    ctx.lineWidth = Math.max(1, 2 * dpr);
+    // Clarão no ponto do choque, maior e mais forte quanto mais forte a pancada.
+    for (const p of this.impactos) {
+      if (p.life <= 0) continue;
+      p.life -= dt;
+      const f = Math.max(0, p.life / IMPACT_SECONDS);
+      const g = (30 + 90 * p.size) * dpr * (1.4 - 0.4 * f);
+      ctx.globalAlpha = f;
+      ctx.drawImage(this.glowBranco, p.x * scale - g / 2, p.y * scale - g / 2, g, g);
+      ctx.drawImage(this.glowFaisca, p.x * scale - g, p.y * scale - g, g * 2, g * 2);
+    }
+    ctx.globalAlpha = 1;
+    ctx.lineWidth = Math.max(1.5, 2.5 * dpr);
     for (const s of this.sparks) {
       if (s.life <= 0) continue;
       s.life -= dt;
@@ -444,7 +546,7 @@ export class ArenaRenderer {
       ctx.strokeStyle = s.hot ? colors.chamada : colors.papel;
       ctx.beginPath();
       ctx.moveTo(x, y);
-      ctx.lineTo((s.x - s.vx * 0.03) * scale, (s.y - s.vy * 0.03) * scale);
+      ctx.lineTo((s.x - s.vx * 0.045) * scale, (s.y - s.vy * 0.045) * scale);
       ctx.stroke();
       const g = 10 * dpr;
       ctx.drawImage(this.glowFaisca, x - g / 2, y - g / 2, g, g);

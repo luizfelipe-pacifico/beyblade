@@ -103,6 +103,13 @@ export const TYPES = {
 // Movimento no estilo do app da Burst (D-032): a força própria (rampa, ponta, comando) não passa do
 // teto do tipo; o que um choque, a investida ou o especial dão acima do teto decai com meia-vida curta,
 // então uma pancada forte ainda joga para fora. O comando curva a trajetória em vez de dirigir.
+// Fera bit invocada (D-036): todos os atributos sobem por um tempo e depois voltam. Sem acumular:
+// enquanto ela está fora, L1 + R1 não invoca de novo.
+export const FERA = {
+  seconds: 8,
+  boost: 1.25,
+};
+
 export const MOTION = {
   excessHalfLife: 0.25,
   steerRate: 2.6,

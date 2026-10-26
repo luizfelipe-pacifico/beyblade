@@ -223,3 +223,64 @@ test('training mode has no clock, no score and the dummy keeps its spin', () => 
   assert.deepEqual(s.wins, [0, 0]);
   assert.equal(s.winner, 0);
 });
+
+test('a released charged attack heads at the other bey even with the stick pointing away', () => {
+  const s = toBattle(createMatch({ beys: [bey(), bey()], seed: 4 }));
+  const [a, b] = s.beys;
+  Object.assign(a, { x: -150, y: 0, vx: 0, vy: 300 });
+  Object.assign(b, { x: 150, y: 0, vx: 0, vy: 0 });
+  // Segura ✕ apontando para trás (para longe do oponente) e solta.
+  const away = { x: -1, y: 0 };
+  for (let t = 0; t < ticks(0.8); t++) stepMatch(s, [input({ move: away, held: { attack: true } }), NEUTRAL_INPUT]);
+  const alvo = Math.atan2(b.y - a.y, b.x - a.x);
+  stepMatch(s, [input({ move: away }), NEUTRAL_INPUT]);
+  let ang = Math.atan2(a.vy, a.vx) - alvo;
+  ang = Math.atan2(Math.sin(ang), Math.cos(ang));
+  // O direcional corrige no máximo 25°; o resto é a rampa agindo no mesmo tick.
+  assert.ok(Math.abs(ang) < (35 * Math.PI) / 180, `investida saiu a ${((ang * 180) / Math.PI).toFixed(0)}° do oponente`);
+});
+
+test('beys bounce apart farther after a harder hit', () => {
+  const gap = (v) => {
+    const s = toBattle(createMatch({ beys: [bey(), bey({ rotacao: 'esquerda' })], seed: 2 }));
+    const [a, b] = s.beys;
+    Object.assign(a, { x: -60, y: 0, vx: v / 2, vy: 0 });
+    Object.assign(b, { x: 60, y: 0, vx: -v / 2, vy: 0 });
+    let hit = -1;
+    for (let t = 0; t < 60; t++) {
+      stepMatch(s);
+      if (hit < 0 && s.events.some((e) => e.type === 'hit')) hit = t;
+      if (hit >= 0 && t === hit + 20) return Math.hypot(a.x - b.x, a.y - b.y) - a.r - b.r;
+    }
+    return 0;
+  };
+  const leve = gap(100);
+  const forte = gap(1200);
+  assert.ok(forte > 2.5 * leve, `leve ${leve.toFixed(0)} mm, forte ${forte.toFixed(0)} mm`);
+});
+
+test('the bit-beast boosts the bey for a limited time and cannot stack', async () => {
+  const { FERA } = await import('../src/sim/constants.js');
+  const s = toBattle(createMatch({ beys: [bey(), bey()], seed: 6 }));
+  const a = s.beys[0];
+  a.special = 1;
+  const lr = input({ held: { jump: true, dodge: true } });
+  stepMatch(s, [lr, NEUTRAL_INPUT]);
+  assert.ok(s.events.some((e) => e.type === 'special'), 'a fera não saiu');
+  assert.ok(a.effects.some((e) => e.fx === 'fera'));
+  // Barra cheia de novo com a fera fora: não invoca outra vez.
+  stepMatch(s, [NEUTRAL_INPUT, NEUTRAL_INPUT]);
+  a.special = 1;
+  stepMatch(s, [lr, NEUTRAL_INPUT]);
+  assert.equal(a.special, 1, 'invocou por cima da fera ativa');
+  // Depois do tempo, os atributos voltam e o fim é avisado.
+  let fim = false;
+  for (let t = 0; t < ticks(FERA.seconds + 0.5) && !fim; t++) {
+    a.spin = 1;
+    s.beys[1].spin = 1;
+    stepMatch(s);
+    fim = s.events.some((e) => e.type === 'feraEnd' && e.slot === 0);
+  }
+  assert.ok(fim, 'a fera não voltou');
+  assert.ok(!a.effects.some((e) => e.fx === 'fera'));
+});
