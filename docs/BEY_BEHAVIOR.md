@@ -13,7 +13,53 @@ Pedido do usuário (2026-10-25): cada tipo de beyblade tem um estilo de moviment
 
 Fontes: [Beyblade Wiki: Type](https://beyblade.fandom.com/wiki/Type), [Beyblade Wiki: Balance](https://beyblade.fandom.com/wiki/Balance), [Wikipedia: Beyblade](https://en.wikipedia.org/wiki/Beyblade) (triângulo de vantagens e estádio em tigela), [Beyblade Wiki: Beystadium Super Attack Type](https://beyblade.fandom.com/wiki/Beystadium_Super_Attack_Type) e [Tornado Beystadium](https://beyblade.fandom.com/wiki/Tornado_Beystadium) (padrão flor e tornado ridge), [WorldBeyblade: Attack vs Defence vs Stamina vs Balance](https://worldbeyblade.org/Thread-Answered-Attack-vs-Defence-vs-Stamina-vs-Balance-in-Burst).
 
-**Triângulo de vantagens:** ataque vence resistência (alcança e tira do centro), resistência vence defesa (dura mais), defesa vence ataque (aguenta e devolve o recuo). Não é regra rígida; serve de alvo para o balanceamento (matriz de vitórias do M4).
+**Triângulo de vantagens:** detalhado em [Vantagens entre os tipos](#vantagens-entre-os-tipos-pesquisa-em-fóruns-e-wikis).
+
+## Vantagens entre os tipos (pesquisa em fóruns e wikis)
+
+### O triângulo e o porquê
+
+| Confronto | Por que um vence o outro | Como reproduzir no jogo |
+| --- | --- | --- |
+| **Ataque > Resistência** | A de resistência é leve e de pouco atrito: fica no centro como alvo parado e voa ou cai com um golpe forte. | Golpe de ataque em alvo de resistência tem impulso maior (massa e resistência a knockout menores); a de resistência não foge porque não tem tração. |
+| **Resistência > Defesa** | A defesa é pesada, e peso gasta giro mais rápido; a de resistência, leve e com pouco atrito, dura mais. "Peso é poder de defesa e fraqueza de resistência ao mesmo tempo." | A defesa perde giro mais rápido que a resistência; como as duas ficam perto do centro e quase não se derrubam, a rodada vai para Parada a favor da resistência. |
+| **Defesa > Ataque** | A defesa fica no estádio sob impacto; o ataque gasta giro rápido e "muitas vezes perde se autodestruindo" (recuo que joga para fora). A Grip Defense, com ponta de borracha, é o melhor contra o ataque hiper-agressivo. | Recuo do atacante maior contra alvo pesado e de recuo baixo; a defesa absorve (massa ×1,5, recuo ×0,5) e o ataque arrisca o ring out próprio. |
+| **Equilíbrio** | Fica **fora do triângulo**: não tem vantagem nem fraqueza fixa; vai bem contra combos fracos e serve para se adaptar ao adversário. | Atributos medianos; matchup neutro contra todos. |
+
+O triângulo **não é regra rígida**: peças, lançamento e habilidade mudam o resultado ([Wikipedia](https://en.wikipedia.org/wiki/Beyblade)). Exceções conhecidas: resistência de formato circular e centro de gravidade baixo aguenta ataque; upper attack derruba quase qualquer tipo que consiga "pegar por baixo".
+
+### Sentido de rotação
+
+- **Mesma rotação:** no ponto de contato as superfícies andam em sentidos opostos → choques mais fortes e **mais recuo** → mais ring out (de quem apanha e de quem bate). Melhor para quem quer derrubar; a defesa por peso vai bem aqui.
+- **Rotação oposta:** choques mais fracos e **menos recuo**, mas há **absorção/equalização de giro** (os contatos funcionam como engrenagens e dividem o giro). A rodada fica mais longa e vence quem tem mais *life after death* (resistência ao fim do giro). É a base das combinações "zumbi" da era plástica ("spin steal"). O anime vendia isso como truque das beys de rotação esquerda, mas acontece entre quaisquer duas de rotação oposta ([Beyblade Wiki: Spin Absorption](https://beyblade.fandom.com/wiki/Spin_Absorption)).
+- **Gyro EG** (Engine Gear com giroscópio): é "praticamente impossível roubar giro" dela ([PlasticsDB](https://www.plasticsdb.com/competitive-combos-list)).
+
+### Subtipos da era plástica (Bakuten Shoot)
+
+| Arquétipo | Vence | Perde para | Observação |
+| --- | --- | --- | --- |
+| Smash Attack | quase tudo na força bruta | Grip Defense | risco × recompensa; precisa controlar o recuo |
+| Upper Attack | quase tudo que consegue levantar por baixo | Circle Survivor | ruim em rotação direita contra a tigela funda |
+| Spin-Stealing Attack / zumbi ofensivo | quem consegue desestabilizar e superar no giro | — | usar rotação oposta |
+| Grip Defense | ataque mais pesado e hiper-agressivo | resistência que supera no giro | o anel de ataque sofre (pode quebrar) |
+| Weight Defense | confrontos de mesma rotação | adversários de recuo pesado | clássica |
+| Circle Survivor Defense | combos fracos, muito difícil de derrubar | golpes acima do prato | |
+| Zumbi (resistência) | rotação oposta, pelo *life after death* | equilíbrio que derruba; Circle Survivor | |
+| Compacts (equilíbrio) | combos fracos e defesas fracas | combos competitivos feitos contra eles | |
+
+Fontes: [WorldBeyblade: type chart](https://worldbeyblade.org/Thread-Answered-Beyblade-type-chart), [WorldBeyblade: Attack vs Defence vs Stamina vs Balance](https://worldbeyblade.org/Thread-Answered-Attack-vs-Defence-vs-Stamina-vs-Balance-in-Burst), [WorldBeyblade: How to Cover All Types Weaknesses](https://worldbeyblade.org/Thread-How-to-Cover-All-Types-Weaknesses), [PlasticsDB: Competitive Combos List](https://www.plasticsdb.com/competitive-combos-list), [note.com: Type Matchups](https://note.com/kamen_a/n/n6c541b32ba7e?hl=en), [Beyblade Wiki: Spin Absorption](https://beyblade.fandom.com/wiki/Spin_Absorption), [Beyblade Wiki: Geist Fafnir](https://beyblade.fandom.com/wiki/Geist_Fafnir_Ratchet_Gyro).
+
+### Regras de jogo derivadas (proposta)
+
+As vantagens saem da física (massa, tração, recuo, perda de giro, rotação), não de um bônus fixo por tipo. Ajustes sugeridos, em cima da tabela do modelo abaixo:
+
+- **Impulso do golpe** proporcional a ataque × velocidade relativa; × **1,3** em mesma rotação e × **0,8** em rotação oposta (já previsto em `pesquisa-bakuten/README.md`).
+- **Recuo do atacante** × **1,3** em mesma rotação e × **0,7** em oposta; contra alvo de massa maior, o recuo cresce na proporção das massas.
+- **Equalização de giro** só em rotação oposta: a cada contato, transfere `(giroA − giroB) × 0,05` da mais rápida para a mais lenta, multiplicado pelo *life after death* de quem recebe (resistência ×1,3, defesa ×1,0, ataque ×0,7).
+- **Perda de giro pelo peso:** `spinDecay × (0,85 + 0,05 × peso)` (peso 1–10), o que faz a defesa perder para a resistência na Parada.
+- **Upper attack:** golpe de anel do tipo upper levanta o alvo (perde tração por ~0,3 s e fica mais fácil de jogar para fora); contra Circle Survivor (Wolborg 4) o efeito é anulado.
+- **Gyro EG** (Thunder Pegasus na ROM): imune à equalização.
+- **Alvo de balanceamento** (matriz do M4, simulações sem input com giro inicial igual): ataque vence resistência em ~65–75%, resistência vence defesa em ~65–75%, defesa vence ataque em ~65–75%, equilíbrio entre 45% e 55% contra todos.
 
 ## Modelo para a simulação
 
