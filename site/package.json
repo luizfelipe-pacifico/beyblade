@@ -5,9 +5,9 @@
   "description": "Landing page do Beyblade Arena (fan-made). Export estático publicado na Vercel.",
   "type": "module",
   "scripts": {
-    "dev": "next dev -p 5000",
+    "dev": "next dev -p 3000",
     "build": "next build",
-    "preview": "npx --yes serve@14.2.4 out -l 5000",
+    "preview": "npx --yes serve@14.2.4 out -l 3000",
     "images": "node scripts/optimize-images.mjs",
     "motion:assets": "node scripts/build-bey-motion.mjs",
     "bey:assets": "node scripts/vectorize-beyblades.mjs"

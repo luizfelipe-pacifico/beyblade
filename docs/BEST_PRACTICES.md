@@ -1,6 +1,6 @@
 # Boas práticas de desenvolvimento
 
-Guia de referência do projeto **Beyblade Arena** (Node.js 22 + Express 5 + `node:sqlite`, jogo local para dois jogadores com controles). As regras curtas e obrigatórias ficam no [`CLAUDE.md`](../CLAUDE.md); aqui está o porquê e o detalhe.
+Guia de referência do projeto **Beyblade Arena** (Node.js 24, Electron + Next.js, PostgreSQL no Docker via Prisma; jogo local para dois jogadores com controles). Arquitetura em [`ARCHITECTURE.md`](ARCHITECTURE.md). As regras curtas e obrigatórias ficam no [`CLAUDE.md`](../CLAUDE.md); aqui está o porquê e o detalhe.
 
 ---
 
@@ -72,7 +72,7 @@ refactor(db): extract match queries into prepared statements
 
 - [ ] `git status` e `git diff --staged` revisados linha a linha.
 - [ ] Nenhum segredo: `.env`, tokens, senhas, chaves de API, credenciais.
-- [ ] Nenhum dado local: `data/` (banco SQLite), `*.db`, `*.db-wal`, `*.db-shm`, logs.
+- [ ] Nenhum dado local: `.env`, backups (`*.dump`), `data/`, `*.db*`, `src/generated/`, logs.
 - [ ] Nenhum `node_modules/`, build gerado ou arquivo pessoal do editor/SO.
 - [ ] Nenhum arquivo grande ou de terceiros sem licença clara (imagens, áudio, fontes).
 - [ ] `npm test` verde (o hook `pre-push` confere de novo automaticamente).
@@ -82,8 +82,8 @@ refactor(db): extract match queries into prepared statements
 ## 4. JavaScript / Node.js
 
 - **ES Modules** (`"type": "module"`): `import`/`export`, nunca `require`.
-- **Prefixo `node:`** para módulos nativos: `node:fs`, `node:path`, `node:sqlite`, `node:test`.
-- **Prefira o que o Node já oferece** antes de instalar dependências: `node:sqlite`, `node:test`, `node --watch`, `node --env-file=.env`, `fetch`, `structuredClone`, `import.meta.dirname`.
+- **Prefixo `node:`** para módulos nativos: `node:fs`, `node:path`, `node:test`.
+- **Prefira o que o Node já oferece** antes de instalar dependências: `node:test`, `node --watch`, `process.loadEnvFile()`, `fetch`, `structuredClone`, `import.meta.dirname`.
 - **Cada dependência nova é um custo** (segurança, atualização, tamanho). Justifique antes de adicionar e fixe a versão no `package.json`.
 - **`async/await`** em vez de callbacks ou cadeias de `.then()`. Nunca deixe Promise sem tratamento.
 - **`const` por padrão**, `let` só quando reatribuir; nunca `var`.
@@ -103,28 +103,28 @@ refactor(db): extract match queries into prepared statements
 - **Handler de erro centralizado** (já existe em `server.js`). Nunca exponha stack trace ao cliente.
 - **Limite o tamanho do payload** (`express.json({ limit: '64kb' })`) e limite listagens (`?limit=` com teto).
 - Express 5 já repassa erros de handlers `async` ao handler de erro; não é preciso `try/catch` só para chamar `next(err)`.
-- **Rede:** o jogo é local. Se não precisar ser acessado por outros dispositivos da rede, faça o servidor escutar só em `127.0.0.1`.
+- **Rede:** o jogo é local; o servidor escuta só em `127.0.0.1` (já configurado).
+- **Banco indisponível** (container parado) responde `503` com mensagem clara, não `500`.
 - **Cabeçalhos de segurança:** se o app for exposto além da máquina local, use `helmet` e desative `x-powered-by`.
 
-## 6. Banco de dados (SQLite via `node:sqlite`)
+## 6. Banco de dados (PostgreSQL + Prisma)
 
-- **Sempre use prepared statements com parâmetros** (`db.prepare('... WHERE id = ?').get(id)`). Nunca concatene valores em SQL.
-- **Prepare uma vez, reutilize:** crie os statements no carregamento do módulo, não a cada requisição.
-- **Transações** para operações com várias escritas (`BEGIN` / `COMMIT` / `ROLLBACK`). Elas garantem atomicidade e são muito mais rápidas.
-- **PRAGMAs recomendados na abertura:**
-  - `journal_mode = WAL` (já em uso): leituras não bloqueiam escritas;
-  - `foreign_keys = ON`: o SQLite **não** aplica FKs por padrão;
-  - `busy_timeout = 5000`: evita erro imediato de "database is locked".
-- **Migrações versionadas com `PRAGMA user_version`:**
-  - cada mudança de schema é um passo numerado, aplicado em ordem e dentro de uma transação;
-  - atualize `user_version` na mesma transação da migração;
+> Decisões D-011 e D-012. Schema, comandos e operação em [`DATABASE.md`](DATABASE.md).
+
+- **Só pelo Prisma Client.** Ele parametriza tudo por construção. SQL manual (agregações que o Prisma não expressa) **só com `prisma.$queryRaw` em template literal**; `$queryRawUnsafe` e concatenação de strings são proibidos.
+- **Um único `PrismaClient` por processo** (em `src/db.js`), criado no carregamento do módulo; nunca um por requisição.
+- **Transações** para escritas relacionadas: `create` aninhado (partida + rodadas) ou `prisma.$transaction([...])`.
+- **Migrações versionadas:**
+  - mudou o `schema.prisma` → `npm run db:migrate -- --name <nome>` e commit da pasta `prisma/migrations/`;
+  - SQL que o Prisma não gera (`CHECK`, índices parciais) → `--create-only`, editar e aplicar;
   - **nunca edite uma migração já aplicada**: crie uma nova;
-  - `CREATE TABLE IF NOT EXISTS` serve para o schema inicial, mas não altera tabelas existentes.
-- **Restrições no schema** (`NOT NULL`, `CHECK`, `UNIQUE`) como segunda linha de defesa além da validação da API.
-- **Datas em UTC** (ISO 8601 / `datetime('now')`). Converta para o fuso local só na interface.
-- **JSON em colunas TEXT** é aceitável para dados aninhados (configs, rounds); valide antes de gravar e trate falha no `JSON.parse` ao ler.
-- **Crie índices** para colunas usadas em `WHERE`/`ORDER BY` frequentes (ex.: `played_at`).
-- **`data/` nunca vai para o Git.** Documente o schema em `docs/DATABASE.md`.
+  - em produção/no `.exe` só `prisma migrate deploy`, nunca `migrate dev`.
+- **Restrições no banco** (`NOT NULL`, `CHECK`, FKs, enums) como segunda linha de defesa além da validação da API.
+- **Datas em `timestamptz` (UTC).** Converta para o fuso local só na interface.
+- **`jsonb`** é aceitável para dados aninhados que não são consultados por campo (configs); o que vira filtro ou ranking vira coluna ou tabela (ex.: `match_rounds`).
+- **`bigint` não vai para JSON:** faça cast `::int` em `COUNT`/`SUM` no `$queryRaw`.
+- **Índices** para colunas usadas em `WHERE`/`ORDER BY` frequentes (ex.: `played_at`).
+- **Container:** porta só em `127.0.0.1`, volume nomeado, imagem com versão maior fixa, healthcheck com `pg_isready`. Credenciais só no `.env`.
 
 ## 7. Jogo: loop, física e input
 
@@ -186,6 +186,7 @@ refactor(db): extract match queries into prepared statements
 - **XSS:** nomes de jogadores e qualquer texto vindo do usuário ou do banco vão para o DOM via `textContent`, nunca `innerHTML`.
 - **SQL injection:** só prepared statements (seção 6).
 - **Dependências:** poucas, atualizadas, `npm audit` periodicamente e `package-lock.json` versionado.
+- **Electron:** `contextIsolation` + `sandbox` + sem `nodeIntegration`, preload mínimo com `contextBridge`, validar o `sender` do IPC, bloquear navegação, sem `file://` (checklist completo em `docs/SECURITY.md`).
 - **Mensagens de erro** genéricas para o cliente; detalhes só no log do servidor.
 - **CSP** (`Content-Security-Policy`) se o app for servido além de localhost.
 - Detalhes e decisões específicas ficam em `docs/SECURITY.md`.
@@ -197,7 +198,7 @@ refactor(db): extract match queries into prepared statements
   - `src/validate.js`: entradas válidas, inválidas e casos-limite;
   - regras de pontuação e finalização (spin, ring-out, burst, xtreme etc.);
   - física/colisão isolada do render (possível graças à seção 7).
-- **Banco em testes:** use `new DatabaseSync(':memory:')` para não tocar em `data/`.
+- **Banco em testes:** a suíte padrão não usa banco (testa lógica pura). Testes de integração usam um banco próprio (`beyblade_test`), nunca o de desenvolvimento.
 - **Testes rápidos e independentes:** sem ordem obrigatória, sem rede, sem estado compartilhado.
 - Nome do teste descreve o comportamento: `rejects deadzone above 0.9`.
 
@@ -240,6 +241,7 @@ Se o bug não for reproduzível em teste automático (ex.: depende do hardware d
 - Canvas: desenhe só o necessário, reutilize objetos, pré-carregue imagens e sons antes da partida.
 - Imagens otimizadas (WebP/PNG comprimido, dimensões adequadas); nada de imagens de vários MB no jogo.
 - No servidor: prepared statements reutilizados, índices, listagens paginadas.
+- **Notebook sem placa de vídeo (GPU integrada) é o alvo mínimo.** Arena e fundos estáticos desenhados uma vez em canvas fora da tela; sprites pré-renderizados em vez de caminhos complexos; sem `shadowBlur`/`filter` por frame; teto de `devicePixelRatio`; teto de partículas com object pool; presets de qualidade. Detalhes em [`ARCHITECTURE.md`](ARCHITECTURE.md#8-renderização-e-performance-em-notebook-sem-placa-de-vídeo).
 
 ## 12. Documentação
 
@@ -289,7 +291,7 @@ Documentação desatualizada é pior que nenhuma: corrija ou apague.
 - [ ] `npm test` verde, com teste de regressão para todo bug corrigido.
 - [ ] Sem `console.log` de debug esquecido nem código comentado morto.
 - [ ] Documentação afetada atualizada.
-- [ ] Diff revisado: sem segredos, sem `data/`, sem arquivos indevidos.
+- [ ] Diff revisado: sem segredos (`.env`), sem dados locais, sem arquivos indevidos.
 - [ ] Commit no padrão Conventional Commits, em inglês.
 
 ---
@@ -299,8 +301,11 @@ Documentação desatualizada é pior que nenhuma: corrija ou apague.
 - [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/)
 - [Node.js Best Practices (goldbergyoni)](https://github.com/goldbergyoni/nodebestpractices)
 - [Express: Production Best Practices: Security](https://expressjs.com/en/advanced/best-practice-security.html)
-- [SQLite: Write-Ahead Logging](https://www.sqlite.org/wal.html) · [PRAGMA](https://www.sqlite.org/pragma.html) · [Foreign Keys](https://www.sqlite.org/foreignkeys.html)
-- [Node.js: `node:sqlite`](https://nodejs.org/api/sqlite.html) · [`node:test`](https://nodejs.org/api/test.html)
+- [Prisma: Development and production](https://www.prisma.io/docs/orm/prisma-migrate/workflows/development-and-production) · [Shadow database](https://prisma.io/docs/concepts/components/prisma-migrate/shadow-database)
+- [Docker Hub: `postgres`](https://hub.docker.com/_/postgres)
+- [Node.js: `node:test`](https://nodejs.org/api/test.html)
+- [Electron: Security](https://www.electronjs.org/docs/latest/tutorial/security)
+- [Glenn Fiedler: Fix Your Timestep!](https://gafferongames.com/post/fix_your_timestep/) · [Game Programming Patterns](https://gameprogrammingpatterns.com/contents.html)
 - [MDN: Using the Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
 - [web.dev: Jumping the hurdles with the Gamepad API](https://web.dev/doodles-gamepad/)
 - [Code inComplete: JavaScript Game Foundations: The Game Loop](https://codeincomplete.com/articles/javascript-game-foundations-the-game-loop)

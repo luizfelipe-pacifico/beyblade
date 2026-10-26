@@ -15,6 +15,25 @@ Formato:
 
 ---
 
+## D-026: regras da batalha do protótipo (melhor de 3, arena 16:1)
+
+- Data: 2026-10-25
+- Status: Proposta (aguardando confirmação do usuário); implementada para o protótipo M1
+- Contexto: o usuário pediu para já batalhar dentro do Electron. O placar é decisão de design ([`GAME_FLOW.md`](GAME_FLOW.md#finais-e-regras)), e o usuário achou a arena pequena (proporção do brinquedo, ~9:1).
+- Decisão: partida em **melhor de 3 rodadas**, como num jogo de luta (D-005); cada rodada termina em **Parada** (spin finish), **Fora** (ring out) ou **Burst**; aos 60 s vence quem tem mais giro (**Decisão**); empate não pontua. Arena com **raio de 360 mm** (~16:1, como o GBA), beys no tamanho real, velocidades e limiares escalados ×1,8 para o ritmo não mudar. Especiais genéricos por tipo de bey até os efeitos de cada fera (M3).
+- Consequências: `src/sim/constants.js` concentra os números (calibração no M1/M3); `tests/sim.test.js` cobre lançamento, colisão, finais, desempate e determinismo. Combos depois de um "HIT!" (D-024) ainda não existem.
+
+## D-025: jogo na 5000, landing na 3000 e `pnpm run dev:all`
+
+- Data: 2026-10-25
+- Status: Aceita (substitui a regra de porta única do `CLAUDE.md`)
+- Contexto: o usuário pediu o jogo na porta 5000, a landing na 3000 e um comando `pnpm run dev:all` que abra a janela do Electron com o jogo e as abas Início, Personagens e Batalha. Na primeira execução a janela abriu a landing: um preview antigo dela continuava escutando a 5000 em IPv6.
+- Decisão:
+  - **jogo** (Express + Next, `server.js`) sempre em `127.0.0.1:5000`; **landing** (`site/`) sempre na **3000**; nenhuma das duas cai para outra porta se a sua estiver ocupada;
+  - `pnpm run dev:all` (= `node scripts/dev-all.js`) copia a arte, tenta subir o PostgreSQL, inicia jogo e landing e só abre o Electron quando a 5000 responde com o cabeçalho `X-Beyblade-App: jogo`; fechar a janela encerra tudo;
+  - o projeto continua **instalado pelo npm** (`package-lock.json`); o pnpm só roda scripts (`verifyDepsBeforeRun: false` em `pnpm-workspace.yaml`), porque a instalação automática dele antes do `run` tentou converter o `node_modules` e falhou com arquivos em uso.
+- Consequências: a landing não sobe quando a 3000 está ocupada (nesta máquina, por um container de outro projeto); o jogo segue normalmente. Abas trocam por L1/R1 (Q/E no teclado) só fora da batalha, onde L1/R1 são pulo e esquiva (D-024).
+
 ## D-024: controles da batalha iguais aos do jogo de GBA
 
 - Data: 2026-10-25

@@ -44,7 +44,7 @@ Segue os comandos do jogo de GBA, confirmados nos textos de dica da ROM ([D-024]
 | `launch` | ✕ (com timing) | A |
 | `pause` / entrar como P2 | Options | Start |
 
-Fera bit, Engine Gear e combos são **combinações** de `attack`, `defend`, `jump`, `dodge` e direções, então não têm binding próprio: remapear os botões base remapeia as combinações. As ações salvas por jogador em `src/validate.js` (`ACTIONS`) ainda são as da proposta antiga (`dash`, `guard`, `special`) e precisam ser trocadas por estas quando o input for implementado.
+Fera bit, Engine Gear e combos são **combinações** de `attack`, `defend`, `jump`, `dodge` e direções, então não têm binding próprio: remapear os botões base remapeia as combinações. As ações aceitas nas configurações salvas (`src/validate.js`, `ACTIONS`) e as lidas pelo input (`src/input/frame.js`) já são estas.
 
 Atualize esta tabela e registre em `DECISIONS.md` se o mapeamento padrão mudar.
 
@@ -54,14 +54,19 @@ Quem não tiver controle joga pelo teclado ([D-015](DECISIONS.md#d-015-jogo-comp
 
 ### Mapeamento padrão
 
-| Ação | Jogador 1 (lado esquerdo) | Jogador 2 (lado direito) |
+| Ação (botão do DualShock 4) | Jogador 1 (lado esquerdo) | Jogador 2 (lado direito) |
 | --- | --- | --- |
 | Mover | `W` `A` `S` `D` | Setas `↑` `←` `↓` `→` |
-| `dash` (investida / confirmar) | `F` | `K` |
-| `guard` (defesa / voltar) | `G` | `L` |
-| `special` | `H` | `J` |
-| `launch` (segurar) | `R` | `I` |
-| `pause` | `Esc` | `P` |
+| `attack` (✕): ataque, confirmar, lançamento | `F` | `K` |
+| `defend` (○): defesa, voltar | `G` | `L` |
+| `jump` (L1) | `R` | `I` |
+| `dodge` (R1) | `T` | `O` |
+| Fera bit (L1 + R1) | `R` + `T` | `I` + `O` |
+| Engine Gear (✕ + ○) | `F` + `G` | `K` + `L` |
+| `pause` (Options) | `Esc` | `P` |
+| Trocar aba (L1 / R1), fora da batalha | `Q` / `E` | — |
+
+Implementado em `src/input/frame.js` (D-024, D-025). Na batalha, L1/R1 são pulo e esquiva, então as abas só trocam nos menus.
 
 Atalhos de menu para qualquer jogador: `Enter` confirma e `Backspace` volta.
 

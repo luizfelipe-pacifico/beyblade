@@ -1,0 +1,4 @@
+# O projeto instala com npm (package-lock.json); o pnpm só roda os scripts (ex.: pnpm run dev:all).
+# Sem isto o pnpm tenta reinstalar o node_modules no formato dele antes de cada run e falha
+# com arquivos em uso.
+verifyDepsBeforeRun: false

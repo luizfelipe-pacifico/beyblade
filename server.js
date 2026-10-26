@@ -15,6 +15,12 @@ const handleNext = nextApp.getRequestHandler();
 
 const app = express();
 app.disable('x-powered-by');
+// Identidade do servidor: o dev:all só abre a janela do Electron quando quem responde na 5000 é o jogo,
+// não outro app que tenha ficado na mesma porta (aconteceu com o preview da landing).
+app.use((req, res, done) => {
+  res.setHeader('X-Beyblade-App', 'jogo');
+  done();
+});
 app.use('/api', express.json({ limit: '64kb' }));
 
 function parseSlot(raw) {

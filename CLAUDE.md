@@ -25,6 +25,7 @@ Jogo de Beyblade local para dois jogadores com controles (Gamepad API) e teclado
 
 ## Comandos
 
+- `pnpm run dev:all` (ou `npm run dev:all`): banco no Docker, jogo na 5000, landing na 3000 e a janela do Electron com o jogo; fechar a janela encerra tudo
 - `npm run dev`: servidor com `node --watch` (recarrega ao salvar)
 - `npm start`: servidor normal
 - `npm test`: roda todos os testes (`node --test`, arquivos `tests/*.test.js`)
@@ -39,7 +40,10 @@ Jogo de Beyblade local para dois jogadores com controles (Gamepad API) e teclado
 - `prisma/schema.prisma` + `prisma/migrations/`: schema e migrações versionadas; `prisma7.config.ts`: configuração do Prisma
 - `docker-compose.yml`: PostgreSQL; `.env` (fora do git) com credenciais e `DATABASE_URL`
 - `src/validate.js`: validação de tudo que chega pela API (`parse*` retorna `{ value }` ou `{ error }`)
-- `public/`: frontend do jogo
+- `app/(jogo)/`: telas do jogo com as abas Início, Personagens e Batalha; `app/design-system/`: galeria do design system
+- `electron/main.js`: janela do Electron (segurança em `docs/SECURITY.md`); `scripts/dev-all.js`: o `dev:all`
+- `src/sim/` (simulação, sem DOM), `src/input/` (controle e teclado → `InputFrame`), `src/render/` (canvas), `src/components/game/` (telas e HUD)
+- `public/art/`, `public/audio/` e `src/content/beys.generated.json`: gerados por `scripts/sync-art.js` (fora do git)
 - `tests/`: testes (`*.test.js`), incluindo os de regressão
 - `.githooks/pre-push`: roda `npm test` antes de todo push (ativado por `core.hooksPath`)
 - `src/generated/prisma/`: client gerado pelo `prisma generate` (**nunca versionar**)
@@ -48,7 +52,7 @@ Jogo de Beyblade local para dois jogadores com controles (Gamepad API) e teclado
 
 ## Porta
 
-- O projeto deve sempre rodar na porta **5000** (dev server, preview e servidor de produção local).
+- O **jogo** roda sempre na porta **5000** (dev server, preview e servidor de produção local); a **landing** (`site/`) roda sempre na **3000** (D-023).
 - Fixe a porta explicitamente na configuração (ex.: `server.port: 5000` + `strictPort: true` no Vite, `PORT=5000` no Node/Express, `--port 5000` em CLIs). Não deixe cair para outra porta automaticamente se a 5000 estiver ocupada.
 
 ## Commits e push

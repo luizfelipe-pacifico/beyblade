@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-A página abre em http://localhost:5000. Para gerar a versão estática, execute `npm run build`; os arquivos saem em `out/` (não versionada).
+A página abre em http://localhost:3000 (a porta 5000 é do jogo). Para gerar a versão estática, execute `npm run build`; os arquivos saem em `out/` (não versionada).
 
 ## Vercel
 

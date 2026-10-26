@@ -4,11 +4,13 @@
   "private": true,
   "description": "Jogo de Beyblade local para dois jogadores com manetes (Electron + Next.js, PostgreSQL no Docker via Prisma).",
   "type": "module",
+  "main": "electron/main.js",
   "scripts": {
     "prestart": "node scripts/sync-art.js",
     "start": "node server.js",
     "predev": "node scripts/sync-art.js",
     "dev": "node --watch server.js",
+    "dev:all": "node scripts/dev-all.js",
     "art:sync": "node scripts/sync-art.js",
     "build:research": "node scripts/build-research.js",
     "test": "node --test",
