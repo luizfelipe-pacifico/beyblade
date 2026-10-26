@@ -20,7 +20,7 @@ export default async function BatalhaPage({ searchParams }) {
         b2={texto(b2)}
         cpu={cpu === '2'}
         modo={MODOS.has(modo) ? modo : cpu === '2' ? 'cpu' : 'versus'}
-        etapa={inteiro(etapa, 1, 20, 1)}
+        etapa={inteiro(etapa, 0, 20, 0)}
         cpuNivel={inteiro(cpuNivel, 1, 5, 1)}
       />
     </>

@@ -20,7 +20,7 @@ Formato:
 - Data: 2026-10-25
 - Status: Aceita
 - Contexto: a outra sessão montou os modos Arcade e Treino (D-005) e combinou o contrato com a batalha.
-- Decisão: `/batalha` aceita `modo=versus|cpu|arcade|treino`, `etapa=<1..20>` e `cpuNivel=<1..5>` (valores fora disso caem no padrão; `cpu=2` continua valendo e equivale a `modo=cpu`). Fora do versus o P2 é da máquina (neutro até existir a IA, que vai ler `cpuNivel`). **Arcade:** o resultado mostra só "Continuar", que vai para `/arcade?etapa=<n>&resultado=vitoria|derrota`; a pausa volta para o arcade. **Treino:** `createMatch({ treino: true })` tira o relógio, não conta pontos e o boneco (P2) não perde giro; a pausa tem "Reiniciar" (L1 / R, porque ✕ já é confirmar).
+- Decisão: `/batalha` aceita `modo=versus|cpu|arcade|treino`, `etapa=<0..20>` (0 = primeira luta) e `cpuNivel=<1..5>` (valores fora disso caem no padrão; `cpu=2` continua valendo e equivale a `modo=cpu`). Fora do versus o P2 é da máquina (neutro até existir a IA, que vai ler `cpuNivel`). **Arcade:** o resultado mostra só "Continuar", que vai para `/arcade?etapa=<n>&resultado=vitoria|derrota`; a pausa volta para o arcade. **Treino:** `createMatch({ treino: true })` tira o relógio, não conta pontos e o boneco (P2) não perde giro; a pausa tem "Reiniciar" (L1 / R, porque ✕ já é confirmar).
 - Consequências: teste em `tests/sim.test.js`; as telas `/modos` e `/arcade` são da outra sessão.
 
 ## D-034: `dev:all` fecha quem estiver na porta e abre de novo
