@@ -44,6 +44,19 @@ Efeitos sonoros do jogo batem com essas ações: `impact1`–`3`, `jump`, `land`
 - **No jogo de GBA (ROM):** "Ring out" (bey expulsa do estádio) e "Spin down" (parou de girar); resenhas citam também a bey quebrada.
 - **Pontuação do brinquedo:** nas regras atuais, ring out vale 2 pontos e o spin finish (o adversário parou de girar primeiro) vale 1; vence quem chegar a 3. Essas regras são da era Burst em diante; não há regra oficial publicada da era Bakuten Shoot, então o placar do nosso jogo é decisão de design (ver `validate.js`: `spin`, `ringout`, `burst` etc.).
 
+## Proporção entre arena e bey
+
+O usuário achou a arena pequena. Comparação (pesquisa de 2026-10-25):
+
+| Referência | Bey | Arena | Proporção (diâmetro) |
+| --- | --- | --- | --- |
+| Brinquedo, era Bakuten | 43–48 mm (`diametro_mm` das beys em `pesquisa-bakuten/`) | ~34–48 cm: Beystadium Attack Type 34 cm, Balance Type 48,3 cm, padrão ~40–44 cm ([Attack Type](https://mfbeyblade.fandom.com/wiki/Beystadium_Attack_Type), [Balance Type](https://beyblade.fandom.com/wiki/Beystadium_Balance_Type), [HLJ](https://www.hlj.co.jp/product/TKT17376)) | ~8:1 a 10:1 |
+| Jogo de GBA **(ROM)** | sprite de 32 px | chão do estádio de 512 px | ~16:1 |
+| Anime | — | sem medida publicada; os estádios são mostrados bem maiores que o brinquedo | maior que o brinquedo |
+| Nosso protótipo (`ARENA_RADIUS = 200`) | ~44 mm | 400 mm | ~9:1 |
+
+O protótipo está fiel ao brinquedo, e por isso parece apertado. **Proposta:** usar a proporção do GBA, ~16:1 (raio da arena ≈ 360 mm, mantendo o raio das beys), escalando junto as velocidades e distâncias da física. Os sites japoneses e a wiki não trazem a medida da arena do anime; o número do anime é só visual.
+
 ## Lançador e ripcord
 
 - O jogo de GBA tem **4 lançadores** (Plastic, Metal, Professional, Competition) e **4 ripcords** (Plastic, Extended, Super long, Competition) **(ROM)**, e os dois **quebram** com o uso ("Your launcher has broken!", "Your ripcord has broken!").
