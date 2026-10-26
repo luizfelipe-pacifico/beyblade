@@ -39,7 +39,7 @@ Responder: **é divertido?** Gráficos simples (círculos) e números de teste.
 - ✅ Simulação determinística em `src/sim/` (PRNG com semente, estado serializável), testável em Node
 - ✅ Arena em tigela: inclinação puxando ao centro, parede e zonas de saída (tigela funda, raio 450 mm, D-028)
 - ✅ Física das beys: movimento, colisão bey×bey e bey×parede, perda de giro, efeito do sentido de rotação (igual = mais recuo; oposto = equalização de giro)
-- ✅ Finalizações: Parada, Fora, Burst e Decisão, melhor de 3 (D-026; a calibrar)
+- ✅ Finalizações: Parada, Fora e Decisão, melhor de 3 (D-026; sem burst, D-045)
 - ✅ Input: 2× DualShock 4 e teclado (dois jogadores no mesmo teclado ou misto, D-015), `InputFrame` por tick, deadzone radial
 - ✅ Comandos da D-024: ataque e defesa com carga, pulo, esquiva, fera bit (L1+R1), Engine Gear (✕+○), lançamento com timing
 - ⬜ Combos depois de um "HIT!" (D-024)

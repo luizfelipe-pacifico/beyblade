@@ -212,10 +212,6 @@ export function BattleScreen({ p1, p2, b1, b2, arena, cpu = false, modo = 'versu
           faseDa(e.slot, 'volta');
           feraTimers[e.slot] = setTimeout(() => faseDa(e.slot, null), FERA_VOLTA_MS);
           break;
-        case 'burst':
-          sons.play('choqueForte');
-          renderer.spawnSparks(e.x, e.y, 1, 0, 900);
-          break;
         case 'ringout':
           sons.play('ringOut');
           break;

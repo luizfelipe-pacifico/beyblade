@@ -403,7 +403,7 @@ function simulate(state, inputs, control) {
   }
 }
 
-const isOnStage = (b) => b.state !== 'out' && b.state !== 'burst';
+const isOnStage = (b) => b.state !== 'out';
 
 function moveBey(state, b, h, inp) {
   if (b.state === 'out') {
@@ -412,7 +412,6 @@ function moveBey(state, b, h, inp) {
     b.angle += b.dir * 8 * h;
     return;
   }
-  if (b.state === 'burst') return;
   const spin = Math.max(0, b.spin);
   const m = mods(b);
   const r = Math.hypot(b.x, b.y);
@@ -620,8 +619,6 @@ function collide(state, a, b, finishes) {
     state.hitCd = 0.06;
     state.events.push({ type: 'hit', impact, x: a.x + nx * a.r, y: a.y + ny * a.r, nx, ny, empurrao: [pushA, pushB] });
   }
-  checkBurst(state, a, impact, ma_, finishes);
-  checkBurst(state, b, impact, mb_, finishes);
 }
 
 function baterNoEscudo(state, b, impact, critico) {
@@ -634,17 +631,6 @@ function baterNoEscudo(state, b, impact, critico) {
   b.guard = false;
   b.guardCharge = 0;
   state.events.push({ type: 'shieldBreak', slot: b.slot, x: b.x, y: b.y });
-}
-
-function checkBurst(state, b, impact, m, finishes) {
-  if (b.state !== 'active' || impact < P.burstImpact || b.spin >= P.burstSpin) return;
-  const chance = ((impact - P.burstImpact) / P.burstSpan) * (1 - b.spin / P.burstSpin) * (1.2 - b.bal * 0.6) * m.dmgIn;
-  if (nextRandom(state) < chance) {
-    b.state = 'burst';
-    b.spin = 0;
-    finishes.push({ loser: b.slot, finish: 'burst' });
-    state.events.push({ type: 'burst', slot: b.slot, x: b.x, y: b.y });
-  }
 }
 
 function angleDiff(a, b) {
@@ -680,7 +666,7 @@ function wall(state, b, finishes) {
   b.y *= k;
 }
 
-const FINISH_PRIORITY = { burst: 3, ringout: 2, spin: 1 };
+const FINISH_PRIORITY = { ringout: 2, spin: 1 };
 
 function resolveFinish(state, finishes) {
   const losers = new Set(finishes.map((f) => f.loser));

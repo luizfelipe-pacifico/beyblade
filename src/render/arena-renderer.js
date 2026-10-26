@@ -546,11 +546,6 @@ export class ArenaRenderer {
     ctx.translate(w / 2, h / 2);
 
     curr.beys.forEach((b, i) => {
-      if (b.state === 'burst') {
-        this.trails[i].length = 0;
-        this.posicoes[i] = null;
-        return;
-      }
       const p = prev?.beys[i] ?? b;
       const wx = p.x + (b.x - p.x) * alpha;
       const wy = p.y + (b.y - p.y) * alpha;

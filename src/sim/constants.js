@@ -40,15 +40,14 @@ export const PHYSICS = {
   dodgeCooldown: 0.8,
   dodgeInvuln: 0.25,
   wallRestitution: 0.6,
-  pocketOutSpeed: 260 * S,
-  rimOutSpeed: 650 * S,
+  // Saída da arena escalada junto com o ritmo (D-041): mesma proporção do teto de velocidade.
+  pocketOutSpeed: 200 * S,
+  rimOutSpeed: 500 * S,
   hitDamage: 0.00008 / S,
   // Atrito de contato entre as beys (por choque, além da força do impacto).
   contactDamage: 0.0002,
   wallDamage: 0.00005 / S,
   equalization: 0.05,
-  burstImpact: 450 * S,
-  burstSpin: 0.3,
   // Girar à toa gasta pouco; o que mais gasta giro são os choques (hitDamage).
   spinDecay: 0.011,
   guardDrain: 0.01,
@@ -60,7 +59,6 @@ export const PHYSICS = {
   specialRush: 900 * S,
   hitEventImpact: 60 * S,
   equalizeImpact: 50 * S,
-  burstSpan: 800 * S,
   wallEventSpeed: 150 * S,
   // Faixas de impacto que a apresentação usa (som forte e vibração máxima).
   strongImpact: 300 * S,
@@ -123,9 +121,9 @@ export const CRITICAL = {
   hitWindow: 0.35,
   minAlign: 0.978,
   knock: 2.4,
-  damage: 3,
+  damage: 4,
   selfKnock: 0.5,
-  selfDamage: 0.5,
+  selfDamage: 0.4,
   // Teto do empurrão no crítico, em múltiplos da parte do impulso que cabe ao alvo (D-043).
   pushShare: 1.6,
   // Ponto do choque: o empurrão tem que mandar o alvo para a borda (de dentro para fora).
@@ -171,7 +169,6 @@ export function bowlSlope(r) {
 export const FINISHES = {
   spin: 'Parada',
   ringout: 'Fora',
-  burst: 'Burst',
   decision: 'Decisão',
   draw: 'Empate',
 };

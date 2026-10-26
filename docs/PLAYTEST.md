@@ -45,4 +45,5 @@ Para o que só se vê jogando (animação, HUD, som, sensação), a batalha roda
 | --- | --- | --- | --- |
 | 2026-10-25 | Ataque com 0% contra a defesa | Sem forma de o ataque vencer a massa e o pouco recuo da defesa | Golpe crítico difícil (D-041); `tests/critico.test.js` |
 | 2026-10-25 | Defesa jogada a ~3,5 m/s por um crítico | O crítico multiplicava o empurrão inteiro, criando energia | Empurrão limitado pelo momento (D-043); regressão em `tests/critico.test.js` |
+| 2026-10-25 | Nenhum ring out em 48 rodadas | Ao baixar o ritmo, a velocidade de saída da arena ficou acima do teto de velocidade | Saída escalada com o ritmo (D-045) |
 | 2026-10-25 | Espelho empatando para sempre | Roteiro do teste perfeitamente simétrico (não é do jogo) | P2 defasado no roteiro |

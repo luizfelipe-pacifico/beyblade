@@ -78,7 +78,7 @@ Efeitos sonoros do jogo batem com essas ações: `impact1`–`3`, `jump`, `land`
 ## Finais e regras
 
 - **No jogo de GBA (ROM):** "Ring out" (bey expulsa do estádio) e "Spin down" (parou de girar); resenhas citam também a bey quebrada.
-- **Pontuação do brinquedo:** nas regras atuais, ring out vale 2 pontos e o spin finish (o adversário parou de girar primeiro) vale 1; vence quem chegar a 3. Essas regras são da era Burst em diante; não há regra oficial publicada da era Bakuten Shoot, então o placar do nosso jogo é decisão de design (ver `validate.js`: `spin`, `ringout`, `burst` etc.).
+- **Pontuação do brinquedo:** nas regras atuais, ring out vale 2 pontos e o spin finish (o adversário parou de girar primeiro) vale 1; vence quem chegar a 3. Essas regras são da era Burst em diante; não há regra oficial publicada da era Bakuten Shoot, então o placar do nosso jogo é decisão de design (ver `validate.js`: `spin`, `ringout` etc.). Na era Bakuten Shoot não existe burst: só parada e ring out (D-045).
 
 ## Proporção entre arena e bey
 

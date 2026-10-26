@@ -15,6 +15,14 @@ Formato:
 
 ---
 
+## D-045: sem burst; só vitória por giro e por ring out
+
+- Data: 2026-10-25
+- Status: Aceita
+- Contexto: o usuário lembrou que neste jogo (era Bakuten Shoot) não existe burst: só vitória por resistência e por tirar da arena.
+- Decisão: a simulação não tem mais burst (estado, chance por impacto e finalização); a rodada acaba por **parada** (giro), **decisão** (mais giro quando o tempo acaba), **fora** (ring out) ou empate. Sem o burst, o playtest mostrou que o ring out tinha ficado impossível: ao baixar o ritmo (D-041), a velocidade de saída não acompanhou e a da borda ficou acima do teto de velocidade. As duas foram escaladas na mesma proporção (bolso 260 → 200, borda 650 → 500, ×S). Contra a defesa no centro (fisicamente difícil de tirar: subir da metade da tigela até a borda pede ~1,6 m/s), o crítico vence tirando giro: ×4 no alvo e quem acerta sente 40% do choque.
+- Consequências: medido (20 partidas): ataque afobada 0% contra a defesa, precisa 55%. Testes: o de finalizações não aceita mais `burst`; nos testes, "tirar a outra bey do palco" usa o estado `out`. A API ainda aceita `burst` no histórico, para não invalidar partidas antigas.
+
 ## D-044: sem barra de abas; o jogo ocupa a tela inteira
 
 - Data: 2026-10-25

@@ -12,7 +12,7 @@ const bey = (over = {}) => ({ slug: 't', nome: 'T', tipo: 'balance', rotacao: 'd
 function solo(def, place) {
   const s = createMatch({ beys: [def, bey({ ponta: 'sharp' })], seed: 5 });
   while (s.phase === 'launch') stepMatch(s);
-  s.beys[1].state = 'burst';
+  s.beys[1].state = 'out';
   if (place) Object.assign(s.beys[0], place);
   return s;
 }

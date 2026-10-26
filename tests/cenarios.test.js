@@ -12,7 +12,7 @@ const ticks = (s) => Math.round(s / DT);
 function solo(regras, place) {
   const s = createMatch({ beys: [bey(), bey({ ponta: 'sharp' })], seed: 5, regras });
   while (s.phase === 'launch') stepMatch(s);
-  s.beys[1].state = 'burst';
+  s.beys[1].state = 'out';
   Object.assign(s.beys[0], place);
   return s;
 }

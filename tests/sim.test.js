@@ -111,7 +111,7 @@ test('a whole match ends with a winner after two round wins', () => {
   assert.equal(s.phase, 'matchOver');
   assert.ok(s.winner === 1 || s.winner === 2);
   assert.equal(s.wins[s.winner - 1], 2);
-  for (const r of s.rounds) assert.ok(['spin', 'ringout', 'burst', 'decision', 'draw'].includes(r.finish), r.finish);
+  for (const r of s.rounds) assert.ok(['spin', 'ringout', 'decision', 'draw'].includes(r.finish), r.finish);
 });
 
 const hold = (held) => input({ held });
@@ -151,7 +151,7 @@ test('a charged attack hits harder than a quick tap', () => {
     const a = s.beys[0];
     Object.assign(a, { x: 0, y: 0, vx: 0, vy: 0 });
     // Adversário fora do palco: sem choque no meio da carga, só a investida conta.
-    Object.assign(s.beys[1], { x: 150, y: 0, state: 'burst' });
+    Object.assign(s.beys[1], { x: 150, y: 0, state: 'out' });
     for (let t = 0; t < frames; t++) stepMatch(s, [hold({ attack: true }), NEUTRAL_INPUT]);
     Object.assign(a, { vx: 0, vy: 0 });
     stepMatch(s, [NEUTRAL_INPUT, NEUTRAL_INPUT]);
